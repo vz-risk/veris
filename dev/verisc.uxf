@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <help_text/>
+  <zoom_level>6</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>348</x>
+      <y>60</y>
+      <w>204</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>Incident
+--
++ notes: string
+#--- AAAA
+* agents [1..n] : AgentAggregate
+* actions [1..n] : ActionAggregate
+* assets : AssetAggregate
+&lt;&lt;nillable&gt;&gt; * attributes [1..n] : AttributeAggregate
++ timeline : Timeline
+#--- victim
+* victim : Victim
++ security_compromise : SECURITYCOMPROMISE
++ discovery_method [0..1] : DISCOVERYMETHOD
++ &lt;&lt;nillable&gt;&gt; control_failure : string
++ &lt;&lt;nillable&gt;&gt; corrective_action [0..*] : string
++ &lt;&lt;nillable&gt;&gt; losses [0..*] : Loss
++ impact_rating [0..1] : IMPACTRATING
++ impact_estimate [0..1] : Money
+#--- tracking
+* uid : string
++ &lt;&lt;nillable&gt;&gt; related_incident [0..*] : Incident
++ source_uid [0..1] : string
++ confidence [0..1] : CONFIDENCE
++ summary : string
+#--- timeline
++ &lt;&lt;nillable&gt;&gt; first_action [0..1] : DateTime
++ &lt;&lt;nillable&gt;&gt; initial_compromise : DateTime
++ &lt;&lt;nillable&gt;&gt; data_exfiltration [0..1] : DateTime
++ &lt;&lt;nillable&gt;&gt; incident_discovery [0..1] : DateTime
++ &lt;&lt;nillable&gt;&gt; containment [0..1] : DateTime
++ investigation : DateTime
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>210</x>
+      <y>0</y>
+      <w>156</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>VERISCommunity
+--
+&lt;&lt;required&gt;&gt; + schema_version : float
+* incidents [1..*] : Incident
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>252</x>
+      <y>18</y>
+      <w>108</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1..*</panel_attributes>
+    <additional_attributes>18;18;18;78;96;78</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>600</x>
+      <y>42</y>
+      <w>168</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>Victim
+--
+* uid : string
++ industry : Industry
++ employee_count : EMPLOYEECOUNT
++ location : Location
++ &lt;&lt;nillable&gt;&gt; revenue [0..1] : Money
++ &lt;&lt;nillable&gt;&gt; security_budget [0..1] : Money
++ notes : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>534</x>
+      <y>102</y>
+      <w>132</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1..*</panel_attributes>
+    <additional_attributes>120;18;120;66;18;66</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>510</x>
+      <y>396</y>
+      <w>372</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>Action
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>48</x>
+      <y>402</y>
+      <w>372</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>Agent
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>300</x>
+      <y>444</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Note: "Unknown" means
+some "generic" agent was
+involved.
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>162</x>
+      <y>420</y>
+      <w>132</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>AgnentAggregate
+--
++ motives [1..*] : AGENTMOTIVE
++ roles [1..*] : AGENTROLE
++ notes : string
+/ type : string
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>84</x>
+      <y>498</y>
+      <w>132</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>External
+--
+varieties [1..*] : EXTERNALVARIETY
+&lt;&lt;nillable&gt;&gt; origins [0..*] : Location
+&lt;&lt;nillable&gt;&gt; ips [0..*] : string
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>252</x>
+      <y>498</y>
+      <w>126</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Internal
+--
++ varieties [1..*] : INTERNALVARIETY
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>216</x>
+      <y>120</y>
+      <w>108</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>An indicent models the 
+relationship between
+AAAA threat events and
+a Victim.
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>162</x>
+      <y>558</y>
+      <w>144</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Partner
+--
++ varieties [1..*] : PARTNERVARIETY
++ &lt;&lt;nillable&gt;&gt; origins [0..*] : Location
++ &lt;&lt;nillable&gt;&gt; ips [0..*] : string
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>156</x>
+      <y>456</y>
+      <w>30</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;42</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>258</x>
+      <y>456</y>
+      <w>30</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;42</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>210</x>
+      <y>456</y>
+      <w>30</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;102</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>204</x>
+      <y>252</y>
+      <w>156</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=    1..n</panel_attributes>
+    <additional_attributes>144;18;18;18;18;168</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>630</x>
+      <y>414</y>
+      <w>126</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>ActionAggregate
+--
++ notes : string
+/ type : string
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>516</x>
+      <y>462</y>
+      <w>162</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Misuse
+--
++ varieties [1..*] : MISUSEVARIETY
++ vectors [0..*] : MISUSEVECTOR
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>714</x>
+      <y>468</y>
+      <w>162</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Environmental
+--
++ varieties [1..*] : ENVIRONMENTALVARIETY
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>714</x>
+      <y>498</y>
+      <w>162</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>Malware
+--
++ varieties [1..*] : MALWAREVARIETY
++ vectors [1..*] : MALWAREVECTOR
++ &lt;&lt;nillable&gt;&gt; names [1..*] : string
++ &lt;&lt;nillable&gt;&gt; filenames [1..*] : string
++ &lt;&lt;nillable&gt;&gt; hash_values [1..*] : string
++ &lt;&lt;nillable&gt;&gt; ips [1..*] : string
++ &lt;&lt;nillable&gt;&gt; urls [1..*] : string
++ &lt;&lt;nillable&gt;&gt; domains [1..*] : string
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>516</x>
+      <y>558</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Social
+--
++ varieties [1..*] : SOCIALVARIETY
++ vectors [1..*] : SOCIALCHANNEL
++ &lt;&lt;nillable&gt;&gt; emails [0..1] : EmailAggregate
++ &lt;&lt;nillable&gt;&gt; targets [0..*] : string
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>516</x>
+      <y>618</y>
+      <w>162</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Error
+--
++ varieties [1..*] : ERRORVARIETY
++ vectors [0..*] : ERRORVECTOR
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>630</x>
+      <y>432</y>
+      <w>30</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>714</x>
+      <y>432</y>
+      <w>30</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;36</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>660</x>
+      <y>432</y>
+      <w>36</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;18;24;90;18;90</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>660</x>
+      <y>432</y>
+      <w>42</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;18;30;150;18;150</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>684</x>
+      <y>432</y>
+      <w>42</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;198;30;198</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>690</x>
+      <y>432</y>
+      <w>36</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;114;24;114</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>762</x>
+      <y>426</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Note: "Unknown" means
+some "generic" action was
+involved.
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>534</x>
+      <y>252</y>
+      <w>168</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1..n</panel_attributes>
+    <additional_attributes>18;18;156;18;156;162</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>48</x>
+      <y>684</y>
+      <w>372</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Asset
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>510</x>
+      <y>684</y>
+      <w>372</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Attribute
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>168</x>
+      <y>720</y>
+      <w>174</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>AssetAggregate
+--
++ varieties [1..*] : AssetVariety
++ ownership [0..*] : ASSETOWNERSHIP
++ hosting [0..*] : ASSETHOSTING
++ management [0..*] : ASSETMANAGEMENT
++ os [0..*] : ASSETOS
++ notes : string
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>324</x>
+      <y>354</y>
+      <w>132</w>
+      <h>408</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>120;18;120;396;18;396</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>624</x>
+      <y>732</y>
+      <w>132</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>AttributeAggregate
+--
++ notes : string
+/ type : string
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>696</x>
+      <y>792</y>
+      <w>156</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>CP
+--
++ data [0..n] : Data
++ transit_state [0..*] : CPTRANSITSTATE
++ disclosure [1..*] : CPDISCLOSURE
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>552</x>
+      <y>792</y>
+      <w>102</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>IA
+--
++ varieties [1..*]: IAVARIETY
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>624</x>
+      <y>858</y>
+      <w>102</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>AU
+--
++ varieties [1..*]: AUVARIETY
++ duration : AUDURATION
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>618</x>
+      <y>750</y>
+      <w>30</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;42</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>702</x>
+      <y>750</y>
+      <w>30</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;42</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>654</x>
+      <y>750</y>
+      <w>30</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;108</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>462</x>
+      <y>354</y>
+      <w>174</w>
+      <h>408</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1..n</panel_attributes>
+    <additional_attributes>18;18;18;396;162;396</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>762</x>
+      <y>750</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Note: "Unknown" means
+some "generic" action was
+involved.
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>54</x>
+      <y>990</y>
+      <w>84</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Industry
+--
+* naics_code : uint</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>156</x>
+      <y>990</y>
+      <w>90</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Money
+--
+* amount : uint
+* iso_currency_code : uint</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>264</x>
+      <y>990</y>
+      <w>114</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Location
+--
+* country : string
+* region : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>702</x>
+      <y>990</y>
+      <w>114</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>DateTime
+--
+* year : uint
+* &lt;&lt;nillable&gt;&gt; month : uint
+* &lt;&lt;nillable&gt;&gt; day : uint
+* &lt;&lt;nillable&gt;&gt; time : time</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>714</x>
+      <y>606</y>
+      <w>162</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Hacking
+--
++ varieties [1..*] : HACKINGVARIETY
++ vectors [1..*] : HACKINGVECTOR
++ &lt;&lt;nillable&gt;&gt; cves [0..*] : string
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>660</x>
+      <y>432</y>
+      <w>48</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>36;18;36;204;18;204</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>408</x>
+      <y>990</y>
+      <w>120</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Data
+--
+* variety : DATAVARIETY
+* &lt;&lt;nillable&gt;&gt; amount [0..*] : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>564</x>
+      <y>990</y>
+      <w>120</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Loss
+--
+* variety : LOSSVARIETY
+* &lt;&lt;nillable&gt;&gt; amount : Money</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>516</x>
+      <y>504</y>
+      <w>162</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Physical
+--
++ varieties [1..*] : PHYSICALVARIETY
++ vectors [0..*] : PHYSICALVECTOR
++ locations [0..*] : Location
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>168</x>
+      <y>840</y>
+      <w>126</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>AssetVariety
+--
++ name : ASSETVARIETY
++ &lt;&lt;nillable&gt;&gt; amount : uint
+bg=orange
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>234</x>
+      <y>780</y>
+      <w>30</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+m2=1..n</panel_attributes>
+    <additional_attributes>18;18;18;60</additional_attributes>
+  </element>
+</diagram>

@@ -1,0 +1,16 @@
+# OS generated files
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# backup files
+*.old
+._*
+*~
+._*
+*.swp
+*.bak
+
+#compilation files
+*.pyc

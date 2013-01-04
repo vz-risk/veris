@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ================================================= -->
+<!-- Reference document for VERIS Community XML Schema -->
+<!-- ================================================= -->
+
+<lib>
+
+<!-- Was a security incident involved? -->
+<security_compromise>Confirmed</security_compromise>
+<security_compromise>Suspected</security_compromise>
+<security_compromise>No</security_compromise>
+
+<!-- Countries -->
+<country>AFGHANISTAN</country>
+<country>ALAND ISLANDS</country>
+<country>ALBANIA</country>
+<country>ALGERIA</country>
+<country>AMERICAN SAMOA</country>
+<country>ANDORRA</country>
+<country>ANGOLA</country>
+<country>ANGUILLA</country>
+<country>ANTARCTICA</country>
+<country>ANTIGUA AND BARBUDA</country>
+<country>ARGENTINA</country>
+<country>ARMENIA</country>
+<country>ARUBA</country>
+<country>AUSTRALIA</country>
+<country>AUSTRIA</country>
+<country>AZERBAIJAN</country>
+<country>BAHAMAS</country>
+<country>BAHRAIN</country>
+<country>BANGLADESH</country>
+<country>BARBADOS</country>
+<country>BELARUS</country>
+<country>BELGIUM</country>
+<country>BELIZE</country>
+<country>BENIN</country>
+<country>BERMUDA</country>
+<country>BHUTAN</country>
+<country>BOLIVIA, PLURINATIONAL STATE OF</country>
+<country>BONAIRE, SINT EUSTATIUS AND SABA</country>
+<country>BOSNIA AND HERZEGOVINA</country>
+<country>BOTSWANA</country>
+<country>BOUVET ISLAND</country>
+<country>BRAZIL</country>
+<country>BRITISH INDIAN OCEAN TERRITORY</country>
+<country>BRUNEI DARUSSALAM</country>
+<country>BULGARIA</country>
+<country>BURKINA FASO</country>
+<country>BURUNDI</country>
+<country>CAMBODIA</country>
+<country>CAMEROON</country>
+<country>CANADA</country>
+<country>CAPE VERDE</country>
+<country>CAYMAN ISLANDS</country>
+<country>CENTRAL AFRICAN REPUBLIC</country>
+<country>CHAD</country>
+<country>CHILE</country>
+<country>CHINA</country>
+<country>CHRISTMAS ISLAND</country>
+<country>COCOS (KEELING) ISLANDS</country>
+<country>COLOMBIA</country>
+<country>COMOROS</country>
+<country>CONGO</country>
+<country>CONGO, THE DEMOCRATIC REPUBLIC OF THE</country>
+<country>COOK ISLANDS</country>
+<country>COSTA RICA</country>
+<country>CïTE D'IVOIRE</country>
+<country>CROATIA</country>
+<country>CUBA</country>
+<country>CURA‚AO</country>
+<country>CYPRUS</country>
+<country>CZECH REPUBLIC</country>
+<country>DENMARK</country>
+<country>DJIBOUTI</country>
+<country>DOMINICA</country>
+<country>DOMINICAN REPUBLIC</country>
+<country>ECUADOR</country>
+<country>EGYPT</country>
+<country>EL SALVADOR</country>
+<country>EQUATORIAL GUINEA</country>
+<country>ERITREA</country>
+<country>ESTONIA</country>
+<country>ETHIOPIA</country>
+<country>FALKLAND ISLANDS (MALVINAS)</country>
+<country>FAROE ISLANDS</country>
+<country>FIJI</country>
+<country>FINLAND</country>
+<country>FRANCE</country>
+<country>FRENCH GUIANA</country>
+<country>FRENCH POLYNESIA</country>
+<country>FRENCH SOUTHERN TERRITORIES</country>
+<country>GABON</country>
+<country>GAMBIA</country>
+<country>GEORGIA</country>
+<country>GERMANY</country>
+<country>GHANA</country>
+<country>GIBRALTAR</country>
+<country>GREECE</country>
+<country>GREENLAND</country>
+<country>GRENADA</country>
+<country>GUADELOUPE</country>
+<country>GUAM</country>
+<country>GUATEMALA</country>
+<country>GUERNSEY</country>
+<country>GUINEA</country>
+<country>GUINEA-BISSAU</country>
+<country>GUYANA</country>
+<country>HAITI</country>
+<country>HEARD ISLAND AND MCDONALD ISLANDS</country>
+<country>HOLY SEE (VATICAN CITY STATE)</country>
+<country>HONDURAS</country>
+<country>HONG KONG</country>
+<country>HUNGARY</country>
+<country>ICELAND</country>
+<country>INDIA</country>
+<country>INDONESIA</country>
+<country>IRAN, ISLAMIC REPUBLIC OF</country>
+<country>IRAQ</country>
+<country>IRELAND</country>
+<country>ISLE OF MAN</country>
+<country>ISRAEL</country>
+<country>ITALY</country>
+<country>JAMAICA</country>
+<country>JAPAN</country>
+<country>JERSEY</country>
+<country>JORDAN</country>
+<country>KAZAKHSTAN</country>
+<country>KENYA</country>
+<country>KIRIBATI</country>
+<country>KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF</country>
+<country>KOREA, REPUBLIC OF</country>
+<country>KUWAIT</country>
+<country>KYRGYZSTAN</country>
+<country>LAO PEOPLE'S DEMOCRATIC REPUBLIC</country>
+<country>LATVIA</country>
+<country>LEBANON</country>
+<country>LESOTHO</country>
+<country>LIBERIA</country>
+<country>LIBYA</country>
+<country>LIECHTENSTEIN</country>
+<country>LITHUANIA</country>
+<country>LUXEMBOURG</country>
+<country>MACAO</country>
+<country>MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF</country>
+<country>MADAGASCAR</country>
+<country>MALAWI</country>
+<country>MALAYSIA</country>
+<country>MALDIVES</country>
+<country>MALI</country>
+<country>MALTA</country>
+<country>MARSHALL ISLANDS</country>
+<country>MARTINIQUE</country>
+<country>MAURITANIA</country>
+<country>MAURITIUS</country>
+<country>MAYOTTE</country>
+<country>MEXICO</country>
+<country>MICRONESIA, FEDERATED STATES OF</country>
+<country>MOLDOVA, REPUBLIC OF</country>
+<country>MONACO</country>
+<country>MONGOLIA</country>
+<country>MONTENEGRO</country>
+<country>MONTSERRAT</country>
+<country>MOROCCO</country>
+<country>MOZAMBIQUE</country>
+<country>MYANMAR</country>
+<country>NAMIBIA</country>
+<country>NAURU</country>
+<country>NEPAL</country>
+<country>NETHERLANDS</country>
+<country>NEW CALEDONIA</country>
+<country>NEW ZEALAND</country>
+<country>NICARAGUA</country>
+<country>NIGER</country>
+<country>NIGERIA</country>
+<country>NIUE</country>
+<country>NORFOLK ISLAND</country>
+<country>NORTHERN MARIANA ISLANDS</country>
+<country>NORWAY</country>
+<country>OMAN</country>
+<country>PAKISTAN</country>
+<country>PALAU</country>
+<country>PALESTINIAN TERRITORY, OCCUPIED</country>
+<country>PANAMA</country>
+<country>PAPUA NEW GUINEA</country>
+<country>PARAGUAY</country>
+<country>PERU</country>
+<country>PHILIPPINES</country>
+<country>PITCAIRN</country>
+<country>POLAND</country>
+<country>PORTUGAL</country>
+<country>PUERTO RICO</country>
+<country>QATAR</country>
+<country>RƒUNION</country>
+<country>ROMANIA</country>
+<country>RUSSIAN FEDERATION</country>
+<country>RWANDA</country>
+<country>SAINT BARTHƒLEMY</country>
+<country>SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA</country>
+<country>SAINT KITTS AND NEVIS</country>
+<country>SAINT LUCIA</country>
+<country>SAINT MARTIN (FRENCH PART)</country>
+<country>SAINT PIERRE AND MIQUELON</country>
+<country>SAINT VINCENT AND THE GRENADINES</country>
+<country>SAMOA</country>
+<country>SAN MARINO</country>
+<country>SAO TOME AND PRINCIPE</country>
+<country>SAUDI ARABIA</country>
+<country>SENEGAL</country>
+<country>SERBIA</country>
+<country>SEYCHELLES</country>
+<country>SIERRA LEONE</country>
+<country>SINGAPORE</country>
+<country>SINT MAARTEN (DUTCH PART)</country>
+<country>SLOVAKIA</country>
+<country>SLOVENIA</country>
+<country>SOLOMON ISLANDS</country>
+<country>SOMALIA</country>
+<country>SOUTH AFRICA</country>
+<country>SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS</country>
+<country>SOUTH SUDAN</country>
+<country>SPAIN</country>
+<country>SRI LANKA</country>
+<country>SUDAN</country>
+<country>SURINAME</country>
+<country>SVALBARD AND JAN MAYEN</country>
+<country>SWAZILAND</country>
+<country>SWEDEN</country>
+<country>SWITZERLAND</country>
+<country>SYRIAN ARAB REPUBLIC</country>
+<country>TAIWAN, PROVINCE OF CHINA</country>
+<country>TAJIKISTAN</country>
+<country>TANZANIA, UNITED REPUBLIC OF</country>
+<country>THAILAND</country>
+<country>TIMOR-LESTE</country>
+<country>TOGO</country>
+<country>TOKELAU</country>
+<country>TONGA</country>
+<country>TRINIDAD AND TOBAGO</country>
+<country>TUNISIA</country>
+<country>TURKEY</country>
+<country>TURKMENISTAN</country>
+<country>TURKS AND CAICOS ISLANDS</country>
+<country>TUVALU</country>
+<country>UGANDA</country>
+<country>UKRAINE</country>
+<country>UNITED ARAB EMIRATES</country>
+<country>UNITED KINGDOM</country>
+<country>UNITED STATES</country>
+<country>UNITED STATES MINOR OUTLYING ISLANDS</country>
+<country>URUGUAY</country>
+<country>UZBEKISTAN</country>
+<country>VANUATU</country>
+<country>VENEZUELA, BOLIVARIAN REPUBLIC OF</country>
+<country>VIET NAM</country>
+<country>VIRGIN ISLANDS, BRITISH</country>
+<country>VIRGIN ISLANDS, U.S.</country>
+<country>WALLIS AND FUTUNA</country>
+<country>WESTERN SAHARA</country>
+<country>YEMEN</country>
+<country>ZAMBIA</country>
+<country>ZIMBABWE</country>
+
+<!-- Region of operation -->
+<region>Africa</region>
+<region>Americas-Central</region>
+<region>Americas-North</region>
+<region>Americas-South</region>
+<region>Asia-Central</region>
+<region>Asia-East</region>
+<region>Asia-South / Southeast</region>
+<region>Europe-East (incl Russia, Turkey)</region>
+<region>Europe-West (incl Northern, Southern)</region>
+<region>Middle East</region>
+<region>Oceania (AUS, NZ, etc)</region>
+<region>Unknown</region>
+
+<!-- What motive drove the agent(s) to act? -->
+<motive>Financial or personal gain</motive>
+<motive>Fear or duress</motive>
+<motive>Disagreement or protest</motive>
+<motive>Grudge or personal offense</motive>
+<motive>Geopolitical</motive>
+<motive>Fun, curiosity, or pride</motive>
+<motive>Not Applicable (Unintentional action)</motive>
+<motive>Unknown</motive>
+
+<!-- What role did the agent(s) play in this incident? -->
+<role>Acted directly, deliberately, and maliciously</role>
+<role>Solicited or aided another agent</role>
+<role>Acted inappropriately but not maliciously</role>
+<role>Acted unintentionally - direct causal role (threat event)</role>
+<role>Acted unintentionally - indirect contributor/enabler (conditional event)</role>
+<role>Unknown</role>
+<role>Other</role>
+
+<!-- What type of external agent was involved? -->
+<external_variety>Activist group</external_variety>
+<external_variety>Another organization (not partner or competitor)</external_variety>
+<external_variety>Auditor</external_variety>
+<external_variety>Competitor</external_variety>
+<external_variety>Customer (B2C)</external_variety>
+<external_variety>Force majeure (nature &amp; chance)</external_variety>
+<external_variety>Former employee (no longer had access)</external_variety>
+<external_variety>Nation-State</external_variety>
+<external_variety>Maintenance / Construction crew</external_variety>
+<external_variety>Organized criminal group</external_variety>
+<external_variety>Relative or acquaintance of employee</external_variety>
+<external_variety>Terrorist group</external_variety>
+<external_variety>Unaffiliated person(s)</external_variety>
+<external_variety>Unknown</external_variety>
+<external_variety>Other</external_variety>
+
+<!-- What type of internal agent was involved? -->
+<internal_variety>Auditor</internal_variety>
+<internal_variety>Call center staff</internal_variety>
+<internal_variety>Cashier / Teller / Waiter</internal_variety>
+<internal_variety>Executive / Upper Management</internal_variety>
+<internal_variety>Finance / Accounting staff</internal_variety>
+<internal_variety>Helpdesk staff</internal_variety>
+<internal_variety>Human resources staff</internal_variety>
+<internal_variety>Internal system or site</internal_variety>
+<internal_variety>Janitorial staff</internal_variety>
+<internal_variety>Maintenance staff</internal_variety>
+<internal_variety>Manager / Supervisor</internal_variety>
+<internal_variety>Regular employee / end-user</internal_variety>
+<internal_variety>Security guard</internal_variety>
+<internal_variety>Software developer</internal_variety>
+<internal_variety>System / network administrator</internal_variety>
+<internal_variety>Unknown</internal_variety>
+<internal_variety>Other</internal_variety>
+
+<!-- What types or functions of malware were involved? -->
+<malware_function>Adware (displays advertisements)</malware_function>
+<malware_function>Backdoor (allows remote access / control)</malware_function>
+<malware_function>Initiate brute force or dictionary attack</malware_function>
+<malware_function>Capture data from an application / system process</malware_function>
+<malware_function>Capture data resident on system (e.g., cache, disk)</malware_function>
+<malware_function>Command and Control (listens for and executes commands)</malware_function>
+<malware_function>Destroy or corrupt data resident on system</malware_function>
+<malware_function>Dialer (dials toll phone numbers)</malware_function>
+<malware_function>Disable or interfere with security controls</malware_function>
+<malware_function>Initiate DoS attack</malware_function>
+<malware_function>Initiate SQL injection attack</malware_function>
+<malware_function>Download / install additional malware or updates</malware_function>
+<malware_function>Encrypt or seize data resident on system</malware_function>
+<malware_function>Infect other systems via email propagation (email worm)</malware_function>
+<malware_function>Infect other systems via network propagation (nw worm)</malware_function>
+<malware_function>Infect removable media or devices</malware_function>
+<malware_function>Initiate client-side attack (e.g., XSS, MitB)</malware_function>
+<malware_function>Keylogger / Form-grabber / Spyware (capture data from user activity)</malware_function>
+<malware_function>Packet sniffer (capture data from network)</malware_function>
+<malware_function>RAM scraper (captures data from volatile memory)</malware_function>
+<malware_function>Redirect to another site / address</malware_function>
+<malware_function>Scan or footprint network</malware_function>
+<malware_function>Send data to external site / entity</malware_function>
+<malware_function>Send spam</malware_function>
+<malware_function>System / network utilities (PsTools, Netcat)</malware_function>
+<malware_function>Unknown</malware_function>
+<malware_function>Other</malware_function>
+
+<!-- What was the vector or path of infection? -->
+<malware_vector>Coded into existing program / script (e.g., logic bomb)</malware_vector>
+<malware_vector>Email via embedded link</malware_vector>
+<malware_vector>Email via user-executed attachment</malware_vector>
+<malware_vector>Email via automatic execution</malware_vector>
+<malware_vector>Instant Messaging</malware_vector>
+<malware_vector>Installed by other malware</malware_vector>
+<malware_vector>Installed by remote attacker (after system access)</malware_vector>
+<malware_vector>Injected by remote attacker (i.e., via SQLi)</malware_vector>
+<malware_vector>Network propagation</malware_vector>
+<malware_vector>P2P / File sharing</malware_vector>
+<malware_vector>Portable media and devices</malware_vector>
+<malware_vector>Web / Internet (auto-executed / 'drive by' infection)</malware_vector>
+<malware_vector>Web / Internet (user-executed or downloaded)</malware_vector>
+<malware_vector>Unknown</malware_vector>
+<malware_vector>Other</malware_vector>
+
+<!-- What types or methods of hacking were involved? -->
+<hacking_method>Abuse of Functionality</hacking_method>
+<hacking_method>Brute force and dictionary attacks</hacking_method>
+<hacking_method>Buffer overflow</hacking_method>
+<hacking_method>Cache Poisoning</hacking_method>
+<hacking_method>Credential / Session Prediction</hacking_method>
+<hacking_method>Cross Site Tracing</hacking_method>
+<hacking_method>Cross-site Request Forgery</hacking_method>
+<hacking_method>Cross-site Scripting</hacking_method>
+<hacking_method>Cryptanalysis</hacking_method>
+<hacking_method>DoS at the application layer (consumes system resources)</hacking_method>
+<hacking_method>DoS at the network layer (consumes bandwidth / connections)</hacking_method>
+<hacking_method>Encryption Brute Forcing</hacking_method>
+<hacking_method>Exploitation of backdoor or command and control channel</hacking_method>
+<hacking_method>Exploitation of default or guessable credentials</hacking_method>
+<hacking_method>Exploitation of insufficient authentication (e.g., no login required)</hacking_method>
+<hacking_method>Exploitation of insufficient authorization (weak or misconfigured access control)</hacking_method>
+<hacking_method>Footprinting and Fingerprinting</hacking_method>
+<hacking_method>Forced browsing (aka Predictable Resource Location)</hacking_method>
+<hacking_method>Format String Attack</hacking_method>
+<hacking_method>Fuzz testing</hacking_method>
+<hacking_method>HTTP Request Smuggling</hacking_method>
+<hacking_method>HTTP Request Splitting</hacking_method>
+<hacking_method>HTTP Response Smuggling</hacking_method>
+<hacking_method>HTTP Response Splitting</hacking_method>
+<hacking_method>Integer Overflows</hacking_method>
+<hacking_method>LDAP Injection</hacking_method>
+<hacking_method>Mail Command Injection</hacking_method>
+<hacking_method>Man-in-the-Middle Attack</hacking_method>
+<hacking_method>Null Byte Injection</hacking_method>
+<hacking_method>OS Commanding (Manipulating OS via web app)</hacking_method>
+<hacking_method>Path Traversal</hacking_method>
+<hacking_method>Remote File Inclusion</hacking_method>
+<hacking_method>Reverse Engineering</hacking_method>
+<hacking_method>Routing Detour</hacking_method>
+<hacking_method>Session Fixation</hacking_method>
+<hacking_method>Session Replay</hacking_method>
+<hacking_method>SOAP Array Abuse</hacking_method>
+<hacking_method>Special Element Injection</hacking_method>
+<hacking_method>SQL Injection</hacking_method>
+<hacking_method>SSI Injection</hacking_method>
+<hacking_method>URL Redirector Abuse</hacking_method>
+<hacking_method>Use of stolen login credentials</hacking_method>
+<hacking_method>XML Attribute Blowup</hacking_method>
+<hacking_method>XML Entity Expansion</hacking_method>
+<hacking_method>XML External Entities</hacking_method>
+<hacking_method>XML Injection</hacking_method>
+<hacking_method>XPath Injection</hacking_method>
+<hacking_method>XQuery Injection</hacking_method>
+<hacking_method>Unknown</hacking_method>
+<hacking_method>Other</hacking_method>
+
+<!-- What was the vector or path of attack? -->
+<hacking_vector>Backdoor or control channel</hacking_vector>
+<hacking_vector>Physical access or connection</hacking_vector>
+<hacking_vector>Remote access - Dial-up modem</hacking_vector>
+<hacking_vector>Remote access - Local remote screen sharing  (e.g., RDP, PCAnywhere)</hacking_vector>
+<hacking_vector>Remote access - Online session screen sharing (e.g., Go2Assist, LogMeIn, NetViewer)</hacking_vector>
+<hacking_vector>Remote access - Remote Shell (e.g., ssh, telnet, rsh)</hacking_vector>
+<hacking_vector>Remote access - VPN</hacking_vector>
+<hacking_vector>Remote access - Web-based terminal services (e.g., Citrix, MS Terminal Services)</hacking_vector>
+<hacking_vector>Web application</hacking_vector>
+<hacking_vector>Unknown</hacking_vector>
+<hacking_vector>Other</hacking_vector>
+
+<!-- What varieties of social tactics were involved? -->
+<social_tactic>Baiting (planting infected media)</social_tactic>
+<social_tactic>Elicitation (subtle extraction of info through conversation)</social_tactic>
+<social_tactic>Extortion / Blackmail</social_tactic>
+<social_tactic>Forgery / Counterfeiting (fake hardware, software, documents, etc)</social_tactic>
+<social_tactic>Hoax / Scam</social_tactic>
+<social_tactic>Influence tactics (Leveraging authority or sense of obligation)</social_tactic>
+<social_tactic>Phishing (or any type of *ishing)</social_tactic>
+<social_tactic>Pretexting (classic Social Engineering)</social_tactic>
+<social_tactic>Propaganda / Disinformation</social_tactic>
+<social_tactic>Repudiation (to deny or reject something)</social_tactic>
+<social_tactic>Solicitation / Bribery</social_tactic>
+<social_tactic>Spam</social_tactic>
+<social_tactic>Unknown</social_tactic>
+<social_tactic>Other</social_tactic>
+
+<!-- What communication channels were used? -->
+<social_channel>Documents</social_channel>
+<social_channel>Email</social_channel>
+<social_channel>Instant messaging</social_channel>
+<social_channel>In-person</social_channel>
+<social_channel>Peer-to-peer network</social_channel>
+<social_channel>Phone</social_channel>
+<social_channel>Portable media</social_channel>
+<social_channel>SMS / Texting</social_channel>
+<social_channel>Social Networking site</social_channel>
+<social_channel>Software</social_channel>
+<social_channel>Web / Internet</social_channel>
+<social_channel>Unknown</social_channel>
+<social_channel>Other</social_channel>
+
+<!-- Who was the target of these social tactics? -->
+<social_target>Auditor</social_target>
+<social_target>Call center staff</social_target>
+<social_target>Cashier / Teller / Waiter</social_target>
+<social_target>Customer (B2C)</social_target>
+<social_target>Executive / Upper Management</social_target>
+<social_target>Finance / Accounting staff</social_target>
+<social_target>Helpdesk staff</social_target>
+<social_target>Human resources staff</social_target>
+<social_target>Internal system or site</social_target>
+<social_target>Janitorial staff</social_target>
+<social_target>Maintenance staff</social_target>
+<social_target>Manager / Supervisor</social_target>
+<social_target>Partner (B2B)</social_target>
+<social_target>Regular employee / end-user</social_target>
+<social_target>Security guard</social_target>
+<social_target>Software developer</social_target>
+<social_target>System / network administrator</social_target>
+<social_target>Unknown</social_target>
+<social_target>Other</social_target>
+
+<!-- What varieties of misuse were involved? -->
+<misuse_variety>Misappropriation of private knowledge</misuse_variety>
+<misuse_variety>Abuse of system access / privileges</misuse_variety>
+<misuse_variety>Handling of data in an unapproved physical area</misuse_variety>
+<misuse_variety>Handling of data in an unapproved format</misuse_variety>
+<misuse_variety>Embezzlement, skimming, and related fraud</misuse_variety>
+<misuse_variety>Storage / distribution of inappropriate or illegal content</misuse_variety>
+<misuse_variety>Unapproved workaround or shortcut</misuse_variety>
+<misuse_variety>Use of unapproved hardware / devices</misuse_variety>
+<misuse_variety>Use of unapproved software / services</misuse_variety>
+<misuse_variety>Inappropriate email / IM usage</misuse_variety>
+<misuse_variety>Inappropriate Web / Internet usage</misuse_variety>
+<misuse_variety>Unknown</misuse_variety>
+<misuse_variety>Other</misuse_variety>
+
+<!-- What venues or types of access were involved in this misuse? -->
+<misuse_venue>Physical access within corporate facility</misuse_venue>
+<misuse_venue>Internal network access from within corporate facility</misuse_venue>
+<misuse_venue>Remote access connection to internal network (i.e., VPN)</misuse_venue>
+<misuse_venue>Non-corporate facilities or networks</misuse_venue>
+<misuse_venue>Unknown</misuse_venue>
+<misuse_venue>Other</misuse_venue>
+
+<!-- What varieties of physical attacks were involved? -->
+<physical_variety>Arson</physical_variety>
+<physical_variety>Assault and Battery</physical_variety>
+<physical_variety>Local access</physical_variety>
+<physical_variety>Passive interception</physical_variety>
+<physical_variety>Sabotage</physical_variety>
+<physical_variety>Snooping</physical_variety>
+<physical_variety>Surveillance</physical_variety>
+<physical_variety>Tampering</physical_variety>
+<physical_variety>Theft</physical_variety>
+<physical_variety>Wiretapping</physical_variety>
+<physical_variety>Unknown</physical_variety>
+<physical_variety>Other</physical_variety>
+
+<!-- Where did these physical attacks occur? -->
+<physical_location>External location - Partner area or building</physical_location>
+<physical_location>External location - Partner vehicle</physical_location>
+<physical_location>External location - Personal residence</physical_location>
+<physical_location>External location - Personal vehicle</physical_location>
+<physical_location>External location - Private area or building (e.g., hotel room)</physical_location>
+<physical_location>External location - Public area or building</physical_location>
+<physical_location>External location - Public vehicle (plane, train, taxi, etc)</physical_location>
+<physical_location>Victim location - Disposal area (e.g., trash bin)</physical_location>
+<physical_location>Victim location - Indoor high security area (server room, R&amp;D labs)</physical_location>
+<physical_location>Victim location - Indoor non-public area (e.g., offices)</physical_location>
+<physical_location>Victim location - Indoor public / customer area</physical_location>
+<physical_location>Victim location - Outdoor area (grounds, parking lot)</physical_location>
+<physical_location>Unknown</physical_location>
+<physical_location>Other</physical_location>
+
+<!-- How was access gained to this location? -->
+<physical_access>Agent had privileges to access location</physical_access>
+<physical_access>Agent bypassed physical barriers / controls</physical_access>
+<physical_access>Agent disabled physical barriers / controls</physical_access>
+<physical_access>The location was uncontrolled (public)</physical_access>
+<physical_access>Agent had temporary / escorted access</physical_access>
+<physical_access>Unknown</physical_access>
+<physical_access>Other</physical_access>
+
+<!-- What varieties of errors were involved? -->
+<error_variety>Capacity overload</error_variety>
+<error_variety>Classification or labeling error</error_variety>
+<error_variety>Data entry error</error_variety>
+<error_variety>Disposal error</error_variety>
+<error_variety>Gaffe</error_variety>
+<error_variety>General user error</error_variety>
+<error_variety>Loss or misplacement</error_variety>
+<error_variety>Maintenance error</error_variety>
+<error_variety>Misaddress or misdelivery</error_variety>
+<error_variety>Misconfiguration</error_variety>
+<error_variety>Misinformation</error_variety>
+<error_variety>Omission</error_variety>
+<error_variety>Physical accidents</error_variety>
+<error_variety>Programming error</error_variety>
+<error_variety>Publishing error</error_variety>
+<error_variety>Technical / System malfunction</error_variety>
+<error_variety>Trips and spills</error_variety>
+<error_variety>Unknown</error_variety>
+<error_variety>Other</error_variety>
+
+<!-- What were the main reasons behind these errors? -->
+<error_reason>Carelessness</error_reason>
+<error_reason>Inadequate processes</error_reason>
+<error_reason>Insufficient personnel resources</error_reason>
+<error_reason>Insufficient technology resources</error_reason>
+<error_reason>Lack of knowledge / skill</error_reason>
+<error_reason>Random act (no reason, no fault)</error_reason>
+<error_reason>Unknown</error_reason>
+<error_reason>Other</error_reason>
+
+<!-- What varieties of environmental events were involved? -->
+<environmental_variety>Deterioration and degradation</environmental_variety>
+<environmental_variety>Dust and Dirt</environmental_variety>
+<environmental_variety>Earthquake</environmental_variety>
+<environmental_variety>Electrical / chemical fire</environmental_variety>
+<environmental_variety>Electromagnetic interference (incuding RFI)</environmental_variety>
+<environmental_variety>Extreme temperatures</environmental_variety>
+<environmental_variety>Fire</environmental_variety>
+<environmental_variety>Flood</environmental_variety>
+<environmental_variety>Hazardous materials</environmental_variety>
+<environmental_variety>Humidity</environmental_variety>
+<environmental_variety>Hurricane</environmental_variety>
+<environmental_variety>Landslide</environmental_variety>
+<environmental_variety>Lightning</environmental_variety>
+<environmental_variety>Meteorites and asteroids</environmental_variety>
+<environmental_variety>Pathogen</environmental_variety>
+<environmental_variety>Power failures and fluctuations</environmental_variety>
+<environmental_variety>Snow and Ice</environmental_variety>
+<environmental_variety>Static electricity / ESD</environmental_variety>
+<environmental_variety>Tornado</environmental_variety>
+<environmental_variety>Tsunamis</environmental_variety>
+<environmental_variety>Vermin</environmental_variety>
+<environmental_variety>Volcanic eruption</environmental_variety>
+<environmental_variety>Water leaks and discharges</environmental_variety>
+<environmental_variety>Wind</environmental_variety>
+<environmental_variety>Unknown</environmental_variety>
+<environmental_variety>Other(s)</environmental_variety>
+
+<!-- What varieties of assets were affected or impacted by this incident? -->
+<!-- // SERVERS -->
+<asset_variety>Authentication server</asset_variety>
+<asset_variety>Backup server</asset_variety>
+<asset_variety>Chat / IM server</asset_variety>
+<asset_variety>Data warehouse</asset_variety>
+<asset_variety>Database server</asset_variety>
+<asset_variety>DHCP server</asset_variety>
+<asset_variety>Directory server (LDAP, AD)</asset_variety>
+<asset_variety>Distributed Control System (DCS)</asset_variety>
+<asset_variety>DNS server</asset_variety>
+<asset_variety>Fax server</asset_variety>
+<asset_variety>File server</asset_variety>
+<asset_variety>FTP server</asset_variety>
+<asset_variety>IDS / IPS server</asset_variety>
+<asset_variety>Log server</asset_variety>
+<asset_variety>Mail server</asset_variety>
+<asset_variety>Mainframe</asset_variety>
+<asset_variety>Media server</asset_variety>
+<asset_variety>Middleware</asset_variety>
+<asset_variety>Payment switch / gateway</asset_variety>
+<asset_variety>POS server (store controller)</asset_variety>
+<asset_variety>Print server</asset_variety>
+<asset_variety>Proxy server</asset_variety>
+<asset_variety>Remote Access server</asset_variety>
+<asset_variety>SCADA system (Supervisory Control and Data Acquisition)</asset_variety>
+<asset_variety>Software distribution server</asset_variety>
+<asset_variety>Terminal services server</asset_variety>
+<asset_variety>Web / application server</asset_variety>
+<asset_variety>Unspecified/Other Server</asset_variety>
+<!-- // NETWORK INFRASTRUCTURE -->
+<asset_variety>Private Branch Exchange (PBX)</asset_variety>
+<asset_variety>Demarcation point / device (e.g., NID)</asset_variety>
+<asset_variety>Wiring closet</asset_variety>
+<asset_variety>LAN cabling / jack</asset_variety>
+<asset_variety>Telephone network / line</asset_variety>
+<asset_variety>Storage Area Network (SAN)</asset_variety>
+<asset_variety>Wireless LAN</asset_variety>
+<asset_variety>Private WAN link / line</asset_variety>
+<asset_variety>Public WAN link / line</asset_variety>
+<asset_variety>Mobile broadband network</asset_variety>
+<asset_variety>Modem bank</asset_variety>
+<asset_variety>Wireless Access Point</asset_variety>
+<asset_variety>VoIP appliance</asset_variety>
+<asset_variety>Router</asset_variety>
+<asset_variety>Switch</asset_variety>
+<asset_variety>Firewall</asset_variety>
+<asset_variety>Hardware security module (HSM)</asset_variety>
+<asset_variety>IDS / IPS sensor</asset_variety>
+<asset_variety>Remote Terminal Unit (RTU)</asset_variety>
+<asset_variety>Programmable Logic Controller (PLC)</asset_variety>
+<asset_variety>Camera / Video device</asset_variety>
+<asset_variety>Physical security system (e.g., badge reader)</asset_variety>
+<asset_variety>Unspecified/Other Network Infrastructure</asset_variety>
+<!-- // USER DEVICES -->
+<asset_variety>Desktop / Workstation</asset_variety>
+<asset_variety>Laptop / Netbook</asset_variety>
+<asset_variety>Tablet</asset_variety>
+<asset_variety>Mobile phone (includes smartphones / PDAs)</asset_variety>
+<asset_variety>Media player / recorder</asset_variety>
+<asset_variety>POS terminal</asset_variety>
+<asset_variety>Self-service kiosk</asset_variety>
+<asset_variety>Automated Teller Machine (ATM)</asset_variety>
+<asset_variety>Pay at the Pump terminal</asset_variety>
+<asset_variety>PIN entry device / Card reader (portable / detached)</asset_variety>
+<asset_variety>Telephone</asset_variety>
+<asset_variety>VoIP phone</asset_variety>
+<asset_variety>Printer / copier / scanner / fax</asset_variety>
+<asset_variety>Authenticaion token / device</asset_variety>
+<asset_variety>Unspecified/Other User Device</asset_variety>
+<!-- // OFFLINE DATA -->
+<asset_variety>Backup tapes</asset_variety>
+<asset_variety>Disk media (CDs, DVDs)</asset_variety>
+<asset_variety>Documents</asset_variety>
+<asset_variety>Exported data (e.g., data taken and stored locally)</asset_variety>
+<asset_variety>Flash drives / cards</asset_variety>
+<asset_variety>Hard disk drive</asset_variety>
+<asset_variety>Payment card (credit, debit, etc)</asset_variety>
+<asset_variety>Smart card / chip card</asset_variety>
+<asset_variety>Unspecified/Other Offiline Data</asset_variety>
+<!-- // PEOPLE -->
+<asset_variety>Auditor</asset_variety>
+<asset_variety>Cashier / Teller / Waiter</asset_variety>
+<asset_variety>Call Center Staff</asset_variety>
+<asset_variety>Customer (B2C)</asset_variety>
+<asset_variety>Executive / Upper Management</asset_variety>
+<asset_variety>Finance / Accounting staff</asset_variety>
+<asset_variety>Former Employee</asset_variety>
+<asset_variety>Helpdesk staff</asset_variety>
+<asset_variety>Human resources staff</asset_variety>
+<asset_variety>Janitorial staff</asset_variety>
+<asset_variety>Maintenance staff</asset_variety>
+<asset_variety>Manager /Supervisor</asset_variety>
+<asset_variety>Partner (B2B)</asset_variety>
+<asset_variety>Regular employee / end-user</asset_variety>
+<asset_variety>Security staff</asset_variety>
+<asset_variety>Software developer</asset_variety>
+<asset_variety>System / network administrator</asset_variety>
+<asset_variety>Unspecified/Other People</asset_variety>
+<asset_variety>Unknown</asset_variety>
+
+<!-- Who owns (or controls) these assets? -->
+<asset_ownership>Not applicable</asset_ownership>
+<asset_ownership>Corporate-owned</asset_ownership>
+<asset_ownership>Employee-owned</asset_ownership>
+<asset_ownership>Partner-owned</asset_ownership>
+<asset_ownership>Customer-owned</asset_ownership>
+<asset_ownership>Unknown</asset_ownership>
+
+<!-- Where are these assets physically located (hosted, stored, etc)? -->
+<asset_hosting>Not Applicable</asset_hosting>
+<asset_hosting>Internal (victim) location</asset_hosting>
+<asset_hosting>External (3rd party) location</asset_hosting>
+<asset_hosting>Co-located</asset_hosting>
+<asset_hosting>Mobile</asset_hosting>
+<asset_hosting>Unknown</asset_hosting>
+
+<!-- Who handles the day-to-day management and administration of these assets? -->
+<asset_management>Not Applicable</asset_management>
+<asset_management>Managed Internally</asset_management>
+<asset_management>Managed by External Party</asset_management>
+<asset_management>Co-Managed</asset_management>
+<asset_management>Unknown</asset_management>
+
+<!-- What operating system families do these assets utilize? -->
+<os>Not applicable</os>
+<os>Android</os>
+<os>Apple iOS</os>
+<os>BlackBerry OS</os>
+<os>Linux</os>
+<os>Mac OSX</os>
+<os>Mainframe</os>
+<os>Symbian</os>
+<os>Unix</os>
+<os>webOS</os>
+<os>Windows</os>
+<os>Windows Phone</os>
+<os>Unknown</os>
+<os>Other</os>
+
+<!-- Was non-public data disclosed? -->
+<data_disclosure>Yes (confirmed)</data_disclosure>
+<data_disclosure>Potentially (at risk)</data_disclosure>
+<data_disclosure>No</data_disclosure>
+
+<!-- What varieties of data were exposed or compromised? -->
+<data_variety>Authentication credentials</data_variety>
+<data_variety>Bank account data</data_variety>
+<data_variety>Classified information</data_variety>
+<data_variety>Copyrighted material</data_variety>
+<data_variety>Medical records</data_variety>
+<data_variety>Payment card data</data_variety>
+<data_variety>Personal Information</data_variety>
+<data_variety>Sensitive organizational data</data_variety>
+<data_variety>System information</data_variety>
+<data_variety>Trade secrets</data_variety>
+<data_variety>Unknown</data_variety>
+<data_variety>Other(s)</data_variety>
+
+<!--  At the time of exposure or compromise, was the data being stored, transmitted, or processed? -->
+<data_state>Stored</data_state>
+<data_state>Transmitted</data_state>
+<data_state>Processed</data_state>
+
+<!-- What was the variety or nature of integrity/authenticity loss? -->
+<integrity_authenticity_variety>Hardware tampering / modification</integrity_authenticity_variety>
+<integrity_authenticity_variety>Software / malware installation</integrity_authenticity_variety>
+<integrity_authenticity_variety>Created new user account</integrity_authenticity_variety>
+<integrity_authenticity_variety>Initiate fraudulent transaction</integrity_authenticity_variety>
+<integrity_authenticity_variety>Modified privileges / permissions</integrity_authenticity_variety>
+<integrity_authenticity_variety>Modified configuration / services</integrity_authenticity_variety>
+<integrity_authenticity_variety>Modified data / content</integrity_authenticity_variety>
+<integrity_authenticity_variety>Log tampering / modification</integrity_authenticity_variety>
+<integrity_authenticity_variety>Influence / alter human behavior</integrity_authenticity_variety>
+<integrity_authenticity_variety>Misrepresentation</integrity_authenticity_variety>
+<integrity_authenticity_variety>Misappropriation</integrity_authenticity_variety>
+<integrity_authenticity_variety>Unknown</integrity_authenticity_variety>
+<integrity_authenticity_variety>Other</integrity_authenticity_variety>
+
+<!-- What was the variety or nature of availability/utility loss? -->
+<availability_utility_variety>Destruction or loss</availability_utility_variety>
+<availability_utility_variety>Interruption</availability_utility_variety>
+<availability_utility_variety>Performance degredation</availability_utility_variety>
+<availability_utility_variety>Acceleration</availability_utility_variety>
+<availability_utility_variety>Conversion or obscuration</availability_utility_variety>
+<availability_utility_variety>Unknown</availability_utility_variety>
+<availability_utility_variety>Other specified</availability_utility_variety>
+
+<!-- What was the duration of availability/utility loss? -->
+<availability_utility_duration>Permanently</availability_utility_duration>
+<availability_utility_duration>Seconds</availability_utility_duration>
+<availability_utility_duration>Minutes</availability_utility_duration>
+<availability_utility_duration>Hours</availability_utility_duration>
+<availability_utility_duration>Days</availability_utility_duration>
+<availability_utility_duration>1 to 2 weeks</availability_utility_duration>
+<availability_utility_duration>2 to 4 weeks</availability_utility_duration>
+<availability_utility_duration>1 to 2 months</availability_utility_duration>
+<availability_utility_duration>3 to 6 months</availability_utility_duration>
+<availability_utility_duration>7 to 12 months</availability_utility_duration>
+<availability_utility_duration>Years</availability_utility_duration>
+<availability_utility_duration>Unknown</availability_utility_duration>
+
+<!-- How was the incident discovered? -->
+<discovery_method>3rd party event monitoring and alerting service (e.g., MSS)</discovery_method>
+<discovery_method>3rd party fraud detection (e.g., CPP)</discovery_method>
+<discovery_method>3rd party security audit or scan</discovery_method>
+<discovery_method>Anomaly-based network IDS (heuristic)</discovery_method>
+<discovery_method>Brag, blackmail, or public disclosure by perpetrator</discovery_method>
+<discovery_method>Discovered while responding to another incident</discovery_method>
+<discovery_method>Financial audit and reconciliation process</discovery_method>
+<discovery_method>Happenstance discovery by unrelated 3rd party</discovery_method>
+<discovery_method>Host IDS (HIDS) or Integrity Monitoring</discovery_method>
+<discovery_method>Internal fraud detection mechanism</discovery_method>
+<discovery_method>Internal security audit or scan</discovery_method>
+<discovery_method>Log analysis and/or review process</discovery_method>
+<discovery_method>Notified by law enforcement</discovery_method>
+<discovery_method>Physical security system</discovery_method>
+<discovery_method>Press release (victim didn't know beforehand)</discovery_method>
+<discovery_method>Reported by customer/partner affected by the incident</discovery_method>
+<discovery_method>Signature-based antivirus</discovery_method>
+<discovery_method>Signature-based network IDS</discovery_method>
+<discovery_method>System event alert or error message</discovery_method>
+<discovery_method>Threat agent's behavior aroused suspicion</discovery_method>
+<discovery_method>Unusual system behavior or performance</discovery_method>
+<discovery_method>Warned by external reports of recent threat activity</discovery_method>
+<discovery_method>Witnessed and/or reported by employee</discovery_method>
+<discovery_method>Unknown</discovery_method>
+
+<!-- What varieties of losses were experienced as a result of this incident? -->
+<loss_variety>Asset and fraud-related losses</loss_variety>
+<loss_variety>Brand and market damage</loss_variety>
+<loss_variety>Business disruption</loss_variety>
+<loss_variety>Increased operating costs</loss_variety>
+<loss_variety>Legal costs and penalties</loss_variety>
+<loss_variety>Loss of competitive advantage</loss_variety>
+<loss_variety>Response and recovery costs</loss_variety>
+
+<!-- How would you rate the overall impact of this incident to the organization? -->
+<impact_rating>Insignificant</impact_rating>
+<impact_rating>Distracting</impact_rating>
+<impact_rating>Painful</impact_rating>
+<impact_rating>Damaging</impact_rating>
+<impact_rating>Unknown</impact_rating>
+<impact_rating>None</impact_rating>
+
+<!-- How certain are you that the information you provided about this incident is accurate? -->
+<certainty>Not at all certain. I was just testing or demonstrating the application. Ignore my submission.</certainty>
+<certainty>Not very certain. While I've tried to enter accurate information, much of what I know is based on second-hand knowledge or speculation.</certainty>
+<certainty>Fairly certain. Some details are less than certain but, for the most part, the information I've provided is reliable.</certainty>
+<certainty>Very certain. I am very familiar with this incident and am confident that I have represented it accurately.</certainty>
+
+</lib>
