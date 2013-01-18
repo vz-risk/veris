@@ -1,0 +1,260 @@
+{
+    "description" : "VERIS Community Schema v.rc1",
+    "type" : "object",
+    "properties" : {
+        "schema_version" : { "type" : "string", "required" : true },
+        "incident_id" : { "type" : "string", "required" : true },
+        "source_id" : { "type" : "string" },
+        "security_compromise" : { "type" : "string" },
+        "confidence" : { "type" : "string" },
+        "summary" : { "type" : "string" },
+        "related_incidents" : { "type" : "string" },
+        "notes" : { "type" : "string" },
+        "victim" : { "type" : "array",
+            "items" : { "type" : "object",
+                "properties" : {
+                    "victim_id" : { "type" : "string" },
+                    "industry" : { "type" : "string", "required" : true },
+                    "employee_count" : { "type" : "string", "required" : true },
+                    "country" : { "type" : "string", "required" : true },
+                    "revenue" : { "type" : "object",
+                        "properties" : {
+                            "amount" : { "type" : "integer" },
+                            "iso_currency_code" : { "type" : "string" }
+                        }
+                    },
+                    "locations_affected" : { "type" : "integer" },
+                    "notes" : { "type" : "string" }
+                }
+            }
+        },
+        "actor" : {
+            "type" : "object", "required" : true,
+            "properties" : {
+                "external" : { "type" : "object",
+                    "properties" : {
+                        "motive" : { "type" : "array", "items" : { "type" : "string", "require" : true } },
+                        "role" : { "type" : "array", "items" : { "type" : "string", "require" : true } },
+                        "variety" : { "type" : "array", "items" : { "type" : "string" } },
+                        "country" : { "type" : "array", "items" : { "type" : "string" } },
+                        "notes" : { "type" : "string" }
+                    }
+                },
+                "internal" : { "type" : "object",
+                    "properties" : {
+                        "motive" : { "type" : "array", "items" : { "type" : "string" } },
+                        "role" : { "type" : "array", "items" : { "type" : "string" } },
+                        "variety" : { "type" : "array", "items" : { "type" : "string" } },
+                        "notes" : { "type" : "string" }
+                    }
+                },
+                "partner" : { "type" : "object",
+                    "properties" : {
+                        "motive" : { "type" : "array", "items" : { "type" : "string" } },
+                        "role" : { "type" : "array", "items" : { "type" : "string" } },
+                        "industry" : { "type" : "string" },
+                        "country" : { "type" : "array", "items" : { "type" : "string" } },
+                        "notes" : { "type" : "string" }
+                    }
+                },
+                "unknown" : { "type" : "object",
+                    "properties" : {
+                        "notes" : { "type" : "string" }
+                    }
+                }
+            }
+        },
+        "action" : { "type" : "object", "required" : true,
+            "properties" : {
+                "malware" : { "type" : "object",
+                    "properties" : {
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "cve" : { "type" : "array", "items" : { "type" : "string" } },
+                        "name" : { "type" : "array", "items" : { "type" : "string" } },
+                        "notes" : { "type" : "string" }
+                    }
+                },
+                "hacking" : { "type" : "object",
+                    "properties" : {
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "cve" : { "type" : "array", "items" : { "type" : "string" } },
+                        "notes" : { "type" : "string" }
+                    }
+                },
+                "social" : { "type" : "object",
+                    "properties" : {
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "target" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "notes" : { "type" : "string" }
+                    }
+                },
+                "misuse" : { "type" : "object",
+                    "properties" : {
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "notes" : { "type" : "string" }
+                    }
+                },
+                "physical" : { "type" : "object",
+                    "properties" : {
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "location" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "notes" : { "type" : "string" }
+                    }
+                },
+                "error" : { "type" : "object",
+                    "properties" : {
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "notes" : { "type" : "string" }
+                    }
+                },
+                "environmental" : { "type" : "object",
+                    "properties" : {
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "notes" : { "type" : "string" }
+                    }
+                },
+                "unknown" : { "type" : "object",
+                    "properties" : {
+                        "notes" : { "type" : "string" }
+                    }
+                }
+            }
+        },
+        "asset" : { "type" : "object",
+            "properties" : {
+                "assets" : { "type" : "array",
+                    "items" : { "type" : "object",
+                        "properties" : {
+                            "variety" : { "type" : "string" },
+                            "amount" : { "type" : "integer" }
+                        }
+                    }
+                },
+                "personal" : { "type" : "boolean" },
+                "management" : { "type" : "boolean" },
+                "hosting" : { "type" : "boolean" },
+                "country" : { "type" : "string" },
+                "cloud" : { "type" : "string" },
+                "notes" : { "type" : "string" }
+            }
+        },
+        "attribute" : { "type" : "object", "required" : true,
+            "properties" : {
+                "confidentiality" : { "type" : "object",
+                    "properties" : {
+                        "data_disclosure" : { "type" : "string", "required" : true },
+                        "data_total" : { "type" : "integer" },
+                        "data" : { "type" : "array",
+                            "items" : { "type" : "object",
+                                "properties" : {
+                                    "variety" : { "type" : "string" },
+                                    "amount" : { "type" : "integer" }
+                                }
+                            }
+                        },
+                        "state" : { "type" : "array", "items" : { "type" : "string" } },
+                        "notes" : { "type" : "string" }
+                    }
+                },
+                "integrity" : { "type" : "object",
+                    "properties" : {
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "notes" : { "type" : "string" }
+                    }
+                },
+                "availability" : { "type" : "object",
+                    "properties" : {
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "duration" : { "type" : "object",
+                            "properties" : {
+                                "unit" : { "type" : "string" },
+                                "value" : { "type" : "number" }
+                            }
+                        },
+                        "notes" : { "type" : "string" }
+                    }
+                }
+            }
+        },
+        "timeline" : { "type" : "object", "required" : true,
+            "properties" : {
+                "incident" : { "type" : "object", "required" : true,
+                    "properties" : {
+                        "year" : {"type" : "integer", "required" : true },
+                        "month" : {"type" : "integer" },
+                        "day" : {"type" : "integer" },
+                        "time" : {"type" : "string" }
+                    }
+                },
+                "investigation" : { "type" : "object", "required" : true,
+                    "properties" : {
+                        "year" : {"type" : "integer", "required" : true },
+                        "month" : {"type" : "integer" },
+                        "day" : {"type" : "integer" }
+                    }
+                },
+                "compromise" : { "type" : "object",
+                    "properties" : {
+                        "unit" : { "type" : "string", "required" : true },
+                        "value" : { "type" : "number" }
+                    }
+                },
+                "exfiltration" : { "type" : "object",
+                    "properties" : {
+                        "unit" : { "type" : "string", "required" : true },
+                        "value" : { "type" : "number" }
+                    }
+                },
+                "discovery" : { "type" : "object",
+                    "properties" : {
+                        "unit" : { "type" : "string", "required" : true },
+                        "value" : { "type" : "number" }
+                    }
+                },
+                "containment" : { "type" : "object",
+                    "properties" : {
+                        "unit" : { "type" : "string", "required" : true },
+                        "value" : { "type" : "number" }
+                    }
+                }
+            }
+        },
+        "discovery_method" : { "type" : "string", "required" : true },
+        "control_failure" : {"type" : "string" },
+        "corrective_action" : {"type" : "string" },
+        "cost_corrective_action" : { "type" : "string" },
+        "ioc" : { "type" : "array",
+            "items" : { "type" : "object",
+                "properties" : {
+                    "indicator" : { "type" : "string" },
+                    "comment" : { "type" : "string" }
+                }
+            }
+        },
+        "impact" : { "type" : "object",
+            "overall_rating" : { "type" : "string", "required" : true },
+            "overall_min_amount" : { "type" : "number" },
+            "overall_amount" : { "type" : "number" },
+            "overall_max_amount" : { "type" : "number" },
+            "loss" : { "type" : "array",
+                "items" : { "type" : "object",
+                    "properties" : {
+                        "variety" : { "type" : "string" },
+                        "rating" : { "type" : "string" },
+                        "min_amount" : { "type" : "number" },
+                        "amount" : { "type" : "number" },
+                        "max_amount" : { "type" : "number" }
+                    }
+                }
+            },
+            "iso_currency_code" : { "type" : "string" },
+            "notes" : { "type" : "string" }
+        }
+    }
+}
