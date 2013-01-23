@@ -1,6 +1,5 @@
 {
     "security_compromise" : [ "Confirmed", "No", "Suspected" ],
-    "analysis_status" : [ "Ineligible", "Next year", "Not started", "In-progress", "First pass", "Reviewed", "Validated", "Finalized" ],
     "public_disclosure" : [ "Yes", "No", "Unknown" ],
     "confidence" : [ "High", "Medium" ,"Low", "None" ],
     "victim" : {
@@ -500,7 +499,7 @@
             ]
         }
     },
-    "timeline : {
+    "timeline" : {
         "unit" : [
             "NA",
             "Seconds",
