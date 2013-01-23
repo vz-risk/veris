@@ -1,6 +1,6 @@
 {
     "security_compromise" : [ "Confirmed", "No", "Suspected" ],
-    "analysis_status" : [ "Validated", "First pass", "In-progress", "Ineligible" ],
+    "analysis_status" : [ "Validated", "First pass", "In-progress", "Ineligible", "Not started" ],
     "public_disclosure" : [ "Yes", "No", "Unknown" ],
     "confidence" : [ "High", "Medium" ,"Low", "None" ],
     "victim" : {
