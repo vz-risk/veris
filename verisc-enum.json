@@ -154,7 +154,7 @@
                 "Soap array abuse",
                 "Special element injection",
                 "SQLi",
-                "SSL injection",
+                "SSI injection",
                 "URL redirector abuse",
                 "Backdoor or C2",
                 "Stolen creds",
