@@ -371,6 +371,7 @@
             "S - Remote access",
             "S - SCADA",
             "S - Web application",
+            "S - VM host",
             "S - Other server",
             "N - Access reader",
             "N - Camera",
