@@ -1,0 +1,78 @@
+{
+  "incident_id": "hhs_osint00165",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1200,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1200,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00165"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "NYU School of Medicine Aging and Dementia Clinical Research Center",
+      "industry": "611310",
+      "country": "United States",
+      "state": "Ny",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 10,
+      "month": 9
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 6
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Flash drive"
+      }
+    ]
+  }
+}

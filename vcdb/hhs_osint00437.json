@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00437",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 50000,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 50000,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00437"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "PBH",
+      "industry": "621330",
+      "country": "United States",
+      "state": "Nc",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 24,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Mail"
+      }
+    ]
+  }
+}

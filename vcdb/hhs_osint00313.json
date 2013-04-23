@@ -1,0 +1,93 @@
+{
+  "incident_id": "hhs_osint00313",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 4328,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 4328,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00313"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Eastmoreland Surgical Clinic",
+      "industry": "621111",
+      "country": "United States",
+      "state": "Or",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 1,
+      "month": 9
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "amount": 1,
+        "variety": "U - Laptop"
+      },
+      {
+        "amount": 3,
+        "variety": "U - Desktop"
+      },
+      {
+        "amount": 1,
+        "variety": "M - Disk drive"
+      }
+    ]
+  }
+}

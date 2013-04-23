@@ -1,0 +1,78 @@
+{
+  "incident_id": "hhs_osint00468",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 551,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 551,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00468"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "role": [
+        "Inappropriate"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Premier Imaging",
+      "industry": "621511",
+      "country": "United States",
+      "state": "Nc",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 18,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2011
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Data mishandling"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

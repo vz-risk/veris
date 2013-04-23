@@ -1,0 +1,116 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint351",
+  "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/data-breach-affects-more-than-14k-oregon-health-a-science-university-patients.html ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "The 200 were employees as well.",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 14300,
+          "variety": "Medical"
+        },
+        {
+          "amount": 200,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 14300
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal residence"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Oregon Health & Science University in Portland has announced that a USB drive storing information for approximately 14,300 patients, including 702 pediatric patients and about 200 OHSU employees, was stolen.  The USB was stolen during a burglary of an OHSU employee's home around July 4. According to the release, the employee accidently took the thumb drive home in a briefcase at the end of the day.  According to the release, the patient information on the USB drive includes names, dates of birth, phone numbers, addresses, OHSU medical record numbers and descriptions of patients' medical conditions. The staff information on the USB includes names, Social Security numbers, addresses and employment-related vaccination information.  The drive was used to back up data and is normally locked in a secure location on campus, according to the release.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 1,
+        "month": 8
+      }
+    },
+    "f500": "N",
+    "master_id": "osint351",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Oregon Health & Science University",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 1980000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "OR",
+      "employee_count": "10001 to 25000",
+      "industry": "611310"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 4,
+      "month": 7
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 4,
+      "month": 7
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Disk drive"
+      }
+    ]
+  }
+}

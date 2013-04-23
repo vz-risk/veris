@@ -1,0 +1,77 @@
+{
+  "incident_id": "hhs_osint00208",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1250,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1250,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00208"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Fransiscan Medical Group",
+      "industry": "446110",
+      "country": "United States",
+      "state": "Wa",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 18,
+      "month": 11
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

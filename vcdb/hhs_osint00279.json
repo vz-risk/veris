@@ -1,0 +1,77 @@
+{
+  "incident_id": "hhs_osint00279",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 8845,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 8845,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00279"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Omnicare, Inc.",
+      "industry": "424210",
+      "country": "United States",
+      "state": "Ky",
+      "employee_count": "10001 to 25000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 19,
+      "month": 1
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

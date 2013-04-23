@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00472",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 11646,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 11646,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00472"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Delta Dental ",
+      "industry": "524114",
+      "country": "United States",
+      "state": "Ca",
+      "employee_count": "1001 to 10000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 3,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

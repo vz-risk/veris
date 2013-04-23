@@ -1,0 +1,87 @@
+{
+  "incident_id": "hhs_osint00225",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1670,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1670,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00225"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Smile Designs",
+      "industry": "561499",
+      "country": "United States",
+      "state": "Fl",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 31,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      },
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "incident_id": "hhs_osint00368",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 546,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 546,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00368"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Jefferson Center for Mental Health ",
+      "industry": "621420",
+      "country": "United States",
+      "state": "Co",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 13,
+      "month": 12
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

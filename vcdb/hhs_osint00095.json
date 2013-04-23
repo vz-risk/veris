@@ -1,0 +1,81 @@
+{
+  "incident_id": "hhs_osint00095",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 400000,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 400000,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00095"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Puerto Rico"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Competitor"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Puerto Rico Department of Health",
+      "industry": "923120",
+      "country": "United States",
+      "state": "Pr",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 19,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Use of stolen creds"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

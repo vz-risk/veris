@@ -1,0 +1,100 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint431",
+  "reference": "http://www.ehackingnews.com/2012/12/hackers-breached-heroes-of-newerth-and.html, http://news.softpedia.com/news/Heroes-of-Newerth-Suffers-Password-Security-Breach-315895.shtml?utm_source=ForumSoftpedia&utm_medium=ForumSoftpedia&utm_campaign=ForumSoftpedia ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Credentials"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Hackers gained access to user passwords after breaching a third party software application that interacts with their account database.  No credit card or billing data was exposed.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 19,
+        "month": 12
+      }
+    },
+    "f500": "N",
+    "master_id": "osint431",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Fun"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "S2 Games/Heroes of Newerth",
+      "country": "United States",
+      "notes": "",
+      "state": "MI",
+      "employee_count": "Unknown",
+      "industry": "511210"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Authentication"
+      }
+    ]
+  }
+}

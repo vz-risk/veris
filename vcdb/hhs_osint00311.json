@@ -1,0 +1,80 @@
+{
+  "incident_id": "hhs_osint00311",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 656,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 656,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00311"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Lake Woods Nursing and Rehabilitation Center",
+      "industry": "623110",
+      "country": "United States",
+      "state": "Mi",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 28,
+      "month": 12
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      },
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

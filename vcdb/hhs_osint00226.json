@@ -1,0 +1,87 @@
+{
+  "incident_id": "hhs_osint00226",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 756,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 756,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00226"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Lutheran Community Services Northwest",
+      "industry": "624110",
+      "country": "United States",
+      "state": "Wa",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 3,
+      "month": 7
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      },
+      {
+        "variety": "M - Flash drive"
+      }
+    ]
+  }
+}

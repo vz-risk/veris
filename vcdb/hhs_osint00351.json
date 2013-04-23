@@ -1,0 +1,77 @@
+{
+  "incident_id": "hhs_osint00351",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1280,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1280,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00351"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Foothills Nephrology, PC",
+      "industry": "621492",
+      "country": "United States",
+      "state": "Sc",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 28,
+      "month": 4
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Flash drive"
+      }
+    ]
+  }
+}

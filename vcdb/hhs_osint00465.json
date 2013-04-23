@@ -1,0 +1,52 @@
+{
+  "incident_id": "hhs_osint00465",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1438,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1438,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00465"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Mills-Peninsula Health Services",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Ca",
+      "employee_count": "1001 to 10000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2009,
+      "day": 1,
+      "month": 11
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

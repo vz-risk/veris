@@ -1,0 +1,112 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint86",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/hertz-corporation-20120801.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Bank"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "Multiple data subjects:  suppliers, consultants, employees and former employees.",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "Partner name is JP Morgan.",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ],
+      "cve": ""
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A partner's system was hacked into, and the data at risk includes names, address, bank account numbers and SSNs of suppliers, consultants, employees and former employees of Hertz.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 3,
+        "month": 8
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint86",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Hertz Corporation",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 8300000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "NJ",
+      "employee_count": "10001 to 25000",
+      "industry": "532111"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "management": true,
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ],
+    "hosting": true
+  }
+}

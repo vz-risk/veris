@@ -1,0 +1,78 @@
+{
+  "incident_id": "hhs_osint00438",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 600,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 600,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00438"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Tomah Memorial Hospital",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Wi",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 26,
+      "month": 4
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

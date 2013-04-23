@@ -1,0 +1,77 @@
+{
+  "incident_id": "hhs_osint00032",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2800,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2800,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00032"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "North Memorial",
+      "industry": "622310",
+      "country": "United States",
+      "state": "Mn",
+      "employee_count": "1001 to 10000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 25,
+      "month": 7
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint458",
+  "reference": "http://www.jaymiescotto.com/2012/12/19/vertecto-responds-to-security-breach-stops-the-rumor-mill/ ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Unknown"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 1
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Vertecto Services, LLC, a provider neutral transaction services to route buyers and sellers in the wholesale telecom industry, recently experienced a security breach, which the company reported was isolated to a single account. Vertecto reported that while the breach didn\u2019t directly affect its long-term business operations or expose its clients to risk, it did have an impact on the company\u2019s business operations for a short time\u2026just long enough for social media rumors to fly.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 19,
+        "month": 12
+      }
+    },
+    "f500": "N",
+    "master_id": "osint458",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Vertecto Transaction Services",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 120000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "DE",
+      "employee_count": "1 to 10",
+      "industry": "523999"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

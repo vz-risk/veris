@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00069",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1270,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1270,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00069"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "UnitedHealth Group--SACE",
+      "industry": "524114",
+      "country": "United States",
+      "state": "Mn",
+      "employee_count": "Over 100000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 7,
+      "month": 10
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

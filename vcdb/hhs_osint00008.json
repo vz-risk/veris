@@ -1,0 +1,74 @@
+{
+  "incident_id": "hhs_osint00008",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 3000,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 3000,
+      "data_disclosure": "Yes"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00008"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "University of Wisconsin Oshkosh",
+      "industry": "522130",
+      "country": "United States",
+      "state": "Wi",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 18,
+      "month": 7
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

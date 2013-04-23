@@ -1,0 +1,103 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint108",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/quest-diagnostics-20120817.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse",
+        "Email misuse"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "in 2012, a former Qwest Diagnostics employee inappropriately forwarded e-mails that included personal information to their personal e-mail address. The information included some or all of the following data: name, address, Social Security number, date of birth, driver's license number, financial account information and medical/health insurance information.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 24,
+        "month": 8
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint108",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Quest Diagnostics",
+      "country": "United States",
+      "notes": "",
+      "state": "NJ",
+      "employee_count": "25001 to 50000",
+      "industry": "62151"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 31,
+      "month": 7
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - File"
+      }
+    ]
+  }
+}

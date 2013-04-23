@@ -1,0 +1,84 @@
+{
+  "incident_id": "hhs_osint00376",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 731,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 731,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00376"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Summit Medical Group, PLLC",
+      "industry": "621111",
+      "country": "United States",
+      "state": "Tn",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 4,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2011
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "incident_id": "hhs_osint00100",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 54165,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 54165,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00100"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Former employee"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Praxair Healthcare Services, Inc.",
+      "industry": "423450",
+      "country": "United States",
+      "state": "Ct",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 4,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "amount": 1,
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

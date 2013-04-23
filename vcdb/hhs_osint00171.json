@@ -1,0 +1,71 @@
+{
+  "incident_id": "hhs_osint00171",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2777,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2777,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00171"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Henry Ford Hospital",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Mi",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 31,
+      "month": 1
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Flash drive"
+      }
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint349",
+  "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/alaska-medicaid-settles-hipaa-security-case-for-17m.html ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "While investigating a data breach in which a portable electronic storage device that may have contained electronic personal health information was stolen from the vehicle of a DHSS employee, HHS found that the department did not have adequate policies and procedures in place to safeguard ePHI. According to the report, evidence suggested that DHSS had not completed a risk analysis, implemented sufficient risk management measures, conducted security training for its workforce members, established device and media controls or addressed device and media encryption.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012
+      }
+    },
+    "f500": "N",
+    "master_id": "osint349",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Alaska Department of Health and Social Services",
+      "country": "United States",
+      "notes": "",
+      "state": "AK",
+      "employee_count": "1001 to 10000",
+      "industry": "92312"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Disk drive"
+      }
+    ]
+  }
+}

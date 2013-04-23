@@ -1,0 +1,78 @@
+{
+  "incident_id": "hhs_osint00173",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 9565,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 9565,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00173"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "The Neighborhood Christian Clinic",
+      "industry": "621999",
+      "country": "United States",
+      "state": "Az",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 10,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Flash drive"
+      }
+    ]
+  }
+}

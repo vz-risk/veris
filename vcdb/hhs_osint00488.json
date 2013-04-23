@@ -1,0 +1,71 @@
+{
+  "incident_id": "hhs_osint00488",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 654,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 654,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00488"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "System admin"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Texas Health Arlington Memorial Hospital",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Tx",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 23,
+      "month": 12
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

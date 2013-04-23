@@ -1,0 +1,131 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Minor",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Insignificant"
+  },
+  "incident_id": "osint558",
+  "reference": "http://www.eastlothiancourier.com/news/roundup/articles/2012/02/09/423493-school-data-loss-apology/ http://www.eastlothian.gov.uk/news/article/1026/council_apologises_for_loss_of_information",
+  "attribute": {
+    "confidentiality": {
+      "notes": "PII included name, school and class information, emergency contact details, and in some cases, medical information.",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 1075,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 1075
+    }
+  },
+  "notes": "",
+  "action": {
+    "misuse": {
+      "notes": "Removal of information onto USB drive was against policy.",
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Data mishandling"
+      ]
+    },
+    "error": {
+      "notes": "",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "School employee downloaded information, including student PII onto a USB drive to work from home.  USB drive was then lost putting data at risk. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "N",
+        "data_subject": "Student"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 2,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint558",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "notes": "",
+      "role": [
+        "Inappropriate"
+      ],
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "East Lothian Council",
+      "notes": "",
+      "country": "United Kingdom",
+      "industry": "921",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "Hours"
+    },
+    "discovery": {
+      "unit": "NA"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Other",
+  "asset": {
+    "personal": true,
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Database"
+      },
+      {
+        "variety": "M - Flash drive"
+      }
+    ]
+  }
+}

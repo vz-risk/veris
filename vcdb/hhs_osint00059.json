@@ -1,0 +1,77 @@
+{
+  "incident_id": "hhs_osint00059",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 800,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 800,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00059"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "International Union of Operating Engineers Health and Welfare Fund",
+      "industry": "813930",
+      "country": "United States",
+      "state": "Md",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 3,
+      "month": 11
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

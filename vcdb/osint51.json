@@ -1,0 +1,103 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint51",
+  "reference": "http://www.stripes.com/news/stolen-thumb-drives-might-hold-personal-data-on-ramstein-students-1.197984, http://www.databreaches.net/?p=26727 ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "The theft of five thumb drives from an unlocked vehicle may have compromised the personal information of hundreds of pupils, their parents and staff members at a Defense Department school in Germany, school officials said Wednesday.  Parents of more than 900 students at Ramstein Intermediate School were notified of the possible data breach Tuesday night, more than three weeks after the information disappeared.  The thumb drives were stolen overnight Oct. 26 from the unlocked vehicle of an American living in Landstuhl, according to German police.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Student"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 21,
+        "month": 11
+      }
+    },
+    "f500": "N",
+    "master_id": "osint51",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Ramstein Intermediate School",
+      "notes": "",
+      "country": "Germany",
+      "industry": "6111",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 26,
+      "month": 10
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Flash drive"
+      }
+    ]
+  }
+}

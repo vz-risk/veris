@@ -1,0 +1,109 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint227",
+  "reference": "http://www.phiprivacy.net/?p=9907; http://www.beaufortregionalhealthsystem.org/pamlico_medical.shtml ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "The information contained on the flash drive was limited to patient name, Medicaid/Social Security Number, medical equipment being provided by Pamlico Medical Equipment, insurance carrier contact information, and miscellaneous billing information such as service date, price of the equipment rental, etc.   It is believed that the flash drive was emptied wwith the trash and transported to a landfill. ",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Payment"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 2917
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": " [through Mail]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A flash drive that was mailed did not get received by its intended recipient.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "N",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 3,
+        "month": 8
+      }
+    },
+    "f500": "N",
+    "master_id": "osint227",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Pamlico Medical Equipment LLC",
+      "country": "United States",
+      "notes": "The mission of Pamlico Medical Equipment is to provide the highest quality of home healthcare equipment, supplies, and services in a cost-effective manner, to all of our clients/patients in our geographical coverage area.",
+      "state": "NC",
+      "employee_count": "Unknown",
+      "industry": "446"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 16,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Other",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Mail"
+      }
+    ]
+  }
+}

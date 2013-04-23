@@ -1,0 +1,116 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint342",
+  "reference": "http://www.14news.com/story/20441631/gibson-general-hospital-notifying-patients-of-stolen-laptop-containing-patient-information ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 29000,
+          "variety": "Medical"
+        },
+        {
+          "amount": 29000,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 29000
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal residence"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Gibson General Hospital has mailed letters to patients informing them of the theft of a hospital laptop containing personal health information.  The laptop was reported stolen, along with several other items, from an employee's home during a burglary on Nov. 27.   The laptop was used by a hospital employee whose job requires 24/7 access to the hospital's electronic medical records system.   On December 26 letters were mailed  to approximately 29,000 patients who received care at Gibson General Hospital since January 2007. The information may have included a patient's name, address, social security number and/or clinical information.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 26,
+        "month": 12
+      }
+    },
+    "f500": "N",
+    "master_id": "osint342",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Gibson General Hospital",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 20700000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "IN",
+      "employee_count": "101 to 1000",
+      "industry": "622110"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 27,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 27,
+      "month": 11
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

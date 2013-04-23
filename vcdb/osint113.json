@@ -1,0 +1,106 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint113",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/speedy-recovery-20120217.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Experian, one of the nationwide credit reporting agencies, identified that its client, speedy recovery services, had a certain experience customer information accessed without proper authorization. The consumer information consists of information typically found in a consumer report. Such information includes your name and address and one or more of the following: Social Security number, date of birth, or account numbers.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 17,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint113",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Unknown"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Experian",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 576700000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "1001 to 10000",
+      "industry": "561450"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 31,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

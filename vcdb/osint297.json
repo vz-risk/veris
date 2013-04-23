@@ -1,0 +1,107 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint297",
+  "reference": "http://deadspin.com/5971165/hackers-take-over-steubenville-high-school-football-teams-website-threaten-to-release-personal-information-of-people-involved-in-alleged-rape-case",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "The people whose data was exposed were students, but this was not a school site.",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "In an effort to prove this, we gained access to the schools website via CPANEL login http://tinypic.com/r/ot0wok/6, and the webmaster James \"Jim\" Parks http://www.facebook.com/BIGREDMANOWAR personal email http://tinypic.com/r/2gwbclj/6 which we promptly found multiple nude photographs in.  We in turn locked him out of his own email, and backed up the contents to the web to preserve evidence. http://www.filehosting.org/file/details/405512/Emails.zip",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ],
+      "cve": ""
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Hackers who claim to be from the groups Anonymous and KnightSec have taken over the Steubenville High School football team's website, posting a video and message demanding an apology from those involved in the alleged rape that took place in August involving players of the football team. If no one steps forward and publicly apologizes to the victim and her family by Jan. 1, the hackers claim they will release personal information\u2014addresses, SSNs, phone numbers\u2014of people involved in the case.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Student"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 25,
+        "month": 12
+      }
+    },
+    "f500": "N",
+    "master_id": "osint297",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Ideology"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "notes": "Anonymous and KnightSec",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Steubenville High School Football Team\u2019s Website (Rollredroll.com)",
+      "country": "United States",
+      "notes": "",
+      "state": "OH",
+      "employee_count": "1 to 10",
+      "industry": "6117"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 25,
+      "month": 12
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "management": true,
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ],
+    "hosting": true
+  }
+}

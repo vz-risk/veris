@@ -1,0 +1,80 @@
+{
+  "incident_id": "hhs_osint00310",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 501,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 501,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00310"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "OhioHealth Corporation dba Grant Medical Center ",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Oh",
+      "employee_count": "10001 to 25000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 5,
+      "month": 11
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      },
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

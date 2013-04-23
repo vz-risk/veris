@@ -1,0 +1,103 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint336",
+  "reference": "http://news.softpedia.com/news/80-000-User-Accounts-Leaked-from-MiniMins-Com-260677.shtml ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "It was posted that email addresses, usernames and password hashes were made available by the hacker.",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 80461
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A hacker called Le0nB3lm0nt breached minimins.com, a popular weight loss support forum, leaking the website\u2019s entire database, totaling 80,461 record sets.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 24,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint336",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "MiniMins.com",
+      "country": "United States",
+      "notes": "MiniMins.com is a  Weight Loss Support Forum website",
+      "state": "CA",
+      "employee_count": "Unknown",
+      "industry": "541990"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 22,
+      "month": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

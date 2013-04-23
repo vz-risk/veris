@@ -1,0 +1,81 @@
+{
+  "incident_id": "hhs_osint00116",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 27000,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 27000,
+      "data_disclosure": "Yes"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00116"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "The University of Texas at Arlington",
+      "industry": "611310",
+      "country": "United States",
+      "state": "Tx",
+      "employee_count": "50001 to 100000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 4,
+      "month": 8
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 6
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - File"
+      }
+    ]
+  }
+}

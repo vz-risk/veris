@@ -1,0 +1,80 @@
+{
+  "incident_id": "hhs_osint00224",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2000,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2000,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00224"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Health Research Institute, Inc., Pfeiifer Treatment Center",
+      "industry": "62149",
+      "country": "United States",
+      "state": "Il",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 1,
+      "month": 7
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      },
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

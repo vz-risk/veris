@@ -1,0 +1,121 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint483",
+  "reference": "https://www.privacyrights.org/node/32387, http://www.thedenverchannel.com/news/homeowner-accounts-hacked, http://oag.ca.gov/system/files/02162012.pdf?",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Bank"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "Unknown record count.",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "We have reason to believe that the integrity of your personal information may have been compromised due to a security breach of the DHI Mortgage Loan Prequalification Website.  On the evening of Friday, February 10, 2012, DHI Mortgage became aware that a software security breach by unknown external sources occurred in its Internet Loan Prequalification System",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 15,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint483",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "DHI Mortgage",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 46000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "TX",
+      "employee_count": "101 to 1000",
+      "industry": "522292"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 10,
+      "month": 2
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

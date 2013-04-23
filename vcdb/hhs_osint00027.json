@@ -1,0 +1,72 @@
+{
+  "incident_id": "hhs_osint00027",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1874,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1874,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00027"
+  },
+  "actor": {
+    "partner": {
+      "motive": [
+        "NA"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Unintentional"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "General Agencies Welfare Benefits Program",
+      "industry": "525120",
+      "country": "United States",
+      "state": "Tn",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 5,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "asset": {}
+}

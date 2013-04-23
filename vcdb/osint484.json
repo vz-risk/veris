@@ -1,0 +1,122 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Major",
+        "variety": "Brand damage"
+      }
+    ],
+    "overall_rating": "Damaging"
+  },
+  "incident_id": "osint484",
+  "reference": "http://www.databreaches.net/?p=23234 http://www.bbc.co.uk/news/uk-england-essex-16853109 http://www.independent.co.uk/news/uk/home-news/council-workers-hit-by-data-leak-6699452.html",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 3550,
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Unknown"
+      ],
+      "data_total": 3550
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "3rd party hosting partner breached. PII and medical records dumped on public website.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 2,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint484",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Diagnostic Health Solutions",
+      "notes": "",
+      "country": "United Kingdom",
+      "industry": "541990",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Hours"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

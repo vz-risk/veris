@@ -1,0 +1,52 @@
+{
+  "incident_id": "hhs_osint00459",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 4500,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 4500,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00459"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "TRICARE Management Activity",
+      "industry": "921190",
+      "country": "United States",
+      "state": "Va",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 25,
+      "month": 6
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

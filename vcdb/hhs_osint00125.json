@@ -1,0 +1,75 @@
+{
+  "incident_id": "hhs_osint00125",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 660,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 660,
+      "data_disclosure": "Yes"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00125"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Goshen Health System, Inc.",
+      "industry": "446110",
+      "country": "United States",
+      "state": "In",
+      "employee_count": "1001 to 10000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 19,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {}
+}

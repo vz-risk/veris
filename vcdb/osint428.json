@@ -1,0 +1,109 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint428",
+  "reference": "http://www.dailytelegraph.com.au/news/national/bae-systems-army-tender-withdrawn-after-security-breach-and-sackings/story-fndo2dsc-1226542069170 ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Classified"
+        },
+        {
+          "variety": "Internal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A $500 MILLION Army communications contract will be retendered after a BAE Systems employee leaked sensitive internal Defence information.  The BAE Systems employee, who had access to the Defence Department's computer network, informed a colleague of material that gave the company an unfair advantage over its competitors in the bid for the Army communications project.  Both employees were sacked after Defence officials discovered the leak.  The company this week walked away from its tender for the contract, which could have given it 20 years' work.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Other"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 22,
+        "month": 12
+      }
+    },
+    "f500": "N",
+    "master_id": "osint428",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Espionage"
+      ],
+      "notes": "",
+      "role": [
+        "Inappropriate"
+      ],
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "BAE Systems",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 14400000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "VA",
+      "employee_count": "25001 to 50000",
+      "industry": "336413"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "management": true,
+    "assets": [
+      {
+        "variety": "S - Other server"
+      }
+    ],
+    "hosting": true
+  }
+}

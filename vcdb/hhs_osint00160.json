@@ -1,0 +1,78 @@
+{
+  "incident_id": "hhs_osint00160",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1472,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1472,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00160"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Conway Regional Medical Center",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Ar",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 18,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2011
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Disk media"
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint445",
+  "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "Names, addresses, telephone numbers, job titles, and e-mail addresses dumped on the Internet",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Classified"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 31
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Personal information was dumped onto the Internet.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 23,
+        "month": 3
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint445",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Northrop Grumman Systems and Software Engineering Services",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 25000000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "Va",
+      "employee_count": "50001 to 100000",
+      "industry": "334511"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "impact": {
+    "overall_rating": "Distracting"
+  },
+  "incident_id": "osint601",
+  "reference": "http://www.reuters.com/article/2012/01/23/us-euronetworldwide-idUSTRE80M2ET20120123 http://digitaltransactions.net/news/story/3405",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "variety": "Payment"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Payment processor disclosed that they suffered a data breach. No information was provided regarding how information was breached or how much.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 23,
+        "month": 1
+      }
+    },
+    "f500": "N",
+    "master_id": "osint601",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Euronet Worldwide",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 1270000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "KS",
+      "employee_count": "1001 to 10000",
+      "industry": "522320"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2011
+    },
+    "investigation": {
+      "year": 2011
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

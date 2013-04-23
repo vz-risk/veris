@@ -1,0 +1,102 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint240",
+  "reference": "http://www.huffingtonpost.com/2012/02/08/west-virginia-chiefs-of-police-association_n_1262892.html ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 150,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 150
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "CabinCr3W claimed responsibility",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Hackers affiliated with the group Anonymous obtained personal information for more than 150 police officers from an old website of the West Virginia Chiefs of Police Association and posted the data online.  He said the hackers obtained the home addresses, home phone numbers and cellphone numbers of current and retired police chiefs from a website that has not been used in two years. The association has a new website but some information was still stored on the old one.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 8,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint240",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Ideology"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "West Virginia Chiefs of Police Association",
+      "country": "United States",
+      "notes": "",
+      "state": "WV",
+      "employee_count": "Unknown",
+      "industry": "813920"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

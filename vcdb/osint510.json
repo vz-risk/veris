@@ -1,0 +1,104 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint510",
+  "reference": "http://www.theaustralian.com.au/news/nation/banknote-error-tops-rba-security-woes/story-e6frg6nf-1226545445009",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 160,
+          "variety": "Internal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 160
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "THE Reserve Bank sent a computer disk containing 160 high-resolution images of banknotes to a website developer in one of 18 security breaches over four years identified in documents released under Freedom of Information.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Other"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 31,
+        "month": 12
+      }
+    },
+    "f500": "N",
+    "master_id": "osint510",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Developer"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Australian Reserve Bank",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 2170000000
+      },
+      "country": "Australia",
+      "industry": "521110",
+      "employee_count": "101 to 1000",
+      "notes": ""
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "M - Disk media"
+      }
+    ]
+  }
+}

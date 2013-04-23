@@ -1,0 +1,116 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint122",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/transunion-20120312.pdf, https://www.privacyrights.org/node/54879 ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "The company has determined that your personal information (address, Social Security number and other details contained in your credit report) was accessed by an  unidentified person between January 22 and February 15, 2012 without proper authorization. The unauthorized access to your credit Corp. was brought to the company's attention by one of the subscribers, The Manufacturers Life Insurance Company (ManULife) and, as a result, a joint investigation has been initiated.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 12,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint122",
+    "asset": {
+      "total": "Yes"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "TransUnion",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 48780000000
+      },
+      "country": "Canada",
+      "industry": "524113",
+      "employee_count": "10001 to 25000",
+      "notes": ""
+    },
+    {
+      "victim_id": "Manufacturers Life Insurance Company (ManULife)",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 30000000000000
+      },
+      "country": "Canada",
+      "industry": "524113",
+      "state": "",
+      "employee_count": "25001 to 50000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 15,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

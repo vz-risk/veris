@@ -1,0 +1,84 @@
+{
+  "incident_id": "hhs_osint00305",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 29021,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 29021,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00305"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "The University of Texas MD Anderson Cancer Center",
+      "industry": "622310",
+      "country": "United States",
+      "state": "Tx",
+      "employee_count": "10001 to 25000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013,
+      "day": 7,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2013
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 10
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

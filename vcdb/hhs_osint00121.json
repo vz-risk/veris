@@ -1,0 +1,74 @@
+{
+  "incident_id": "hhs_osint00121",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 6000,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 6000,
+      "data_disclosure": "Yes"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00121"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Keith & Fisher, DDS, PA",
+      "industry": "621111",
+      "country": "United States",
+      "state": "Nc",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 16,
+      "month": 2
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

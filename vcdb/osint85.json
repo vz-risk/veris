@@ -1,0 +1,111 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint85",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/hanover-insurance-20120306.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "Partner is Impairment Resources.",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Theft of computer backup hardware from a partner exposes name, address, SSN and medical information.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 6,
+        "month": 3
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint85",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Hanover Insurance Group, Inc.",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 3930000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "MA",
+      "employee_count": "1001 to 10000",
+      "industry": "524126"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 3,
+      "month": 1
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Other",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Disk drive"
+      }
+    ]
+  }
+}

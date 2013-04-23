@@ -1,0 +1,117 @@
+{
+  "impact": {
+    "overall_rating": "Distracting"
+  },
+  "incident_id": "osint531",
+  "reference": "http://www.phiprivacy.net/?p=8976 http://manhattantimesnews.com/February-15-2012/confidential-patient-records-found-in-the-open.html",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "variety": "Medical"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Paper documentation of paper records disposed of in insecure manner. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "N",
+        "data_subject": ""
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 15,
+        "month": 2
+      }
+    },
+    "f500": "U",
+    "master_id": "osint531",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Doshi Diagnostic Center",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 1500000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "NY",
+      "employee_count": "11 to 100",
+      "industry": "621511"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "year": 2012,
+      "day": 9,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 9,
+      "month": 2
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "Hours"
+    },
+    "discovery": {
+      "unit": "Hours"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

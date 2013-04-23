@@ -1,0 +1,152 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Minor",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Moderate",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Moderate",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Painful"
+  },
+  "incident_id": "osint177",
+  "reference": "http://www.azcentral.com/arizonarepublic/local/articles/2012/01/19/20120119asu-system-back-online-after-breach.html (20130212) http://cronkite.asu.edu/mcguireblog/?p=298(20130212) http://downtowndevil.com/2012/01/19/19699/asurite-system-shut-down-to-protect-personal-information/ (20130212) http://downtowndevil.com/2012/01/26/20213/asu-phoenix-law-hacking-asurite/ (20130212) http://www.statepress.com/2012/01/25/following-hack-asurite-accounts-are-target-of-phishing-attacks/ (20130212)",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored encrypted"
+      ],
+      "data": [
+        {
+          "amount": 180000,
+          "variety": "Credentials"
+        }
+      ],
+      "notes": "employee, student, and alumni",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ],
+      "cve": ""
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "External hackers breached the ASURITE authentication system at Arizona State University and downloaded files.  Response resulted in complete shutdown for at least one day.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Student"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 18,
+        "month": 1
+      }
+    },
+    "f500": "N",
+    "master_id": "osint177",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "notes": "This attack lead to a rise in phishing attacks later.",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Arizona State University",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 1200000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "AZ",
+      "employee_count": "1001 to 10000",
+      "industry": "611310"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 18,
+      "month": 1
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Minutes"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Authentication"
+      }
+    ]
+  }
+}

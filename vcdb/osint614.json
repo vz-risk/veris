@@ -1,0 +1,103 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint614",
+  "reference": "http://news.softpedia.com/news/Panasonic-Hacked-Visitors-Redirected-to-Other-Website-248049.shtml ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Internal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "DoS"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "The official Chinese website of Panasonic, the world renowned manufacturer of electronics and high-tech gadgets, has suffered a data breach at the hands of a hacker named Q-R3ST; who is from India and part of a hacker group named Vatan.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 23,
+        "month": 1
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint614",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Panasonic",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 80000000000
+      },
+      "country": "Japan",
+      "industry": "334310",
+      "employee_count": "Over 100000",
+      "notes": ""
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Authentication"
+      }
+    ]
+  }
+}

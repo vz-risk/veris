@@ -1,0 +1,84 @@
+{
+  "incident_id": "hhs_osint00333",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 702,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 702,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00333"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Oregon Health & Science University",
+      "industry": "611310",
+      "country": "United States",
+      "state": "Or",
+      "employee_count": "10001 to 25000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 2,
+      "month": 8
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Weeks",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

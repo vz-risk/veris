@@ -1,0 +1,76 @@
+{
+  "incident_id": "hhs_osint00435",
+  "attribute": {
+    "integrity": {
+      "variety": [
+        "Unknown"
+      ]
+    },
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 757,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 757,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00435"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "System admin"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Indiana University School of Optometry",
+      "industry": "621320",
+      "country": "United States",
+      "state": "In",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 12,
+      "month": 8
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misconfiguration"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

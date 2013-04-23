@@ -1,0 +1,122 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint421",
+  "reference": "http://news.softpedia.com/news/Government-and-Military-Members-Exposed-After-David-Morgan-Hack-247111.shtml",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 24000,
+          "variety": "Credentials"
+        },
+        {
+          "amount": 24000,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored encrypted"
+      ],
+      "data_total": 24000
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A hacker managed to bypass the security mechanisms implemented by online clothing and accessories store David Morgan, leaking usernames, represented by emails, and password hashes. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 16,
+        "month": 1
+      }
+    },
+    "f500": "U",
+    "master_id": "osint421",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Fun"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Davidmorgan.com",
+      "country": "United States",
+      "notes": "",
+      "state": "WA",
+      "employee_count": "Unknown",
+      "industry": "454"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012,
+      "day": 16,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 16,
+      "month": 1
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

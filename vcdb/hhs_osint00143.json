@@ -1,0 +1,71 @@
+{
+  "incident_id": "hhs_osint00143",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2600,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2600,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00143"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "NYU Hospital for Joint Diseases Inventory Management Department",
+      "industry": "622310",
+      "country": "United States",
+      "state": "Ny",
+      "employee_count": "1001 to 10000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 23,
+      "month": 6
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

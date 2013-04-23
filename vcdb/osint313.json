@@ -1,0 +1,114 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint313",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/manhattan-prep-20120403.pdf; http://www.efortresses.com/2012-Breaches-Matrix.htm",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Bank"
+        },
+        {
+          "variety": "Personal"
+        },
+        {
+          "variety": "Internal"
+        }
+      ],
+      "notes": "Information released included names, mailing addresses, email addresses, birth date, username, password, phone number and credit card details. ",
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Other"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Site hacked, hacker accessed and decrypted credit card data.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 3,
+        "month": 4
+      }
+    },
+    "f500": "N",
+    "master_id": "osint313",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Manhattan Prep (MG Prep)",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 2000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "NY",
+      "employee_count": "11 to 100",
+      "industry": "611699"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 23,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 25,
+      "month": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

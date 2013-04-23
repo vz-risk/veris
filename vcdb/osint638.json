@@ -1,0 +1,104 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint638",
+  "reference": "",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 1771,
+          "variety": "Unknown"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 1771
+    }
+  },
+  "notes": "HHS Breach Tool",
+  "action": {
+    "misuse": {
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Breach tool lists this as unauthorized access/disclosure with paper as the asset.  No further details.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Unknown"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 7,
+        "month": 1
+      }
+    },
+    "f500": "N",
+    "master_id": "osint638",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Group Health Incorporated",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 168800000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "NY",
+      "employee_count": "1001 to 10000",
+      "industry": "524114"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 13,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

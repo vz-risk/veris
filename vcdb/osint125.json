@@ -1,0 +1,123 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint125",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/university-of-connecticut-20120508.pdf ",
+  "attribute": {
+    "integrity": {
+      "variety": [
+        "Alter behavior"
+      ]
+    },
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "social": {
+      "notes": "",
+      "vector": [
+        "Email"
+      ],
+      "target": [
+        "Unknown"
+      ],
+      "variety": [
+        "Phishing"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "an employee responded to a phishing e-mail during the week of April 16, 2012. In doing so the employee provided access to a file that contained payroll related information for individuals were employed with the University dining services the apartment during 2011. This error was discovered on April 23, 2012.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 8,
+        "month": 5
+      }
+    },
+    "f500": "N",
+    "master_id": "osint125",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "University of Connecticut",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 599540000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "CT",
+      "employee_count": "1001 to 10000",
+      "industry": "611310"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "month": 4
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 23,
+      "month": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      },
+      {
+        "variety": "M - Documents"
+      },
+      {
+        "variety": "P - Other"
+      }
+    ]
+  }
+}

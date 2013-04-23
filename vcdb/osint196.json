@@ -1,0 +1,112 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint196",
+  "reference": "https://www.privacyrights.org/node/55178",
+  "attribute": {
+    "confidentiality": {
+      "notes": "The lost flash drive contained patient names, Social Security numbers, dates of birth, addresses, telephone numbers, account numbers, diagnoses, and other protected health information.",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 5713
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": "Unknown",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A vendor working with patient data for digital conversion from Colon & Digestive lost a flash drive that contained patient names, Social Security numbers, dates of birth, addresses, telephone numbers, account numbers, diagnoses, and other protected health information. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 19,
+        "month": 10
+      }
+    },
+    "f500": "N",
+    "master_id": "osint196",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Colon & Digestive Health Specialists",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 100000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "AZ",
+      "employee_count": "Unknown",
+      "industry": "621498"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 16,
+      "month": 7
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 17,
+      "month": 10
+    },
+    "discovery": {
+      "unit": "Months"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Flash drive"
+      }
+    ]
+  }
+}

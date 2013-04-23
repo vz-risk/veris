@@ -1,0 +1,123 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint423",
+  "reference": "http://www.phiprivacy.net/?s=Delta+Dental&x=0&y=0, http://www.news-gazette.com/news/health/miscellaneous/2012-06-20/some-delta-dental-records-lost-during-shipping.html",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 650,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Unknown"
+      ],
+      "data_total": 650
+    },
+    "availability": {
+      "duration": {
+        "unit": "Never"
+      },
+      "notes": "",
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "3rd party shipper loses medical records; xrays. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 20,
+        "month": 6
+      }
+    },
+    "f500": "N",
+    "master_id": "osint423",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "partner": {
+      "motive": [
+        "NA"
+      ],
+      "country": [
+        "United States"
+      ],
+      "industry": "492110",
+      "role": [
+        "Unintentional"
+      ],
+      "notes": ""
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Delta Dental of Illinois",
+      "country": "United States",
+      "notes": "",
+      "state": "IL",
+      "employee_count": "Unknown",
+      "industry": "5241"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

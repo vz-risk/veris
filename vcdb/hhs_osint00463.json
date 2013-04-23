@@ -1,0 +1,52 @@
+{
+  "incident_id": "hhs_osint00463",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 694,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 694,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00463"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Health Plan of San Mateo",
+      "industry": "621999",
+      "country": "United States",
+      "state": "Ca",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 25,
+      "month": 4
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

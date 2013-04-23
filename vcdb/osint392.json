@@ -1,0 +1,115 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint392",
+  "reference": "http://www.cyberwarnews.info/2011/12/12/20000-cpps-testville-accounts-leaked/",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 20000,
+          "variety": "Credentials"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 20000
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "gaming site hacked via unknown methods. 20K creds posted onto pastebin",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2011,
+        "day": 12,
+        "month": 12
+      }
+    },
+    "f500": "N",
+    "master_id": "osint392",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Fun"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "CPPS",
+      "notes": "",
+      "country": "Panama",
+      "industry": "518",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2011,
+      "day": 12,
+      "month": 12
+    },
+    "investigation": {
+      "year": 2011
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

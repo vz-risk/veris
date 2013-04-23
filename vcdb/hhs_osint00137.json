@@ -1,0 +1,78 @@
+{
+  "incident_id": "hhs_osint00137",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2123,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2123,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00137"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Wright Patterson Air Force Base",
+      "industry": "928110",
+      "country": "United States",
+      "state": "Oh",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 7,
+      "month": 10
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

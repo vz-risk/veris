@@ -1,0 +1,100 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint466",
+  "reference": "http://www.ktvu.com/news/news/crime-law/hackers-steal-credit-card-information-concord-pub/nTHCm/, http://concord-ca.patch.com/articles/credit-card-theft-case-at-ej-phair-remains-a-mystery, http://oag.ca.gov/system/files/EJ%20PHAIR%20BREWING%20CO%20and%20ALE%20HOUS-C2012116470%20CA%20AG%20Letter_customer%20notice_0.pdf? ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Transmitted"
+      ],
+      "data": [
+        {
+          "variety": "Payment"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "An East Bay pub says computer hackers stole the credit card information of dozens of customers recently and there may be more who were affected.  Every time a business swipes a credit card, that information is collected by a third party, so the business can get paid.  But in this case, E.J. Phair suspects hackers used a computer virus or worm to access that sensitive information without ever stepping foot inside the business.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 27,
+        "month": 11
+      }
+    },
+    "f500": "U",
+    "master_id": "osint466",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "E.J. Phair's Brewing Company",
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "11 to 100",
+      "industry": "722410"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

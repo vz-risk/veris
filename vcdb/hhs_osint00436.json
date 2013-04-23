@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00436",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 7067,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 7067,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00436"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "The Surgeons of Lake County, LLC",
+      "industry": "621111",
+      "country": "United States",
+      "state": "Il",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 13,
+      "month": 8
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

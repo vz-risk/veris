@@ -1,0 +1,117 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint246",
+  "reference": "http://www.phiprivacy.net/?p=10885; https://www.privacyrights.org/node/55441",
+  "attribute": {
+    "confidentiality": {
+      "notes": "The theft resulted in the exposure of sensitive patient information.  ",
+      "data_disclosure": "Potentially",
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        },
+        {
+          "variety": "Unknown"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 1017
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim grounds"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Theft of a network server that contains patient information ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 4,
+        "month": 12
+      }
+    },
+    "f500": "N",
+    "master_id": "osint246",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Surgical Associates of Utica, PC",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 1000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "NY",
+      "employee_count": "Unknown",
+      "industry": "621111"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 18,
+      "month": 9
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 16,
+      "month": 11
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Other"
+      }
+    ]
+  }
+}

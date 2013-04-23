@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00456",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 771,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 771,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00456"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Memorial Hospital of Gardena",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Ca",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 10,
+      "month": 12
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

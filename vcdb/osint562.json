@@ -1,0 +1,126 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint562",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/ecs-tuning-20120619.pdf",
+  "attribute": {
+    "integrity": {
+      "notes": "Web Server misappropriated via likley SQLi to affect database.",
+      "variety": [
+        "Misappropriation"
+      ]
+    },
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 71,
+          "variety": "Payment"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 71
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "E-commerce site compromised via undisclosed methods and customer payment card information was exposed. SQLi highly likely vector CPP likely method of discovery.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 19,
+        "month": 6
+      }
+    },
+    "f500": "N",
+    "master_id": "osint562",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "ECS Tuning",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 3900000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "OH",
+      "employee_count": "11 to 100",
+      "industry": "441310"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012,
+      "day": 6,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Weeks"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

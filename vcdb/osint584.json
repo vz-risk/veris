@@ -1,0 +1,110 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint584",
+  "reference": "http://www.cbc.ca/news/canada/new-brunswick/story/2012/05/09/nb-privacy-breach-voters-list-1026.html",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 553000,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 553000
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": " [through Mail]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "CD with voter information was provided to political parties. Extraneous information including drivers license numbers and phone numbers was included.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "N",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 9,
+        "month": 5
+      }
+    },
+    "f500": "N",
+    "master_id": "osint584",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Manager"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Elections New Brunswick",
+      "notes": "",
+      "country": "Canada",
+      "industry": "921190",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "Days"
+    },
+    "discovery": {
+      "unit": "Days"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Disk media"
+      }
+    ]
+  }
+}

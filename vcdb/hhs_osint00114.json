@@ -1,0 +1,81 @@
+{
+  "incident_id": "hhs_osint00114",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 3200,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 3200,
+      "data_disclosure": "Yes"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00114"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Metro Community Provider Network",
+      "industry": "621999",
+      "country": "United States",
+      "state": "Co",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 19,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Mail"
+      }
+    ]
+  }
+}

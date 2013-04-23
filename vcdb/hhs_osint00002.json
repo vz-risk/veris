@@ -1,0 +1,89 @@
+{
+  "incident_id": "hhs_osint00002",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 550,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 550,
+      "data_disclosure": "Yes"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00002"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Adult & Child Care Center",
+      "industry": "000000",
+      "country": "United States",
+      "employee_count": "Unknown",
+      "state": "In"
+    },
+    {
+      "victim_id": "Midtown Mental Health Center",
+      "industry": "621498",
+      "employee_count": "Unknown",
+      "state": "IN",
+      "country": "United States"
+    },
+    {
+      "victim_id": "Diversified Support Services",
+      "industry": "000000",
+      "country": "United States",
+      "state": "IN",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 27,
+      "month": 7
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {}
+}

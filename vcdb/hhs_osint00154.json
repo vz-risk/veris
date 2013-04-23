@@ -1,0 +1,65 @@
+{
+  "incident_id": "hhs_osint00154",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 4800,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 4800,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00154"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Baptist Memorial Hospital - Huntingdon",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Tn",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 27,
+      "month": 11
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "asset": {}
+}

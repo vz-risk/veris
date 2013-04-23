@@ -1,0 +1,106 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint315",
+  "reference": "http://www.infosecurity-magazine.com/view/24439/mcgill-shuts-down-website-that-published-confidential-donor-data/ ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored encrypted"
+      ],
+      "data": [
+        {
+          "variety": "Classified"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "The information leaked included school donors, including names, addresses, phone numbers, and the amount they donated from contributions from pharmaceutical, biotechnology and defense companies. ",
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A website called McGill-Leaks website published confidential data on school donors, including names, addresses, phone numbers and the amount they donated.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Other"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 9,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint315",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Ideology"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "McGill University",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 1000000000
+      },
+      "country": "China",
+      "industry": "611310",
+      "employee_count": "1001 to 10000",
+      "notes": "McGill University is one of Canada's foremost institutions of higher education. "
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

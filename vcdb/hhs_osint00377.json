@@ -1,0 +1,84 @@
+{
+  "incident_id": "hhs_osint00377",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1537,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1537,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00377"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Amerigroup Community Care of New Mexico, Inc",
+      "industry": "624410",
+      "country": "United States",
+      "state": "Nm",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 18,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2011
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 5
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

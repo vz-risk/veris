@@ -1,0 +1,103 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint543",
+  "reference": "http://www.cyberwarnews.info/2012/12/24/islamic-network-hacked-17000-user-credentials-leaked/ ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "It is unknown the information pertained in the breached accounts. ",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Classified"
+        },
+        {
+          "variety": "Unknown"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 17000
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "The leaked data has been uploaded to anonfiles.me in the format of a compressed rar file that contains the complete database extraction from the site in CSV format",
+      "vector": [
+        "Backdoor or C2"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A hacker who goes by the handle @th3inf1d3l breached accounts from the Islamic network website.  The attack is part of an ongoing operation named #OpFuckMohammad which has been going for some time now and mainly been carried out by @th3inf1d3l.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 24,
+        "month": 12
+      }
+    },
+    "f500": "N",
+    "master_id": "osint543",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Islamic Network",
+      "notes": "London",
+      "country": "United Kingdom",
+      "industry": "8131",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint571",
+  "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "Usernames, encrypted passwords and decrypted passwords acquired and dumped by hacker",
+      "data_disclosure": "Unknown",
+      "data": [
+        {
+          "variety": "Classified"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored encrypted"
+      ],
+      "data_total": 109
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Usernames, encrypted passwords and decrypted passwords acquired and dumped by hacker",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 10,
+        "month": 1
+      }
+    },
+    "f500": "N",
+    "master_id": "osint571",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Le Muse Societ\u00e0 Cooperativa",
+      "notes": "",
+      "country": "Italy",
+      "industry": "81",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

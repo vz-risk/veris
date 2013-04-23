@@ -1,0 +1,127 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint419",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/dartmouth-20120314.pdf",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored encrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Potentially"
+    },
+    "availability": {
+      "duration": {
+        "unit": "Never"
+      },
+      "notes": "",
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Laptop w/ PII stolen from vehicle.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "N",
+        "data_subject": "Student"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 14,
+        "month": 3
+      }
+    },
+    "f500": "U",
+    "master_id": "osint419",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Dartmouth College",
+      "country": "United States",
+      "notes": "",
+      "state": "NH",
+      "employee_count": "1001 to 10000",
+      "industry": "6113"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Seconds"
+    },
+    "incident": {
+      "year": 2012,
+      "day": 19,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 19,
+      "month": 2
+    },
+    "compromise": {
+      "unit": "Seconds"
+    },
+    "containment": {
+      "unit": "NA"
+    },
+    "discovery": {
+      "unit": "Minutes"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Other",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

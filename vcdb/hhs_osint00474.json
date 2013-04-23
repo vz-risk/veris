@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00474",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1287,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1287,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00474"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Medco Health Solutions, Inc.",
+      "industry": "424210",
+      "country": "United States",
+      "state": "Nj",
+      "employee_count": "10001 to 25000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 19,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

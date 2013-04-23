@@ -1,0 +1,110 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint574",
+  "reference": "http://www.nbcnews.com/id/47621717/ns/technology_and_science-security/t/data-breach-topples-australian-lego-fans/ ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "Parents who tried to sign up their children to the LEGO Club website potentially had their personal information, including credit card numbers, names, addresses, birth dates and phone numbers may have been exposed. ",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Bank"
+        },
+        {
+          "variety": "Personal"
+        },
+        {
+          "variety": "Internal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 1591
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "The Australian branch of the toy building company has informed nearly 1,600 people that their personal information, including credit card numbers, may have been compromised due to a website vulnerability. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 30,
+        "month": 5
+      }
+    },
+    "f500": "U",
+    "master_id": "osint574",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "LEGO Australia",
+      "notes": "",
+      "country": "Australia",
+      "industry": "423920",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 27,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 5,
+      "month": 5
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

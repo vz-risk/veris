@@ -1,0 +1,130 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Minor",
+        "variety": "Asset and fraud"
+      }
+    ],
+    "overall_rating": "Insignificant"
+  },
+  "incident_id": "osint393",
+  "reference": "http://www.databreaches.net/?p=23272",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 2300,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 2300
+    },
+    "availability": {
+      "duration": {
+        "unit": "Unknown"
+      },
+      "notes": "",
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "he Information Commissioner (the \u201cCommissioner\u201d) was informed by the Council of the theft of an unencrypted laptop containing a database with child swimming lesson details for 2300 individuals. The information was not of a nature that would be defined as sensitive personal data in the Act.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 10,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint393",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Craven District Council",
+      "notes": "",
+      "country": "United Kingdom",
+      "industry": "923",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "year": 2011
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "compromise": {
+      "unit": "Minutes"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Seconds"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

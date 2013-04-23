@@ -1,0 +1,71 @@
+{
+  "incident_id": "hhs_osint00086",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1378,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1378,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00086"
+  },
+  "actor": {
+    "partner": {
+      "motive": [
+        "NA"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Unintentional"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Windsor Health Plan",
+      "industry": "621999",
+      "country": "United States",
+      "state": "Tn",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 1,
+      "month": 3
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

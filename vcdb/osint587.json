@@ -1,0 +1,116 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint587",
+  "reference": "http://www.cyberwarnews.info/2012/01/12/emaxx-hacked-by-tehmaskz/",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 7,
+          "variety": "Credentials"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 7
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Motherboard manufacturing company has 7 usernames and encrypted passwords posted on public site.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Unknown"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 11,
+        "month": 1
+      }
+    },
+    "f500": "U",
+    "master_id": "osint587",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "EMAXX",
+      "notes": "",
+      "country": "Philippines",
+      "industry": "334",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 11,
+      "month": 1
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint69",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/coca-cola-credit-union-20120222.pdf",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Two laptops containing member information included names, SSNs and credit card numbers were stolen from their partner.  No location detail is provided.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 22,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint69",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "The Coca-Cola Company Family Federal Credit Union",
+      "country": "United States",
+      "notes": "",
+      "state": "GA",
+      "employee_count": "Unknown",
+      "industry": "5239"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 21,
+      "month": 12
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Other",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

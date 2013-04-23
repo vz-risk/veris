@@ -1,0 +1,87 @@
+{
+  "incident_id": "hhs_osint00434",
+  "attribute": {
+    "integrity": {
+      "variety": [
+        "Unknown"
+      ]
+    },
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2345,
+          "variety": "Payment"
+        },
+        {
+          "amount": 2345,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2345,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00434"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "System admin"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Aetna, Inc.",
+      "industry": "524114",
+      "country": "United States",
+      "state": "Ct",
+      "employee_count": "25001 to 50000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 10,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misconfiguration"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

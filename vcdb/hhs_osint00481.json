@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00481",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 7000,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 7000,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00481"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "University of Houston for UH College of Optometry",
+      "industry": "611310",
+      "country": "United States",
+      "state": "Tx",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 8,
+      "month": 6
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint112",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/sourcefire-20121115.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A company laptop was stolen on November 6, 2012. Through our investigation, we have determined that the password-protected laptop contained files that include information related to SourceFire employees, including name and Social Security number.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 15,
+        "month": 11
+      }
+    },
+    "f500": "N",
+    "master_id": "osint112",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "SourceFire",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 165650000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "MD",
+      "employee_count": "101 to 1000",
+      "industry": "511210"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 6,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Other",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

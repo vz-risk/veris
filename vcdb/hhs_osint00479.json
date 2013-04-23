@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00479",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 708,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 708,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00479"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "University of Louisville Research Foundations, Inc.",
+      "industry": "611310",
+      "country": "United States",
+      "state": "Ky",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 21,
+      "month": 7
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

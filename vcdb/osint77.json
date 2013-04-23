@@ -1,0 +1,105 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint77",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/experian-20120504.pdf",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Unauthorized access to Experian records.  These are typically through their customer's credentials, although none is mentioned in this source doc.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "Y",
+        "data_subject": "Other"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 4,
+        "month": 5
+      }
+    },
+    "f500": "N",
+    "master_id": "osint77",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Unknown"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Experian",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 576700000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "1001 to 10000",
+      "industry": "561450"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 13,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

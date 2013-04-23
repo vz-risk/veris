@@ -1,0 +1,126 @@
+{
+  "incident_id": "hhs_osint00231",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1548,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1548,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00231"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "City of Covington Kentucky Fire Department",
+      "industry": "922160",
+      "country": "United States",
+      "employee_count": "Unknown",
+      "state": "Ky"
+    },
+    {
+      "victim_id": "Okaloosa County Public Safety",
+      "industry": "926120",
+      "employee_count": "Unknown",
+      "state": "FL",
+      "country": "United States"
+    },
+    {
+      "victim_id": "City of Gloucester, Fire Department",
+      "industry": "922160",
+      "country": "United States",
+      "state": "MA",
+      "employee_count": "11 to 100"
+    },
+    {
+      "victim_id": "City of Overland Park Fire Department",
+      "industry": "922160",
+      "state": "FL",
+      "employee_count": "Unknown",
+      "country": "United States"
+    },
+    {
+      "victim_id": "Osceola County EMS",
+      "industry": "922190",
+      "country": "United States",
+      "employee_count": "Unknown",
+      "state": "FL"
+    },
+    {
+      "victim_id": "Sumner County Emergency Medical Services",
+      "industry": "621910",
+      "employee_count": "11 to 100",
+      "state": "TN",
+      "country": "United States"
+    },
+    {
+      "victim_id": "Atlanta Fire and Rescue Department",
+      "industry": "922160",
+      "country": "United States",
+      "state": "GA",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 18,
+      "month": 12
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 7
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

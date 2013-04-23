@@ -1,0 +1,104 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint178",
+  "reference": "http://www.scmagazine.com.au/News/288847,privacy-commissioner-probes-fairfax-hack.aspx,  http://www.scmagazine.com.au/News/288661,fairfax-microsites-hacked.aspx",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Payment"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ],
+      "cve": ""
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "The\ufeff Office of the Australian Information Commissioner \ufeffhas opened an investigation into the breach of two Fairfax microsites to probe whether sufficient security mechanisms were in place during the attacks.  Media giant Fairfax has confirmed that two of its microsites were hacked this month but claims that up to 10,000 unencrypted credit card details compromised in the same attack were not Fairfax customers.  Hackers revealed to SC Magazine how they managed to exploit vulnerabilities in two third party-hosted web sites, Herald Education and Young Writer.  The hackers claim to have accessed full credit card data including CCV numbers along with related information on names, addresses and date of birth using this root access. The hackers had assumed these belonged to subscribers of Fairfax publications including the Sydney Morning Herald.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 1,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint178",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Ideology"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Fairfax",
+      "notes": "",
+      "country": "Australia",
+      "industry": "518",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "management": true,
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ],
+    "hosting": true
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint631",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/anthem-blue-cross-blue-shield-20130314.pdf",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 2206,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 2206
+    }
+  },
+  "notes": "",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "An employee at Connextions, a call center vendor for Anthem's Medicare business customer service, confessed to the Social Security Administration investigators that she had taken SSNs, including those from members of Anthem.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 14,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint631",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "partner": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "United States"
+      ],
+      "industry": "519190",
+      "role": [
+        "Malicious"
+      ],
+      "notes": "Call center employee confessed to Social Security investigators.  "
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Anthem Blue Cross Blue Shield",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 198600000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "VA",
+      "employee_count": "1001 to 10000",
+      "industry": "524114"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013,
+      "day": 7,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2013
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "management": true,
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ],
+    "hosting": true
+  }
+}

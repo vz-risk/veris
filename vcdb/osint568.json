@@ -1,0 +1,105 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint568",
+  "reference": "",
+  "attribute": {
+    "confidentiality": {
+      "notes": "A potential data exposure involving a computer containing clinic patient records.  ",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 7000
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A potential data exposure involving a computer containing clinic patient records",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 23,
+        "month": 2
+      }
+    },
+    "f500": "U",
+    "master_id": "osint568",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "La Nueva Casa de Amigos Eye Clinic (University of Houston College of Optometry)",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 620000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "TX",
+      "employee_count": "10001 to 25000",
+      "industry": "621320"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

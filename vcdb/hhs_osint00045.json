@@ -1,0 +1,52 @@
+{
+  "incident_id": "hhs_osint00045",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1700000,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1700000,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00045"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "New York City Health & Hospitals Corporation's North Bronx Healthcare Network",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Ny",
+      "employee_count": "25001 to 50000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 23,
+      "month": 12
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

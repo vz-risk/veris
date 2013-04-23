@@ -1,0 +1,101 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint25",
+  "reference": "http://oag.ca.gov/system/files/SVSP%20Notification%20Letter_0.pdf? ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misconfiguration"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A database file containing personal informatino for custody staff was accessible to all staff on a server.  The file contained name, SSN, phone, address and position information.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 1,
+        "month": 11
+      }
+    },
+    "f500": "N",
+    "master_id": "osint25",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "notes": "",
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "California Department of Corrections and Rehabilitation",
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "25001 to 50000",
+      "industry": "92219"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 26,
+      "month": 9
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - File"
+      }
+    ]
+  }
+}

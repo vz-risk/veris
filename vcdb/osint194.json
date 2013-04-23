@@ -1,0 +1,108 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint194",
+  "reference": "http://oag.ca.gov/system/files/Agent%20Jain%20Williams-Victim%20Letter%20%283%29_0.pdf?, http://oag.ca.gov/system/files/Agent%20Jain%20Williams-Customer%20Letter%20%285%29_0.pdf? ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Payment"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Embezzlement",
+        "Data mishandling"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "For at least two months, a former employee used customer information inappropriately.  This information would have included names, addresses, DOB, CCN and SSN.  The employee used some of these cards to make fraudulent purchases.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 23,
+        "month": 8
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint194",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "State Farm Insurance",
+      "country": "United States",
+      "notes": "",
+      "state": "IL",
+      "employee_count": "50001 to 100000",
+      "industry": "524126"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 1,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 28,
+      "month": 7
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

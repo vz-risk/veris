@@ -1,0 +1,109 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint218",
+  "reference": "http://www.databreaches.net/?p=23715",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 261161,
+          "variety": "Payment"
+        },
+        {
+          "amount": 261161,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Unknown"
+      ],
+      "data_total": 261161
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "    A software sales company affiliated with Softbank Corp. said Thursday that personal information related to up to 261,161 customers may have been compromised from its database due to fraudulent access.      Vector Inc. based in Tokyo said data that may have been stolen include names, addresses and credit card numbers, but that it remains unknown whether such information has been misused.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 24,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint218",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Softbank Corp.",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 38920000000
+      },
+      "country": "Japan",
+      "industry": "55111",
+      "employee_count": "10001 to 25000",
+      "notes": ""
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "incident_id": "hhs_osint00466",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 3950,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 3950,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00466"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Washington State Department of Social and Health Services",
+      "industry": "813319",
+      "country": "United States",
+      "state": "Wa",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 1,
+      "month": 7
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

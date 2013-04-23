@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00484",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 64846,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 64846,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00484"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "University of Miami",
+      "industry": "611310",
+      "country": "United States",
+      "state": "Fl",
+      "employee_count": "10001 to 25000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 20,
+      "month": 9
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

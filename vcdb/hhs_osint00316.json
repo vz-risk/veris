@@ -1,0 +1,87 @@
+{
+  "incident_id": "hhs_osint00316",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 850,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 850,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00316"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Westerville Dental Center",
+      "industry": "621210",
+      "country": "United States",
+      "state": "Oh",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013,
+      "day": 17,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2013
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      },
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

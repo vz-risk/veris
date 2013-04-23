@@ -1,0 +1,66 @@
+{
+  "incident_id": "hhs_osint00082",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1907,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1907,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00082"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "MMM Health Care Inc.",
+      "industry": "621999",
+      "employee_count": "1 to 10",
+      "state": "Ny",
+      "country": "United States"
+    },
+    {
+      "victim_id": "PMC Medicare Choice",
+      "industry": "000000",
+      "country": "United States",
+      "state": "PR",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "month": 3,
+      "day": 4,
+      "year": 2010
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "value": 1,
+      "unit": "Months"
+    }
+  },
+  "source_id": "hhs",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

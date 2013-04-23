@@ -1,0 +1,119 @@
+{
+  "incident_id": "hhs_osint00053",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 5994,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 5994,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00053"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Policlinica La Familia IPA 343",
+      "industry": "000000",
+      "employee_count": "Unknown",
+      "state": "Pr",
+      "country": "United States"
+    },
+    {
+      "victim_id": "Proveedores Aliados por tu Salud",
+      "industry": "000000",
+      "country": "United States",
+      "state": "PR",
+      "employee_count": "Unknown"
+    },
+    {
+      "victim_id": "Access Medical Group",
+      "industry": "62",
+      "state": "PR",
+      "employee_count": "Unknown",
+      "country": "United States"
+    },
+    {
+      "victim_id": "Servicios Medicos Integrados de Fajardo",
+      "industry": "000000",
+      "country": "United States",
+      "employee_count": "Unknown",
+      "state": "PR"
+    },
+    {
+      "victim_id": "Grupo Medico- IPA 341",
+      "industry": "000000",
+      "employee_count": "Unknown",
+      "state": "PR",
+      "country": "United States"
+    },
+    {
+      "victim_id": "First Medical Center ",
+      "industry": "62",
+      "country": "United States",
+      "state": "PR",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "month": 5,
+      "day": 10,
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "value": 4,
+      "unit": "Months"
+    }
+  },
+  "source_id": "hhs",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

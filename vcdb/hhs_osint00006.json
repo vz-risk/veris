@@ -1,0 +1,81 @@
+{
+  "incident_id": "hhs_osint00006",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1090,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1090,
+      "data_disclosure": "Yes"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00006"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Cabinet for Health & Family Services, Department of Medicaid Services",
+      "industry": "923120",
+      "country": "United States",
+      "state": "Ky",
+      "employee_count": "1001 to 10000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013,
+      "day": 17,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2013
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

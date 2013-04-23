@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00483",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 800,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 800,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00483"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Sierra Plastic Surgery",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Nv",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 1,
+      "month": 10
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Years",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint332",
+  "reference": "http://www.pcworld.com/article/249927/microsoft_india_store_a_victim_or_poor_data_security_not_hackers.html; http://content.usatoday.com/communities/technologylive/post/2012/02/hackers-breach-database-of-microsofts-india-store/1",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "The Microsoft Store in India stored the customer data in plaintext. ",
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A chines hacker group exposed customer data due to poor data security at Microsoft India Store. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 14,
+        "month": 2
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint332",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Microsoft Store India",
+      "notes": "",
+      "country": "India",
+      "industry": "0000",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

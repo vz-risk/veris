@@ -1,0 +1,112 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint611",
+  "reference": "http://www.statesmanjournal.com/article/20120425/NEWS/304250069/State-hospital-suffers-data-theft",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Potentially",
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 618
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A theft of patient information from the car of Oregon State Hospital\u2019s chief of psychiatry has breached the privacy of current and former patients.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 24,
+        "month": 4
+      }
+    },
+    "f500": "U",
+    "master_id": "osint611",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Oregon State Hospital",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 12000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "OR",
+      "employee_count": "11 to 100",
+      "industry": "621112"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 20,
+      "month": 4
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

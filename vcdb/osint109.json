@@ -1,0 +1,107 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint109",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/red-boat-advisor-20120820.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 4657
+    }
+  },
+  "notes": "lincoln financial securities Corporation is a subsidiary of Lincoln national Corporation",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "it appears Red Boat's server was accessed without authorization between January 2012 and early April 2012. Based upon the facts available, we believe the purpose of the intrusion was to use the virtual server as a jumping off point for attempted intrusions into third-party computer systems.  the virtual server contains the SQL database with TIFF-formatted images of applications for brokerage accounts, life insurance and annuities, and other documents related to the business. The customer data within this images included some or all of the following information: names, addresses, e-mail addresses, Social Security numbers, government issued identification numbers, and financial account information. Records involving approximately 4657 customers were in the database and could've been accessed.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 20,
+        "month": 8
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint109",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Lincoln Financial Securities Corporation",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 11530000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "PA",
+      "employee_count": "1001 to 10000",
+      "industry": "524113"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 31,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

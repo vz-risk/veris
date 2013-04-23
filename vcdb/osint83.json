@@ -1,0 +1,110 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint83",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/federal-network-20130116.pdf ",
+  "attribute": {
+    "integrity": {
+      "variety": [
+        "Software installation"
+      ]
+    },
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "name": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Malware infected computer exposes names and SSNs of employees (current/former) and independent contractors.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 19,
+        "month": 1
+      }
+    },
+    "f500": "N",
+    "master_id": "osint83",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Federal Network Systems LLC",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 86600000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "VA",
+      "employee_count": "1001 to 10000",
+      "industry": "541690"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "month": 12
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Suspected",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

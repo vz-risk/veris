@@ -1,0 +1,107 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint221",
+  "reference": "http://news.softpedia.com/news/Canadian-Video-Games-Plus-Hacked-21-000-Customers-Exposed-247028.shtml ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 21000,
+          "variety": "Credentials"
+        },
+        {
+          "amount": 21000,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 21000
+    }
+  },
+  "notes": "hacker xdev@b4lc4nh4ck ",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Canada-based Video Games Plus (VGP), a major gaming website that commercializes games and console accessories has been breached after the hacker xdev@b4lc4nh4ck managed to bypass their security protocols.  Names, dates of birth, email addresses, phone numbers and encrypted passwords belonging to 21,000 of their users were leaked online. Apparently, no credit card information has been obtained by the hackers. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 17,
+        "month": 1
+      }
+    },
+    "f500": "N",
+    "master_id": "osint221",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Fun"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Video Games Plus",
+      "notes": "",
+      "country": "Canada",
+      "industry": "443142",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 17,
+      "month": 1
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

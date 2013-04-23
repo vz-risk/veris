@@ -1,0 +1,52 @@
+{
+  "incident_id": "hhs_osint00467",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2000,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2000,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00467"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Centro de Ortodoncia",
+      "industry": "621210",
+      "country": "United States",
+      "state": "Pr",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 6,
+      "month": 5
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

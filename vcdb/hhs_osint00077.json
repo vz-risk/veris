@@ -1,0 +1,53 @@
+{
+  "incident_id": "hhs_osint00077",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 28187,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 28187,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00077"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "OHP PHSP, Inc.",
+      "industry": "524114",
+      "country": "United States",
+      "state": "Ny",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013,
+      "day": 17,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2013
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 5
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {}
+}

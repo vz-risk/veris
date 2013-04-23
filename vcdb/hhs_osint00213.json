@@ -1,0 +1,84 @@
+{
+  "incident_id": "hhs_osint00213",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 29143,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 29143,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "master_id": "hhs_osint00213"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "MMM Healthcare, Inc.",
+      "industry": "524114",
+      "employee_count": "101 to 1000",
+      "state": "Pr",
+      "country": "United States"
+    },
+    {
+      "victim_id": "PMC Medicare Choice",
+      "industry": "524114",
+      "country": "United States",
+      "state": "PR",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "month": 3,
+      "day": 8,
+      "year": 2011
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "source_id": "hhs",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

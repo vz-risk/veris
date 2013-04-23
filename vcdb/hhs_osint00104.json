@@ -1,0 +1,87 @@
+{
+  "incident_id": "hhs_osint00104",
+  "attribute": {
+    "integrity": {
+      "variety": [
+        "Software installation"
+      ]
+    },
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1898,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1898,
+      "data_disclosure": "Yes"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00104"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "University of New Mexico Health Sciences Center",
+      "industry": "621999",
+      "country": "United States",
+      "state": "Nm",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 9,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "amount": 2,
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

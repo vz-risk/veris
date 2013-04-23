@@ -1,0 +1,46 @@
+{
+  "incident_id": "hhs_osint00440",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2250,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2250,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00440"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Long Beach Memorial Medical Center",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Ca",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 10,
+      "month": 12
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {}
+}

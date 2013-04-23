@@ -1,0 +1,103 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint554",
+  "reference": "http://www.databreaches.net/?p=24164 ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "The data included details of housing benefits entitlements and other benefits, the name of the bank each tenant used, their rent account number and any supporting people\u2019s transfer details.",
+      "data_disclosure": "Potentially",
+      "data": [
+        {
+          "variety": "Bank"
+        },
+        {
+          "variety": "Classified"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Unknown"
+      ],
+      "data_total": 100
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": " [through Mail]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A mailing error resulted in rent statements being sent out with the first page belonging to one tenant\u2019s account and the second page belonging to a different person.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 4,
+        "month": 5
+      }
+    },
+    "f500": "N",
+    "master_id": "osint554",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Kingston Council",
+      "notes": "",
+      "country": "United Kingdom",
+      "industry": "624190",
+      "employee_count": "1001 to 10000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Mail"
+      }
+    ]
+  }
+}

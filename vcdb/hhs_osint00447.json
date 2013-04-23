@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00447",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 3900,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 3900,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00447"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "State of TN, Bureau of TennCare",
+      "industry": "923120",
+      "country": "United States",
+      "state": "Tn",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 9,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

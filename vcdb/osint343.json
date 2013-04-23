@@ -1,0 +1,121 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Moderate",
+        "variety": "Asset and fraud"
+      }
+    ],
+    "overall_rating": "Painful"
+  },
+  "incident_id": "osint343",
+  "reference": "http://www.cyberwarnews.info/2012/03/04/panama-film-website-hacked-and-accounts-dumped-for-acta/  http://hackmageddon.com/tag/cine-com-pa/",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 1200,
+          "variety": "Credentials"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 1200
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "1200 Usernames and passwords dumped after web site breach.  Purported to be part of #OpMarzoNegro.  No specific hacking details provided in OSINT. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "N",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 4,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint343",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Ideology"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "cine.com.pa",
+      "notes": "",
+      "country": "Panama",
+      "industry": "512",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012,
+      "day": 2,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

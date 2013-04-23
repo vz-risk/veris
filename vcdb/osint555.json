@@ -1,0 +1,109 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint555",
+  "reference": "http://www.databreaches.net/?p=23293  ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "Unknown digital intruders stole personal data such as user names, home addresses, phone numbers and bank account numbers. ",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Bank"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 500
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "DoS"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Unknown digital intruders stole personal data such as user names, home addresses, phone numbers and bank account numbers.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 10,
+        "month": 2
+      }
+    },
+    "f500": "U",
+    "master_id": "osint555",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Koninklijke KPN N.V",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 29000000000
+      },
+      "country": "Netherlands",
+      "industry": "517110",
+      "employee_count": "25001 to 50000",
+      "notes": "Koninklijke KPN, which is also known as Royal KPN, is the leading provider of telecommunications services in the Netherlands, where it has more than 4 million fixed-line phone customers. "
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 27,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Other server"
+      }
+    ]
+  }
+}

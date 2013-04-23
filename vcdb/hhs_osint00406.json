@@ -1,0 +1,112 @@
+{
+  "incident_id": "hhs_osint00406",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 6145,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 6145,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00406"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Michele Del Vicario, MD",
+      "industry": "621111",
+      "country": "United States",
+      "state": "Ca",
+      "employee_count": "11 to 100"
+    },
+    {
+      "victim_id": "Mark D. Lurie, MD",
+      "industry": "621111",
+      "state": "CA",
+      "employee_count": "1 to 10",
+      "country": "United States"
+    },
+    {
+      "victim_id": "L. Douglas Carlson, M.D.",
+      "industry": "621330",
+      "country": "United States",
+      "employee_count": "1 to 10",
+      "state": "CA"
+    },
+    {
+      "victim_id": "David I. Cohen, MD",
+      "industry": "621111",
+      "employee_count": "1 to 10",
+      "state": "CA",
+      "country": "United States"
+    },
+    {
+      "victim_id": "Joseph F. Lopez, MD",
+      "industry": "621111",
+      "country": "United States",
+      "state": "CA",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 22,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 5
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim public area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

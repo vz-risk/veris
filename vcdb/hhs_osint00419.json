@@ -1,0 +1,52 @@
+{
+  "incident_id": "hhs_osint00419",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 942,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 942,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00419"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "University Health Services, University of Massachusetts, Amherst",
+      "industry": "621112",
+      "country": "United States",
+      "state": "Ma",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 29,
+      "month": 9
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

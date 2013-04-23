@@ -1,0 +1,105 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint326",
+  "reference": "http://retractionwatch.wordpress.com/2012/12/11/elsevier-editorial-system-hacked-reviews-faked-11-retractions-follow/ ",
+  "attribute": {
+    "integrity": {
+      "notes": "This was an alteration of intellectual property.",
+      "variety": [
+        "Misrepresentation",
+        "Modified data"
+      ]
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ],
+      "cve": ""
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Retraction Watch has learned that the Elsevier Editorial System (EES) was hacked sometime last month, leading to faked peer reviews and retractions \u2014 although the submitting authors don\u2019t seem to have been at fault. As of now, eleven papers by authors in China, India, Iran, and Turkey have been retracted from three journals.  The reviews by these fake reviewers, not surprisingly, were done incorrectly, and were not up to the journal\u2019s standards of quality. But the authors, Cusano said, were \u201cinnocent victims of this hacking problem,\u201d so the journal retracted the papers, and decided to allow them to resubmit the manuscripts for new peer review. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 11,
+        "month": 12
+      }
+    },
+    "f500": "N",
+    "master_id": "osint326",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Elsevier",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 2370000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "NY",
+      "employee_count": "10001 to 25000",
+      "industry": "511120"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - File"
+      },
+      {
+        "variety": "S - Mail"
+      }
+    ]
+  }
+}

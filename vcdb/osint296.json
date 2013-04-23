@@ -1,0 +1,104 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint296",
+  "reference": "http://chapelboro.com/Hackers-Reportedly-Access-Thousands-Of-UNC-Lineber/15197571 ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 3500,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 3500
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Thousands of people have had their private data publically exposed, after hackers reportedly got into a server at UNC\u2019s Lineberger Cancer Center.  The Chapel Hill News reports that the victims found out shortly after Christmas, when center director Dr. Shelley Earp sent out letters of apology; center employees found out about the breach last spring.  The incident affected about 3,500 individuals, exposing information such as their Social Security and passport numbers. In the letter, Earp told the victims that authorities have no way to know whether the data will be misused. The situation reportedly didn\u2019t involve any patient information, although it did involve a small number of people who were subjects in research projects.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012
+      }
+    },
+    "f500": "N",
+    "master_id": "osint296",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "University of North Carolina Lineberger Cancer Center",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 456700000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "NC",
+      "employee_count": "1001 to 10000",
+      "industry": "622110"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

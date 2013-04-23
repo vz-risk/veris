@@ -1,0 +1,82 @@
+{
+  "incident_id": "hhs_osint00023",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1073,
+          "variety": "Payment"
+        },
+        {
+          "amount": 1073,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1073,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00023"
+  },
+  "actor": {
+    "partner": {
+      "motive": [
+        "NA"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Unintentional"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Trinity Health Corporation Welfare Benefit Plan",
+      "industry": "541611",
+      "country": "United States",
+      "state": "Mi",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 4,
+      "month": 8
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 5
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Tapes"
+      }
+    ]
+  }
+}

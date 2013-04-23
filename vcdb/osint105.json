@@ -1,0 +1,121 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint105",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/primex-20120529.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 55
+    }
+  },
+  "notes": "This is another Impairment Resources incident.  ",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Bypassed controls"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A tape and external drive were stolen from a partner.  Personal identifying and medical data for up to 14,000 workers comp claimants and auto insurance claimant were included after a burglary.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 29,
+        "month": 5
+      }
+    },
+    "f500": "N",
+    "master_id": "osint105",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "United States"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Primex",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 4700000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "NH",
+      "employee_count": "11 to 100",
+      "industry": "524126"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "month": 12
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 3,
+      "month": 5
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "management": true,
+    "assets": [
+      {
+        "variety": "M - Tapes"
+      },
+      {
+        "variety": "M - Disk drive"
+      }
+    ],
+    "hosting": true
+  }
+}

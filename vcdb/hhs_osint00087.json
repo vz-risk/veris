@@ -1,0 +1,86 @@
+{
+  "incident_id": "hhs_osint00087",
+  "attribute": {
+    "integrity": {
+      "variety": [
+        "Unknown"
+      ]
+    },
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 3400,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 3400,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00087"
+  },
+  "actor": {
+    "partner": {
+      "motive": [
+        "NA"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Unintentional"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Blue Cross Blue Shield Association",
+      "industry": "524292",
+      "country": "United States",
+      "state": "Dc",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 22,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      },
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint95",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/labelmaster-20121017.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Payment"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "E-commerce site hacked.  Data exposed includes name, address and CCN.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 17,
+        "month": 10
+      }
+    },
+    "f500": "N",
+    "master_id": "osint95",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "LabelMaster",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 2610000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "IL",
+      "employee_count": "101 to 1000",
+      "industry": "44"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 18,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 12,
+      "month": 9
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

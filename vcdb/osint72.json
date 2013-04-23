@@ -1,0 +1,110 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint72",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/centric-group-20130109.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Payment"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Computer system hacked, data included customer name, credit/debit cards, expiration and CVV.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 9,
+        "month": 1
+      }
+    },
+    "f500": "N",
+    "master_id": "osint72",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Centric Group, LLC",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 750000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "MO",
+      "employee_count": "1001 to 10000",
+      "industry": "424490"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "month": 8
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 13,
+      "month": 12
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

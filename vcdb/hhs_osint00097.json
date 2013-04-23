@@ -1,0 +1,78 @@
+{
+  "incident_id": "hhs_osint00097",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1112,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1112,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00097"
+  },
+  "actor": {
+    "partner": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Inappropriate"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Hamner Square Dental",
+      "industry": "621210",
+      "country": "United States",
+      "state": "Ca",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 27,
+      "month": 7
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Data mishandling"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Flash drive"
+      }
+    ]
+  }
+}

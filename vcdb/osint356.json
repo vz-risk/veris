@@ -1,0 +1,110 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint356",
+  "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/data-on-600-patients-stolen-from-temple-community-hospital-in-los-angeles.html  ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 600,
+          "variety": "Medical"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 600
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Temple Community Hospital in Los Angeles has warned 600 patients that their personal and medical information was breached when a computer was stolen from a locked office in July, according to a Los Angeles Times report.  The computer contained CT scans of patients, patient names, the reason for the scans and patients' hospital account numbers. No financial information, Social Security numbers or personal contact information was part of the stolen data, according to the report.  The hospital did not report as to whether the patient data has been accessed on the computer. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 4,
+        "month": 9
+      }
+    },
+    "f500": "N",
+    "master_id": "osint356",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Temple Community Hospital",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 27900000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "101 to 1000",
+      "industry": "622110"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 31,
+      "month": 7
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

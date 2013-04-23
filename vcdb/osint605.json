@@ -1,0 +1,102 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint605",
+  "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Medical"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 9565
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": "Unknown",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Lost device contained data on patients. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 10,
+        "month": 5
+      }
+    },
+    "f500": "N",
+    "master_id": "osint605",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Neighborhood Christian Clinic",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 1000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "AZ",
+      "employee_count": "1 to 10",
+      "industry": "621999"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

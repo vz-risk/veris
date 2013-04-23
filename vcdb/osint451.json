@@ -1,0 +1,126 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint451",
+  "reference": "http://www.goldcoast.com.au/article/2012/12/10/443366_gold-coast-news.html ",
+  "attribute": {
+    "integrity": {
+      "notes": "Encrypted and held for ransom.",
+      "variety": [
+        "Modified data"
+      ]
+    },
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    },
+    "availability": {
+      "duration": {
+        "unit": "Never"
+      },
+      "notes": "Encrypted and held for ransom.",
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ],
+      "cve": ""
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A GOLD Coast medical centre which had its patient records hacked by international computer hackers will stay open.  But the owners of the Miami Family Medical Centre fear they may have to pay $4000 to the extortionists, who hacked into a server and encrypted the medical records.  \"We're trying to work out how to pay the hackers or find someone to decrypt the information,\" the centre's co-owner David Wood told ABC Online on today.  He said the information hadn't been stolen and the centre would continue to operate, but admitted it would be very difficult without patient records.  It is the latest in a string of 11 similar medical extortion cases that have taken place across the state this year.  Dr Munira Butt said the system was hit over a weekend, with the hackers then sending emails from an untraceable overseas account demanding $4000 if the business wanted to get the records back.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 10,
+        "month": 12
+      }
+    },
+    "f500": "N",
+    "master_id": "osint451",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Gold Coast Medical Centre",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 1300000
+      },
+      "country": "Australia",
+      "industry": "621111",
+      "employee_count": "11 to 100",
+      "notes": ""
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 9,
+      "month": 12
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

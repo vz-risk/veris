@@ -1,0 +1,123 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint502",
+  "reference": "http://www.cyberwarnews.info/2012/06/15/directv-hacked-data-and-accounts-leaked-by-teamintricate/",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 300,
+          "variety": "Credentials"
+        },
+        {
+          "variety": "System"
+        }
+      ],
+      "state": [
+        "Unknown"
+      ],
+      "data_total": 300
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "@TeamIntricate has announced they have hacked DIRECTV http://www.usdirect.com/ and as a result they have posted a leak of data to pastebin.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": ""
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 15,
+        "month": 6
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint502",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Fun"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "DirectTV",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 29000000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "25001 to 50000",
+      "industry": "515210"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 15,
+      "month": 6
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

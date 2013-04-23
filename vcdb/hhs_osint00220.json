@@ -1,0 +1,84 @@
+{
+  "incident_id": "hhs_osint00220",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2603,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2603,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00220"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Stanford University Medical Center",
+      "industry": "624120",
+      "country": "United States",
+      "state": "Ca",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 13,
+      "month": 8
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Weeks",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint645",
+  "reference": "http://www.zdnet.com/up-to-1-million-scribd-user-passwords-may-have-been-compromised-7000013595/, http://www.nbcnews.com/technology/technolog/scribd-hack-exposes-thousands-users-1B9239618",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Potentially",
+      "data": [
+        {
+          "amount": 1000000,
+          "variety": "Credentials"
+        }
+      ],
+      "state": [
+        "Stored encrypted"
+      ],
+      "data_total": 1000000
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "\"Earlier this week, Scribd's operations team discovered and blocked suspicious activity on Scribd's network that appears to have been a deliberate attempt to access the email addresses and passwords of registered Scribd users,\" Scribd said on its support page on Wednesday.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 5,
+        "month": 4
+      }
+    },
+    "f500": "N",
+    "master_id": "osint645",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Scribd",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 1100000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "11 to 100",
+      "industry": "519130"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013
+    },
+    "investigation": {
+      "year": 2013,
+      "day": 1,
+      "month": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint157",
+  "reference": "http://www.dailymail.co.uk/news/article-2086866/Eight-officers-resign-illegal-searches-dozens-people-using-police-files.html",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Eight police staff have lost their jobs after illegally accessing the confidential records of dozens of people on the Police National Computer.  Of the eight, one police officer and one community support officer (PCSO) are facing criminal charges after an investigation by Essex Police found them guilty of gross misconduct. Another PCSO has been cautioned.  All eight are alleged to have accessed the personal records of members of the public and passed on the information to people outside the force.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 14,
+        "month": 1
+      }
+    },
+    "f500": "N",
+    "master_id": "osint157",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Inappropriate"
+      ],
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Essex Police Department",
+      "notes": "",
+      "country": "United Kingdom",
+      "industry": "92219",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Other",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

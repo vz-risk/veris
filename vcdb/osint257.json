@@ -1,0 +1,116 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint257",
+  "reference": "http://m.jacksonville.com/news/crime/2012-09-13/story/30-plus-laptop-computers-stolen-jacksonvilles-wounded-warrior-project-hq ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Bypassed controls"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "At least 33 laptop computers and iPads were stolen in late July from the Wounded Warrior Project\u2019s third-floor office at 4899 Belfort Road in Jacksonville.  They may contain personal information on \u201csome, but not all of our former employees,\u201d according to a letter sent out Sept. 7 by Wounded Warrior Executive Director Steve Nardizzi. So he has offered victims free credit monitoring in case someone hacks into them.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 13,
+        "month": 9
+      }
+    },
+    "f500": "N",
+    "master_id": "osint257",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "United States"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Wounded Warrior Project",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 74060000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "FL",
+      "employee_count": "1 to 10",
+      "industry": "813410"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 25,
+      "month": 7
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 25,
+      "month": 7
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Other",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      },
+      {
+        "variety": "U - Tablet"
+      }
+    ]
+  }
+}

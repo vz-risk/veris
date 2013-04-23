@@ -1,0 +1,103 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint610",
+  "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        },
+        {
+          "variety": "Internal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Unknown"
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Thousands of workers' pay details were sent to others due to printing error. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 31,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint610",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Opus Trust Marketing",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 25000000
+      },
+      "country": "United Kingdom",
+      "industry": "541512",
+      "employee_count": "101 to 1000",
+      "notes": ""
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Other"
+      }
+    ]
+  }
+}

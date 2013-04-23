@@ -1,0 +1,101 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint429",
+  "reference": "http://www.dataprivacymonitor.com/identity-theft/its-raining-pii-in-new-york/ ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "On November 25, 2012, the front page of the New York Post blasted the headline, \u201cDrop Secret. Shred Alert! Covert cop files used as parade confetti.\u201d The Post reported that shredded files appearing to contain material from Long Island\u2019s Nassau County Police Department were dropped during this year\u2019s Thanksgiving Day parade. The confetti reportedly contains the names and social security numbers of detectives as well as other confidential information. An anonymous law enforcement source indicated that the documents were to have been shredded and then burned. The Police Department is investigating and has vowed to conduct a review of its procedures \u201cfor the disposing of sensitive documents.\u201d Although most data breaches don\u2019t result in PII being strewn throughout the streets of New York, they can and often do become front page news and can have serious legal, regulatory, financial and reputational consequences.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 26,
+        "month": 11
+      }
+    },
+    "f500": "N",
+    "master_id": "osint429",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "New York Police Department (NYPD)",
+      "country": "United States",
+      "notes": "",
+      "state": "NY",
+      "employee_count": "1001 to 10000",
+      "industry": "9221"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 25,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 25,
+      "month": 11
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

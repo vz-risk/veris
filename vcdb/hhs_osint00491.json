@@ -1,0 +1,52 @@
+{
+  "incident_id": "hhs_osint00491",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2700,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2700,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00491"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Navos",
+      "industry": "621420",
+      "country": "United States",
+      "state": "Wa",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 15,
+      "month": 3
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

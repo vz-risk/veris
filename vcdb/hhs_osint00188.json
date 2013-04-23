@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00188",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 344579,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 344579,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00188"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Affinity Health Plan, Inc.",
+      "industry": "923130",
+      "country": "United States",
+      "state": "Ny",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 27,
+      "month": 4
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 6
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

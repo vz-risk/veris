@@ -1,0 +1,108 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint81",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/forte-20120314.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "The source doc is from the partner's perspective.  The partner is Forte Interactive, Inc.",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misconfiguration"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Information copied from their web portal while performing a system upgrade became publicly accessible through the internet and was indexed by Google.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 14,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint81",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "partner": {
+      "motive": [
+        "NA"
+      ],
+      "country": [
+        "United States"
+      ],
+      "industry": "51919",
+      "role": [
+        "Unintentional"
+      ],
+      "notes": ""
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Children's SErvices Council of Palm Beach County",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 210000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "FL",
+      "employee_count": "1 to 10",
+      "industry": "813319"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 30,
+      "month": 1
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "management": true,
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ],
+    "hosting": true
+  }
+}

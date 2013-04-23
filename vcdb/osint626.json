@@ -1,0 +1,129 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint626",
+  "reference": "http://news.softpedia.com/news/Online-Storage-and-File-Hosting-Site-FileDEN-Hacked-Users-Exposed-246059.shtml  http://news.softpedia.com/news/FileDen-Works-on-Securing-User-Data-After-Breach-246520.shtml",
+  "attribute": {
+    "integrity": {
+      "notes": "Use of web application to manipulate database (SQLi).",
+      "variety": [
+        "Misappropriation"
+      ]
+    },
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 4500,
+          "variety": "Credentials"
+        },
+        {
+          "amount": 4500,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 4500
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "SQLi inferred based on TTP of hacker who claimed responsibility and posted the information online.",
+      "vector": [],
+      "variety": [
+        "SQLi"
+      ],
+      "cve": ""
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Database compromise leads to public posting of 4500 usernames, passwords, and e-mail addresses. Passwords were hashed, but not salted and many were cracked.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 12,
+        "month": 1
+      }
+    },
+    "f500": "U",
+    "master_id": "osint626",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Fun"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "notes": "xdev@b4lc4nh4ck",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "FileDen",
+      "country": "United States",
+      "notes": "",
+      "state": "GA",
+      "employee_count": "Unknown",
+      "industry": "518"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012,
+      "day": 12,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 12,
+      "month": 1
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Hours"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

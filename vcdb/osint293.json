@@ -1,0 +1,145 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint293",
+  "reference": "http://bc.ctvnews.ca/private-info-of-4-600-b-c-students-leaked-1.782799 (20130215)",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 4600,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 4600
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Company accidentally emails spreadsheet with non-public data to large number of customers",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Student"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint293",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Certified General Accountants Association of B.C.",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 32000000
+      },
+      "country": "Canada",
+      "notes": "",
+      "state": "BC",
+      "employee_count": "101 to 1000",
+      "industry": "813920"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "year": 2013,
+      "day": 13,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2013
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

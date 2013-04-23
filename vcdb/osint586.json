@@ -1,0 +1,137 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint586",
+  "reference": "http://www.abajournal.com/news/article/suit_claims_ex-partner_installed_software_allowing_continued_access_to_law_/",
+  "attribute": {
+    "integrity": {
+      "notes": "",
+      "variety": [
+        "Software installation"
+      ]
+    },
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Internal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse",
+        "Data mishandling"
+      ]
+    },
+    "malware": {
+      "variety": [
+        "Other"
+      ],
+      "vector": [
+        "Direct install"
+      ],
+      "name": "",
+      "cve": ""
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Lawyer installed Dropbox on corporate devices and accessed files after moving to another firm.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Other"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 13,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint586",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Espionage"
+      ],
+      "notes": "Partner in law firm. Installed Dropbox to allow access to files in cloud.",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Executive"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Elliott Greenleaf & Siedzikowski",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 7500000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "PA",
+      "employee_count": "11 to 100",
+      "industry": "541110"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Minutes"
+    },
+    "incident": {
+      "year": 2012,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012,
+      "month": 2
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Days"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Other server"
+      },
+      {
+        "variety": "U - Other"
+      }
+    ]
+  }
+}

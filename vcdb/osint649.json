@@ -1,0 +1,114 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint649",
+  "reference": "http://news.techworld.com/security/3424445/anonymous-posts-personal-data-of-4000-bankers-online/",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 4000,
+          "variety": "Credentials"
+        },
+        {
+          "amount": 4000,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 4000
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "OpLastResort",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Personal information on some 4,000 people in the banking industry, including bank officers, was posted online Sunday by the hacker collective Anonymous.  The list was initially posted to the website for the Alabama Criminal Justice Information Center (ACJIC), then apparently taken down by that site's operators. However, the list was also posted elsewhere online, and remains available through Google's web cache. It contains contact information on people with a range of job titles, from cashier to C-level officers to bank presidents. Phone calls placed to several of the people on the list indicates that the tally is current and accurate.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 5,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint649",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Ideology"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Federal Reserve Bank",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 487860000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "DC",
+      "employee_count": "10001 to 25000",
+      "industry": "521110"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013,
+      "day": 5,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2013,
+      "day": 5,
+      "month": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "incident_id": "hhs_osint00422",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1562,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1562,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00422"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Jackson Health System",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Fl",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2009,
+      "day": 1,
+      "month": 10
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {}
+}

@@ -1,0 +1,105 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint536",
+  "reference": "http://www.privacyrights.org/data-breach",
+  "attribute": {
+    "confidentiality": {
+      "notes": "Sensitive health information related to a health care premium plans. ",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Unknown"
+        }
+      ],
+      "state": [
+        "Unknown"
+      ],
+      "data_total": 1134
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "An email or emails with sensitive health information related to a health care premium plan was mistakenly emailed to or accessed by unauthorized people. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 17,
+        "month": 7
+      }
+    },
+    "f500": "N",
+    "master_id": "osint536",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "System admin"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Hogan Services Inc. Health Care Premium Plan",
+      "country": "United States",
+      "notes": "",
+      "state": "MO",
+      "employee_count": "Unknown",
+      "industry": "524114"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 30,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 8,
+      "month": 6
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Other"
+      }
+    ]
+  }
+}

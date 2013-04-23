@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00424",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2464,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2464,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00424"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Dallas County Hospital District dba Parkland Health & Hospital System",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Tx",
+      "employee_count": "1001 to 10000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 8,
+      "month": 12
+    },
+    "investigation": {
+      "year": 2011
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

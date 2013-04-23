@@ -1,0 +1,107 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint84",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/great-river-20121001.pdf ",
+  "attribute": {
+    "integrity": {
+      "variety": [
+        "Software installation"
+      ]
+    },
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Payment"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "name": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Payment application systems infected by malware.  Potential compromise of CCN data.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 1,
+        "month": 10
+      }
+    },
+    "f500": "N",
+    "master_id": "osint84",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Great River Entertainment",
+      "country": "United States",
+      "notes": "",
+      "state": "IA",
+      "employee_count": "Unknown",
+      "industry": "7213"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 30,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Payment switch"
+      }
+    ]
+  }
+}

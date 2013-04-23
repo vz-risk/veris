@@ -1,0 +1,52 @@
+{
+  "incident_id": "hhs_osint00486",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1797,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1797,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00486"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "VA Gulf Coast Veterans Health Care System",
+      "industry": "923140",
+      "country": "United States",
+      "state": "Ms",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 21,
+      "month": 7
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

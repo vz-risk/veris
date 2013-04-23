@@ -1,0 +1,103 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint583",
+  "reference": "http://www.databreaches.net/?p=24425; http://www.iol.co.za/scitech/technology/security/user-data-stolen-off-publisher-s-website-1.1312834#.UUdwmzeRfp0 ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "Data affected includes passwords and personal data.",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Classified"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 24000
+    }
+  },
+  "notes": "The publishing house that issues Donald Duck and Mickey Mouse comic books in Germany",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "The publishing house that issues Donald Duck and Mickey Mouse comic books in Germany alerted fans on Tuesday that its website had been hacked and data on thousands of users stolen. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 6,
+        "month": 6
+      }
+    },
+    "f500": "N",
+    "master_id": "osint583",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Lustigen Taschenbuch (LTB), or Funny Pocketbooks",
+      "notes": "",
+      "country": "Germany",
+      "industry": "511199",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

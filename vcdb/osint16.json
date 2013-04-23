@@ -1,0 +1,126 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint16",
+  "reference": "http://thescoopblog.dallasnews.com/2012/03/stolen-ipad-leads-to-worries-t.html/; http://www.scribd.com/doc/86119184/BHVH-480-Breech-Legal-Letters-A",
+  "attribute": {
+    "confidentiality": {
+      "notes": "Names, addresses and test results, such as blood pressure, glucose and cholesterol levels. Te stolen device did not containany social security numbers or other \ue000nancial related information.",
+      "data_disclosure": "Potentially",
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 1972
+    }
+  },
+  "notes": "The incident occurred at Baylor Heart and Vascular Center, LLP; an affiliate of Baylor Health Care System",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Theft of an employee's iPad that contained medical information from the employee's vehicle. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": ""
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 20,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint16",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Baylor Health Care System",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 4
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "TX",
+      "employee_count": "10001 to 25000",
+      "industry": "622110"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012,
+      "day": 26,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 9,
+      "month": 3
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Months"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Other"
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint314",
+  "reference": "http://www.massdataprivacylaw.com/data-breach/ ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "The records included names, dates of birth, addresses and license numbers. The types of paperwork stolen do not include the social security numbers of Massachusetts residents",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 600
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Partner vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Two masked men, operating a stolen jeep, pulled up next to a courier's white van that was parked outside a Massachusetts Registry of Motor Vehicles location, jumped out of the jeep and stole five bags from the courier's van.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 9,
+        "month": 4
+      }
+    },
+    "f500": "N",
+    "master_id": "osint314",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Massachusetts Registry of Motor Vehicles",
+      "country": "United States",
+      "notes": "",
+      "state": "MA",
+      "employee_count": "Unknown",
+      "industry": "926120"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 5,
+      "month": 4
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

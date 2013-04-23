@@ -1,0 +1,109 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint464",
+  "reference": "http://www.kob.com/article/stories/S2861824.shtml?cat=500 ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": " Some patient records may be in jeopardy, thanks to a lost or stolen laptop computer from ABQ Health Partners, the state's largest independent doctor's group.  ABQ Health Partners sent out a letter telling patients their personal information is at risk of falling into the wrong hands.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 10,
+        "month": 12
+      }
+    },
+    "f500": "N",
+    "master_id": "osint464",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "ABQ Health Partners",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 78700000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "NM",
+      "employee_count": "1001 to 10000",
+      "industry": "621111"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

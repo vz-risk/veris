@@ -1,0 +1,78 @@
+{
+  "incident_id": "hhs_osint00012",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2000,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2000,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00012"
+  },
+  "actor": {
+    "partner": {
+      "motive": [
+        "NA"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Unintentional"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Open MRI of Chicago",
+      "industry": "621512",
+      "country": "United States",
+      "state": "Il ",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 10,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 5
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "incident_id": "hhs_osint00490",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 3897,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 3897,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00490"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Maryville Academy",
+      "industry": "623990",
+      "country": "United States",
+      "state": "Il",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 25,
+      "month": 1
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Flash drive"
+      }
+    ]
+  }
+}

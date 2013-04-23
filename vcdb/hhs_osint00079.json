@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00079",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 660,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 660,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00079"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Beatrice Community Hospital and Health Center",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Ne",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 29,
+      "month": 4
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

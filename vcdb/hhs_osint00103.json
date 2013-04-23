@@ -1,0 +1,92 @@
+{
+  "incident_id": "hhs_osint00103",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 735,
+          "variety": "Payment"
+        },
+        {
+          "amount": 735,
+          "variety": "Medical"
+        },
+        {
+          "amount": 735,
+          "variety": "Bank"
+        }
+      ],
+      "data_total": 735,
+      "data_disclosure": "Yes"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00103"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "UnitedHealth Group--SACE",
+      "industry": "524114",
+      "country": "United States",
+      "state": "Mn",
+      "employee_count": "Over 100000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 4,
+      "month": 8
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 6
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

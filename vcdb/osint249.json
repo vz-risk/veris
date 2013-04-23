@@ -1,0 +1,105 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint249",
+  "reference": "http://www.phiprivacy.net/?p=9907 ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "The information contained on the laptop may have included medical record number, date of visit and general reason for visit. No Social Security numbers, dates of birth, credit card, debit card or bank account numbers were exposed.",
+      "data_disclosure": "Potentially",
+      "data": [
+        {
+          "variety": "Internal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 4490
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A password-protected laptop was stolen that contained personal patient information. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 21,
+        "month": 6
+      }
+    },
+    "f500": "N",
+    "master_id": "osint249",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "University of Kentucky HealthCare",
+      "country": "United States",
+      "notes": "",
+      "state": "KY",
+      "employee_count": "Unknown",
+      "industry": "622"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 1,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

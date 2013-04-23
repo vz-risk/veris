@@ -1,0 +1,100 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint414",
+  "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "Names, addresses, phone numbers, academic degrees, title or position, and dates of birth dumped on the Internet",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 19
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Names, addresses, phone numbers, academic degrees, title or position and dates of birth dumped on the Internet.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 29,
+        "month": 5
+      }
+    },
+    "f500": "N",
+    "master_id": "osint414",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Nigerian Society of Chemical Engineers",
+      "notes": "The vision of NSChE is to be the center of excellence for the Chemical Engineering profession in Africa and the prime mover of industrialization in Nigeria",
+      "country": "Nigeria",
+      "industry": "325180",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

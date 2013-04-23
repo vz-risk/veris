@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00189",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2900,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2900,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00189"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Rite Aid Corporation",
+      "industry": "446110",
+      "country": "United States",
+      "state": "Pa",
+      "employee_count": "50001 to 100000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 10,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

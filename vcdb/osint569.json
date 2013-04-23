@@ -1,0 +1,100 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint569",
+  "reference": "http://www.cyberwarnews.info/2012/02/19/la-business-connect-hacked-exposed-data-leaked-and-taken-offline-by-anonymous/ ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Classified"
+        }
+      ],
+      "notes": "They found that the database connected to an adult website called,  adultstaffing.com/default.cfm.  ",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Anonymous  hacked a Los Angeles county based company and  as a result they have exposed a link to a adult site,  adultstaffing.com/default.cfm.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Other"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 19,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint569",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Fun"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "LABusinessConnect.com",
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "Unknown",
+      "industry": "51919"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

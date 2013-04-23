@@ -1,0 +1,102 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint545",
+  "reference": "http://news.softpedia.com/news/International-Police-Association-Australia-Hacked-by-S3rver-exe-259635.shtml; http://www.vestabyjgs.com/?p=782 ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        },
+        {
+          "variety": "Internal"
+        }
+      ],
+      "notes": "The information taken includes the site's database structure along with names, usernames, email addresses and password hashes. ",
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Backdoor or C2"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A hacker known as S3rver.exe managed to breach the official website of the International Police Association of Australia (ipa-australiapolice.com.au), defacing the Houses domain.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 20,
+        "month": 3
+      }
+    },
+    "f500": "U",
+    "master_id": "osint545",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Grudge"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "International Police Association of Australia",
+      "notes": "",
+      "country": "Australia",
+      "industry": "813990",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

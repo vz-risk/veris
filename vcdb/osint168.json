@@ -1,0 +1,120 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      }
+    ],
+    "overall_rating": "Distracting"
+  },
+  "incident_id": "osint168",
+  "reference": "http://www.alertboot.com/blog/blogs/endpoint_security/archive/2012/06/05/laptop-encryption-software-stolen-laptop-breaches-va-information-824-affected.aspx; http://chronicle.augusta.com/latest-news/2012-06-01/stolen-laptop-contained-veteran-information-va-says February 12, 2013",
+  "attribute": {
+    "confidentiality": {
+      "notes": "The information contained on the laptop contained names, the SSN's last four digits, discharge dates, and medical providers' names.",
+      "data_disclosure": "Potentially",
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        },
+        {
+          "variety": "Internal"
+        }
+      ],
+      "state": [
+        "Stored encrypted"
+      ],
+      "data_total": 824
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Physician's personal laptop was stolen that contains patient and medical providers' names. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012
+      }
+    },
+    "f500": "N",
+    "master_id": "osint168",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Charlie Norwood VA Medical Center",
+      "country": "United States",
+      "notes": "",
+      "state": "GA",
+      "employee_count": "101 to 1000",
+      "industry": "923140"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 30,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 27,
+      "month": 7
+    },
+    "discovery": {
+      "unit": "Months"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

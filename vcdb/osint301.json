@@ -1,0 +1,111 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint301",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/workers-united-20121130.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Bypassed controls"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "on October 25, 2012, workers United was informed by an independent contractor that a hard drive containing certain retiree personal information had been stolen from the contractor's office. The theft is believed to have occurred: October 13 or 14 2012. The hard drive included a database containing personal information on some former workers United members, including but not limited to their first name, last name and Social Security number.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 30,
+        "month": 11
+      }
+    },
+    "f500": "N",
+    "master_id": "osint301",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "United States"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Workers United",
+      "country": "United States",
+      "notes": "",
+      "state": "NY",
+      "employee_count": "Unknown",
+      "industry": "813930"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 14,
+      "month": 10
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 25,
+      "month": 10
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "management": true,
+    "assets": [
+      {
+        "variety": "M - Disk drive"
+      }
+    ],
+    "hosting": true
+  }
+}

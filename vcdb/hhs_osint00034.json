@@ -1,0 +1,91 @@
+{
+  "incident_id": "hhs_osint00034",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1435,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1435,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00034"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Washington County EMS",
+      "industry": "000000",
+      "employee_count": "Unknown",
+      "state": "Tx",
+      "country": "United States"
+    },
+    {
+      "victim_id": "City of Seguin - Fire/EMS Department",
+      "industry": "922",
+      "country": "United States",
+      "state": "TX",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "month": 1,
+      "day": 17,
+      "year": 2013
+    },
+    "investigation": {
+      "year": 2013
+    },
+    "discovery": {
+      "value": 8,
+      "unit": "Months"
+    }
+  },
+  "source_id": "hhs",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint617",
+  "reference": "http://www.ehackingnews.com/2012/05/stanford-database-breached-by-indian.html ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored encrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        },
+        {
+          "variety": "Internal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Indian Hackers Harsha Vardhan Boppana and Codie Root claimed that they hacked into Stanford university website. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 11,
+        "month": 5
+      }
+    },
+    "f500": "N",
+    "master_id": "osint617",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Stanford University",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 7000000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "Unknown",
+      "industry": "611310"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 11,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

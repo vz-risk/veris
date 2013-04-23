@@ -1,0 +1,121 @@
+{
+  "impact": {
+    "overall_rating": "Insignificant"
+  },
+  "incident_id": "osint625",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/fidelity-20120320.pdf",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 1,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Unknown"
+      ],
+      "data_total": 1
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": "Incorrect number provided to customer resulting in misdelivery.",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Company provided incorrect fax number to customer resulting in customer sending fax containing PII to incorrect number.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "N",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 19,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint625",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "notes": "",
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Fidelity Investments",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 12000000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "MA",
+      "employee_count": "25001 to 50000",
+      "industry": "525910"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "year": 2012,
+      "day": 28,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 28,
+      "month": 2
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "Weeks"
+    },
+    "discovery": {
+      "unit": "Days"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Other",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "incident_id": "hhs_osint00058",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1700,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1700,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00058"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "role": [
+        "Inappropriate"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    },
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Catholic Social Services",
+      "industry": "813410",
+      "country": "United States",
+      "state": "Ak",
+      "employee_count": "101 to 1000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 1,
+      "month": 2
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Data mishandling"
+      ]
+    },
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "amount": 1,
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

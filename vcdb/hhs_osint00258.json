@@ -1,0 +1,84 @@
+{
+  "incident_id": "hhs_osint00258",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 653,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 653,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00258"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Oconee Physician Practices",
+      "industry": "621111",
+      "country": "United States",
+      "state": "Sc",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 27,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Weeks",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

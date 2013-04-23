@@ -1,0 +1,84 @@
+{
+  "incident_id": "hhs_osint00326",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 10480,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 10480,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00326"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Lee Miller Rehab Associates",
+      "industry": "621111",
+      "country": "United States",
+      "state": "Md",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013,
+      "day": 7,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2013
+    },
+    "discovery": {
+      "unit": "Years",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

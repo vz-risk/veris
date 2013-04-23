@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00063",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 552,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 552,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00063"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "1st Response Medical Transport Corp.",
+      "industry": "62191",
+      "country": "United States",
+      "state": "Md",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013,
+      "day": 7,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2013
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 8
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

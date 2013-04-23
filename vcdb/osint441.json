@@ -1,0 +1,107 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint441",
+  "reference": "http://www.databreachtoday.com/virus-causes-nissan-data-breach-a-4698; http://nissannews.com/en-US/nissan/usa/releases/statement-nissan-is-taking-actions-to-protect-and-inform-employees-and-customers-following-an-intrusion-into-the-company-s-global-network-systems?la=1&download_url=%2Fen-US%2Fnissan%2Fusa%2Freleases%2Fdb7532f4-1e6e-4b5c-bc51-54f07b4dc502%2Fdownload%2F825faf56-0ccf-4f70-8210-394656dadd32 ",
+  "attribute": {
+    "integrity": {
+      "variety": [
+        "Software installation"
+      ]
+    },
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "The malware placed allowed user IDs and hashed passwords to be transmitted.  The user IDs were among employees, contractors and suppliers worldwide.",
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "action": {
+    "malware": {
+      "vector": [
+        "Direct install"
+      ],
+      "name": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Malware placed on Nissan Motor Co.'s network allowed user IDs and hashed passwords to be transmitted.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 23,
+        "month": 4
+      }
+    },
+    "f500": "N",
+    "master_id": "osint441",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Nissan Motor Co.",
+      "country": "United States",
+      "notes": "",
+      "state": "TN",
+      "employee_count": "Unknown",
+      "industry": "441110"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 13,
+      "month": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

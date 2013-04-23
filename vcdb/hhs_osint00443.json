@@ -1,0 +1,53 @@
+{
+  "incident_id": "hhs_osint00443",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 7121,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 7121,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00443"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "University of Arkansas for Medical Sciences",
+      "industry": "611310",
+      "country": "United States",
+      "state": "Ar",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 10,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 3
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {}
+}

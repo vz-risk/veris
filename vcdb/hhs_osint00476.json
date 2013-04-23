@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00476",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 638,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 638,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00476"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "First Step Counseling, Inc.",
+      "industry": "624190",
+      "country": "United States",
+      "state": "Nj",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 16,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Years",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

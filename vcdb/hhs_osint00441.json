@@ -1,0 +1,46 @@
+{
+  "incident_id": "hhs_osint00441",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 935,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 935,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00441"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Union Security Insurance Company",
+      "industry": "524113",
+      "country": "United States",
+      "state": "Mo",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 18,
+      "month": 2
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {}
+}

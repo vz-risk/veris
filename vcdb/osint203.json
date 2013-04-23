@@ -1,0 +1,144 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint203",
+  "reference": "http://pastebin.com/qnKiBJNj (20130212) http://www.ehackingnews.com/2012/03/460-productions-database-leaked-by.html (20130212)",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 216,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 216
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Hackers breached a website and posted non-public data.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 8,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint203",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Fun"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "460 Productions",
+      "country": "United States",
+      "notes": "",
+      "state": "VA",
+      "employee_count": "Unknown",
+      "industry": "512"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

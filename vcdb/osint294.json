@@ -1,0 +1,154 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint294",
+  "reference": "http://www.huffingtonpost.com/2012/03/09/british-pregnancy-advisory-service-hack_n_1334570.html (20130215) http://www.telegraph.co.uk/news/uknews/crime/9132654/BPAS-Hacker-held-over-illegal-breach-of-abortion-website.html (20130215)",
+  "attribute": {
+    "confidentiality": {
+      "notes": "Data subject are persons requesting more information.",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 9000,
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 9000
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ],
+      "cve": ""
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Activist hacker breaches website and steals personal information but is arrested before being able to publish the data",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "N",
+        "data_subject": "Other"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 9,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint294",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Ideology"
+      ],
+      "country": [
+        "United Kingdom"
+      ],
+      "notes": "Actor claimed to be allied with Anonymous but it is not clear that Anonymous is claiming him or was responsible for this attack.",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "British Pregnancy Advisory Service",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 42200000
+      },
+      "country": "United Kingdom",
+      "industry": "813211",
+      "employee_count": "101 to 1000",
+      "notes": ""
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012,
+      "day": 8,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 8,
+      "month": 3
+    },
+    "compromise": {
+      "unit": "Hours"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

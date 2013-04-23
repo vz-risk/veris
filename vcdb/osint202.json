@@ -1,0 +1,115 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint202",
+  "reference": "http://www.phiprivacy.net/?p=9779",
+  "attribute": {
+    "confidentiality": {
+      "notes": "The USB memory chip contained information, including names, home addresses, telephone numbers, e-mail addresses, ID numbers, dates of birth, driver\u2019s license numbers, social security numbers, dental information and dental insurance information of some of our patients.",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Classified"
+        },
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 1112
+    }
+  },
+  "notes": "The patients that were affected were patients at River Arch Dental and Hammer Square Dental.  ",
+  "action": {
+    "error": {
+      "notes": " [through Mail]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "While upgrading to a new imaging and management software system a violation of the policies and procedures in exporting the data occurred.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 16,
+        "month": 7
+      }
+    },
+    "f500": "N",
+    "master_id": "osint202",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Patterson Dental",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 140000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "1 to 10",
+      "industry": "423450"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 10,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 14,
+      "month": 5
+    },
+    "discovery": {
+      "unit": "Days"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Other",
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Flash drive"
+      }
+    ]
+  }
+}

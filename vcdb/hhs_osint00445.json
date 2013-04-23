@@ -1,0 +1,53 @@
+{
+  "incident_id": "hhs_osint00445",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1961,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 1961,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00445"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "Duke University Health System",
+      "industry": "622110",
+      "country": "United States",
+      "state": "Nc",
+      "employee_count": "10001 to 25000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 3,
+      "month": 7
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "discovery": {
+      "unit": "Years",
+      "value": 9
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {}
+}

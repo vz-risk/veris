@@ -1,0 +1,116 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint384",
+  "reference": "http://www.gamepolitics.com/2012/01/14/coveritlive-warns-users-possible-security-breach#.USPaFeip1Tg",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "variety": "Credentials"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "\"CoveritLive recently discovered that certain proprietary data files were accessed without authorization starting on or about January 7, 2012. We have not yet determined if, or to what extent, CoveritLive account information (i.e., usernames, email addresses and/or passwords) was accessed. We do know, however, that no financial account information has been compromised.\"",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 13,
+        "month": 1
+      }
+    },
+    "f500": "N",
+    "master_id": "osint384",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "CoveritLive",
+      "notes": "",
+      "country": "Canada",
+      "industry": "518",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012,
+      "day": 7,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

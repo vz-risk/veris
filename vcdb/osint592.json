@@ -1,0 +1,106 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint592",
+  "reference": "http://www.latimes.com/business/technology/la-fi-tn-microsoft-hack-azure-20130222,0,6681241.story; http://www.news.com.au/technology/microsoft-xbox-azure-services-taken-offline/story-e6frfro0-1226584080719; http://readwrite.com/2013/02/22/microsofts-rotten-friday-hack-revealed-as-azure-halo-go-down; http://www.thehacknews.org/2013/02/microsofts-azure-service-hit-by-expired.html",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "variety": "Internal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "DoS"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "MICROSOFT online services are going offline around the world, affecting Xbox Live and Windows Azure users. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Other"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 22,
+        "month": 2
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint592",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Microsoft",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 235000000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "WA",
+      "employee_count": "50001 to 100000",
+      "industry": "511210"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013,
+      "day": 22,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2013
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "N - Other"
+      }
+    ]
+  }
+}

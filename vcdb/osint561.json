@@ -1,0 +1,118 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint561",
+  "reference": "http://www.cyberwarnews.info/2012/02/09/economic-development-association-scotland-hacked-and-data-leaked-by-epoch/",
+  "attribute": {
+    "integrity": {
+      "variety": [
+        "Misappropriation"
+      ]
+    },
+    "confidentiality": {
+      "notes": "Usernames in clear text, passwords are encrypted.",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 647,
+          "variety": "Credentials"
+        }
+      ],
+      "state": [
+        "Stored encrypted"
+      ],
+      "data_total": 647
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Hacker posts 647 usernames and encrypted passwords to pastebin.com. Method used to access information not provided ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 9,
+        "month": 2
+      }
+    },
+    "f500": "U",
+    "master_id": "osint561",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Fun"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Economic Development Association Scotland",
+      "notes": "",
+      "country": "United Kingdom",
+      "industry": "5419",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

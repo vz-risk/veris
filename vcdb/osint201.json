@@ -1,0 +1,113 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Major",
+        "variety": "Business disruption"
+      }
+    ],
+    "overall_rating": "Damaging"
+  },
+  "incident_id": "osint201",
+  "reference": "http://www.phiprivacy.net/?p=10663; http://www.hhs.gov/ocr/privacy/hipaa/administrative/breachnotificationrule/breachtool.html February 12, 2013",
+  "attribute": {
+    "confidentiality": {
+      "notes": "The receptionist downloaded patients' name, address, phone number and date of birth and gave them to a psychiatrist and a nurse practitioner who had also left the practice.  ",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 13000
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Tampering"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "An employee with authorization/legitimate purpose accessed information pertaining to patients. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 10,
+        "month": 11
+      }
+    },
+    "f500": "N",
+    "master_id": "osint201",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "System admin"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Gulf Coast Health Care Services Inc",
+      "country": "United States",
+      "notes": "Home health care services",
+      "state": "FL",
+      "employee_count": "Unknown",
+      "industry": "621610"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 29,
+      "month": 6
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 17,
+      "month": 8
+    },
+    "discovery": {
+      "unit": "Months"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

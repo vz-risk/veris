@@ -1,0 +1,78 @@
+{
+  "incident_id": "hhs_osint00138",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 8200,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 8200,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00138"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "University of Tennessee Medical Center",
+      "industry": "621340",
+      "country": "United States",
+      "state": "Tn",
+      "employee_count": "1 to 10"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 10,
+      "month": 12
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Years",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

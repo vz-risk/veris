@@ -1,0 +1,108 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint174",
+  "reference": "http://blog.al.com/businessnews/2012/01/regions_says_employee_401k_dat.html ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored encrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "Encryption key",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": "Sending the decryption key with the encrypted drive is more than just careless, but it is our best option here.",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Personal information about Regions Financial Corp. current and former employees was lost in November when a flash drive with the data came up missing after being mailed by outside auditor Ernst & Young in the same envelope as the decryption code.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 23,
+        "month": 1
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint174",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "partner": {
+      "motive": [
+        "NA"
+      ],
+      "country": [
+        "United States"
+      ],
+      "industry": "541211",
+      "role": [
+        "Inappropriate"
+      ],
+      "notes": ""
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Regions Financial Corporation",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 6000000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "AL",
+      "employee_count": "25001 to 50000",
+      "industry": "522110"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 30,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "management": true,
+    "assets": [
+      {
+        "variety": "M - Flash drive"
+      }
+    ],
+    "hosting": true
+  }
+}

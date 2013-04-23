@@ -1,0 +1,82 @@
+{
+  "incident_id": "hhs_osint00454",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 6372,
+          "variety": "Payment"
+        },
+        {
+          "amount": 6372,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 6372,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00454"
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Aetna",
+      "industry": "524114",
+      "country": "United States",
+      "state": "Ct",
+      "employee_count": "25001 to 50000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 29,
+      "month": 7
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

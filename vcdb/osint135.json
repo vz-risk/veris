@@ -1,0 +1,107 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint135",
+  "reference": "http://www.atg.state.vt.us/assets/files/Experian%20Security%20Breach%20Notice%20ltr%20to%20consumer.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "Customer is CASE Federal Credit Union",
+  "action": {
+    "misuse": {
+      "notes": "The actor is using customer credentials. ",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "experience with the nationwide credit reporting agencies identified that its clients CASE federal credit union have certain experience consumer information access without proper authorization. The consumer information consists of information found in a Consumer Reports. Such information includes your name, address and the more the following: Social Security number, date of birth, or Numbers.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Other"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 12,
+        "month": 11
+      }
+    },
+    "f500": "N",
+    "master_id": "osint135",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Experian",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 576700000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "1001 to 10000",
+      "industry": "561450"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 30,
+      "month": 10
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "management": true,
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ],
+    "hosting": true
+  }
+}

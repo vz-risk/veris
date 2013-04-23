@@ -1,0 +1,134 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Minor",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Distracting"
+  },
+  "incident_id": "osint409",
+  "reference": "doj.nh.gov/consumer/security-breaches/documents/crowne-plaza-columbus-20120518.pdf ",
+  "attribute": {
+    "integrity": {
+      "notes": "",
+      "variety": [
+        "Software installation"
+      ]
+    },
+    "confidentiality": {
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "variety": "Payment"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "malware": {
+      "variety": [
+        "Unknown"
+      ],
+      "vector": [
+        "Unknown"
+      ],
+      "name": "",
+      "cve": ""
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "PII and credit card information exposed at hotel ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 18,
+        "month": 5
+      }
+    },
+    "f500": "U",
+    "master_id": "osint409",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Crowne Plaza Columbus",
+      "country": "United States",
+      "notes": "",
+      "state": "OH",
+      "employee_count": "11 to 100",
+      "industry": "7211"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012,
+      "day": 14,
+      "month": 3
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 2,
+      "month": 4
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Days"
+    },
+    "discovery": {
+      "unit": "Weeks"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

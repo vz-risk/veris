@@ -1,0 +1,102 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint457",
+  "reference": "http://www.itnews.com.au/News/309902,aapt-investigating-alleged-data-breach.aspx, http://www.zdnet.com/au/anonymous-begins-dump-of-stolen-isp-data-7000001749/#comments ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "variety": "Credentials"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "AAPT has confirmed a breach of systems held at an external service provider that saw some of the telco's \"business customer data\" compromised.  The telco told iTnews this morning that it was investigating if a potential data breach, after hacking group Anonymous threatened to release 40 GB of data from an Australian internet service provider.  Some 3.5 GB of data is alleged to be from AAPT.  \"It was brought to our attention by our service provider, Melbourne IT, at approximately 9.30pm last night that there had been a security incident and unauthorised access to some AAPT business customer data stored on servers at Melbourne IT,\" the telco said in a statement.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 26,
+        "month": 7
+      }
+    },
+    "f500": "N",
+    "master_id": "osint457",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Ideology"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "AAPT",
+      "notes": "",
+      "country": "Australia",
+      "industry": "517110",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

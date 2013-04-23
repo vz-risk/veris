@@ -1,0 +1,121 @@
+{
+  "impact": {
+    "overall_rating": "Insignificant"
+  },
+  "incident_id": "osint556",
+  "reference": "http://www.dukehealth.org/health_library/news/notice-to-patients-who-previously-filed-chapter-13-bankrupty",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "# of customers/patients affected not disclosed.",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "error": {
+      "notes": "Including non-essential private data with proof of claim.",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Billing department included patient PII and medical information with proofs of claim submitted when patients had filed for bankruptcy and it was necessary to prove legitimacy of debt.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "N",
+        "data_subject": ""
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 23,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint556",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "notes": "",
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Finance"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Duke University Health System",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 3000000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "NC",
+      "employee_count": "10001 to 25000",
+      "industry": "622110"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "year": 2012,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 25,
+      "month": 1
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "Months"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

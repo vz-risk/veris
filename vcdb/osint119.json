@@ -1,0 +1,107 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint119",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/tiffany-co-20120905.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Bank"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "We were recently informed by J.P. Morgan Chase Bank that there was unauthorized access to chase his computer servers containing personal information of some employees. Chase told us that the affected servers, which contains certain information provided in connection with an employee travel expense reimbursement system, contained personal information such as names, addresses, Social Security numbers and banking information.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 5,
+        "month": 9
+      }
+    },
+    "f500": "N",
+    "master_id": "osint119",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Tiffany and Company",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 3640000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "NY",
+      "employee_count": "1001 to 10000",
+      "industry": "448310"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Other",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - File"
+      }
+    ]
+  }
+}

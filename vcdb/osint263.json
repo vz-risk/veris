@@ -1,0 +1,104 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint263",
+  "reference": "http://news.softpedia.com/news/1-700-Clear-Text-Passwords-Leaked-from-Yamaha-Audio-Systems-253921.shtml ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 1700,
+          "variety": "Credentials"
+        }
+      ],
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 1700
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "hacker called Muldaria48",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Cyber War News informs us of a hacking operation that exposes the usernames and passwords of more than 1,700 individuals who own accounts on the Yamaha Commercial Audio Systems website.  Unfortunately, not only the users were exposed by a hacker called Muldaria48, but also a number of 8 site administrators. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 20,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint263",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Fun"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Yamaha Commercial Audio Systems",
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "Unknown",
+      "industry": "423990"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 20,
+      "month": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

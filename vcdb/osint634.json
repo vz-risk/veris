@@ -1,0 +1,106 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint634",
+  "reference": "",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "amount": 5822,
+          "variety": "Unknown"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 5822
+    }
+  },
+  "notes": "HHS Breach Tool",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Laptop Theft",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 4,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint634",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Center for Pain Management, LLC",
+      "country": "United States",
+      "notes": "",
+      "state": "MD",
+      "employee_count": "Unknown",
+      "industry": "62"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013,
+      "day": 22,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2013
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

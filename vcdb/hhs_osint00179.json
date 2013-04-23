@@ -1,0 +1,78 @@
+{
+  "incident_id": "hhs_osint00179",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 837,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 837,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00179"
+  },
+  "actor": {
+    "partner": {
+      "motive": [
+        "NA"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Unintentional"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Northridge Hospital Medical Center",
+      "industry": "622310",
+      "country": "United States",
+      "state": "Ca",
+      "employee_count": "25001 to 50000"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 10,
+      "month": 11
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Weeks",
+      "value": 4
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

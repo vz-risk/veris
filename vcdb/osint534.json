@@ -1,0 +1,112 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint534",
+  "reference": "http://news.georgiahealth.edu/archives/5161 ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "The information on the laptop contained patient name, date of birth, limited diagnosis information and an internal code associated with the patient\u2019s laboratory tests. The records did not include addresses, Social Security numbers or financial information.",
+      "data_disclosure": "Potentially",
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 513
+    }
+  },
+  "notes": "",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal residence"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Theft of a laptop computer from a nurse practitioner's home that may have contained patient personal information ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 15,
+        "month": 3
+      }
+    },
+    "f500": "U",
+    "master_id": "osint534",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Georgia Health Sciences University",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 2000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "GA",
+      "employee_count": "1001 to 10000",
+      "industry": "611310"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 18,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

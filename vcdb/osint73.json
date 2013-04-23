@@ -1,0 +1,126 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint73",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/database-designs-20120828.pdf ",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "The source document is from the point of view of the partner, Database Designs, Inc.  However the two organizations whose data they lost are listed in the Victim list.",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "A laptop and flash drive was stolen while in the custody of an employee.  The laptop contained data on business clients.  ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 28,
+        "month": 8
+      }
+    },
+    "f500": "N",
+    "master_id": "osint73",
+    "asset": {
+      "total": "Yes"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Health Care for All",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 1990000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "MA",
+      "employee_count": "11 to 100",
+      "industry": "813319"
+    },
+    {
+      "victim_id": "Boston Teachers Union",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 6750000
+      },
+      "country": "United States",
+      "industry": "813930",
+      "state": "MA",
+      "employee_count": "11 to 100"
+    },
+    {
+      "victim_id": "Database Designs Associates, Inc.",
+      "industry": "5112",
+      "country": "Unknown",
+      "state": "",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 17,
+      "month": 7
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Other",
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

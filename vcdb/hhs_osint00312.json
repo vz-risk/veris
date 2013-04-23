@@ -1,0 +1,83 @@
+{
+  "incident_id": "hhs_osint00312",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2334,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2334,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "master_id": "hhs_osint00312"
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Gail Gillespie and Associates, LLC",
+      "industry": "000000",
+      "country": "United States",
+      "state": "Tx",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011,
+      "day": 25,
+      "month": 6
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      },
+      {
+        "variety": "U - Desktop"
+      },
+      {
+        "variety": "S - Other"
+      }
+    ]
+  }
+}

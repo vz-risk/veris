@@ -1,0 +1,121 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint104",
+  "reference": "http://doj.nh.gov/consumer/security-breaches/documents/owner-operator-independent-drivers-20120619.pdf ",
+  "attribute": {
+    "integrity": {
+      "notes": "",
+      "variety": [
+        "Misappropriation",
+        "Software installation"
+      ]
+    },
+    "confidentiality": {
+      "state": [
+        "Transmitted"
+      ],
+      "data": [
+        {
+          "variety": "Payment"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ],
+      "cve": ""
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "An unauthorized individual gained access to some coded online forms stored on a remote server housed with a third party ISP.  The individual changed certain informatino on the forms which caused the forms to be sent to this individual as a blind copy email.  The breach may have exposed customer's name, CCN, expiration dates, phone numbers, email addresses, DOB and credit/debit card service codes.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 19,
+        "month": 6
+      }
+    },
+    "f500": "N",
+    "master_id": "osint104",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Owner-Operator Independent Drivers Association",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 4690000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "MO",
+      "employee_count": "101 to 1000",
+      "industry": "48"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012,
+      "day": 15,
+      "month": 1
+    },
+    "investigation": {
+      "year": 2012
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "management": true,
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ],
+    "hosting": true
+  }
+}

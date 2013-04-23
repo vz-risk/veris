@@ -1,0 +1,102 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint644",
+  "reference": "http://www.databreaches.net/?p=26775",
+  "attribute": {
+    "integrity": {
+      "notes": "",
+      "variety": [
+        "Fraudulent transaction"
+      ]
+    },
+    "confidentiality": {
+      "notes": "",
+      "data_disclosure": "Yes",
+      "data": [
+        {
+          "variety": "Personal"
+        }
+      ],
+      "state": [
+        "Stored"
+      ],
+      "data_total": 65
+    }
+  },
+  "notes": "",
+  "action": {
+    "misuse": {
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "According to court documents, Veronica Niko had access to the department\u2019s LEADER computer system, which, as a receptionist, she was authorized to use to input applicants\u2019 information for assistance requests. What she did, however, beginning in July 2009, was to access the system, take screenshots of applicants\u2019 PII, and print out the screenshots for her husband, Thomas Marshall, who used the information to submit fraudulent tax returns. ",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Other"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2011
+      }
+    },
+    "f500": "N",
+    "master_id": "osint644",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Los Angeles County Department of Public Social Services",
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "Unknown",
+      "industry": "92"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2009,
+      "month": 7
+    },
+    "investigation": {
+      "year": 2011
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

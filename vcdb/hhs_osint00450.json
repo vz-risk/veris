@@ -1,0 +1,59 @@
+{
+  "incident_id": "hhs_osint00450",
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 2628,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 2628,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "source_id": "hhs",
+  "plus": {
+    "timeline": {
+      "notification": {}
+    },
+    "master_id": "hhs_osint00450"
+  },
+  "actor": {
+    "unknown": {}
+  },
+  "victim": [
+    {
+      "victim_id": "University of Rochester Medical Center Affiliates",
+      "industry": "621111",
+      "country": "United States",
+      "state": "Ny",
+      "employee_count": "11 to 100"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2010,
+      "day": 28,
+      "month": 5
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "discovery": {
+      "unit": "Months",
+      "value": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "action": {},
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

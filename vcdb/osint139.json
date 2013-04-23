@@ -1,0 +1,98 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint139",
+  "reference": "http://madera.courts.ca.gov/",
+  "attribute": {
+    "integrity": {
+      "notes": "",
+      "variety": [
+        "Modified data"
+      ]
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Madera Superior Court website hacked and defaced by 04hazmi.  Sourced from insider interview.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Unknown"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 11,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint139",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Fun"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Madera Superior Court",
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "101 to 1000",
+      "industry": "922110"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013,
+      "day": 11,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2013,
+      "day": 11,
+      "month": 2
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}

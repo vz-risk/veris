@@ -1,0 +1,150 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Moderate",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Moderate",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Painful"
+  },
+  "incident_id": "osint357",
+  "reference": "http://www.examiner.com/article/anonymous-strikes-war-profiteering-tear-gas-manufacturer-combined-systems",
+  "attribute": {
+    "integrity": {
+      "notes": "site defacement",
+      "variety": [
+        "Modified configuration"
+      ]
+    },
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Personal"
+        },
+        {
+          "variety": "Internal"
+        },
+        {
+          "variety": "System"
+        }
+      ],
+      "notes": "Employee and client data.",
+      "data_disclosure": "Yes"
+    },
+    "availability": {
+      "duration": {
+        "unit": "Unknown"
+      },
+      "notes": "rm -fr prior to defacement.",
+      "variety": [
+        "Destruction"
+      ]
+    }
+  },
+  "notes": "",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ],
+      "cve": ""
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "Anonymous compromises web server and replaces w/ propaganda video.",
+  "source_id": "osint",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012,
+        "day": 14,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint357",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Ideology"
+      ],
+      "country": [
+        "United States"
+      ],
+      "notes": "Anonymous",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Activist"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Combined Systems",
+      "country": "United States",
+      "notes": "",
+      "state": "PA",
+      "employee_count": "101 to 1000",
+      "industry": "332993"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2012,
+      "day": 14,
+      "month": 2
+    },
+    "investigation": {
+      "year": 2012,
+      "day": 14,
+      "month": 2
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "security_compromise": "Confirmed",
+  "discovery_method": "Unknown",
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  }
+}
