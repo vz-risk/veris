@@ -7,7 +7,7 @@
   "attribute": {
     "confidentiality": {
       "notes": "Potential exposure of protected health information from psychology patients. ",
-      "data_disclosure": "Yes",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
