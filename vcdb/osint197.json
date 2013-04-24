@@ -7,7 +7,7 @@
   "attribute": {
     "confidentiality": {
       "notes": "Information on the computer contained a spreadsheet which included client name, assigned staff person, client status (active, discharged, etc.), internal client identification number, and date of birth",
-      "data_disclosure": "Yes",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Personal"
