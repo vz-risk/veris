@@ -7,7 +7,7 @@
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
