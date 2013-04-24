@@ -7,7 +7,7 @@
   "attribute": {
     "confidentiality": {
       "notes": "The 200 were employees as well.",
-      "data_disclosure": "Yes",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 14300,
