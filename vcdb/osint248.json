@@ -7,7 +7,7 @@
   "attribute": {
     "confidentiality": {
       "notes": "The computer stolen contained pictures of CT scans performed that contained patients\u2019 names, the ordering doctor\u2019s names, and the patients\u2019 hospital account numbers. ",
-      "data_disclosure": "Yes",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
