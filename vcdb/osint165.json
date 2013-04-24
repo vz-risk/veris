@@ -37,7 +37,7 @@
   "attribute": {
     "confidentiality": {
       "notes": "The article says that the incident affected all 70 RDF members but that former members may also be affected.",
-      "data_disclosure": "Yes",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 70,
