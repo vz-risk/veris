@@ -13,7 +13,7 @@
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 2300,
@@ -50,7 +50,7 @@
     }
   },
   "schema_version": "1.0",
-  "summary": "he Information Commissioner (the \u201cCommissioner\u201d) was informed by the Council of the theft of an unencrypted laptop containing a database with child swimming lesson details for 2300 individuals. The information was not of a nature that would be defined as sensitive personal data in the Act.",
+  "summary": "The Information Commissioner (The Commissioner) was informed by the Council of the theft of an unencrypted laptop containing a database with child swimming lesson details for 2300 individuals. The information was not of a nature that would be defined as sensitive personal data in the Act.",
   "source_id": "osint",
   "plus": {
     "attribute": {
