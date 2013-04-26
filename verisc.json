@@ -1,11 +1,11 @@
 {
-    "description" : "VERIS Community Schema v.rc1",
+    "description" : "VERIS Community Schema 1.1",
     "type" : "object",
     "properties" : {
         "schema_version" : { "type" : "string", "required" : true },
         "incident_id" : { "type" : "string", "required" : true },
         "source_id" : { "type" : "string" },
-        "security_compromise" : { "type" : "string" },
+        "security_compromise" : { "type" : "string", "required" : true },
         "confidence" : { "type" : "string" },
         "summary" : { "type" : "string" },
         "related_incidents" : { "type" : "string" },
@@ -17,6 +17,7 @@
                     "industry" : { "type" : "string", "required" : true },
                     "employee_count" : { "type" : "string", "required" : true },
                     "country" : { "type" : "string", "required" : true },
+                    "state" : { "type" : "string" },
                     "revenue" : { "type" : "object",
                         "properties" : {
                             "amount" : { "type" : "integer" },
@@ -33,27 +34,27 @@
             "properties" : {
                 "external" : { "type" : "object",
                     "properties" : {
-                        "motive" : { "type" : "array", "items" : { "type" : "string", "require" : true } },
-                        "role" : { "type" : "array", "items" : { "type" : "string", "require" : true } },
-                        "variety" : { "type" : "array", "items" : { "type" : "string" } },
-                        "country" : { "type" : "array", "items" : { "type" : "string" } },
+                        "motive" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "role" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "country" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
                         "notes" : { "type" : "string" }
                     }
                 },
                 "internal" : { "type" : "object",
                     "properties" : {
-                        "motive" : { "type" : "array", "items" : { "type" : "string" } },
-                        "role" : { "type" : "array", "items" : { "type" : "string" } },
-                        "variety" : { "type" : "array", "items" : { "type" : "string" } },
+                        "motive" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "role" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
                         "notes" : { "type" : "string" }
                     }
                 },
                 "partner" : { "type" : "object",
                     "properties" : {
-                        "motive" : { "type" : "array", "items" : { "type" : "string" } },
-                        "role" : { "type" : "array", "items" : { "type" : "string" } },
+                        "motive" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "role" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
                         "industry" : { "type" : "string" },
-                        "country" : { "type" : "array", "items" : { "type" : "string" } },
+                        "country" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
                         "notes" : { "type" : "string" }
                     }
                 },
@@ -68,54 +69,54 @@
             "properties" : {
                 "malware" : { "type" : "object",
                     "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
-                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
-                        "cve" : { "type" : "array", "items" : { "type" : "string" } },
-                        "name" : { "type" : "array", "items" : { "type" : "string" } },
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "cve" : { "type" : "string" },
+                        "name" : { "type" : "string" },
                         "notes" : { "type" : "string" }
                     }
                 },
                 "hacking" : { "type" : "object",
                     "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
-                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
-                        "cve" : { "type" : "array", "items" : { "type" : "string" } },
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "cve" : { "type" : "string" },
                         "notes" : { "type" : "string" }
                     }
                 },
                 "social" : { "type" : "object",
                     "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
-                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
-                        "target" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "target" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
                         "notes" : { "type" : "string" }
                     }
                 },
                 "misuse" : { "type" : "object",
                     "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
-                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
                         "notes" : { "type" : "string" }
                     }
                 },
                 "physical" : { "type" : "object",
                     "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
-                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
-                        "location" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "location" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
                         "notes" : { "type" : "string" }
                     }
                 },
                 "error" : { "type" : "object",
                     "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
-                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
+                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
                         "notes" : { "type" : "string" }
                     }
                 },
                 "environmental" : { "type" : "object",
                     "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
                         "notes" : { "type" : "string" }
                     }
                 },
@@ -131,7 +132,7 @@
                 "assets" : { "type" : "array",
                     "items" : { "type" : "object",
                         "properties" : {
-                            "variety" : { "type" : "string" },
+                            "variety" : { "type" : "string", "required" : true },
                             "amount" : { "type" : "integer" }
                         }
                     }
@@ -153,7 +154,7 @@
                         "data" : { "type" : "array",
                             "items" : { "type" : "object",
                                 "properties" : {
-                                    "variety" : { "type" : "string" },
+                                    "variety" : { "type" : "string", "required" : true },
                                     "amount" : { "type" : "integer" }
                                 }
                             }
@@ -164,16 +165,16 @@
                 },
                 "integrity" : { "type" : "object",
                     "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
                         "notes" : { "type" : "string" }
                     }
                 },
                 "availability" : { "type" : "object",
                     "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string" } },
+                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
                         "duration" : { "type" : "object",
                             "properties" : {
-                                "unit" : { "type" : "string" },
+                                "unit" : { "type" : "string", "required" : true },
                                 "value" : { "type" : "number" }
                             }
                         },
@@ -192,7 +193,7 @@
                         "time" : {"type" : "string" }
                     }
                 },
-                "investigation" : { "type" : "object", "required" : true,
+                "investigation" : { "type" : "object",
                     "properties" : {
                         "year" : {"type" : "integer", "required" : true },
                         "month" : {"type" : "integer" },
@@ -255,6 +256,7 @@
             },
             "iso_currency_code" : { "type" : "string" },
             "notes" : { "type" : "string" }
-        }
+        },
+        "plus" : { "type" : "any" }
     }
 }
