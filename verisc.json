@@ -5,6 +5,7 @@
         "schema_version" : { "type" : "string", "required" : true },
         "incident_id" : { "type" : "string", "required" : true },
         "source_id" : { "type" : "string" },
+        "reference" : { "type" : "string" },
         "security_compromise" : { "type" : "string", "required" : true },
         "confidence" : { "type" : "string" },
         "summary" : { "type" : "string" },
