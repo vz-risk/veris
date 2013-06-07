@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint301",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/workers-united-20121130.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,20 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Bypassed controls"
-      ],
-      "location": [
-        "Partner facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "on October 25, 2012, workers United was informed by an independent contractor that a hard drive containing certain retiree personal information had been stolen from the contractor's office. The theft is believed to have occurred: October 13 or 14 2012. The hard drive included a database containing personal information on some former workers United members, including but not limited to their first name, last name and Social Security number.",
   "source_id": "osint",
@@ -44,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 30,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint301",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 30,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -86,18 +73,31 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 10,
       "day": 14,
-      "month": 10
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 10,
       "day": 25,
-      "month": 10
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Bypassed controls"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "management": true,

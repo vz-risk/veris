@@ -1,0 +1,115 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint675",
+  "reference": "http://www.ico.org.uk/news/latest_news/2013/gp-practice-in-county-armagh-warned-after-email-attack-26042013",
+  "attribute": {
+    "integrity": {
+      "notes": "Hackers sent email to patients asking for banking information after compromising the email service.",
+      "variety": [
+        "Alter behavior",
+        "Misrepresentation"
+      ]
+    },
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "A GP practice in County Armagh is taking action to improve the way it looks after patients\u2019 information following a breach of the Data Protection Act investigated by the Information Commissioner\u2019s Office (ICO).  The breach was caused when a free web-based email account, used by the Burnett Practice to inform patients of upcoming smear tests appointments, was hacked. The Portadown practice only became aware of the problem in October last year when patients reported receiving strange emails claiming to be from a doctor at the surgery asking them to provide their bank account details. ",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 26,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint675",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "notes": "",
+      "victim_id": "Unnamed Burnette Medical Practice",
+      "industry": "6211",
+      "employee_count": "Unknown",
+      "country": "United Kingdom"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2012
+    },
+    "investigation": {
+      "month": 10,
+      "year": 2012
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "management": true,
+    "assets": [
+      {
+        "variety": "S - Mail"
+      }
+    ],
+    "hosting": true
+  }
+}

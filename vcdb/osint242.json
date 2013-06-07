@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint242",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=11065; http://www.efortresses.com/2012-Breaches-Matrix.htm; http://www.privacyrights.org/data-breach?order=field_breach_total_value&sort=asc&title=",
   "attribute": {
     "confidentiality": {
       "notes": "Patients records were compromised by the stolen computer.  ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Unknown"
@@ -16,23 +16,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1749
+      "data_total": 1749,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Records were compromised by a stolen desktop computer at Robbins Eye Center.  ",
   "source_id": "osint",
@@ -44,17 +32,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint242",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -89,9 +77,9 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 10,
       "day": 7,
-      "month": 10
+      "year": 2012
     },
     "investigation": {
       "year": 2012
@@ -100,8 +88,20 @@
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

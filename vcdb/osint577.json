@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint577",
+  "security_compromise": "Confirmed",
   "reference": "http://gannettblog.blogspot.com/2013/01/westchester-facing-threats-paper-hires.html ",
   "attribute": {
     "confidentiality": {
@@ -22,16 +23,6 @@
     }
   },
   "notes": "Lohud.com is the Journal News website.  ",
-  "action": {
-    "misuse": {
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "On the media website, Lohud.com, the names and addresses of pistol permit holders in two New York counties.  ",
   "source_id": "osint",
@@ -43,15 +34,15 @@
         "data_subject": "Other"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint577",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint577",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -79,16 +70,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 12,
       "day": 23,
-      "month": 12
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

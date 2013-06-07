@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint288",
+  "security_compromise": "Confirmed",
   "reference": "http://www.examiner.com/article/in-bizarre-security-breach-blue-cross-sends-private-info-new-member-packets (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 100,
@@ -51,21 +51,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 100
+      "data_total": 100,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Mail]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Organization accidentally mails PHI for 100 people to all their new members.",
   "source_id": "osint",
@@ -77,17 +67,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 25,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint288",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 25,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -122,9 +112,9 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 12,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
       "year": 2012
@@ -139,8 +129,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through Mail]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

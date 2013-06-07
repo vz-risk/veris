@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint535",
+  "security_compromise": "Confirmed",
   "reference": "http://www.theledger.com/article/20120612/NEWS/120619807",
   "attribute": {
     "confidentiality": {
       "notes": "The information on the documents included patient addresses, phone numbers, dates of birth, diagnosis and treatment information, insurance information, and Social Security numbers.",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Classified"
@@ -19,23 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1400
+      "data_total": 1400,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Documents, called Charge Tickets, containing patient information was stolen from Gessler Clinic.  ",
   "source_id": "osint",
@@ -47,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint535",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,16 +80,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 3,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

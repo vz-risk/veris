@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint54",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cfpsych.org/HIPAA-Breach-Letter.pdf, http://www.ssmedcenter.com/SSMC-Public-Notice-010313.pdf, http://www.phiprivacy.net/?p=11395, Breachtool",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Payment"
@@ -19,21 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 15693
+      "data_total": 15693,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "On December 3, 2012, the vendor that hosted our website informed us of a hacking incident that occurred between October 18, 2012 and November 15, 2012. This resulted in unauthorized access to certain information entered on our website between January, 2007 and November 15, 2012. The breach did not impact our electronic health record system or our secure patient portal, MyHealth Online. The information potentially accessed included data entered by patients when paying a bill online, requesting a school health form, e-mailing our organization, requesting a referral, requesting a prescription renewal, requesting an appointment, informing us of an address change, or registering as a new patient. The breached data may include first and last name, home address, phone number, e-mail address, health insurance identification number and, if patients made a payment on our website between October 18, 2012 and November 15, 2012, the credit card number, three-digit security code, and expiration date. In addition, new patients who registered online between January, 2007 and October, 2009 may also have had their social security number exposed.",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 3,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint54",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 3,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -90,17 +80,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 10,
       "day": 18,
-      "month": 10
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 12,
       "day": 3,
-      "month": 12
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

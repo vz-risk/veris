@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint158",
+  "security_compromise": "Confirmed",
   "reference": "http://www.washingtonpost.com/local/education/fairfax-officials-2-lake-braddock-students-stole-passwords-erased-school-data/2012/01/13/gIQArRuExP_story.html",
   "attribute": {
     "integrity": {
@@ -26,7 +27,6 @@
     }
   },
   "notes": "",
-  "action": {},
   "schema_version": "1.0",
   "summary": "Two Fairfax County middle-school students used stolen passwords to wreak havoc with a school software application used countywide by thousands of teachers, students and parents, according to authorities.  Officials at Lake Braddock Secondary School in Burke reported the breach to police Jan. 3, the first day of classes after winter vacation. Course content had been erased from the school\u2019s Blackboard site, an online system that teachers use to post assignments, hold discussions and communicate with parents.  The Blackboard system had also been used to send inappropriate messages to students that appeared to come from teachers, said Maribeth Luftglass, Fairfax\u2019s assistant superintendent for information technology.",
   "source_id": "osint",
@@ -38,17 +38,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 13,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint158",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 13,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -80,13 +80,13 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 3,
-      "month": 1
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {},
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

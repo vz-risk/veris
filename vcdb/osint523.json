@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint523",
+  "security_compromise": "Confirmed",
   "reference": "http://www.zdnet.com/au/breach-at-macquarie-uni-hackers-claim-1-million-plain-text-passwords-exposed-7000008199/ ",
   "attribute": {
     "integrity": {
@@ -26,17 +27,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Macquarie University has had one of its sites breached and defaced over the weekend in an apparent show to demonstrate that its servers' security are not being maintained to a sufficient standard.  On Friday, one of Macquarie University's web applications, designed to assist international students in applying to study, was breached and defaced by two hackers going by the names of \"JuliaDaRanga1000\" and \"AbbotttheFaggot2000.\" The defacement makes a number of disparaging remarks about the university's security, mocking what they call a complete lack of security.  \"Macquarie University, let me ask you this, who the f*** do you hire for security? Oh, wait, there is none,\" the two hackers wrote on the site.  \"When your administration panel is accessible publicly, what do you think will happen? Once again, as I said, anyone could have done it. It just took some investigating. Don't dub me as an elite hacker, because I simply am not.  \"Oh well, you make mistakes, you suffer, you learn. That's how it is for everyone, and your day has come.  \"PS Your Oracle database was a piece of s***.\"",
   "source_id": "osint",
@@ -48,17 +38,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint523",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,9 +75,9 @@
         "amount": 676010000
       },
       "country": "Australia",
-      "industry": "611310",
+      "notes": "",
       "employee_count": "1001 to 10000",
-      "notes": ""
+      "industry": "611310"
     }
   ],
   "timeline": {
@@ -98,8 +88,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

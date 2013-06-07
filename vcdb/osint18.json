@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint18",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Notification%20letter%2012-21-12_0.pdf?, http://oag.ca.gov/system/files/Notification%20-%20stuffer%20final%20_0.pdf?",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Email]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Information about children's enrollment to Medi-Cal from the Healthy Families Program was mailed out to the wrong people.  Information disclosed included the child's name, Client Index Number, DOB, gender and the date the card was issued.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": ""
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 21,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint18",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 21,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,8 +75,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

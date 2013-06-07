@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint13",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=10635 February 4, 2012",
   "attribute": {
     "confidentiality": {
       "notes": "Patient information that was contained on the device that was lost is unknown. ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,21 +19,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 2376
+      "data_total": 2376,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "Associated with Baptist Neurology Consultants",
-  "action": {
-    "error": {
-      "notes": "Unknown",
-      "vector": [
-        "Carelessness"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Device lost containing patient information ",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": ""
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 10,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint13",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 10,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -90,14 +80,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 8,
       "day": 15,
-      "month": 8
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 11,
       "day": 6,
-      "month": 11
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -109,7 +99,17 @@
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "Unknown",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

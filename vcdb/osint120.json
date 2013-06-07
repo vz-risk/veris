@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint120",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/tiffany-20120321.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Mail]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "around March 15, 2012, UPS working on behalf of the company misdirected a package containing a customer's credit card application (including social security number) to the address of an unaffiliated business \u2013 drugstore.com. The air was immediately realized and the package along with its entire contents was returned to the company. Although the package was opened upon its mistaken delivery, the company does not believe that the information was misused or otherwise compromised.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 21,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint120",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 21,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,16 +73,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 15,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through Mail]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

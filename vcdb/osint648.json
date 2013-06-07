@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint648",
+  "security_compromise": "Confirmed",
   "reference": "http://www.ico.org.uk/news/latest_news/2013/medical-receptionist-prosecuted-after-unlawfully-accessing-patients-details-12032013",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1,
@@ -17,20 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1
+      "data_total": 1,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A former receptionist at a GP surgery in Southampton has been prosecuted by the Information Commissioner\u2019s Office (ICO) for unlawfully obtaining sensitive medical information relating to her ex-husband\u2019s new wife. ",
   "source_id": "osint",
@@ -42,16 +33,16 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint648",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -71,9 +62,9 @@
     {
       "victim_id": "Southampton GP Surgery (Unnamed)",
       "notes": "",
-      "country": "United Kingdom",
+      "employee_count": "Unknown",
       "industry": "62111",
-      "employee_count": "Unknown"
+      "country": "United Kingdom"
     }
   ],
   "timeline": {
@@ -84,8 +75,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

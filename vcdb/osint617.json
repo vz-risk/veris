@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint617",
+  "security_compromise": "Confirmed",
   "reference": "http://www.ehackingnews.com/2012/05/stanford-database-breached-by-indian.html ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Indian Hackers Harsha Vardhan Boppana and Codie Root claimed that they hacked into Stanford university website. ",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 11,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint617",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 11,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -89,16 +79,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 11,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint100",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/neurocare-20120709.pdf ",
   "attribute": {
     "integrity": {
@@ -29,20 +30,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "social": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "target": [
-        "Partner"
-      ],
-      "variety": [
-        "Influence"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Neurocare was notified by its payroll processing vendor that it had received instructions from Neurocare to re-route a suspiciously large number of employee automatic payroll deposits.  As Neurocare had not provided such instructions, the account was immediately disabled by the payroll processor.",
   "source_id": "osint",
@@ -54,17 +41,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 9,
-        "month": 7
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint100",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 7,
+        "day": 9,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -99,12 +86,25 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 6,
       "day": 26,
-      "month": 6
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "social": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "target": [
+        "Partner"
+      ],
+      "variety": [
+        "Influence"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

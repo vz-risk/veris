@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint289",
+  "security_compromise": "Confirmed",
   "reference": "http://bgr.com/2012/10/24/barnes-noble-security-breach-credit-card-information/, http://doj.nh.gov/consumer/security-breaches/documents/barnes-noble-20121024.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,20 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Uncontrolled location"
-      ],
-      "location": [
-        "Victim public area"
-      ],
-      "variety": [
-        "Tampering"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Hackers were able to breach more than 60 Barnes & Noble (BKS) stores, including locations in New York City, Miami, San Diego and Chicago, and obtain credit card information, according to a report from The New York Times. The information is believed to have been stolen from keypads at store registers where customers swipe their cards and enter their pin numbers. Customers who have used the company\u2019s website, mobile application and college bookstores were not affected by the breach, though. Barnes & Noble discovered that information had been stolen around September 14th, however the company has reportedly kept the matter under wraps at the request of the Justice Department so the FBI could investigate the attacks. ",
   "source_id": "osint",
@@ -44,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 24,
-        "month": 10
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint289",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 10,
+        "day": 24,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -96,8 +83,21 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Uncontrolled location"
+      ],
+      "location": [
+        "Victim public area"
+      ],
+      "variety": [
+        "Tampering"
+      ]
+    }
+  },
+  "discovery_method": "Ext - fraud detection",
   "asset": {
     "notes": "",
     "assets": [

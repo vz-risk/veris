@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint189",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/bimbo-bakeries-20120502.pdf (20130212)",
   "attribute": {
     "confidentiality": {
       "notes": "We know of 6 victims in NH.  There are probably more victims from other states.",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 6,
@@ -47,23 +47,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 6
+      "data_total": 6,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal vehicle"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Laptop stolen from employee car contained non-public personnel information.",
   "source_id": "osint",
@@ -75,17 +63,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 2,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint189",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 2,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -123,14 +111,14 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 13,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 14,
-      "month": 4
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -142,8 +130,20 @@
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

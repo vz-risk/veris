@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint493",
+  "security_compromise": "Confirmed",
   "reference": "http://www.publicservice.co.uk/news_story.asp?id=21676 ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Other"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Sensitive information belonging to jobseekers has been put at risk on the government's new Universal Jobmatch website, it has been reported.  The security flaw was uncovered during a Channel 4 News investigation. Hackers were said to have been able to register as an employer on the site which is accessed through the Gov.uk portal \u2013 another website that has just been launched by the government to deliver more public services online.  The hackers were reported to have obtained information including passwords and passport and driving licence scans after posting a fake advert for a cleaner on Universal Jobmatch.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 10,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint493",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 10,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -74,9 +64,9 @@
     {
       "victim_id": "Universal Jobmatch",
       "notes": "",
-      "country": "United Kingdom",
+      "employee_count": "Unknown",
       "industry": "51919",
-      "employee_count": "Unknown"
+      "country": "United Kingdom"
     }
   ],
   "timeline": {
@@ -87,7 +77,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

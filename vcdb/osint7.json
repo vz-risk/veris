@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint7",
+  "security_compromise": "Confirmed",
   "reference": "http://www.prnewswire.com/news-releases/alere-home-monitoring-announces-theft-of-company-owned-laptop-180227241.html",
   "attribute": {
     "confidentiality": {
@@ -44,19 +45,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal vehicle"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Employee's personal vehicle was broken into and company laptop was stolen ",
   "source_id": "osint",
@@ -68,17 +56,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint7",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -112,14 +100,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 9,
       "day": 23,
-      "month": 9
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 11,
       "day": 16,
-      "month": 11
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -131,7 +119,19 @@
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [

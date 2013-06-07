@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint611",
+  "security_compromise": "Confirmed",
   "reference": "http://www.statesmanjournal.com/article/20120425/NEWS/304250069/State-hospital-suffers-data-theft",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,23 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 618
+      "data_total": 618,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal vehicle"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A theft of patient information from the car of Oregon State Hospital\u2019s chief of psychiatry has breached the privacy of current and former patients.  ",
   "source_id": "osint",
@@ -47,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 24,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint611",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 24,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,16 +80,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 20,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

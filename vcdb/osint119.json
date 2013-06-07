@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint119",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/tiffany-co-20120905.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "We were recently informed by J.P. Morgan Chase Bank that there was unauthorized access to chase his computer servers containing personal information of some employees. Chase told us that the affected servers, which contains certain information provided in connection with an employee travel expense reimbursement system, contained personal information such as names, addresses, Social Security numbers and banking information.",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 5,
-        "month": 9
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint119",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 9,
+        "day": 5,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -95,7 +85,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

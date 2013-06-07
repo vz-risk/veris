@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint424",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Redacted%20SSN.PDF?",
   "attribute": {
     "integrity": {
@@ -12,17 +13,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "malware": {
-      "vector": [
-        "Unknown"
-      ],
-      "name": "",
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "external actor uploaded malware on to corporate server that was externally hosted. ",
   "source_id": "osint",
@@ -34,15 +24,15 @@
         "data_subject": "Customer"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint424",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint424",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -83,9 +73,9 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 2,
-      "month": 4
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -97,8 +87,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "name": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - monitoring service",
   "asset": {
     "assets": [
       {

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint186",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cbsatlanta.com/story/16478506/tough-questions-for ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "CBS Atlanta started asking Tough Questions about one of Employ Bridge's companies after thousands of documents containing personal information were found in a Gwinnett County recycling dumpster.   Poole said he saw a story on CBS Atlanta about the situation and he started an investigation.   \"We couldn't figure out how that could have happened, so what we did was we went and talked to each of our branch offices here in Metro Atlanta to see if they had disposed of any records over the weekend and really the last six months. The answer was no,\" said Poole.  Poole said after investigating further he learned the documents were taken from a Alpharetta office without the company's knowledge or permission.   \"The lease ends in February of this year and the landlord was under the impression it ended on Dec. 31 and he sent a cleaning crew in there to clean out the offices,\" Poole said.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 9,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint186",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 9,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -79,16 +69,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 12,
       "day": 31,
-      "month": 12
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint216",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=9806; http://www.lcsnw.org/bremerton/pdf/BreakInNotice.pdf February 13, 2013",
   "attribute": {
     "confidentiality": {
       "notes": "The sensitive information could include: name, address, phone number or email; date of birth; social security number; driver's license or Washington ID number; income or payment information about services received and information about client conditions, treatment and/or service information or diagnosis. ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -22,24 +22,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 3040
+      "data_total": 3040,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "There was a break in at the Bremerton Office of the Lutheran Community Services Northwest company.  ",
-  "action": {
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Bypassed controls"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Computers and electronic devices were taken during break-in at Lutheran Community Services Northwest.  ",
   "source_id": "osint",
@@ -51,15 +38,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint216",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint216",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -98,15 +85,28 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 30,
-      "month": 3
+      "year": 2012
     },
     "discovery": {
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Bypassed controls"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "Computers and electronic devices were taken that contained sensitive information.  ",

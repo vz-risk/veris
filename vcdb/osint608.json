@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint608",
+  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=23426 ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -19,21 +19,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 8
+      "data_total": 8,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Ontario Association of Chiefs of Police's website suffers cyber attack by Anonymous or its affiliates.  ",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 26,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint608",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 26,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,23 +72,33 @@
         "amount": 429000
       },
       "country": "Canada",
-      "industry": "813920",
+      "notes": "",
       "employee_count": "1 to 10",
-      "notes": ""
+      "industry": "813920"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 24,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

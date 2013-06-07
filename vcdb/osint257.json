@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint257",
+  "security_compromise": "Confirmed",
   "reference": "http://m.jacksonville.com/news/crime/2012-09-13/story/30-plus-laptop-computers-stolen-jacksonvilles-wounded-warrior-project-hq ",
   "attribute": {
     "confidentiality": {
@@ -19,20 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Bypassed controls"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "At least 33 laptop computers and iPads were stolen in late July from the Wounded Warrior Project's third-floor office at 4899 Belfort Road in Jacksonville.  They may contain personal information on \u201csome, but not all of our former employees,\u201d according to a letter sent out Sept. 7 by Wounded Warrior Executive Director Steve Nardizzi. So he has offered victims free credit monitoring in case someone hacks into them.",
   "source_id": "osint",
@@ -44,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 13,
-        "month": 9
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint257",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 9,
+        "day": 13,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -90,17 +77,30 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 7,
       "day": 25,
-      "month": 7
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 7,
       "day": 25,
-      "month": 7
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Bypassed controls"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "notes": "",

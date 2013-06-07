@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint163",
+  "security_compromise": "Confirmed",
   "reference": "http://www.finextra.com/news/fullstory.aspx?newsitemid=23337 ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Australian Securities and Investments Commission (Asic) is urging the country's online traders to \"urgently review\" their account security after a wave of hacks. The watchdog says that during its regular surveillance it has \"become aware of several stockbroking account intrusions involving unauthorised access and trading\".  Asic is in touch with online broking firms to help affected customers and working with other authorities to find the source, already \"pursuing a line of enquiry consistent with similar incidents in overseas markets\".",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint163",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -74,9 +64,9 @@
     {
       "victim_id": "Australian Securities and Investments Commission",
       "notes": "",
-      "country": "Australia",
+      "employee_count": "Unknown",
       "industry": "5231",
-      "employee_count": "Unknown"
+      "country": "Australia"
     }
   ],
   "timeline": {
@@ -87,7 +77,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

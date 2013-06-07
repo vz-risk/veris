@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint277",
+  "security_compromise": "Confirmed",
   "reference": "http://bc.ctvnews.ca/ctv-personalities-among-victims-of-medical-breach-1.1069119 ",
   "attribute": {
     "confidentiality": {
@@ -22,19 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse",
-        "Net misuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": " A female Vancouver Coastal Health employee has been fired after accessing the confidential electronic records of five local media personalities \u2013 including three from CTV News.  Anchors Tamara Taggart and Coleen Christie and health expert Dr. Rhonda Low were among the victims contacted Thursday and informed that a nursing aide had improperly viewed their patient records.  The health authority said the breach was discovered several days ago during a regular monthly audit, and that there\u2019s no evidence the information was passed on to anyone else.  \u201cAll indications are that this person did it out of quote-unquote \u2018curiosity,\u2019 so there\u2019s no reason to believe it was anything other than that,\u201d spokesman Clay Adams said.",
   "source_id": "osint",
@@ -46,17 +34,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint277",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -81,9 +69,9 @@
         "amount": 2960000000
       },
       "country": "Canada",
-      "industry": "622110",
+      "notes": "",
       "employee_count": "10001 to 25000",
-      "notes": ""
+      "industry": "622110"
     }
   ],
   "timeline": {
@@ -94,8 +82,20 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse",
+        "Net misuse"
+      ]
+    }
+  },
+  "discovery_method": "Int - IT audit",
   "asset": {
     "notes": "",
     "assets": [

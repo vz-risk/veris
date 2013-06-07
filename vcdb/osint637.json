@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint637",
+  "security_compromise": "Confirmed",
   "reference": "http://www.local10.com/news/Computer-hardware-records-stolen-from-billing-center/-/1717324/19046268/-/1207ekf/-/index.html, http://www.healthcareitnews.com/news/walgreens-company-announces-data-breach",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 109000,
@@ -21,24 +21,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 109000
+      "data_total": 109000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "HHS Breach Tool",
-  "action": {
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Bypassed controls"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Theft of a desktop computer and paper records from a billing center in California results in 109,000 records exposed.  The theft affected employees, employee applicants and patients.  Data included personal health information and SSNs of patients.    Anaheim, Calif.-based Crescent Healthcare mailed out letters to patients and employees Feb. 21, notifying them of the theft which occurred Dec. 28, 2012. According to the letter, an unknown person or persons broke into Crescent's billing center and stole the hardware, which may have contained patient names, addresses, phone numbers, Social Security numbers, health insurance data, dates of birth and clinical diagnoses. The group notified authorities three days later. ",
   "source_id": "osint",
@@ -50,17 +37,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 4,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint637",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 4,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -96,17 +83,30 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 12,
       "day": 28,
-      "month": 12
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
-      "month": 12
+      "month": 12,
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Bypassed controls"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - security alarm",
   "asset": {
     "notes": "",
     "assets": [

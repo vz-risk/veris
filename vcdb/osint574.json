@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint574",
+  "security_compromise": "Confirmed",
   "reference": "http://www.nbcnews.com/id/47621717/ns/technology_and_science-security/t/data-breach-topples-australian-lego-fans/ ",
   "attribute": {
     "confidentiality": {
       "notes": "Parents who tried to sign up their children to the LEGO Club website potentially had their personal information, including credit card numbers, names, addresses, birth dates and phone numbers may have been exposed. ",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Bank"
@@ -22,21 +22,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1591
+      "data_total": 1591,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Australian branch of the toy building company has informed nearly 1,600 people that their personal information, including credit card numbers, may have been compromised due to a website vulnerability. ",
   "source_id": "osint",
@@ -48,17 +38,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 30,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint574",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 30,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -81,24 +71,34 @@
     {
       "victim_id": "LEGO Australia",
       "notes": "",
-      "country": "Australia",
+      "employee_count": "11 to 100",
       "industry": "423920",
-      "employee_count": "11 to 100"
+      "country": "Australia"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 27,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 5,
       "day": 5,
-      "month": 5
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

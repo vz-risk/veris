@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint421",
+  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/Government-and-Military-Members-Exposed-After-David-Morgan-Hack-247111.shtml",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 24000,
@@ -21,21 +21,11 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 24000
+      "data_total": 24000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A hacker managed to bypass the security mechanisms implemented by online clothing and accessories store David Morgan, leaking usernames, represented by emails, and password hashes. ",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 16,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint421",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 16,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -91,14 +81,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 16,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 16,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -110,8 +100,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

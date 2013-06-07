@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint308",
+  "security_compromise": "Confirmed",
   "reference": "http://krebsonsecurity.com/2012/12/logmein-docusign-investigate-breach-claims/  ",
   "attribute": {
     "integrity": {
@@ -27,18 +28,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "malware": {
-      "variety": [
-        "Spam"
-      ],
-      "vector": [
-        "Unknown"
-      ],
-      "name": "",
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Customers of remote PC administration service Logmein.com and electronic signature provider Docusign.com are complaining of a possible breach of customer information after receiving malware-laced emails to accounts they registered exclusively for use with those companies. Both companies say they are investigating the incidents, but so far have found no evidence of a security breach.  Some LogMeIn users began complaining of receiving malware spam to LogMeIn-specific email addresses on Dec. 3, 2012. The messages matched spam campaigns that spoofed the U.S. Internal Revenue Service (IRS) and other organizations in a bid to trick recipients into opening a malicious attachment.  Multiple LogMeIn users reported receiving similar spam to addresses they had created specifically for their LogMeIn accounts and that had not been used for other purposes. The first LogMeIn user to report the suspicious activity said he received a malicious email made to look like it came from DocuSign but was sent to an address that was created exclusively for use with LogMeIn.",
   "source_id": "osint",
@@ -50,17 +39,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 12
-      }
+    "asset": {
+      "total": "Yes"
     },
     "f500": "N",
     "master_id": "osint308",
-    "asset": {
-      "total": "Yes"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -111,8 +100,19 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "name": "",
+      "variety": [
+        "Spam"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "assets": [

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint109",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/red-boat-advisor-20120820.pdf ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,21 +16,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 4657
+      "data_total": 4657,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "lincoln financial securities Corporation is a subsidiary of Lincoln national Corporation",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "it appears Red Boat's server was accessed without authorization between January 2012 and early April 2012. Based upon the facts available, we believe the purpose of the intrusion was to use the virtual server as a jumping off point for attempted intrusions into third-party computer systems.  the virtual server contains the SQL database with TIFF-formatted images of applications for brokerage accounts, life insurance and annuities, and other documents related to the business. The customer data within this images included some or all of the following information: names, addresses, e-mail addresses, Social Security numbers, government issued identification numbers, and financial account information. Records involving approximately 4657 customers were in the database and could've been accessed.",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 8
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint109",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 8,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -87,15 +77,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 31,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

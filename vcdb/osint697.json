@@ -1,0 +1,171 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Moderate",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Moderate",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint697",
+  "reference": "http://www.goldcoast.com.au/article/2013/05/15/451894_crime-and-court-news.html (20130524)",
+  "attribute": {
+    "integrity": {
+      "variety": [
+        "Software installation"
+      ]
+    },
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "amount": 8000,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 8000,
+      "data_disclosure": "Potentially"
+    },
+    "availability": {
+      "duration": {
+        "unit": "Days"
+      },
+      "notes": "",
+      "variety": [
+        "Obscuration"
+      ]
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Ransomware prevents access to small business medical records",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 15,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint697",
+    "asset": {
+      "total": "Yes"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "notes": "Likely operating out of Eastern Europe.",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Organized crime"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "notes": "",
+      "victim_id": "Back in Motion Physiotherapy",
+      "industry": "621340",
+      "employee_count": "1 to 10",
+      "country": "Australia"
+    },
+    {
+      "victim_id": "Miami Family Medical Centre",
+      "industry": "621111",
+      "state": "",
+      "employee_count": "1 to 10",
+      "country": "Australia"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "month": 5,
+      "day": 11,
+      "year": 2013
+    },
+    "investigation": {
+      "month": 5,
+      "day": 11,
+      "year": 2013
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Days"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "name": "",
+      "variety": [
+        "Ransomware"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - File"
+      }
+    ]
+  }
+}

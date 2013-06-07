@@ -13,11 +13,11 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint347",
+  "security_compromise": "Confirmed",
   "reference": "http://weldbham.com/secondfront/2012/02/10/hacker-group-targets-alabama-over-hb56/  http://freakoutnation.com/2012/02/09/anonymous-your-government-leaves-your-sensitive-data-vulnerable-to-hacking/?wpmp_tp=1",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 46000,
@@ -27,21 +27,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 46000
+      "data_total": 46000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Alabama state govt servers breached by activist group via unknown methods. PII on 46,000 residents at risk. Some data disclosed on pastebay.",
   "source_id": "osint",
@@ -53,17 +43,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 9,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint347",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 9,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -97,8 +87,8 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
-      "month": 2
+      "month": 2,
+      "year": 2012
     },
     "investigation": {
       "year": 2012
@@ -113,8 +103,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

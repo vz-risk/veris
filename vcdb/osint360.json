@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint360",
+  "security_compromise": "Confirmed",
   "reference": "",
   "attribute": {
     "confidentiality": {
@@ -15,17 +16,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "DoS"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A security breach that led to the destruction of in-game assets and account status changes at Mortal Online.  ",
   "source_id": "osint",
@@ -37,17 +27,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint360",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -70,9 +60,9 @@
     {
       "victim_id": "Mortal Online",
       "notes": "",
-      "country": "Sweden",
+      "employee_count": "Unknown",
       "industry": "713990",
-      "employee_count": "Unknown"
+      "country": "Sweden"
     }
   ],
   "timeline": {
@@ -83,8 +73,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "DoS"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

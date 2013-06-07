@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint631",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/anthem-blue-cross-blue-shield-20130314.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 2206,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 2206
+      "data_total": 2206,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "An employee at Connextions, a call center vendor for Anthem's Medicare business customer service, confessed to the Social Security Administration investigators that she had taken SSNs, including those from members of Anthem.  ",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 14,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint631",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 14,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -87,15 +77,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2013,
+      "month": 1,
       "day": 7,
-      "month": 1
+      "year": 2013
     },
     "investigation": {
       "year": 2013
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

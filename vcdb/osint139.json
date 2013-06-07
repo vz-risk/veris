@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint139",
+  "security_compromise": "Confirmed",
   "reference": "http://madera.courts.ca.gov/",
   "attribute": {
     "integrity": {
@@ -13,17 +14,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Madera Superior Court website hacked and defaced by 04hazmi.  Sourced from insider interview.",
   "source_id": "osint",
@@ -35,17 +25,17 @@
         "data_subject": "Unknown"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 11,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint139",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 11,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -76,18 +66,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2013,
+      "month": 2,
       "day": 11,
-      "month": 2
+      "year": 2013
     },
     "investigation": {
-      "year": 2013,
+      "month": 2,
       "day": 11,
-      "month": 2
+      "year": 2013
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

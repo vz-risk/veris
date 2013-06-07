@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint572",
+  "security_compromise": "Confirmed",
   "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
   "attribute": {
     "confidentiality": {
       "notes": "Names, usernames, email addresses and passwords dumped on the Internet",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -19,21 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 132
+      "data_total": 132,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Names, usernames, email addresses and passwords dumped on the Internet",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Unknown"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint572",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -78,9 +68,9 @@
     {
       "victim_id": "Learning Disabilities Resource Community",
       "notes": "Technically, the LDRC is based in Ontario, Canada with our server and development team located in the city of Toronto. But, because the LDRC is a virtual organization, we are not restricted to serving individuals from a specific region or locale. Many of us are members of the University of Toronto's Adaptive Technology Resource Centre (ATRC) research and development team. Our location/mailing address is:  LDRC Adaptive Technology Resource Centre University of Toronto 130 St. George St. First Floor Toronto, Ontario Canada, M5S 3H1",
-      "country": "Canada",
+      "employee_count": "Unknown",
       "industry": "611519",
-      "employee_count": "Unknown"
+      "country": "Canada"
     }
   ],
   "timeline": {
@@ -91,7 +81,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

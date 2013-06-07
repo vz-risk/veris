@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint361",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/motorola-mobility-20120203.pdf; http://www.chicagobusiness.com/article/20120203/NEWS08/120209906/tablet-snafu-motorola-says-not-all-data-wiped-from-refurbished ",
   "attribute": {
     "confidentiality": {
       "notes": "Items included on the refurbished tablets included photos, documents, user names and passwords stored by a previous owner if a factory reset was not performed before the item was returned. ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Classified"
@@ -19,21 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 6200
+      "data_total": 6200,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Motorola Mobility Inc. says some of its refurbished tablets have been sold with previous owners' data still intact on the devices.   ",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint361",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -93,8 +83,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

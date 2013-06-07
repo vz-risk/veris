@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint90",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/investacorp-20120419.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "National Financial is the partner.",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Malfunction"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Partner data breach , \"inadvertent sharing of electronic files\" included client name, SSN and account level data.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 19,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint90",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 19,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,17 +75,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 11,
       "day": 29,
-      "month": 11
+      "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 12,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Malfunction"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "notes": "",

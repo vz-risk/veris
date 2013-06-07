@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint36",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Final%20Notice%20%28C%26E%29_0.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "Unknown",
-      "vector": [
-        "Carelessness"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "On August 13, 2012, following an investigation of a missing portable device (USB drive) containing Child and Elder Care Plan participant files, we determined that the USB drive has been inadvertently lost.  The data on the USB drive may have included your name, SSN, and address.  ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 7,
-        "month": 9
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint36",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 9,
+        "day": 7,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,12 +72,22 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 8,
       "day": 13,
-      "month": 8
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "Unknown",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint460",
+  "security_compromise": "Confirmed",
   "reference": "http://www.justice.gov/opa/pr/2013/January/13-tax-022.html ",
   "attribute": {
     "confidentiality": {
@@ -19,19 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Physical access",
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": " On Aug. 9, 2012, Quentin Collick was indicted for his role in the conspiracy. In November 2012, pursuant to a criminal complaint, Williams was arrested for her role in the conspiracy. The superseding indictment was unsealed today.     According to court documents, Williams worked for a debt collection company in Georgia. As part of her employment, Williams had access to names and social security numbers. She provided several names and Social Security numbers to her son-in-law, Quentin Collick.   Collick, and his co-conspirators used those names to file false tax returns from the Middle District of Alabama. Collick and his co-conspirators, in turn, cashed several fraudulent federal refund checks.   ",
   "source_id": "osint",
@@ -43,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 7,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint460",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 7,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -85,13 +73,25 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 8,
       "day": 9,
-      "month": 8
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access",
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
+  "discovery_method": "Ext - law enforcement",
   "asset": {
     "notes": "",
     "assets": [

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint306",
+  "security_compromise": "Confirmed",
   "reference": "http://in.reuters.com/article/2012/06/07/us-linkedin-breach-idINBRE85511820120607, http://www.zdnet.com/blog/btl/6-46-million-linkedin-passwords-leaked-online/79290 ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 6400000,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 6400000
+      "data_total": 6400000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "LinkedIn Corp is working with the FBI as the social network for job seekers and professionals investigates the theft of 6.4 million member passwords, the company said on Thursday.  The company does not know of any accounts that were taken over as a result of the security violations, according to LinkedIn spokesman Hani Durzy.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint306",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,8 +84,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

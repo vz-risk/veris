@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint513",
+  "security_compromise": "Confirmed",
   "reference": "http://www.thestar.com/news/gta/article/1308440--concern-mounts-among-those-affected-by-federal-government-privacy-breach, http://www.sunnewsnetwork.ca/sunnews/canada/archives/2013/01/20130101-175145.html ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 5000,
@@ -17,21 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 5000
+      "data_total": 5000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "Unknown",
-      "vector": [
-        "Carelessness"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The massive federal department responsible for Canada's employment, training and pension programs faces a formal investigation into a possible breach of the nation's privacy law after the government misplaced a USB key containing the personal information of 5,000 Canadians.  An employee of Human Resources and Skills Development Canada (HRSDC) lost the flash drive containing the Social Insurance Numbers and other sensitive information, QMI Agency first reported last week.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 1,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint513",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 1,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -73,25 +63,35 @@
     {
       "victim_id": "Human Resources and Skills Development Canada (HRSDC)",
       "notes": "",
-      "country": "Canada",
+      "employee_count": "Unknown",
       "industry": "561311",
-      "employee_count": "Unknown"
+      "country": "Canada"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 11,
       "day": 17,
-      "month": 11
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 12,
       "day": 21,
-      "month": 12
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": "Unknown",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

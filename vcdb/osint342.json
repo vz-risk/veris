@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint342",
+  "security_compromise": "Confirmed",
   "reference": "http://www.14news.com/story/20441631/gibson-general-hospital-notifying-patients-of-stolen-laptop-containing-patient-information ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 29000,
@@ -21,23 +21,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 29000
+      "data_total": 29000,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal residence"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Gibson General Hospital has mailed letters to patients informing them of the theft of a hospital laptop containing personal health information.  The laptop was reported stolen, along with several other items, from an employee's home during a burglary on Nov. 27.   The laptop was used by a hospital employee whose job requires 24/7 access to the hospital's electronic medical records system.   On December 26 letters were mailed  to approximately 29,000 patients who received care at Gibson General Hospital since January 2007. The information may have included a patient's name, address, social security number and/or clinical information.",
   "source_id": "osint",
@@ -49,17 +37,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 26,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint342",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 26,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,18 +82,30 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 11,
       "day": 27,
-      "month": 11
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 11,
       "day": 27,
-      "month": 11
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal residence"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

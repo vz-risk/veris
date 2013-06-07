@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint571",
+  "security_compromise": "Confirmed",
   "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
   "attribute": {
     "confidentiality": {
       "notes": "Usernames, encrypted passwords and decrypted passwords acquired and dumped by hacker",
-      "data_disclosure": "Unknown",
       "data": [
         {
           "variety": "Classified"
@@ -19,21 +19,11 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 109
+      "data_total": 109,
+      "data_disclosure": "Unknown"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Usernames, encrypted passwords and decrypted passwords acquired and dumped by hacker",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 10,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint571",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 10,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -78,9 +68,9 @@
     {
       "victim_id": "Le Muse Societ\u00e0 Cooperativa",
       "notes": "",
-      "country": "Italy",
+      "employee_count": "Unknown",
       "industry": "81",
-      "employee_count": "Unknown"
+      "country": "Italy"
     }
   ],
   "timeline": {
@@ -91,7 +81,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

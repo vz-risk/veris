@@ -1,0 +1,101 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint671",
+  "reference": "http://www.fbi.gov/news/stories/2013/april/soldier-receives-16-year-sentence-for-attempted-espionage/soldier-receives-16-year-sentence-for-attempted-espionage",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Classified"
+        }
+      ],
+      "notes": "The data was shared with an undercover FBI agent rather than the Russian officer the person thought they were meeting.  So the data was safe, but it wasn't for lack of trying.",
+      "data_disclosure": "No"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "A 22-year-old military police officer in Alaska has been sentenced to a 16-year jail term in connection with his efforts to sell classified documents to a person he believed was a Russian intelligence officer.  In 2011, William Millay was stationed at Joint Base Elmendorf-Richardson near Anchorage when he began to talk to\u2014and solicit help from\u2014other military members regarding selling classified national defense information to the Russians.  \u201cThis case really drives home the point that the insider threat is alive and well,\u201d said Special Agent Sam Johnson, who supervises a national security squad in our Anchorage Division. \u201cThat\u2019s why counterintelligence investigations continue to be a very high priority for the FBI.\u201d",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 26,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint671",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "N",
+        "data_subject": "Other"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "United States Army",
+      "country": "United States",
+      "notes": "",
+      "state": "AK",
+      "employee_count": "Over 100000",
+      "industry": "928110"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011
+    },
+    "investigation": {
+      "month": 10,
+      "year": 2011
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access",
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

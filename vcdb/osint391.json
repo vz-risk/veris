@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint391",
+  "security_compromise": "Confirmed",
   "reference": "http://articles.latimes.com/2010/jun/11/local/la-me-ucla-privacy-20100611, http://www.cdph.ca.gov/Pages/NR10-039.aspx, http://www.cdph.ca.gov/programs/Documents/LnCRonaldReaganUCLAMedicalCenter-dv6t11-LA12010.pdf",
   "attribute": {
     "confidentiality": {
@@ -19,18 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "State health regulators have fined Ronald Reagan UCLA Medical Center $95,000 for allowing unauthorized employees to view a patient's medical records, a breach that sources indicated targeted the files of Michael Jackson.  The fine, one of six privacy-related penalties state officials announced Thursday, stems from multiple violations that led to the firing of two hospital employees. Two hospital contract workers were also fired for accessing the same patient's information, UCLA officials said.",
   "source_id": "osint",
@@ -42,15 +31,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint391",
     "timeline": {
       "notification": {
         "year": 2010
       }
-    },
-    "f500": "N",
-    "master_id": "osint391",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -83,16 +72,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2009,
+      "month": 6,
       "day": 30,
-      "month": 6
+      "year": 2009
     },
     "investigation": {
       "year": 2010
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
+  "discovery_method": "Int - IT audit",
   "asset": {
     "notes": "",
     "assets": [

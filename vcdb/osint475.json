@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint475",
+  "security_compromise": "Confirmed",
   "reference": "http://www.networkworld.com/news/2012/120712-nationwideallied-security-breach-highlights-litigation-264896.html , http://www.nationwide.com/notice.jsp, http://www.turnto23.com/money/dont-waste-your-money/nationwide-insurance-company-hit-by-security-breach_43236964, http://oag.ca.gov/system/files/PE%2320121003-127_letter%20_Final%20Template__0.pdf?, http://www.atg.state.vt.us/issues/consumer-protection/privacy-and-Data-Security/documents-and-resources5/nationwide-security-breach-notice-ltr-to-consumer.php  ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1100000,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1100000
+      "data_total": 1100000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Nationwide Mutual Insurance went public on Wednesday with notification of an Oct. 3 break-in of a computer network also used by Allied Insurance. Data stolen from the insurers included names, Social Security numbers, driver's license numbers and birth dates. ",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 5,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint475",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 5,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,9 +78,9 @@
     {
       "victim_id": "Allied Insurnace",
       "industry": "524126",
-      "country": "Unknown",
+      "employee_count": "Unknown",
       "state": "",
-      "employee_count": "Unknown"
+      "country": "Unknown"
     }
   ],
   "timeline": {
@@ -98,12 +88,22 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 10,
       "day": 3,
-      "month": 10
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

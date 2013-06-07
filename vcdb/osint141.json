@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint141",
+  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/Sweden-s-Kalmar-Airport-Hacked-by-Sepo-255578.shtml ",
   "attribute": {
     "integrity": {
@@ -24,17 +25,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "in support of Anonymous Sweden",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "After identifying an SQL injection vulnerability in the site (kalmarairport.com), the hacker gained unauthorized access, but didn\u2019t cause any damage. He simply published some information from their server to prove that he gained access.",
   "source_id": "osint",
@@ -46,17 +36,17 @@
         "data_subject": "Unknown"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 28,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint141",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 28,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,23 +73,33 @@
         "amount": 5050000
       },
       "country": "Sweden",
-      "industry": "481111",
+      "notes": "",
       "employee_count": "11 to 100",
-      "notes": ""
+      "industry": "481111"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 28,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "in support of Anonymous Sweden",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint188",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/standardaero-20120403.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,19 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Public facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Stolen computer contained credit card numbers, names.  ",
   "source_id": "osint",
@@ -46,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 5,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint188",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 5,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -91,17 +79,29 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 20,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 20,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Public facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

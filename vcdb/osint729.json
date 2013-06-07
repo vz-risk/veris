@@ -1,0 +1,153 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint729",
+  "reference": "http://www.wane.com/dpp/news/local/bank-customers-information-stolen (20130604)",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Bank"
+        },
+        {
+          "variety": "Payment"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "ATM Skimming",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 29,
+        "year": 2013
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint729",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "N",
+        "data_subject": "Customer"
+      }
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Organized crime"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Fifth Third Bancorp",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 7110000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "IN",
+      "employee_count": "10001 to 25000",
+      "industry": "522110"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "month": 5,
+      "day": 10,
+      "year": 2013
+    },
+    "investigation": {
+      "year": 2013
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim public area"
+      ],
+      "variety": [
+        "Tampering"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - ATM"
+      }
+    ]
+  }
+}

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint487",
+  "security_compromise": "Confirmed",
   "reference": "http://www.pharmalot.com/2007/08/pfizer-laptops-stolen-from-locked-car/",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 950,
@@ -17,23 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 950
+      "data_total": 950,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal vehicle"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The drugmaker is quickly coming to resemble The Gang That Couldn\u2019t Shoot Straight. Two months ago, Pfizer suffered an enormous embarassment after revealing that personal data, including social security numbers, belonging to 17,000 former and current employees was compromised after unauthorized file sharing software was used by an employee\u2019s spouse on a laptop.  Now, Pfizer is \u2018fessing up to another incident. This time, two Pfizer laptops were stolen from a locked car, The Day reports. The laptops, which disappeared May 31 in Boston, included the names, addresses, social security numbers and cell phone numbers of health-care professionals who \u00e2\u20ac\u0153were providing or considering providing contract services for Pfizer,\u00e2\u20ac\u009d according to a letter sent to Connecticut attorney general Richard Blumenthal. And 950 people are affected.",
   "source_id": "osint",
@@ -45,17 +33,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2007,
-        "day": 13,
-        "month": 8
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint487",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 8,
+        "day": 13,
+        "year": 2007
+      }
     }
   },
   "actor": {
@@ -90,18 +78,30 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2007,
+      "month": 5,
       "day": 31,
-      "month": 5
+      "year": 2007
     },
     "investigation": {
-      "year": 2007,
+      "month": 5,
       "day": 31,
-      "month": 5
+      "year": 2007
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

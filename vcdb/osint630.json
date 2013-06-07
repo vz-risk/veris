@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint630",
+  "security_compromise": "Confirmed",
   "reference": "",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 1103,
@@ -17,23 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1103
+      "data_total": 1103,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "HHS Breachtool",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Unknown"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Laptop stolen, no indication of location.",
   "source_id": "osint",
@@ -45,15 +33,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint630",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint630",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -88,15 +76,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 10,
       "day": 11,
-      "month": 10
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

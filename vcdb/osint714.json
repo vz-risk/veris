@@ -1,0 +1,144 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint714",
+  "reference": "http://healthitsecurity.com/2013/05/17/community-health-sends-patients-data-breach-notifications/ (20130604) http://www.wishtv.com/dpp/news/crime/medical-worker-stole-patient-identities (20130604)",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "amount": 10,
+          "variety": "Personal"
+        }
+      ],
+      "data_total": 10,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Hospital employee steals patient data for identity theft",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 17,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint714",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Community Hospitals of Indiana",
+      "country": "United States",
+      "notes": "",
+      "state": "IN",
+      "employee_count": "Unknown",
+      "industry": "621"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "month": 3,
+      "day": 15,
+      "year": 2013
+    },
+    "investigation": {
+      "month": 4,
+      "day": 15,
+      "year": 2013
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Days"
+    },
+    "discovery": {
+      "unit": "Months"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "misuse": {
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Mainframe"
+      }
+    ]
+  }
+}

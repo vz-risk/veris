@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint231",
+  "security_compromise": "Confirmed",
   "reference": "http://www.privacyrights.org/data-breach, http://www.efortresses.com/2012-Breaches-Matrix.htm ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 35959,
@@ -17,21 +17,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 35959
+      "data_total": 35959,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "3rd party desktop"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Usernames, e-mail addresses and passwords dumped on the Internet",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Unknown"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 5,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint231",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 5,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -90,8 +80,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "3rd party desktop"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

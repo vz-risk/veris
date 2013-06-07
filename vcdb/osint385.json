@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint385",
+  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/patient-medical-records-found-in-dumpster-in-florida.html, http://www.fox4now.com/news/local/183093551.html ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Hundreds of patient medical records were found in a dumpster in a Fort Myers, Fla., strip mall Dec. 11, according to a Fox 4 News report.  An individual was looking through a dumpster for cardboard boxes to help him move when he stumbled upon what appeared to be patient medical records. He called the local Fox television station, and a reporter called the police.  According to the report, the medical records allegedly belong to Luxor Industries, a physician group in Fort Myers. The medical records had names, addresses, phone numbers and Social Security numbers. Luxor Industries was raided by state agents in July. According to the report, state agents released few details on that raid. ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint385",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,13 +72,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 12,
       "day": 11,
-      "month": 12
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

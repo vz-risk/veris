@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint522",
+  "security_compromise": "Confirmed",
   "reference": "http://www.wpxi.com/news/news/local/target-11-investigates-confidential-information-ap/nTRw2/ ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Documents with confidential information including names, addresses and even Social Security numbers were apparently found a street corner sitting next to a dumpster in the West End.   A resident contacted Target 11 saying he had discovered boxes of documents from a non-profit development agency in the West End of Pittsburgh. He said the documents, including names and Social Security numbers, were sitting right out in the open next to a dumpster on a public sidewalk. ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 10,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint522",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 10,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,8 +75,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

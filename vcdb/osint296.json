@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint296",
+  "security_compromise": "Confirmed",
   "reference": "http://chapelboro.com/Hackers-Reportedly-Access-Thousands-Of-UNC-Lineber/15197571 ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 3500,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 3500
+      "data_total": 3500,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Thousands of people have had their private data publically exposed, after hackers reportedly got into a server at UNC\u2019s Lineberger Cancer Center.  The Chapel Hill News reports that the victims found out shortly after Christmas, when center director Dr. Shelley Earp sent out letters of apology; center employees found out about the breach last spring.  The incident affected about 3,500 individuals, exposing information such as their Social Security and passport numbers. In the letter, Earp told the victims that authorities have no way to know whether the data will be misused. The situation reportedly didn\u2019t involve any patient information, although it did involve a small number of people who were subjects in research projects.",
   "source_id": "osint",
@@ -43,15 +33,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint296",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint296",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -92,7 +82,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

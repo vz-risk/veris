@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint536",
+  "security_compromise": "Confirmed",
   "reference": "http://www.privacyrights.org/data-breach",
   "attribute": {
     "confidentiality": {
       "notes": "Sensitive health information related to a health care premium plans. ",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Medical"
@@ -19,21 +19,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 1134
+      "data_total": 1134,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Email]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "An email or emails with sensitive health information related to a health care premium plan was mistakenly emailed to or accessed by unauthorized people. ",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 7
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint536",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 7,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,17 +73,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 30,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 6,
       "day": 8,
-      "month": 6
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

@@ -9,11 +9,11 @@
     "overall_rating": "Insignificant"
   },
   "incident_id": "osint393",
+  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=23272",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 2300,
@@ -23,7 +23,8 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 2300
+      "data_total": 2300,
+      "data_disclosure": "Potentially"
     },
     "availability": {
       "duration": {
@@ -36,19 +37,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Information Commissioner (The Commissioner) was informed by the Council of the theft of an unencrypted laptop containing a database with child swimming lesson details for 2300 individuals. The information was not of a nature that would be defined as sensitive personal data in the Act.",
   "source_id": "osint",
@@ -60,17 +48,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 10,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint393",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 10,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -93,9 +81,9 @@
     {
       "victim_id": "Craven District Council",
       "notes": "",
-      "country": "United Kingdom",
+      "employee_count": "Unknown",
       "industry": "923",
-      "employee_count": "Unknown"
+      "country": "United Kingdom"
     }
   ],
   "timeline": {
@@ -118,8 +106,20 @@
       "unit": "Seconds"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - security alarm",
   "asset": {
     "assets": [
       {

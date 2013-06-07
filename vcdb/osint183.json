@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint183",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/sailboat-owners-20120320.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 2258,
@@ -17,22 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 2258
+      "data_total": 2258,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "The company is a small business which has maintained a retails sales website at shop.sailboatowners.com.  On Feb 23, 2012, staff noticed unusual activity on the web server, which led them to suspect that the network was under attack.  They immediately shut the site down and retained a forensic firm.  ",
   "source_id": "osint",
@@ -44,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint183",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -89,13 +78,24 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 23,
-      "month": 2
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

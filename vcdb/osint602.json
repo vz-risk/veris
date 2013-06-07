@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint602",
+  "security_compromise": "Confirmed",
   "reference": "www.oag.state.md.us/idtheft/Breach%20Notices/ITU%20215637.pdf  doj.nh.gov/consumer/security-breaches/.../experian-20120518.pdf  ",
   "attribute": {
     "confidentiality": {
       "notes": "Only 2 confirmed records lost, based on MD and NH notifications.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 2,
@@ -17,11 +17,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 2
+      "data_total": 2,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {},
   "schema_version": "1.0",
   "summary": "Coast One Financial had Experian consumer information accessed. Limited information on breach available.",
   "source_id": "osint",
@@ -33,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 18,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint602",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 18,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -68,12 +68,12 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
-      "month": 5
+      "month": 5,
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
-      "month": 5
+      "month": 5,
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -85,7 +85,7 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {},
   "discovery_method": "Unknown",
   "asset": {
     "notes": "No information provided on Asset Details.",

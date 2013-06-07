@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint345",
+  "security_compromise": "Confirmed",
   "reference": "http://www.abc.net.au/news/2012-12-11/adfa-hack/4421690 ",
   "attribute": {
     "confidentiality": {
       "notes": "Students and staff.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 20000,
@@ -17,21 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 20000
+      "data_total": 20000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "A member of the infamous Anonymous group, known as Darwinaire, is claiming responsibility for the theft.",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The private details of thousands of staff and students at the Australian Defence Force Academy (ADFA) have been hacked and released online.  The details include the name, rank, birth dates and passwords of up to 20,000 people.  A member of the infamous Anonymous group, known as Darwinaire, is claiming responsibility for the theft.  An online blog for hackers says the attack took place a month ago, but the details are still easily accessible online.  Darwinaire said the hack was just for fun.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 11,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint345",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 11,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -76,9 +66,9 @@
     {
       "victim_id": "Australian Defence Force Academy (ADFA)",
       "notes": "",
-      "country": "Australia",
+      "employee_count": "Unknown",
       "industry": "921110",
-      "employee_count": "Unknown"
+      "country": "Australia"
     }
   ],
   "timeline": {
@@ -89,8 +79,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "A member of the infamous Anonymous group, known as Darwinaire, is claiming responsibility for the theft.",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

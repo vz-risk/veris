@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint423",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?s=Delta+Dental&x=0&y=0, http://www.news-gazette.com/news/health/miscellaneous/2012-06-20/some-delta-dental-records-lost-during-shipping.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 650,
@@ -17,7 +17,8 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 650
+      "data_total": 650,
+      "data_disclosure": "Yes"
     },
     "availability": {
       "duration": {
@@ -30,17 +31,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "3rd party shipper loses medical records; xrays. ",
   "source_id": "osint",
@@ -52,17 +42,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint423",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -110,7 +100,17 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

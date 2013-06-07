@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint224",
+  "security_compromise": "Confirmed",
   "reference": "http://www.roanoke.com/news/roanoke/wb/307564 ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 258,
@@ -17,21 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 258
+      "data_total": 258,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Email]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "An email sent Thursday evening by the Virginia Military Institute administration to the president of the school's graduating class included something it should not have -- a spreadsheet revealing the grade point averages of every member of the school's senior class.  According to VMI spokesman Stewart MacInnis, the error was compounded when the class president, not realizing there was more than one spreadsheet attached to the administration's email, forwarded the message to the 258 members of the senior class.  MacInnis said the administration had meant to email only a spreadsheet with the names and hometowns of potential graduates as the school's 2012 graduation approaches. The class president forwarded the email asking students to make sure they were listed and to double-check their information, MacInnis said.  The school's mistake led to information about each student's cumulative and major grade point averages being available to other students to review, MacInnis said.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint224",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,15 +75,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 12,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

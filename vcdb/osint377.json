@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint377",
+  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/kentucky-health-agency-notifies-2500-of-potential-hipaa-breach.html, http://surfky.com/index.php/news/kentucky/24461-medicaid-clients-notified-of-potential-hipaa-breach ",
   "attribute": {
     "integrity": {
@@ -12,7 +13,6 @@
     },
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 2500,
@@ -26,24 +26,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 2500
+      "data_total": 2500,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "There is a conflict in how many records were released.  I took the higher amount.",
-  "action": {
-    "social": {
-      "notes": "",
-      "vector": [
-        "Phone"
-      ],
-      "target": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Cabinet for Health and Family Services in Frankfort, Ky., is informing approximately 2,500 clients of a possible data breach that may have released information held by the Cabinet's Department for Community Based Services.  The Cabinet for Health and Family Services (CHFS) is informing 1,090 Medicaid clients by letter of a computer security breach that may have resulted in the unintentional release of information held by Hewlett-Packard Enterprise Services (HP ES), the vendor that manages Medicaid\u2019s information management system.   In mid-November, an employee of Carewise Health, a subcontractor of HP ES, responded to a telephone computer scam, resulting in unauthorized remote access to a computer that contained a database with information on the Medicaid clients. HP ES and Carewise Health disabled the laptop as soon as the breach was reported, and notified CHFS. Typically such scams are targeted at charging people for unnecessary computer services. While there is no evidence that the confidential contents of the database were accessed, the hacker did have access to the employee\u2019s laptop for a brief period. The database included health and other information about the individuals being notified, including social security numbers for less than half the individuals. HP ES is arranging for those affected to receive free credit monitoring to detect identity theft for one year.  ",
   "source_id": "osint",
@@ -55,17 +42,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 28,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint377",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 28,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -114,18 +101,31 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 11,
       "day": 15,
-      "month": 11
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 11,
       "day": 15,
-      "month": 11
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "social": {
+      "notes": "",
+      "vector": [
+        "Phone"
+      ],
+      "target": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "management": true,

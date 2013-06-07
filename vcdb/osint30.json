@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint30",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Incident%20Notification%20Letter%20_Final%2010022012__0.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Mail]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Member ID cards were mailed to the wrong members.  Exposed data types are name, member ID number, DOB.  ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 22,
-        "month": 10
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint30",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 10,
+        "day": 22,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,17 +73,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 9,
       "day": 17,
-      "month": 9
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 9,
       "day": 28,
-      "month": 9
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Mail]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

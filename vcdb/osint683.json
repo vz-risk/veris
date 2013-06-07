@@ -1,0 +1,106 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint683",
+  "reference": "http://healthitsecurity.com/2013/02/20/johns-hopkins-investigating-patient-privacy-breach/, http://www.baltimoresun.com/news/maryland/crime/blog/bs-md-ci-hopkins-doctor-investigation-20130218,0,3650212.story",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Dr. Nikita Levy, a former gynecologist at Johns Hopkins Medical, was under investigation for allegedly recording photo and video images of patients. Police think Levy's death may have been a suicide.  Police want to identify women seen over two decades by a Johns Hopkins gynecologist who was found dead on Monday amid a police investigation that he was surreptitiously photographing and videotaping his patients.  The doctor, identified as Nikita A. Levy, 54, was let go by Johns Hopkins Medicine earlier this month after a colleague alerted security staff to the allegations, hospital officials said. They said Levy had been capturing images of patients with personal photo and video equipment.  Police uncovered what they called an \"extraordinary\" amount of evidence at Levy's Towson home.",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 18,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint683",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Inappropriate"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Johns Hopkins Medical",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 1080000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "MD",
+      "employee_count": "10001 to 25000",
+      "industry": "622110"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "month": 2,
+      "day": 4,
+      "year": 2013
+    },
+    "investigation": {
+      "month": 2,
+      "day": 4,
+      "year": 2013
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [],
+      "variety": []
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "N - Camera"
+      }
+    ]
+  }
+}

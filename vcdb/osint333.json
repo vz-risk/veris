@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint333",
+  "security_compromise": "Confirmed",
   "reference": "http://securitywatch.pcmag.com/none/298270-lulzsec-exploited-photo-upload-tool-in-militarysingles-com-breach; http://www.databreaches.net/?p=23736 ",
   "attribute": {
     "confidentiality": {
       "notes": "Customers of MilitarySingles.com had their names, usernames, e-mail addresses, IP addresses, and passwords has been dumped on the Internet. ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Classified"
@@ -22,21 +22,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 163792
+      "data_total": 163792,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "DoS"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "LulzSec Exploited Photo Upload Tool in MilitarySingles.com Breach. ",
   "source_id": "osint",
@@ -48,17 +38,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 26,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint333",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 26,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,13 +82,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 27,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "DoS"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

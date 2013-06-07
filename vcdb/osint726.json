@@ -1,0 +1,149 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint726",
+  "reference": "http://vtdigger.org/2013/06/03/champlain-college-offers-hotline-security-monitoring-in-wake-of-dat/ (20130604) http://www.burlingtonfreepress.com/article/20130603/NEWS02/306030008/Champlain-discloses-possible-security-breach?nclick_check=1 (20130604)",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "amount": 14217,
+          "variety": "Personal"
+        }
+      ],
+      "data_total": 14217,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Unencrypted hard drive containing personal data for thousands of students was left unsecured for a period of time.",
+  "security_compromise": "Suspected",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 3,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint726",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Student"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "notes": "",
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Champlain College Incorporated",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 74000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "VT",
+      "employee_count": "101 to 1000",
+      "industry": "611210"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "month": 3,
+      "year": 2013
+    },
+    "investigation": {
+      "month": 3,
+      "year": 2013
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "NA"
+    },
+    "discovery": {
+      "unit": "Days"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "M - Disk drive"
+      }
+    ]
+  }
+}

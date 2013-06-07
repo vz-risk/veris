@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint86",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/hertz-corporation-20120801.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,18 +23,6 @@
     }
   },
   "notes": "Partner name is JP Morgan.",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "A partner's system was hacked into, and the data at risk includes names, address, bank account numbers and SSNs of suppliers, consultants, employees and former employees of Hertz.",
   "source_id": "osint",
@@ -45,17 +34,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 8
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint86",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 8,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -97,7 +86,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

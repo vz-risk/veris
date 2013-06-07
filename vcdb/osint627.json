@@ -3,6 +3,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint627",
+  "security_compromise": "Confirmed",
   "reference": "http://techyzilla.blogspot.com/2012/07/fitch-rating-sri-lanka-website-hacked.html",
   "attribute": {
     "integrity": {
@@ -12,7 +13,6 @@
     },
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 886,
@@ -26,22 +26,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 886
+      "data_total": 886,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Website and database compromised via SQL Injection attack. Usernames, clear-text passwords, and e-mail addresses were posted to public site.",
   "source_id": "osint",
@@ -53,17 +42,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2102,
-        "day": 23,
-        "month": 7
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint627",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 7,
+        "day": 23,
+        "year": 2102
+      }
     }
   },
   "actor": {
@@ -85,9 +74,9 @@
     {
       "victim_id": "Fitch Ratings Lanka Limited",
       "notes": "",
-      "country": "Sri Lanka",
+      "employee_count": "11 to 100",
       "industry": "561499",
-      "employee_count": "11 to 100"
+      "country": "Sri Lanka"
     }
   ],
   "timeline": {
@@ -95,8 +84,8 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
-      "month": 1
+      "month": 1,
+      "year": 2012
     },
     "investigation": {
       "year": 2012
@@ -111,8 +100,19 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "management": true,

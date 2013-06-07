@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint334",
+  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=23032; http://www.wowt.com/news/headlines/Student_Allegedly_Admits_Hacking_Schools_Computer_Network_138229584.html ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "applicaiton via cell phone",
-      "vector": [
-        "Other"
-      ],
-      "variety": [
-        "Other"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A student at Horizon High, an alternative high school in Millard Utah, has hacked into Millard High School's computer network.  ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 27,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint334",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 27,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,8 +78,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "applicaiton via cell phone",
+      "vector": [
+        "Other"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "discovery_method": "Ext - law enforcement",
   "asset": {
     "assets": [
       {

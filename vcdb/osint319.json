@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint319",
+  "security_compromise": "Confirmed",
   "reference": "http://newyork.cbslocal.com/2012/12/19/nj-health-department-apologizes-after-privacy-breach-in-email-to-medical-marijuana-patients/?utm_source=dlvr.it&utm_medium=twitter ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 481,
@@ -17,21 +17,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 481
+      "data_total": 481,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Email]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Some medical marijuana patients in New Jersey are upset that an email from the state health department included the email addresses of all recipients.  The state e-mailed more than 480 registered medical marijuana patients to tell them not to call the state, but instead to call the dispensary in Montclair to make an appointment. But the message did not hide the e-mail addresses of the other recipients.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 19,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint319",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 19,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -87,8 +77,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

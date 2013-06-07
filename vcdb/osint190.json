@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint190",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/03/19/10000-accounts-leaked-from-adult-insider-network/",
   "attribute": {
     "confidentiality": {
       "notes": "Posted username, email address, encrypted password, and salt",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 10679,
@@ -47,21 +47,11 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 10679
+      "data_total": 10679,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Hacker compromised Adult Insider Network posted encrypted authentication credentials on public site.",
   "source_id": "osint",
@@ -73,17 +63,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 19,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint190",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 19,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -106,9 +96,9 @@
     {
       "victim_id": "Adult Insider Network",
       "notes": "Not sure how to categorize them.  They are a membership site where webmasters of adult websites can network and share ideas.",
-      "country": "United States",
+      "employee_count": "Unknown",
       "industry": "51913",
-      "employee_count": "Unknown"
+      "country": "United States"
     }
   ],
   "timeline": {
@@ -131,8 +121,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint466",
+  "security_compromise": "Confirmed",
   "reference": "http://www.ktvu.com/news/news/crime-law/hackers-steal-credit-card-information-concord-pub/nTHCm/, http://concord-ca.patch.com/articles/credit-card-theft-case-at-ej-phair-remains-a-mystery, http://oag.ca.gov/system/files/EJ%20PHAIR%20BREWING%20CO%20and%20ALE%20HOUS-C2012116470%20CA%20AG%20Letter_customer%20notice_0.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "An East Bay pub says computer hackers stole the credit card information of dozens of customers recently and there may be more who were affected.  Every time a business swipes a credit card, that information is collected by a third party, so the business can get paid.  But in this case, E.J. Phair suspects hackers used a computer virus or worm to access that sensitive information without ever stepping foot inside the business.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 27,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint466",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 27,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,8 +78,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

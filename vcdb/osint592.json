@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint592",
+  "security_compromise": "Confirmed",
   "reference": "http://www.latimes.com/business/technology/la-fi-tn-microsoft-hack-azure-20130222,0,6681241.story; http://www.news.com.au/technology/microsoft-xbox-azure-services-taken-offline/story-e6frfro0-1226584080719; http://readwrite.com/2013/02/22/microsofts-rotten-friday-hack-revealed-as-azure-halo-go-down; http://www.thehacknews.org/2013/02/microsofts-azure-service-hit-by-expired.html",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "DoS"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "MICROSOFT online services are going offline around the world, affecting Xbox Live and Windows Azure users. ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 22,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint592",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 22,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -86,16 +76,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2013,
+      "month": 2,
       "day": 22,
-      "month": 2
+      "year": 2013
     },
     "investigation": {
       "year": 2013
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "DoS"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

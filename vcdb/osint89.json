@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint89",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/impairment-sedgwick-20120320.pdf, http://doj.nh.gov/consumer/security-breaches/documents/impairment-resources-20120213.pdf, http://www.atg.state.vt.us/assets/files/Impairment%20Resources%20Notice.pdf,  ",
   "attribute": {
     "confidentiality": {
@@ -22,19 +23,6 @@
     }
   },
   "notes": "Partner was Impairment Resources",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Partner facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Partner experienced the theft of computer equipment from their offices, exposing names, SSNs and medical information.",
   "source_id": "osint",
@@ -46,17 +34,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint89",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -91,17 +79,29 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 12,
       "day": 31,
-      "month": 12
+      "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 3,
-      "month": 1
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

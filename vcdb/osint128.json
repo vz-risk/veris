@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint128",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/vermont-credit-union-20121023.pdf, http://www.atg.state.vt.us/assets/files/VSECU%20Security%20Breach%20Notice%20ltr%20to%20consumer.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Two unencrypted computer backup tapes were found to be missing.  The company believes they were thrown away and are now buried in a landfill.  They contained names, addresses, SSNs, Driver's license numbers, financial account information and transaction records.  ",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 10
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint128",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 10,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -86,18 +76,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 8,
       "day": 27,
-      "month": 8
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 9,
       "day": 10,
-      "month": 9
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

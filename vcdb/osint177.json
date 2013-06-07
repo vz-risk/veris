@@ -33,6 +33,7 @@
     "overall_rating": "Painful"
   },
   "incident_id": "osint177",
+  "security_compromise": "Confirmed",
   "reference": "http://www.azcentral.com/arizonarepublic/local/articles/2012/01/19/20120119asu-system-back-online-after-breach.html (20130212) http://cronkite.asu.edu/mcguireblog/?p=298(20130212) http://downtowndevil.com/2012/01/19/19699/asurite-system-shut-down-to-protect-personal-information/ (20130212) http://downtowndevil.com/2012/01/26/20213/asu-phoenix-law-hacking-asurite/ (20130212) http://www.statepress.com/2012/01/25/following-hack-asurite-accounts-are-target-of-phishing-attacks/ (20130212)",
   "attribute": {
     "confidentiality": {
@@ -50,18 +51,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "External hackers breached the ASURITE authentication system at Arizona State University and downloaded files.  Response resulted in complete shutdown for at least one day.",
   "source_id": "osint",
@@ -73,17 +62,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 18,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint177",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 18,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -125,9 +114,9 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 18,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -139,8 +128,19 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - IT audit",
   "asset": {
     "notes": "",
     "assets": [

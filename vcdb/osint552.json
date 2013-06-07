@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint552",
+  "security_compromise": "Confirmed",
   "reference": "http://nakedsecurity.sophos.com/2012/11/15/nasa-data-breach-stolen-laptop/; http://epic.org/2012/11/nasa-suffers-more-data-breache.html ",
   "attribute": {
     "confidentiality": {
       "notes": "The information on the laptop contained personal identifiable information (PII) of employees and students. ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Personal"
@@ -19,23 +19,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 2300
+      "data_total": 2300,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "In March 2011, algorithms used to command and control the International Space Station were exposed. ",
   "source_id": "osint",
@@ -47,17 +35,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 15,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint552",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 15,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,16 +76,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
-      "month": 3
+      "month": 3,
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 10,
       "day": 31,
-      "month": 10
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

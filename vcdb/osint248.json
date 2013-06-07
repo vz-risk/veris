@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint248",
+  "security_compromise": "Confirmed",
   "reference": "http://www.templecommunityhospital.com/computer-theft-in-xray-alert/; http://www.phiprivacy.net/?p=10133; http://latimesblogs.latimes.com/lanow/2012/08/patient-data-stolen-from-temple-community-hospital-.html",
   "attribute": {
     "confidentiality": {
       "notes": "The computer stolen contained pictures of CT scans performed that contained patients\u2019 names, the ordering doctor\u2019s names, and the patients\u2019 hospital account numbers. ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -22,23 +22,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 603
+      "data_total": 603,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Patients personal and medical information was taken from a computer that was in a locked office.   ",
   "source_id": "osint",
@@ -50,17 +38,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 27,
-        "month": 8
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint248",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 8,
+        "day": 27,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -95,16 +83,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 7,
       "day": 3,
-      "month": 7
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

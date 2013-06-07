@@ -3,6 +3,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint498",
+  "security_compromise": "Confirmed",
   "reference": "http://www.ibtimes.co.uk/articles/297770/20120213/turkey-opdigiturk-anonymous-ica-pastebin.htm http://www.cyberwarnews.info/2012/02/14/turkish-information-technologies-and-communications-authority-hacked-and-lots-of-data-leaked/",
   "attribute": {
     "confidentiality": {
@@ -22,18 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Part of #OpDigiturk. The Anonymous collective has hacked Turkey's Information Technologies and Communications Authority (ICA) and leaked information on Pastebin as part of an assault against a Turkish satellite provider.",
   "source_id": "osint",
@@ -45,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 13,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint498",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 13,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -79,9 +68,9 @@
     {
       "victim_id": "Turkish ICA",
       "notes": "",
-      "country": "Turkey",
+      "employee_count": "101 to 1000",
       "industry": "921",
-      "employee_count": "101 to 1000"
+      "country": "Turkey"
     }
   ],
   "timeline": {
@@ -92,9 +81,9 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 13,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -106,8 +95,19 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

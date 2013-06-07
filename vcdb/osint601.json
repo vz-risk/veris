@@ -3,6 +3,7 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint601",
+  "security_compromise": "Confirmed",
   "reference": "http://www.reuters.com/article/2012/01/23/us-euronetworldwide-idUSTRE80M2ET20120123 http://digitaltransactions.net/news/story/3405",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Payment processor disclosed that they suffered a data breach. No information was provided regarding how information was breached or how much.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint601",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -104,7 +94,17 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

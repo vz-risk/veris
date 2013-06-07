@@ -1,0 +1,108 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint668",
+  "reference": "http://allthingsd.com/20130426/livingsocial-hacked-more-than-50-million-customer-names-emails-birthdates-and-encrypted-passwords-accessed/?goback=.gde_36573_member_236065788, http://allthingsd.com/20130426/livingsocial-hacked-more-than-50-million-customer-names-emails-birthdates-and-encrypted-passwords-accessed/?goback=.gde_36573_member_236065788,  ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "amount": 50000000,
+          "variety": "Credentials"
+        },
+        {
+          "amount": 50000000,
+          "variety": "Personal"
+        }
+      ],
+      "data_total": 50000000,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "LivingSocial recently experienced a cyber-attack on our computer systems that resulted in unauthorized access to some customer data from our servers. We are actively working with law enforcement to investigate this issue.  The information accessed includes names, email addresses, date of birth for some users, and encrypted passwords -- technically \u2018hashed\u2019 and \u2018salted\u2019 passwords. We never store passwords in plain text.  The database that stores customer credit card information was not affected or accessed.",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 26,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint668",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "LivingSocial",
+      "country": "United States",
+      "notes": "",
+      "state": "DC",
+      "employee_count": "Unknown",
+      "industry": "541890"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "month": 4,
+      "year": 2013
+    },
+    "investigation": {
+      "month": 4,
+      "year": 2013
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint606",
+  "security_compromise": "Confirmed",
   "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm; http://www.smh.com.au/it-pro/security-it/hackers-infiltrate-domain-name-auction-house-20120201-1qtgk.html ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Computer hackers penetrate database of Netfleet, possibly accessing addresses and credit card numbers.  ",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 2,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint606",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 2,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -77,23 +67,33 @@
     {
       "victim_id": "Netfleet Domain Names",
       "notes": "",
-      "country": "Australia",
+      "employee_count": "1 to 10",
       "industry": "541512",
-      "employee_count": "1 to 10"
+      "country": "Australia"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 1,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

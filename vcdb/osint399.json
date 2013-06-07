@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint399",
+  "security_compromise": "Confirmed",
   "reference": "http://www.businessweek.com/ap/2012-12-31/ri-labor-dept-dot-warns-of-possible-privacy-breach ",
   "attribute": {
     "confidentiality": {
       "notes": "Three months of credit monitoring is offered.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 700,
@@ -17,21 +17,11 @@
       "state": [
         "Transmitted unencrypted"
       ],
-      "data_total": 700
+      "data_total": 700,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misconfiguration"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Rhode Island Department of Labor and Training says a technical problem may have led to a privacy breach for some callers to its phone line for unemployment and disability benefits.  Spokeswoman Laura Hart says the problem happened Dec. 24 when some of the 700 callers that day may have inadvertently been able to hear parts of other callers' conversations. It's possible personal information could have been disclosed, including Social Security numbers.  The department is investigating what happened. Hart says it shut down the phone system as soon as officials learned of the problem.  The department is alerting all callers from that day and offering them free credit monitoring services for three months.  Hart says it's believed the number of people affected is much less than the 700 who called that day. ",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 31,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint399",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 31,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,17 +72,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 12,
       "day": 24,
-      "month": 12
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 12,
       "day": 24,
-      "month": 12
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misconfiguration"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

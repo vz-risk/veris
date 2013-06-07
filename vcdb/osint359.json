@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint359",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cleveland.com/metro/index.ssf/2012/04/case_western_reserve_notifies.html (20130218) https://www.attevo.com/blog/600-alumni-of-case-western-reserve-university-involved-in-data-b/ (20130218)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 600,
@@ -47,23 +47,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 600
+      "data_total": 600,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Stolen laptop results in potentially exposed PII for 600 former students",
   "source_id": "osint",
@@ -75,17 +63,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 2,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint359",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 2,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -123,14 +111,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 12,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 13,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -142,8 +130,20 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

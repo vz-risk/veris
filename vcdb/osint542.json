@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint542",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/02/17/islamicfinder-org-and-culturecrossing-net-hacked-by-alienz-and-a-message-to-anonymous/ ",
   "attribute": {
     "confidentiality": {
       "notes": "Account information that contained encrypted passwords. ",
-      "data_disclosure": "Unknown",
       "data": [
         {
           "variety": "Unknown"
@@ -16,21 +16,11 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 300
+      "data_total": 300,
+      "data_disclosure": "Unknown"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Websites were attacked and they were islamicfinder.org and culturecrossing.net and both contained account leaks.",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 2
-      }
+    "asset": {
+      "total": "Yes"
     },
     "f500": "N",
     "master_id": "osint542",
-    "asset": {
-      "total": "Yes"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -87,9 +77,9 @@
     {
       "victim_id": "Islamic Finder",
       "industry": "541612",
-      "country": "Unknown",
+      "employee_count": "Unknown",
       "state": "",
-      "employee_count": "Unknown"
+      "country": "Unknown"
     }
   ],
   "timeline": {
@@ -97,13 +87,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 16,
-      "month": 2
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

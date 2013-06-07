@@ -3,11 +3,11 @@
     "overall_rating": "Insignificant"
   },
   "incident_id": "osint478",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/derry-londonderry-center-20120409.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1,
@@ -21,21 +21,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1
+      "data_total": 1,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Remote access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Former employee of medical center still had access to patient data. Used this access to look up into on a patient and went to her place of employment to ask her out.",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 9,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint478",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 9,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -96,14 +86,14 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 23,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 3,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -115,8 +105,18 @@
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Remote access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "assets": [

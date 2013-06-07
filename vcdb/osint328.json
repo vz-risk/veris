@@ -33,6 +33,7 @@
     "overall_rating": "Damaging"
   },
   "incident_id": "osint328",
+  "security_compromise": "Confirmed",
   "reference": "http://www.charitypeople.co.uk/news-Charity_jobs_at_risk_following_laptop_theft-801301617.aspx (20130217) http://www.thisisscunthorpe.co.uk/Jobs-risk-thieves-steal-Scunthorpe-charity-shop-s/story-15295921-detail/story.html#axzz2LDwW5ZbU (20130217)",
   "attribute": {
     "confidentiality": {
@@ -49,20 +50,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Disabled controls"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Stolen laptop contained the only copies of critical data",
   "source_id": "osint",
@@ -74,15 +61,15 @@
         "data_subject": "Other"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint328",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint328",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -106,9 +93,9 @@
     {
       "victim_id": "Active Community Team",
       "notes": "",
-      "country": "United Kingdom",
+      "employee_count": "1 to 10",
       "industry": "624",
-      "employee_count": "1 to 10"
+      "country": "United Kingdom"
     }
   ],
   "timeline": {
@@ -116,14 +103,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 18,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 19,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -135,8 +122,21 @@
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Disabled controls"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint452",
+  "security_compromise": "Confirmed",
   "reference": "Breachtool, http://www.govhealthit.com/news/infographic-biggest-healthcare-data-breaches-2012, http://oag.ca.gov/system/files/Apria%20Healthcare%20Sample%20Notification%20Letter_0.pdf?, http://doj.nh.gov/consumer/security-breaches/documents/apria-healthcare-20120927.pdf, http://doj.nh.gov/consumer/security-breaches/documents/apria-healthcare-20120815.pdf, http://www.atg.state.vt.us/issues/consumer-protection/privacy-and-Data-Security/documents-and-resources5/apria-healthcare-follow-up-notification-letter.php ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 65700,
@@ -21,23 +21,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 65700
+      "data_total": 65700,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal vehicle"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Laptop stolen from an employee's vehicle puts patient data at risk.  Specifically, SSN, name, DOB and personal health info was included.",
   "source_id": "osint",
@@ -49,17 +37,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 28,
-        "month": 9
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint452",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 9,
+        "day": 28,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,18 +82,30 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 6,
       "day": 14,
-      "month": 6
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 6,
       "day": 14,
-      "month": 6
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

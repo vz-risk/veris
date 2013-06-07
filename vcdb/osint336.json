@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint336",
+  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/80-000-User-Accounts-Leaked-from-MiniMins-Com-260677.shtml ",
   "attribute": {
     "confidentiality": {
       "notes": "It was posted that email addresses, usernames and password hashes were made available by the hacker.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,21 +16,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 80461
+      "data_total": 80461,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A hacker called Le0nB3lm0nt breached minimins.com, a popular weight loss support forum, leaking the website\u2019s entire database, totaling 80,461 record sets.",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 24,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint336",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 24,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -86,13 +76,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 22,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

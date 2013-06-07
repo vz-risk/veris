@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint580",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/02/17/chinese-cpu-maker-loongson-hacked-and-data-leaked-by-muldaria48/ ",
   "attribute": {
     "confidentiality": {
       "notes": "usernames, emails and passwords",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,21 +16,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 223
+      "data_total": 223,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "Loongson is a private/public start up also creates other technoglys to go with the cpus they produce.  ",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Anonymous hacker @muldaria48 hacked Loongson and data was leaked. ",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint580",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -75,9 +65,9 @@
     {
       "victim_id": "Loongson",
       "notes": "",
-      "country": "China",
+      "employee_count": "101 to 1000",
       "industry": "322299",
-      "employee_count": "101 to 1000"
+      "country": "China"
     }
   ],
   "timeline": {
@@ -88,8 +78,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

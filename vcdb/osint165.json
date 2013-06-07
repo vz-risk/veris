@@ -33,11 +33,11 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint165",
+  "security_compromise": "Confirmed",
   "reference": "http://www.herald.ie/news/military-names-on-stolen-laptop-28003790.html (20130213)",
   "attribute": {
     "confidentiality": {
       "notes": "The article says that the incident affected all 70 RDF members but that former members may also be affected.",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 70,
@@ -47,23 +47,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 70
+      "data_total": 70,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal residence"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A MILITARY laptop containing the personal details of hundreds of reserve defense force (RDF) members has been stolen.",
   "source_id": "osint",
@@ -75,17 +63,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint165",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -108,9 +96,9 @@
     {
       "victim_id": "Ireland 65th Battalion, Reserve Defence Forces",
       "notes": "",
-      "country": "Ireland",
+      "employee_count": "11 to 100",
       "industry": "928",
-      "employee_count": "11 to 100"
+      "country": "Ireland"
     }
   ],
   "timeline": {
@@ -118,12 +106,12 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
-      "month": 3
+      "month": 3,
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
-      "month": 3
+      "month": 3,
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -135,8 +123,20 @@
       "unit": "Hours"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal residence"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

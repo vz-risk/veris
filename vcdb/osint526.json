@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint526",
+  "security_compromise": "Confirmed",
   "reference": "http://www.zdnet.com/blog/violetblue/sex-tech-bitcoin-louis-theroux-booth-babe-life-eharmony-password-scandal/1357 ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1500000,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1500000
+      "data_total": 1500000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The simultaneous, massive password leak at dating mega-site eHarmony was a bad situation as well.  On Thursday eHarmony admitted that its password database had been compromised and somewhere around 1.5 million passwords were exposed and out in the wild.  With no irony whatsoever, eHarmony characterized the 1.5 million passwords as a \"small fraction\" of its accounts.  According to The H security blog, the eHarmony passwords were put into a forum and users were invited to crack the hashes as a warmup to giving the forum LinkedIn's password database. ",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 9,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint526",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 9,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,8 +84,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

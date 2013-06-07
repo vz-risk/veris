@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint196",
+  "security_compromise": "Confirmed",
   "reference": "https://www.privacyrights.org/node/55178",
   "attribute": {
     "confidentiality": {
       "notes": "The lost flash drive contained patient names, Social Security numbers, dates of birth, addresses, telephone numbers, account numbers, diagnoses, and other protected health information.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Medical"
@@ -19,21 +19,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 5713
+      "data_total": 5713,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "Unknown",
-      "vector": [
-        "Carelessness"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A vendor working with patient data for digital conversion from Colon & Digestive lost a flash drive that contained patient names, Social Security numbers, dates of birth, addresses, telephone numbers, account numbers, diagnoses, and other protected health information. ",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 19,
-        "month": 10
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint196",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 10,
+        "day": 19,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -87,21 +77,31 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 7,
       "day": 16,
-      "month": 7
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 10,
       "day": 17,
-      "month": 10
+      "year": 2012
     },
     "discovery": {
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": "Unknown",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

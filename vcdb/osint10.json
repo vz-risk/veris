@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint10",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/RBGDataBreachLetterFINAL_0.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Carelessness"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A report containing names and SSNs of employees was accidentally sent to the personal email address of an employee of another organization, owned by the same company.  ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": ""
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 4,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint10",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 4,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -84,16 +74,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 11,
       "day": 9,
-      "month": 11
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

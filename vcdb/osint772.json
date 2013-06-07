@@ -1,0 +1,110 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint772",
+  "reference": "http://healthitsecurity.com/2013/03/25/utah-health-clinic-sends-patient-data-breach-notifications/, http://www.sltrib.com/sltrib/news/56048214-78/records-clinic-medical-breach.html.csp",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "amount": 2600,
+          "variety": "Medical"
+        },
+        {
+          "amount": 2600,
+          "variety": "Personal"
+        }
+      ],
+      "data_total": 2600,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "The Granger Medical Clinic, a West Valley City, Utah-based clinic, fears there has been a potential patient data breach after 2,600 medical appointment records from 2012 that were supposed to be shredded went missing on Jan. 22. The clinic sent out patient notification letters on Friday, as HIPAA mandates that an organization alert affected patients within 60 days of the breach.",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 22,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint772",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Granger Medical Clinic",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 20400000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "UT",
+      "employee_count": "101 to 1000",
+      "industry": "621111"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "month": 1,
+      "day": 22,
+      "year": 2013
+    },
+    "investigation": {
+      "month": 1,
+      "year": 2013
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "error": {
+      "notes": "Victim work area",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

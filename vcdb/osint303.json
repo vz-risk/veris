@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint303",
+  "security_compromise": "Confirmed",
   "reference": "http://go.bloomberg.com/tech-blog/2012-08-10-hackers-steal-encrypt-health-records-and-hold-data-for-ransom/",
   "attribute": {
     "confidentiality": {
@@ -28,18 +29,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Surgeons of Lake County, located in the affluent northern Illinois suburb of Libertyville, revealed last month that hackers had burrowed deeply into its computer network, infiltrating a server where e-mails and electronic medical records were stored.  But unlike many other data breaches, the hackers made no attempt to keep their presence a secret. In fact, they all but fired a flare to announce the break-in, taking the extreme step of encrypting their illicit haul and posting a digital ransom note demanding payment for the password.  The doctors turned the server off and notified the authorities, refusing to pay.",
   "source_id": "osint",
@@ -51,17 +40,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 10,
-        "month": 8
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint303",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 8,
+        "day": 10,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -97,8 +86,19 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

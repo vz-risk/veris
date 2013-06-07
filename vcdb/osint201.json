@@ -9,11 +9,11 @@
     "overall_rating": "Damaging"
   },
   "incident_id": "osint201",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=10663; http://www.hhs.gov/ocr/privacy/hipaa/administrative/breachnotificationrule/breachtool.html February 12, 2013",
   "attribute": {
     "confidentiality": {
       "notes": "The receptionist downloaded patients' name, address, phone number and date of birth and gave them to a psychiatrist and a nurse practitioner who had also left the practice.  ",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -22,23 +22,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 13000
+      "data_total": 13000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Tampering"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "An employee with authorization/legitimate purpose accessed information pertaining to patients. ",
   "source_id": "osint",
@@ -50,17 +38,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 10,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint201",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 10,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,20 +76,32 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 6,
       "day": 29,
-      "month": 6
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 8,
       "day": 17,
-      "month": 8
+      "year": 2012
     },
     "discovery": {
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Tampering"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

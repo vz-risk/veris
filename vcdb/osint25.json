@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint25",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/SVSP%20Notification%20Letter_0.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misconfiguration"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A database file containing personal informatino for custody staff was accessible to all staff on a server.  The file contained name, SSN, phone, address and position information.  ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 1,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint25",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 1,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -80,15 +70,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 9,
       "day": 26,
-      "month": 9
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misconfiguration"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

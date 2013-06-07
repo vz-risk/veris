@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint175",
+  "security_compromise": "Confirmed",
   "reference": "http://triblocal.com/naperville/2012/01/26/report-cards-mistakenly-delivered-to-emergency-contacts/",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,21 +16,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 10
+      "data_total": 10,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Mail]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Naperville Unit District 203 may not get very high marks in the subject of report card distribution this semester.  The district recently learned copies of some high school students\u2019 report cards were accidentally sent to the person listed as their emergency contact.  Chief Information Officer Roger Brunelle said a vendor made an unauthorized change to the computer program that generates report cards, which led to duplicates being mailed in some cases.",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 26,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint175",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 26,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -86,8 +76,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through Mail]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

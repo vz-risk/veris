@@ -21,11 +21,11 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint413",
+  "security_compromise": "Confirmed",
   "reference": "http://www.zdnet.com/blog/security/lulzsec-hacks-css-corp/11108",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 66,
@@ -35,21 +35,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 66
+      "data_total": 66,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Lulzsec dumps employee list of CSS Corp onto pastebin.",
   "source_id": "osint",
@@ -61,17 +51,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 27,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint413",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 27,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -109,14 +99,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 27,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 27,
-      "month": 3
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -128,8 +118,18 @@
       "unit": "Hours"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

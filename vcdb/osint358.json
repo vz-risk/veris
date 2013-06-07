@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint358",
+  "security_compromise": "Confirmed",
   "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
   "attribute": {
     "confidentiality": {
       "notes": "The leaked information included names and usernames, with encrypted and decrypted passwords that where put on the Internet.  ",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,21 +16,11 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 12
+      "data_total": 12,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Names and usernames, with encrypted and decrypted passwords dumped on the web",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint358",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -79,9 +69,9 @@
         "amount": 232000
       },
       "country": "United Kingdom",
-      "industry": "523991",
+      "notes": "",
       "employee_count": "1 to 10",
-      "notes": ""
+      "industry": "523991"
     }
   ],
   "timeline": {
@@ -92,7 +82,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

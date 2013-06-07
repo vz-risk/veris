@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint135",
+  "security_compromise": "Confirmed",
   "reference": "http://www.atg.state.vt.us/assets/files/Experian%20Security%20Breach%20Notice%20ltr%20to%20consumer.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "Customer is CASE Federal Credit Union",
-  "action": {
-    "misuse": {
-      "notes": "The actor is using customer credentials. ",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "experience with the nationwide credit reporting agencies identified that its clients CASE federal credit union have certain experience consumer information access without proper authorization. The consumer information consists of information found in a Consumer Reports. Such information includes your name, address and the more the following: Social Security number, date of birth, or Numbers.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint135",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -84,15 +74,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 10,
       "day": 30,
-      "month": 10
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "The actor is using customer credentials. ",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

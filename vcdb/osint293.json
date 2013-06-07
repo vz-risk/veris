@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint293",
+  "security_compromise": "Confirmed",
   "reference": "http://bc.ctvnews.ca/private-info-of-4-600-b-c-students-leaked-1.782799 (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 4600,
@@ -47,21 +47,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 4600
+      "data_total": 4600,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Email]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Company accidentally emails spreadsheet with non-public data to large number of customers",
   "source_id": "osint",
@@ -73,15 +63,15 @@
         "data_subject": "Student"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint293",
     "timeline": {
       "notification": {
         "year": 2013
       }
-    },
-    "f500": "N",
-    "master_id": "osint293",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -116,9 +106,9 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2013,
+      "month": 3,
       "day": 13,
-      "month": 3
+      "year": 2013
     },
     "investigation": {
       "year": 2013
@@ -133,7 +123,17 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint245",
+  "security_compromise": "Confirmed",
   "reference": "http://www.idtheftcenter.org/ITRC%20Breach%20Report%202012.pdf; http://www.phiprivacy.net/?p=9771; http://www.privacyrights.org/data-breach?order=field_breach_total_value&sort=asc&title=",
   "attribute": {
     "confidentiality": {
       "notes": "Possible exposure of sensitive patient health information. ",
-      "data_disclosure": "Unknown",
       "data": [
         {
           "variety": "Medical"
@@ -19,23 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1597
+      "data_total": 1597,
+      "data_disclosure": "Unknown"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The network server was stolen containing patient information from Dr. Stephen Haggard's office.   ",
   "source_id": "osint",
@@ -47,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint245",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,18 +76,30 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 4,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 22,
-      "month": 4
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

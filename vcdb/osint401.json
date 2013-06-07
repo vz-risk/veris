@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint401",
+  "security_compromise": "Confirmed",
   "reference": "http://www.canadafreepress.com/index.php/article/51719 ",
   "attribute": {
     "confidentiality": {
@@ -19,18 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Over the past few weeks, news of a treasonous security breach at Naval Intelligence has dominated the headlines.  In case you missed it - Canadian Navy intelligence officer, Sub-Lt. Jeffrey Paul Delisle, pleaded guilty last month to passing classified information to Russia.  CBC News reported, \u201cthat electronic records detailing the planned overhaul of Canadian naval intelligence \u2014 created when admitted Russian spy Jeffrey Delisle was at the height of his treachery \u2014 were deleted from a National Defence database.  But when the news agency asked why both the electronic and paper copies had been expunged, and whether that violated access-to-information law, the Navy eventually reversed itself and claimed some copies of the presentations had survived in email accounts of officers serving overseas.\u201d",
   "source_id": "osint",
@@ -42,17 +31,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint401",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -73,9 +62,9 @@
     {
       "victim_id": "Canadian Naval Intelligence",
       "notes": "",
-      "country": "Canada",
+      "employee_count": "Unknown",
       "industry": "928110",
-      "employee_count": "Unknown"
+      "country": "Canada"
     }
   ],
   "timeline": {
@@ -86,7 +75,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

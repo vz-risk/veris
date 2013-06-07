@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint473",
+  "security_compromise": "Confirmed",
   "reference": "http://www.myfoxtampabay.com/story/20224892/2012/11/30/two-accused-of-stealing-patient-information-from-hospital ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Medical"
@@ -19,23 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 45
+      "data_total": 45,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Physical access",
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Forty-five hospital patients had their personal information stolen, and now two people are under arrest and accused of filing phony IRS returns to collect more than a million dollars.  Federal agents say Tanya Cullens and Kenyon Williams filed those returns using patient IDs from Florida Hospital Tampa \u2013 formerly known as University Community Hospital.  That's where Cullens used to work. The hospital has released a statement, which reads in part, \"We deeply regret that this incident occurred. We remain committed to the protection of our patients' personal information.\"  All of the affected patients have already been notified. ",
   "source_id": "osint",
@@ -47,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 30,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint473",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 30,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,7 +80,19 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access",
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint95",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/labelmaster-20121017.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "E-commerce site hacked.  Data exposed includes name, address and CCN.",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 10
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint95",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 10,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -89,17 +79,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 18,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 9,
       "day": 12,
-      "month": 9
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

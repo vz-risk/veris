@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint15",
+  "security_compromise": "Confirmed",
   "reference": "https://www.wheretofindcare.com/newsletters/2012DataBreaches.pdf February 5, 2012",
   "attribute": {
     "confidentiality": {
       "notes": "It is unknown what data was compromised during the hack. ",
-      "data_disclosure": "Unknown",
       "data": [
         {
           "variety": "Unknown"
@@ -16,21 +16,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 2743
+      "data_total": 2743,
+      "data_disclosure": "Unknown"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Unauthorized disclosure involving a computer or computers that resulted in the exposure of protected health information.  ",
   "source_id": "osint",
@@ -42,15 +32,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint15",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint15",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -85,14 +75,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2011,
+      "month": 12,
       "day": 20,
-      "month": 12
+      "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 4,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -104,7 +94,17 @@
       "unit": "Weeks"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

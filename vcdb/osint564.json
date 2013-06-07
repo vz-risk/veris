@@ -3,6 +3,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint564",
+  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=23616 http://doj.nh.gov/consumer/security-breaches/documents/edmund-optics-20120313.pdf",
   "attribute": {
     "confidentiality": {
@@ -19,18 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "Cold Fusion 8 vulnerability.  Specific CVE and hacking method not specified.",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Cold Fusion vulnerability exploited on web site. Customer payment card information was disclosed. ",
   "source_id": "osint",
@@ -42,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 13,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint564",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 13,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -87,14 +76,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 8,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 26,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -106,8 +95,19 @@
       "unit": "Weeks"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "Cold Fusion 8 vulnerability.  Specific CVE and hacking method not specified.",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - log review",
   "asset": {
     "notes": "",
     "assets": [

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint380",
+  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/palm-beach-health-department-employee-steals-patient-names-social-security-numbers.html ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 86,
@@ -17,24 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 86
+      "data_total": 86,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Physical access",
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse",
-        "Data mishandling"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Palm Beach County (Fla.) Health Department issued a public notice that at least 86 patients of its health centers may have had confidential information in their medical records disclosed to an unauthorized source.  The breach occurred when an employee created a client list containing names and Social Security numbers for 86 patients and attempted to mail the list, according to the release. Law enforcement was able to confiscate the list in May, and further investigation showed that the names were used for fraudulent activity. According to the release, the document did not contain bank account, credit card or other personal information.  According to the release, the employee has been removed from access to any and all health department information. ",
   "source_id": "osint",
@@ -46,17 +33,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 6,
-        "month": 8
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint380",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 8,
+        "day": 6,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,12 +75,25 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 5,
       "day": 31,
-      "month": 5
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access",
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse",
+        "Data mishandling"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

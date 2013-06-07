@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint152",
+  "security_compromise": "Confirmed",
   "reference": "http://www.marbridgeconsulting.com/marbridgedaily/2012-01-05/article/52705/sql_injection_attack_exposes_sina_passwords ",
   "attribute": {
     "integrity": {
@@ -24,17 +25,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Chinese online security website Youxia.org today revealed a security loophole in Chinese internet company Sina's (Nasdaq: SINA) iAsk search engine that exposes user passwords.  According to the site, iAsk is vulnerable to an SQL injection attack that allows access to the iAsk database, which includes information for over 70 mln users.  As an example, Youxia.org demonstrated how it could find the username and password of popular magician Liu Qian, who confirmed on his personal microblog that the password was correct.  While Sina has already closed the security breach, Youxia pointed out that following user data leaks at online communities CSDN.net and Tianya, Sina claimed passwords were encrypted in their database, but the exploit has proven that the majority of passwords are saved in plain text.",
   "source_id": "osint",
@@ -46,17 +36,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 5,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint152",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 5,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,9 +73,9 @@
         "amount": 482830000
       },
       "country": "China",
-      "industry": "519130",
+      "notes": "",
       "employee_count": "1001 to 10000",
-      "notes": ""
+      "industry": "519130"
     }
   ],
   "timeline": {
@@ -96,8 +86,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

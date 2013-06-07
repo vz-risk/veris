@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint199",
+  "security_compromise": "Confirmed",
   "reference": "http://centralny.ynn.com/content/top_stories/572563/syracuse-police-website-hacked/ ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "They are faceless, leaderless by design. The organization exists only in the ether. The internet is the gathering place for those addressing a host of complaints.  It was in this world of \"Anonymous\" that the Syracuse Police Department became a target.  On Wednesday night, usernames and passwords utilized by Syracuse Police personnel on a police department website began appearing on another site frequented by hackers. There was never any access to police files or any sensitive information contained on police department servers.  \u201cBecause it's a completely different system. The internal website is completely encrypted and has a lot of security on it,\u201d said Syracuse Police Department Sgt. Thomas Connellan.  Syracuse was one of three police department sites hit as part of what was called Operation Piggybank. The supposed cause for the targeting? The long delay in response to complaints in the Bernie Fine case.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint199",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,16 +72,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 1,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint481",
+  "security_compromise": "Confirmed",
   "reference": "http://www.odt.co.nz/news/dunedin/239614/stolen-research-staff-details-unlikely-be-recovered ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 500,
@@ -17,23 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 500
+      "data_total": 500,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Public facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": " A stolen briefcase containing the private information of 500 research staff from tertiary institutions, including more than 140 staff from the University of Otago, will likely never be recovered, the Tertiary Education Commission (TEC) says.  The briefcase, which contained evidence portfolios submitted by academic staff as part of the Performance-based Research Fund (PBRF) health round, was stolen from a coffee shop on the AUT University campus in Auckland last month. The briefcase also contained information about 24 Otago Polytechnic staff. ",
   "source_id": "osint",
@@ -45,17 +33,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 18,
-        "month": 12
-      }
+    "asset": {
+      "total": "Yes"
     },
     "f500": "N",
     "master_id": "osint481",
-    "asset": {
-      "total": "Yes"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 18,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,23 +70,23 @@
         "amount": 2610000000
       },
       "country": "New Zealand",
-      "industry": "541611",
+      "notes": "",
       "employee_count": "1 to 10",
-      "notes": ""
+      "industry": "541611"
     },
     {
       "victim_id": "University of Otago",
       "industry": "611310",
-      "country": "New Zealand",
+      "employee_count": "Unknown",
       "state": "",
-      "employee_count": "Unknown"
+      "country": "New Zealand"
     },
     {
       "victim_id": "Otago Polytechnic",
       "industry": "611310",
-      "country": "New Zealand",
+      "employee_count": "Unknown",
       "state": "",
-      "employee_count": "Unknown"
+      "country": "New Zealand"
     }
   ],
   "timeline": {
@@ -109,7 +97,19 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Public facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

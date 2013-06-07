@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint219",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/06/04/veluwe-info-hacked-200-accounts-leaked/",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 200,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 200
+      "data_total": 200,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A hacker who use\u2019s the handle \u201cHANIKO YUNOKAWA\u201d has hacked a Netherlands based information website and leaked 200+ accounts via pastebin. The announcement of the breach was made via their facebook page not so long ago.  The leaked data contains just over 200  usernames and encrypted passwords from veluwe.info. ",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 4,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint219",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 4,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -76,9 +66,9 @@
     {
       "victim_id": "veluwe.info",
       "notes": "",
-      "country": "Netherlands",
+      "employee_count": "Unknown",
       "industry": "51919",
-      "employee_count": "Unknown"
+      "country": "Netherlands"
     }
   ],
   "timeline": {
@@ -86,13 +76,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 6,
       "day": 4,
-      "month": 6
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

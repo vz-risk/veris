@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint153",
+  "security_compromise": "Confirmed",
   "reference": "http://news.fredericksburg.com/gettingschooled/2012/01/05/spotsylvania-school-employees-personal-information-was-av/ ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Web]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Personal information of some Spotsylvania school division employees was briefly accessible online over the holidays.  An employee discovered the problem on Dec. 23 and division staff immediately moved to address the issue, shutting down the internal system known as \u201cself serve\u201d that contains personal information. The system was shut down until staff identified what it presumed to be the problem.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 5,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint153",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 5,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,16 +73,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
-      "month": 12
+      "month": 12,
+      "year": 2011
     },
     "investigation": {
-      "year": 2011,
+      "month": 12,
       "day": 23,
-      "month": 12
+      "year": 2011
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Web]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

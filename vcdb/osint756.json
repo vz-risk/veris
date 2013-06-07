@@ -1,0 +1,113 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint756",
+  "reference": "http://www.wishtv.com/dpp/news/crime/medical-worker-stole-patient-identities",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "amount": 180,
+          "variety": "Medical"
+        },
+        {
+          "amount": 180,
+          "variety": "Personal"
+        }
+      ],
+      "data_total": 180,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Greenwood police was the agency that alerted Community Health that they had an employee who was stealing patients' identities.   \"A former patient had stated that they had reason to believe that someone had taken their identity,\" said Jean Putnam, Vice President at Community Health Network.\"       Between mid-March and mid-April, an employee of the new Community Health Med-check in Speedway,  got into the computerized medical records of up to 180 people, and may have taken their Social Security numbers, dates of birth, even credit card numbers.",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 16,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint756",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Community Health Med-Check",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 170000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "IN",
+      "employee_count": "1 to 10",
+      "industry": "621399"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "month": 3,
+      "day": 15,
+      "year": 2013
+    },
+    "investigation": {
+      "month": 4,
+      "day": 15,
+      "year": 2013
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

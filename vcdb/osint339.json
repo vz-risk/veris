@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint339",
+  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=23385 http://www.abc24.com/news/local/story/Personal-Information-Found-Dumped-Behind-Mo-Money/jLsP5acBpkirlMxPHLVxvw.cspx",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Personal information was found dumped behind the office of Mo' Money Taxes.  ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 21,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint339",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 21,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -86,13 +76,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 20,
-      "month": 2
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

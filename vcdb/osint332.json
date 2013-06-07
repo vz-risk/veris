@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint332",
+  "security_compromise": "Confirmed",
   "reference": "http://www.pcworld.com/article/249927/microsoft_india_store_a_victim_or_poor_data_security_not_hackers.html; http://content.usatoday.com/communities/technologylive/post/2012/02/hackers-breach-database-of-microsofts-india-store/1",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A chines hacker group exposed customer data due to poor data security at Microsoft India Store. ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 14,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint332",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 14,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -74,9 +64,9 @@
     {
       "victim_id": "Microsoft Store India",
       "notes": "",
-      "country": "India",
+      "employee_count": "Unknown",
       "industry": "0000",
-      "employee_count": "Unknown"
+      "country": "India"
     }
   ],
   "timeline": {
@@ -87,8 +77,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

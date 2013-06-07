@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint539",
+  "security_compromise": "Confirmed",
   "reference": "http://www.wibc.com/news/story.aspx?ID=1685268",
   "attribute": {
     "confidentiality": {
@@ -14,17 +15,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Personal documents that contained prescriptions for powerful pain medication and patient information were discovered on Wednesday in a dumpster.  ",
   "source_id": "osint",
@@ -36,17 +26,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint539",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -84,8 +74,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

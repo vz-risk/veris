@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint181",
+  "security_compromise": "Confirmed",
   "reference": "http://harrison.dailyvoice.com/news/mamaroneck-staples-cashier-charged-181k-fraud ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 50,
@@ -17,24 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 50
+      "data_total": 50,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Embezzlement",
-        "Data mishandling",
-        "Unapproved hardware"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A cashier at the Staples in Mamaroneck has been charged with stealing, then selling, 50 customers' credit card numbers, leading to $181,800 in credit card fraud, according to a Westchester County Police press release.  Valerie Fajardo, a 21-year-old from the Bronx, was arrested at the store on 2444 Boston Post Road on Tuesday at 1:45 p.m. by Westchester County Police. She is accused of using a skimming device to capture the credit card information. Police seized the device at Fajardo's Morris Avenue home.",
   "source_id": "osint",
@@ -46,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 1,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint181",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 1,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -89,15 +76,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 5,
       "day": 1,
-      "month": 5
+      "year": 2011
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Embezzlement",
+        "Data mishandling",
+        "Unapproved hardware"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

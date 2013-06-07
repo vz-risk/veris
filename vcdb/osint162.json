@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint162",
+  "security_compromise": "Confirmed",
   "reference": "http://www.stripes.com/veterans-personal-information-accidentally-posted-on-ancestry-com-1.166409",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,21 +16,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 2500
+      "data_total": 2500,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "They found out about the error a month ago, but no word on when they shared the data.",
-  "action": {
-    "error": {
-      "notes": " [through Email]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "More than 2,200 veterans had their personal information accidentally posted on the genealogy website Ancestry.com last year, a move that could potentially expose them to identify theft crimes.  Officials from the Department of Veterans Affairs said all of the veterans affected by the mistake will receive free credit monitoring services to help mitigate any damage. The information posted online included veterans\u2019 names and Social Security numbers, but not any health information.  VA officials supplied the information to Ancestry.com in March 2011 as part of a Freedom of Information Act request by the genealogy site. The records were supposed to only contain information on deceased veterans, but also included more than 2,200 living veterans due to a department error.  Department officials found out about the error just last month.",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint162",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,11 +73,21 @@
       "year": 2011
     },
     "investigation": {
-      "year": 2011,
-      "month": 12
+      "month": 12,
+      "year": 2011
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

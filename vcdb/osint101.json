@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint101",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/postcard-press-next-day-20120605.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,18 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Company discovered an electronic file on  its system that was storing transaction information, including name, address, email, and CCN for customers who placed orders through its website.  NDF does not know if it was accessed, or how it was created, but it detected the file near the time an unauthorized person was trying to disrupt NDF's website.  ",
   "source_id": "osint",
@@ -45,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 6,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint101",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 6,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,12 +83,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 2,
-      "month": 4
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

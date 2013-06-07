@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint369",
+  "security_compromise": "Confirmed",
   "reference": "http://geinvestigations.com/blog/2012/05/page/2/ ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "NASA, Air Force and Harvard Computers Hacked by a group known as \u2018The Unknowns\u2019",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 4,
-        "month": 5
-      }
+    "asset": {
+      "total": "Yes"
     },
     "f500": "N",
     "master_id": "osint369",
-    "asset": {
-      "total": "Yes"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 4,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,44 +75,44 @@
     {
       "victim_id": "US Air Force",
       "industry": "92811",
-      "country": "United States",
+      "employee_count": "Over 100000",
       "state": "DC",
-      "employee_count": "Over 100000"
+      "country": "United States"
     },
     {
       "victim_id": "French Ministry of Defense",
       "industry": "921110",
-      "country": "Unknown",
+      "employee_count": "Unknown",
       "state": "",
-      "employee_count": "Unknown"
+      "country": "Unknown"
     },
     {
       "victim_id": "European Space Agency",
       "industry": "927110",
-      "country": "France",
+      "employee_count": "1 to 10",
       "state": "",
-      "employee_count": "1 to 10"
+      "country": "France"
     },
     {
       "victim_id": "Bahrain Ministry of Defense",
       "industry": "921110",
-      "country": "Unknown",
+      "employee_count": "Unknown",
       "state": "",
-      "employee_count": "Unknown"
+      "country": "Unknown"
     },
     {
       "victim_id": "Thai Royal Navy",
       "industry": "921110",
-      "country": "Unknown",
+      "employee_count": "Unknown",
       "state": "",
-      "employee_count": "Unknown"
+      "country": "Unknown"
     },
     {
       "victim_id": "Harvard University\u2019s School of Public Health",
       "industry": "611310",
-      "country": "United States",
+      "employee_count": "10001 to 25000",
       "state": "MA",
-      "employee_count": "10001 to 25000"
+      "country": "United States"
     }
   ],
   "timeline": {
@@ -133,7 +123,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

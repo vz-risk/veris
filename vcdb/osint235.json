@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint235",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/washington-university-20120315.pdf ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 4100,
@@ -17,25 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 4100
+      "data_total": 4100,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Physical access",
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse",
-        "Data mishandling",
-        "Unapproved hardware"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "On February 17, 2012, our client, Washington University in St. Louis discovered that an employee was copying electronic files onto an external hard drive.  While the employee was authorized to see the data in these files, they were not authorized to copy the first onto an external drive that he brought to the office.    The information contained names, SSNs, addresses, and DOB.  ",
   "source_id": "osint",
@@ -47,17 +33,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 15,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint235",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 15,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -93,12 +79,26 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 17,
-      "month": 2
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access",
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse",
+        "Data mishandling",
+        "Unapproved hardware"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "personal": true,

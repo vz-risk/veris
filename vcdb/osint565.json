@@ -3,11 +3,11 @@
     "overall_rating": "Painful"
   },
   "incident_id": "osint565",
+  "security_compromise": "Confirmed",
   "reference": "arstechnica.com/security/2012/06/eharmony-confirms-member-passwords-compromise/",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1500000,
@@ -17,21 +17,11 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 1500000
+      "data_total": 1500000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Online dating site suffers compromise, 1.5 million user credentials disclosed. Passwords were encrypted but not salted and were trivial to decrypt.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 6,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint565",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 6,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,9 +84,9 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 6,
       "day": 6,
-      "month": 6
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -108,8 +98,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

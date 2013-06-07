@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint502",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/06/15/directv-hacked-data-and-accounts-leaked-by-teamintricate/",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 300,
@@ -20,21 +20,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 300
+      "data_total": 300,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "@TeamIntricate has announced they have hacked DIRECTV http://www.usdirect.com/ and as a result they have posted a leak of data to pastebin.",
   "source_id": "osint",
@@ -46,17 +36,17 @@
         "data_subject": ""
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 15,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint502",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 15,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -97,9 +87,9 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 6,
       "day": 15,
-      "month": 6
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -111,8 +101,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

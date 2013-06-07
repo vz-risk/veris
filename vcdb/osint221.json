@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint221",
+  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/Canadian-Video-Games-Plus-Hacked-21-000-Customers-Exposed-247028.shtml ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 21000,
@@ -21,21 +21,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 21000
+      "data_total": 21000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "hacker xdev@b4lc4nh4ck ",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Canada-based Video Games Plus (VGP), a major gaming website that commercializes games and console accessories has been breached after the hacker xdev@b4lc4nh4ck managed to bypass their security protocols.  Names, dates of birth, email addresses, phone numbers and encrypted passwords belonging to 21,000 of their users were leaked online. Apparently, no credit card information has been obtained by the hackers. ",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint221",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -80,9 +70,9 @@
     {
       "victim_id": "Video Games Plus",
       "notes": "",
-      "country": "Canada",
+      "employee_count": "1 to 10",
       "industry": "443142",
-      "employee_count": "1 to 10"
+      "country": "Canada"
     }
   ],
   "timeline": {
@@ -90,13 +80,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 17,
-      "month": 1
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint294",
+  "security_compromise": "Confirmed",
   "reference": "http://www.huffingtonpost.com/2012/03/09/british-pregnancy-advisory-service-hack_n_1334570.html (20130215) http://www.telegraph.co.uk/news/uknews/crime/9132654/BPAS-Hacker-held-over-illegal-breach-of-abortion-website.html (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "Data subject are persons requesting more information.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 9000,
@@ -47,22 +47,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 9000
+      "data_total": 9000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Activist hacker breaches website and steals personal information but is arrested before being able to publish the data",
   "source_id": "osint",
@@ -74,17 +63,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 9,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint294",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 9,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -112,9 +101,9 @@
         "amount": 42200000
       },
       "country": "United Kingdom",
-      "industry": "813211",
+      "notes": "",
       "employee_count": "101 to 1000",
-      "notes": ""
+      "industry": "813211"
     }
   ],
   "timeline": {
@@ -122,14 +111,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 8,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 8,
-      "month": 3
+      "year": 2012
     },
     "compromise": {
       "unit": "Hours"
@@ -141,8 +130,19 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

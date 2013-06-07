@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint323",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Multi-State_Skagit_1Leaf_Proofs%20(2).pdf%20-%20Adobe%20Acrobat%20Pro_0.pdf, http://doj.nh.gov/consumer/security-breaches/documents/upper-skagit-casino-resort-20121221.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,19 +20,6 @@
     }
   },
   "notes": "Partner: Balley Technologies, Inc.",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Partner facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A partner (Bally Technologies, Inc.) experienced a burglary from an employee's home office, which resulted in the theft of a computer containing customer data.  Data included name, driver's license number, SSN and bank account information.",
   "source_id": "osint",
@@ -43,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 21,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint323",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 21,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -91,13 +79,25 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 11,
       "day": 29,
-      "month": 11
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

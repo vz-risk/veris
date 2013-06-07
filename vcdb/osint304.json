@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint304",
+  "security_compromise": "Confirmed",
   "reference": "http://healthitsecurity.com/2012/11/26/christus-st-john-hospital-reports-data-breach/ ",
   "attribute": {
     "confidentiality": {
@@ -22,19 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Houston-based CHRISTUS St. John Hospital fell victim to unencrypted device theft in late September when a memory stick containing patient data was lost on the hospital campus. The hospital notified affected patients on Nov. 16 on its website after it learned about the breach on Sept. 25. However, it also told the New Hampshire Attorney General\u2019s Office of the breach on Nov. 16 through its New York-based law firm Baker & Hostetler, as the firm reported that a New Hampshire resident\u2019s information was on the lost device.  The number of patients affected hasn\u2019t been determined, but patient information included name, date of birth, Social Security number, health insurance information, diagnoses, and progress notes on patients in the St. John Sports Medicine Program from Jan. 1, 2011 to July 31, 2012. ",
   "source_id": "osint",
@@ -46,17 +34,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 16,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint304",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 16,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,13 +82,25 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 9,
       "day": 25,
-      "month": 9
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

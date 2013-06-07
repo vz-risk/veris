@@ -9,11 +9,11 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint168",
+  "security_compromise": "Confirmed",
   "reference": "http://www.alertboot.com/blog/blogs/endpoint_security/archive/2012/06/05/laptop-encryption-software-stolen-laptop-breaches-va-information-824-affected.aspx; http://chronicle.augusta.com/latest-news/2012-06-01/stolen-laptop-contained-veteran-information-va-says February 12, 2013",
   "attribute": {
     "confidentiality": {
       "notes": "The information contained on the laptop contained names, the SSN's last four digits, discharge dates, and medical providers' names.",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -28,23 +28,11 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 824
+      "data_total": 824,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Unknown"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Physician's personal laptop was stolen that contains patient and medical providers' names. ",
   "source_id": "osint",
@@ -56,15 +44,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint168",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint168",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -95,21 +83,33 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 30,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 7,
       "day": 27,
-      "month": 7
+      "year": 2012
     },
     "discovery": {
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

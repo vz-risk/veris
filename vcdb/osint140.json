@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint140",
+  "security_compromise": "Confirmed",
   "reference": "",
   "attribute": {
     "integrity": {
@@ -24,18 +25,6 @@
     }
   },
   "notes": "Source by insider who knew about the breach.",
-  "action": {
-    "malware": {
-      "variety": [
-        "Unknown"
-      ],
-      "vector": [
-        "Unknown"
-      ],
-      "name": "",
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "One of the HR people's laptop was infected by malware.  The entire contents of the laptop was shipped off to a file sharing site.  It contained full payroll data dump.  Company did not choose to notify--claimed exemption as a government agency.",
   "source_id": "osint",
@@ -47,17 +36,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 5,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint140",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 5,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -93,18 +82,29 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 11,
       "day": 19,
-      "month": 11
+      "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 31,
-      "month": 1
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "name": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

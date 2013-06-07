@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint20",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Yolo%20FCU%20IDENTITY%20THEFT%20VICTIMS-Immediate%20Steps_1.pdf?, http://oag.ca.gov/system/files/Yolo%20Skim%20Notice_0.pdf?, http://www.mercurynews.com/crime-courts/ci_22502375/bank-card-scam-skimming-devices-target-consumers-at ",
   "attribute": {
     "integrity": {
@@ -25,19 +26,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Public facility"
-      ],
-      "variety": [
-        "Tampering"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The notice only says that it identified the cardholder's card as one that had potentially been compromised and they blocked it.  They don't say what triggered that belief.  They were called out specifically in the article by mercurynews.com as ATM skimming.",
   "source_id": "osint",
@@ -49,17 +37,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 13,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint20",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 13,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,15 +82,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 10,
       "day": 27,
-      "month": 10
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Public facility"
+      ],
+      "variety": [
+        "Tampering"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

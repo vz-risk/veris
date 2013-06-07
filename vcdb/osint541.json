@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint541",
+  "security_compromise": "Confirmed",
   "reference": "http://www.kionrightnow.com/story/16481347/books-student-personal-documents-thrown-in-dumpsters-at-school; http://www.idtheftcenter.org/artman2/uploads/1/ITRC_Breach_Stats_Report_1H_20120630.pdf; http://www.privacyrights.org/data-breach",
   "attribute": {
     "confidentiality": {
@@ -25,17 +26,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Boxes in a dumpster outside the elementary school contained books that were to be donated and personal and financial information related to applications for free and reduced price meals.  ",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 10,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint541",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 10,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -95,8 +85,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

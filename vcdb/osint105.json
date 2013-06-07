@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint105",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/primex-20120529.pdf ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,24 +19,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 55
+      "data_total": 55,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "This is another Impairment Resources incident.  ",
-  "action": {
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Bypassed controls"
-      ],
-      "location": [
-        "Partner facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A tape and external drive were stolen from a partner.  Personal identifying and medical data for up to 14,000 workers comp claimants and auto insurance claimant were included after a burglary.",
   "source_id": "osint",
@@ -48,17 +35,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 29,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint105",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 29,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,16 +81,29 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
-      "month": 12
+      "month": 12,
+      "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 5,
       "day": 3,
-      "month": 5
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Bypassed controls"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

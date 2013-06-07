@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint322",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Calvin%20Schuster%20Breach%20Notice%20_0.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -22,19 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Burglary at doctor's offices results in computer stolen that contained names, dates of birth and medical information of patients.",
   "source_id": "osint",
@@ -46,17 +34,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 4,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint322",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 4,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -87,18 +75,30 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 11,
       "day": 5,
-      "month": 11
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 11,
       "day": 5,
-      "month": 11
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

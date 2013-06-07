@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint276",
+  "security_compromise": "Confirmed",
   "reference": "http://www.tuscaloosanews.com/article/20120125/NEWS/120129865 (20130215) http://blog.al.com/breaking/2012/01/tide_fans_ordering_from_bamast.html (20130215)",
   "attribute": {
     "confidentiality": {
@@ -55,17 +56,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Hackers breach college bookstore website and stole non-public data",
   "source_id": "osint",
@@ -77,17 +67,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 24,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint276",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 24,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -125,14 +115,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 16,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 24,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -144,8 +134,18 @@
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - IT audit",
   "asset": {
     "assets": [
       {

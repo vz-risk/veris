@@ -3,11 +3,11 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint408",
+  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/3-452-Accounts-Leaked-from-CricFire-258877.shtml",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 3452,
@@ -17,21 +17,11 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 3452
+      "data_total": 3452,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "A hacker called Le0n B3lm0nt",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "over 3000 account names and encrypted passwords dumped on pastebin. No OSINT on hacking method(s) used.",
   "source_id": "osint",
@@ -43,15 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint408",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint408",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -74,9 +64,9 @@
     {
       "victim_id": "Cricfire",
       "notes": "",
-      "country": "Panama",
+      "employee_count": "Unknown",
       "industry": "51913",
-      "employee_count": "Unknown"
+      "country": "Panama"
     }
   ],
   "timeline": {
@@ -99,8 +89,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "A hacker called Le0n B3lm0nt",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

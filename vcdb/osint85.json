@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint85",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/hanover-insurance-20120306.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,19 +23,6 @@
     }
   },
   "notes": "Partner is Impairment Resources.",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Partner facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Theft of computer backup hardware from a partner exposes name, address, SSN and medical information.  ",
   "source_id": "osint",
@@ -46,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 6,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint85",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 6,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,12 +82,24 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 3,
-      "month": 1
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

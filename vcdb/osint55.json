@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint55",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/fileshttp://oag.ca.gov/system/files/DCSSsecuritycustyltr_OAG.pdf?",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "Lost in transit between locations.",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "We are contacting you because on March 12, 2012, the California Department of Child Support Services learned that contracted service providers, International Business Machines (IBM) and Iron Mountain Inc., could not locate several specialized computer storage devices containing personal information of parents, caregivers and children maintained by our department. The devices were in transit from IBM\u2019s facility in Colorado to California. Upon arrival, several devices were missing. The State is continuing to work with IBM and Iron Mountain to recover these storage devices but, to date, the storage devices have not been found.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 29,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint55",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 29,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,12 +78,22 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 12,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "Lost in transit between locations.",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

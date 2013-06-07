@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint91",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/irvine-scientific-20121218.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,18 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Company received a communication from a former contractor claiming he had possession of credit card information of some of their customers.  The contractor refused to return the data and to identify precisely what data he has.  ",
   "source_id": "osint",
@@ -42,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 18,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint91",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 18,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -91,12 +80,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 10,
       "day": 31,
-      "month": 10
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "notes": "",

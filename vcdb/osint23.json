@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint23",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Sample%20Letter_2.pdf?",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Knowledge abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "An employee (now former employee) disclosed information about workers compensation claimants to certain individuals who were cooperating in an investigation of suppliers of medical services.  The disclosures occurred between 10/11 and 3/12.  The information disclosed related to workers compensation claimants who received spinal surgery in Southern California between 2004 and 2011, or had urinalysis testing, diagnostics or medical services performed in California between 2006 and 2011.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 21,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint23",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 21,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -84,15 +74,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 31,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Knowledge abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

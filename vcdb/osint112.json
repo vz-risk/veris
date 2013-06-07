@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint112",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/sourcefire-20121115.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,19 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Unknown"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A company laptop was stolen on November 6, 2012. Through our investigation, we have determined that the password-protected laptop contained files that include information related to SourceFire employees, including name and Social Security number.",
   "source_id": "osint",
@@ -43,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 15,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint112",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 15,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,15 +76,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 11,
       "day": 6,
-      "month": 11
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

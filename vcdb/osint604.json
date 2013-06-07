@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint604",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/12/24/national-examination-council-neco-of-nigeria-hacked/ ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The official school website of National examination council (NECO) nigeria(www.necoschools.com) has been breached by the hacker collective \u2018NIGERIAN CYBER ARMY SQUAD.22\u2032.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 24,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint604",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 24,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -74,9 +64,9 @@
     {
       "victim_id": "National examination council Nigeria (NECO)",
       "notes": "",
-      "country": "Nigeria",
+      "employee_count": "Unknown",
       "industry": "61169",
-      "employee_count": "Unknown"
+      "country": "Nigeria"
     }
   ],
   "timeline": {
@@ -87,8 +77,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint12",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/SampleLetterforSecurityBreachNotification%2801126564%29%20%283%29_0.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -22,19 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Laptop stolen from office in a burglary.  An Excel spreadsheet related to worker's compensation was on the laptop and contained name, social security numbers, and health information.",
   "source_id": "osint",
@@ -46,17 +34,17 @@
         "data_subject": ""
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint12",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -91,16 +79,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 12,
       "day": 15,
-      "month": 12
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

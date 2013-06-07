@@ -1,0 +1,148 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint696",
+  "reference": "http://www.lsuhscshreveport.edu/Uploads/Public/Documents/billingissuesiemens.pdf (20130524)",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "amount": 8330,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 8330,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Computer error resulted in patients being mailed bills for other customers exposing patient health information.",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 15,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint696",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "partner": {
+      "motive": [
+        "NA"
+      ],
+      "country": [
+        "Germany"
+      ],
+      "industry": "334510",
+      "role": [
+        "Unintentional"
+      ],
+      "notes": ""
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Louisiana State University System",
+      "country": "United States",
+      "notes": "",
+      "state": "LA",
+      "employee_count": "11 to 100",
+      "industry": "541219"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "month": 3,
+      "day": 11,
+      "year": 2013
+    },
+    "investigation": {
+      "month": 3,
+      "day": 18,
+      "year": 2013
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "NA"
+    },
+    "discovery": {
+      "unit": "Days"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Random error"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

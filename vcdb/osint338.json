@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint338",
+  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/Hackers-Breach-the-Lebanese-Ministry-of-Economy-and-Trade-255263.shtml ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "The hackers wrote \u201cAnd Now Sorry For Owner Website But We Have To Send Our Messege. I Repeat: Our revolution is peaceful. Our goal: Deliver a message to the Lebanese people and Governors.\u201d ",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Mad HackerZ Team, the Lebanese hackers, managed to leak data from the server on which the official site of Lebanon\u2019s Ministry of Economy and Trade is hosted. ",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 27,
-        "month": 2
-      }
+    "asset": {
+      "total": "Yes"
     },
     "f500": "N",
     "master_id": "osint338",
-    "asset": {
-      "total": "Yes"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 27,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -77,16 +67,16 @@
     {
       "victim_id": "Ministry of Economy & Trade",
       "notes": "",
-      "country": "Lebanon",
+      "employee_count": "1 to 10",
       "industry": "541990",
-      "employee_count": "1 to 10"
+      "country": "Lebanon"
     },
     {
       "victim_id": "Lebanese White Pages",
       "industry": "561499",
-      "country": "Lebanon",
+      "employee_count": "Unknown",
       "state": "",
-      "employee_count": "Unknown"
+      "country": "Lebanon"
     }
   ],
   "timeline": {
@@ -97,8 +87,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

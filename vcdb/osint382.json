@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint382",
+  "security_compromise": "Confirmed",
   "reference": "http://talkvietnam.com/2012/10/website-of-vietnams-top-internet-security-firm-hacked/#.USPSIlpASLE (20130219) http://talkvietnam.com/2012/10/suspect-seized-for-hacking-vietnams-top-net-security-site/#.USPSkFpASLE (20130219)",
   "attribute": {
     "confidentiality": {
@@ -44,8 +45,8 @@
     },
     "availability": {
       "duration": {
-        "unit": "Days",
-        "value": 2.0
+        "value": 2.0,
+        "unit": "Days"
       },
       "notes": "",
       "variety": [
@@ -54,19 +55,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown",
-        "DoS"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Bach Khoa Internetwork Security Company website hacked and DDoSed.",
   "source_id": "osint",
@@ -78,17 +66,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint382",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -112,9 +100,9 @@
     {
       "victim_id": "Bach Khoa Internetwork Security Company",
       "notes": "",
-      "country": "Viet Nam",
+      "employee_count": "Unknown",
       "industry": "517919",
-      "employee_count": "Unknown"
+      "country": "Viet Nam"
     }
   ],
   "timeline": {
@@ -122,14 +110,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 2,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 3,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -141,8 +129,20 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown",
+        "DoS"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

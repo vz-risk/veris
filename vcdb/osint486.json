@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint486",
+  "security_compromise": "Confirmed",
   "reference": "http://www.pharmalot.com/2008/05/what-security-latest-pfizer-breach-hits-13k-people/ ",
   "attribute": {
     "confidentiality": {
@@ -19,19 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal vehicle"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "There have been so many security breaches involving the drugmaker over the past year that we are losing track. The latest involved an unencrypted USB flash drive that was recently stolen from a Pfizer employee\u2019s car, along with an encrypted laptop and some personal items. The unencrypted flash drive contained info regarding approximately 13,000 Pfizer pfolks.  Unlike the previous breaches, Pfizer has this time decided, \u201cafter careful consideration,\u201d that the latest incident doesn\u2019t warrant free credit monitoring, based on the type of info exposed, and not exposed, according to a statement sent to us by Pfizer. Social security numbers and credit-card numbers, for instance, weren\u2019t stored on the drive, although home addresses and telelphone numbers were.",
   "source_id": "osint",
@@ -43,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2008,
-        "day": 12,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint486",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 12,
+        "year": 2008
+      }
     }
   },
   "actor": {
@@ -90,8 +78,20 @@
       "year": 2008
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

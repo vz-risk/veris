@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint121",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/tobacco-haven-20120727.pdf ",
   "attribute": {
     "integrity": {
@@ -24,19 +25,6 @@
     }
   },
   "notes": "Partner is CCR Data Systems.",
-  "action": {
-    "malware": {
-      "variety": [
-        "Capture stored data",
-        "Packet sniffer"
-      ],
-      "vector": [
-        "Unknown"
-      ],
-      "name": "",
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Point of sale computer found to have malware.  Processes were identified as taking snapshots of network traffic and saving aside cardholder data in a log file.  ",
   "source_id": "osint",
@@ -48,17 +36,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 27,
-        "month": 7
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint121",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 7,
+        "day": 27,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -96,7 +84,19 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "name": "",
+      "variety": [
+        "Capture stored data",
+        "Packet sniffer"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

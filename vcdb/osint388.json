@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint388",
+  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/providence-holy-cross-employee-in-california-allegedly-posts-patients-record-on-facebook.html, Hospital employee allegedly makes fun of patient's medical condition on Facebook; officials investigating - LA Daily News.pdf  ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1,
@@ -21,24 +21,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1
+      "data_total": 1,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Physical access",
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse",
-        "Data mishandling"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A staffing agency employee who worked at Providence Holy Cross Medical Center in Mission Hills, Calif., allegedly posted a patient's medical information on Facebook to make fun of her and her medical condition, according to a Los Angeles Daily News report.  A printout of the employee's Facebook page showed a photo of a patient's medical record with her name and the date she was admitted. The employee commented on the photo: \"Funny but this patient came in to cure her VD and get birth control,\" according to the report.  The employee's post was met with some opposition on Facebook as some said he is violating HIPAA. The employee responded on Facebook: \"People, it's just Facebook...Not reality. Hello? Again...It's just a name out of millions and millions of names. If some people can't appreciate my humor than tough. And if you don't like it too bad because it's my wall and I'll post what I want to. Cheers!\" according to the report. ",
   "source_id": "osint",
@@ -50,17 +37,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 4,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint388",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 4,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -100,8 +87,21 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access",
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse",
+        "Data mishandling"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "assets": [

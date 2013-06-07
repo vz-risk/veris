@@ -1,0 +1,107 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint743",
+  "reference": "http://www.chroniclejournal.com/content/news/local/2013/05/28/hospital-apologizes-data-breach",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "amount": 500,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 500,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Thunder Bay Regional Health Sciences Centre has confirmed a privacy breach involving diagnostic images, but are providing few details as to who was involved. Hospital CEO Andree Robichaud and chief of staff Dr. Gordon Porter said Monday that the MRI scans of about 500 people were shared with a physician outside the hospital who did not have hospital privileges.",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 28,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint743",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "N",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "notes": "Staff physician sharing data with physician who did not have privileges in this hospital.",
+      "role": [
+        "Inappropriate"
+      ],
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Thunder Bay Regional Health Sciences Centre",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 298180000
+      },
+      "country": "Canada",
+      "notes": "",
+      "employee_count": "1001 to 10000",
+      "industry": "622110"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013
+    },
+    "investigation": {
+      "year": 2013
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Other server"
+      },
+      {
+        "variety": "M - Other"
+      }
+    ]
+  }
+}

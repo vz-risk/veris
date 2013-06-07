@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint464",
+  "security_compromise": "Confirmed",
   "reference": "http://www.kob.com/article/stories/S2861824.shtml?cat=500 ",
   "attribute": {
     "confidentiality": {
@@ -22,19 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Unknown"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": " Some patient records may be in jeopardy, thanks to a lost or stolen laptop computer from ABQ Health Partners, the state's largest independent doctor's group.  ABQ Health Partners sent out a letter telling patients their personal information is at risk of falling into the wrong hands.",
   "source_id": "osint",
@@ -46,17 +34,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 10,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint464",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 10,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -97,8 +85,20 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

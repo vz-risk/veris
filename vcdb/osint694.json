@@ -1,0 +1,147 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Minor",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Insignificant"
+  },
+  "incident_id": "osint694",
+  "reference": "http://www.wafb.com/story/20260440/almost-400-victims-identified-in-massive-identity-theft-scheme (20130520) http://theadvocate.com/home/4598376-125/seven-arrested-in-identity-theft (20130520)  ",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "amount": 400,
+          "variety": "Bank"
+        }
+      ],
+      "data_total": 400,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Insider misused access to billing department records to provide data to an identity theft ring which printed and cashed checks from other people's accounts.",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 4,
+        "year": 2012
+      }
+    },
+    "f500": "U",
+    "master_id": "osint694",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Finance"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Louisiana State University",
+      "country": "United States",
+      "notes": "",
+      "state": "LA",
+      "employee_count": "1001 to 10000",
+      "industry": "622110"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "month": 6,
+      "day": 1,
+      "year": 2012
+    },
+    "investigation": {
+      "month": 8,
+      "day": 1,
+      "year": 2012
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Months"
+    },
+    "discovery": {
+      "unit": "Months"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint75",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/emblem-health-20120529.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,20 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse",
-        "Email misuse",
-        "Net misuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Shortly before his departure, an employee emailed a copy of Emblem's Broker Master File to an email account owned by his wife.  It was also sent to the company he was about to join.  It contained the names, SSNs and broker license numbers of brokers.  ",
   "source_id": "osint",
@@ -47,17 +34,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 29,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint75",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 29,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -90,17 +77,30 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 9,
       "day": 27,
-      "month": 9
+      "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 29,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse",
+        "Email misuse",
+        "Net misuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

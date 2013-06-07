@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint640",
+  "security_compromise": "Confirmed",
   "reference": "http://wnyt.com/article/stories/S2988422.shtml?cat=300",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 2300,
@@ -17,21 +17,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 2300
+      "data_total": 2300,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Glens Falls Hospital says the medical records of more than 2,300 patients may have been compromised.  The hospital says it stored those records for more than 4 months on an unprotected computer server.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 5,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint640",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 5,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -91,7 +81,17 @@
       "year": 2013
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

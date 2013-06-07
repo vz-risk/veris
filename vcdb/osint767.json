@@ -1,0 +1,108 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint767",
+  "reference": "http://www.wgal.com/news/susquehanna-valley/york-adams/malware-program-found-in-seniorliving-centers-computer/-/9704248/20055360/-/iv5rf0z/-/index.html",
+  "attribute": {
+    "integrity": {
+      "variety": [
+        "Software installation"
+      ]
+    },
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Medical"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Thousands of current and former senior-living residents' personal information could be in jeopardy after a hacker's malware program was found on a computer. ",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 8,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint767",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Lutheran Social Services of South Central Pennsylvania",
+      "country": "United States",
+      "notes": "",
+      "state": "PA",
+      "employee_count": "Unknown",
+      "industry": "62"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013
+    },
+    "investigation": {
+      "year": 2013
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "name": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ]
+  }
+}

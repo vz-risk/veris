@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint553",
+  "security_compromise": "Confirmed",
   "reference": "http://socialbarrel.com/europes-youngest-application-designer-aaron-bond-expelled-from-school-for-hacking-the-computer-system/33493/ ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "Aaron Bond is labeled the youngest iPhone app developer.  ",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Aaron Bond, 14 years old at the time, hacked into King Edward VI College's computer system and has been expelled as a result.  ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 13,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint553",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 13,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -75,9 +65,9 @@
         "amount": 10000000
       },
       "country": "United Kingdom",
-      "industry": "611310",
+      "notes": "",
       "employee_count": "Unknown",
-      "notes": ""
+      "industry": "611310"
     }
   ],
   "timeline": {
@@ -88,8 +78,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

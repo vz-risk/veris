@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint146",
+  "security_compromise": "Confirmed",
   "reference": "http://hackmageddon.com/tag/nychiefs-org/",
   "attribute": {
     "confidentiality": {
@@ -25,17 +26,6 @@
     }
   },
   "notes": "The details are in the second story in this graphic. ",
-  "action": {
-    "hacking": {
-      "notes": "Anonymous",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Anonymous dumps some emails from NY Police Chiefs (nychiefs.org).  The leaded documents contained mail spools for 10 NY Police Chiefs, over 300 usernames and md5-hashed passwords for all NY Chiefs and several \"Law Enforcement Sensitive\" and \"For Official Use Only\" documents.  ",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 1,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint146",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 1,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,16 +82,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 1,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "Anonymous",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

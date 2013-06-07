@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint238",
+  "security_compromise": "Confirmed",
   "reference": "http://www.wxyz.com/dpp/news/region/wayne_county/wayne-county-sends-out-email-blast-containing-some-1300-names-and-social-security-numbers ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1000,
@@ -17,21 +17,11 @@
       "state": [
         "Transmitted unencrypted"
       ],
-      "data_total": 1000
+      "data_total": 1000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Email]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The personal information of more than 1000 Wayne County employees is compromised after an email mistake by the county's Department of Personnel/Human Resources.  A spreadsheet containing the data was mistakenly attached to an email about health insurance. The email went out on Friday to members of AFSCME Locals 25, 409, 1659 and 3309. Union officials say about 1300 people received the email.  The attachment contained names, employee ID numbers, social security numbers, birth dates, addresses and other information.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 21,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint238",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 21,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -81,15 +71,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 16,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

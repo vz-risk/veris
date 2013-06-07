@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint350",
+  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/blount-memorial-hospital-data-breach-affects-27k-patients.html ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 22000,
@@ -21,23 +21,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 27000
+      "data_total": 27000,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Unknown"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Blount Memorial Hospital in Maryville, Tenn., has notified 27,000 patients whose personal information was compromised when an employee's laptop was stolen in August, according to a Knox News report.  The laptop, which was password protected, contained registration records on approximately 22,000 patients, including their names, dates of birth, responsible party names, addresses, physician names and billing information, according to the report. Information for an additional 5,000 patients was on the laptop as well but with Social Security numbers and other non-medical data.",
   "source_id": "osint",
@@ -49,17 +37,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 19,
-        "month": 10
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint350",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 10,
+        "day": 19,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,18 +82,30 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 8,
       "day": 30,
-      "month": 8
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 8,
       "day": 30,
-      "month": 8
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

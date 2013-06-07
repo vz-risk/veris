@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint392",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2011/12/12/20000-cpps-testville-accounts-leaked/",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 20000,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 20000
+      "data_total": 20000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "gaming site hacked via unknown methods. 20K creds posted onto pastebin",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2011,
-        "day": 12,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint392",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 12,
+        "year": 2011
+      }
     }
   },
   "actor": {
@@ -76,9 +66,9 @@
     {
       "victim_id": "CPPS",
       "notes": "",
-      "country": "Panama",
+      "employee_count": "Unknown",
       "industry": "518",
-      "employee_count": "Unknown"
+      "country": "Panama"
     }
   ],
   "timeline": {
@@ -86,9 +76,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2011,
+      "month": 12,
       "day": 12,
-      "month": 12
+      "year": 2011
     },
     "investigation": {
       "year": 2011
@@ -103,8 +93,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

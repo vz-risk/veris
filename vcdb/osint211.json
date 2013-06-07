@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint211",
+  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=23354",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Valley View University in Ghana is a private chartered university.  According to Wikipedia, it is part of a worldwide system of over 100 tertiary institutions operated by the Seventh-day Adventist Church. And according to Virtual SEPO, it was hacked. The data dump includes entries consisting of e-mail address, plaintext passwords, and full names.",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 25,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint211",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 25,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -77,9 +67,9 @@
     {
       "victim_id": "Valley View University",
       "notes": "",
-      "country": "Ghana",
+      "employee_count": "Unknown",
       "industry": "6113",
-      "employee_count": "Unknown"
+      "country": "Ghana"
     }
   ],
   "timeline": {
@@ -87,13 +77,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 25,
-      "month": 2
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

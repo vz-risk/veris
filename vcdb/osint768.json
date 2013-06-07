@@ -1,0 +1,166 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint768",
+  "reference": "http://www.justice.gov/usao/ins/press_releases/Pressrelease12/Myers.20120911.pdf (20130606) http://www.1011now.com/home/headlines/Customers-Scammed-by-Their-Financial-Adviser-200619271.html (20130606)",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Bank"
+        },
+        {
+          "variety": "Personal"
+        }
+      ],
+      "data_total": 3000,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Employee misues access to commit identity fraud",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "year": 2011
+      }
+    },
+    "f500": "N",
+    "master_id": "osint768",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Finance"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Northwestern Mutual Investment Services",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 9500000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "NE",
+      "employee_count": "11 to 100",
+      "industry": "524210"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "month": 6,
+      "year": 2011
+    },
+    "investigation": {
+      "month": 8,
+      "year": 2011
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Months"
+    },
+    "discovery": {
+      "unit": "Months"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse",
+        "Data mishandling"
+      ]
+    },
+    "physical": {
+      "notes": "Stole some physical records. Also had physical mail re-routed.",
+      "vector": [
+        "Privileged access",
+        "Uncontrolled location"
+      ],
+      "location": [
+        "Public facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Database"
+      },
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

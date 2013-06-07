@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint497",
+  "security_compromise": "Confirmed",
   "reference": "http://www.securityweek.com/database-vulnerability-exposes-235000-western-connecticut-state-university ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 235000,
@@ -17,21 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 235000
+      "data_total": 235000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misconfiguration"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Western Connecticut State University on Thursday said that a database vulnerability on a system housing sensitive personal information resulted in approximately 235,000 individuals being exposed.  The vulnerable server maintained records collected by the university over a 13-year period, and was said to be vulnerable from April 2009 to September 2012.  Exposed information included names, addresses, social security numbers, and/or financial account information provided in association with transactions with the university.  The information was gathered in several ways, the University said, including when prospective students applied to the university, when filled financial aid forms were filled out, or when the university purchased lists of items like SAT scores.  The vulnerable information dated back to 1999, the University said.",
   "source_id": "osint",
@@ -43,15 +33,15 @@
         "data_subject": "Student"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint497",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint497",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -84,17 +74,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2009,
+      "month": 4,
       "day": 31,
-      "month": 4
+      "year": 2009
     },
     "investigation": {
-      "year": 2012,
+      "month": 9,
       "day": 26,
-      "month": 9
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misconfiguration"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

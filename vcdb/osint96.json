@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint96",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/lahey-clinic-20120829.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,19 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Public facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Physician's blackberry was stolen at an airport in France.  The blackberry was not encrypted and no password was required to use it.  It was wiped 5 days later, but the info on it included patient names, DOB, clinic medical record numbers, diagnosis and procedure names.",
   "source_id": "osint",
@@ -46,17 +34,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 29,
-        "month": 8
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint96",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 8,
+        "day": 29,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -91,17 +79,29 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 7,
       "day": 1,
-      "month": 7
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 7,
       "day": 6,
-      "month": 7
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Public facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

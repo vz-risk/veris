@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint209",
+  "security_compromise": "Confirmed",
   "reference": "http://hackmageddon.com/tag/uzfiles-com/",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 4130,
@@ -17,21 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 4130
+      "data_total": 4130,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Unknown hackers dump on pastebin 4,130 records from uzfiles.com, an Uzbek music forum.  The records contain usernames, email addresses, and plain-text passwords.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 5,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint209",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 5,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -76,25 +66,35 @@
     {
       "victim_id": "uzfiles.com",
       "notes": "",
-      "country": "Uzbekistan",
+      "employee_count": "Unknown",
       "industry": "512",
-      "employee_count": "Unknown"
+      "country": "Uzbekistan"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 5,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 5,
-      "month": 4
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

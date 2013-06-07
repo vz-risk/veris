@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint374",
+  "security_compromise": "Confirmed",
   "reference": "http://dev.dowagiacnews.com/2012/04/19/berrien-website-hacked/ (20130219) http://articles.wsbt.com/2012-04-18/website_31363825 (20130219) http://www.mlive.com/news/kalamazoo/index.ssf/2012/04/berrien_county_government_webs.html (20130219)",
   "attribute": {
     "integrity": {
@@ -55,18 +56,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Use of stolen creds"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Berrien County Sheriff's Department hacked and defaced by Anonymous",
   "source_id": "osint",
@@ -78,17 +67,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 18,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint374",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 18,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -121,14 +110,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 15,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 15,
-      "month": 4
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -140,8 +129,19 @@
       "unit": "Hours"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Use of stolen creds"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

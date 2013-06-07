@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint122",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/transunion-20120312.pdf, https://www.privacyrights.org/node/54879 ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The company has determined that your personal information (address, Social Security number and other details contained in your credit report) was accessed by an  unidentified person between January 22 and February 15, 2012 without proper authorization. The unauthorized access to your credit Corp. was brought to the company's attention by one of the subscribers, The Manufacturers Life Insurance Company (ManULife) and, as a result, a joint investigation has been initiated.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 3
-      }
+    "asset": {
+      "total": "Yes"
     },
     "f500": "N",
     "master_id": "osint122",
-    "asset": {
-      "total": "Yes"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -78,9 +68,9 @@
         "amount": 48780000000
       },
       "country": "Canada",
-      "industry": "524113",
+      "notes": "",
       "employee_count": "10001 to 25000",
-      "notes": ""
+      "industry": "524113"
     },
     {
       "victim_id": "Manufacturers Life Insurance Company (ManULife)",
@@ -96,16 +86,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 15,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

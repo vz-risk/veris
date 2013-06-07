@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint448",
+  "security_compromise": "Confirmed",
   "reference": "http://www.fox44.com/news/nerves-rattled-identity-theft-involving-lsu-health-employee, http://www.wafb.com/story/20260440/almost-400-victims-identified-in-massive-identity-theft-scheme ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,22 +16,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 400
+      "data_total": 400,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Data mishandling"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "LSU Health is already working to restore its reputation after an employee allegedly stole the identities of hundreds of patients.  Authorities say roughly 400 patients from Louisiana and beyond have to go through the process of reclaiming their lives.    Police arrested seven people for their parts in the identity theft ring, including Pamela Reams, who worked in the billing department. Detectives say she admitted stealing personal information from a hospital database to write counterfeit checks.  \"Late last week, LSU HCSD received from law enforcement copies of the check images printed by the employee and seized from her residence. Immediately upon receiving this information, HCSD began to determine which of its patients were affected and to notify them by phone and letter as required by HIPAA and other federal regulations.\"",
   "source_id": "osint",
@@ -43,17 +32,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 5,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint448",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 5,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -89,13 +78,24 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 11,
       "day": 8,
-      "month": 11
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Data mishandling"
+      ]
+    }
+  },
+  "discovery_method": "Ext - law enforcement",
   "asset": {
     "notes": "",
     "assets": [

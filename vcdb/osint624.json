@@ -3,11 +3,11 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint624",
+  "security_compromise": "Confirmed",
   "reference": "http://www.bybradio.net/2012/01/17/medical-records-stolen/ http://kokomotribune.com/local/x2019121991/Thieves-swipe-medical-records/print d",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 450,
@@ -21,23 +21,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 450
+      "data_total": 450,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Chirporactic center suffered a physical break-in over New Year's break; ~450 files were stolen. The clinic did have electronic backup copies.",
   "source_id": "osint",
@@ -49,17 +37,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 14,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint624",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 14,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -97,14 +85,14 @@
       "unit": "Minutes"
     },
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 1,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 3,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "Minutes"
@@ -116,7 +104,19 @@
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

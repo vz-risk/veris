@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint633",
+  "security_compromise": "Confirmed",
   "reference": "http://www.wfmd.com/pages/localnews2.html?feed=119935&article=11016926",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Dentist office computer systems hacked.  HHS tool lists Patterson Dental Supply as an involved partner.  The article does not mention them.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 3,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint633",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 3,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -85,13 +75,23 @@
       "year": 2013
     },
     "investigation": {
-      "year": 2013,
+      "month": 1,
       "day": 4,
-      "month": 1
+      "year": 2013
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

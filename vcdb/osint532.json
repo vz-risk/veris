@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint532",
+  "security_compromise": "Confirmed",
   "reference": "http://www.dragosrestaurant.com/media/official-statement-02-16-2012/",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Embezzlement"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Food server used hand-held skimmer to steal payment card information while on duty at restaurant.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 16,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint532",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 16,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -98,8 +88,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Embezzlement"
+      ]
+    }
+  },
+  "discovery_method": "Ext - fraud detection",
   "asset": {
     "notes": "",
     "assets": [

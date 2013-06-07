@@ -33,11 +33,11 @@
     "overall_rating": "Painful"
   },
   "incident_id": "osint191",
+  "security_compromise": "Confirmed",
   "reference": "http://abovethelaw.com/2012/04/baylor-law-screw-up-reveals-personal-data-of-entire-admitted-class-data-that-weve-got/ (20130212) http://sbmblog.typepad.com/sbm-blog/2012/08/httpwwwlawcomjspnljpubarticlenljjspid1202564381624baylors_accidental_doc_dump_provides_grist_for_bias_suitslreturn.html (20130212)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 442,
@@ -47,21 +47,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 442
+      "data_total": 442,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "Document attached to email sent to all admitted students",
-      "vector": [
-        "Random error"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Employee accidentally attaches spreadsheet with non-public information to email being sent to students.",
   "source_id": "osint",
@@ -73,17 +63,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint191",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -119,14 +109,14 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 3,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 3,
-      "month": 4
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -138,8 +128,18 @@
       "unit": "Hours"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": "Document attached to email sent to all admitted students",
+      "vector": [
+        "Random error"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

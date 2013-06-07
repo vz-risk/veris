@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint267",
+  "security_compromise": "Confirmed",
   "reference": "http://www.vvdailypress.com/articles/tossed-34195-files-hesperia.html (20130215) ",
   "attribute": {
     "confidentiality": {
@@ -49,17 +50,6 @@
     }
   },
   "notes": "Some dispute about whether the records were stolen or mishandled.  Opinion seems to be mishandle.",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Inadequate processes"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Tax business improperly stored or improperly disposed of physical tax records",
   "source_id": "osint",
@@ -71,17 +61,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 30,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint267",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 30,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -132,8 +122,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Inadequate processes"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - law enforcement",
   "asset": {
     "notes": "",
     "assets": [

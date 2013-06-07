@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint102",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/ocean-reef-20120314.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Web]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A software development consultant working for the Ocean Reef Community was running security checks on confidential community databases being used by the company's software systems vendor, Forte Interactive.  They discovered that the vendor's server didn't have proper protection and was exposed on the internet from 12/8/11 through 1/30/12.  Information exposed includes names, DOB, SSN, driver's license numbers of members and employees.  ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 14,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint102",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 14,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -79,18 +69,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 12,
       "day": 8,
-      "month": 12
+      "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 30,
-      "month": 1
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through Web]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - audit",
   "asset": {
     "assets": [
       {

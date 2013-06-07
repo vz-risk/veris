@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint589",
+  "security_compromise": "Confirmed",
   "reference": "http://blogs.wsj.com/speakeasy/2012/10/30/medal-of-honor-warfighter-looks-to-battle-through-controversy/ ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Web]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The game publisher during the pre-launch phase of Medal of Honor Warfighter the \u201cpartners\u201d tab offered direct links to gear manufacturers\u2019 sites, potentially letting all comers \u2014 including underaged ones \u2014 get to pages that displayed real guns, custom magazines, scopes and big knives for sale.",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 30,
-        "month": 10
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint589",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 10,
+        "day": 30,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,8 +82,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through Web]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

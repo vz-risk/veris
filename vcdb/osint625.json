@@ -3,11 +3,11 @@
     "overall_rating": "Insignificant"
   },
   "incident_id": "osint625",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/fidelity-20120320.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1,
@@ -17,21 +17,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 1
+      "data_total": 1,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "Incorrect number provided to customer resulting in misdelivery.",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Company provided incorrect fax number to customer resulting in customer sending fax containing PII to incorrect number.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 19,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint625",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 19,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -89,14 +79,14 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 28,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 28,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -108,7 +98,17 @@
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "Incorrect number provided to customer resulting in misdelivery.",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "notes": "",

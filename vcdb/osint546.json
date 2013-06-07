@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint546",
+  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=22776 ",
   "attribute": {
     "confidentiality": {
       "notes": "Names, phone numbers, e-mail addresses, passwords, birth dates, ID numbers, and usernames",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Classified"
@@ -19,21 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 160
+      "data_total": 160,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "During an Anti-Israeli cyberattack, the Israel Institute of Technology was compromised.  ",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 11,
-        "month": 1
-      }
+    "asset": {
+      "total": "Yes"
     },
     "f500": "U",
     "master_id": "osint546",
-    "asset": {
-      "total": "Yes"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 11,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,9 +72,9 @@
         "amount": 484000000
       },
       "country": "Israel",
-      "industry": "611310",
+      "notes": "",
       "employee_count": "1001 to 10000",
-      "notes": ""
+      "industry": "611310"
     },
     {
       "victim_id": "TopLinks",
@@ -122,16 +112,16 @@
     {
       "victim_id": "ILAN",
       "industry": "611310",
-      "country": "Israel",
+      "employee_count": "Unknown",
       "state": "",
-      "employee_count": "Unknown"
+      "country": "Israel"
     },
     {
       "victim_id": "SNIP",
       "industry": "722511",
-      "country": "Israel",
+      "employee_count": "11 to 100",
       "state": "",
-      "employee_count": "11 to 100"
+      "country": "Israel"
     }
   ],
   "timeline": {
@@ -142,8 +132,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

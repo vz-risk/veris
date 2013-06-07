@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint126",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/valpak-20121214.pdf, http://www.atg.state.vt.us/issues/consumer-protection/privacy-and-Data-Security/documents-and-resources5/valpak-security-breach-notice-ltr-to-consumer.php ",
   "attribute": {
     "confidentiality": {
@@ -19,16 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "on November 14 and 12, our client, learned from an investigator at the United States postal inspection services that a temporary independent contractor used by the company was indicted and charged with mail fraud. When the individual was arrested November 2012, law enforcement found a file in his possession that contain the names, Social Security numbers, and employment start and end dates for employees of the company's franchises. Because the contractor only performed work for the company from June through September 2011, only individuals hired before September 2011 were in the file. The company was informed by the USPS that the contractor opened a PO Box in a limited number of individuals names.",
   "source_id": "osint",
@@ -40,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 14,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint126",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 14,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,18 +73,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 6,
       "day": 30,
-      "month": 6
+      "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 11,
       "day": 14,
-      "month": 11
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "discovery_method": "Ext - law enforcement",
   "asset": {
     "assets": [
       {

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint567",
+  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=24221; http://www.kpho.com/story/18362022/passerby-finds-hundreds-of-documents-with-personal-info-in-dumpster ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A passerby found paperwork pertaining personal information for customer's for Fitness 1.  Fitness 1 sold their location, contracts and memberships to LA Fitness in 2000.  ",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint567",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,8 +82,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

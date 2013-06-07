@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint103",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/orvis-20120323.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,18 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Partner who hosted website and provided auction software that accepts registration and bids for merchandise may have been accessed by an unauthorized person.  Partner indicated that although they had not conducted a forensic investigation, they believed that its computer network may have been compromised.  They had received reports from other companies hosted by it saying that their bidders had fraudulent charges on the credit cards they used to register for those auctions.  At risk are bidder's name, address, phone, email, CCN and expiration date.",
   "source_id": "osint",
@@ -45,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint103",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,12 +83,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 15,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "notes": "",

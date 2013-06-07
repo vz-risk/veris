@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint93",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/kelly-20120309.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,16 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A former employee retained electronic documents on his personal computer containing information on some employees.  Data types are not disclosed.",
   "source_id": "osint",
@@ -40,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 9,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint93",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 9,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,12 +76,21 @@
       "year": 2011
     },
     "investigation": {
-      "year": 2011,
+      "month": 12,
       "day": 11,
-      "month": 12
+      "year": 2011
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

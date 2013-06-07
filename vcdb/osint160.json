@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint160",
+  "security_compromise": "Confirmed",
   "reference": "http://newsok.com/piedmont-woman-linked-to-id-theft-investigation/article/3640901# ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,20 +16,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 300
+      "data_total": 300,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Between February and December, members of the Oklahoma City Economic and Identity Crimes Task Force seized dozens of stolen identification cards, credit cards and checks, along with multiple computers, scanners, printers and related items used to create bogus checks and IDs, according to a search warrant affidavit.  Nine people were arrested in connection with the investigation, including Tracy Lavarnway, of Piedmont, who worked at American Quality Exteriors, a window and siding company in Bethany.",
   "source_id": "osint",
@@ -41,15 +32,15 @@
         "data_subject": "Customer"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint160",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint160",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -87,8 +78,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "discovery_method": "Ext - law enforcement",
   "asset": {
     "assets": [
       {

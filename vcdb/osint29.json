@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint29",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/KP%20Privacy%20Incident%20Sample%20Letter%20082412_0.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Email]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "On August 24, 2012, an employee in Kaiser Permanente\u2019s Northern California Region Recruitment department mistakenly emailed a list of former Northern California KP employees who left the organization between 1990 and 2006 to a person not authorized to receive the information. Some of these NCAL former employees have since returned to KP in various regions. This list contained, among other information, your name and Social Security number. No personal health information was involved. The unintended recipient who received the information has been extremely cooperative. Kaiser Permanente\u2019s IT Security conducted a detailed analysis to confirm that the recipient effectively deleted the information and that the information had not been further emailed or printed. As a result of our investigation, we believe it is highly unlikely that your information has been, or will be used for unlawful purposes.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 29,
-        "month": 10
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint29",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 10,
+        "day": 29,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,15 +73,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 8,
       "day": 24,
-      "month": 8
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

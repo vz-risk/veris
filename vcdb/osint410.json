@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint410",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/CA%20customer%20letter.pdf?;  http://doj.nh.gov/consumer/security-breaches/documents/new-york-rochester-gas-electric-20120123.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "The customer records contain Social Security numbers, dates of birth and, in some cases, financial institution account numbers.",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Bank"
@@ -19,20 +19,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 921
+      "data_total": 921,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "An employee of an independent software development consulting firm (contracted by NYSEG and RG&E) allowed unauthorized access to one of our customer information systems.",
   "source_id": "osint",
@@ -44,17 +35,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint410",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,8 +79,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

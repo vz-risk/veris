@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint166",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=10249; http://centennial-man.blogspot.com/2012/09/one-of-my-least-favorite-topics-theftof.html February 12, 2013",
   "attribute": {
     "confidentiality": {
       "notes": "It is unknown what information was on the paper records that were unauthorized to be obtained.  ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 754,
@@ -17,23 +17,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 754
+      "data_total": 754,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "The incident involved \"Unauthorized Access/Disclosure, Other\"  of paper records. ",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Unknown"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Incident involving unauthorized access/disclosure of paper records.  ",
   "source_id": "osint",
@@ -45,17 +33,17 @@
         "data_subject": "Unknown"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 9
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint166",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 9,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -86,20 +74,32 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 7,
       "day": 31,
-      "month": 7
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 8,
       "day": 27,
-      "month": 8
+      "year": 2012
     },
     "discovery": {
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

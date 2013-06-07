@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint244",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=9771; http://1shields1.ipower.com/hipaa/",
   "attribute": {
     "confidentiality": {
       "notes": "The privileged health information that was compromised included date of birth, address, treatment plans and other types of personal information. ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,24 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 961
+      "data_total": 961,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Individuals stole the program's computer server where personal information was stored; as well as a server, monitor and keyboard. ",
   "source_id": "osint",
@@ -48,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint244",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -97,13 +84,26 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 27,
-      "month": 2
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "It was also revealed that the server, monitor and keyboard had been stolen as well. ",
     "assets": [

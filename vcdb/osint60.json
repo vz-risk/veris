@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint60",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/arizona-central-cu-experian-20120608.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Experian's client, Arizona Central Credit, was identified as having accessed information without proper authorization.  The information compromised included name and address, SSN, DOB and/or account numbers.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint60",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -84,15 +74,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 11,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

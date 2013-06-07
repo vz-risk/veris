@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint249",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=9907 ",
   "attribute": {
     "confidentiality": {
       "notes": "The information contained on the laptop may have included medical record number, date of visit and general reason for visit. No Social Security numbers, dates of birth, credit card, debit card or bank account numbers were exposed.",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Internal"
@@ -16,23 +16,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 4490
+      "data_total": 4490,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A password-protected laptop was stolen that contained personal patient information. ",
   "source_id": "osint",
@@ -44,17 +32,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 21,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint249",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 21,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,16 +73,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 1,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

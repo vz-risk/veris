@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint185",
+  "security_compromise": "Confirmed",
   "reference": "http://www.wgal.com/Printing-Company-Releases-SSNs-By-Mistake/-/9361174/10232776/-/10fjm1hz/-/index.html ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 2038,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 2038
+      "data_total": 2038,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Inadequate personnel"
-      ],
-      "variety": [
-        "Classification error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Social Security numbers of thousands of Derry Township residents have been exposed.  Officials with a West Shore printing company admit they made a mistake and they are offering identity theft protection to the taxpayers whose personal information was exposed.  On Tuesday, taxpayers in Derry Township received forms in the mail with the information of two taxpayers printed on them.  The 1099-G forms listed the amount of the person's tax refund from last year. The forms did not list their total income; however, they showed the person's Social Security number.  The 2,038 forms were printed and mailed by Security Savings Systems of New Cumberland.  The printing company's owner said the mistake happened because the company was trying to conserve paper. The forms were supposed to be cut below the instructions.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint185",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,18 +73,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 31,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 31,
-      "month": 1
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Inadequate personnel"
+      ],
+      "variety": [
+        "Classification error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "notes": "",
     "management": true,

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint117",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/sullys-superette-20120725.pdf ",
   "attribute": {
     "integrity": {
@@ -24,20 +25,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "malware": {
-      "variety": [
-        "Capture app data",
-        "Export data",
-        "Packet sniffer"
-      ],
-      "vector": [
-        "Unknown"
-      ],
-      "name": "",
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "point-of-sale content unit was compromised company was notified by city from services and Secret Service is suspicious that these were occurring during credit card swipe at the store. Technicians also examined the computers and certain suspicious processes running on the point-of-sale fileserver. Upon further investigation it became clear that these processes were malware and that they appear to be taking snapshots of network traffic and setting aside cardholder data and log file.",
   "source_id": "osint",
@@ -49,17 +36,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 25,
-        "month": 7
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint117",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 7,
+        "day": 25,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -98,12 +85,25 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
-      "month": 7
+      "month": 7,
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "name": "",
+      "variety": [
+        "Capture app data",
+        "Export data",
+        "Packet sniffer"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "notes": "",
     "management": true,

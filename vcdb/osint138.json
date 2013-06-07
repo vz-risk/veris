@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint138",
+  "security_compromise": "Confirmed",
   "reference": "http://www.atg.state.vt.us/assets/files/Akliz%20Notice.pdf, http://www.oag.state.md.us/idtheft/Breach%20Notices/ITU215459.pdf",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "We believe that one of our internal servers compromised on December 27, 2011. We discovered this incident during a routine examination our server logs and C with any time to our customers associate incident. It appears that an attacker was able to gain access to the internal servers that host our billing system. That system contains information you provided when you created an account with us, such as your name, phone number, e-mail address, username and password. If you paid online with a credit card, your credit card is stored in the systems well. The billing system uses is popular and sophisticated. Sensitive information, such as credit card information and account passwords, was stored in an encrypted form. However, the incident involved an attempt by the attacker to access the keys used to decrypt the data. So we cannot be certain that the data is encrypted.",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 4,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint138",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 4,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -89,16 +79,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 12,
       "day": 27,
-      "month": 12
+      "year": 2011
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - log review",
   "asset": {
     "assets": [
       {

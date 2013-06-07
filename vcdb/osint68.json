@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint68",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/clarksville-montgomery-school-20120808.pdf, http://www.theleafchronicle.com/article/20120611/NEWS01/306110014/Hackers-release-info-on-14-000-Clarksville-schools-students-employees?nclick_check=1 ",
   "attribute": {
     "integrity": {
@@ -12,7 +13,6 @@
     },
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -21,21 +21,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 110000
+      "data_total": 110000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Nine computer databases that contained the name, addreses, SSNs of current and former students were illegally intruded upon via SQLi.  The information was posted in pastebin.    ",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 8
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint68",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 8,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,18 +78,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 6,
       "day": 11,
-      "month": 6
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 6,
       "day": 12,
-      "month": 6
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

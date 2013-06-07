@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint373",
+  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=22776 ",
   "attribute": {
     "confidentiality": {
       "notes": "The information that was released included names, postal addresses, SHA1 passwords and e-mail addresses.  ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Personal"
@@ -16,21 +16,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 594
+      "data_total": 594,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Anti-Israeli cyber attacks resulted in a dump of emails from Nefesh B'Nefesh (NBN)  that consisted of people signing up for meetings or workshops.  ",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 10,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint373",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 10,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -79,9 +69,9 @@
         "amount": 15000000
       },
       "country": "Israel",
-      "industry": "813410",
+      "notes": "",
       "employee_count": "11 to 100",
-      "notes": ""
+      "industry": "813410"
     }
   ],
   "timeline": {
@@ -92,7 +82,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

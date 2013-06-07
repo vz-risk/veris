@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint82",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/fujifilm-recording-20120917.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,18 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "The email account of one of their employees was accessed without authorization by an unknown individual.  They used the email account and confidential information of Fujifilm to try and commit an act of fraud against the company.  The attempt was not successful.    Exposed data included name, address and SSN.   The data was 1099 reports.",
   "source_id": "osint",
@@ -42,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 9
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint82",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 9,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,15 +77,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 8,
       "day": 13,
-      "month": 8
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

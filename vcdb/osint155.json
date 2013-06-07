@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint155",
+  "security_compromise": "Confirmed",
   "reference": "http://hackmageddon.com/tag/bar-ilan-university-geography-and-environment-department/",
   "attribute": {
     "integrity": {
@@ -24,17 +25,6 @@
     }
   },
   "notes": "Listed in graphic as Jan 10.  Part of the #OpFreePalestine activity.",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "From Bar-Ilan University Geography and Environment Department (home.geoenv.biu.ac.il):  36 names, email addresses and SHA1 passwords.",
   "source_id": "osint",
@@ -46,17 +36,17 @@
         "data_subject": "Unknown"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 10,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint155",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 10,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,23 +73,33 @@
         "amount": 293220000
       },
       "country": "Israel",
-      "industry": "611310",
+      "notes": "",
       "employee_count": "1001 to 10000",
-      "notes": ""
+      "industry": "611310"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 10,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

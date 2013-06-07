@@ -9,6 +9,7 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint344",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/citibank-20120313.pdf  ",
   "attribute": {
     "confidentiality": {
@@ -28,17 +29,6 @@
     }
   },
   "notes": "No OSINT data on how credentials were stolen, or number of accounts affected.",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Use of stolen creds"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "User credentials were stolen from a third party and used to access Citibank web banking site for numerous customers.",
   "source_id": "osint",
@@ -50,17 +40,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 13,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint344",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 13,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -113,7 +103,17 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Use of stolen creds"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

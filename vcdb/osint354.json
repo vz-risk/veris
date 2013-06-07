@@ -9,11 +9,11 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint354",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/claires-20120426.pdf https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&ved=0CDsQFjAA&url=http%3A%2F%2Fwww.oag.state.md.us%2Fidtheft%2FBreach%2520Notices%2FITU%2520215616.pdf&ei=hdkiUerTFOvV0gHl8oGACg&usg=AFQjCNEONyI4lZslv76iJLasImpScUQhmA&bvm=bv.42553238,d.dmQ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 582,
@@ -23,21 +23,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 582
+      "data_total": 582,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "Victim work area",
-      "vector": [
-        "Carelessness"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Lost CD at retail HQ location contained W-2 information on employees. New Hampshire and Maryland disclosures available as OSINT via their respective attorney general sites. 150 notifications in NH, 432 in MD",
   "source_id": "osint",
@@ -49,17 +39,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 26,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint354",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 26,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,8 +84,8 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
-      "month": 4
+      "month": 4,
+      "year": 2012
     },
     "investigation": {
       "year": 2012
@@ -110,7 +100,17 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "Victim work area",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

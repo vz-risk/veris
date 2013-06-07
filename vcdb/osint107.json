@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint107",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/procter-gamble-05152012.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Web]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Procter & Gamble recently became aware of a security incident involving certain personal information of some shareholders on Sunday, April 8, 2012, SunGard systems, the third-party provider of Proctor and Gamble's shareholder services account online access website, experienced a technical issue during a routine server upgrade. During a confined window of 24 hours, a limited amount of account information was incorrectly displayed to the wrong account holder if they logged into the site during this period and perform certain tasks.  The data displayed included some combination of another user's name, address, shareholder account number, and account details.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 15,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint107",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 15,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,15 +73,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 8,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Web]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

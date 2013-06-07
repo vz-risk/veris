@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint341",
+  "security_compromise": "Confirmed",
   "reference": "http://usnews.nbcnews.com/_news/2012/12/07/15755157-secret-service-says-it-lost-two-computer-backup-tapes-in-2008?lite ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "Partner vehicle",
-      "vector": [
-        "Carelessness"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Secret Service confirmed Friday that it lost two computer backup tapes in 2008 but said it knew of no fraud that had been committed using the information on them.  The tapes were left on a Washington Metro subway train in February 2008 by a contract employee who was taking them to a storage facility, the agency said in a statement. It said that the tapes weren't \"marked or identified in any way\" and that they couldn't be accessed without proper codes and equipment.  The inspector general's office of the Department of Homeland Security, to which the Secret Service reports, was notified of the loss at the time, the agency said.  Sources said the \"personally identifiable information\" \u2014 or \"PII,\" in government-speak \u2014 on the tapes includes combinations of the following: Social Security Numbers; home addresses; information about family members; phone numbers; dates of birth; medical information; bank account numbers; employment information; driver's license numbers; passport numbers; and any biometric information on file with the Secret Service. ...",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Unknown"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 7,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint341",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 7,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,16 +72,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2008,
+      "month": 2,
       "day": 28,
-      "month": 2
+      "year": 2008
     },
     "investigation": {
       "year": 2008
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": "Partner vehicle",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint629",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?s=DentaQuest&x=0&y=0&=Go, http://www.phiprivacy.net/wp-content/uploads/Miami-Herald-Public-Notice.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1892,
@@ -17,21 +17,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 1892
+      "data_total": 1892,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "Initially discovered from HHS Breachtool.",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Florida\u2019s Agency for Health Care Administration reports that a breach involving its business associate,  DentaQuest of Florida affected 1,892 patients. This was a printing error on the part of OnTouchPoint CCI, DentaQuest's print vendor.  A programming error resulted in member ID cards being mailed to the wrong addresses.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint629",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,16 +73,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2201,
+      "month": 11,
       "day": 1,
-      "month": 11
+      "year": 2201
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "management": true,

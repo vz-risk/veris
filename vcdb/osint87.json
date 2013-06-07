@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint87",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/home-depot-20120416.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,18 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "An employee accessed certain HR information for unauthorized purposes, with what appear to have been failed attempts to misuse the information to obtain fraudulent credit cards.  The information included name, contact information, SSN, driver's license numbers and financial account information.  ",
   "source_id": "osint",
@@ -42,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 16,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint87",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 16,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,12 +77,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 15,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

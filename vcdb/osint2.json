@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint2",
+  "security_compromise": "Confirmed",
   "reference": "http://www.thestar.com/life/parent/2012/02/06/halton_school_board_alerts_parents_after_employees_laptop_with_student_data_stolen.html",
   "attribute": {
     "confidentiality": {
@@ -50,19 +51,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Unknown"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A laptop containing thousands of Halton students\u2019 names, numbers and birthdates \u2014 even their standardized test scores \u2014 has been stolen, prompting the board to warn all parents of a possible privacy breach.  \u201cWhile we don\u2019t believe data contained on the laptop to be damaging or harmful to student safety, we wanted to alert you of the issue,\u201d education director David Euale said in an email sent last Friday, adding the laptop was stolen from an employee between Jan. 23 and 27.",
   "source_id": "osint",
@@ -74,17 +62,17 @@
         "data_subject": ""
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 4,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint2",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 4,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -111,9 +99,9 @@
         "amount": 573420000
       },
       "country": "Canada",
-      "industry": "923110",
+      "notes": "",
       "employee_count": "1001 to 10000",
-      "notes": ""
+      "industry": "923110"
     }
   ],
   "timeline": {
@@ -121,9 +109,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 27,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
       "year": 2012
@@ -138,8 +126,20 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

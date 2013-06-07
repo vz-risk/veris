@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint444",
+  "security_compromise": "Confirmed",
   "reference": "http://abclocal.go.com/wabc/story?section=news/investigators&id=8617099 ",
   "attribute": {
     "confidentiality": {
       "notes": "The records stolen included date of birth, address, phone number, medical record number, social security number, insurance information, and potentially the medical history.   It was reported that information on the computer network that was stolen was an attempt to open up credit cards in the person's name.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Medical"
@@ -22,23 +22,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 100
+      "data_total": 100,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim grounds"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "There was a breach at North Shore University Hospital that resulted in private health records being stolen.  ",
   "source_id": "osint",
@@ -50,17 +38,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 11,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint444",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 11,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -98,13 +86,25 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 19,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim grounds"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

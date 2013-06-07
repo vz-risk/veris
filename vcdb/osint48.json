@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint48",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/GoTickets%20Customer%20Notification%20Template_0.pdf?, http://doj.nh.gov/consumer/security-breaches/documents/gotickets-20120904.pdf, http://doj.nh.gov/consumer/security-breaches/documents/gotickets-20120803.pdf. , http://doj.nh.gov/consumer/security-breaches/documents/go-tickets-20120620.pdf",
   "attribute": {
     "integrity": {
@@ -24,17 +25,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Pending the final results of our investigation, it appears that an unknown, outside group or individual improperly accessed www.gotickets.com\u2019s database possibly exposing some of our customers\u2019 sensitive information, including shipping, billing and credit card data related to purchases made through www.gotickets.com. We believe this improper access occurred on or around May 22 and May 30, 2012. Although we are not certain that your sensitive information was affected, as a precaution, we are advising you to keep a close eye on this account\u2019s activity.",
   "source_id": "osint",
@@ -46,17 +36,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint48",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -87,16 +77,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 22,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Ext - fraud detection",
   "asset": {
     "assets": [
       {

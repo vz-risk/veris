@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint579",
+  "security_compromise": "Confirmed",
   "reference": "http://www.bbc.co.uk/news/uk-england-london-17820700 ",
   "attribute": {
     "confidentiality": {
       "notes": "Names, home and email addresses ",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -19,21 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 38000
+      "data_total": 38000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The home and email addresses, including high-profile celebrities and politicians, of the 38,000 entrants to the London Marathon were accidentally published on the organizers' website.  ",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint579",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,9 +72,9 @@
         "amount": 32000000
       },
       "country": "United Kingdom",
-      "industry": "711219",
+      "notes": "",
       "employee_count": "11 to 100",
-      "notes": ""
+      "industry": "711219"
     }
   ],
   "timeline": {
@@ -95,8 +85,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

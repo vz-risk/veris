@@ -33,11 +33,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint169",
+  "security_compromise": "Suspected",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/altrec-20120524.pdf (20130212) http://www.oag.state.md.us/idtheft/Breach%20Notices/ITU%20215640.pdf (20130212)",
   "attribute": {
     "confidentiality": {
       "notes": "Only found records of customers affected in two states.  We know there were victims in CA but unable to find a count.  Likely other victims in other states.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 3011,
@@ -47,11 +47,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 3011
+      "data_total": 3011,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "Vulnerability was present between June 2010 and March 2012.  Unclear when data was exfiltrated.",
-  "action": {},
   "schema_version": "1.0",
   "summary": "Fraudulent activity on payment cards of people that had visited altrec.com.  ",
   "source_id": "osint",
@@ -63,17 +63,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint169",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -101,9 +101,9 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 5,
       "day": 7,
-      "month": 5
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -115,8 +115,8 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Suspected",
-  "discovery_method": "Unknown",
+  "action": {},
+  "discovery_method": "Ext - fraud detection",
   "asset": {
     "notes": "",
     "assets": [

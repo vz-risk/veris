@@ -1,0 +1,140 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Minor",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Minor",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Insignificant"
+  },
+  "incident_id": "osint760",
+  "reference": "http://www.simivalleyacorn.com/news/2013-05-10/Community/Card_skimmers_draw_lengthy_sentences.html",
+  "attribute": {
+    "integrity": {
+      "notes": "",
+      "variety": [
+        "Hardware tampering"
+      ]
+    },
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Processed"
+      ],
+      "data": [
+        {
+          "amount": 1100,
+          "variety": "Payment"
+        }
+      ],
+      "data_total": 1100,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "ATM skimming operation in California conducted by organized criminal group.",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 24,
+        "year": 2012
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint760",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": ""
+      }
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Armenia"
+      ],
+      "notes": "The two men that have been arrested are US citizens, strong possibility that they are part of an Armenian-based group.",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Organized crime"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Chase",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 108000000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "Over 100000",
+      "industry": "5221"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "month": 11,
+      "year": 2010
+    },
+    "investigation": {
+      "year": 2010
+    },
+    "compromise": {
+      "unit": "Seconds"
+    },
+    "containment": {
+      "unit": "Years"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Uncontrolled location"
+      ],
+      "location": [
+        "Public facility"
+      ],
+      "variety": [
+        "Tampering"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "The skimmers were placed on the doors that led to the ATM area; ATM cards are swiped once at the door to allow entry into the locked area where customers can then make ATM transactions after hours.",
+    "assets": [
+      {
+        "variety": "N - Access reader"
+      }
+    ]
+  }
+}

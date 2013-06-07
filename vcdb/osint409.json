@@ -9,6 +9,7 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint409",
+  "security_compromise": "Confirmed",
   "reference": "doj.nh.gov/consumer/security-breaches/documents/crowne-plaza-columbus-20120518.pdf ",
   "attribute": {
     "integrity": {
@@ -34,18 +35,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "malware": {
-      "variety": [
-        "Unknown"
-      ],
-      "vector": [
-        "Unknown"
-      ],
-      "name": "",
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "PII and credit card information exposed at hotel ",
   "source_id": "osint",
@@ -57,17 +46,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 18,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint409",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 18,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -102,14 +91,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 14,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 2,
-      "month": 4
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -121,8 +110,19 @@
       "unit": "Weeks"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "name": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - fraud detection",
   "asset": {
     "notes": "",
     "assets": [

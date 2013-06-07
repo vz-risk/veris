@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint70",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/college-board-20120113.pdf ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,21 +16,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 430
+      "data_total": 430,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Web]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A spreadsheet containing personal information of 430 individuals who registered for or participated in the November 2011 Chinese Bridge Delegation was not properly secured, and potentially viewable via the internet.  It contained name, DOB, passport number and contact info of the registrants.  ",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 13,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint70",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 13,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -72,24 +62,34 @@
     {
       "victim_id": "College Board",
       "notes": "",
-      "country": "China",
+      "employee_count": "Unknown",
       "industry": "6113",
-      "employee_count": "Unknown"
+      "country": "China"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 4,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 5,
-      "month": 1
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Web]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

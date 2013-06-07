@@ -1,0 +1,155 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint711",
+  "reference": "http://articles.chicagotribune.com/2013-05-17/news/chi-geneva-bank-teller-charged-20130517_1_bank-teller-account-info-bank-fraud (20130603) http://geneva.patch.com/groups/editors-picks/p/fifththird-bank-teller-charged-with-fraud (20130603) http://fraudtalk.blogspot.com/2013/05/former-bank-teller-indicted-for.html (20130603)",
+  "attribute": {
+    "integrity": {
+      "notes": "",
+      "variety": [
+        "Fraudulent transaction"
+      ]
+    },
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "amount": 14,
+          "variety": "Bank"
+        }
+      ],
+      "data_total": 14,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Teller at Fifth Third Bank in Geneva, IL uses customer information to commit wire fraud",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 17,
+        "year": 2013
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint711",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Cashier"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Fifth Third Bancorp",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 7110000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "IL",
+      "employee_count": "10001 to 25000",
+      "industry": "522110"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Minutes"
+    },
+    "incident": {
+      "month": 4,
+      "year": 2008
+    },
+    "investigation": {
+      "month": 4,
+      "year": 2010
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Years"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Other server"
+      }
+    ]
+  }
+}

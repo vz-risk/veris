@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint609",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/ecrime/databreach/reports/sb24-22861; http://oag.ca.gov/system/files/Opening%20Ceremony%20-%20Notice%20re%20Security%20Breach%20to%20Customer.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -25,17 +26,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A breach of security occurred that placed some of their customer's purchase information in jeopardy.  ",
   "source_id": "osint",
@@ -47,15 +37,15 @@
         "data_subject": "Customer"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint609",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint609",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -90,16 +80,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 14,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

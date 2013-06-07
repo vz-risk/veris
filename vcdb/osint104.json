@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint104",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/owner-operator-independent-drivers-20120619.pdf ",
   "attribute": {
     "integrity": {
@@ -29,18 +30,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "An unauthorized individual gained access to some coded online forms stored on a remote server housed with a third party ISP.  The individual changed certain informatino on the forms which caused the forms to be sent to this individual as a blind copy email.  The breach may have exposed customer's name, CCN, expiration dates, phone numbers, email addresses, DOB and credit/debit card service codes.",
   "source_id": "osint",
@@ -52,17 +41,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 19,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint104",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 19,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -98,15 +87,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 15,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

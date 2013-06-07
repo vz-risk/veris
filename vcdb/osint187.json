@@ -33,11 +33,11 @@
     "overall_rating": "Insignificant"
   },
   "incident_id": "osint187",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/american-stock-20120214.pdf (20130212) http://doj.nh.gov/consumer/security-breaches/documents/american-stock-20120413.pdf (20130212)",
   "attribute": {
     "confidentiality": {
       "notes": "We know there were at least 6 victims in one state.  Total victim count unknown.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 6,
@@ -47,21 +47,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 6
+      "data_total": 6,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "One of the sources said they discovered the breach from returned mail.  I added two days to the compromise date to allow for the mail to send and be returned.",
-  "action": {
-    "error": {
-      "notes": " [through Mail]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "American Stock Transer & Trust Company, LLC accidentally mailed tax forms to the wrong people.",
   "source_id": "osint",
@@ -73,17 +63,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 24,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint187",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 24,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -118,14 +108,14 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 17,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 18,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -137,8 +127,18 @@
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through Mail]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

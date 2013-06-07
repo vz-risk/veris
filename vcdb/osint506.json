@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint506",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Letter%20to%20Affected%20Customers.pdf",
   "attribute": {
     "confidentiality": {
@@ -25,17 +26,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "unknown actor somehow gained access to storage device and obtained SSN and other conf information",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Usernames, credit card information, email addresses, billing addresses, and/or logins were compromised between 4/3 and 4/7.  ESI was accessed by unapproved third parties.",
   "source_id": "osint",
@@ -47,15 +37,15 @@
         "data_subject": "Customer"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint506",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint506",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -93,13 +83,13 @@
       "unit": "Minutes"
     },
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 2,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
-      "month": 4
+      "month": 4,
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -111,7 +101,17 @@
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "unknown actor somehow gained access to storage device and obtained SSN and other conf information",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

@@ -9,11 +9,11 @@
     "overall_rating": "Damaging"
   },
   "incident_id": "osint484",
+  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=23234 http://www.bbc.co.uk/news/uk-england-essex-16853109 http://www.independent.co.uk/news/uk/home-news/council-workers-hit-by-data-leak-6699452.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 3550,
@@ -26,21 +26,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 3550
+      "data_total": 3550,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "3rd party hosting partner breached. PII and medical records dumped on public website.",
   "source_id": "osint",
@@ -52,17 +42,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 2,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint484",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 2,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,9 +75,9 @@
     {
       "victim_id": "Diagnostic Health Solutions",
       "notes": "",
-      "country": "United Kingdom",
+      "employee_count": "Unknown",
       "industry": "541990",
-      "employee_count": "Unknown"
+      "country": "United Kingdom"
     }
   ],
   "timeline": {
@@ -110,8 +100,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

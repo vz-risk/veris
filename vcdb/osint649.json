@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint649",
+  "security_compromise": "Confirmed",
   "reference": "http://news.techworld.com/security/3424445/anonymous-posts-personal-data-of-4000-bankers-online/",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 4000,
@@ -21,21 +21,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 4000
+      "data_total": 4000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "OpLastResort",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Personal information on some 4,000 people in the banking industry, including bank officers, was posted online Sunday by the hacker collective Anonymous.  The list was initially posted to the website for the Alabama Criminal Justice Information Center (ACJIC), then apparently taken down by that site's operators. However, the list was also posted elsewhere online, and remains available through Google's web cache. It contains contact information on people with a range of job titles, from cashier to C-level officers to bank presidents. Phone calls placed to several of the people on the list indicates that the tally is current and accurate.",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 5,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint649",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 5,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -92,18 +82,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2013,
+      "month": 2,
       "day": 5,
-      "month": 2
+      "year": 2013
     },
     "investigation": {
-      "year": 2013,
+      "month": 2,
       "day": 5,
-      "month": 2
+      "year": 2013
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "OpLastResort",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

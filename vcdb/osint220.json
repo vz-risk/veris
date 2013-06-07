@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint220",
+  "security_compromise": "Confirmed",
   "reference": "http://www.infosecurity-magazine.com/view/23194/vermont-tax-agency-posts-social-security-numbers-federal-tax-ids-online/",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1577,
@@ -17,21 +17,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 1577
+      "data_total": 1577,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Web]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": " The Vermont Department of Taxes admitted this week that the social security numbers of 1,332 Vermont tax payers and federal ID numbers of 245 businesses were inadvertently posted online.  The personal data were contained in a weekly batch of property transfer tax returns, according to a report by the Burlington Free Press citing a Vermont Department of Taxes statement. The information was available for viewing for two hours on a vendor portion of the tax department's website, the statement said.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint220",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -87,7 +77,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Web]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

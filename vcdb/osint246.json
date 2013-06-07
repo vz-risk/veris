@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint246",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=10885; https://www.privacyrights.org/node/55441",
   "attribute": {
     "confidentiality": {
       "notes": "The theft resulted in the exposure of sensitive patient information.  ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -22,23 +22,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1017
+      "data_total": 1017,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim grounds"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Theft of a network server that contains patient information ",
   "source_id": "osint",
@@ -50,17 +38,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 4,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint246",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 4,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -95,18 +83,30 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 9,
       "day": 18,
-      "month": 9
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 11,
       "day": 16,
-      "month": 11
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim grounds"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

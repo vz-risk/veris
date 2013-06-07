@@ -1,0 +1,144 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint727",
+  "reference": "http://www.npr.org/templates/story/story.php?storyId=186853260 (20130604) http://www.news.com.au/technology/hacking-chinese-spies-steal-asio-blueprints/story-e6frfro0-1226651694269 (20130604)",
+  "attribute": {
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Classified"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Chinese hackers get the plans to a secret Australian government building by hacking into a partner.",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 28,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint727",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Other"
+      }
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Espionage"
+      ],
+      "country": [
+        "China"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Nation-state"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "notes": "There is another victim, the contractor that was hacked, but information about that organization has not been revealed.",
+      "victim_id": "Australian Security Intelligence Organization",
+      "industry": "928",
+      "employee_count": "Unknown",
+      "country": "Australia"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "year": 2009
+    },
+    "investigation": {
+      "year": 2013
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Other server"
+      }
+    ]
+  }
+}

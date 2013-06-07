@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint537",
+  "security_compromise": "Confirmed",
   "reference": "http://datasecurityweekly.com/roll-call-of-healthcare-data-breaches-for-2012/",
   "attribute": {
     "confidentiality": {
       "notes": "It is unknown what information was contained on the patient records that were on the stolen laptop. ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -16,23 +16,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 20000
+      "data_total": 20000,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim grounds"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A laptop was stolen that contained patient records.  ",
   "source_id": "osint",
@@ -44,17 +32,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 15,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint537",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 15,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -95,7 +83,19 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim grounds"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

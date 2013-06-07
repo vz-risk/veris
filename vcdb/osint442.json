@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint442",
+  "security_compromise": "Confirmed",
   "reference": "http://www.newsandstar.co.uk/news/cumbrian-patients-data-left-on-train-1.921755?referrerPath= ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "Public vehicle",
-      "vector": [
-        "Carelessness"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Patient information from North Cumbria's hospitals were lost on a train. ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 4,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint442",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 4,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -75,9 +65,9 @@
         "amount": 16000000
       },
       "country": "United Kingdom",
-      "industry": "622110",
+      "notes": "",
       "employee_count": "1001 to 10000",
-      "notes": ""
+      "industry": "622110"
     }
   ],
   "timeline": {
@@ -88,8 +78,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": "Public vehicle",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

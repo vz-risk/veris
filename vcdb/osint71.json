@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint71",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/columbia-university-20120423.pdf ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,21 +16,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 3500
+      "data_total": 3500,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "The letter contradicts itself.  It says both that it did contain names and that it didn't.",
-  "action": {
-    "error": {
-      "notes": " [through Web]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "File was exposed on internet facing server and eventually indexed by Google.  It contained 3500 current and former employees and sole proprietor contractor's names, addresses, bank account numbers, SSNs.",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint71",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -84,17 +74,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 10,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 16,
-      "month": 4
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Web]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

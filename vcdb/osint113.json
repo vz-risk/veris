@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint113",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/speedy-recovery-20120217.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,18 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Experian, one of the nationwide credit reporting agencies, identified that its client, speedy recovery services, had a certain experience customer information accessed without proper authorization. The consumer information consists of information typically found in a consumer report. Such information includes your name and address and one or more of the following: Social Security number, date of birth, or account numbers.",
   "source_id": "osint",
@@ -42,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint113",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,15 +74,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 31,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

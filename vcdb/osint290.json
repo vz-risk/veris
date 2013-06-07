@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint290",
+  "security_compromise": "Confirmed",
   "reference": "http://pastebin.com/raw.php?i=UQJQNRP8 (20130215) http://ozdc.net/archives.php?aid=1034 (20130215)",
   "attribute": {
     "integrity": {
@@ -42,7 +43,6 @@
     },
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 5,
@@ -56,21 +56,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 5
+      "data_total": 5,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "hackers breach site and post data on Internet",
   "source_id": "osint",
@@ -82,17 +72,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint290",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -115,9 +105,9 @@
     {
       "victim_id": "cifi.fr",
       "notes": "",
-      "country": "France",
+      "employee_count": "Unknown",
       "industry": "0000",
-      "employee_count": "Unknown"
+      "country": "France"
     }
   ],
   "timeline": {
@@ -125,9 +115,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 3,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
       "year": 2012
@@ -142,8 +132,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

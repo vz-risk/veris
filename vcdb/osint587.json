@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint587",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/01/12/emaxx-hacked-by-tehmaskz/",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 7,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 7
+      "data_total": 7,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Motherboard manufacturing company has 7 usernames and encrypted passwords posted on public site.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Unknown"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 11,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint587",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 11,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -76,9 +66,9 @@
     {
       "victim_id": "EMAXX",
       "notes": "",
-      "country": "Philippines",
+      "employee_count": "Unknown",
       "industry": "334",
-      "employee_count": "Unknown"
+      "country": "Philippines"
     }
   ],
   "timeline": {
@@ -86,13 +76,13 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
-      "month": 1
+      "month": 1,
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 11,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -104,8 +94,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

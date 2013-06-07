@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint436",
+  "security_compromise": "Confirmed",
   "reference": "http://www.eweek.com/c/a/Security/Yahoo-Confirms-400000-Passwords-Stolen-in-Hack-112338/",
   "attribute": {
     "integrity": {
@@ -12,7 +13,6 @@
     },
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 400000,
@@ -26,21 +26,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 400000
+      "data_total": 400000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Yahoo officials confirmed that an older file from the Yahoo Voices (formerly Associated Content) was stolen July 12 by hackers, allowing them to get their hands on more than 400,000 user credentials.  Of that amount, less than 5 percent of the Yahoo accounts had valid passwords, the company told eWEEK. Besides Yahoo email addresses, the list also included email addresses for Gmail, Hotmail, AOL and other services. Users of the Yahoo Contributor Network can sign up using their Google or Facebook IDs, which accounts for the various emails listed.   The breach occurred courtesy of a group of hackers known as \u0080\u009cD33Ds Company,\u0080\u009d which posted a text file with the information online and said they used union-based SQL injection to swipe the information.  \"We hope that the parties responsible for managing the security of this subdomain will take this as a wake-up call, and not as a threat,\" D33Ds said in a message accompanying the leaked data. \"There have been many security holes exploited in Web servers belonging to Yahoo! Inc. that have caused far greater damage than our disclosure. Please do not take them lightly. The subdomain and vulnerable parameters have not been posted to avoid further damage.\"",
   "source_id": "osint",
@@ -52,17 +42,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 7
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint436",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 7,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -100,13 +90,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 7,
       "day": 12,
-      "month": 7
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

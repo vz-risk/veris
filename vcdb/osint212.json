@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint212",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=11065; http://www.efortresses.com/2012-Breaches-Matrix.htm",
   "attribute": {
     "confidentiality": {
       "notes": "It is unknown what information was on the paper records that were stolen.  ",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Unknown"
@@ -16,23 +16,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1306
+      "data_total": 1306,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Patient's paper dental records were stolen at the office of Dr. James McGee. ",
   "source_id": "osint",
@@ -44,15 +32,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint212",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint212",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -83,21 +71,33 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 9,
       "day": 19,
-      "month": 9
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 12,
       "day": 3,
-      "month": 12
+      "year": 2012
     },
     "discovery": {
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

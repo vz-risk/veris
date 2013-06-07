@@ -17,6 +17,7 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint551",
+  "security_compromise": "Confirmed",
   "reference": "http://www.zdnet.com/blog/security/dreamhost-hacked-mass-password-reset-issued/10175 http://dreamhost.com/dreamscape/2012/01/21/security-update/ http://www.computerworld.com/s/article/9223625/DreamHost_resets_passwords_after_database_breach",
   "attribute": {
     "confidentiality": {
@@ -33,17 +34,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Web hosting database accessed via undisclosed method. Legacy plain text FTP passwords were determined to be at risk. ",
   "source_id": "osint",
@@ -55,17 +45,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint551",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -99,14 +89,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 19,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 19,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -118,8 +108,18 @@
       "unit": "Hours"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - NIDS",
   "asset": {
     "assets": [
       {

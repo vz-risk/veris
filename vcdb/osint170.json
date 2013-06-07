@@ -9,11 +9,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint170",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/clark-neitzel-20120906.pdf February 12, 2013",
   "attribute": {
     "confidentiality": {
       "notes": "The laptop that was taken contained information pertaining to the patients' names, social security numbers, date of birth and medical information.  ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -25,24 +25,11 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 942
+      "data_total": 942,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "Dr. Clark-Neitzel shares an office with Dr. Kathleen Hurd.  ",
-  "action": {
-    "physical": {
-      "notes": "The theft was conducted at the personal home of Dr. Clark-Neitzel.  ",
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal residence"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Home office of Charlotte Clark-Neitze, MD was broken into and her medical bags and a laptop were stolen. ",
   "source_id": "osint",
@@ -54,17 +41,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 7,
-        "month": 9
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint170",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 9,
+        "day": 7,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -96,21 +83,34 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 7,
       "day": 24,
-      "month": 7
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 9,
       "day": 6,
-      "month": 9
+      "year": 2012
     },
     "discovery": {
       "unit": "Weeks"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "notes": "The theft was conducted at the personal home of Dr. Clark-Neitzel.  ",
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal residence"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "personal": true,
     "notes": "The residence of Dr. Clark-Neitzel was broken into and her medical bags and laptop were stolen.  ",

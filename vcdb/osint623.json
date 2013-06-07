@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint623",
+  "security_compromise": "Confirmed",
   "reference": "http://www.alertboot.com/blog/blogs/endpoint_security/archive/2012/02/20/laptop-encryption-software-fairbridge-signs-undertaking-with-uk-ico.aspx",
   "attribute": {
     "confidentiality": {
       "notes": "Salary information accounts for the sensitive organizational data loss.",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 325,
@@ -21,21 +21,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 325
+      "data_total": 325,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "Public vehicle",
-      "vector": [
-        "Carelessness"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Laptop that contained PII and salary information for 325 employees was left on public bus. Device was password-protected, but did not have full-disk encryption.",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint623",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -77,9 +67,9 @@
     {
       "victim_id": "Fairbridge",
       "notes": "",
-      "country": "United Kingdom",
+      "employee_count": "1 to 10",
       "industry": "813",
-      "employee_count": "1 to 10"
+      "country": "United Kingdom"
     }
   ],
   "timeline": {
@@ -102,7 +92,17 @@
       "unit": "Minutes"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "Public vehicle",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

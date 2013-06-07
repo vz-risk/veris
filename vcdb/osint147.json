@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint147",
+  "security_compromise": "Confirmed",
   "reference": "http://www.haaretz.com/news/national/saudi-hackers-claim-to-post-personal-information-of-400-000-israelis-1.405147 ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Saudi hackers claimed Monday to have released the credit card information of hundreds of thousands of Israelis, after hacking one of Israel's leading sports websites.  A hacker claiming to be a member of the Saudi hacking group, Group-XP, claimed Monday that he penetrated one of Israel's leading sports websites and released the personal information of hundreds of thousands of Israelis.  One hacker, who claimed to be a member of the Saudi hacking group, Group-XP, said he revealed information including credit card details, personal addresses, names, phone numbers and ID numbers of individuals listed on the website, One.co.il. ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint147",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -74,23 +64,33 @@
     {
       "victim_id": "One.co.il",
       "notes": "",
-      "country": "Israel",
+      "employee_count": "Unknown",
       "industry": "451",
-      "employee_count": "Unknown"
+      "country": "Israel"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 3,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

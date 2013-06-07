@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint111",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/sirius-xm-radio-20120406.pdf ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Payment"
@@ -19,23 +19,11 @@
       "state": [
         "Transmitted unencrypted"
       ],
-      "data_total": 234
+      "data_total": 234,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Data mishandling",
-        "Unapproved hardware"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "On March 19, 2012, the company's management was alerted to a situation involving one of its contractors, stream international global services Philippines Inc. Which handles inbound customer service calls for Sirius.  in the process of speaking with certain customers, employees may hear unencrypted credit card information. Management at the call-center detected three employees recording such credit card information using methods which are prohibited in the workplace and are in violation of the companies requirements. Incident reports are prepared and the employees at issue were placed on immediate suspension. The company believes that the unauthorized rituals gain access to names and credit card information of 234 individuals.",
   "source_id": "osint",
@@ -47,17 +35,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 6,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint111",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 6,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -91,17 +79,29 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 19,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 19,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Data mishandling",
+        "Unapproved hardware"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "notes": "",

@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint195",
+  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/Hackers-Breach-Alabama-and-Texas-Law-Enforcement-Sites-251967.shtml (20130212) http://www.databreaches.net/?p=23257 (20130212) http://pastehtml.com/view/bniks0jem.html (20130212)",
   "attribute": {
     "integrity": {
@@ -60,18 +61,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "SQL injection not reported.  However, it has the look of an sql injection attack and CabinCr3w is known for using that type of attack frequently.",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Hacker breached the website for Alabama Department of Public Safety and posted database tables and sample data online.",
   "source_id": "osint",
@@ -83,17 +72,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint195",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -129,9 +118,9 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 8,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -143,8 +132,19 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "SQL injection not reported.  However, it has the look of an sql injection attack and CabinCr3w is known for using that type of attack frequently.",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

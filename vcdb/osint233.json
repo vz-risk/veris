@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint233",
+  "security_compromise": "Confirmed",
   "reference": "http://pastebin.com/qtJSibas, http://www.databreaches.net/?p=23351 ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Credentials"
@@ -16,21 +16,11 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 12
+      "data_total": 12,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Usernames and hashed passwords dumped to pastebin by SEPO.",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint233",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -90,13 +80,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 12,
-      "month": 2
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

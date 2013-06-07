@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint69",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/coca-cola-credit-union-20120222.pdf",
   "attribute": {
     "confidentiality": {
@@ -19,19 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Partner facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Two laptops containing member information included names, SSNs and credit card numbers were stolen from their partner.  No location detail is provided.  ",
   "source_id": "osint",
@@ -43,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 22,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint69",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 22,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -84,15 +72,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 12,
       "day": 21,
-      "month": 12
+      "year": 2011
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

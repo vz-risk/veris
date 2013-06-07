@@ -9,11 +9,11 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint560",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/eaton-vance-20120208.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 5,
@@ -23,21 +23,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 5
+      "data_total": 5,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Investment management company mailed shareholder documents with customer SSN potentially visible in the envelope window",
   "source_id": "osint",
@@ -49,17 +39,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint560",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -95,14 +85,14 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 25,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 31,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -114,7 +104,17 @@
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

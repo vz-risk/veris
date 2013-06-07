@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint291",
+  "security_compromise": "Confirmed",
   "reference": "http://www.wthr.com/story/16770212/cardinal-fitness-customer-receipts-found-in-dumpster (20130215) http://www.theindychannel.com/news/ag-investigates-cardinal-fitness-dumped-documents (20130215)",
   "attribute": {
     "confidentiality": {
@@ -52,17 +53,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Inadequate processes"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Company improperly disposes of non-public payment data.",
   "source_id": "osint",
@@ -74,17 +64,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint291",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -116,14 +106,14 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2011,
+      "month": 12,
       "day": 1,
-      "month": 12
+      "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 8,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -135,8 +125,18 @@
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Inadequate processes"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "assets": [

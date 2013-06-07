@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint434",
+  "security_compromise": "Confirmed",
   "reference": "http://www.eweek.com/security/adobe-connect-security-breach-exposes-personal-data-of-150k-users/ ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 150000,
@@ -21,21 +21,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 150000
+      "data_total": 150000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Adobe pulls down the forum for its video conferencing service, Adobe Connect after a hacker breached its security and leaked information, including password hashes, on 150,000 users. Adobe pulled down a forum for users of its video conferencing service, Adobe Connect, after a hacker successfully compromised the server and downloaded information on its 150,000 members.  The information taken from the server included each member's name, username, company, title and email address as well as the hashed version of their password. In a statement posted to Pastebin on Nov. 13, the hacker\u2014who claimed to be Egyptian\u2014said that he would publicly post only the information for Adobe employees and users that work for the U.S. Department of Defense or other government agencies.",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 14,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint434",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 14,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -95,13 +85,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 11,
       "day": 13,
-      "month": 11
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

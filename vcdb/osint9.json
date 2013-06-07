@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint9",
+  "security_compromise": "Confirmed",
   "reference": "https://oag.ca.gov/system/files/SAMPLE%20Nov%2028%202012%20Breach%20Notification%20Letter%20to%20Client_0.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Mail]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A referral document containing patient's name, date of birth, Social Security Number, address, and current health concerns was unintentionally sent by email to an unauthorized recipient, a county social worker, at the Alameda County Department of Social Services, Child and Family Services Unit.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": ""
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 29,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint9",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 29,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -86,12 +76,22 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 11,
       "day": 27,
-      "month": 11
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Mail]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

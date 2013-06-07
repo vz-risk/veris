@@ -3,6 +3,7 @@
     "overall_rating": "Insignificant"
   },
   "incident_id": "osint556",
+  "security_compromise": "Confirmed",
   "reference": "http://www.dukehealth.org/health_library/news/notice-to-patients-who-previously-filed-chapter-13-bankrupty",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "Including non-essential private data with proof of claim.",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Billing department included patient PII and medical information with proofs of claim submitted when patients had filed for bankruptcy and it was necessary to prove legitimacy of debt.",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": ""
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint556",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -90,13 +80,13 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
-      "month": 1
+      "month": 1,
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 25,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -108,7 +98,17 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "Including non-essential private data with proof of claim.",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

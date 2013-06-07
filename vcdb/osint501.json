@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint501",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/06/07/2886-accounts-leaked-from-digitword-com/",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 2886,
@@ -17,21 +17,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 2886
+      "data_total": 2886,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Forum hacked user creds (encrypted pw) pasted to PB.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 7,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint501",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 7,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -76,9 +66,9 @@
     {
       "victim_id": "digitword.com",
       "notes": "Kosovo",
-      "country": "Other",
+      "employee_count": "Unknown",
       "industry": "51913",
-      "employee_count": "Unknown"
+      "country": "Other"
     }
   ],
   "timeline": {
@@ -101,8 +91,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

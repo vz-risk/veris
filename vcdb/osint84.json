@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint84",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/great-river-20121001.pdf ",
   "attribute": {
     "integrity": {
@@ -24,17 +25,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "malware": {
-      "vector": [
-        "Unknown"
-      ],
-      "name": "",
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Payment application systems infected by malware.  Potential compromise of CCN data.  ",
   "source_id": "osint",
@@ -46,17 +36,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 1,
-        "month": 10
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint84",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 10,
+        "day": 1,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -87,15 +77,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 11,
       "day": 30,
-      "month": 11
+      "year": 2011
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "name": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

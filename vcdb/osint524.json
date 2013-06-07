@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint524",
+  "security_compromise": "Confirmed",
   "reference": "http://www.zdnet.com/blog/london/anonymous-intercepts-records-fbi-scotland-yard-cybercrime-call/2896 ",
   "attribute": {
     "confidentiality": {
@@ -15,18 +16,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Other"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Members of Anonymous have intercepted a conference call between the UK's Metropolitan Police in London, and the FBI, after an email containing the login details of the call were accessed.  The contents of the call --- though audibly censored in places --- contained critical intelligence about ongoing cybercrime investigations. The ironic thing here is that the call was recorded by the very people who were being discussed.  The FBI confirmed that the interception of the \"confidential phone call\" was \"illegally obtained\", adding that it is, \"hunting those responsible.\" ",
   "source_id": "osint",
@@ -38,17 +27,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 2
-      }
+    "asset": {
+      "total": "Yes"
     },
     "f500": "N",
     "master_id": "osint524",
-    "asset": {
-      "total": "Yes"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -80,9 +69,9 @@
     {
       "victim_id": "Scotland Yard",
       "industry": "92212",
-      "country": "United Kingdom",
+      "employee_count": "Unknown",
       "state": "",
-      "employee_count": "Unknown"
+      "country": "United Kingdom"
     }
   ],
   "timeline": {
@@ -93,8 +82,19 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Other"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

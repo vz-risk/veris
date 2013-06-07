@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint508",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/hagerty-insurance-20120221.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "name, address, driver's license",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 4,
@@ -17,21 +17,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 4
+      "data_total": 4,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Web]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A recent change to the website (www.hagerty.com) may have unintentionally permitted temporary read-only access to a limited number of consumer's personal information.  ",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 18,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint508",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 18,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,14 +78,14 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 14,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 15,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -107,8 +97,18 @@
       "unit": "NA"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through Web]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

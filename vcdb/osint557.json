@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint557",
+  "security_compromise": "Confirmed",
   "reference": "http://www.americanownews.com/story/16641742/nearly-200-high-school-students-fall-victim-to-identity-theft?clienttype=printable",
   "attribute": {
     "confidentiality": {
       "notes": "PII, including SSN compromised for 187 students. ",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 187,
@@ -17,24 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 187
+      "data_total": 187,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Student at high school acquired printout of 159 students' names, SSN, DOB. Used data to commit tax fraud.",
   "source_id": "osint",
@@ -46,17 +33,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 31,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint557",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 31,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,9 +81,9 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 17,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -108,8 +95,21 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Ext - law enforcement",
   "asset": {
     "notes": "",
     "assets": [

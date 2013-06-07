@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint16",
+  "security_compromise": "Confirmed",
   "reference": "http://thescoopblog.dallasnews.com/2012/03/stolen-ipad-leads-to-worries-t.html/; http://www.scribd.com/doc/86119184/BHVH-480-Breech-Legal-Letters-A",
   "attribute": {
     "confidentiality": {
       "notes": "Names, addresses and test results, such as blood pressure, glucose and cholesterol levels. Te stolen device did not containany social security numbers or other \ue000nancial related information.",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,23 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1972
+      "data_total": 1972,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "The incident occurred at Baylor Heart and Vascular Center, LLP; an affiliate of Baylor Health Care System",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal vehicle"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Theft of an employee's iPad that contained medical information from the employee's vehicle. ",
   "source_id": "osint",
@@ -47,17 +35,17 @@
         "data_subject": ""
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint16",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -95,14 +83,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 26,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 9,
-      "month": 3
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -114,8 +102,20 @@
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

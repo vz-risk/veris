@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint367",
+  "security_compromise": "Confirmed",
   "reference": "http://www.theregister.co.uk/2012/01/13/namesco_phish_like_security_warning/; http://www.theregister.co.uk/2012/01/13/namesco_phish_like_security_warning/page2.html ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "We provide professional online solutions for individuals, businesses, developers and resellers. Whether you're a total beginner or you have years of experience, our products and services are designed with you in mind.",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "3rd party desktop"
-      ],
-      "variety": [
-        "Use of backdoor or C2"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Namesco reports a warning after credit card info leak through a third party hack.  ",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 13,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint367",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 13,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -81,9 +71,9 @@
         "amount": 260000000
       },
       "country": "Ireland",
-      "industry": "511210",
+      "notes": "Their name has changed to names.co.uk",
       "employee_count": "1 to 10",
-      "notes": "Their name has changed to names.co.uk"
+      "industry": "511210"
     }
   ],
   "timeline": {
@@ -94,8 +84,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "3rd party desktop"
+      ],
+      "variety": [
+        "Use of backdoor or C2"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

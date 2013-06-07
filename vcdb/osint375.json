@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint375",
+  "security_compromise": "Confirmed",
   "reference": "http://ozdc.net/archives.php?aid=843 (20130219) http://www.cyberwarnews.info/2012/03/16/christian-teen-forums-hacked-and-accounts-leaked/ (20130219)",
   "attribute": {
     "integrity": {
@@ -42,7 +43,6 @@
     },
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 18000,
@@ -56,22 +56,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 18000
+      "data_total": 18000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Christian Teen Forums hacked via SQL injection.  Usernames and email addresses posted to pastebin",
   "source_id": "osint",
@@ -83,15 +72,15 @@
         "data_subject": "Customer"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint375",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint375",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -113,9 +102,9 @@
     {
       "victim_id": "Christian Teen Forums",
       "notes": "",
-      "country": "Belize",
+      "employee_count": "Unknown",
       "industry": "51913",
-      "employee_count": "Unknown"
+      "country": "Belize"
     }
   ],
   "timeline": {
@@ -123,14 +112,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 16,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 16,
-      "month": 3
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -142,8 +131,19 @@
       "unit": "Hours"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

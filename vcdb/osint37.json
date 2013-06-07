@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint37",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Security%20Breach%208282012_0.pdf? ",
   "attribute": {
     "integrity": {
@@ -24,17 +25,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Web site was hacked and despite using \"industry standard encryption\" the credit card numbers in their \"secured database\" were compromised.  The website is AtWhatGreatSkin.com.",
   "source_id": "osint",
@@ -46,17 +36,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 11,
-        "month": 9
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint37",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 9,
+        "day": 11,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -91,16 +81,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 8,
       "day": 28,
-      "month": 8
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

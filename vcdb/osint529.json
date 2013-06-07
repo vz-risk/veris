@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint529",
+  "security_compromise": "Confirmed",
   "reference": "https://www.surveygizmo.com/s3/1134048/veris",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 3178,
@@ -17,21 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 3178
+      "data_total": 3178,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Abuse of functionality"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Gaming website compromised via undisclosed method. User information in the form of usernames and passwords posted to pastebin.com",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 16,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint529",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 16,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -80,9 +70,9 @@
         "amount": 100000
       },
       "country": "Canada",
-      "industry": "51913",
+      "notes": "",
       "employee_count": "1 to 10",
-      "notes": ""
+      "industry": "51913"
     }
   ],
   "timeline": {
@@ -90,13 +80,13 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
-      "month": 5
+      "month": 5,
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 5,
       "day": 16,
-      "month": 5
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -108,8 +98,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Abuse of functionality"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

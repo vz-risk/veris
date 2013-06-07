@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint406",
+  "security_compromise": "Confirmed",
   "reference": "http://www.coastalbh.org/pdfs/website_notification.pdf, breachtool ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 4907,
@@ -17,23 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 4907
+      "data_total": 4907,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "this notice says 136 records were found, but the breachtool indicates the total is 4,907.",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Unknown"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Coastal Behavioral Healthcare, Inc. (Coastal) became aware of a breach of patient information on October 10, 2012 when a law enforcement officer contacted Coastal to report discovery of a list, dated April 2011, of approximately 136 Coastal patient names and identifying information found in a vehicle during a traffic stop.",
   "source_id": "osint",
@@ -45,17 +33,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint406",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -93,13 +81,25 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 10,
       "day": 10,
-      "month": 10
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Ext - law enforcement",
   "asset": {
     "assets": [
       {

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint477",
+  "security_compromise": "Confirmed",
   "reference": "http://www.nydailynews.com/new-york/health-center-worker-stole-identities-patients-severe-brain-injuries-filed-fake-tax-returns-refunds-officials-article-1.1062539 ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 58,
@@ -21,22 +21,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 56
+      "data_total": 56,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Dozens of victims of severe brain injuries had their identities stolen by a man who worked at the New York center where they were treated, a prosecutor said Monday. The suspect then filed phony tax returns with the Internal Revenue Service and in at least two states, pocketing over $200,000 in refunds.  In addition to the charges against Achampong in New York, Spota said he is suspected of using the same victims\u2019 Social Security numbers and other identification to obtain $30,000 in refunds in New Jersey, though charges have yet to be filed there. Achampong had been in custody in Georgia, facing credit card fraud, forgery and identity theft charges stemming from a November 2011 arrest.",
   "source_id": "osint",
@@ -48,17 +37,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 16,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint477",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 16,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -93,7 +82,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

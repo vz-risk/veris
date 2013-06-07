@@ -1,0 +1,157 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint699",
+  "reference": "http://tbo.com/news/crime/tampa-teenager-charged-in-fraudulent-visa-card-scheme-b82494525z1 (20130529) http://www.baynews9.com/content/news/baynews9/news/article.html/content/news/articles/bn9/2013/5/21/detectives_armwood_h.html (20130529)",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "amount": 41,
+          "variety": "Payment"
+        }
+      ],
+      "data_total": 41,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "external actor uses physical access to unattended workstation to gather patient data and create fradulent credit cards",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 21,
+        "year": 2013
+      }
+    },
+    "f500": "U",
+    "master_id": "osint699",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "United States"
+      ],
+      "notes": "Actor is the son of an employee.",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Ace Homecare LLC",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 14400000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "FL",
+      "employee_count": "101 to 1000",
+      "industry": "621610"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Unknown"
+    },
+    "incident": {
+      "month": 2,
+      "day": 13,
+      "year": 2013
+    },
+    "investigation": {
+      "month": 5,
+      "day": 13,
+      "year": 2013
+    },
+    "compromise": {
+      "unit": "Unknown"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Months"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Privileged access"
+      ],
+      "location": [
+        "Personal residence"
+      ],
+      "variety": [
+        "Snooping"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

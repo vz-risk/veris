@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint300",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/ccs-medical-20121210.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,20 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Physical access",
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse",
-        "Data mishandling"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "On September 20, 2012, a CCS medical employee reported that another employee may have accessed, recorded and disclosed Social Security numbers and other personal information in order to submit false tax returns to the IRS and collect fraudulent tax refunds. CCS medical immediately initiated an internal investigation and suspended the employee. On October 17, 2012 following discussions with the IRS, CCS medical determine that the employee potentially engaged in the alleged wrongful access and disclosure.",
   "source_id": "osint",
@@ -47,17 +34,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 7,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint300",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 7,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -90,18 +77,31 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 1,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 9,
       "day": 20,
-      "month": 9
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access",
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse",
+        "Data mishandling"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

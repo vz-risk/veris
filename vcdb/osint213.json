@@ -17,11 +17,11 @@
     "overall_rating": "Painful"
   },
   "incident_id": "osint213",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=9972",
   "attribute": {
     "confidentiality": {
       "notes": "The server contained both patient electronic medical and billing records, including protected health information, names, social security numbers, dates of birth, addresses, telephone numbers, account numbers, and diagnoses. ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Bank"
@@ -36,23 +36,11 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 4800
+      "data_total": 4800,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim secure area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A computer server was stolen from a locked closet in the office of Dr. Jeffrey Paul Edelstein.  ",
   "source_id": "osint",
@@ -64,15 +52,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint213",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint213",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -100,21 +88,33 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 10,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 7,
       "day": 27,
-      "month": 7
+      "year": 2012
     },
     "discovery": {
       "unit": "Hours"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim secure area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint543",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/12/24/islamic-network-hacked-17000-user-credentials-leaked/ ",
   "attribute": {
     "confidentiality": {
       "notes": "It is unknown the information pertained in the breached accounts. ",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Classified"
@@ -19,21 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 17000
+      "data_total": 17000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "The leaked data has been uploaded to anonfiles.me in the format of a compressed rar file that contains the complete database extraction from the site in CSV format",
-      "vector": [
-        "Backdoor or C2"
-      ],
-      "variety": [
-        "Other"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A hacker who goes by the handle @th3inf1d3l breached accounts from the Islamic network website.  The attack is part of an ongoing operation named #OpFuckMohammad which has been going for some time now and mainly been carried out by @th3inf1d3l.",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 24,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint543",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 24,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -78,9 +68,9 @@
     {
       "victim_id": "Islamic Network",
       "notes": "London",
-      "country": "United Kingdom",
+      "employee_count": "Unknown",
       "industry": "8131",
-      "employee_count": "Unknown"
+      "country": "United Kingdom"
     }
   ],
   "timeline": {
@@ -91,8 +81,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "The leaked data has been uploaded to anonfiles.me in the format of a compressed rar file that contains the complete database extraction from the site in CSV format",
+      "vector": [
+        "Backdoor or C2"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

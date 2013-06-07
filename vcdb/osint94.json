@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint94",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/korn-ferry-20121228.pdf, https://oag.ca.gov/system/files/Notification%20Letter_0.pdf ",
   "attribute": {
     "confidentiality": {
@@ -25,17 +26,6 @@
     }
   },
   "notes": "Disclosure delay due to ongoing LE investigation.",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Sophisticated cyber attack carried out against organization.  Investigation determined that affected databases were not designed or structured to receive sensitive personal information, but they were nevertheless included names, drivers license, government issued identification number, SSNs, CCNs, and health information.",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 11,
-        "month": 10
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint94",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 10,
+        "day": 11,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -95,12 +85,22 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 8,
       "day": 31,
-      "month": 8
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

@@ -33,11 +33,11 @@
     "overall_rating": "Insignificant"
   },
   "incident_id": "osint192",
+  "security_compromise": "Confirmed",
   "reference": "http://www.heraldextra.com/news/local/education/college/byu-students-information-released-accidentally/article_b7e5695d-6f00-54a8-8c3c-e7bca51b99fe.html (20130212)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1300,
@@ -47,21 +47,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1300
+      "data_total": 1300,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Email]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Email sent to students accidentally contains non-public data for all recipients of the message.",
   "source_id": "osint",
@@ -73,17 +63,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint192",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -114,14 +104,14 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 12,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 12,
-      "month": 3
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -133,8 +123,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

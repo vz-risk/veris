@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint184",
+  "security_compromise": "Confirmed",
   "reference": "http://slcpd.blogspot.com/2012/01/police-department-website-temporarily.html ",
   "attribute": {
     "integrity": {
@@ -13,17 +14,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Salt Lake City Police Department\u2019s website, www.slcpd.com, has been taken offline due to a security breach.  At approximately 2:30 p.m. this afternoon, odd postings started to appear on www.slcpd.com. According to claims posted on Twitter, the hacking collective Anonymous claims it launched the attack in response to an anti-graffiti paraphernalia bill being proffered by a state senator who neither represents nor resides in the city.  While the hackers obtained email information of registered users, there is no indication that confidential information was compromised. The website was built as a standalone communication feature to increase dialogue about public safety issues in a proactive manner. For this reason it was not integrated with Department or City databases.",
   "source_id": "osint",
@@ -35,17 +25,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 31,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint184",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 31,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -76,18 +66,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 31,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 31,
-      "month": 1
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

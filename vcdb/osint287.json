@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint287",
+  "security_compromise": "Confirmed",
   "reference": "http://www.boston.com/whitecoatnotes/2012/05/22/boston-children-hospital-notifies-data-breach-affecting-more-than-patients/SHpxoNkyKf3RwgKPFK2pIM/story.html (20130215) http://www.healthcare-informatics.com/news-item/boston-children-s-hospital-reports-data-breach (20130215) http://www.newsfactor.com/story.xhtml?story_id=12100BIECM3B (20130215) http://www.darkreading.com/compliance/167901112/security/attacks-breaches/240001031/stolen-laptop-exposes-boston-hospital-patient-data.html (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 2159,
@@ -47,23 +47,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 2159
+      "data_total": 2159,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Public facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "lost laptop unencrypted with patient health data.",
   "source_id": "osint",
@@ -75,17 +63,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 22,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint287",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 22,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -138,8 +126,20 @@
       "unit": "NA"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Public facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

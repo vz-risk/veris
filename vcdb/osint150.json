@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint150",
+  "security_compromise": "Confirmed",
   "reference": "http://genevalunch.com/2012/01/03/bank-employee-admits-sharing-hildebrand-private-data/ ",
   "attribute": {
     "confidentiality": {
@@ -19,16 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A computer system employee of Bank Sarasin turned himself into police 1 January, it was revealed late Tuesday, after sharing documents linked to currency transactions made by the family of Philipp Hildebrand, chairman of the Swiss National Bank.    The documents were given to an attorney who is close to the UDC, Switzerland\u2019s right-wing People\u2019s Party. The employee, who was promptly fired by the bank says the lawyer made an appointment to meet Christoph Blocher 11 November. Blocher is a former leader of the UDC who was a member of the Swiss government until 2007.",
   "source_id": "osint",
@@ -40,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint150",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -74,9 +65,9 @@
         "amount": 809150000
       },
       "country": "Switzerland",
-      "industry": "522110",
+      "notes": "",
       "employee_count": "1001 to 10000",
-      "notes": ""
+      "industry": "522110"
     }
   ],
   "timeline": {
@@ -84,12 +75,21 @@
       "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 1,
-      "month": 1
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

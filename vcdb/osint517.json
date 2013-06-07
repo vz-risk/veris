@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint517",
+  "security_compromise": "Confirmed",
   "reference": "http://www.usatoday.com/story/tech/2012/11/08/twitter-password-third-party/1691461/ ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Twitter sent out e-mails to some of its users Thursday prompting them to reset their passwords because of possible security issues with third-party applications.  \"Twitter believes that your account may have been compromised by a website or service not associated with Twitter,\" the e-mail says. \"We've reset your password to prevent others from accessing your account.\" ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint517",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,7 +82,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

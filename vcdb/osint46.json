@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint46",
+  "security_compromise": "Confirmed",
   "reference": "http://www.journalnow.com/news/local/article_66287b04-2f0b-5ec8-9ed2-3d850bdbb303.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Medical"
@@ -20,20 +20,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 10000
+      "data_total": 10000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "It is unknown if Christopher Church took the information held on the computer or Bruce Peller gave the information to Christopher Church.  ",
-  "action": {
-    "misuse": {
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Patient information that was held on a computer at Bruce Peller's dentist office was either stolen by Christopher Church or the information was sent from Peller to Church.   ",
   "source_id": "osint",
@@ -45,15 +36,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint46",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint46",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -81,17 +72,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 27,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 6,
       "day": 26,
-      "month": 6
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

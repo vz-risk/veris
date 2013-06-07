@@ -1,0 +1,151 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint718",
+  "reference": "http://www.the-med.org/media/Public-Notices/PHI%20Public%20Notice%205.9.13.pdf (20130604) http://healthblawg.sharedby.co/share/DcVea0 (20130604)",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "amount": 1200,
+          "variety": "Medical"
+        },
+        {
+          "amount": 1200,
+          "variety": "Personal"
+        }
+      ],
+      "data_total": 1200,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Employee accidentally send protected health information via email to the wrong recipients",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 15,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint718",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "notes": "",
+      "role": [
+        "Unintentional"
+      ],
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Regional Medical Center Memphis",
+      "country": "United States",
+      "notes": "",
+      "state": "TN",
+      "employee_count": "1 to 10",
+      "industry": "621111"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "month": 10,
+      "day": 29,
+      "year": 2012
+    },
+    "investigation": {
+      "month": 3,
+      "day": 15,
+      "year": 2013
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "NA"
+    },
+    "discovery": {
+      "unit": "Months"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  }
+}

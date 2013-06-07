@@ -1,0 +1,103 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint750",
+  "reference": "http://news.ufl.edu/2013/05/29/potential-identity-theft-2/",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "amount": 5682,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 5682,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "An employee working at a University of Florida medical practice who had ties to an identity theft ring may have compromised patient personal and health information.  UF is notifying 5,682 patients and parents of patients at the UF Pediatric Primary Care Clinic at Tower Square, now known as UF Health Pediatrics \u2015 Tower Square, that they should take appropriate measures to protect themselves from identity theft. UF is offering fraud resolution services for those who suspect or confirm identity theft associated with this incident; the fraud service offer is good for one year.",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 29,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint750",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "University of Florida",
+      "country": "United States",
+      "notes": "",
+      "state": "FL",
+      "employee_count": "Unknown",
+      "industry": "621112"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013
+    },
+    "investigation": {
+      "month": 4,
+      "day": 11,
+      "year": 2013
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

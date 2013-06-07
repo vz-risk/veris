@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint62",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/bjs-20120402.pdf ",
   "attribute": {
     "integrity": {
@@ -14,7 +15,6 @@
     },
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Payment"
@@ -26,24 +26,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1
+      "data_total": 1,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "social": {
-      "notes": "This was someone creating a fake customer profile and using it to commit transaction fraud.",
-      "vector": [
-        "Website"
-      ],
-      "target": [
-        "Other"
-      ],
-      "variety": [
-        "Forgery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "On March 1, 2012, BJ's Wholesale Club learned of the unauthorized use of the name, address and membership number of a resident of the State of New Hampshire.  The data was used to create a new online profile on BJs.com, which was used to purchase goods on the website.  The purchases were made between 11/11 and 3/12 using fraudulent credit cards.  In addition, this profile contained a SSN which was provided by him for check writing privileges at BJs.  ",
   "source_id": "osint",
@@ -55,17 +42,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 2,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint62",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 2,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -101,16 +88,29 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
-      "month": 11
+      "month": 11,
+      "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 1,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "social": {
+      "notes": "This was someone creating a fake customer profile and using it to commit transaction fraud.",
+      "vector": [
+        "Website"
+      ],
+      "target": [
+        "Other"
+      ],
+      "variety": [
+        "Forgery"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

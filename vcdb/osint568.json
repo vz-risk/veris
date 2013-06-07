@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint568",
+  "security_compromise": "Confirmed",
   "reference": "",
   "attribute": {
     "confidentiality": {
       "notes": "A potential data exposure involving a computer containing clinic patient records.  ",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Medical"
@@ -19,21 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 7000
+      "data_total": 7000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A potential data exposure involving a computer containing clinic patient records",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint568",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -93,8 +83,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint280",
+  "security_compromise": "Confirmed",
   "reference": "http://pastebin.com/kCAbE5BQ (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 322,
@@ -51,21 +51,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 322
+      "data_total": 322,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "website hacked, database contents posted to Internet",
   "source_id": "osint",
@@ -77,17 +67,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 25,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint280",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 25,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -110,9 +100,9 @@
     {
       "victim_id": "almshaheer.com",
       "notes": "",
-      "country": "Sudan",
+      "employee_count": "Unknown",
       "industry": "51913",
-      "employee_count": "Unknown"
+      "country": "Sudan"
     }
   ],
   "timeline": {
@@ -135,8 +125,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

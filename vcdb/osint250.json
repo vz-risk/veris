@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint250",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=10484; http://www.privacyrights.org/data-breach",
   "attribute": {
     "confidentiality": {
       "notes": "The theft of an electronic device exposed patient information.",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Unknown"
@@ -16,23 +16,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 4873
+      "data_total": 4873,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Unknown"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "An electronic device was stolen that contained patient information.   ",
   "source_id": "osint",
@@ -44,15 +32,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint250",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint250",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -83,15 +71,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 7,
       "day": 15,
-      "month": 7
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

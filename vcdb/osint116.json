@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint116",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/suddenlink-20120323.pdf  ",
   "attribute": {
     "confidentiality": {
@@ -19,16 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "in late February 2012, we were informed by law enforcement that a former in Floyd had been arrested for illegal use of payroll and benefits information of employees per company. Even though we were only recently informed of this incident the former employee obtain the information from documents taken between May 22, 2006 and July 21, 2006. The nonpublic personal information was contained in those documents included your name, address, date of birth, Social Security number, and wage and banking information. The investigation uncovered a small number of instances of such use or attempted use starting in 2006 and continuing through 2012. The former employee is arrested and peers cooperating with authorities.",
   "source_id": "osint",
@@ -40,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint116",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,18 +73,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2006,
+      "month": 5,
       "day": 22,
-      "month": 5
+      "year": 2006
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 28,
-      "month": 2
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "discovery_method": "Ext - law enforcement",
   "asset": {
     "assets": [
       {

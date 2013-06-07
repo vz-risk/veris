@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint240",
+  "security_compromise": "Confirmed",
   "reference": "http://www.huffingtonpost.com/2012/02/08/west-virginia-chiefs-of-police-association_n_1262892.html ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 150,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 150
+      "data_total": 150,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "CabinCr3W claimed responsibility",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Hackers affiliated with the group Anonymous obtained personal information for more than 150 police officers from an old website of the West Virginia Chiefs of Police Association and posted the data online.  He said the hackers obtained the home addresses, home phone numbers and cellphone numbers of current and retired police chiefs from a website that has not been used in two years. The association has a new website but some information was still stored on the old one.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint240",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -90,8 +80,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "CabinCr3W claimed responsibility",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

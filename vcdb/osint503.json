@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint503",
+  "security_compromise": "Confirmed",
   "reference": "http://www.stuff.co.nz/manawatu-standard/news/8018794/Data-breaches-parents-sent-private-details ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Carelessness"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Manawatu Standard revealed yesterday that Palmerston North woman Zelda McConachy was mailed other patients' mental health data after she applied to MidCentral to see her own files.    Ms McConachy claimed she was mailed other mental health patients' files along with her own records.  The Standard has viewed the most recent files. Along with her own records, she was sent two pages from another patient's file with details including his name, age, address, phone number, medication type and notes on his behavioural issues.  MidCentral yesterday confirmed it made an error in that particular incident. ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 30,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint503",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 30,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -72,9 +62,9 @@
     {
       "victim_id": "MidCentral District Health Board",
       "notes": "",
-      "country": "New Zealand",
+      "employee_count": "Unknown",
       "industry": "923120",
-      "employee_count": "Unknown"
+      "country": "New Zealand"
     }
   ],
   "timeline": {
@@ -85,8 +75,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "assets": [

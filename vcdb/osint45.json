@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint45",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=11108",
   "attribute": {
     "confidentiality": {
       "notes": "Information on the stolen computer may include medical record number, age, medications, laboratory values or other clinical information. ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -49,23 +49,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 615
+      "data_total": 615,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "A desktop computer was reported stolen from a building at Brigham and Women\u2019s Hospital",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A computer was stolen from building at Brigham and Women's Hospital that contained patients records ",
   "source_id": "osint",
@@ -77,15 +65,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint45",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint45",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -123,14 +111,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 10,
       "day": 16,
-      "month": 10
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 12,
       "day": 3,
-      "month": 12
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -142,8 +130,20 @@
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint197",
+  "security_compromise": "Confirmed",
   "reference": "http://www.desertaidsproject.org/notification/; http://www.hhs.gov/ocr/privacy/hipaa/administrative/breachnotificationrule/breachtool.html ",
   "attribute": {
     "confidentiality": {
       "notes": "Information on the computer contained a spreadsheet which included client name, assigned staff person, client status (active, discharged, etc.), internal client identification number, and date of birth",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Personal"
@@ -19,23 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 4400
+      "data_total": 4400,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A thief gained unauthorized access to the receptionist's office computer at Desert AIDS Project.  ",
   "source_id": "osint",
@@ -47,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 19,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint197",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 19,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,20 +80,32 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 12,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 13,
-      "month": 4
+      "year": 2012
     },
     "discovery": {
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

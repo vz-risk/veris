@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint1",
+  "security_compromise": "Confirmed",
   "reference": "http://www.wftv.com/news/news/local/mistake-put-personal-information-valencia-college-/nHWdn/  ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 9000,
@@ -47,21 +47,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 9000
+      "data_total": 9000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Web]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Valencia College is apologizing after a mistake allowed the personal information of 9,000 current and prospective students to be posted online.  The school said an Excel spreadsheet with the students' names, address, date of birth, and student IDs was listed online on a password-protected website.  Eventually, it lost its password protection, which means anyone could see the information. ",
   "source_id": "osint",
@@ -73,17 +63,17 @@
         "data_subject": ""
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 7,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint1",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 7,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -133,7 +123,17 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Web]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

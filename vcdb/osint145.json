@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint145",
+  "security_compromise": "Confirmed",
   "reference": "http://m.ibtimes.com/anonymous-spank-naughty-neo-nazis-opblitzkrieg-hack-275692.html, http://www.ibtimes.co.uk/articles/245458/20111108/operation-antisec-anonymous-hackers-expose-finnish-parliamentary.htm, http://www.theregister.co.uk/2012/01/04/anon_op_blitzkrieg/",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Members of Anonymous have re-doubled their offensive against German neo-Nazis.  The hacktivists of Operation Blitzkrieg this week launched a WikiLeaks-style website that aims to expose members of the far-right National Democratic Party (NPD) and other extremist groups, Der Spiegel reports. Nazi-leaks.net (German) already features a list of alleged donors to the NPD. It also hosts what OpBlitzkrieg claims are internal emails, a list of contact details purported to belong to far-right newspaper subscribers, and customer data allegedly hacked from neo-Nazi online stores.  Some of the data, such as the internal emails, had been previously disclosed, but other information is new. The launch of the site this week represents the latest phase of OpBlitzkrieg, which launched early last year with a string of DDoS attacks. ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 4,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint145",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 4,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -74,22 +64,32 @@
     {
       "victim_id": "National Democratic Party (NPD)",
       "notes": "",
-      "country": "Germany",
+      "employee_count": "Unknown",
       "industry": "813940",
-      "employee_count": "Unknown"
+      "country": "Germany"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
-      "month": 1
+      "month": 1,
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

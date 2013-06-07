@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint428",
+  "security_compromise": "Confirmed",
   "reference": "http://www.dailytelegraph.com.au/news/national/bae-systems-army-tender-withdrawn-after-security-breach-and-sackings/story-fndo2dsc-1226542069170 ",
   "attribute": {
     "confidentiality": {
@@ -22,18 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A $500 MILLION Army communications contract will be retendered after a BAE Systems employee leaked sensitive internal Defence information.  The BAE Systems employee, who had access to the Defence Department's computer network, informed a colleague of material that gave the company an unfair advantage over its competitors in the bid for the Army communications project.  Both employees were sacked after Defence officials discovered the leak.  The company this week walked away from its tender for the contract, which could have given it 20 years' work.  ",
   "source_id": "osint",
@@ -45,17 +34,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 22,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint428",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 22,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -94,7 +83,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

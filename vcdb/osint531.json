@@ -3,6 +3,7 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint531",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=8976 http://manhattantimesnews.com/February-15-2012/confidential-patient-records-found-in-the-open.html",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Paper documentation of paper records disposed of in insecure manner. ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": ""
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 15,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint531",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 15,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -86,14 +76,14 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 9,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 9,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -105,8 +95,18 @@
       "unit": "Hours"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

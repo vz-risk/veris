@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint496",
+  "security_compromise": "Confirmed",
   "reference": "http://www.scribd.com/doc/110003006/Zynga-vs-Patmore, http://www.darkreading.com/insider-threat/167801100/security/security-management/240144559/five-significant-insider-attacks-of-2012.html?utm_source=twitter&utm_medium=social&utm_content=fc582eb7-df18-4f0f-bbb6-0bd955a8762c ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 760,
@@ -21,23 +21,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 760
+      "data_total": 760,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse",
-        "Data mishandling"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Insider executive leaves the company and takes over 700 files containing intellectual property.  Zynga sues.",
   "source_id": "osint",
@@ -49,15 +37,15 @@
         "data_subject": "Other"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint496",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint496",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -90,15 +78,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 8,
       "day": 15,
-      "month": 8
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse",
+        "Data mishandling"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "notes": "",

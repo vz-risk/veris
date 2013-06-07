@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint194",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Agent%20Jain%20Williams-Victim%20Letter%20%283%29_0.pdf?, http://oag.ca.gov/system/files/Agent%20Jain%20Williams-Customer%20Letter%20%285%29_0.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -22,19 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Embezzlement",
-        "Data mishandling"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "For at least two months, a former employee used customer information inappropriately.  This information would have included names, addresses, DOB, CCN and SSN.  The employee used some of these cards to make fraudulent purchases.",
   "source_id": "osint",
@@ -46,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 8
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint194",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 8,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,18 +73,30 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 1,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 7,
       "day": 28,
-      "month": 7
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Embezzlement",
+        "Data mishandling"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "assets": [

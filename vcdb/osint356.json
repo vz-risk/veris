@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint356",
+  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/data-on-600-patients-stolen-from-temple-community-hospital-in-los-angeles.html  ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 600,
@@ -17,23 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 600
+      "data_total": 600,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Temple Community Hospital in Los Angeles has warned 600 patients that their personal and medical information was breached when a computer was stolen from a locked office in July, according to a Los Angeles Times report.  The computer contained CT scans of patients, patient names, the reason for the scans and patients' hospital account numbers. No financial information, Social Security numbers or personal contact information was part of the stolen data, according to the report.  The hospital did not report as to whether the patient data has been accessed on the computer. ",
   "source_id": "osint",
@@ -45,17 +33,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 4,
-        "month": 9
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint356",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 9,
+        "day": 4,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -93,13 +81,25 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 7,
       "day": 31,
-      "month": 7
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint510",
+  "security_compromise": "Confirmed",
   "reference": "http://www.theaustralian.com.au/news/nation/banknote-error-tops-rba-security-woes/story-e6frg6nf-1226545445009",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 160,
@@ -17,21 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 160
+      "data_total": 160,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Other"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "THE Reserve Bank sent a computer disk containing 160 high-resolution images of banknotes to a website developer in one of 18 security breaches over four years identified in documents released under Freedom of Information.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 31,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint510",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 31,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -78,9 +68,9 @@
         "amount": 2170000000
       },
       "country": "Australia",
-      "industry": "521110",
+      "notes": "",
       "employee_count": "101 to 1000",
-      "notes": ""
+      "industry": "521110"
     }
   ],
   "timeline": {
@@ -91,7 +81,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

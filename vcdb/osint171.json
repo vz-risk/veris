@@ -33,6 +33,7 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint171",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/ecrime/databreach/reports/sb24-32315 (20130212) http://doj.nh.gov/consumer/security-breaches/documents/american-pharmacists-20120709.pdf (20130212)",
   "attribute": {
     "integrity": {
@@ -43,7 +44,6 @@
     },
     "confidentiality": {
       "notes": "We know of 81 records affecting NH residents.  We also know there was an unknown number of victims in CA.  Total record count across all states is unknown.",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 81,
@@ -53,22 +53,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 81
+      "data_total": 81,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Attackers deface website of American Pharmacists Association and accessed credit card numbers of some members",
   "source_id": "osint",
@@ -80,17 +69,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 9,
-        "month": 7
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint171",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 7,
+        "day": 9,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -127,14 +116,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 23,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 5,
       "day": 28,
-      "month": 5
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -146,8 +135,19 @@
       "unit": "Hours"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

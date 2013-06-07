@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint268",
+  "security_compromise": "Confirmed",
   "reference": "http://www.krem.com/news/local/LCSCs-student-records-targeted-by-hackers-147179385.html (20130215) http://www.krem.com/video/yahoo-video/Lewis-Clark-State-College-server-hacked-unknown-if-information-stolen-147396335.html (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Payment"
@@ -49,22 +49,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 7000
+      "data_total": 7000,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "A computer server holding student information from Lewis-Clark State College was hacked. The hackers accessed a database of around 7,000 student registrations.  The database includes addresses, phone numbers, the last four digits of credit cards and Social Security numbers.",
   "source_id": "osint",
@@ -76,17 +65,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 11,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint268",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 11,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -126,7 +115,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint387",
+  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/phoenix-cardiac-surgery-group-pays-100k-in-hipaa-violation-settlement.html, http://www.hhs.gov/news/press/2012pres/04/20120417a.html, http://www.hhs.gov/ocr/privacy/hipaa/enforcement/examples/pcsurgery_agreement.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "The settlement document lists numerous violations.  Each are being modeled separately.",
-  "action": {
-    "error": {
-      "notes": " [through Email]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Phoenix Cardiac Surgery of Phoenix and Prescott, Ariz., has agreed to pay HHS a $100,000 settlement for its failure to comply with HIPAA privacy and security rules.   From September 1, 2005 until November 1, 2009, Covered Entity daily transmitted ePHI from an Internet-based email account to workforce members\u2019 personal Internet-based email accounts.",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint387",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,17 +72,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2005,
+      "month": 9,
       "day": 1,
-      "month": 9
+      "year": 2005
     },
     "investigation": {
-      "year": 2009,
+      "month": 11,
       "day": 1,
-      "month": 11
+      "year": 2009
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

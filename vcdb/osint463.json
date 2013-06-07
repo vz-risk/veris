@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint463",
+  "security_compromise": "Confirmed",
   "reference": "http://www.kare11.com/news/article/974638/391/Personal-information-of-3700-Minnesota-drivers-leaked ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 3700,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 3700
+      "data_total": 3700,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Minnesota Department of Public Safety Driver and Vehicle Services (DVS) announced Friday that the personal information of 3,700 licensed Minnesota drivers has been compromised.  An internal audit revealed the illegal access. DVS says there are no indications that the data is being used for criminal purposes, but the agency is sending letters to affected individuals to make them aware of the breech.  The DVS says an audit revealed that an employee at a Minnesota car dealer who was authorized to access vehicle data to process consumer sales allegedly provided his system login information to a friend who worked at a vehicle repossession company.  That individual, who did not have authorization to access Minnesota vehicle records, either viewed the data or allowed others within the company to view it. ",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 28,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint463",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 28,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,8 +78,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "discovery_method": "Int - IT audit",
   "asset": {
     "notes": "",
     "management": true,

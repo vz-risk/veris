@@ -3,6 +3,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint364",
+  "security_compromise": "Confirmed",
   "reference": "http://ethiopiantimes.wordpress.com/2012/01/26/commercial-bank-of-ethiopia-website-hacked-data-leaked-by-sepo/",
   "attribute": {
     "integrity": {
@@ -12,7 +13,6 @@
     },
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 18,
@@ -25,21 +25,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 18
+      "data_total": 18,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SQLi"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "DB compromise posted to public website.",
   "source_id": "osint",
@@ -51,17 +41,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 26,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint364",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 26,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -84,9 +74,9 @@
     {
       "victim_id": "Commercial Bank of Ethiopia",
       "notes": "",
-      "country": "Ethiopia",
+      "employee_count": "1001 to 10000",
       "industry": "5222",
-      "employee_count": "1001 to 10000"
+      "country": "Ethiopia"
     }
   ],
   "timeline": {
@@ -109,8 +99,18 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "SQLi"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

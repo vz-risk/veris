@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint228",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/02/29/12000-accounts-leaked-from-polish-website-vista-pl/",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 12000,
@@ -21,21 +21,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 12000
+      "data_total": 12000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The targets seem to be all Polish websites and the hackers are said to be from Poland as well. So far they have hit Vista.pl and dumped well over 12000 user accounts from the software information and download portal.  The leak is in two pastebin pastes and contains over 6000 per paste, all leaked details are ID, usernames, encrypted passwords and emails.  Part 1: http://pastebin.com/xiDfHjjn Part 2: http://pastebin.com/HXJKhjKC",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 29,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint228",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 29,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -80,9 +70,9 @@
     {
       "victim_id": "Vista.pl",
       "notes": "",
-      "country": "Poland",
+      "employee_count": "1 to 10",
       "industry": "454113",
-      "employee_count": "1 to 10"
+      "country": "Poland"
     }
   ],
   "timeline": {
@@ -90,13 +80,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 29,
-      "month": 2
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

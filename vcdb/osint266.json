@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint266",
+  "security_compromise": "Confirmed",
   "reference": "http://www.csmonitor.com/Innovation/Horizons/2012/0607/In-wake-of-LinkedIn-hack-Last.fm-confirms-data-breach; http://www.csmonitor.com/Innovation/Tech/2012/0713/LinkedIn-Last.fm-now-Yahoo-Don-t-ignore-news-of-a-password-breach?nav=topic-tag_topic_page-storyList ",
   "attribute": {
     "confidentiality": {
       "notes": "Passwords on to the site was released online for the public.  ",
-      "data_disclosure": "Unknown",
       "data": [
         {
           "variety": "Classified"
@@ -16,21 +16,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 2000000
+      "data_total": 2000000,
+      "data_disclosure": "Unknown"
     }
   },
   "notes": "Last.fm is a popular music website.  ",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Brute force"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The music website, Last.fm, was hacked and user passwords were leaked.  ",
   "source_id": "osint",
@@ -42,15 +32,15 @@
         "data_subject": "Customer"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint266",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint266",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -77,9 +67,9 @@
         "amount": 13000000
       },
       "country": "United Kingdom",
-      "industry": "515120",
+      "notes": "Television broadcasting stations, nsk",
       "employee_count": "11 to 100",
-      "notes": "Television broadcasting stations, nsk"
+      "industry": "515120"
     }
   ],
   "timeline": {
@@ -87,12 +77,22 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 6,
       "day": 7,
-      "month": 6
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Brute force"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

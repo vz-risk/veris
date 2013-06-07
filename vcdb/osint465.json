@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint465",
+  "security_compromise": "Confirmed",
   "reference": "",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A Las Vegas woman got quite a surprise as she drove around looking for empty boxes to store her holiday decorations. She found some near a dumpster but they weren't empty. To her surprise they were packed with medical records. So she emailed Action News wondering how they got there.  From credit cards applications to patient's name, addresses and even social security numbers. All that information was just sitting next to a dumpster in a parking lot near Buffalo Drive and Washington Avenue. Jacquelyn knew it shouldn't be there.",
   "source_id": "osint",
@@ -44,15 +34,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "Yes"
+    },
+    "f500": "N",
+    "master_id": "osint465",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint465",
-    "asset": {
-      "total": "Yes"
     }
   },
   "actor": {
@@ -80,9 +70,9 @@
     {
       "victim_id": "Brite Smile Brite Skin",
       "industry": "621210",
-      "country": "United States",
+      "employee_count": "Unknown",
       "state": "NV",
-      "employee_count": "Unknown"
+      "country": "United States"
     }
   ],
   "timeline": {
@@ -93,8 +83,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

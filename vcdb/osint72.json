@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint72",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/centric-group-20130109.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Computer system hacked, data included customer name, credit/debit cards, expiration and CVV.  ",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 9,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint72",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 9,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -89,16 +79,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2010,
-      "month": 8
+      "month": 8,
+      "year": 2010
     },
     "investigation": {
-      "year": 2012,
+      "month": 12,
       "day": 13,
-      "month": 12
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

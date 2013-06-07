@@ -9,11 +9,11 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint417",
+  "security_compromise": "Confirmed",
   "reference": "http://crimeblog.dallasnews.com/2012/02/hacker-claims-credit-for-attac.html/ http://www.nbcdfw.com/news/tech/Dallas-Police-Departments-Website-Hacked-138823209.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 10,
@@ -23,21 +23,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 10
+      "data_total": 10,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Dallas PD web site compromised; 10 officers' usernames and passwords posted online",
   "source_id": "osint",
@@ -49,17 +39,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 7,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint417",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 7,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -93,9 +83,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 4,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
       "year": 2012
@@ -110,8 +100,18 @@
       "unit": "Hours"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

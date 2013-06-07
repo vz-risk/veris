@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint378",
+  "security_compromise": "Confirmed",
   "reference": "http://www.ajc.com/news/news/local/ob-gyns-worried-burglaries-fires-are-retaliation/nQT4d/ (20130219) http://www.wsbtv.com/news/news/local/2nd-doctors-office-targeted-laptop-theft/nLchZ/ (20130219)",
   "attribute": {
     "confidentiality": {
@@ -49,20 +50,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Bypassed controls"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Atlanta Women\u2019s Health Group laptop stolen in a targeted attack against abortion providers in the area",
   "source_id": "osint",
@@ -74,15 +61,15 @@
         "data_subject": "Partner"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint378",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint378",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -136,8 +123,21 @@
       "unit": "Hours"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Bypassed controls"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

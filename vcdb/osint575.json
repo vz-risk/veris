@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint575",
+  "security_compromise": "Confirmed",
   "reference": "http://www.ico.gov.uk/news/latest_news/2012/leicestershire-county-council-in-data-breach-17042012.aspx ",
   "attribute": {
     "confidentiality": {
       "notes": "Sensitive personal data of 18 individuals which outlined details of neglect and requested the removal of the children from their parents\u2019 care.",
-      "data_disclosure": "Unknown",
       "data": [
         {
           "variety": "Classified"
@@ -22,23 +22,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 18
+      "data_total": 18,
+      "data_disclosure": "Unknown"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal residence"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Theft of a briefcase containing sensitive personal data from a social worker\u2019s home. ",
   "source_id": "osint",
@@ -50,17 +38,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint575",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,22 +71,34 @@
     {
       "victim_id": "Leicestershire County Council",
       "notes": "",
-      "country": "United Kingdom",
+      "employee_count": "1001 to 10000",
       "industry": "921120",
-      "employee_count": "1001 to 10000"
+      "country": "United Kingdom"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
-      "month": 5
+      "month": 5,
+      "year": 2011
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal residence"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint297",
+  "security_compromise": "Confirmed",
   "reference": "http://deadspin.com/5971165/hackers-take-over-steubenville-high-school-football-teams-website-threaten-to-release-personal-information-of-people-involved-in-alleged-rape-case",
   "attribute": {
     "confidentiality": {
@@ -19,18 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "In an effort to prove this, we gained access to the schools website via CPANEL login http://tinypic.com/r/ot0wok/6, and the webmaster James \"Jim\" Parks http://www.facebook.com/BIGREDMANOWAR personal email http://tinypic.com/r/2gwbclj/6 which we promptly found multiple nude photographs in.  We in turn locked him out of his own email, and backed up the contents to the web to preserve evidence. http://www.filehosting.org/file/details/405512/Emails.zip",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Hackers who claim to be from the groups Anonymous and KnightSec have taken over the Steubenville High School football team's website, posting a video and message demanding an apology from those involved in the alleged rape that took place in August involving players of the football team. If no one steps forward and publicly apologizes to the victim and her family by Jan. 1, the hackers claim they will release personal information\u2014addresses, SSNs, phone numbers\u2014of people involved in the case.",
   "source_id": "osint",
@@ -42,17 +31,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 25,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint297",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 25,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -87,13 +76,24 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 12,
       "day": 25,
-      "month": 12
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "In an effort to prove this, we gained access to the schools website via CPANEL login http://tinypic.com/r/ot0wok/6, and the webmaster James \"Jim\" Parks http://www.facebook.com/BIGREDMANOWAR personal email http://tinypic.com/r/2gwbclj/6 which we promptly found multiple nude photographs in.  We in turn locked him out of his own email, and backed up the contents to the web to preserve evidence. http://www.filehosting.org/file/details/405512/Emails.zip",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "management": true,

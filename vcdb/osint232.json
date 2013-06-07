@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint232",
+  "security_compromise": "Confirmed",
   "reference": "http://www.bbc.co.uk/news/uk-england-hampshire-16843607 ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,23 +19,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1500
+      "data_total": 1500,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A laptop containing personal and medical information of up to 1,500 people has been stolen from a podiatry clinic in Hampshire.  The Zoostorm laptop, containing unencrypted data, was taken from the Walking On Air clinic in Gosport on Tuesday.",
   "source_id": "osint",
@@ -47,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 1,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint232",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 1,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -80,9 +68,9 @@
     {
       "victim_id": "Walking on Air Clinic",
       "notes": "",
-      "country": "United Kingdom",
+      "employee_count": "Unknown",
       "industry": "622",
-      "employee_count": "Unknown"
+      "country": "United Kingdom"
     }
   ],
   "timeline": {
@@ -93,7 +81,19 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

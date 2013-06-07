@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint386",
+  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/phoenix-cardiac-surgery-group-pays-100k-in-hipaa-violation-settlement.html, http://www.hhs.gov/news/press/2012pres/04/20120417a.html, http://www.hhs.gov/ocr/privacy/hipaa/enforcement/examples/pcsurgery_agreement.pdf ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1000,
@@ -21,21 +21,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1000
+      "data_total": 1000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Web]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "On February 19, 2009, OCR notified the Covered Entity of its initiation of an investigation of a complaint alleging that the Covered Entity had impermissibly disclosed electronic protected health information (ePHI) by making it publicly available on the Internet.  From July 3, 2007 until February 6, 2009, Covered Entity posted over 1,000 separate entries of ePHI on a publicly accessible, Internet-based calendar",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint386",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,17 +75,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2007,
+      "month": 7,
       "day": 3,
-      "month": 7
+      "year": 2007
     },
     "investigation": {
-      "year": 2009,
+      "month": 2,
       "day": 6,
-      "month": 2
+      "year": 2009
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Web]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

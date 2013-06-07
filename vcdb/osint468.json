@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint468",
+  "security_compromise": "Confirmed",
   "reference": "http://www.localnews8.com/news/Children-s-medical-records-found-in-Dumpster-to-be-shredded/-/308662/17839236/-/e4edh6/-/index.html ",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A man is questioning just how safe our medical records are, after he found volumes of records in the Dumpster behind his workplace.  Dustin found seven boxes and a garbage bag packed with children's medical records from a place called The Children's Center.  \"Names, addresses, Social Security numbers, date of birth,\" Dustin listed.  He also found billing and payroll information in the boxes.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 19,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint468",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 19,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,13 +72,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 12,
       "day": 19,
-      "month": 12
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

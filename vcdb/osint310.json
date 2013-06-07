@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint310",
+  "security_compromise": "Confirmed",
   "reference": "http://menlopark-atherton.patch.com/articles/postal-worker-arrested ",
   "attribute": {
     "confidentiality": {
@@ -19,18 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Embezzlement",
-        "Data mishandling"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A U.S. Postal Service mail carrier accused of stealing thousands of pieces of mail to provide credit cards to friends has pleaded not guilty to several charges and is expected to return to court on Thursday, San Mateo County prosecutors said.  Romeo Maniulit Natan, 38, pleaded not guilty on Friday to multiple counts of identity theft, possession of stolen property and second-degree burglary, according to the district attorney's office.  Natan allegedly stole thousands of pieces of mail and passed out credit cards from the stolen mail to friends in the northern part of the county, prosecutors said. At least three accomplices used the stolen credit cards to make purchases. After one was caught, he implicated Natan as the distributor of the cards. Natan was also caught on surveillance video using stolen credit cards on two occasions at the Target store in Colma, prosecutors said.  Natan was arrested on Dec. 19 police obtained a search warrant for his home and found more than 2,000 pieces of mail in a storage closet as well as more than 1,000 other pieces of mail in the trunk of his car, according to the district attorney's office.",
   "source_id": "osint",
@@ -42,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 26,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint310",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 26,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -87,8 +76,19 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Embezzlement",
+        "Data mishandling"
+      ]
+    }
+  },
+  "discovery_method": "Ext - law enforcement",
   "asset": {
     "notes": "",
     "assets": [

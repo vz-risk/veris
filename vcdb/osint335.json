@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint335",
+  "security_compromise": "Confirmed",
   "reference": "http://triblive.com/news/allegheny/3207432-74/information-university-breach ",
   "attribute": {
     "integrity": {
@@ -12,7 +13,6 @@
     },
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1406,
@@ -22,21 +22,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 1406
+      "data_total": 1406,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "malware": {
-      "vector": [
-        "Unknown"
-      ],
-      "name": "",
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": " Penn State University officials on Friday began notifying former students of a security breach on a computer server that contained 1,406 Social Security numbers for enrollees at the Altoona campus before 2005.  An operator at Penn State's call center said officials were alerted Sept. 10 that a server at University Park containing the records was infected with malware, software that allows it to communicate with unauthorized outside networks.  Techs took the server offline when officials became aware of the issue. ",
   "source_id": "osint",
@@ -48,17 +38,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 29,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint335",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 29,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,12 +82,22 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 9,
       "day": 10,
-      "month": 9
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "name": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

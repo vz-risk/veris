@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint485",
+  "security_compromise": "Confirmed",
   "reference": "http://www.pepperdine-graphic.com/headline/laptop-theft-compromises-information-of-8300-campus-community-members/ ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 8300,
@@ -17,23 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 8300
+      "data_total": 8300,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal vehicle"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "President Andrew K. Benton sent an email today informing the university community that a laptop computer belonging to an authorized university employee was stolen from that individual\u2019s car. This laptop had been used extensively in work related to the IRS, \u201cand it contained data dating back to 2008 involving as many as 8300 Pepperdine campus community members.\u201d Approximately 75 percent of these names belong to students.  ",
   "source_id": "osint",
@@ -45,17 +33,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 16,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint485",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 16,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -96,8 +84,20 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

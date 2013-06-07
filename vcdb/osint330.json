@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint330",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/06/09/9000-accounts-leaked-from-mercotour-com-by-nrtnz/",
   "attribute": {
     "confidentiality": {
       "notes": "Information that was leaked contained usernames, email address and passwords.  ",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 9000,
@@ -20,21 +20,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 9000
+      "data_total": 9000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Accounts were leaked by a hacker named @nrtnz. ",
   "source_id": "osint",
@@ -46,17 +36,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 9,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint330",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 9,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -79,9 +69,9 @@
     {
       "victim_id": "Mercotour.com",
       "notes": "The country of operation is Argentina and the city is Buenos Aires.  ",
-      "country": "Argentina",
+      "employee_count": "Unknown",
       "industry": "72",
-      "employee_count": "Unknown"
+      "country": "Argentina"
     }
   ],
   "timeline": {
@@ -92,8 +82,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint143",
+  "security_compromise": "Confirmed",
   "reference": "http://www.theregister.co.uk/2012/01/27/students_hack_teachers_computers/",
   "attribute": {
     "integrity": {
@@ -21,31 +22,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Brute force"
-      ],
-      "cve": ""
-    },
-    "physical": {
-      "notes": "Broke into janitor office and made copy of the master key.  Used that to get into other areas and install hardware keyloggers on several systems.",
-      "vector": [
-        "Bypassed controls"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft",
-        "Wiretapping"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Three high school juniors have been arrested after they devised a sophisticated hacking scheme to up their grades and make money selling quiz answers to their classmates.  The students are accused of breaking into the janitor\u2019s office of California's Palos Verdes High School and making a copy of the master key, giving them access to all the classrooms. They then attached keylogging hardware to the computers of four teachers, and harvested the passwords needed to access the central files of the school network.  They then used that access to change their grades slightly, nudging them up by increments so that all three got As. At the time they were caught, keyloggers were found on three other teachers\u2019 systems, indicating the group was expanding its efforts. ",
   "source_id": "osint",
@@ -57,17 +33,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 27,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint143",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 27,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -106,8 +82,32 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Physical access"
+      ],
+      "cve": "",
+      "variety": [
+        "Brute force"
+      ]
+    },
+    "physical": {
+      "notes": "Broke into janitor office and made copy of the master key.  Used that to get into other areas and install hardware keyloggers on several systems.",
+      "vector": [
+        "Bypassed controls"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft",
+        "Wiretapping"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "assets": [

@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint329",
+  "security_compromise": "Confirmed",
   "reference": "http://eznotice.com/notices/3319596 (20130217)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 875,
@@ -51,24 +51,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 875
+      "data_total": 875,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "notes": "Locked van in an impound lot.",
-      "vector": [
-        "Disabled controls"
-      ],
-      "location": [
-        "Other"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Paper records stolen from the back of a truck in an impound lot.",
   "source_id": "osint",
@@ -80,17 +67,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 25,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint329",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 25,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -129,14 +116,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 26,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 27,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -148,8 +135,21 @@
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "notes": "Locked van in an impound lot.",
+      "vector": [
+        "Disabled controls"
+      ],
+      "location": [
+        "Other"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint230",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=10516 ",
   "attribute": {
     "confidentiality": {
       "notes": "The computer stored both medical records, insurance information and social security numbers. ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,23 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 980
+      "data_total": 980,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A computer was stolen from the office suite.   ",
   "source_id": "osint",
@@ -47,17 +35,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 10
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint230",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 10,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -95,16 +83,28 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 9,
       "day": 15,
-      "month": 9
+      "year": 2012
     },
     "discovery": {
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

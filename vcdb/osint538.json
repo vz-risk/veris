@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint538",
+  "security_compromise": "Confirmed",
   "reference": "http://www.dhs.state.ia.us/docs/Warren%20County%20Fire%20FAQ%20.pdf ",
   "attribute": {
     "confidentiality": {
       "notes": "The document included the following types of information: name, mailing address, telephone number, date of birth and social security numbers.  ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Personal"
@@ -16,21 +16,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 3000
+      "data_total": 3000,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through ]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Disposal error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Due to a fire at the Iowa Department of Human Resources building in Warren County partially burned documents were found on neighbors' lawns containing confidential information.  ",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 15,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint538",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 15,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -80,18 +70,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 12,
       "day": 4,
-      "month": 12
+      "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 14,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through ]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Disposal error"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

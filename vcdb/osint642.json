@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint642",
+  "security_compromise": "Confirmed",
   "reference": "http://rockville.patch.com/articles/rockville-man-indicted-for-identity-theft-and-tax-fraud, http://www.justice.gov/usao/md/Public-Affairs/press_releases/Press13/TwoBrothersIndictedforTaxFraudandIdentityTheft.html",
   "attribute": {
     "integrity": {
@@ -25,16 +26,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Business owners stole customer information to file fraudulent tax returns.",
   "source_id": "osint",
@@ -46,16 +37,16 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2010,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint642",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "year": 2010
+      }
     }
   },
   "actor": {
@@ -83,15 +74,24 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2007,
-      "month": 4
+      "month": 4,
+      "year": 2007
     },
     "investigation": {
-      "year": 2010,
-      "month": 1
+      "month": 1,
+      "year": 2010
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

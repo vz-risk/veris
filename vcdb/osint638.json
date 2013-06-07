@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint638",
+  "security_compromise": "Confirmed",
   "reference": "",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1771,
@@ -17,20 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1771
+      "data_total": 1771,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "HHS Breach Tool",
-  "action": {
-    "misuse": {
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Breach tool lists this as unauthorized access/disclosure with paper as the asset.  No further details.",
   "source_id": "osint",
@@ -42,17 +33,17 @@
         "data_subject": "Unknown"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 7,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint638",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 7,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -84,15 +75,24 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 11,
       "day": 13,
-      "month": 11
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

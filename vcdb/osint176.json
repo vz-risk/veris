@@ -33,6 +33,7 @@
     "overall_rating": "Insignificant"
   },
   "incident_id": "osint176",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Email%20Customer%20Letter%20final%20approved.pdf (20130212)",
   "attribute": {
     "confidentiality": {
@@ -49,17 +50,6 @@
     }
   },
   "notes": "Not clear how or when the incident was discovered.",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Employee sent non-public data in the clear over email to personal email address and one other email address",
   "source_id": "osint",
@@ -71,17 +61,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 27,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint176",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 27,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -117,9 +107,9 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 23,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
       "year": 2012
@@ -134,7 +124,17 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "The affected asset was a document which was inappropriately handled",

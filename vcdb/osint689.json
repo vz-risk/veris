@@ -1,0 +1,134 @@
+{
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint689",
+  "reference": "http://www.thisisstaffordshire.co.uk/Hospital-worker-breaks-confidential-records/story-18922822-detail/story.html#axzz2SpWSwQNr",
+  "attribute": {
+    "integrity": {
+      "notes": "",
+      "variety": [
+        "Unknown",
+        "Alter behavior"
+      ]
+    },
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Unknown"
+      ],
+      "data": [
+        {
+          "amount": 3,
+          "variety": "Medical"
+        }
+      ],
+      "data_total": 3,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "Investigation is ongoing; should review case to see if identity is uncovered and methods used to access data.",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Disgruntled employee accesses medical records of 3 patients for next of kin information. Writes letters pretending to be a nurse expressing concerns over the surgeon who operated on their relatives. ",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint689",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": ""
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Grudge"
+      ],
+      "notes": "",
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "notes": "",
+      "victim_id": "University Hospital of North Staffordshire",
+      "industry": "622",
+      "employee_count": "1001 to 10000",
+      "country": "United Kingdom"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "year": 2013
+    },
+    "investigation": {
+      "month": 5,
+      "year": 2013
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "NA"
+    },
+    "discovery": {
+      "unit": "Unknown"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Knowledge abuse"
+      ]
+    },
+    "social": {
+      "notes": "Sending of misinformation regarding treatment and care of relatives that had undergone surgery.",
+      "vector": [
+        "Documents"
+      ],
+      "target": [
+        "Customer"
+      ],
+      "variety": [
+        "Propaganda"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Other server"
+      },
+      {
+        "variety": "P - Customer"
+      }
+    ]
+  }
+}

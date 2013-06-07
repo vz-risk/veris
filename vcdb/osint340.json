@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint340",
+  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/Management-of-Aggressive-Behavior-Site-Hacked-User-Credentials-Leaked-273217.shtml ",
   "attribute": {
     "confidentiality": {
       "notes": "The hackers have targeted the firm because it provides training for law enforcement organizations, federal agencies and even the military.   The leaked information included usernames, email address and passwords.  Many of the email address belong to government employes, including police officer and members of the military. ",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Classified"
@@ -22,21 +22,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1763
+      "data_total": 1763,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Hackers part of the Anonymous-affiliated k0detec collective have gained unauthorized access to the systems of MOAB Training International.  ",
   "source_id": "osint",
@@ -48,17 +38,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 1,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint340",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 1,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -95,8 +85,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

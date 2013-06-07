@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint252",
+  "security_compromise": "Confirmed",
   "reference": "http://www.privacyrights.org/data-breach?order=field_breach_total_value&sort=asc&title=; http://news.softpedia.com/newsImage/FBI-Investigates-Lake-County-Sheriff-s-Office-Hack-2.png/; http://www.sun-sentinel.com/news/local/breakingnews/os-hacking-site-lake-sheriffs-office-20120505,0,58306.story",
   "attribute": {
     "confidentiality": {
       "notes": "Hackers released 911 calls, witness and victim statements, names of young crime victims, names and personal phone numbers of SWAT team members, a blueprint that could allow sex predators to avoid arrest, and possibly sheriff employee passwords were posted. SWAT team information such as the unit's operating guide and number of snipers was also posted.  Personal information including Swat team member home and cell phone numbers.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Classified"
@@ -19,21 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 16000
+      "data_total": 16000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Brute force"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Hackers were able to access and post law enforcement files online.  ",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 7,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint252",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 7,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -86,15 +76,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 28,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Brute force"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

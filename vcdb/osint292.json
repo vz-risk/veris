@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint292",
+  "security_compromise": "Confirmed",
   "reference": "http://chronicle.augusta.com/latest-news/2012-06-01/stolen-laptop-contained-veteran-information-va-says (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 824,
@@ -51,24 +51,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 824
+      "data_total": 824,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Uncontrolled location"
-      ],
-      "location": [
-        "Public facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "stolen laptop",
   "source_id": "osint",
@@ -80,17 +67,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 1,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint292",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 1,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -125,9 +112,9 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 3,
       "day": 30,
-      "month": 3
+      "year": 2012
     },
     "investigation": {
       "year": 2012
@@ -142,8 +129,21 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Uncontrolled location"
+      ],
+      "location": [
+        "Public facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "personal": true,
     "notes": "",

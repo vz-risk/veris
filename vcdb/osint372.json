@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint372",
+  "security_compromise": "Confirmed",
   "reference": "http://www.technewsworld.com/story/74718.html ",
   "attribute": {
     "confidentiality": {
       "notes": "Phone numbers and email addresses of more than 200 users were posted to the Internet.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 200,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 200
+      "data_total": 200,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A security breach has allowed for users information to be posted onto the Internet.  ",
   "source_id": "osint",
@@ -43,15 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint372",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint372",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -74,9 +64,9 @@
     {
       "victim_id": "NaturEnergy",
       "notes": "The country of operation is Romania.  ",
-      "country": "Romania",
+      "employee_count": "Unknown",
       "industry": "22111",
-      "employee_count": "Unknown"
+      "country": "Romania"
     }
   ],
   "timeline": {
@@ -84,12 +74,22 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 3,
       "day": 16,
-      "month": 3
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

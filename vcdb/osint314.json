@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint314",
+  "security_compromise": "Confirmed",
   "reference": "http://www.massdataprivacylaw.com/data-breach/ ",
   "attribute": {
     "confidentiality": {
       "notes": "The records included names, dates of birth, addresses and license numbers. The types of paperwork stolen do not include the social security numbers of Massachusetts residents",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,23 +16,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 600
+      "data_total": 600,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Partner vehicle"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Two masked men, operating a stolen jeep, pulled up next to a courier's white van that was parked outside a Massachusetts Registry of Motor Vehicles location, jumped out of the jeep and stole five bags from the courier's van.",
   "source_id": "osint",
@@ -44,17 +32,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 9,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint314",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 9,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,16 +73,28 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 5,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Partner vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

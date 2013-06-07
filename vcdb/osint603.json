@@ -3,6 +3,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint603",
+  "security_compromise": "Confirmed",
   "reference": "http://www.globalpost.com/dispatches/globalpost-blogs/the-grid/anonymous-formula-1-bahrain",
   "attribute": {
     "confidentiality": {
@@ -24,19 +25,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown",
-        "DoS"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Formula-1 racing website defaced and DDoS'ed before race in Bahrain. Anonymous claimed responsibility and stated they are supporting the protests in Bahrain.",
   "source_id": "osint",
@@ -48,17 +36,17 @@
         "data_subject": "Unknown"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint603",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -82,9 +70,9 @@
     {
       "victim_id": "f-1racers.net",
       "notes": "",
-      "country": "United Kingdom",
+      "employee_count": "Unknown",
       "industry": "51913",
-      "employee_count": "Unknown"
+      "country": "United Kingdom"
     }
   ],
   "timeline": {
@@ -92,14 +80,14 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 20,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 20,
-      "month": 4
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -111,8 +99,20 @@
       "unit": "Minutes"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown",
+        "DoS"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

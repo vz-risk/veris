@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint43",
+  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Experian%20Final%20Proof%20-%20Base%20Version_0.pdf?, http://doj.nh.gov/consumer/security-breaches/documents/petco-20120726.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,20 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Bypassed controls"
-      ],
-      "location": [
-        "Partner facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "On Tuesday, July 3, 2012, the outside auditor of Petco's 401(d) plan informed us that five laptop computers had been stolen from their offices during the weekend of May 18-20, 2012. We are seeking an explanation from the outside auditor\u2019s office for the lapse of time in informing Petco of this incident. In the meantime. we are writing to you because the outside auditor also informed us that the stolen laptops may have contained certain personal information, including name and Social Security number, of all associates who were issued a Petco paycheck in 2010 as well as associates who had a 401(k) account and received a distribution, or had a fee deducted from their account, in 2011.",
   "source_id": "osint",
@@ -44,17 +31,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 26,
-        "month": 7
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint43",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 7,
+        "day": 26,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -90,18 +77,31 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 18,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 7,
       "day": 3,
-      "month": 7
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Bypassed controls"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "management": true,

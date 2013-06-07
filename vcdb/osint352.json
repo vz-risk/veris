@@ -9,6 +9,7 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint352",
+  "security_compromise": "Confirmed",
   "reference": "http://www.nhregister.com/articles/2012/06/08/news/doc4fd206134783d161651112.txt  http://www.nbcconnecticut.com/news/local/Rent-Rebate-Laptop-Stolen-from-New-Haven-Library--158177055.html",
   "attribute": {
     "confidentiality": {
@@ -25,19 +26,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Public facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Stolen laptop results in potential compromise of PII.",
   "source_id": "osint",
@@ -49,17 +37,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 6
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint352",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 6,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -93,14 +81,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 23,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 5,
       "day": 23,
-      "month": 5
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -112,7 +100,19 @@
       "unit": "Minutes"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Public facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

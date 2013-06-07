@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint563",
+  "security_compromise": "Confirmed",
   "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
   "attribute": {
     "confidentiality": {
       "notes": "Databases with usernames and clear-text passwords or usernames plus e-mail addresses dumped on the web with some admin logins",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Credentials"
@@ -19,21 +19,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 315
+      "data_total": 315,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Databases with usernames and clear-text passwords or usernames plus e-mail addresses dumped on the web with some admin logins.",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint563",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -78,9 +68,9 @@
     {
       "victim_id": "Korea Investors Service",
       "notes": "",
-      "country": "Korea, Democratic People's Republic of",
+      "employee_count": "Unknown",
       "industry": "522320",
-      "employee_count": "Unknown"
+      "country": "Korea, Democratic People's Republic of"
     }
   ],
   "timeline": {
@@ -91,8 +81,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

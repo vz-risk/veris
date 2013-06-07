@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint263",
+  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/1-700-Clear-Text-Passwords-Leaked-from-Yamaha-Audio-Systems-253921.shtml ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1700,
@@ -17,21 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1700
+      "data_total": 1700,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "hacker called Muldaria48",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Cyber War News informs us of a hacking operation that exposes the usernames and passwords of more than 1,700 individuals who own accounts on the Yamaha Commercial Audio Systems website.  Unfortunately, not only the users were exposed by a hacker called Muldaria48, but also a number of 8 site administrators. ",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint263",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -87,13 +77,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 20,
-      "month": 2
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "hacker called Muldaria48",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

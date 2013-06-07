@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint549",
+  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/01/27/just10time-com-hacked-and-thousands-of-accounts-leaked-by-psykonx-of-netbashers/ ",
   "attribute": {
     "confidentiality": {
       "notes": "usernames/emails and encrypted passwords",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -19,21 +19,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 4000
+      "data_total": 4000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A hacker named @psykonx from @Netbashers leaked usernames/emails and encrypted passwords. ",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 27,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint549",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 27,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,8 +82,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

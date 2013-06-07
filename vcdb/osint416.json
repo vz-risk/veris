@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint416",
+  "security_compromise": "Confirmed",
   "reference": "http://www.bbc.co.uk/news/uk-england-cambridgeshire-17002503 (20130220)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 47,
@@ -47,21 +47,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 47
+      "data_total": 47,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "Not sure when notification happened.  Used the date of the source article.",
-  "action": {
-    "error": {
-      "notes": "Victim work area",
-      "vector": [
-        "Carelessness"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Documents containing non-public patient information went missing while in transit using inter-office mail.",
   "source_id": "osint",
@@ -73,17 +63,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 12,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint416",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 12,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -107,9 +97,9 @@
         "amount": 183000000
       },
       "country": "United Kingdom",
-      "industry": "622110",
+      "notes": "",
       "employee_count": "101 to 1000",
-      "notes": ""
+      "industry": "622110"
     }
   ],
   "timeline": {
@@ -117,14 +107,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 13,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 1,
       "day": 23,
-      "month": 1
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -136,8 +126,18 @@
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": "Victim work area",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

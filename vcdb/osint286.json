@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint286",
+  "security_compromise": "Confirmed",
   "reference": "http://bianet.org/english/freedom-of-expression/136509-redhack-hacked-police-directorate (20130215) http://www.hurriyetdailynews.com/turkish-police-secret-files-password-123456-hackers-reveal-.aspx?pageID=238&nid=15187 (20130215) http://www.cyberwarnews.info/2012/03/01/redhackers-hack-police-net-and-ankara-police-directorate/ (20130215)",
   "attribute": {
     "confidentiality": {
@@ -52,18 +53,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Brute force"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Hackers breached network of Ankara Police Directorate and released non-public information to the Internet",
   "source_id": "osint",
@@ -75,17 +64,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 25,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint286",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 25,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -109,9 +98,9 @@
     {
       "victim_id": "Ankara Police Directorate",
       "notes": "Country is Turkey which does not appear in the list.",
-      "country": "Turkey",
+      "employee_count": "Unknown",
       "industry": "922",
-      "employee_count": "Unknown"
+      "country": "Turkey"
     }
   ],
   "timeline": {
@@ -119,14 +108,14 @@
       "unit": "Weeks"
     },
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 4,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 25,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "Months"
@@ -138,8 +127,19 @@
       "unit": "Minutes"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "variety": [
+        "Brute force"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

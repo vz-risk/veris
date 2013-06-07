@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint616",
+  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/Indian-Hackers-Leak-Data-from-Panpacific-University-North-Philippines-269806.shtml ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -19,21 +19,11 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 400
+      "data_total": 400,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Indian hackers called Harsha Vardhan Boppana and codie root have breached the website of the Panpacific University North Philippines (punp.edu.ph).  ",
   "source_id": "osint",
@@ -45,17 +35,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 16,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint616",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 16,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -78,9 +68,9 @@
     {
       "victim_id": "Panpacific University North Philippines",
       "notes": "",
-      "country": "Philippines",
+      "employee_count": "Unknown",
       "industry": "611310",
-      "employee_count": "Unknown"
+      "country": "Philippines"
     }
   ],
   "timeline": {
@@ -91,7 +81,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

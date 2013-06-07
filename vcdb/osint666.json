@@ -1,0 +1,122 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Moderate",
+        "variety": "Asset and fraud"
+      }
+    ],
+    "overall_rating": ""
+  },
+  "incident_id": "osint666",
+  "reference": "http://blogs.seattletimes.com/today/2013/04/hackers-steal-more-than-1-million-from-leavenworth-hospital/, http://www.wenatcheeworld.com/news/2013/apr/26/cybertheft-heists-1-million-from-leavenworth/",
+  "attribute": {
+    "integrity": {
+      "notes": "$1.03 million in fraudulent ACH transfers.",
+      "variety": [
+        "Fraudulent transaction"
+      ]
+    },
+    "confidentiality": {
+      "state": [
+        "Stored"
+      ],
+      "data": [
+        {
+          "variety": "Credentials"
+        },
+        {
+          "variety": "Bank"
+        }
+      ],
+      "notes": "",
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "ACH Fraud",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "The Chelan County treasurer says hackers stole more than $1 million from an electronic bank account held by a Leavenworth hospital.  Treasurer David Griffiths\u2019 office noticed Monday that three unauthorized transaction files had been logged the previous Friday, April 19.  The Wenatchee World reports that the files moved more than $1 million out of a public hospital district account to 96 different bank accounts, most in the Midwest and East.",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 26,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint666",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Other"
+      }
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Cascade Medical Center",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 9900000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "WA",
+      "employee_count": "101 to 1000",
+      "industry": "622110"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "month": 4,
+      "year": 2013
+    },
+    "investigation": {
+      "month": 4,
+      "day": 19,
+      "year": 2013
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "Unknown"
+      }
+    ]
+  }
+}

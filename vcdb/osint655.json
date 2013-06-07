@@ -1,0 +1,107 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint655",
+  "reference": "http://healthitsecurity.com/2013/02/19/heyman-hospicecare-reports-patient-data-breach/#.USO4ZYPDtFY.twitter, http://www.healthcareitnews.com/news/georgia-hipaa-breach-after-laptop-stolen",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "amount": 2000,
+          "variety": "Personal"
+        }
+      ],
+      "data_total": 2000,
+      "data_disclosure": "Potentially"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Heyman HospiceCare, Ga., experienced a familiar plot on Jan. 4 when an employee left a non-encrypted laptop in their car that contained patient names, addresses, phone numbers, birth dates, Social Security numbers and insurance policy numbers and the device was stolen  Potentially-affected patients\u2019 time of treatment may range from July 1, 2006, and Jan. 3, 2013, but the report doesn\u2019t detail how many patients were impacted. ",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 15,
+        "year": 2013
+      }
+    },
+    "f500": "N",
+    "master_id": "osint655",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Heyman HospiceCare",
+      "country": "United States",
+      "notes": "",
+      "state": "GA",
+      "employee_count": "Unknown",
+      "industry": "623110"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "month": 1,
+      "day": 4,
+      "year": 2013
+    },
+    "investigation": {
+      "month": 1,
+      "year": 2013
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  }
+}

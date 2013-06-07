@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint585",
+  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=22947 ",
   "attribute": {
     "confidentiality": {
       "notes": "Personal data of over 400 individuals to 60 employees in error, but did not contain sensitive personal data as defined by the Act. ",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,21 +16,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 400
+      "data_total": 400,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Email]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "One of the data controller\u2019s employees had emailed a spreadsheet containing the personal data of over 400 individuals to 60 employees in error.",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "Y",
     "master_id": "osint585",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -76,9 +66,9 @@
         "amount": 21000000000
       },
       "country": "United Kingdom",
-      "industry": "561320",
+      "notes": "",
       "employee_count": "25001 to 50000",
-      "notes": ""
+      "industry": "561320"
     }
   ],
   "timeline": {
@@ -89,7 +79,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Email]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

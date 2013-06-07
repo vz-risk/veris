@@ -1,0 +1,101 @@
+{
+  "impact": {
+    "overall_rating": ""
+  },
+  "incident_id": "osint681",
+  "reference": "http://storify.com/xdamman/sncb-europe-leaks-1-4m-personal-data-of-its-custom, http://storify.com/xdamman/sncbgate-nmbsgate, http://www.huntonprivacyblog.com/2013/04/articles/belgian-privacy-commission-refers-data-breach-case-to-public-prosecutor/",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data": [
+        {
+          "amount": 1400000,
+          "variety": "Personal"
+        }
+      ],
+      "data_total": 1400000,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "SNCB Europe put by mistake on their public HTTP server a text file with 1.4M records of their customers. Including name, address, email, birthdate, sexe, even phone numbers in some cases. That file got indexed by Google and Bing and a user found it and posted the link on a forum. ",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "year": 2012
+      }
+    },
+    "f500": "N",
+    "master_id": "osint681",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Unknown"
+      ],
+      "notes": "",
+      "role": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "notes": "",
+      "victim_id": "National Belgian Railway Company",
+      "industry": "482",
+      "employee_count": "Unknown",
+      "country": "Belgium"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "month": 12,
+      "year": 2012
+    },
+    "investigation": {
+      "month": 12,
+      "year": 2012
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
+  "asset": {
+    "notes": "",
+    "assets": [
+      {
+        "variety": "S - Database"
+      }
+    ]
+  }
+}

@@ -3,6 +3,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint586",
+  "security_compromise": "Confirmed",
   "reference": "http://www.abajournal.com/news/article/suit_claims_ex-partner_installed_software_allowing_continued_access_to_law_/",
   "attribute": {
     "integrity": {
@@ -25,28 +26,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Privilege abuse",
-        "Data mishandling"
-      ]
-    },
-    "malware": {
-      "variety": [
-        "Other"
-      ],
-      "vector": [
-        "Direct install"
-      ],
-      "name": "",
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Lawyer installed Dropbox on corporate devices and accessed files after moving to another firm.",
   "source_id": "osint",
@@ -58,17 +37,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 13,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint586",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 13,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -104,12 +83,12 @@
       "unit": "Minutes"
     },
     "incident": {
-      "year": 2012,
-      "month": 1
+      "month": 1,
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
-      "month": 2
+      "month": 2,
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -121,7 +100,28 @@
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse",
+        "Data mishandling"
+      ]
+    },
+    "malware": {
+      "vector": [
+        "Direct install"
+      ],
+      "cve": "",
+      "name": "",
+      "variety": [
+        "Other"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",

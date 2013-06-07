@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint223",
+  "security_compromise": "Confirmed",
   "reference": "http://www.huffingtonpost.com/2012/04/07/virgin-atlantic-employee-resigns-after-allegedly-revealing-celebrity-passengers_n_1409679.html",
   "attribute": {
     "confidentiality": {
@@ -19,20 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "This involved disclosure of data to paparazzi.",
-      "vector": [
-        "Physical access",
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse",
-        "Data mishandling"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A Virgin Atlantic employee has resigned following allegations she routinely fed information about the airline's celebrity clientele \u2013 from Madonna to Sienna Miller \u2013 to a paparazzi agency.  The employee was a junior member of the team that looks after high-profile clients, Virgin said Friday. She quit Thursday before reports published in the Guardian and the Press Gazette alleged that she had passed the booking information of more than 60 celebrities on to the Big Pictures photo agency.  Among those allegedly targeted: Britain's Princess Beatrice; singers Madonna and Rihanna; actors Charlize Theron, Kate Winslet, Daniel Radcliffe and Miller; comedians Sacha Baron Cohen and Russell Brand; and a slew of U.K. celebrities and sports figures.",
   "source_id": "osint",
@@ -44,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 13,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint223",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 13,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -79,9 +66,9 @@
         "amount": 3810000000
       },
       "country": "United Kingdom",
-      "industry": "481111",
+      "notes": "",
       "employee_count": "1001 to 10000",
-      "notes": ""
+      "industry": "481111"
     }
   ],
   "timeline": {
@@ -92,8 +79,21 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "This involved disclosure of data to paparazzi.",
+      "vector": [
+        "Physical access",
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse",
+        "Data mishandling"
+      ]
+    }
+  },
+  "discovery_method": "Ext - unrelated party",
   "asset": {
     "notes": "",
     "assets": [

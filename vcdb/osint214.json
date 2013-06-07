@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint214",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=9966; http://www.sellersburgrehab.com/our-center/in-the-news/?id=2147531586 February 13, 2013",
   "attribute": {
     "confidentiality": {
       "notes": "Information on the tapes included diagnosis, social security numbers, clinical and financial information such as address, date of birth, insurance number, dates that services were received from Kindred, discharge location, activities of daily living, collections letters, medications received and bank account information.",
-      "data_disclosure": "Unknown",
       "data": [
         {
           "variety": "Bank"
@@ -25,23 +25,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1504
+      "data_total": 1504,
+      "data_disclosure": "Unknown"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim secure area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A safe containing tapes with patient information was stolen.  ",
   "source_id": "osint",
@@ -53,15 +41,15 @@
         "data_subject": "Patient"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint214",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint214",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -92,20 +80,32 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 6,
       "day": 1,
-      "month": 6
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 6,
       "day": 4,
-      "month": 6
+      "year": 2012
     },
     "discovery": {
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim secure area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

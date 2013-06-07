@@ -33,6 +33,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint283",
+  "security_compromise": "Confirmed",
   "reference": "http://www.kptv.com/story/16997177/former-burger-king-employee-accused-of-stealing-credit-card-bank-information (20130215)",
   "attribute": {
     "confidentiality": {
@@ -49,16 +50,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "vector": [
-        "Physical access"
-      ],
-      "variety": [
-        "Embezzlement"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "restaurant employee uses skimmer to copy customer credit card information and make fraudulent purchases",
   "source_id": "osint",
@@ -70,17 +61,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 22,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint283",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 22,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -126,8 +117,17 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "vector": [
+        "Physical access"
+      ],
+      "variety": [
+        "Embezzlement"
+      ]
+    }
+  },
+  "discovery_method": "Ext - fraud detection",
   "asset": {
     "assets": [
       {

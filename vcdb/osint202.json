@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint202",
+  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=9779",
   "attribute": {
     "confidentiality": {
       "notes": "The USB memory chip contained information, including names, home addresses, telephone numbers, e-mail addresses, ID numbers, dates of birth, driver\u2019s license numbers, social security numbers, dental information and dental insurance information of some of our patients.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Classified"
@@ -22,21 +22,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1112
+      "data_total": 1112,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "The patients that were affected were patients at River Arch Dental and Hammer Square Dental.  ",
-  "action": {
-    "error": {
-      "notes": " [through Mail]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "While upgrading to a new imaging and management software system a violation of the policies and procedures in exporting the data occurred.  ",
   "source_id": "osint",
@@ -48,17 +38,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 16,
-        "month": 7
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint202",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 7,
+        "day": 16,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -90,20 +80,30 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 10,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 5,
       "day": 14,
-      "month": 5
+      "year": 2012
     },
     "discovery": {
       "unit": "Days"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Mail]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

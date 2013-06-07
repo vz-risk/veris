@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint441",
+  "security_compromise": "Confirmed",
   "reference": "http://www.databreachtoday.com/virus-causes-nissan-data-breach-a-4698; http://nissannews.com/en-US/nissan/usa/releases/statement-nissan-is-taking-actions-to-protect-and-inform-employees-and-customers-following-an-intrusion-into-the-company-s-global-network-systems?la=1&download_url=%2Fen-US%2Fnissan%2Fusa%2Freleases%2Fdb7532f4-1e6e-4b5c-bc51-54f07b4dc502%2Fdownload%2F825faf56-0ccf-4f70-8210-394656dadd32 ",
   "attribute": {
     "integrity": {
@@ -24,17 +25,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "malware": {
-      "vector": [
-        "Direct install"
-      ],
-      "name": "",
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Malware placed on Nissan Motor Co.'s network allowed user IDs and hashed passwords to be transmitted.",
   "source_id": "osint",
@@ -46,17 +36,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 23,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint441",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 23,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -90,13 +80,23 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 13,
-      "month": 4
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "malware": {
+      "vector": [
+        "Direct install"
+      ],
+      "name": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

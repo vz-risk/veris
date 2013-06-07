@@ -13,11 +13,11 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint594",
+  "security_compromise": "Confirmed",
   "reference": "http://www.nbcnews.com/id/47120697/#.UVBP0oVLGws http://news.emory.edu/stories/2012/04/ehc_missing_data/campus.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 315000,
@@ -31,7 +31,8 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 315000
+      "data_total": 315000,
+      "data_disclosure": "Yes"
     },
     "availability": {
       "duration": {
@@ -44,17 +45,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Backup tapes discovered missing from storage location. Data resident on tapes included SSN and medical information on 315K patients. ",
   "source_id": "osint",
@@ -66,17 +56,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint594",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -112,12 +102,12 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012,
-      "month": 2
+      "month": 2,
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
-      "month": 4
+      "month": 4,
+      "year": 2012
     },
     "compromise": {
       "unit": "NA"
@@ -129,7 +119,17 @@
       "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "notes": "",

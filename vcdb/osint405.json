@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint405",
+  "security_compromise": "Confirmed",
   "reference": "http://www.clinical-innovation.com/topics/privacy-security/lost-mobile-device-impacts-1800-home-infusion-patients, http://hamptonroads.com/2012/12/uva-med-center-warns-potential-privacy-breach ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1800,
@@ -21,21 +21,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1800
+      "data_total": 1800,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "Unknown",
-      "vector": [
-        "Carelessness"
-      ],
-      "variety": [
-        "Loss"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The University of Virginia Medical Center is warning patients that an electronic device containing their medical and personal information is missing.  The handheld device was used by on-call pharmacists at Continuum Home Infusion. It went missing around Oct. 5.   Hospital officials say in a statement that the device might have contained patients' names, addresses, diagnoses and medications, along with some Social Security numbers that also are health insurance identification numbers.",
   "source_id": "osint",
@@ -47,17 +37,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 30,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint405",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 30,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -89,17 +79,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 10,
       "day": 5,
-      "month": 10
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 10,
       "day": 5,
-      "month": 10
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "Unknown",
+      "vector": [
+        "Carelessness"
+      ],
+      "variety": [
+        "Loss"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint632",
+  "security_compromise": "Confirmed",
   "reference": "",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 908,
@@ -17,23 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 908
+      "data_total": 908,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "HHS Breach Tool",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Unknown"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Stolen desktop computer puts 908 records at risk.",
   "source_id": "osint",
@@ -45,17 +33,17 @@
         "data_subject": "Unknown"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 7,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint632",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 7,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -86,17 +74,29 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 6,
       "day": 15,
-      "month": 6
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 10,
       "day": 1,
-      "month": 10
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint425",
+  "security_compromise": "Confirmed",
   "reference": "http://www.attorneygeneral.gov/uploadedFiles/Crime/IFS/April%20Newsletter%20Ins%20Co.pdf; http://ujsportal.pacourts.us/DocketSheets/CPReport.ashx?docketNumber=CP-65-CR-0001648-2010; http://triblive.com/x/pittsburghtrib/news/westmoreland/s_734327.html#axzz2LTUxWJYx",
   "attribute": {
     "confidentiality": {
@@ -25,19 +26,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Tampering"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Dr. Ferguson, Jr. was arrested for writing numerous prescriptions in the name of two of his employees to be filed at various pharmacies.  ",
   "source_id": "osint",
@@ -49,17 +37,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2011,
-        "day": 28,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "U",
     "master_id": "osint425",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 28,
+        "year": 2011
+      }
     }
   },
   "actor": {
@@ -91,17 +79,29 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2006,
+      "month": 7,
       "day": 27,
-      "month": 7
+      "year": 2006
     },
     "investigation": {
-      "year": 2010,
+      "month": 3,
       "day": 19,
-      "month": 3
+      "year": 2010
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Tampering"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

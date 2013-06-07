@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint159",
+  "security_compromise": "Confirmed",
   "reference": "http://www.mydailyregister.com/view/full_story/17244934/article-City-computers-possibly-hacked",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The City of Point Pleasant may\u2019ve been hacked.  According to a press release from Mayor Brian Billings on Friday morning, the City of Point Pleasant was notified from an outside agency of a potential security breach of its computer system. Billings\u2019 statement said the apparent breach was originated from an outside source.  Upon learning of the potential breach, city officials immediately contacted the West Virginia State Police who began an official investigation into the matter.",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Unknown"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 20,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint159",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 20,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -88,8 +78,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - law enforcement",
   "asset": {
     "assets": [
       {

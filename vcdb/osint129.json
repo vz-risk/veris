@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint129",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/wine-library-20120124.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,18 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Between October 20,2011 and November 7,2011, customer personal information including name, CCN with CVV and expiration date, username, password, address, was taken from the website by computer hackers based in China.  For some customers, this included multiple credit cards.",
   "source_id": "osint",
@@ -45,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 24,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint129",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 24,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -97,9 +86,9 @@
       "year": 2011
     },
     "investigation": {
-      "year": 2012,
+      "month": 10,
       "day": 20,
-      "month": 10
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -111,8 +100,19 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - law enforcement",
   "asset": {
     "notes": "",
     "assets": [

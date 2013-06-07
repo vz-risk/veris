@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint83",
+  "security_compromise": "Suspected",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/federal-network-20130116.pdf ",
   "attribute": {
     "integrity": {
@@ -24,17 +25,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "malware": {
-      "vector": [
-        "Unknown"
-      ],
-      "name": "",
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Malware infected computer exposes names and SSNs of employees (current/former) and independent contractors.  ",
   "source_id": "osint",
@@ -46,17 +36,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2013,
-        "day": 19,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint83",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 19,
+        "year": 2013
+      }
     }
   },
   "actor": {
@@ -91,14 +81,24 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
-      "month": 12
+      "month": 12,
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Suspected",
+  "action": {
+    "malware": {
+      "vector": [
+        "Unknown"
+      ],
+      "name": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

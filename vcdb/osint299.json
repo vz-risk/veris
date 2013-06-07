@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint299",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/acumentrics-20120611.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,18 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "on the morning of Monday, May 7, 2012 the company noticed suspicious activity in payroll system logs. The company, with the assistance of its payroll vendor, ADP payroll services, conducted an investigation. The investigation revealed that the breach occurred sometime between close of business on Friday, May 4, 2012 and the opening of business on Monday, May 7, 2012. An unknown person gain access to the company's payroll system, exposing the way profiles used by the system. These records contain the following information: name, address, Social Security numbers, dates of birth and, for direct depositors, thinking routing and account information.",
   "source_id": "osint",
@@ -45,17 +34,17 @@
         "data_subject": "Partner"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 17,
-        "month": 5
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint299",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 17,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -85,18 +74,29 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 4,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 5,
       "day": 7,
-      "month": 5
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - log review",
   "asset": {
     "notes": "",
     "management": true,

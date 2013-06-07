@@ -33,11 +33,11 @@
     "overall_rating": "Painful"
   },
   "incident_id": "osint270",
+  "security_compromise": "Confirmed",
   "reference": "http://www.thisisnorthdevon.co.uk/Children-8217-s-centre-loses-sensitive-family/story-15177841-detail/story.html#axzz2Kz443YHQ (20130215) http://business.highbeam.com/438499/article-1P2-30783753/centre-may-face-pounds-500000-fine (20130215) http://www.accessmylibrary.com/article-1G1-307262910/children-charity-says-lessons.html (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 45,
@@ -47,33 +47,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 45
+      "data_total": 45,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "It is against company policy to copy personal information of customers to unapproved devices or to take such data off premises.",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Data mishandling"
-      ]
-    },
-    "physical": {
-      "notes": "",
-      "vector": [
-        "Uncontrolled location"
-      ],
-      "location": [
-        "Unknown"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "employee improperly copied sensitive personal information to a usb device which was then stolen along with her handbag.",
   "source_id": "osint",
@@ -85,17 +63,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 9,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint270",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 9,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -135,9 +113,9 @@
         "amount": 316500000
       },
       "country": "United Kingdom",
-      "industry": "813211",
+      "notes": "",
       "employee_count": "Unknown",
-      "notes": ""
+      "industry": "813211"
     }
   ],
   "timeline": {
@@ -148,9 +126,9 @@
       "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 2,
       "day": 4,
-      "month": 2
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -162,8 +140,30 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "notes": "It is against company policy to copy personal information of customers to unapproved devices or to take such data off premises.",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Data mishandling"
+      ]
+    },
+    "physical": {
+      "notes": "",
+      "vector": [
+        "Uncontrolled location"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "personal": true,
     "notes": "",

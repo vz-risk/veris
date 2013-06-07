@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint73",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/database-designs-20120828.pdf ",
   "attribute": {
     "confidentiality": {
@@ -19,19 +20,6 @@
     }
   },
   "notes": "The source document is from the point of view of the partner, Database Designs, Inc.  However the two organizations whose data they lost are listed in the Victim list.",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Partner facility"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "A laptop and flash drive was stolen while in the custody of an employee.  The laptop contained data on business clients.  ",
   "source_id": "osint",
@@ -43,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 28,
-        "month": 8
-      }
+    "asset": {
+      "total": "Yes"
     },
     "f500": "N",
     "master_id": "osint73",
-    "asset": {
-      "total": "Yes"
+    "timeline": {
+      "notification": {
+        "month": 8,
+        "day": 28,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -99,22 +87,34 @@
     {
       "victim_id": "Database Designs Associates, Inc.",
       "industry": "5112",
-      "country": "Unknown",
+      "employee_count": "Unknown",
       "state": "",
-      "employee_count": "Unknown"
+      "country": "Unknown"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 7,
       "day": 17,
-      "month": 7
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Partner facility"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "assets": [

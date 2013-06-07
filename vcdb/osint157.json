@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint157",
+  "security_compromise": "Confirmed",
   "reference": "http://www.dailymail.co.uk/news/article-2086866/Eight-officers-resign-illegal-searches-dozens-people-using-police-files.html",
   "attribute": {
     "confidentiality": {
@@ -19,18 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Knowledge abuse",
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Eight police staff have lost their jobs after illegally accessing the confidential records of dozens of people on the Police National Computer.  Of the eight, one police officer and one community support officer (PCSO) are facing criminal charges after an investigation by Essex Police found them guilty of gross misconduct. Another PCSO has been cautioned.  All eight are alleged to have accessed the personal records of members of the public and passed on the information to people outside the force.",
   "source_id": "osint",
@@ -42,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 14,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint157",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 14,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -73,9 +62,9 @@
     {
       "victim_id": "Essex Police Department",
       "notes": "",
-      "country": "United Kingdom",
+      "employee_count": "Unknown",
       "industry": "92219",
-      "employee_count": "Unknown"
+      "country": "United Kingdom"
     }
   ],
   "timeline": {
@@ -86,7 +75,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Knowledge abuse",
+        "Privilege abuse"
+      ]
+    }
+  },
   "discovery_method": "Other",
   "asset": {
     "notes": "",

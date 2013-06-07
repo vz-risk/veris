@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint142",
+  "security_compromise": "Confirmed",
   "reference": "http://www.news-leader.com/article/20120228/NEWS06/302280028/springfield-city-website-hacked-data-break-citizens-identity-protection?odyssey=mod|newswell|text|Special%20Reports|s&nclick_check=1",
   "attribute": {
     "confidentiality": {
       "notes": "Scott confirmed those affected were private citizens \u2014 not city employees \u2014 but she declined to say why the city had their information.",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Unknown"
@@ -16,21 +16,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 2100
+      "data_total": 2100,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Springfield officials say the personal information of about 2,100 citizens may have been obtained by hackers when the city\u2019s website was \u201ccompromised\u201d Feb. 17, a Friday.  Some functions have been turned off on the city\u2019s website, springfieldmo.gov, as authorities investigate the apparent breach, said city spokeswoman, Cora Scott.  Scott said officials are notifying the 2,100 individuals who may have been victimized.  She said those who were at risk will receive a letter offering a one-year subscription with an identity theft protection company.",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 28,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint142",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 28,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -83,15 +73,25 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 2,
       "day": 17,
-      "month": 2
+      "year": 2012
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

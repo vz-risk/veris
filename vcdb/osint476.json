@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint476",
+  "security_compromise": "Confirmed",
   "reference": "http://www.newsnet5.com/dpp/news/local_news/cleveland_metro/laptop-stolen-from-cuyahoga-county-board-of-developmental-disabilities-may-compromise-600-people ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 613,
@@ -17,23 +17,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 613
+      "data_total": 613,
+      "data_disclosure": "Potentially"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal vehicle"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Cuyahoga County Board of Developmental Disabilities has notified 613 people who receive its services that their names and birthdates may have been on the hard drive of a laptop stolen from an employee\u2019s car in North Royalton.  The laptop itself was password protected. The Board of DD believes that, although the information on the laptop could be used ",
   "source_id": "osint",
@@ -45,17 +33,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 29,
-        "month": 11
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint476",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 11,
+        "day": 29,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,8 +80,20 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

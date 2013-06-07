@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint4",
+  "security_compromise": "Confirmed",
   "reference": "http://www.thetelegram.com/News/Local/2012-02-03/article-2885584/Workplace-safety-commission-reports-privacy-breach/1",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 12,
@@ -47,20 +47,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 12
+      "data_total": 12,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "misuse": {
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Privilege abuse"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Workplace Health, Safety and Compensation\u2008Commission is investigating a privacy breach by an employee.  The commission announced today that an employee accessed 12 injured workers\u2019 records without a justifiable work purpose over a three-year period.",
   "source_id": "osint",
@@ -72,17 +63,17 @@
         "data_subject": ""
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 3,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint4",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 3,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -128,8 +119,17 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "misuse": {
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Privilege abuse"
+      ]
+    }
+  },
+  "discovery_method": "Int - IT audit",
   "asset": {
     "assets": [
       {

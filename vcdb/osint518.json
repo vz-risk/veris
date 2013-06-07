@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint518",
+  "security_compromise": "Confirmed",
   "reference": "http://www.voxy.co.nz/politics/another-govt-privacy-breach-nz-first/5/143158 ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1,
@@ -17,21 +17,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1
+      "data_total": 1,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Mail]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misdelivery"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Corrections spokesperson Asenati Lole-Taylor says the latest breach happened when an individual who wanted to visit an inmate was sent official forms to apply for permission.  \"This individual was sent an envelope with the official forms - but the envelope also contained the personal details of another prisoner who was a complete stranger and details of that prisoner\u2019s visitor.  \"This is an example of Corrections systems failing a visitor, a prisoner and the taxpayers who fund the system\".  Mrs Lole-Taylor says these mistakes and privacy breaches are either the result of carelessness or individuals trying to work in a dysfunctional system.",
   "source_id": "osint",
@@ -43,17 +33,17 @@
         "data_subject": "Other"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 11,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint518",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 11,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -73,9 +63,9 @@
     {
       "victim_id": "New Zealand Corrections",
       "notes": "",
-      "country": "New Zealand",
+      "employee_count": "Unknown",
       "industry": "9221",
-      "employee_count": "Unknown"
+      "country": "New Zealand"
     }
   ],
   "timeline": {
@@ -86,8 +76,18 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "error": {
+      "notes": " [through Mail]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misdelivery"
+      ]
+    }
+  },
+  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

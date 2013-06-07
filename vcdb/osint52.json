@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint52",
+  "security_compromise": "Confirmed",
   "reference": "www.news.gov.hk/en/categories/admin/html/2013/01/20130115_162131.shtml",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,21 +16,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 8505
+      "data_total": 8505,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": " [through Web]",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Publishing error"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "The Office of the Privacy Commissioner for Personal Data has discovered that sensitive personal information of students has inadvertently been exposed online, potentially affecting as many as 8,505 students from 11 local schools, including tertiary institutions.",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 15,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint52",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 15,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -72,9 +62,9 @@
     {
       "victim_id": "Hong Kong Institute of Education\u2019s School of Continuing & Professional Education",
       "notes": "",
-      "country": "Hong Kong",
+      "employee_count": "Unknown",
       "industry": "6111",
-      "employee_count": "Unknown"
+      "country": "Hong Kong"
     }
   ],
   "timeline": {
@@ -85,7 +75,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": " [through Web]",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Publishing error"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

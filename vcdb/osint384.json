@@ -3,6 +3,7 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint384",
+  "security_compromise": "Confirmed",
   "reference": "http://www.gamepolitics.com/2012/01/14/coveritlive-warns-users-possible-security-breach#.USPaFeip1Tg",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "\"CoveritLive recently discovered that certain proprietary data files were accessed without authorization starting on or about January 7, 2012. We have not yet determined if, or to what extent, CoveritLive account information (i.e., usernames, email addresses and/or passwords) was accessed. We do know, however, that no financial account information has been compromised.\"",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 13,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint384",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 13,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -77,9 +67,9 @@
     {
       "victim_id": "CoveritLive",
       "notes": "",
-      "country": "Canada",
+      "employee_count": "11 to 100",
       "industry": "518",
-      "employee_count": "11 to 100"
+      "country": "Canada"
     }
   ],
   "timeline": {
@@ -87,9 +77,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 1,
       "day": 7,
-      "month": 1
+      "year": 2012
     },
     "investigation": {
       "year": 2012
@@ -104,7 +94,17 @@
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

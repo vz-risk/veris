@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint151",
+  "security_compromise": "Confirmed",
   "reference": "http://www.therecord.com/news/local/article/650845--computers-with-personal-info-stolen-from-school-board ",
   "attribute": {
     "confidentiality": {
@@ -19,19 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Victim work area"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Nine computers stolen from the Waterloo Region District School Board's education centre in Kitchener on Dec. 1 contained personal information about individuals.  No details on what type of personal information was contained on the laptops, used by staff, were released by the Board on Friday.  The number of people or families with information at risk was not released.  The board says the computers conform to industry standards and highly specialized knowledge would be needed to bypass security to get at the information.",
   "source_id": "osint",
@@ -43,17 +31,17 @@
         "data_subject": "Student"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 7,
-        "month": 1
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint151",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 1,
+        "day": 7,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -76,24 +64,36 @@
     {
       "victim_id": "Waterloo Region District School Board",
       "notes": "",
-      "country": "Canada",
+      "employee_count": "101 to 1000",
       "industry": "611110",
-      "employee_count": "101 to 1000"
+      "country": "Canada"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 11,
       "day": 30,
-      "month": 11
+      "year": 2011
     },
     "investigation": {
-      "year": 2011,
+      "month": 12,
       "day": 1,
-      "month": 12
+      "year": 2011
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Victim work area"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

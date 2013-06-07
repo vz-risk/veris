@@ -1,0 +1,154 @@
+{
+  "impact": {
+    "loss": [
+      {
+        "rating": "Unknown",
+        "variety": "Asset and fraud"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Brand damage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Business disruption"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Operating costs"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Legal and regulatory"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Competitive advantage"
+      },
+      {
+        "rating": "Unknown",
+        "variety": "Response and recovery"
+      }
+    ],
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "osint709",
+  "reference": "http://palmdesert.patch.com/groups/police-and-fire/p/police-man-installs-skimming-devices-in-la-quinta-atm-tries-to-use-stolen-info-in-palm-desert (20130603) http://palmdesert.patch.com/groups/police-and-fire/p/update-palm-desert-fraud-suspect-targeted-68-chase-bank-customers-prosecutor-alleges (20130603)",
+  "attribute": {
+    "confidentiality": {
+      "notes": "",
+      "state": [
+        "Transmitted unencrypted"
+      ],
+      "data": [
+        {
+          "amount": 8,
+          "variety": "Bank"
+        }
+      ],
+      "data_total": 8,
+      "data_disclosure": "Yes"
+    }
+  },
+  "notes": "",
+  "discovery_method": "Unknown",
+  "schema_version": "1.0",
+  "summary": "Man installs ATM skimming devices to steal customer payment card info",
+  "security_compromise": "Confirmed",
+  "plus": {
+    "timeline": {
+      "notification": {
+        "month": 5,
+        "day": 16,
+        "year": 2013
+      }
+    },
+    "f500": "Y",
+    "master_id": "osint709",
+    "asset": {
+      "total": "No"
+    },
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Customer"
+      }
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "JPMorgan Chase",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 108000000000
+      },
+      "country": "United States",
+      "notes": "",
+      "state": "CA",
+      "employee_count": "Over 100000",
+      "industry": "522110"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Hours"
+    },
+    "incident": {
+      "month": 5,
+      "day": 12,
+      "year": 2012
+    },
+    "investigation": {
+      "month": 5,
+      "day": 14,
+      "year": 2012
+    },
+    "compromise": {
+      "unit": "Hours"
+    },
+    "containment": {
+      "unit": "Days"
+    },
+    "discovery": {
+      "unit": "Hours"
+    }
+  },
+  "source_id": "osint",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Other"
+      ],
+      "variety": [
+        "Tampering"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - ATM"
+      }
+    ]
+  }
+}

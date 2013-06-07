@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint127",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/valve-corporation-20120208.pdf ",
   "attribute": {
     "confidentiality": {
@@ -22,17 +23,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Steam game forums hacked and defaced.  Intruders obtained a copy of a database with information about Steam transactions between 2004 and 2008.  This database contains user names, e-mail addresses, encrypted billing addresses and encrypted credit card information. We do not have any evidence that the encryption on credit card numbers and billing addresses has been compromised.",
   "source_id": "osint",
@@ -44,17 +34,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 8,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint127",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 8,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -89,16 +79,26 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2011,
+      "month": 11,
       "day": 6,
-      "month": 11
+      "year": 2011
     },
     "investigation": {
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

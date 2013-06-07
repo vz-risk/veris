@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint607",
+  "security_compromise": "Confirmed",
   "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Internal"
@@ -16,21 +16,11 @@
       "state": [
         "Stored"
       ],
-      "data_total": 4933
+      "data_total": 4933,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "E-mail addresses and hashed passwords dumped on the Internet",
   "source_id": "osint",
@@ -42,17 +32,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 1,
-        "month": 2
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint607",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 2,
+        "day": 1,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -75,9 +65,9 @@
     {
       "victim_id": "Obiblio",
       "notes": "Obiblio.fr is a site for sharing documents for students.",
-      "country": "Denmark",
+      "employee_count": "Unknown",
       "industry": "51919",
-      "employee_count": "Unknown"
+      "country": "Denmark"
     }
   ],
   "timeline": {
@@ -88,7 +78,17 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "assets": [

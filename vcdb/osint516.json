@@ -3,11 +3,11 @@
     "overall_rating": ""
   },
   "incident_id": "osint516",
+  "security_compromise": "Confirmed",
   "reference": "http://www.turnto23.com/news/your-neighborhood/east-county/kern-medical-center-resident-physician-loses-1-500-patient-records, http://oag.ca.gov/system/files/English%20Letter.pdf? ",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1431,
@@ -17,23 +17,11 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 1431
+      "data_total": 1431,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "physical": {
-      "vector": [
-        "Unknown"
-      ],
-      "location": [
-        "Personal vehicle"
-      ],
-      "variety": [
-        "Theft"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "Research documents were stolen from an employee's vehicle.  They contained confidential patient information.  Officials said the resident took home the records in a computer bag, which she left in her car parked at her apartment complex.  The records contained information, including names, health information and test results, and possible insurance information, officials said.  There were no addresses, Social Security numbers or financial information in the records, officials said.",
   "source_id": "osint",
@@ -45,17 +33,17 @@
         "data_subject": "Patient"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 2,
-        "month": 3
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint516",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 3,
+        "day": 2,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -92,8 +80,20 @@
       "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
+  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

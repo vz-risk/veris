@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint365",
+  "security_compromise": "Confirmed",
   "reference": "http://pastebin.com/AGBywqf5 (20130219) http://www.cyberwarnews.info/2012/05/30/full-database-from-bzpower-com-leaked/ (20130219) http://www.cyberwarnews.info/2012/05/28/bzpower-com-bionicle-hacked-again-900-accounts-leaked/ (20130219)",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 9000,
@@ -47,22 +47,11 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 9000
+      "data_total": 9000,
+      "data_disclosure": "Yes"
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "SSI injection"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Hackers use SQL injection to dump non-public member information and post it to pastebin.",
   "source_id": "osint",
@@ -74,15 +63,15 @@
         "data_subject": "Customer"
       }
     },
+    "asset": {
+      "total": "No"
+    },
+    "f500": "N",
+    "master_id": "osint365",
     "timeline": {
       "notification": {
         "year": 2012
       }
-    },
-    "f500": "N",
-    "master_id": "osint365",
-    "asset": {
-      "total": "No"
     }
   },
   "actor": {
@@ -115,14 +104,14 @@
       "unit": "Minutes"
     },
     "incident": {
-      "year": 2012,
+      "month": 5,
       "day": 27,
-      "month": 5
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 5,
       "day": 27,
-      "month": 5
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -134,8 +123,19 @@
       "unit": "Minutes"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "SSI injection"
+      ]
+    }
+  },
+  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

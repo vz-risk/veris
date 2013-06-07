@@ -3,6 +3,7 @@
     "overall_rating": "Distracting"
   },
   "incident_id": "osint600",
+  "security_compromise": "Confirmed",
   "reference": "http://www.theregister.co.uk/2012/04/30/eukhost_billing_system_compromise/",
   "attribute": {
     "integrity": {
@@ -29,18 +30,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ],
-      "cve": ""
-    }
-  },
   "schema_version": "1.0",
   "summary": "Webhosting company's billing system was compromised via undisclosed web-based hacking action. ",
   "source_id": "osint",
@@ -52,17 +41,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 28,
-        "month": 4
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint600",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 4,
+        "day": 28,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -90,9 +79,9 @@
         "amount": 78000
       },
       "country": "United Kingdom",
-      "industry": "518210",
+      "notes": "",
       "employee_count": "1 to 10",
-      "notes": ""
+      "industry": "518210"
     }
   ],
   "timeline": {
@@ -100,14 +89,14 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012,
+      "month": 4,
       "day": 28,
-      "month": 4
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 4,
       "day": 28,
-      "month": 4
+      "year": 2012
     },
     "compromise": {
       "unit": "Unknown"
@@ -119,8 +108,19 @@
       "unit": "Hours"
     }
   },
-  "security_compromise": "Confirmed",
-  "discovery_method": "Unknown",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "cve": "",
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "discovery_method": "Int - log review",
   "asset": {
     "notes": "",
     "assets": [

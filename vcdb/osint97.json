@@ -3,6 +3,7 @@
     "overall_rating": ""
   },
   "incident_id": "osint97",
+  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/lexisnexis-20121206.pdf, http://www.atg.state.vt.us/assets/files/12%2012%2010%20LexusNexis%20Risk%20Solutions%20Security%20Breach%20Notice%20Ltr%20to%20consumer.pdf",
   "attribute": {
     "confidentiality": {
@@ -19,17 +20,6 @@
     }
   },
   "notes": "",
-  "action": {
-    "error": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Misconfiguration"
-      ]
-    }
-  },
   "schema_version": "1.0",
   "summary": "An error in a technical change made to a process used to generate reports caused certain sensitive PII to become unmasked and displayed in full on consumer's reports.  Sometimes this also affected others in the household of a claimant, for example.  ",
   "source_id": "osint",
@@ -41,17 +31,17 @@
         "data_subject": "Customer"
       }
     },
-    "timeline": {
-      "notification": {
-        "year": 2012,
-        "day": 6,
-        "month": 12
-      }
+    "asset": {
+      "total": "No"
     },
     "f500": "N",
     "master_id": "osint97",
-    "asset": {
-      "total": "No"
+    "timeline": {
+      "notification": {
+        "month": 12,
+        "day": 6,
+        "year": 2012
+      }
     }
   },
   "actor": {
@@ -84,17 +74,27 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 10,
       "day": 30,
-      "month": 10
+      "year": 2012
     },
     "investigation": {
-      "year": 2012,
+      "month": 11,
       "day": 5,
-      "month": 11
+      "year": 2012
     }
   },
-  "security_compromise": "Confirmed",
+  "action": {
+    "error": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Misconfiguration"
+      ]
+    }
+  },
   "discovery_method": "Unknown",
   "asset": {
     "notes": "",
