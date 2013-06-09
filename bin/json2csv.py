@@ -8,11 +8,11 @@ import glob
 import re
 
 # text file containing the full names of the fields
-fieldnames = "keynames-real.txt"
+fieldnames = "../keynames-real.txt"
 # the name of the output file - if exists, it will overwrite.
 outputFile = "veris.csv"
 # the filter to read in all the json files
-fileglob = "data/*.json"
+fileglob = "../vcdb/*.json"
 
 def getHeader(label):
     temp = re.sub("_", " ", label)
