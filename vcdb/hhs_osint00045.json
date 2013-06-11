@@ -19,7 +19,20 @@
     "master_id": "hhs_osint00045"
   },
   "actor": {
-    "unknown": {}
+    "external": {
+      "motive": [
+        "Unknown"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "role": [
+        "Malicious"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
   },
   "victim": [
     {
@@ -41,11 +54,22 @@
     }
   },
   "security_compromise": "Confirmed",
-  "action": {},
-  "asset": {
+  "action": {
+    "physical": {
+      "vector": [
+        "Unknown"
+      ],
+      "location": [
+        "Unknown"
+      ],
+      "variety": [
+        "Theft"
+      ]
+    }
+  },
     "assets": [
       {
-        "variety": "Unknown"
+        "variety": "M - Tapes"
       }
     ]
   }
