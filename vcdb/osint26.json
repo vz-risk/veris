@@ -4,7 +4,7 @@
   },
   "incident_id": "osint26",
   "security_compromise": "Confirmed",
-  "reference": "http://oag.ca.gov/system/files/Customer%20Notification_1.pdf? ",
+  "reference": "http://oag.ca.gov/system/files/Customer%20Notification_1.pdf?, http://www.expatica.com/fr/news/french-news/court-says-france-cannot-use-stolen-bank-data-for-searches_205420.html ",
   "attribute": {
     "confidentiality": {
       "state": [
