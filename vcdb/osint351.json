@@ -4,30 +4,30 @@
   },
   "incident_id": "osint351",
   "security_compromise": "Confirmed",
-  "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/data-breach-affects-more-than-14k-oregon-health-a-science-university-patients.html ",
+  "reference": "https://home.modernhealthcare.com/clickshare/authenticateUserSubscription.do?CSProduct=modernhealthcare&CSAuthReq=1:473495951274515:AID|IDAID=20130327/NEWS/303279953|ID=:C2FF4D8BD51E74E1D5A0488EF2F870AE&AID=20130327/NEWS/303279953&title=OHSU%20notifies%20patients%20of%20laptop%20theft%20&ID=&CSTargetURL=http%3A%2F%2Fwww.modernhealthcare.com%2Fapps%2Fpbcs.dll%2Flogin%3FAssignSessionID%3D473495951274515%26AID%3D20130327%2FNEWS%2F303279953, http://www.columbian.com/news/2013/mar/26/patients-records-surgeons-stolen-laptop/ ",
   "attribute": {
     "confidentiality": {
-      "notes": "The 200 were employees as well.",
+      "notes": "4,000 medical records with 17 including SSNs",
       "data": [
         {
-          "amount": 14300,
+          "amount": 4000,
           "variety": "Medical"
         },
         {
-          "amount": 200,
+          "amount": 17,
           "variety": "Personal"
         }
       ],
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 14300,
+      "data_total": 4000,
       "data_disclosure": "Potentially"
     }
   },
   "notes": "",
   "schema_version": "1.0",
-  "summary": "Oregon Health & Science University in Portland has announced that a USB drive storing information for approximately 14,300 patients, including 702 pediatric patients and about 200 OHSU employees, was stolen.  The USB was stolen during a burglary of an OHSU employee's home around July 4. According to the release, the employee accidently took the thumb drive home in a briefcase at the end of the day.  According to the release, the patient information on the USB drive includes names, dates of birth, phone numbers, addresses, OHSU medical record numbers and descriptions of patients' medical conditions. The staff information on the USB includes names, Social Security numbers, addresses and employment-related vaccination information.  The drive was used to back up data and is normally locked in a secure location on campus, according to the release.",
+  "summary": "Oregon Health & Science University in Portland is in the process of contacting about 4,000 patients after the theft of a surgeon's laptop containing some of their personal information. ",
   "source_id": "osint",
   "plus": {
     "attribute": {
@@ -44,9 +44,9 @@
     "master_id": "osint351",
     "timeline": {
       "notification": {
-        "month": 8,
-        "day": 1,
-        "year": 2012
+        "month": 3,
+        "day": 26,
+        "year": 2013
       }
     }
   },
@@ -56,7 +56,7 @@
         "Financial"
       ],
       "country": [
-        "Unknown"
+        "United States of America"
       ],
       "role": [
         "Malicious"
@@ -82,14 +82,14 @@
   ],
   "timeline": {
     "incident": {
-      "month": 7,
-      "day": 4,
-      "year": 2012
+      "month": ,
+      "day": ,
+      "year": 2013
     },
     "investigation": {
-      "month": 7,
-      "day": 4,
-      "year": 2012
+      "month": ,
+      "day": ,
+      "year": 2013
     }
   },
   "action": {
@@ -98,7 +98,7 @@
         "Unknown"
       ],
       "location": [
-        "Personal residence"
+        "Unknown"
       ],
       "variety": [
         "Theft"
@@ -109,7 +109,7 @@
   "asset": {
     "assets": [
       {
-        "variety": "M - Disk drive"
+        "variety": "U - Laptop"
       }
     ]
   }
