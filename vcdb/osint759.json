@@ -33,7 +33,7 @@
     "overall_rating": "Insignificant"
   },
   "incident_id": "osint759",
-  "reference": "http://dshs.wa.gov/mediareleases/2013/pr13011.shtml",
+  "reference": "http://dshs.wa.gov/mediareleases/2013/pr13011.shtml, http://www.king5.com/news/local/Laptop-containing-DSHS-clients-confidential-information-stolen-200642441.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
