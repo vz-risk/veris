@@ -4,7 +4,7 @@
   },
   "incident_id": "osint152",
   "security_compromise": "Confirmed",
-  "reference": "http://www.marbridgeconsulting.com/marbridgedaily/2012-01-05/article/52705/sql_injection_attack_exposes_sina_passwords ",
+  "reference": "http://www.marbridgeconsulting.com/marbridgedaily/2012-01-05/article/52705/sql_injection_attack_exposes_sina_passwords, http://www.scmagazine.com.au/News/349585,28-million-clear-text-passwords-found-after-tianya65279-hack.aspx ",
   "attribute": {
     "integrity": {
       "variety": [
