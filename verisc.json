@@ -1,263 +1,655 @@
 {
-    "description" : "VERIS Community Schema 1.1",
-    "type" : "object",
-    "properties" : {
-        "schema_version" : { "type" : "string", "required" : true },
-        "incident_id" : { "type" : "string", "required" : true },
-        "source_id" : { "type" : "string" },
-        "reference" : { "type" : "string" },
-        "security_compromise" : { "type" : "string", "required" : true },
-        "confidence" : { "type" : "string" },
-        "summary" : { "type" : "string" },
-        "related_incidents" : { "type" : "string" },
-        "notes" : { "type" : "string" },
-        "victim" : { "type" : "array",
-            "items" : { "type" : "object",
-                "properties" : {
-                    "victim_id" : { "type" : "string" },
-                    "industry" : { "type" : "string", "required" : true },
-                    "employee_count" : { "type" : "string", "required" : true },
-                    "country" : { "type" : "string", "required" : true },
-                    "state" : { "type" : "string" },
-                    "revenue" : { "type" : "object",
-                        "properties" : {
-                            "amount" : { "type" : "integer" },
-                            "iso_currency_code" : { "type" : "string" }
-                        }
-                    },
-                    "locations_affected" : { "type" : "integer" },
-                    "notes" : { "type" : "string" }
-                }
-            }
-        },
-        "actor" : {
-            "type" : "object", "required" : true,
-            "properties" : {
-                "external" : { "type" : "object",
-                    "properties" : {
-                        "motive" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "role" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "country" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "notes" : { "type" : "string" }
-                    }
-                },
-                "internal" : { "type" : "object",
-                    "properties" : {
-                        "motive" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "role" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "notes" : { "type" : "string" }
-                    }
-                },
-                "partner" : { "type" : "object",
-                    "properties" : {
-                        "motive" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "role" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "industry" : { "type" : "string" },
-                        "country" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "notes" : { "type" : "string" }
-                    }
-                },
-                "unknown" : { "type" : "object",
-                    "properties" : {
-                        "notes" : { "type" : "string" }
-                    }
-                }
-            }
-        },
-        "action" : { "type" : "object", "required" : true,
-            "properties" : {
-                "malware" : { "type" : "object",
-                    "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "cve" : { "type" : "string" },
-                        "name" : { "type" : "string" },
-                        "notes" : { "type" : "string" }
-                    }
-                },
-                "hacking" : { "type" : "object",
-                    "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "cve" : { "type" : "string" },
-                        "notes" : { "type" : "string" }
-                    }
-                },
-                "social" : { "type" : "object",
-                    "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "target" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "notes" : { "type" : "string" }
-                    }
-                },
-                "misuse" : { "type" : "object",
-                    "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "notes" : { "type" : "string" }
-                    }
-                },
-                "physical" : { "type" : "object",
-                    "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "location" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "notes" : { "type" : "string" }
-                    }
-                },
-                "error" : { "type" : "object",
-                    "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "vector" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "notes" : { "type" : "string" }
-                    }
-                },
-                "environmental" : { "type" : "object",
-                    "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "notes" : { "type" : "string" }
-                    }
-                },
-                "unknown" : { "type" : "object",
-                    "properties" : {
-                        "notes" : { "type" : "string" }
-                    }
-                }
-            }
-        },
-        "asset" : { "type" : "object",
-            "properties" : {
-                "assets" : { "type" : "array",
-                    "items" : { "type" : "object",
-                        "properties" : {
-                            "variety" : { "type" : "string", "required" : true },
-                            "amount" : { "type" : "integer" }
-                        }
-                    }
-                },
-                "personal" : { "type" : "boolean" },
-                "management" : { "type" : "boolean" },
-                "hosting" : { "type" : "boolean" },
-                "country" : { "type" : "string" },
-                "cloud" : { "type" : "string" },
-                "notes" : { "type" : "string" }
-            }
-        },
-        "attribute" : { "type" : "object", "required" : true,
-            "properties" : {
-                "confidentiality" : { "type" : "object",
-                    "properties" : {
-                        "data_disclosure" : { "type" : "string", "required" : true },
-                        "data_total" : { "type" : "integer" },
-                        "data" : { "type" : "array",
-                            "items" : { "type" : "object",
-                                "properties" : {
-                                    "variety" : { "type" : "string", "required" : true },
-                                    "amount" : { "type" : "integer" }
-                                }
-                            }
-                        },
-                        "state" : { "type" : "array", "items" : { "type" : "string" } },
-                        "notes" : { "type" : "string" }
-                    }
-                },
-                "integrity" : { "type" : "object",
-                    "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "notes" : { "type" : "string" }
-                    }
-                },
-                "availability" : { "type" : "object",
-                    "properties" : {
-                        "variety" : { "type" : "array", "required" : true, "items" : { "type" : "string", "required" : true } },
-                        "duration" : { "type" : "object",
-                            "properties" : {
-                                "unit" : { "type" : "string", "required" : true },
-                                "value" : { "type" : "number" }
-                            }
-                        },
-                        "notes" : { "type" : "string" }
-                    }
-                }
-            }
-        },
-        "timeline" : { "type" : "object", "required" : true,
-            "properties" : {
-                "incident" : { "type" : "object", "required" : true,
-                    "properties" : {
-                        "year" : {"type" : "integer", "required" : true },
-                        "month" : {"type" : "integer" },
-                        "day" : {"type" : "integer" },
-                        "time" : {"type" : "string" }
-                    }
-                },
-                "investigation" : { "type" : "object",
-                    "properties" : {
-                        "year" : {"type" : "integer", "required" : true },
-                        "month" : {"type" : "integer" },
-                        "day" : {"type" : "integer" }
-                    }
-                },
-                "compromise" : { "type" : "object",
-                    "properties" : {
-                        "unit" : { "type" : "string", "required" : true },
-                        "value" : { "type" : "number" }
-                    }
-                },
-                "exfiltration" : { "type" : "object",
-                    "properties" : {
-                        "unit" : { "type" : "string", "required" : true },
-                        "value" : { "type" : "number" }
-                    }
-                },
-                "discovery" : { "type" : "object",
-                    "properties" : {
-                        "unit" : { "type" : "string", "required" : true },
-                        "value" : { "type" : "number" }
-                    }
-                },
-                "containment" : { "type" : "object",
-                    "properties" : {
-                        "unit" : { "type" : "string", "required" : true },
-                        "value" : { "type" : "number" }
-                    }
-                }
-            }
-        },
-        "discovery_method" : { "type" : "string", "required" : true },
-        "control_failure" : {"type" : "string" },
-        "corrective_action" : {"type" : "string" },
-        "cost_corrective_action" : { "type" : "string" },
-        "ioc" : { "type" : "array",
-            "items" : { "type" : "object",
-                "properties" : {
-                    "indicator" : { "type" : "string" },
-                    "comment" : { "type" : "string" }
-                }
-            }
-        },
-        "impact" : { "type" : "object",
-            "overall_rating" : { "type" : "string", "required" : true },
-            "overall_min_amount" : { "type" : "number" },
-            "overall_amount" : { "type" : "number" },
-            "overall_max_amount" : { "type" : "number" },
-            "loss" : { "type" : "array",
-                "items" : { "type" : "object",
-                    "properties" : {
-                        "variety" : { "type" : "string" },
-                        "rating" : { "type" : "string" },
-                        "min_amount" : { "type" : "number" },
-                        "amount" : { "type" : "number" },
-                        "max_amount" : { "type" : "number" }
-                    }
-                }
+  "description": "VERIS Community Schema 1.2",
+  "properties": {
+    "action": {
+      "properties": {
+        "environmental": {
+          "properties": {
+            "notes": {
+              "type": "string"
             },
-            "iso_currency_code" : { "type" : "string" },
-            "notes" : { "type" : "string" }
+            "variety": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            }
+          },
+          "type": "object"
         },
-        "plus" : { "type" : "any" }
+        "error": {
+          "properties": {
+            "notes": {
+              "type": "string"
+            },
+            "variety": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "vector": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "hacking": {
+          "properties": {
+            "cve": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "variety": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "vector": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "malware": {
+          "properties": {
+            "cve": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "variety": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "vector": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "misuse": {
+          "properties": {
+            "notes": {
+              "type": "string"
+            },
+            "variety": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "vector": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "physical": {
+          "properties": {
+            "location": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "variety": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "vector": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "social": {
+          "properties": {
+            "notes": {
+              "type": "string"
+            },
+            "target": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "variety": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "vector": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "unknown": {
+          "properties": {
+            "notes": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "required": true,
+      "type": "object"
+    },
+    "actor": {
+      "properties": {
+        "external": {
+          "properties": {
+            "country": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "motive": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "variety": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "internal": {
+          "properties": {
+            "motive": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "variety": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "partner": {
+          "properties": {
+            "country": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "industry": {
+              "type": "string"
+            },
+            "motive": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "unknown": {
+          "properties": {
+            "notes": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "required": true,
+      "type": "object"
+    },
+    "asset": {
+      "properties": {
+        "accessibility": {
+          "type": "string"
+        },
+        "assets": {
+          "items": {
+            "properties": {
+              "amount": {
+                "type": "integer"
+              },
+              "variety": {
+                "required": true,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "cloud": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "hosting": {
+          "type": "string"
+        },
+        "management": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "ownership": {
+          "type": "string"
+        }
+      },
+      "required": true,
+      "type": "object"
+    },
+    "attribute": {
+      "properties": {
+        "availability": {
+          "properties": {
+            "duration": {
+              "properties": {
+                "unit": {
+                  "required": true,
+                  "type": "string"
+                },
+                "value": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "variety": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "confidentiality": {
+          "properties": {
+            "data": {
+              "items": {
+                "properties": {
+                  "amount": {
+                    "type": "integer"
+                  },
+                  "variety": {
+                    "required": true,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "data_disclosure": {
+              "required": true,
+              "type": "string"
+            },
+            "data_total": {
+              "type": "integer"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "state": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "integrity": {
+          "properties": {
+            "notes": {
+              "type": "string"
+            },
+            "variety": {
+              "items": {
+                "required": true,
+                "type": "string"
+              },
+              "required": true,
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "confidence": {
+      "type": "string"
+    },
+    "control_failure": {
+      "type": "string"
+    },
+    "corrective_action": {
+      "type": "string"
+    },
+    "cost_corrective_action": {
+      "type": "string"
+    },
+    "discovery_method": {
+      "required": true,
+      "type": "string"
+    },
+    "impact": {
+      "properties": {
+        "iso_currency_code": {
+          "type": "string"
+        },
+        "loss": {
+          "items": {
+            "properties": {
+              "amount": {
+                "type": "number"
+              },
+              "max_amount": {
+                "type": "number"
+              },
+              "min_amount": {
+                "type": "number"
+              },
+              "rating": {
+                "type": "string"
+              },
+              "variety": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "overall_amount": {
+          "type": "number"
+        },
+        "overall_max_amount": {
+          "type": "number"
+        },
+        "overall_min_amount": {
+          "type": "number"
+        },
+        "overall_rating": {
+          "required": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "incident_id": {
+      "required": true,
+      "type": "string"
+    },
+    "ioc": {
+      "items": {
+        "properties": {
+          "comment": {
+            "type": "string"
+          },
+          "indicator": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "plus": {
+      "type": "any"
+    },
+    "reference": {
+      "type": "string"
+    },
+    "related_incidents": {
+      "type": "string"
+    },
+    "schema_version": {
+      "required": true,
+      "type": "string"
+    },
+    "security_incident": {
+      "required": true,
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "targeted": {
+      "type": "string"
+    },
+    "timeline": {
+      "properties": {
+        "compromise": {
+          "properties": {
+            "unit": {
+              "required": true,
+              "type": "string"
+            },
+            "value": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "containment": {
+          "properties": {
+            "unit": {
+              "required": true,
+              "type": "string"
+            },
+            "value": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "discovery": {
+          "properties": {
+            "unit": {
+              "required": true,
+              "type": "string"
+            },
+            "value": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "exfiltration": {
+          "properties": {
+            "unit": {
+              "required": true,
+              "type": "string"
+            },
+            "value": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "incident": {
+          "properties": {
+            "day": {
+              "type": "integer"
+            },
+            "month": {
+              "type": "integer"
+            },
+            "time": {
+              "type": "string"
+            },
+            "year": {
+              "required": true,
+              "type": "integer"
+            }
+          },
+          "required": true,
+          "type": "object"
+        }
+      },
+      "required": true,
+      "type": "object"
+    },
+    "victim": {
+      "items": {
+        "properties": {
+          "country": {
+            "required": true,
+            "type": "string"
+          },
+          "employee_count": {
+            "required": true,
+            "type": "string"
+          },
+          "industry": {
+            "required": true,
+            "type": "string"
+          },
+          "locations_affected": {
+            "type": "integer"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "revenue": {
+            "properties": {
+              "amount": {
+                "type": "integer"
+              },
+              "iso_currency_code": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "state": {
+            "type": "string"
+          },
+          "victim_id": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
     }
+  },
+  "type": "object"
 }

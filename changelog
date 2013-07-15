@@ -1,0 +1,85 @@
+Version 1.2
+    Schema changes
+        * Removed investigation date completely
+        * Added field for target section, called "targeted" (not required)
+        * Replaced "personal" boolean with "ownership" field for enumeration 
+          listing
+        * Changed "management" boolean into enumeration listing
+        * Changed "hosting" boolean into enumeration listing
+        * Added field "accessibility" for enumeration listing, for where the 
+          asset is in the network (internal facing or internet facing, etc), 
+          will not be associated on a per asset basis.
+        * Changed "asset" to be required
+        * Make attribute section not required (near miss, false alarms, etc)
+        * Change "security_compromise" to "security_incident" to make it more
+          clear what this variable tracks. This essentially asks "Was this 
+          event a security incident (defined as an event in which a security 
+          attribute (C/P, I/A, A/U) of an asset was compromised).
+    Enumeration changes
+        * Removed "No" from 'security_incident' (formerly security_compromise),
+          and add options of "False positive" and "Near miss" *Need feedback
+        * Added in enumeration for targeted with values of "Unknown", "NA", 
+          "Opportunistic", "Targeted"
+        * Added "S - Code repository" to enum for asset.variety
+        * Integrity variety, changed instances of "Modified…" to "Modify" to 
+          match tense
+        * Actor motive, added "Convenience" (intentionally bypassing controls 
+          for convenience)
+        * Discovery method, added "Int - Unknown" and "Ext - Unknown" 
+        * Hacking variety: Added "Virtual machine escape"
+        * Ownership, created enumerations of "Victim", "Employee", "Partner", 
+          "Customer", "Unknown", "NA"
+        * Management, created enumerations of "Internal", "External", 
+          "Unknown","NA"
+        * Hosting, created enumerations of "Internal", "External", "Unknown", 
+          "NA"
+        * accessibility, created enumerations of "External", "Internal", 
+          "Isolated", "Unknown", "NA"  
+        * Malware variety, added "Click fraud" to represent 
+          "Click Fraud/Bitcoin mining"
+        * Asset variety, changed "U - ATM" to "T - ATM" (kiosk/public facing
+          user device)
+        * Asset variety, changed "U - Gas terminal" to "T - Gas terminal" 
+          (kiosk/public facing user device)
+        * Asset variety, changed "U - PED pad" to "T - PED pad" (kiosk/public
+          facing user device)
+        * Asset variety, changed "U - Kiosk" to "T - Kiosk" (kiosk/public 
+          facing user device)
+        * Hacking vector: Added "Partner" to represent partner connection or
+          credential
+        * Convert the country enumeration to be 2-digit codes from ISO 3166
+        * Removing the "role" of the actor, it appears to be highly correlated
+          to motive and redundant.
+        * Removing value of "S - Other Server" in the asset variety since
+          "S - Other" exists
+Changes in 1.1 (from initial release)
+    Schema changes
+        * "security_compromise" field is now required
+        * Any field that is an enumeration, and that enumerations has an
+          "Unknown" value is now required
+        * Malware CVE, Malware name and Hacking name are changed from an array
+          to a string
+        * Investigation date is no longer required
+        * Added support for a "plus" section and allowing it to be anything
+          (place for localized data collection and personalized extension of
+          the schema)
+        * Added in an optional "reference" field as a string, so other references
+          or sources could be listed
+    Enumeration changes
+        * Removed "public_disclosure" from the enumerations, not used
+        * Modified employee_count to include options for "Small" and "Large" when
+          more precise numbers are not known
+        * External variety, changed "State-sponsored" to "State-affiliated"
+        * Internal variety, changed "Administrator" to "System admin"
+        * Malware variety, changed "Client-side" to "Client-side attack"
+        * Malware variety, changed "Spyware" to "Spyware/keylogger"
+        * Malware variety, changed "Utility" to "Adminware"
+        * Hacking variety, changed "Backdoor or C2" to "Use of backdoor or C2"
+        * Hacking variety, changed "Stolen creds" to "Use of stolen creds"
+        * Hacking vector, changed "Shell" to "Command shell"
+        * Social target, changed "Administrator" to "System admin"
+        * Asset, added "S - Other"
+        * Asset, changed "P - Administrator" to "P - System admin"
+        * Fixed typo in South Korea, removed white space at the end of the name.
+        * Country, changed "Russian Federation" to "Russia"
+        * Country, changed "United States of America" to "United States"
