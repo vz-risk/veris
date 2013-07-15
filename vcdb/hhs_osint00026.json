@@ -68,9 +68,11 @@
       ]
     }
   },
-  "asset": [
+  "asset": {
+    "assets" : [
       {
         "variety": "M - Disk media"
       }
     ]
+  }
 }

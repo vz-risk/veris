@@ -68,7 +68,8 @@
       ]
     }
   },
-  "asset": "assets": [
+  "asset": {
+    "assets": [
       {
         "variety": "M - Tapes"
       }
