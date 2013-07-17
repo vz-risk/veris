@@ -130,7 +130,7 @@
         "C2": "Command and control (C2)",
         "Capture app data": "Capture data from application or system process",
         "Capture stored data": "Capture data stored on system disk",
-        "Click fraud": "Click fraud/Bitcoin mining",
+        "Click fraud": "Click fraud or Bitcoin mining",
         "Client-side attack": "Client-side or browser attack (e.g., redirection, XSS, MitB)",
         "Destroy data": "Destroy or corrupt stored data",
         "Disable controls": "Disable or interfere with security controls",
@@ -319,7 +319,7 @@
       }
     },
     "motive": {
-      "Convenience": "Intentionally bypassing controls for convenience",
+      "Convenience": "Convenience of expediency",
       "Espionage": "Espionage or competitive advantage",
       "Fear": "Fear or duress",
       "Financial": "Financial or personal gain",
@@ -335,18 +335,24 @@
     "accessibility": {
       "External": "Publicly accessible",
       "Internal": "Internally accessible",
-      "Isolated": "Internally accessible with restrictions",
+      "Isolated": "Internally isolated or restricted environment",
       "NA": "Not applicable",
       "Unknown": "Unknown"
     },
     "cloud": {
-      "Hybrid": "Hybrid cloud",
-      "Private": "Private cloud",
-      "Public": "Public cloud",
-      "Unknown": "Unknown"
+      "Customer attack": "Penetration of another web site on shared device",
+      "Hosting Error": "Misconfiguration or error by hosting provider",
+      "Hosting governance": "Lack of security process or procedure by hosting provider",
+      "Hypervisor": "Hypervisor break-out attack",
+      "Other": "Other",
+      "Partner application": "Application vulnerability in partner developer application",
+      "Unknown": "Unknown",
+      "User Breakout": "Elevation of privilege by another customer in shared environment"
     },
     "hosting": {
       "External": "Externally hosted",
+      "External dedicated": "Externally hosted in a dedicated envirnoment",
+      "External shared": "Externally hosted in a shared (cloud) envirnoment",
       "Internal": "Internally hosted",
       "NA": "Not applicable",
       "Unknown": "Unknown"
@@ -823,10 +829,10 @@
     },
     "overall_rating": {
       "Catastrophic": "Catastrophic: A business-ending event (don't choose this if the victim will continue operations)",
-      "Damaging": "Damaging: Real and serious effect on the \u201cbottom line\u201d and/or long-term ability to generate revenue",
-      "Distracting": "Distracting: Limited \u201chard costs\u201d, but impact felt through having to deal with the incident rather than conducting normal duties",
+      "Damaging": "Damaging: Real and serious effect on the \"bottom line\" and/or long-term ability to generate revenue",
+      "Distracting": "Distracting: Limited \"hard costs\", but impact felt through having to deal with the incident rather than conducting normal duties",
       "Insignificant": "Insignificant: Impact absorbed by normal activities",
-      "Painful": "Painful: Limited \u201chard costs\u201d, but impact felt through having to deal with the incident rather than conducting normal duties",
+      "Painful": "Painful: Limited \"hard costs\", but impact felt through having to deal with the incident rather than conducting normal duties",
       "Unknown": "Unknown"
     }
   },
@@ -971,7 +977,7 @@
     "TJS": "TJS - Somoni",
     "TMT": "TMT - Turkmenistan New Manat",
     "TND": "TND - Tunisian Dinar",
-    "TOP": "TOP - Pa\u2019anga",
+    "TOP": "TOP - Pa'anga",
     "TRY": "TRY - Turkish Lira",
     "TTD": "TTD - Trinidad and Tobago Dollar",
     "TVD": "TVD - Tuvalu Dollar",
@@ -997,15 +1003,15 @@
     "ZWD": "ZWD - Zimbabwean Dollar A/06"
   },
   "security_incident": {
-    "Confirmed": "Incident had an attribute affected (confidentiality, integrity, availability, possession, authenticity, utility)",
-    "False Positive": "No incident was present",
-    "Near Miss": "Incident had no attributes affected  (confidentiality, integrity, availability, possession, authenticity, utility)",
-    "Suspected": "Incident may have an attribute affected (confidentiality, integrity, availability, possession, authenticity, utility)"
+    "Confirmed": "Yes - Confirmed",
+    "False positive": "False positive (response triggered, but no incident)",
+    "Near miss": "Near miss (actions did not compromise asset)",
+    "Suspected": "Suspected"
   },
   "targeted": {
     "NA": "Not applicable",
-    "Opportunistic": "Opportunistic attacks: victim exhibited a weakness the attacker knew how to exploit",
-    "Targeted": "Targeted attacks: victim is specifically chosen as a target",
+    "Opportunistic": "Opportunistic: victim attacked because they exhibited a weakness the actor knew how to exploit",
+    "Targeted": "Targeted: victim chosen as target then actor determined what weaknesses could be exploited",
     "Unknown": "Unknown"
   },
   "timeline": {
@@ -1024,16 +1030,16 @@
   },
   "victim": {
     "employee_count": {
-      "1 to 10": "1 to 10 employees (small)",
-      "10001 to 25000": "10,001 to 25,000 employees (large)",
-      "1001 to 10000": "1,001 to 10,000 employees (large)",
-      "101 to 1000": "101 to 1,000 employees (small)",
-      "11 to 100": "11 to 100 employees (small)",
-      "25001 to 50000": "25,001 to 50,000 employees (large)",
-      "50001 to 100000": "50,001 to 100,000 employees (large)",
-      "Large": "Large organzation (over 1,000 employees)",
-      "Over 100000": "Over 100,0001 employees (large)",
-      "Small": "Small organziation (1,000 employees or less)",
+      "1 to 10": "1 to 10 employees",
+      "10001 to 25000": "10,001 to 25,000 employees",
+      "1001 to 10000": "1,001 to 10,000 employees",
+      "101 to 1000": "101 to 1,000 employees",
+      "11 to 100": "11 to 100 employees",
+      "25001 to 50000": "25,001 to 50,000 employees",
+      "50001 to 100000": "50,001 to 100,000 employees",
+      "Large": "Large organizations (over 1,000 employees)",
+      "Over 100000": "Over 100,0001 employees",
+      "Small": "Small organizations (1,000 employees or less)",
       "Unknown": "Unknown number of employees"
     }
   }

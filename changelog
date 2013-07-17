@@ -31,8 +31,12 @@ Version 1.2
           "Customer", "Unknown", "NA"
         * Management, created enumerations of "Internal", "External", 
           "Unknown","NA"
-        * Hosting, created enumerations of "Internal", "External", "Unknown", 
-          "NA"
+        * Hosting, created enumerations of "Internal", "External - shared", 
+          "External - dedicated", "External", "Unknown", "NA"
+        * Cloud, changed enumerations to be the component of cloud: 
+          "Hypervisor", "Partner application", "Hosting governance", 
+          "Customer attack", "Hosting Error", "User Breakout", "Unknown", 
+          "Other"
         * accessibility, created enumerations of "External", "Internal", 
           "Isolated", "Unknown", "NA"  
         * Malware variety, added "Click fraud" to represent 

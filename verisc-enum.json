@@ -340,13 +340,19 @@
       "NA"
     ],
     "cloud": [
-      "Public",
-      "Private",
-      "Hybrid",
-      "Unknown"
+      "Hypervisor",
+      "Partner application",
+      "Hosting governance",
+      "Customer attack",
+      "Hosting Error",
+      "User Breakout",
+      "Unknown",
+      "Other"
     ],
     "hosting": [
       "Internal",
+      "External shared",
+      "External dedicated",
       "External",
       "Unknown",
       "NA"
@@ -386,7 +392,7 @@
       "S - Web application",
       "S - Code repository",
       "S - VM host",
-      "S - Other server",
+      "S - Other",
       "S - Other",
       "N - Access reader",
       "N - Camera",
@@ -1000,14 +1006,14 @@
   "security_incident": [
     "Confirmed",
     "Suspected",
-    "False Positive",
-    "Near Miss"
+    "False positive",
+    "Near miss"
   ],
   "targeted": [
     "Opportunistic",
     "Targeted",
     "Unknown",
-    "Not applicable"
+    "NA"
   ],
   "timeline": {
     "unit": [
