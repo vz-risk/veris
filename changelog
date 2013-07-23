@@ -35,7 +35,7 @@ Version 1.2
           "External - dedicated", "External", "Unknown", "NA"
         * Cloud, changed enumerations to be the component of cloud: 
           "Hypervisor", "Partner application", "Hosting governance", 
-          "Customer attack", "Hosting Error", "User Breakout", "Unknown", 
+          "Customer attack", "Hosting error", "User breakout", "Unknown", 
           "Other"
         * accessibility, created enumerations of "External", "Internal", 
           "Isolated", "Unknown", "NA"  
