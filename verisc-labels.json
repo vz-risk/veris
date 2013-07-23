@@ -341,18 +341,18 @@
     },
     "cloud": {
       "Customer attack": "Penetration of another web site on shared device",
-      "Hosting Error": "Misconfiguration or error by hosting provider",
+      "Hosting error": "Misconfiguration or error by hosting provider",
       "Hosting governance": "Lack of security process or procedure by hosting provider",
       "Hypervisor": "Hypervisor break-out attack",
       "Other": "Other",
-      "Partner application": "Application vulnerability in partner developer application",
+      "Partner application": "Application vulnerability in partner-developed application",
       "Unknown": "Unknown",
-      "User Breakout": "Elevation of privilege by another customer in shared environment"
+      "User breakout": "Elevation of privilege by another customer in shared environment"
     },
     "hosting": {
-      "External": "Externally hosted",
+      "External": "Externally hosted (unsure if dedicated or shared)",
       "External dedicated": "Externally hosted in a dedicated envirnoment",
-      "External shared": "Externally hosted in a shared (cloud) envirnoment",
+      "External shared": "Externally hosted in a shared envirnoment",
       "Internal": "Internally hosted",
       "NA": "Not applicable",
       "Unknown": "Unknown"
