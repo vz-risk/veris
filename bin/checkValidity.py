@@ -1,11 +1,13 @@
 #!/usr/bin/python
 
 import simplejson as json
-from jsonschema import Validator, ErrorTree
+from jsonschema import Draft3Validator
 import sys
 import os
 import csv
 import glob
+
+# leveraging jsonschema 2.0 now
 
 # file with the enumerations
 enumfile = "verisc-enum.json"
@@ -120,9 +122,9 @@ for fileglob in fileglobs:
             continue
         filecount += 1
         # now validate it matches the schema
-        v = Validator()
-        for error in sorted(v.iter_errors(jdata, jschema), key=str):
-            print filename, "Validator:", error
+        v = Draft3Validator(jschema)
+        for error in sorted(v.iter_errors(jdata), key=str):
+            print filename, "Validator:", error.message
     
         # now validate there aren't any extra fields we aren't expecting 
         output = []
