@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint608",
-  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=23426 ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -19,15 +19,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 8,
-      "data_disclosure": "Yes"
+      "data_total": 8
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Ontario Association of Chiefs of Police's website suffers cyber attack by Anonymous or its affiliates.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint608",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -35,16 +37,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint608",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 26,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -55,9 +56,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Activist"
@@ -71,20 +69,17 @@
         "iso_currency_code": "USD",
         "amount": 429000
       },
-      "country": "Canada",
-      "notes": "",
+      "country": "CA",
+      "industry": "813920",
       "employee_count": "1 to 10",
-      "industry": "813920"
+      "notes": ""
     }
   ],
   "timeline": {
     "incident": {
-      "month": 2,
+      "year": 2012,
       "day": 24,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 2
     }
   },
   "action": {
@@ -98,7 +93,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

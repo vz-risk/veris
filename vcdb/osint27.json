@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint27",
-  "security_compromise": "Confirmed",
   "reference": "http://www.bidmc.org/News/AroundBIDMC/2012/July/LaptopBreach.aspx; http://www.ihealthbeat.org/articles/2012/7/23/beth-israel-deaconess-notifying-3900-patients-about-data-breach.aspx",
   "attribute": {
     "confidentiality": {
       "notes": "The laptop did not contain complete patient health records, Social Security numbers, medication lists, financial data or anything \"that would be used from an identity theft perspective.\"  ",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Credentials"
@@ -22,15 +22,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 3900,
-      "data_disclosure": "Potentially"
+      "data_total": 3900
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Data breach of a physician's personal laptop was stolen from the physician's office that contained personal health information about patients.   ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint27",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -38,16 +40,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint27",
     "timeline": {
       "notification": {
-        "month": 7,
+        "year": 2012,
         "day": 23,
-        "year": 2012
+        "month": 7
       }
     }
   },
@@ -58,9 +59,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -74,7 +72,7 @@
         "iso_currency_code": "USD",
         "amount": 575000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "Beth Israel Deaconess Medical Center is the official hospital for the Boston Red Sox baseball team and a teaching hospital of Harvard Medical School.  ",
       "state": "MA",
       "employee_count": "1001 to 10000",
@@ -86,14 +84,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 5,
+      "year": 2012,
       "day": 22,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 7,
-      "day": 21,
-      "year": 2012
+      "month": 5
     },
     "compromise": {
       "unit": "Unknown"
@@ -118,7 +111,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

@@ -10,14 +10,14 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Distracting"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint594",
-  "security_compromise": "Confirmed",
   "reference": "http://www.nbcnews.com/id/47120697/#.UVBP0oVLGws http://news.emory.edu/stories/2012/04/ehc_missing_data/campus.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 315000,
@@ -31,8 +31,7 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 315000,
-      "data_disclosure": "Yes"
+      "data_total": 315000
     },
     "availability": {
       "duration": {
@@ -45,10 +44,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "Backup tapes discovered missing from storage location. Data resident on tapes included SSN and medical information on 315K patients. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint594",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -56,16 +58,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint594",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 20,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -75,9 +76,6 @@
         "NA"
       ],
       "notes": "",
-      "role": [
-        "Unintentional"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -90,7 +88,7 @@
         "iso_currency_code": "USD",
         "amount": 770500000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "GA",
       "employee_count": "1001 to 10000",
@@ -102,12 +100,8 @@
       "unit": "NA"
     },
     "incident": {
-      "month": 2,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 4,
-      "year": 2012
+      "year": 2012,
+      "month": 2
     },
     "compromise": {
       "unit": "NA"
@@ -130,7 +124,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "notes": "",
     "assets": [

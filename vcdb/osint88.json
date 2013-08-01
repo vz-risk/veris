@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint88",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/humana-20121217.pdf ",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "A box of paper files was lost during a move.  Data included member name, demographic information, DOB, Medicare ID number and possibly clinical information.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint88",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -34,16 +36,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "Y",
     "asset": {
       "total": "No"
     },
-    "f500": "Y",
-    "master_id": "osint88",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 17,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -51,9 +52,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -67,7 +65,7 @@
         "iso_currency_code": "USD",
         "amount": 39130000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "KY",
       "employee_count": "25001 to 50000",
@@ -76,14 +74,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 7,
+      "year": 2012,
       "day": 12,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 11,
-      "day": 28,
-      "year": 2012
+      "month": 7
     }
   },
   "action": {
@@ -97,7 +90,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

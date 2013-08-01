@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint346",
-  "security_compromise": "Confirmed",
   "reference": "http://www.app.com/article/20121228/NJNEWS/312280021/Hackers-take-data-36-000-people-fort?nclick_check=1, http://www.darkreading.com/database-security/167901020/security/attacks-breaches/240145376/ssns-salary-information-exposed-in-breach-of-army-servers.html ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 36000,
@@ -17,15 +17,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 36000,
-      "data_disclosure": "Yes"
+      "data_total": 36000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Army officials have confirmed that cybercriminals obtained personal information of 36,000 people from multiple Army commands and visitors to the former Fort Monmouth base via a server hack.  The Army Communications-Electronics Command (CECOM) told The Asbury Park Press that the data breach \"may have affected CECOM, C4ISR (Command, Control, Communications, Computers, Intelligence, Surveillance and Reconnaissance) and nongovernmental personnel as well as persons who may have visited Fort Monmouth.\"    A CECOM spokesperson told the newspaper that, at the least, names and Social Security numbers were stolen, and that the databases also included birthplace, home addresses, and salary information.  In a Dec. 18 letter to victims whose data was exposed in the breach, CECOM commanding general Maj. Gen. Robert Ferrell said the hack was detected on Dec. 6 and that the breached databases were taken offline.  The databases included information from CECOM Software Engineering Center personnel files and from Fort Monmouth visitor logs, Ferrell said. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint346",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint346",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 18,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -54,9 +55,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -65,7 +63,7 @@
   "victim": [
     {
       "victim_id": "United States Army - Fort Monmouth",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "DC",
       "employee_count": "Over 100000",
@@ -74,11 +72,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 12,
-      "day": 6,
       "year": 2012
     }
   },
@@ -93,7 +86,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

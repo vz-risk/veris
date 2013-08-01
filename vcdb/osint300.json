@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint300",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/ccs-medical-20121210.pdf ",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "On September 20, 2012, a CCS medical employee reported that another employee may have accessed, recorded and disclosed Social Security numbers and other personal information in order to submit false tax returns to the IRS and collect fraudulent tax refunds. CCS medical immediately initiated an internal investigation and suspended the employee. On October 17, 2012 following discussions with the IRS, CCS medical determine that the employee potentially engaged in the alleged wrongful access and disclosure.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint300",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -34,16 +36,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint300",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 7,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -53,9 +54,6 @@
         "Financial"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "End-user"
       ]
@@ -68,7 +66,7 @@
         "iso_currency_code": "USD",
         "amount": 130500000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "FL",
       "employee_count": "1001 to 10000",
@@ -77,14 +75,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 5,
+      "year": 2012,
       "day": 1,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 9,
-      "day": 20,
-      "year": 2012
+      "month": 5
     }
   },
   "action": {
@@ -101,7 +94,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

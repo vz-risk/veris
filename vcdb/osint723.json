@@ -6,7 +6,7 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Distracting"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint723",
   "reference": "http://hamptonroads.com/2008/09/emergency-room-clerk-pleads-guilty-identity-theft-patient",
@@ -19,107 +19,20 @@
     },
     "confidentiality": {
       "notes": "",
-      "state": [
-        "Stored"
-      ],
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 2,
           "variety": "Personal"
         }
       ],
-      "data_total": 2,
-      "data_disclosure": "Yes"
+      "state": [
+        "Stored"
+      ],
+      "data_total": 2
     }
   },
   "notes": "",
-  "discovery_method": "Unknown",
-  "schema_version": "1.0",
-  "summary": "Hospital employee accessed at least 2 patients personal information and provided to external actor in order to commit identity theft and apply for car loans.",
-  "security_compromise": "Confirmed",
-  "plus": {
-    "timeline": {
-      "notification": {
-        "month": 9,
-        "day": 16,
-        "year": 2008
-      }
-    },
-    "f500": "N",
-    "master_id": "osint723",
-    "asset": {
-      "total": "No"
-    },
-    "attribute": {
-      "confidentiality": {
-        "credit_monitoring": "Y",
-        "data_abuse": "Y",
-        "data_subject": "Patient"
-      }
-    }
-  },
-  "actor": {
-    "internal": {
-      "motive": [
-        "Financial"
-      ],
-      "notes": "",
-      "role": [
-        "Malicious"
-      ],
-      "variety": [
-        "End-user"
-      ]
-    },
-    "external": {
-      "motive": [
-        "Financial"
-      ],
-      "country": [
-        "United States"
-      ],
-      "notes": "",
-      "role": [
-        "Indirect"
-      ],
-      "variety": [
-        "Unaffiliated"
-      ]
-    }
-  },
-  "victim": [
-    {
-      "victim_id": "Bon Secours DePaul Medical Center",
-      "country": "United States",
-      "notes": "",
-      "state": "VA",
-      "employee_count": "101 to 1000",
-      "industry": "622"
-    }
-  ],
-  "timeline": {
-    "exfiltration": {
-      "unit": "NA"
-    },
-    "incident": {
-      "month": 10,
-      "year": 2007
-    },
-    "investigation": {
-      "month": 4,
-      "year": 2008
-    },
-    "compromise": {
-      "unit": "NA"
-    },
-    "containment": {
-      "unit": "Unknown"
-    },
-    "discovery": {
-      "unit": "Months"
-    }
-  },
-  "source_id": "osint",
   "action": {
     "misuse": {
       "notes": "",
@@ -143,6 +56,83 @@
       ]
     }
   },
+  "schema_version": "1.2",
+  "summary": "Hospital employee accessed at least 2 patients personal information and provided to external actor in order to commit identity theft and apply for car loans.",
+  "source_id": "osint",
+  "security_incident": "Confirmed",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "Y",
+        "data_abuse": "Y",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2008,
+        "day": 16,
+        "month": 9
+      }
+    },
+    "f500": "N",
+    "master_id": "osint723",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "notes": "",
+      "variety": [
+        "End-user"
+      ]
+    },
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "US"
+      ],
+      "notes": "",
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Bon Secours DePaul Medical Center",
+      "country": "US",
+      "notes": "",
+      "state": "VA",
+      "employee_count": "101 to 1000",
+      "industry": "622"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "year": 2007,
+      "month": 10
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "Unknown"
+    },
+    "discovery": {
+      "unit": "Months"
+    }
+  },
+  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

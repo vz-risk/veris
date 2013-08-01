@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint183",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/sailboat-owners-20120320.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 2258,
@@ -17,15 +17,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 2258,
-      "data_disclosure": "Yes"
+      "data_total": 2258
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "The company is a small business which has maintained a retails sales website at shop.sailboatowners.com.  On Feb 23, 2012, staff noticed unusual activity on the web server, which led them to suspect that the network was under attack.  They immediately shut the site down and retained a forensic firm.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint183",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint183",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 20,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -55,9 +56,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -66,7 +64,7 @@
   "victim": [
     {
       "victim_id": "Sailboat Owners, Inc.",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "WA",
       "employee_count": "Unknown",
@@ -76,11 +74,6 @@
   "timeline": {
     "incident": {
       "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 23,
-      "year": 2012
     }
   },
   "action": {
@@ -89,13 +82,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

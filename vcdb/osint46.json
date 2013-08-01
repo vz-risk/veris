@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint46",
-  "security_compromise": "Confirmed",
   "reference": "http://www.journalnow.com/news/local/article_66287b04-2f0b-5ec8-9ed2-3d850bdbb303.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Medical"
@@ -20,15 +20,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 10000,
-      "data_disclosure": "Yes"
+      "data_total": 10000
     }
   },
   "notes": "It is unknown if Christopher Church took the information held on the computer or Bruce Peller gave the information to Christopher Church.  ",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Patient information that was held on a computer at Bruce Peller's dentist office was either stolen by Christopher Church or the information was sent from Peller to Church.   ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint46",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -36,11 +38,10 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint46",
     "timeline": {
       "notification": {
         "year": 2012
@@ -52,9 +53,6 @@
       "motive": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Manager"
       ]
@@ -63,7 +61,7 @@
   "victim": [
     {
       "victim_id": "Bruce G. Peller, DMD, PA",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NC",
       "employee_count": "Unknown",
@@ -72,14 +70,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 4,
+      "year": 2012,
       "day": 27,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 6,
-      "day": 26,
-      "year": 2012
+      "month": 4
     }
   },
   "action": {
@@ -92,7 +85,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

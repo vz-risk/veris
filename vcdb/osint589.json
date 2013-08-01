@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint589",
-  "security_compromise": "Confirmed",
   "reference": "http://blogs.wsj.com/speakeasy/2012/10/30/medal-of-honor-warfighter-looks-to-battle-through-controversy/ ",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "The game publisher during the pre-launch phase of Medal of Honor Warfighter the \u201cpartners\u201d tab offered direct links to gear manufacturers\u2019 sites, potentially letting all comers \u2014 including underaged ones \u2014 get to pages that displayed real guns, custom magazines, scopes and big knives for sale.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint589",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -34,16 +36,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint589",
     "timeline": {
       "notification": {
-        "month": 10,
+        "year": 2012,
         "day": 30,
-        "year": 2012
+        "month": 10
       }
     }
   },
@@ -51,9 +52,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Developer"
@@ -67,7 +65,7 @@
         "iso_currency_code": "USD",
         "amount": 6000000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "1001 to 10000",
@@ -76,9 +74,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -93,7 +88,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

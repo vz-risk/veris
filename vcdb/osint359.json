@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint359",
-  "security_compromise": "Confirmed",
   "reference": "http://www.cleveland.com/metro/index.ssf/2012/04/case_western_reserve_notifies.html (20130218) https://www.attevo.com/blog/600-alumni-of-case-western-reserve-university-involved-in-data-b/ (20130218)",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 600,
@@ -47,15 +47,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 600,
-      "data_disclosure": "Potentially"
+      "data_total": 600
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Stolen laptop results in potentially exposed PII for 600 former students",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint359",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -63,16 +65,15 @@
         "data_subject": "Student"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint359",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 2,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -83,9 +84,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unaffiliated"
@@ -99,7 +97,7 @@
         "iso_currency_code": "USD",
         "amount": 959000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "OH",
       "employee_count": "1001 to 10000",
@@ -111,14 +109,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 2,
+      "year": 2012,
       "day": 12,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 13,
-      "year": 2012
+      "month": 2
     },
     "compromise": {
       "unit": "Unknown"
@@ -143,7 +136,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

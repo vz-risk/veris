@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint640",
-  "security_compromise": "Confirmed",
   "reference": "http://wnyt.com/article/stories/S2988422.shtml?cat=300",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 2300,
@@ -17,15 +17,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 2300,
-      "data_disclosure": "Potentially"
+      "data_total": 2300
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Glens Falls Hospital says the medical records of more than 2,300 patients may have been compromised.  The hospital says it stored those records for more than 4 months on an unprotected computer server.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint640",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint640",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2013,
         "day": 5,
-        "year": 2013
+        "month": 4
       }
     }
   },
@@ -50,9 +51,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -66,7 +64,7 @@
         "iso_currency_code": "USD",
         "amount": 299370000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NY",
       "employee_count": "1001 to 10000",
@@ -75,9 +73,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2013
-    },
-    "investigation": {
       "year": 2013
     }
   },
@@ -92,7 +87,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

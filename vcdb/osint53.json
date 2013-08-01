@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint53",
-  "security_compromise": "Confirmed",
   "reference": "http://www.smmctx.org/news/privacy-notice-for-st-marks-medical-center-patients/ ",
   "attribute": {
     "integrity": {
@@ -13,6 +12,7 @@
     },
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Personal"
@@ -21,15 +21,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 2998,
-      "data_disclosure": "Potentially"
+      "data_total": 2998
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "On November 15, 2012, we learned that on May 21, 2012, one of our employee\u2019s computers had become infected with malware that appears to have been designed to look for personal information stored on the computer. We immediately began an investigation and engaged a computer forensic investigation firm to examine the computer. Although the firm could not rule out the possibility, they did not find any evidence to confirm that any unauthorized person removed the personal information stored on the computer. If an unauthorized person did gain access to files stored on the computer, they would have been able to view billing files that contained patient names, account numbers, medical record numbers, dates of birth, gender, Social Security numbers, treatment dates, insurance provider names, and account balances. No medical records were accessed in the incident.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint53",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -37,16 +39,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint53",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 29,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -57,9 +58,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -73,7 +71,7 @@
         "iso_currency_code": "USD",
         "amount": 28850000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "TX",
       "employee_count": "101 to 1000",
@@ -82,14 +80,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 5,
+      "year": 2012,
       "day": 21,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 11,
-      "day": 15,
-      "year": 2012
+      "month": 5
     }
   },
   "action": {
@@ -103,7 +96,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

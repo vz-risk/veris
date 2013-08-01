@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint469",
-  "security_compromise": "Confirmed",
   "reference": "http://www.loudountimes.com/index.php/news/article/applicants_personal_information_stolen_from_ashburn_business898/ ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": " Applicants personal information stolen from Ashburn business Friday, Dec. 7, 2012 by Crystal Owens | 0 comments | Email this story  Several applications containing the personal information of applicants for NVGA Gymnastics in the 44600 block of Cape Court in Ashburn were stolen from the business between 5 p.m. Dec. 3 and 8 p.m. Dec. 5.  A report from the Loudoun County Sheriff\u2019s Office said the applicants were notified of the thefts, but did not indicate how the forms were stolen. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint469",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint469",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 7,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -52,9 +53,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -63,7 +61,7 @@
   "victim": [
     {
       "victim_id": "NVGA Gymnastics",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "VA",
       "employee_count": "Unknown",
@@ -72,11 +70,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 12,
-      "day": 5,
       "year": 2012
     }
   },
@@ -93,7 +86,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

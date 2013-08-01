@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint159",
-  "security_compromise": "Confirmed",
   "reference": "http://www.mydailyregister.com/view/full_story/17244934/article-City-computers-possibly-hacked",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - law enforcement",
+  "schema_version": "1.2",
   "summary": "The City of Point Pleasant may\u2019ve been hacked.  According to a press release from Mayor Brian Billings on Friday morning, the City of Point Pleasant was notified from an outside agency of a potential security breach of its computer system. Billings\u2019 statement said the apparent breach was originated from an outside source.  Upon learning of the potential breach, city officials immediately contacted the West Virginia State Police who began an official investigation into the matter.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint159",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Unknown"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint159",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 20,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -52,9 +53,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -63,7 +61,7 @@
   "victim": [
     {
       "victim_id": "City of Point Pleasant",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "WV",
       "employee_count": "11 to 100",
@@ -72,9 +70,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -89,7 +84,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - law enforcement",
   "asset": {
     "assets": [
       {

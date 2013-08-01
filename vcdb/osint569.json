@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint569",
-  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/02/19/la-business-connect-hacked-exposed-data-leaked-and-taken-offline-by-anonymous/ ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Anonymous  hacked a Los Angeles county based company and  as a result they have exposed a link to a adult site,  adultstaffing.com/default.cfm.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint569",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint569",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 19,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -52,9 +53,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -63,7 +61,7 @@
   "victim": [
     {
       "victim_id": "LABusinessConnect.com",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "Unknown",
@@ -72,9 +70,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -89,7 +84,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

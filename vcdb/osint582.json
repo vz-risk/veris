@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint582",
-  "security_compromise": "Confirmed",
   "reference": "http://news.techworld.com/security/3355659/hackers-blackmail-belgian-bank-elantis-over-unencrypted-customer-data/",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 3700,
@@ -17,15 +17,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 3700,
-      "data_disclosure": "Potentially"
+      "data_total": 3700
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Hackers compromise mortgage database and blackmail victim company. No details in publicly available information on method of breach",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint582",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint582",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 3,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -53,9 +54,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Organized crime"
@@ -69,10 +67,10 @@
         "iso_currency_code": "USD",
         "amount": 56400000
       },
-      "country": "Belgium",
-      "notes": "",
+      "country": "BE",
+      "industry": "522298",
       "employee_count": "11 to 100",
-      "industry": "522298"
+      "notes": ""
     }
   ],
   "timeline": {
@@ -80,11 +78,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 27,
       "year": 2012
     },
     "compromise": {
@@ -108,7 +101,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

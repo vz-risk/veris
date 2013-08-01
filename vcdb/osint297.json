@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint297",
-  "security_compromise": "Confirmed",
   "reference": "http://deadspin.com/5971165/hackers-take-over-steubenville-high-school-football-teams-website-threaten-to-release-personal-information-of-people-involved-in-alleged-rape-case",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Hackers who claim to be from the groups Anonymous and KnightSec have taken over the Steubenville High School football team's website, posting a video and message demanding an apology from those involved in the alleged rape that took place in August involving players of the football team. If no one steps forward and publicly apologizes to the victim and her family by Jan. 1, the hackers claim they will release personal information\u2014addresses, SSNs, phone numbers\u2014of people involved in the case.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint297",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Student"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint297",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 25,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -53,9 +54,6 @@
         "Unknown"
       ],
       "notes": "Anonymous and KnightSec",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -64,7 +62,7 @@
   "victim": [
     {
       "victim_id": "Steubenville High School Football Team\u2019s Website (Rollredroll.com)",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "OH",
       "employee_count": "1 to 10",
@@ -74,11 +72,6 @@
   "timeline": {
     "incident": {
       "year": 2012
-    },
-    "investigation": {
-      "month": 12,
-      "day": 25,
-      "year": 2012
     }
   },
   "action": {
@@ -87,21 +80,20 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
-    "management": true,
+    "management": "External",
     "assets": [
       {
         "variety": "S - Web application"
       }
     ],
-    "hosting": true
+    "hosting": "External"
   }
 }

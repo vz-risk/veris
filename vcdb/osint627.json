@@ -3,7 +3,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint627",
-  "security_compromise": "Confirmed",
   "reference": "http://techyzilla.blogspot.com/2012/07/fitch-rating-sri-lanka-website-hacked.html",
   "attribute": {
     "integrity": {
@@ -13,6 +12,7 @@
     },
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 886,
@@ -26,15 +26,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 886,
-      "data_disclosure": "Yes"
+      "data_total": 886
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Website and database compromised via SQL Injection attack. Usernames, clear-text passwords, and e-mail addresses were posted to public site.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint627",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -42,16 +44,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint627",
     "timeline": {
       "notification": {
-        "month": 7,
+        "year": 2102,
         "day": 23,
-        "year": 2102
+        "month": 7
       }
     }
   },
@@ -62,9 +63,6 @@
       ],
       "country": [],
       "notes": "Loosely tied to Anonymous and Anti-sec movements.  Targeted credit rating agencies.",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -74,9 +72,9 @@
     {
       "victim_id": "Fitch Ratings Lanka Limited",
       "notes": "",
-      "employee_count": "11 to 100",
       "industry": "561499",
-      "country": "Sri Lanka"
+      "employee_count": "11 to 100",
+      "country": "LK"
     }
   ],
   "timeline": {
@@ -84,11 +82,8 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 1,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "year": 2012,
+      "month": 1
     },
     "compromise": {
       "unit": "Unknown"
@@ -106,21 +101,20 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "SQLi"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
-    "management": true,
+    "management": "External",
     "assets": [
       {
         "variety": "S - Database"
       }
     ],
-    "hosting": true
+    "hosting": "External"
   }
 }

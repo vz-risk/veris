@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint623",
-  "security_compromise": "Confirmed",
   "reference": "http://www.alertboot.com/blog/blogs/endpoint_security/archive/2012/02/20/laptop-encryption-software-fairbridge-signs-undertaking-with-uk-ico.aspx",
   "attribute": {
     "confidentiality": {
       "notes": "Salary information accounts for the sensitive organizational data loss.",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 325,
@@ -21,15 +21,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 325,
-      "data_disclosure": "Potentially"
+      "data_total": 325
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "Laptop that contained PII and salary information for 325 employees was left on public bus. Device was password-protected, but did not have full-disk encryption.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint623",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -37,16 +39,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint623",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 20,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -54,9 +55,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -67,9 +65,9 @@
     {
       "victim_id": "Fairbridge",
       "notes": "",
-      "employee_count": "1 to 10",
       "industry": "813",
-      "country": "United Kingdom"
+      "employee_count": "1 to 10",
+      "country": "GB"
     }
   ],
   "timeline": {
@@ -77,9 +75,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -103,7 +98,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "assets": [
       {

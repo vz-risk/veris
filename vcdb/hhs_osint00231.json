@@ -1,4 +1,7 @@
 {
+  "impact": {
+    "overall_rating": "Unknown"
+  },
   "incident_id": "hhs_osint00231",
   "attribute": {
     "confidentiality": {
@@ -13,8 +16,8 @@
     }
   },
   "discovery_method": "Unknown",
-  "schema_version": "1.0",
-  "source_id": "hhs",
+  "schema_version": "1.2",
+  "security_incident": "Confirmed",
   "plus": {
     "timeline": {
       "notification": {}
@@ -29,9 +32,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -41,68 +41,65 @@
     {
       "victim_id": "City of Covington Kentucky Fire Department",
       "industry": "922160",
-      "country": "United States",
+      "state": "Ky",
       "employee_count": "Unknown",
-      "state": "Ky"
+      "country": "US"
     },
     {
       "victim_id": "Okaloosa County Public Safety",
       "industry": "926120",
-      "employee_count": "Unknown",
-      "state": "FL",
-      "country": "United States"
-    },
-    {
-      "victim_id": "City of Gloucester, Fire Department",
-      "industry": "922160",
-      "country": "United States",
-      "state": "MA",
-      "employee_count": "11 to 100"
-    },
-    {
-      "victim_id": "City of Overland Park Fire Department",
-      "industry": "922160",
-      "state": "FL",
-      "employee_count": "Unknown",
-      "country": "United States"
-    },
-    {
-      "victim_id": "Osceola County EMS",
-      "industry": "922190",
-      "country": "United States",
+      "country": "US",
       "employee_count": "Unknown",
       "state": "FL"
     },
     {
+      "victim_id": "City of Gloucester, Fire Department",
+      "industry": "922160",
+      "employee_count": "11 to 100",
+      "state": "MA",
+      "country": "US"
+    },
+    {
+      "victim_id": "City of Overland Park Fire Department",
+      "industry": "922160",
+      "country": "US",
+      "state": "FL",
+      "employee_count": "Unknown"
+    },
+    {
+      "victim_id": "Osceola County EMS",
+      "industry": "922190",
+      "state": "FL",
+      "employee_count": "Unknown",
+      "country": "US"
+    },
+    {
       "victim_id": "Sumner County Emergency Medical Services",
       "industry": "621910",
+      "country": "US",
       "employee_count": "11 to 100",
-      "state": "TN",
-      "country": "United States"
+      "state": "TN"
     },
     {
       "victim_id": "Atlanta Fire and Rescue Department",
       "industry": "922160",
-      "country": "United States",
+      "employee_count": "Unknown",
       "state": "GA",
-      "employee_count": "Unknown"
+      "country": "US"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012,
+      "month": 12,
       "day": 18,
-      "month": 12
-    },
-    "investigation": {
       "year": 2012
     },
     "discovery": {
-      "unit": "Months",
-      "value": 7
+      "value": 7,
+      "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
+  "source_id": "hhs",
   "action": {
     "physical": {
       "vector": [

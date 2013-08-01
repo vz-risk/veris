@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint23",
-  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Sample%20Letter_2.pdf?",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "An employee (now former employee) disclosed information about workers compensation claimants to certain individuals who were cooperating in an investigation of suppliers of medical services.  The disclosures occurred between 10/11 and 3/12.  The information disclosed related to workers compensation claimants who received spinal surgery in Southern California between 2004 and 2011, or had urinalysis testing, diagnostics or medical services performed in California between 2006 and 2011.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint23",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint23",
     "timeline": {
       "notification": {
-        "month": 11,
+        "year": 2012,
         "day": 21,
-        "year": 2012
+        "month": 11
       }
     }
   },
@@ -50,9 +51,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Inappropriate"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -65,7 +63,7 @@
         "iso_currency_code": "USD",
         "amount": 10300000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "11 to 100",
@@ -74,12 +72,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 3,
+      "year": 2012,
       "day": 31,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 3
     }
   },
   "action": {
@@ -93,7 +88,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

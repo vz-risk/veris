@@ -1,24 +1,26 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint326",
-  "security_compromise": "Confirmed",
   "reference": "http://retractionwatch.wordpress.com/2012/12/11/elsevier-editorial-system-hacked-reviews-faked-11-retractions-follow/ ",
   "attribute": {
     "integrity": {
       "notes": "This was an alteration of intellectual property.",
       "variety": [
         "Misrepresentation",
-        "Modified data"
+        "Modify data"
       ]
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Retraction Watch has learned that the Elsevier Editorial System (EES) was hacked sometime last month, leading to faked peer reviews and retractions \u2014 although the submitting authors don\u2019t seem to have been at fault. As of now, eleven papers by authors in China, India, Iran, and Turkey have been retracted from three journals.  The reviews by these fake reviewers, not surprisingly, were done incorrectly, and were not up to the journal\u2019s standards of quality. But the authors, Cusano said, were \u201cinnocent victims of this hacking problem,\u201d so the journal retracted the papers, and decided to allow them to resubmit the manuscripts for new peer review. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint326",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -26,16 +28,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint326",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 11,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -48,9 +49,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -63,7 +61,7 @@
         "iso_currency_code": "USD",
         "amount": 2370000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NY",
       "employee_count": "10001 to 25000",
@@ -73,9 +71,6 @@
   "timeline": {
     "incident": {
       "year": 2012
-    },
-    "investigation": {
-      "year": 2012
     }
   },
   "action": {
@@ -84,13 +79,12 @@
       "vector": [
         "Unknown"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

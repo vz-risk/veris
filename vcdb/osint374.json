@@ -33,13 +33,12 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint374",
-  "security_compromise": "Confirmed",
   "reference": "http://dev.dowagiacnews.com/2012/04/19/berrien-website-hacked/ (20130219) http://articles.wsbt.com/2012-04-18/website_31363825 (20130219) http://www.mlive.com/news/kalamazoo/index.ssf/2012/04/berrien_county_government_webs.html (20130219)",
   "attribute": {
     "integrity": {
       "notes": "",
       "variety": [
-        "Modified configuration"
+        "Modify configuration"
       ]
     },
     "confidentiality": {
@@ -56,10 +55,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Berrien County Sheriff's Department hacked and defaced by Anonymous",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint374",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -67,16 +69,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint374",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 18,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -87,9 +88,6 @@
       ],
       "country": [],
       "notes": "Anonymous Operation Shoot the Sherriff Sunday (SSS)",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -98,7 +96,7 @@
   "victim": [
     {
       "victim_id": "Berrien County Sheriff's Department",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MI",
       "employee_count": "Unknown",
@@ -110,14 +108,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 4,
+      "year": 2012,
       "day": 15,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 4,
-      "day": 15,
-      "year": 2012
+      "month": 4
     },
     "compromise": {
       "unit": "Unknown"
@@ -135,13 +128,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Use of stolen creds"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

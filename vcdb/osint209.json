@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint209",
-  "security_compromise": "Confirmed",
   "reference": "http://hackmageddon.com/tag/uzfiles-com/",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 4130,
@@ -17,15 +17,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 4130,
-      "data_disclosure": "Yes"
+      "data_total": 4130
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Unknown hackers dump on pastebin 4,130 records from uzfiles.com, an Uzbek music forum.  The records contain usernames, email addresses, and plain-text passwords.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint209",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint209",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 5,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -54,9 +55,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -66,21 +64,16 @@
     {
       "victim_id": "uzfiles.com",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "512",
-      "country": "Uzbekistan"
+      "employee_count": "Unknown",
+      "country": "UZ"
     }
   ],
   "timeline": {
     "incident": {
-      "month": 4,
+      "year": 2012,
       "day": 5,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 4,
-      "day": 5,
-      "year": 2012
+      "month": 4
     }
   },
   "action": {
@@ -94,7 +87,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

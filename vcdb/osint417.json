@@ -6,14 +6,14 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Distracting"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint417",
-  "security_compromise": "Confirmed",
   "reference": "http://crimeblog.dallasnews.com/2012/02/hacker-claims-credit-for-attac.html/ http://www.nbcdfw.com/news/tech/Dallas-Police-Departments-Website-Hacked-138823209.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 10,
@@ -23,15 +23,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 10,
-      "data_disclosure": "Yes"
+      "data_total": 10
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Dallas PD web site compromised; 10 officers' usernames and passwords posted online",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint417",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -39,16 +41,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint417",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 7,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -60,9 +61,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -71,7 +69,7 @@
   "victim": [
     {
       "victim_id": "Dallas Police Department",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "TX",
       "employee_count": "1001 to 10000",
@@ -83,12 +81,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 2,
+      "year": 2012,
       "day": 4,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 2
     },
     "compromise": {
       "unit": "Unknown"
@@ -111,7 +106,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

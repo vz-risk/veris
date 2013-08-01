@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint421",
-  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/Government-and-Military-Members-Exposed-After-David-Morgan-Hack-247111.shtml",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 24000,
@@ -21,15 +21,17 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 24000,
-      "data_disclosure": "Yes"
+      "data_total": 24000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "A hacker managed to bypass the security mechanisms implemented by online clothing and accessories store David Morgan, leaking usernames, represented by emails, and password hashes. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint421",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -37,16 +39,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint421",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 16,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -58,9 +59,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -69,7 +67,7 @@
   "victim": [
     {
       "victim_id": "Davidmorgan.com",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "WA",
       "employee_count": "Unknown",
@@ -81,14 +79,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 1,
+      "year": 2012,
       "day": 16,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 1,
-      "day": 16,
-      "year": 2012
+      "month": 1
     },
     "compromise": {
       "unit": "Unknown"
@@ -111,7 +104,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

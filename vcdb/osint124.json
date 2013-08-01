@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint124",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/under-armour-20120424.pdf ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "Partner was PricewaterhouseCoopers (PWC)",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - customer",
+  "schema_version": "1.2",
   "summary": "the breach of security involved the companies publishing firm, Price Waterhouse Coopers. A Price Waterhouse Coopers employee, in connection with a recent company audit, send an unencrypted thumb drive containing certain payroll information about the company employees by mail. That thumb drive, which contained the names and Social Security numbers of a number of employees, along with limited other information, was lost around April 12, 2012. We have not been able to locate the thumb drive.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint124",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint124",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 19,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -48,9 +49,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Other"
@@ -64,7 +62,7 @@
         "iso_currency_code": "USD",
         "amount": 1830000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MD",
       "employee_count": "1001 to 10000",
@@ -73,12 +71,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 4,
+      "year": 2012,
       "day": 12,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 4
     }
   },
   "action": {
@@ -92,7 +87,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

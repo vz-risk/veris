@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint416",
-  "security_compromise": "Confirmed",
   "reference": "http://www.bbc.co.uk/news/uk-england-cambridgeshire-17002503 (20130220)",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 47,
@@ -47,15 +47,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 47,
-      "data_disclosure": "Potentially"
+      "data_total": 47
     }
   },
   "notes": "Not sure when notification happened.  Used the date of the source article.",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Documents containing non-public patient information went missing while in transit using inter-office mail.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint416",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -63,16 +65,15 @@
         "data_subject": "Student"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint416",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 12,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -80,9 +81,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -96,10 +94,10 @@
         "iso_currency_code": "USD",
         "amount": 183000000
       },
-      "country": "United Kingdom",
-      "notes": "",
+      "country": "GB",
+      "industry": "622110",
       "employee_count": "101 to 1000",
-      "industry": "622110"
+      "notes": ""
     }
   ],
   "timeline": {
@@ -107,14 +105,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 1,
+      "year": 2012,
       "day": 13,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 1,
-      "day": 23,
-      "year": 2012
+      "month": 1
     },
     "compromise": {
       "unit": "Unknown"
@@ -137,7 +130,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

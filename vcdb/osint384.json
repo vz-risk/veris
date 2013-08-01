@@ -3,7 +3,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint384",
-  "security_compromise": "Confirmed",
   "reference": "http://www.gamepolitics.com/2012/01/14/coveritlive-warns-users-possible-security-breach#.USPaFeip1Tg",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "\"CoveritLive recently discovered that certain proprietary data files were accessed without authorization starting on or about January 7, 2012. We have not yet determined if, or to what extent, CoveritLive account information (i.e., usernames, email addresses and/or passwords) was accessed. We do know, however, that no financial account information has been compromised.\"",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint384",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -34,16 +36,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint384",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 13,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -55,9 +56,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -67,9 +65,9 @@
     {
       "victim_id": "CoveritLive",
       "notes": "",
-      "employee_count": "11 to 100",
       "industry": "518",
-      "country": "Canada"
+      "employee_count": "11 to 100",
+      "country": "CA"
     }
   ],
   "timeline": {
@@ -77,12 +75,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 1,
+      "year": 2012,
       "day": 7,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 1
     },
     "compromise": {
       "unit": "Unknown"
@@ -105,7 +100,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

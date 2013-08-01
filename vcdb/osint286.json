@@ -33,7 +33,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint286",
-  "security_compromise": "Confirmed",
   "reference": "http://bianet.org/english/freedom-of-expression/136509-redhack-hacked-police-directorate (20130215) http://www.hurriyetdailynews.com/turkish-police-secret-files-password-123456-hackers-reveal-.aspx?pageID=238&nid=15187 (20130215) http://www.cyberwarnews.info/2012/03/01/redhackers-hack-police-net-and-ankara-police-directorate/ (20130215)",
   "attribute": {
     "confidentiality": {
@@ -53,10 +52,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Hackers breached network of Ankara Police Directorate and released non-public information to the Internet",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint286",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -64,16 +66,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint286",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 25,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -86,9 +87,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -98,9 +96,9 @@
     {
       "victim_id": "Ankara Police Directorate",
       "notes": "Country is Turkey which does not appear in the list.",
-      "employee_count": "Unknown",
       "industry": "922",
-      "country": "Turkey"
+      "employee_count": "Unknown",
+      "country": "TR"
     }
   ],
   "timeline": {
@@ -108,14 +106,9 @@
       "unit": "Weeks"
     },
     "incident": {
-      "month": 2,
+      "year": 2012,
       "day": 4,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 25,
-      "year": 2012
+      "month": 2
     },
     "compromise": {
       "unit": "Months"
@@ -133,18 +126,17 @@
       "vector": [
         "Unknown"
       ],
-      "cve": "",
       "variety": [
         "Brute force"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [
       {
-        "variety": "S - Other server"
+        "variety": "S - Other"
       }
     ]
   }

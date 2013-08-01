@@ -1,4 +1,7 @@
 {
+  "impact": {
+    "overall_rating": "Unknown"
+  },
   "incident_id": "hhs_osint00406",
   "attribute": {
     "confidentiality": {
@@ -13,8 +16,8 @@
     }
   },
   "discovery_method": "Unknown",
-  "schema_version": "1.0",
-  "source_id": "hhs",
+  "schema_version": "1.2",
+  "security_incident": "Confirmed",
   "plus": {
     "timeline": {
       "notification": {}
@@ -29,9 +32,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -41,54 +41,51 @@
     {
       "victim_id": "Michele Del Vicario, MD",
       "industry": "621111",
-      "country": "United States",
+      "employee_count": "11 to 100",
       "state": "Ca",
-      "employee_count": "11 to 100"
+      "country": "US"
     },
     {
       "victim_id": "Mark D. Lurie, MD",
       "industry": "621111",
+      "country": "US",
       "state": "CA",
-      "employee_count": "1 to 10",
-      "country": "United States"
+      "employee_count": "1 to 10"
     },
     {
       "victim_id": "L. Douglas Carlson, M.D.",
       "industry": "621330",
-      "country": "United States",
+      "state": "CA",
       "employee_count": "1 to 10",
-      "state": "CA"
+      "country": "US"
     },
     {
       "victim_id": "David I. Cohen, MD",
       "industry": "621111",
+      "country": "US",
       "employee_count": "1 to 10",
-      "state": "CA",
-      "country": "United States"
+      "state": "CA"
     },
     {
       "victim_id": "Joseph F. Lopez, MD",
       "industry": "621111",
-      "country": "United States",
+      "employee_count": "1 to 10",
       "state": "CA",
-      "employee_count": "1 to 10"
+      "country": "US"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2010,
+      "month": 2,
       "day": 22,
-      "month": 2
-    },
-    "investigation": {
       "year": 2010
     },
     "discovery": {
-      "unit": "Months",
-      "value": 5
+      "value": 5,
+      "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
+  "source_id": "hhs",
   "action": {
     "physical": {
       "vector": [

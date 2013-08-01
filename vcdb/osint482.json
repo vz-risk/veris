@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint482",
-  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/02/08/4940-accounts-leaked-from-media-devilscafe-in/",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 4940,
@@ -17,15 +17,17 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 4940,
-      "data_disclosure": "Yes"
+      "data_total": 4940
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "The attack which targeted media.devilscafe.in  and the leaked data contains usersnames, emails and encrypted passwords.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint482",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint482",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 8,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -54,9 +55,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -66,9 +64,9 @@
     {
       "victim_id": "Devil's Cafe",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "51913",
-      "country": "India"
+      "employee_count": "Unknown",
+      "country": "IN"
     }
   ],
   "timeline": {
@@ -76,9 +74,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -102,7 +97,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

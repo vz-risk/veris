@@ -14,14 +14,14 @@
         "variety": "Legal and regulatory"
       }
     ],
-    "overall_rating": "Painful"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint213",
-  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=9972",
   "attribute": {
     "confidentiality": {
       "notes": "The server contained both patient electronic medical and billing records, including protected health information, names, social security numbers, dates of birth, addresses, telephone numbers, account numbers, and diagnoses. ",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Bank"
@@ -36,15 +36,17 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 4800,
-      "data_disclosure": "Potentially"
+      "data_total": 4800
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "A computer server was stolen from a locked closet in the office of Dr. Jeffrey Paul Edelstein.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint213",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -52,11 +54,10 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint213",
     "timeline": {
       "notification": {
         "year": 2012
@@ -68,9 +69,6 @@
       "motive": [
         "Financial"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Other"
       ]
@@ -79,7 +77,7 @@
   "victim": [
     {
       "victim_id": "Jeffrey Paul Edelstein M.D.",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "AZ",
       "employee_count": "Unknown",
@@ -88,14 +86,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 5,
+      "year": 2012,
       "day": 10,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 7,
-      "day": 27,
-      "year": 2012
+      "month": 5
     },
     "discovery": {
       "unit": "Hours"
@@ -114,7 +107,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

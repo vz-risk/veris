@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint294",
-  "security_compromise": "Confirmed",
   "reference": "http://www.huffingtonpost.com/2012/03/09/british-pregnancy-advisory-service-hack_n_1334570.html (20130215) http://www.telegraph.co.uk/news/uknews/crime/9132654/BPAS-Hacker-held-over-illegal-breach-of-abortion-website.html (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "Data subject are persons requesting more information.",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 9000,
@@ -47,15 +47,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 9000,
-      "data_disclosure": "Yes"
+      "data_total": 9000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Activist hacker breaches website and steals personal information but is arrested before being able to publish the data",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint294",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -63,16 +65,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint294",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 9,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -82,12 +83,9 @@
         "Ideology"
       ],
       "country": [
-        "United Kingdom"
+        "GB"
       ],
       "notes": "Actor claimed to be allied with Anonymous but it is not clear that Anonymous is claiming him or was responsible for this attack.",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -100,10 +98,10 @@
         "iso_currency_code": "USD",
         "amount": 42200000
       },
-      "country": "United Kingdom",
-      "notes": "",
+      "country": "GB",
+      "industry": "813211",
       "employee_count": "101 to 1000",
-      "industry": "813211"
+      "notes": ""
     }
   ],
   "timeline": {
@@ -111,14 +109,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 3,
+      "year": 2012,
       "day": 8,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 3,
-      "day": 8,
-      "year": 2012
+      "month": 3
     },
     "compromise": {
       "unit": "Hours"
@@ -136,13 +129,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

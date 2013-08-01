@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": "Painful"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint565",
-  "security_compromise": "Confirmed",
   "reference": "arstechnica.com/security/2012/06/eharmony-confirms-member-passwords-compromise/",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1500000,
@@ -17,15 +17,17 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 1500000,
-      "data_disclosure": "Yes"
+      "data_total": 1500000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Online dating site suffers compromise, 1.5 million user credentials disclosed. Passwords were encrypted but not salted and were trivial to decrypt.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint565",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint565",
     "timeline": {
       "notification": {
-        "month": 6,
+        "year": 2012,
         "day": 6,
-        "year": 2012
+        "month": 6
       }
     }
   },
@@ -53,9 +54,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unaffiliated"
@@ -69,7 +67,7 @@
         "iso_currency_code": "USD",
         "amount": 250000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "101 to 1000",
@@ -81,11 +79,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 6,
-      "day": 6,
       "year": 2012
     },
     "compromise": {
@@ -109,7 +102,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

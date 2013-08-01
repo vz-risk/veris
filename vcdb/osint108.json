@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint108",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/quest-diagnostics-20120817.pdf ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "in 2012, a former Qwest Diagnostics employee inappropriately forwarded e-mails that included personal information to their personal e-mail address. The information included some or all of the following data: name, address, Social Security number, date of birth, driver's license number, financial account information and medical/health insurance information.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint108",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "Y",
     "asset": {
       "total": "No"
     },
-    "f500": "Y",
-    "master_id": "osint108",
     "timeline": {
       "notification": {
-        "month": 8,
+        "year": 2012,
         "day": 24,
-        "year": 2012
+        "month": 8
       }
     }
   },
@@ -50,9 +51,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "End-user"
       ]
@@ -61,7 +59,7 @@
   "victim": [
     {
       "victim_id": "Quest Diagnostics",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NJ",
       "employee_count": "25001 to 50000",
@@ -70,11 +68,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 7,
-      "day": 31,
       "year": 2012
     }
   },
@@ -91,7 +84,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

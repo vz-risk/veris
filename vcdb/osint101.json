@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint101",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/postcard-press-next-day-20120605.pdf ",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Company discovered an electronic file on  its system that was storing transaction information, including name, address, email, and CCN for customers who placed orders through its website.  NDF does not know if it was accessed, or how it was created, but it detected the file near the time an unauthorized person was trying to disrupt NDF's website.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint101",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -34,16 +36,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint101",
     "timeline": {
       "notification": {
-        "month": 6,
+        "year": 2012,
         "day": 6,
-        "year": 2012
+        "month": 6
       }
     }
   },
@@ -56,9 +57,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -71,7 +69,7 @@
         "iso_currency_code": "USD",
         "amount": 4200000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "11 to 100",
@@ -81,11 +79,6 @@
   "timeline": {
     "incident": {
       "year": 2012
-    },
-    "investigation": {
-      "month": 4,
-      "day": 2,
-      "year": 2012
     }
   },
   "action": {
@@ -94,13 +87,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

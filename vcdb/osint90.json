@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint90",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/investacorp-20120419.pdf ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "National Financial is the partner.",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "Partner data breach , \"inadvertent sharing of electronic files\" included client name, SSN and account level data.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint90",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint90",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 19,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -50,12 +51,9 @@
         "NA"
       ],
       "country": [
-        "United States"
+        "US"
       ],
       "industry": "000000",
-      "role": [
-        "Unintentional"
-      ],
       "notes": ""
     }
   },
@@ -66,7 +64,7 @@
         "iso_currency_code": "USD",
         "amount": 11700000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "FL",
       "employee_count": "11 to 100",
@@ -75,14 +73,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 11,
+      "year": 2011,
       "day": 29,
-      "year": 2011
-    },
-    "investigation": {
-      "month": 3,
-      "day": 12,
-      "year": 2012
+      "month": 11
     }
   },
   "action": {
@@ -96,15 +89,14 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "notes": "",
-    "management": true,
+    "management": "External",
     "assets": [
       {
         "variety": "S - File"
       }
     ],
-    "hosting": true
+    "hosting": "External"
   }
 }

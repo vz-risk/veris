@@ -3,7 +3,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint483",
-  "security_compromise": "Confirmed",
   "reference": "https://www.privacyrights.org/node/32387, http://www.thedenverchannel.com/news/homeowner-accounts-hacked, http://oag.ca.gov/system/files/02162012.pdf?",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "We have reason to believe that the integrity of your personal information may have been compromised due to a security breach of the DHI Mortgage Loan Prequalification Website.  On the evening of Friday, February 10, 2012, DHI Mortgage became aware that a software security breach by unknown external sources occurred in its Internet Loan Prequalification System",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint483",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -34,16 +36,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint483",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 15,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -54,9 +55,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -70,7 +68,7 @@
         "iso_currency_code": "USD",
         "amount": 46000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "TX",
       "employee_count": "101 to 1000",
@@ -82,11 +80,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 10,
       "year": 2012
     },
     "compromise": {
@@ -110,7 +103,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

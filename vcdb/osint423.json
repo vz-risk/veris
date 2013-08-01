@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint423",
-  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?s=Delta+Dental&x=0&y=0, http://www.news-gazette.com/news/health/miscellaneous/2012-06-20/some-delta-dental-records-lost-during-shipping.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 650,
@@ -17,8 +17,7 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 650,
-      "data_disclosure": "Yes"
+      "data_total": 650
     },
     "availability": {
       "duration": {
@@ -31,10 +30,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "3rd party shipper loses medical records; xrays. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint423",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -42,16 +44,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint423",
     "timeline": {
       "notification": {
-        "month": 6,
+        "year": 2012,
         "day": 20,
-        "year": 2012
+        "month": 6
       }
     }
   },
@@ -61,19 +62,16 @@
         "NA"
       ],
       "country": [
-        "United States"
+        "US"
       ],
       "industry": "492110",
-      "role": [
-        "Unintentional"
-      ],
       "notes": ""
     }
   },
   "victim": [
     {
       "victim_id": "Delta Dental of Illinois",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "IL",
       "employee_count": "Unknown",
@@ -85,9 +83,6 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -111,7 +106,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

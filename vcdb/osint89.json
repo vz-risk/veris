@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint89",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/impairment-sedgwick-20120320.pdf, http://doj.nh.gov/consumer/security-breaches/documents/impairment-resources-20120213.pdf, http://www.atg.state.vt.us/assets/files/Impairment%20Resources%20Notice.pdf,  ",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "Partner was Impairment Resources",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "Partner experienced the theft of computer equipment from their offices, exposing names, SSNs and medical information.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint89",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -34,16 +36,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint89",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 20,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -54,9 +55,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unaffiliated"
@@ -70,7 +68,7 @@
         "iso_currency_code": "USD",
         "amount": 808100000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "TN",
       "employee_count": "1001 to 10000",
@@ -79,14 +77,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 12,
+      "year": 2011,
       "day": 31,
-      "year": 2011
-    },
-    "investigation": {
-      "month": 1,
-      "day": 3,
-      "year": 2012
+      "month": 12
     }
   },
   "action": {
@@ -102,7 +95,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "assets": [
       {

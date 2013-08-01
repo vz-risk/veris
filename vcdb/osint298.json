@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint298",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/accucom-20120222.pdf ",
   "attribute": {
     "integrity": {
@@ -29,10 +28,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "on January 3, 2012, someone outside our company used our credentials to make an unauthorized one dollar charge to a number of customer payment cards that had previously been used by customers to make an authorized purchase through one or more of our affiliated websites. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint298",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -40,16 +42,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint298",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 22,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -59,12 +60,9 @@
         "Financial"
       ],
       "country": [
-        "Viet Nam"
+        "VN"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -73,7 +71,7 @@
   "victim": [
     {
       "victim_id": "Accucom Corporation",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MA",
       "employee_count": "Unknown",
@@ -83,10 +81,6 @@
   "timeline": {
     "incident": {
       "year": 2012
-    },
-    "investigation": {
-      "month": 1,
-      "year": 2012
     }
   },
   "action": {
@@ -95,13 +89,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

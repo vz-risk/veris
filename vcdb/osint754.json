@@ -1,6 +1,6 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint754",
   "reference": "http://articles.sun-sentinel.com/2012-06-09/news/fl-ftl-id-theft-tax-fraud-20120608_1_tax-returns-fraudulent-tax-million-tax-fraud, http://articles.sun-sentinel.com/2013-01-29/news/fl-lauderdale-tax-fraud-conviction-20130129_1_tax-fraud-scheme-identity-theft-fort-lauderdale-woman, http://www.justice.gov/usao/fls/PressReleases/130129-01.html, http://www.justice.gov/usao/fls/PressReleases/120608-03.html",
@@ -12,9 +12,7 @@
     },
     "confidentiality": {
       "notes": "",
-      "state": [
-        "Stored"
-      ],
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1000,
@@ -25,82 +23,13 @@
           "variety": "Personal"
         }
       ],
-      "data_total": 1000,
-      "data_disclosure": "Yes"
+      "state": [
+        "Stored"
+      ],
+      "data_total": 1000
     }
   },
   "notes": "",
-  "discovery_method": "Unknown",
-  "schema_version": "1.0",
-  "summary": "Woman steals data, files fraudulent tax returns.",
-  "security_compromise": "Confirmed",
-  "plus": {
-    "timeline": {
-      "notification": {
-        "year": 2012
-      }
-    },
-    "f500": "N",
-    "master_id": "osint754",
-    "asset": {
-      "total": "No"
-    },
-    "attribute": {
-      "confidentiality": {
-        "credit_monitoring": "U",
-        "data_abuse": "Y",
-        "data_subject": "Patient"
-      }
-    }
-  },
-  "actor": {
-    "internal": {
-      "motive": [
-        "Financial"
-      ],
-      "notes": "Nurse",
-      "role": [
-        "Malicious"
-      ],
-      "variety": [
-        "End-user"
-      ]
-    },
-    "external": {
-      "motive": [
-        "Financial"
-      ],
-      "country": [
-        "United States"
-      ],
-      "notes": "",
-      "role": [
-        "Malicious"
-      ],
-      "variety": [
-        "Unaffiliated"
-      ]
-    }
-  },
-  "victim": [
-    {
-      "victim_id": "Unnamed Florida Hospital",
-      "country": "United States",
-      "notes": "",
-      "state": "FL",
-      "employee_count": "Unknown",
-      "industry": "622"
-    }
-  ],
-  "timeline": {
-    "incident": {
-      "year": 2011
-    },
-    "investigation": {
-      "year": 2011
-    }
-  },
-  "source_id": "osint",
   "action": {
     "misuse": {
       "notes": "",
@@ -126,6 +55,68 @@
       ]
     }
   },
+  "schema_version": "1.2",
+  "summary": "Woman steals data, files fraudulent tax returns.",
+  "source_id": "osint",
+  "security_incident": "Confirmed",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "Y",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2012
+      }
+    },
+    "f500": "N",
+    "master_id": "osint754",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Financial"
+      ],
+      "notes": "Nurse",
+      "variety": [
+        "End-user"
+      ]
+    },
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "US"
+      ],
+      "notes": "",
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Unnamed Florida Hospital",
+      "country": "US",
+      "notes": "",
+      "state": "FL",
+      "employee_count": "Unknown",
+      "industry": "622"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2011
+    }
+  },
+  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

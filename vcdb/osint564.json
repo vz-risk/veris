@@ -3,7 +3,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint564",
-  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=23616 http://doj.nh.gov/consumer/security-breaches/documents/edmund-optics-20120313.pdf",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - log review",
+  "schema_version": "1.2",
   "summary": "Cold Fusion vulnerability exploited on web site. Customer payment card information was disclosed. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint564",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint564",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 13,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -53,9 +54,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -64,7 +62,7 @@
   "victim": [
     {
       "victim_id": "Edmund Optics, Inc.",
-      "country": "United States",
+      "country": "US",
       "notes": "NAICS code for main company is 333314: Optical Instrument and Lens Manufacturing; used NAICS 454 as this is e-commerce business unit that as affected.",
       "state": "NJ",
       "employee_count": "Unknown",
@@ -76,14 +74,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 2,
+      "year": 2012,
       "day": 8,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 26,
-      "year": 2012
+      "month": 2
     },
     "compromise": {
       "unit": "Unknown"
@@ -101,13 +94,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Int - log review",
   "asset": {
     "notes": "",
     "assets": [

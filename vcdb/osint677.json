@@ -1,6 +1,6 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint677",
   "reference": "http://oag.ca.gov/system/files/ShopletCA%20notification4_2_13_0.pdf?",
@@ -22,29 +22,40 @@
     }
   },
   "notes": "",
-  "discovery_method": "Unknown",
-  "schema_version": "1.0",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Web application"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.2",
   "summary": "On January 11, 2013, we learned that a hacker may have accessed our systems. We immediately took steps to secure our systems, and implemented increased security controls to prevent this from happening in the future, including hiring a computer forensic investigator to determine what happened, installing a hardware firewall and moving our database server to a more secure zone. Law enforcement has been notified and we are cooperating with their investigation. Unfortunately, the hacker may have accessed the names, addresses, and credit card information of customers who purchased an item on our website. We are notifying you so that you can be aware of this situation and take steps to protect yourself from any harm, including contacting your bank and/or credit card company. It is important to carefully review your account statement over the next 12 to 24 months, and promptly report any suspect transactions to your credit card company. Please see the enclosed insert for more information.",
-  "security_compromise": "Confirmed",
+  "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
-    "timeline": {
-      "notification": {
-        "month": 4,
-        "day": 2,
-        "year": 2013
-      }
-    },
-    "f500": "N",
-    "master_id": "osint677",
-    "asset": {
-      "total": "No"
-    },
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
         "data_abuse": "U",
         "data_subject": "Customer"
       }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 2,
+        "month": 4
+      }
+    },
+    "f500": "N",
+    "master_id": "osint677",
+    "asset": {
+      "total": "No"
     }
   },
   "actor": {
@@ -54,9 +65,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unaffiliated"
@@ -70,7 +78,7 @@
         "iso_currency_code": "USD",
         "amount": 7200000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NY",
       "employee_count": "11 to 100",
@@ -79,28 +87,12 @@
   ],
   "timeline": {
     "incident": {
-      "month": 12,
+      "year": 2012,
       "day": 20,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 1,
-      "day": 11,
-      "year": 2013
+      "month": 12
     }
   },
-  "source_id": "osint",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Web application"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
+  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

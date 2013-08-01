@@ -30,14 +30,14 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Painful"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint270",
-  "security_compromise": "Confirmed",
   "reference": "http://www.thisisnorthdevon.co.uk/Children-8217-s-centre-loses-sensitive-family/story-15177841-detail/story.html#axzz2Kz443YHQ (20130215) http://business.highbeam.com/438499/article-1P2-30783753/centre-may-face-pounds-500000-fine (20130215) http://www.accessmylibrary.com/article-1G1-307262910/children-charity-says-lessons.html (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 45,
@@ -47,15 +47,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 45,
-      "data_disclosure": "Potentially"
+      "data_total": 45
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "employee improperly copied sensitive personal information to a usb device which was then stolen along with her handbag.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint270",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -63,16 +65,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint270",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 9,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -82,9 +83,6 @@
         "Unknown"
       ],
       "notes": "We don't know why the employee copied the information to the USB device.",
-      "role": [
-        "Inappropriate"
-      ],
       "variety": [
         "End-user"
       ]
@@ -94,12 +92,9 @@
         "Financial"
       ],
       "country": [
-        "United Kingdom"
+        "GB"
       ],
       "notes": "Thief that stole handbag which contained usb device",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -112,10 +107,10 @@
         "iso_currency_code": "USD",
         "amount": 316500000
       },
-      "country": "United Kingdom",
-      "notes": "",
+      "country": "GB",
+      "industry": "813211",
       "employee_count": "Unknown",
-      "industry": "813211"
+      "notes": ""
     }
   ],
   "timeline": {
@@ -123,11 +118,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 4,
       "year": 2012
     },
     "compromise": {
@@ -163,14 +153,13 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
-    "personal": true,
     "notes": "",
     "assets": [
       {
         "variety": "M - Flash drive"
       }
-    ]
+    ],
+    "ownership": "Employee"
   }
 }

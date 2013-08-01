@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint212",
-  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=11065; http://www.efortresses.com/2012-Breaches-Matrix.htm",
   "attribute": {
     "confidentiality": {
       "notes": "It is unknown what information was on the paper records that were stolen.  ",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Unknown"
@@ -16,15 +16,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1306,
-      "data_disclosure": "Yes"
+      "data_total": 1306
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Patient's paper dental records were stolen at the office of Dr. James McGee. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint212",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -32,11 +34,10 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint212",
     "timeline": {
       "notification": {
         "year": 2012
@@ -51,9 +52,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -62,7 +60,7 @@
   "victim": [
     {
       "victim_id": "James M. McGee, D.M.D., P.C.",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "GA",
       "employee_count": "Unknown",
@@ -71,14 +69,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 9,
+      "year": 2012,
       "day": 19,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 12,
-      "day": 3,
-      "year": 2012
+      "month": 9
     },
     "discovery": {
       "unit": "Months"
@@ -97,7 +90,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

@@ -1,4 +1,7 @@
 {
+  "impact": {
+    "overall_rating": "Unknown"
+  },
   "incident_id": "hhs_osint00053",
   "attribute": {
     "confidentiality": {
@@ -13,8 +16,9 @@
     }
   },
   "discovery_method": "Unknown",
-  "schema_version": "1.0",
-  "security_compromise": "Confirmed",
+  "schema_version": "1.2",
+  "source_id": "hhs",
+  "security_incident": "Confirmed",
   "plus": {
     "timeline": {
       "notification": {}
@@ -29,9 +33,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -41,61 +42,57 @@
     {
       "victim_id": "Policlinica La Familia IPA 343",
       "industry": "000000",
+      "country": "US",
       "employee_count": "Unknown",
-      "state": "Pr",
-      "country": "United States"
+      "state": "Pr"
     },
     {
       "victim_id": "Proveedores Aliados por tu Salud",
       "industry": "000000",
-      "country": "United States",
+      "employee_count": "Unknown",
       "state": "PR",
-      "employee_count": "Unknown"
+      "country": "US"
     },
     {
       "victim_id": "Access Medical Group",
       "industry": "62",
+      "country": "US",
       "state": "PR",
-      "employee_count": "Unknown",
-      "country": "United States"
+      "employee_count": "Unknown"
     },
     {
       "victim_id": "Servicios Medicos Integrados de Fajardo",
       "industry": "000000",
-      "country": "United States",
+      "state": "PR",
       "employee_count": "Unknown",
-      "state": "PR"
+      "country": "US"
     },
     {
       "victim_id": "Grupo Medico- IPA 341",
       "industry": "000000",
+      "country": "US",
       "employee_count": "Unknown",
-      "state": "PR",
-      "country": "United States"
+      "state": "PR"
     },
     {
       "victim_id": "First Medical Center ",
       "industry": "62",
-      "country": "United States",
+      "employee_count": "Unknown",
       "state": "PR",
-      "employee_count": "Unknown"
+      "country": "US"
     }
   ],
   "timeline": {
     "incident": {
-      "month": 5,
+      "year": 2012,
       "day": 10,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 5
     },
     "discovery": {
-      "value": 4,
-      "unit": "Months"
+      "unit": "Months",
+      "value": 4
     }
   },
-  "source_id": "hhs",
   "action": {
     "physical": {
       "vector": [

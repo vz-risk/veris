@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint602",
-  "security_compromise": "Confirmed",
   "reference": "www.oag.state.md.us/idtheft/Breach%20Notices/ITU%20215637.pdf  doj.nh.gov/consumer/security-breaches/.../experian-20120518.pdf  ",
   "attribute": {
     "confidentiality": {
       "notes": "Only 2 confirmed records lost, based on MD and NH notifications.",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 2,
@@ -17,15 +17,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 2,
-      "data_disclosure": "Yes"
+      "data_total": 2
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Coast One Financial had Experian consumer information accessed. Limited information on breach available.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint602",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint602",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 18,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -56,7 +57,7 @@
         "iso_currency_code": "USD",
         "amount": 579900000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "1001 to 10000",
@@ -68,12 +69,8 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 5,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 5,
-      "year": 2012
+      "year": 2012,
+      "month": 5
     },
     "compromise": {
       "unit": "Unknown"
@@ -86,7 +83,6 @@
     }
   },
   "action": {},
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "No information provided on Asset Details.",
     "assets": []

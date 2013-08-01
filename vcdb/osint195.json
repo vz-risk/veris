@@ -33,7 +33,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint195",
-  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/Hackers-Breach-Alabama-and-Texas-Law-Enforcement-Sites-251967.shtml (20130212) http://www.databreaches.net/?p=23257 (20130212) http://pastehtml.com/view/bniks0jem.html (20130212)",
   "attribute": {
     "integrity": {
@@ -61,10 +60,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Hacker breached the website for Alabama Department of Public Safety and posted database tables and sample data online.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint195",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -72,16 +74,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint195",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 8,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -92,9 +93,6 @@
       ],
       "country": [],
       "notes": "CabinCr3w, w0rmer",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -103,7 +101,7 @@
   "victim": [
     {
       "victim_id": "Alabama Department of Public Safety",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "AL",
       "employee_count": "1001 to 10000",
@@ -115,11 +113,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 8,
       "year": 2012
     },
     "compromise": {
@@ -138,13 +131,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "SQLi"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

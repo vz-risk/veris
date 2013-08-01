@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint113",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/speedy-recovery-20120217.pdf ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Experian, one of the nationwide credit reporting agencies, identified that its client, speedy recovery services, had a certain experience customer information accessed without proper authorization. The consumer information consists of information typically found in a consumer report. Such information includes your name and address and one or more of the following: Social Security number, date of birth, or account numbers.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint113",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint113",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 17,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -50,9 +51,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Unknown"
-      ],
       "variety": [
         "Other"
       ]
@@ -65,7 +63,7 @@
         "iso_currency_code": "USD",
         "amount": 576700000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "1001 to 10000",
@@ -74,12 +72,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 1,
+      "year": 2012,
       "day": 31,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 1
     }
   },
   "action": {
@@ -94,7 +89,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

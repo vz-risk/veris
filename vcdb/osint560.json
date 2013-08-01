@@ -6,14 +6,14 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Distracting"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint560",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/eaton-vance-20120208.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 5,
@@ -23,15 +23,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 5,
-      "data_disclosure": "Potentially"
+      "data_total": 5
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Investment management company mailed shareholder documents with customer SSN potentially visible in the envelope window",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint560",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -39,16 +41,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint560",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 8,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -58,9 +59,6 @@
         "NA"
       ],
       "notes": "",
-      "role": [
-        "Unintentional"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -73,7 +71,7 @@
         "iso_currency_code": "USD",
         "amount": 1210000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MA",
       "employee_count": "1001 to 10000",
@@ -85,14 +83,9 @@
       "unit": "NA"
     },
     "incident": {
-      "month": 1,
+      "year": 2012,
       "day": 25,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 1,
-      "day": 31,
-      "year": 2012
+      "month": 1
     },
     "compromise": {
       "unit": "NA"
@@ -115,7 +108,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

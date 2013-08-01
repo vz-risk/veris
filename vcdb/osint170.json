@@ -9,11 +9,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint170",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/clark-neitzel-20120906.pdf February 12, 2013",
   "attribute": {
     "confidentiality": {
       "notes": "The laptop that was taken contained information pertaining to the patients' names, social security numbers, date of birth and medical information.  ",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -25,15 +25,17 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 942,
-      "data_disclosure": "Potentially"
+      "data_total": 942
     }
   },
   "notes": "Dr. Clark-Neitzel shares an office with Dr. Kathleen Hurd.  ",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Home office of Charlotte Clark-Neitze, MD was broken into and her medical bags and a laptop were stolen. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint170",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -41,16 +43,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint170",
     "timeline": {
       "notification": {
-        "month": 9,
+        "year": 2012,
         "day": 7,
-        "year": 2012
+        "month": 9
       }
     }
   },
@@ -60,12 +61,9 @@
         "Financial"
       ],
       "country": [
-        "United States"
+        "US"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -74,7 +72,7 @@
   "victim": [
     {
       "victim_id": "Charlotte Clark-Neitzel, MD",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "WA",
       "employee_count": "Unknown",
@@ -83,14 +81,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 7,
+      "year": 2012,
       "day": 24,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 9,
-      "day": 6,
-      "year": 2012
+      "month": 7
     },
     "discovery": {
       "unit": "Weeks"
@@ -110,13 +103,11 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
-    "personal": true,
     "notes": "The residence of Dr. Clark-Neitzel was broken into and her medical bags and laptop were stolen.  ",
     "assets": [
       {
-        "variety": "S - Other server"
+        "variety": "S - Other"
       },
       {
         "variety": "U - Laptop"
@@ -130,6 +121,7 @@
       {
         "variety": "N - Other"
       }
-    ]
+    ],
+    "ownership": "Employee"
   }
 }

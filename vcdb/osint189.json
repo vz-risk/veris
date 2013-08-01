@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint189",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/bimbo-bakeries-20120502.pdf (20130212)",
   "attribute": {
     "confidentiality": {
       "notes": "We know of 6 victims in NH.  There are probably more victims from other states.",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 6,
@@ -47,15 +47,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 6,
-      "data_disclosure": "Potentially"
+      "data_total": 6
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Laptop stolen from employee car contained non-public personnel information.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint189",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -63,16 +65,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint189",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 2,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -83,9 +84,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -99,7 +97,7 @@
         "iso_currency_code": "USD",
         "amount": 3000000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "PA",
       "employee_count": "25001 to 50000",
@@ -111,14 +109,9 @@
       "unit": "NA"
     },
     "incident": {
-      "month": 4,
+      "year": 2012,
       "day": 13,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 4,
-      "day": 14,
-      "year": 2012
+      "month": 4
     },
     "compromise": {
       "unit": "NA"
@@ -143,7 +136,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

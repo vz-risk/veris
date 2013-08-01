@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint147",
-  "security_compromise": "Confirmed",
   "reference": "http://www.haaretz.com/news/national/saudi-hackers-claim-to-post-personal-information-of-400-000-israelis-1.405147 ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Saudi hackers claimed Monday to have released the credit card information of hundreds of thousands of Israelis, after hacking one of Israel's leading sports websites.  A hacker claiming to be a member of the Saudi hacking group, Group-XP, claimed Monday that he penetrated one of Israel's leading sports websites and released the personal information of hundreds of thousands of Israelis.  One hacker, who claimed to be a member of the Saudi hacking group, Group-XP, said he revealed information including credit card details, personal addresses, names, phone numbers and ID numbers of individuals listed on the website, One.co.il. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint147",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint147",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 3,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -52,9 +53,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -64,19 +62,16 @@
     {
       "victim_id": "One.co.il",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "451",
-      "country": "Israel"
+      "employee_count": "Unknown",
+      "country": "IL"
     }
   ],
   "timeline": {
     "incident": {
-      "month": 1,
+      "year": 2012,
       "day": 3,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 1
     }
   },
   "action": {
@@ -90,7 +85,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

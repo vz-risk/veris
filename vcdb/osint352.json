@@ -6,10 +6,9 @@
         "variety": "Asset and fraud"
       }
     ],
-    "overall_rating": "Distracting"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint352",
-  "security_compromise": "Confirmed",
   "reference": "http://www.nhregister.com/articles/2012/06/08/news/doc4fd206134783d161651112.txt  http://www.nbcconnecticut.com/news/local/Rent-Rebate-Laptop-Stolen-from-New-Haven-Library--158177055.html",
   "attribute": {
     "confidentiality": {
@@ -26,10 +25,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "Stolen laptop results in potential compromise of PII.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint352",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -37,16 +39,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint352",
     "timeline": {
       "notification": {
-        "month": 6,
+        "year": 2012,
         "day": 8,
-        "year": 2012
+        "month": 6
       }
     }
   },
@@ -58,9 +59,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -69,7 +67,7 @@
   "victim": [
     {
       "victim_id": "City of New Haven",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CT",
       "employee_count": "Unknown",
@@ -81,14 +79,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 5,
+      "year": 2012,
       "day": 23,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 5,
-      "day": 23,
-      "year": 2012
+      "month": 5
     },
     "compromise": {
       "unit": "NA"
@@ -113,7 +106,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "assets": [
       {

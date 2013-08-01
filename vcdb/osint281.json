@@ -30,14 +30,14 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Painful"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint281",
-  "security_compromise": "Confirmed",
   "reference": "http://www.u.tv/news/Council-seeks-to-prevent-future-leaks/4eb4add3-0374-468a-b69b-0c544b0e64a7 (20130215) http://www.u.tv/news/Council-probes-security-breach/eabc740e-2763-484d-a577-c76bbbaf59cb (20130215) http://www.belfasttelegraph.co.uk/news/local-national/northern-ireland/data-leak-fiasco-deepens-recipient-of-councillors-details-defiant-as-injunction-granted-28722985.html (20130215) http://www.belfasttelegraph.co.uk/news/local-national/northern-ireland/belfast-city-councillors-bank-details-disclosed-in-data-foulup-28722552.html (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 51,
@@ -51,15 +51,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 51,
-      "data_disclosure": "Yes"
+      "data_total": 51
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Employee accidentally releases non-public data to a private citizen.  That citizen then published the non-public information.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint281",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -67,16 +69,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint281",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 6,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -86,9 +87,6 @@
         "NA"
       ],
       "notes": "Accidental disclosure of non-public information while responding to a request for public information.",
-      "role": [
-        "Unintentional"
-      ],
       "variety": [
         "End-user"
       ]
@@ -98,12 +96,9 @@
         "Unknown"
       ],
       "country": [
-        "United Kingdom"
+        "GB"
       ],
       "notes": "Actor received information that was accidentally disclosed and published the non-public information for unknown reasons.",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -113,9 +108,9 @@
     {
       "victim_id": "Belfast City Council",
       "notes": "",
-      "employee_count": "101 to 1000",
       "industry": "921",
-      "country": "Ireland"
+      "employee_count": "101 to 1000",
+      "country": "IE"
     }
   ],
   "timeline": {
@@ -123,14 +118,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 3,
+      "year": 2012,
       "day": 5,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 3,
-      "day": 5,
-      "year": 2012
+      "month": 3
     },
     "compromise": {
       "unit": "Unknown"
@@ -162,7 +152,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

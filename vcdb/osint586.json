@@ -3,7 +3,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint586",
-  "security_compromise": "Confirmed",
   "reference": "http://www.abajournal.com/news/article/suit_claims_ex-partner_installed_software_allowing_continued_access_to_law_/",
   "attribute": {
     "integrity": {
@@ -26,10 +25,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Lawyer installed Dropbox on corporate devices and accessed files after moving to another firm.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint586",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -37,16 +39,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint586",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 13,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -56,9 +57,6 @@
         "Espionage"
       ],
       "notes": "Partner in law firm. Installed Dropbox to allow access to files in cloud.",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Executive"
       ]
@@ -71,7 +69,7 @@
         "iso_currency_code": "USD",
         "amount": 7500000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "PA",
       "employee_count": "11 to 100",
@@ -83,12 +81,8 @@
       "unit": "Minutes"
     },
     "incident": {
-      "month": 1,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "year": 2012
+      "year": 2012,
+      "month": 1
     },
     "compromise": {
       "unit": "NA"
@@ -112,22 +106,21 @@
       ]
     },
     "malware": {
+      "variety": [
+        "Other"
+      ],
       "vector": [
         "Direct install"
       ],
-      "cve": "",
       "name": "",
-      "variety": [
-        "Other"
-      ]
+      "cve": ""
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [
       {
-        "variety": "S - Other server"
+        "variety": "S - Other"
       },
       {
         "variety": "U - Other"

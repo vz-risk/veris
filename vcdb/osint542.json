@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint542",
-  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/02/17/islamicfinder-org-and-culturecrossing-net-hacked-by-alienz-and-a-message-to-anonymous/ ",
   "attribute": {
     "confidentiality": {
       "notes": "Account information that contained encrypted passwords. ",
+      "data_disclosure": "Unknown",
       "data": [
         {
           "variety": "Unknown"
@@ -16,15 +16,17 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 300,
-      "data_disclosure": "Unknown"
+      "data_total": 300
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Websites were attacked and they were islamicfinder.org and culturecrossing.net and both contained account leaks.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint542",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -32,16 +34,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "Yes"
     },
-    "f500": "N",
-    "master_id": "osint542",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 17,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -52,9 +53,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unaffiliated"
@@ -68,7 +66,7 @@
         "iso_currency_code": "USD",
         "amount": 160000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "IslamicFinder is a non-profit organization, is dedicated to serving Islam on the Internet and currently provides information about mosques, Islamic organizations, Islamic centers, and Muslim owned businesses all over the world (our users can also add them).",
       "state": "CA",
       "employee_count": "1 to 10",
@@ -77,18 +75,13 @@
     {
       "victim_id": "Islamic Finder",
       "industry": "541612",
+      "country": "Unknown",
       "employee_count": "Unknown",
-      "state": "",
-      "country": "Unknown"
+      "state": ""
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 16,
       "year": 2012
     }
   },
@@ -103,11 +96,10 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {
-        "variety": "S - Other server"
+        "variety": "S - Other"
       }
     ]
   }

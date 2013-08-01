@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint157",
-  "security_compromise": "Confirmed",
   "reference": "http://www.dailymail.co.uk/news/article-2086866/Eight-officers-resign-illegal-searches-dozens-people-using-police-files.html",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "Eight police staff have lost their jobs after illegally accessing the confidential records of dozens of people on the Police National Computer.  Of the eight, one police officer and one community support officer (PCSO) are facing criminal charges after an investigation by Essex Police found them guilty of gross misconduct. Another PCSO has been cautioned.  All eight are alleged to have accessed the personal records of members of the public and passed on the information to people outside the force.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint157",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint157",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 14,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -50,9 +51,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Inappropriate"
-      ],
       "variety": [
         "End-user"
       ]
@@ -62,16 +60,13 @@
     {
       "victim_id": "Essex Police Department",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "92219",
-      "country": "United Kingdom"
+      "employee_count": "Unknown",
+      "country": "GB"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -87,7 +82,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "notes": "",
     "assets": [

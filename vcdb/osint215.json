@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint215",
-  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/wp-content/uploads/Press-Release-08-15-12.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "The computer contained files that had patient names, medicaid numbers and short summaries of information used for administrate purposes.  ",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,15 +19,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 3184,
-      "data_disclosure": "Potentially"
+      "data_total": 3184
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "A personal computer was stolen from the office that contained personal information of Liberty Resources Inc Consumers in eastern Pennsylvania.   ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint215",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -35,16 +37,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint215",
     "timeline": {
       "notification": {
-        "month": 8,
+        "year": 2012,
         "day": 15,
-        "year": 2012
+        "month": 8
       }
     }
   },
@@ -55,9 +56,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -71,7 +69,7 @@
         "iso_currency_code": "USD",
         "amount": 76000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "Liberty Resources Inc is a non-profit, Consumer driven organization that advocates for and works with persons with disabilities to ensure their civil rights and equal access to all aspects of life in our community.  ",
       "state": "PA",
       "employee_count": "101 to 1000",
@@ -80,14 +78,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 8,
+      "year": 2012,
       "day": 4,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 8,
-      "day": 13,
-      "year": 2012
+      "month": 8
     },
     "discovery": {
       "unit": "Days"
@@ -106,7 +99,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

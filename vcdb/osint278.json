@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint278",
-  "security_compromise": "Confirmed",
   "reference": "http://pastebin.com/vrRwPTV8 (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 250,
@@ -51,15 +51,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 250,
-      "data_disclosure": "Yes"
+      "data_total": 250
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Hackers break into website and post non-public information",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint278",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -67,16 +69,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint278",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 13,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -88,9 +89,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -100,9 +98,9 @@
     {
       "victim_id": "alamiravideo.com",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "51913",
-      "country": "United Arab Emirates"
+      "employee_count": "Unknown",
+      "country": "AE"
     }
   ],
   "timeline": {
@@ -110,9 +108,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -136,7 +131,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

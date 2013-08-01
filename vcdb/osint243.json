@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint243",
-  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=9907; http://www.privacyrights.org/data-breach?order=field_breach_total_value&sort=asc&title=",
   "attribute": {
     "confidentiality": {
       "notes": "Potential exposure of protected health information from psychology patients. ",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,15 +19,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 585,
-      "data_disclosure": "Potentially"
+      "data_total": 585
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "A laptop was stolen that contained patient information. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint243",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -35,16 +37,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint243",
     "timeline": {
       "notification": {
-        "month": 7,
+        "year": 2012,
         "day": 27,
-        "year": 2012
+        "month": 7
       }
     }
   },
@@ -55,9 +56,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -71,7 +69,7 @@
         "iso_currency_code": "USD",
         "amount": 230000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "TX",
       "employee_count": "1 to 10",
@@ -80,12 +78,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 6,
+      "year": 2012,
       "day": 16,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 6
     },
     "discovery": {
       "unit": "Months"
@@ -104,7 +99,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

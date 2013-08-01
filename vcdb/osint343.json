@@ -6,14 +6,14 @@
         "variety": "Asset and fraud"
       }
     ],
-    "overall_rating": "Painful"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint343",
-  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/03/04/panama-film-website-hacked-and-accounts-dumped-for-acta/  http://hackmageddon.com/tag/cine-com-pa/",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1200,
@@ -23,15 +23,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1200,
-      "data_disclosure": "Yes"
+      "data_total": 1200
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "1200 Usernames and passwords dumped after web site breach.  Purported to be part of #OpMarzoNegro.  No specific hacking details provided in OSINT. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint343",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -39,16 +41,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint343",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 4,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -60,9 +61,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -72,9 +70,9 @@
     {
       "victim_id": "cine.com.pa",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "512",
-      "country": "Panama"
+      "employee_count": "Unknown",
+      "country": "PA"
     }
   ],
   "timeline": {
@@ -82,12 +80,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 3,
+      "year": 2012,
       "day": 2,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 3
     },
     "compromise": {
       "unit": "Unknown"
@@ -110,7 +105,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

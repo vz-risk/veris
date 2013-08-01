@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint226",
-  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/03/15/israeli-airforce-secret-data-leaked-for-recent-air-attacks-by-0xomar/ ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "Hacker: 0xOmar  Sites: www.viaf.co.il & www.vfs-il.net",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Well its been a quiet couple of months on the cyber waar front for Israeli, that is until today when a hacker who use\u2019s the handle 0xOmar has claimed to leak secret information from the Israel air force. The attack comes not long after the recent attacks which have so far left many injured or worse.  In the leak comes a message which claims the hacked data is from www.viaf.co.il & www.vfs-il.net and the hacked data can be found on several download sites and we can confirm this data is indeed a tone of information and accounts which may take some time to go through.  The leak which is a 8.86 MB rar file contains various different files and documents that will need translating.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint226",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint226",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 15,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -52,9 +53,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -64,18 +62,13 @@
     {
       "victim_id": "Israeli Airforce",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "928",
-      "country": "Israel"
+      "employee_count": "Unknown",
+      "country": "IL"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 3,
-      "day": 15,
       "year": 2012
     }
   },
@@ -90,7 +83,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint17",
-  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/601841172_1_%28BHDOCS%29_1.PDF?",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Employee sent a career placement email to students regarding open positions which inadvertently included an attachment containing student information.  The attachment contained student attendance information, including name, DOB, SSN.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint17",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": ""
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint17",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 28,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -48,9 +49,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "End-user"
@@ -64,7 +62,7 @@
         "iso_currency_code": "USD",
         "amount": 19800000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "101 to 1000",
@@ -73,12 +71,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 12,
+      "year": 2012,
       "day": 11,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 12
     }
   },
   "action": {
@@ -92,7 +87,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint480",
-  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/06/07/destiny-software-hacked-1630-user-details-leaked-by-googleswe/",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1630,
@@ -17,15 +17,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1630,
-      "data_disclosure": "Yes"
+      "data_total": 1630
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Software company website compromised, user emails and clear text passwords leaked to PB.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint480",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": ""
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint480",
     "timeline": {
       "notification": {
-        "month": 6,
+        "year": 2012,
         "day": 7,
-        "year": 2012
+        "month": 6
       }
     }
   },
@@ -54,9 +55,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -65,7 +63,7 @@
   "victim": [
     {
       "victim_id": "Destiny Software",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "Unknown",
@@ -77,9 +75,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -103,7 +98,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

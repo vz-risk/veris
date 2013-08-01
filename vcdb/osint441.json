@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint441",
-  "security_compromise": "Confirmed",
   "reference": "http://www.databreachtoday.com/virus-causes-nissan-data-breach-a-4698; http://nissannews.com/en-US/nissan/usa/releases/statement-nissan-is-taking-actions-to-protect-and-inform-employees-and-customers-following-an-intrusion-into-the-company-s-global-network-systems?la=1&download_url=%2Fen-US%2Fnissan%2Fusa%2Freleases%2Fdb7532f4-1e6e-4b5c-bc51-54f07b4dc502%2Fdownload%2F825faf56-0ccf-4f70-8210-394656dadd32 ",
   "attribute": {
     "integrity": {
@@ -25,10 +24,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Malware placed on Nissan Motor Co.'s network allowed user IDs and hashed passwords to be transmitted.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint441",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -36,16 +38,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint441",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 23,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -57,9 +58,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -68,7 +66,7 @@
   "victim": [
     {
       "victim_id": "Nissan Motor Co.",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "TN",
       "employee_count": "Unknown",
@@ -77,11 +75,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 4,
-      "day": 13,
       "year": 2012
     }
   },
@@ -96,7 +89,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

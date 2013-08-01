@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint133",
-  "security_compromise": "Confirmed",
   "reference": "http://www.atg.state.vt.us/issues/consumer-protection/privacy-and-Data-Security/documents-and-resources5/delaval-inc-security-breach-notice-ltr-to-consumer.php ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Fidelity, our retirement program administrator, detected some unusual activity related to a small number of company employees retirement accounts. Based upon that unusual activity, we were able to conclude that unauthorized access to the personal information of all company employees with Fidelity accounts may have occurred. The personal information that may have been obtained includes name, phone and e-mail addresses, social security numbers and account balances, employment status and employee number.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint133",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint133",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 13,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -51,9 +52,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -67,7 +65,7 @@
         "iso_currency_code": "USD",
         "amount": 48900000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MO",
       "employee_count": "101 to 1000",
@@ -76,9 +74,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -93,7 +88,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

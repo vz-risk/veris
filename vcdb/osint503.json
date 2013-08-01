@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint503",
-  "security_compromise": "Confirmed",
   "reference": "http://www.stuff.co.nz/manawatu-standard/news/8018794/Data-breaches-parents-sent-private-details ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - customer",
+  "schema_version": "1.2",
   "summary": "The Manawatu Standard revealed yesterday that Palmerston North woman Zelda McConachy was mailed other patients' mental health data after she applied to MidCentral to see her own files.    Ms McConachy claimed she was mailed other mental health patients' files along with her own records.  The Standard has viewed the most recent files. Along with her own records, she was sent two pages from another patient's file with details including his name, age, address, phone number, medication type and notes on his behavioural issues.  MidCentral yesterday confirmed it made an error in that particular incident. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint503",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint503",
     "timeline": {
       "notification": {
-        "month": 11,
+        "year": 2012,
         "day": 30,
-        "year": 2012
+        "month": 11
       }
     }
   },
@@ -50,9 +51,6 @@
         "NA"
       ],
       "notes": "",
-      "role": [
-        "Unintentional"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -62,16 +60,13 @@
     {
       "victim_id": "MidCentral District Health Board",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "923120",
-      "country": "New Zealand"
+      "employee_count": "Unknown",
+      "country": "NZ"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -86,7 +81,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "assets": [

@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint1",
-  "security_compromise": "Confirmed",
   "reference": "http://www.wftv.com/news/news/local/mistake-put-personal-information-valencia-college-/nHWdn/  ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 9000,
@@ -47,15 +47,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 9000,
-      "data_disclosure": "Yes"
+      "data_total": 9000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Valencia College is apologizing after a mistake allowed the personal information of 9,000 current and prospective students to be posted online.  The school said an Excel spreadsheet with the students' names, address, date of birth, and student IDs was listed online on a password-protected website.  Eventually, it lost its password protection, which means anyone could see the information. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint1",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -63,16 +65,15 @@
         "data_subject": ""
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint1",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 7,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -80,9 +81,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -96,7 +94,7 @@
         "iso_currency_code": "USD",
         "amount": 9200000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "FL",
       "employee_count": "101 to 1000",
@@ -108,9 +106,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -134,7 +129,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

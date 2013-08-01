@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint415",
-  "security_compromise": "Confirmed",
   "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm; https://www.privacyrights.org/node/53393 ",
   "attribute": {
     "confidentiality": {
       "notes": "Information pertaining to the companies' employees ",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Unknown"
@@ -16,15 +16,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 900,
-      "data_disclosure": "Potentially"
+      "data_total": 900
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Information on 900 employees were found in possession of a licensed nurse who may or may not have been affiliated with North Shore University Hospital  that was arraigned in another breach case.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint415",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -32,16 +34,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "Yes"
     },
-    "f500": "N",
-    "master_id": "osint415",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 12,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -53,9 +54,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Other"
       ]
@@ -64,7 +62,7 @@
   "victim": [
     {
       "victim_id": "Nippon Express",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "VA",
       "employee_count": "1001 to 10000",
@@ -76,7 +74,7 @@
         "iso_currency_code": "USD",
         "amount": 464000000
       },
-      "country": "United States",
+      "country": "US",
       "industry": "622110",
       "state": "NY",
       "employee_count": "1001 to 10000"
@@ -84,11 +82,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 4,
-      "day": 11,
       "year": 2012
     }
   },
@@ -105,7 +98,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

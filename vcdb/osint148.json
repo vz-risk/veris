@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint148",
-  "security_compromise": "Confirmed",
   "reference": "http://www.chinapost.com.tw/taiwan/local/taoyuan/2012/01/03/327787/CIB-takes.htm",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - law enforcement",
+  "schema_version": "1.2",
   "summary": "The Criminal Investigation Bureau (CIB) yesterday nabbed the leader of a group of credit card criminals in Taoyuan County who profited through cheaply selling off illegally purchased concert tickets.  A man surnamed Lin began shopping online with embezzled credit cards in early 2011. After being busted by the police in April that year, Lin adjusted his criminal strategies.  Lin obtained credit card numbers and identify information of the cardholders from a television shopping channel leak to purchase concert tickets of famous singers, including Leehom Wang, Jay Chou, Eason Chen, K-Friends, Luo Da-yu (\u7f85\u5927\u4f51) and Wu Bai & China Blue. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint148",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,11 +33,10 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint148",
     "timeline": {
       "notification": {
         "year": 2012
@@ -50,9 +51,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -62,16 +60,13 @@
     {
       "victim_id": "Unnamed Television Shopping Channel",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "71",
-      "country": "China"
+      "employee_count": "Unknown",
+      "country": "CN"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -86,7 +81,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - law enforcement",
   "asset": {
     "assets": [
       {

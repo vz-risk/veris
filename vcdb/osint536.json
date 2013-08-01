@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint536",
-  "security_compromise": "Confirmed",
   "reference": "http://www.privacyrights.org/data-breach",
   "attribute": {
     "confidentiality": {
       "notes": "Sensitive health information related to a health care premium plans. ",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Medical"
@@ -19,15 +19,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 1134,
-      "data_disclosure": "Yes"
+      "data_total": 1134
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "An email or emails with sensitive health information related to a health care premium plan was mistakenly emailed to or accessed by unauthorized people. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint536",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -35,16 +37,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint536",
     "timeline": {
       "notification": {
-        "month": 7,
+        "year": 2012,
         "day": 17,
-        "year": 2012
+        "month": 7
       }
     }
   },
@@ -52,9 +53,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "System admin"
@@ -64,7 +62,7 @@
   "victim": [
     {
       "victim_id": "Hogan Services Inc. Health Care Premium Plan",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MO",
       "employee_count": "Unknown",
@@ -73,14 +71,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 3,
+      "year": 2012,
       "day": 30,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 6,
-      "day": 8,
-      "year": 2012
+      "month": 3
     }
   },
   "action": {
@@ -94,7 +87,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

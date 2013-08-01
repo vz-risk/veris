@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint362",
-  "security_compromise": "Confirmed",
   "reference": "http://articles.latimes.com/2012/may/12/local/la-me-0513-homecare-workers-20120513 (20130218) http://www.examiner.com/article/california-s-home-supportive-services-reports-data-breach (20130218)",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 700000,
@@ -47,15 +47,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 700000,
-      "data_disclosure": "Potentially"
+      "data_total": 700000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Damaged package in postal mail arrives with missing data",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint362",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -63,16 +65,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint362",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 8,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -80,9 +81,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -92,7 +90,7 @@
   "victim": [
     {
       "victim_id": "California Department of Social Services",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "1001 to 10000",
@@ -104,13 +102,8 @@
       "unit": "NA"
     },
     "incident": {
-      "month": 4,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 5,
-      "day": 1,
-      "year": 2012
+      "year": 2012,
+      "month": 4
     },
     "compromise": {
       "unit": "NA"
@@ -133,7 +126,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

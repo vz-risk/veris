@@ -10,14 +10,14 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Distracting"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint347",
-  "security_compromise": "Confirmed",
   "reference": "http://weldbham.com/secondfront/2012/02/10/hacker-group-targets-alabama-over-hb56/  http://freakoutnation.com/2012/02/09/anonymous-your-government-leaves-your-sensitive-data-vulnerable-to-hacking/?wpmp_tp=1",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 46000,
@@ -27,15 +27,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 46000,
-      "data_disclosure": "Yes"
+      "data_total": 46000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Alabama state govt servers breached by activist group via unknown methods. PII on 46,000 residents at risk. Some data disclosed on pastebay.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint347",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -43,16 +45,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint347",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 9,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -64,9 +65,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -75,7 +73,7 @@
   "victim": [
     {
       "victim_id": "City of Mobile",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "AL",
       "employee_count": "Unknown",
@@ -87,11 +85,8 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 2,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "year": 2012,
+      "month": 2
     },
     "compromise": {
       "unit": "Unknown"
@@ -114,7 +109,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

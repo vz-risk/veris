@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint537",
-  "security_compromise": "Confirmed",
   "reference": "http://datasecurityweekly.com/roll-call-of-healthcare-data-breaches-for-2012/",
   "attribute": {
     "confidentiality": {
       "notes": "It is unknown what information was contained on the patient records that were on the stolen laptop. ",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -16,15 +16,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 20000,
-      "data_disclosure": "Potentially"
+      "data_total": 20000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "A laptop was stolen that contained patient records.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint537",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -32,16 +34,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint537",
     "timeline": {
       "notification": {
-        "month": 6,
+        "year": 2012,
         "day": 15,
-        "year": 2012
+        "month": 6
       }
     }
   },
@@ -52,9 +53,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -68,7 +66,7 @@
         "iso_currency_code": "USD",
         "amount": 5000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "IN",
       "employee_count": "11 to 100",
@@ -77,9 +75,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -96,7 +91,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

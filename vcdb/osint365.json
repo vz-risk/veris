@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint365",
-  "security_compromise": "Confirmed",
   "reference": "http://pastebin.com/AGBywqf5 (20130219) http://www.cyberwarnews.info/2012/05/30/full-database-from-bzpower-com-leaked/ (20130219) http://www.cyberwarnews.info/2012/05/28/bzpower-com-bionicle-hacked-again-900-accounts-leaked/ (20130219)",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 9000,
@@ -47,15 +47,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 9000,
-      "data_disclosure": "Yes"
+      "data_total": 9000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Hackers use SQL injection to dump non-public member information and post it to pastebin.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint365",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -63,11 +65,10 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint365",
     "timeline": {
       "notification": {
         "year": 2012
@@ -81,9 +82,6 @@
       ],
       "country": [],
       "notes": "Hacker known as AnonTeenUSA.  Although affiliated with Anonymous, it doesn't appear that any protest or statement was made along with the hack.",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -92,7 +90,7 @@
   "victim": [
     {
       "victim_id": "bzpower.com",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "FL",
       "employee_count": "Unknown",
@@ -104,14 +102,9 @@
       "unit": "Minutes"
     },
     "incident": {
-      "month": 5,
+      "year": 2012,
       "day": 27,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 5,
-      "day": 27,
-      "year": 2012
+      "month": 5
     },
     "compromise": {
       "unit": "Unknown"
@@ -129,13 +122,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "SSI injection"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

@@ -30,14 +30,14 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint169",
-  "security_compromise": "Suspected",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/altrec-20120524.pdf (20130212) http://www.oag.state.md.us/idtheft/Breach%20Notices/ITU%20215640.pdf (20130212)",
   "attribute": {
     "confidentiality": {
       "notes": "Only found records of customers affected in two states.  We know there were victims in CA but unable to find a count.  Likely other victims in other states.",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 3011,
@@ -47,15 +47,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 3011,
-      "data_disclosure": "Yes"
+      "data_total": 3011
     }
   },
   "notes": "Vulnerability was present between June 2010 and March 2012.  Unclear when data was exfiltrated.",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - fraud detection",
+  "schema_version": "1.2",
   "summary": "Fraudulent activity on payment cards of people that had visited altrec.com.  ",
   "source_id": "osint",
+  "security_incident": "Suspected",
   "plus": {
+    "master_id": "osint169",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -63,16 +65,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint169",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 23,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -86,7 +87,7 @@
         "iso_currency_code": "USD",
         "amount": 2900000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "OR",
       "employee_count": "11 to 100",
@@ -100,11 +101,6 @@
     "incident": {
       "year": 2012
     },
-    "investigation": {
-      "month": 5,
-      "day": 7,
-      "year": 2012
-    },
     "compromise": {
       "unit": "Unknown"
     },
@@ -116,7 +112,6 @@
     }
   },
   "action": {},
-  "discovery_method": "Ext - fraud detection",
   "asset": {
     "notes": "",
     "assets": [

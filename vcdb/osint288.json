@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint288",
-  "security_compromise": "Confirmed",
   "reference": "http://www.examiner.com/article/in-bizarre-security-breach-blue-cross-sends-private-info-new-member-packets (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 100,
@@ -51,15 +51,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 100,
-      "data_disclosure": "Yes"
+      "data_total": 100
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Organization accidentally mails PHI for 100 people to all their new members.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint288",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -67,16 +69,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint288",
     "timeline": {
       "notification": {
-        "month": 6,
+        "year": 2012,
         "day": 25,
-        "year": 2012
+        "month": 6
       }
     }
   },
@@ -84,9 +85,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "End-user"
@@ -100,7 +98,7 @@
         "iso_currency_code": "USD",
         "amount": 5500000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NC",
       "employee_count": "1001 to 10000",
@@ -112,12 +110,9 @@
       "unit": "NA"
     },
     "incident": {
-      "month": 4,
+      "year": 2012,
       "day": 12,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 4
     },
     "compromise": {
       "unit": "NA"
@@ -140,7 +135,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

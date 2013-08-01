@@ -33,7 +33,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint5",
-  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/ecrime/databreach/reports/sb24-37286, http://www.atg.state.vt.us/assets/files/2012%2012%2020%20World%20Travel%20Holdings%20Security%20Breach%20Notice%20ltr%20to%20consumer.pdf",
   "attribute": {
     "confidentiality": {
@@ -50,10 +49,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "An unauthorized person gained access to the booking system by misusing the log-in credentials of an authorized user.  Although credit card information is encrypted when it is stored in the booking system, the unauthorized person used a decryption feature of the system to view the card number and expiration for a limited number of individuals.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint5",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -61,16 +63,15 @@
         "data_subject": ""
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint5",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 17,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -84,7 +85,7 @@
         "iso_currency_code": "USD",
         "amount": 37200000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MA",
       "employee_count": "101 to 1000",
@@ -96,12 +97,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 11,
+      "year": 2012,
       "day": 30,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 11
     },
     "compromise": {
       "unit": "Unknown"
@@ -119,13 +117,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Brute force"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint506",
-  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/Letter%20to%20Affected%20Customers.pdf",
   "attribute": {
     "confidentiality": {
@@ -26,10 +25,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Usernames, credit card information, email addresses, billing addresses, and/or logins were compromised between 4/3 and 4/7.  ESI was accessed by unapproved third parties.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint506",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -37,11 +39,10 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint506",
     "timeline": {
       "notification": {
         "year": 2012
@@ -56,9 +57,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -71,7 +69,7 @@
         "iso_currency_code": "USD",
         "amount": 4
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NJ",
       "employee_count": "11 to 100",
@@ -83,13 +81,9 @@
       "unit": "Minutes"
     },
     "incident": {
-      "month": 4,
+      "year": 2012,
       "day": 2,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 4,
-      "year": 2012
+      "month": 4
     },
     "compromise": {
       "unit": "Unknown"
@@ -112,7 +106,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

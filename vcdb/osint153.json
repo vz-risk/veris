@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint153",
-  "security_compromise": "Confirmed",
   "reference": "http://news.fredericksburg.com/gettingschooled/2012/01/05/spotsylvania-school-employees-personal-information-was-av/ ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Personal information of some Spotsylvania school division employees was briefly accessible online over the holidays.  An employee discovered the problem on Dec. 23 and division staff immediately moved to address the issue, shutting down the internal system known as \u201cself serve\u201d that contains personal information. The system was shut down until staff identified what it presumed to be the problem.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint153",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint153",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 5,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -48,9 +49,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -64,7 +62,7 @@
         "iso_currency_code": "USD",
         "amount": 112900000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "PA",
       "employee_count": "1001 to 10000",
@@ -73,13 +71,8 @@
   ],
   "timeline": {
     "incident": {
-      "month": 12,
-      "year": 2011
-    },
-    "investigation": {
-      "month": 12,
-      "day": 23,
-      "year": 2011
+      "year": 2011,
+      "month": 12
     }
   },
   "action": {
@@ -93,7 +86,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint373",
-  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=22776 ",
   "attribute": {
     "confidentiality": {
       "notes": "The information that was released included names, postal addresses, SHA1 passwords and e-mail addresses.  ",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Personal"
@@ -16,15 +16,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 594,
-      "data_disclosure": "Potentially"
+      "data_total": 594
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Anti-Israeli cyber attacks resulted in a dump of emails from Nefesh B'Nefesh (NBN)  that consisted of people signing up for meetings or workshops.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint373",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -32,16 +34,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint373",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 10,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -52,9 +53,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Activist"
@@ -68,17 +66,14 @@
         "iso_currency_code": "USD",
         "amount": 15000000
       },
-      "country": "Israel",
-      "notes": "",
+      "country": "IL",
+      "industry": "813410",
       "employee_count": "11 to 100",
-      "industry": "813410"
+      "notes": ""
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -93,7 +88,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

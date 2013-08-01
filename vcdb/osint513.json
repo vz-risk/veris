@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint513",
-  "security_compromise": "Confirmed",
   "reference": "http://www.thestar.com/news/gta/article/1308440--concern-mounts-among-those-affected-by-federal-government-privacy-breach, http://www.sunnewsnetwork.ca/sunnews/canada/archives/2013/01/20130101-175145.html ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 5000,
@@ -17,15 +17,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 5000,
-      "data_disclosure": "Yes"
+      "data_total": 5000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "The massive federal department responsible for Canada's employment, training and pension programs faces a formal investigation into a possible breach of the nation's privacy law after the government misplaced a USB key containing the personal information of 5,000 Canadians.  An employee of Human Resources and Skills Development Canada (HRSDC) lost the flash drive containing the Social Insurance Numbers and other sensitive information, QMI Agency first reported last week.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint513",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint513",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2013,
         "day": 1,
-        "year": 2013
+        "month": 1
       }
     }
   },
@@ -50,9 +51,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -63,21 +61,16 @@
     {
       "victim_id": "Human Resources and Skills Development Canada (HRSDC)",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "561311",
-      "country": "Canada"
+      "employee_count": "Unknown",
+      "country": "CA"
     }
   ],
   "timeline": {
     "incident": {
-      "month": 11,
+      "year": 2012,
       "day": 17,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 12,
-      "day": 21,
-      "year": 2012
+      "month": 11
     }
   },
   "action": {
@@ -91,7 +84,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

@@ -1,15 +1,14 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint143",
-  "security_compromise": "Confirmed",
   "reference": "http://www.theregister.co.uk/2012/01/27/students_hack_teachers_computers/",
   "attribute": {
     "integrity": {
       "notes": "Modified their grades in the system.",
       "variety": [
-        "Modified data"
+        "Modify data"
       ]
     },
     "confidentiality": {
@@ -22,10 +21,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - customer",
+  "schema_version": "1.2",
   "summary": "Three high school juniors have been arrested after they devised a sophisticated hacking scheme to up their grades and make money selling quiz answers to their classmates.  The students are accused of breaking into the janitor\u2019s office of California's Palos Verdes High School and making a copy of the master key, giving them access to all the classrooms. They then attached keylogging hardware to the computers of four teachers, and harvested the passwords needed to access the central files of the school network.  They then used that access to change their grades slightly, nudging them up by increments so that all three got As. At the time they were caught, keyloggers were found on three other teachers\u2019 systems, indicating the group was expanding its efforts. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint143",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -33,16 +35,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint143",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 27,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -52,9 +53,6 @@
         "Financial"
       ],
       "notes": "These were high school students victimizing their own school.  They also took exams, figured out the answers and sold them.  That is what got them caught--someone snitched.",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Other"
       ]
@@ -67,7 +65,7 @@
         "iso_currency_code": "USD",
         "amount": 53300000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "101 to 1000",
@@ -77,9 +75,6 @@
   "timeline": {
     "incident": {
       "year": 2012
-    },
-    "investigation": {
-      "year": 2012
     }
   },
   "action": {
@@ -88,10 +83,10 @@
       "vector": [
         "Physical access"
       ],
-      "cve": "",
       "variety": [
         "Brute force"
-      ]
+      ],
+      "cve": ""
     },
     "physical": {
       "notes": "Broke into janitor office and made copy of the master key.  Used that to get into other areas and install hardware keyloggers on several systems.",
@@ -107,7 +102,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "assets": [

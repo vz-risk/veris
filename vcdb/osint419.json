@@ -3,7 +3,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint419",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/dartmouth-20120314.pdf",
   "attribute": {
     "confidentiality": {
@@ -29,10 +28,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "Laptop w/ PII stolen from vehicle.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint419",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -40,16 +42,15 @@
         "data_subject": "Student"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint419",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 14,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -61,9 +62,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -72,7 +70,7 @@
   "victim": [
     {
       "victim_id": "Dartmouth College",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NH",
       "employee_count": "1001 to 10000",
@@ -84,14 +82,9 @@
       "unit": "Seconds"
     },
     "incident": {
-      "month": 2,
+      "year": 2012,
       "day": 19,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 19,
-      "year": 2012
+      "month": 2
     },
     "compromise": {
       "unit": "Seconds"
@@ -116,7 +109,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "assets": [
       {

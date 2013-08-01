@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint59",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/austin-rare-coins-20120720.pdf ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "A security breach they were notified of in March, 2012 intiially indicated that there was no personal data taken.  In May 2012, they were notified that in fact, some customer's credit card data was compromised.  The data affected is name, credit card information, phone and home address.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint59",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint59",
     "timeline": {
       "notification": {
-        "month": 7,
+        "year": 2012,
         "day": 20,
-        "year": 2012
+        "month": 7
       }
     }
   },
@@ -51,9 +52,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unaffiliated"
@@ -67,7 +65,7 @@
         "iso_currency_code": "USD",
         "amount": 1800000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "TX",
       "employee_count": "11 to 100",
@@ -76,11 +74,8 @@
   ],
   "timeline": {
     "incident": {
-      "month": 3,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "year": 2012,
+      "month": 3
     }
   },
   "action": {
@@ -94,7 +89,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

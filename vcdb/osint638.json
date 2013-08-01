@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint638",
-  "security_compromise": "Confirmed",
   "reference": "",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1771,
@@ -17,15 +17,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1771,
-      "data_disclosure": "Yes"
+      "data_total": 1771
     }
   },
   "notes": "HHS Breach Tool",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Breach tool lists this as unauthorized access/disclosure with paper as the asset.  No further details.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint638",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Unknown"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint638",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2013,
         "day": 7,
-        "year": 2013
+        "month": 1
       }
     }
   },
@@ -50,9 +51,6 @@
     "internal": {
       "motive": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -66,7 +64,7 @@
         "iso_currency_code": "USD",
         "amount": 168800000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NY",
       "employee_count": "1001 to 10000",
@@ -75,12 +73,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 11,
+      "year": 2012,
       "day": 13,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 11
     }
   },
   "action": {
@@ -93,7 +88,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

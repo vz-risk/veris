@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint69",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/coca-cola-credit-union-20120222.pdf",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "Two laptops containing member information included names, SSNs and credit card numbers were stolen from their partner.  No location detail is provided.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint69",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint69",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 22,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -52,9 +53,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -63,7 +61,7 @@
   "victim": [
     {
       "victim_id": "The Coca-Cola Company Family Federal Credit Union",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "GA",
       "employee_count": "Unknown",
@@ -72,12 +70,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 12,
+      "year": 2011,
       "day": 21,
-      "year": 2011
-    },
-    "investigation": {
-      "year": 2012
+      "month": 12
     }
   },
   "action": {
@@ -93,7 +88,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "assets": [
       {

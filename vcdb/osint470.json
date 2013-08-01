@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint470",
-  "security_compromise": "Confirmed",
   "reference": "http://www.med.nyu.edu/about-us/potential-data-breach-notification ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 453,
@@ -17,15 +17,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 453,
-      "data_disclosure": "Yes"
+      "data_total": 453
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "NYU School of Medicine, part of NYU Langone Medical Center, notified 453 epilepsy patients on December 10, 2012 that an unencrypted portable USB drive used to store information gathered for a research project regarding epilepsy treatment was reported missing on October 11, 2012 by an NYU School of Medicine physician. No financial information, social security numbers, or home addresses were on the drive and therefore are not at risk. Additionally, there is no indication that patient information stored on the missing USB drive has been adversely used or disclosed.  The department-sponsored study assessed the value of an epilepsy surgery grading scale in predicting the likelihood of progression to and benefit from surgery. The USB drive contained patient name, date of birth, treatment dates, clinical information gathered in the process of treatment, and, if applicable, dates of surgery.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint470",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint470",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 10,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -50,9 +51,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -66,7 +64,7 @@
         "iso_currency_code": "USD",
         "amount": 74200000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NY",
       "employee_count": "1001 to 10000",
@@ -75,14 +73,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 10,
+      "year": 2012,
       "day": 11,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 10,
-      "day": 11,
-      "year": 2012
+      "month": 10
     }
   },
   "action": {
@@ -96,7 +89,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

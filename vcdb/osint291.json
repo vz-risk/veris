@@ -33,7 +33,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint291",
-  "security_compromise": "Confirmed",
   "reference": "http://www.wthr.com/story/16770212/cardinal-fitness-customer-receipts-found-in-dumpster (20130215) http://www.theindychannel.com/news/ag-investigates-cardinal-fitness-dumped-documents (20130215)",
   "attribute": {
     "confidentiality": {
@@ -53,10 +52,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - customer",
+  "schema_version": "1.2",
   "summary": "Company improperly disposes of non-public payment data.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint291",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -64,16 +66,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint291",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 8,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -83,9 +84,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Inappropriate"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -94,7 +92,7 @@
   "victim": [
     {
       "victim_id": "Cardinal Fitness",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "IN",
       "employee_count": "1 to 10",
@@ -106,14 +104,9 @@
       "unit": "NA"
     },
     "incident": {
-      "month": 12,
+      "year": 2011,
       "day": 1,
-      "year": 2011
-    },
-    "investigation": {
-      "month": 2,
-      "day": 8,
-      "year": 2012
+      "month": 12
     },
     "compromise": {
       "unit": "NA"
@@ -136,7 +129,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
     "assets": [

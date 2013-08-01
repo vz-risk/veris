@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint306",
-  "security_compromise": "Confirmed",
   "reference": "http://in.reuters.com/article/2012/06/07/us-linkedin-breach-idINBRE85511820120607, http://www.zdnet.com/blog/btl/6-46-million-linkedin-passwords-leaked-online/79290 ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 6400000,
@@ -17,15 +17,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 6400000,
-      "data_disclosure": "Yes"
+      "data_total": 6400000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "LinkedIn Corp is working with the FBI as the social network for job seekers and professionals investigates the theft of 6.4 million member passwords, the company said on Thursday.  The company does not know of any accounts that were taken over as a result of the security violations, according to LinkedIn spokesman Hani Durzy.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint306",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint306",
     "timeline": {
       "notification": {
-        "month": 6,
+        "year": 2012,
         "day": 8,
-        "year": 2012
+        "month": 6
       }
     }
   },
@@ -53,9 +54,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -69,7 +67,7 @@
         "iso_currency_code": "USD",
         "amount": 972310000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "1001 to 10000",
@@ -78,9 +76,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -95,7 +90,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

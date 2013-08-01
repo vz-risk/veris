@@ -3,7 +3,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint626",
-  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/Online-Storage-and-File-Hosting-Site-FileDEN-Hacked-Users-Exposed-246059.shtml  http://news.softpedia.com/news/FileDen-Works-on-Securing-User-Data-After-Breach-246520.shtml",
   "attribute": {
     "integrity": {
@@ -14,6 +13,7 @@
     },
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 4500,
@@ -27,15 +27,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 4500,
-      "data_disclosure": "Yes"
+      "data_total": 4500
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Database compromise leads to public posting of 4500 usernames, passwords, and e-mail addresses. Passwords were hashed, but not salted and many were cracked.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint626",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -43,16 +45,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint626",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 12,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -65,9 +66,6 @@
         "Unknown"
       ],
       "notes": "xdev@b4lc4nh4ck",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -76,7 +74,7 @@
   "victim": [
     {
       "victim_id": "FileDen",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "GA",
       "employee_count": "Unknown",
@@ -88,14 +86,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 1,
+      "year": 2012,
       "day": 12,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 1,
-      "day": 12,
-      "year": 2012
+      "month": 1
     },
     "compromise": {
       "unit": "Unknown"
@@ -111,13 +104,12 @@
     "hacking": {
       "notes": "SQLi inferred based on TTP of hacker who claimed responsibility and posted the information online.",
       "vector": [],
-      "cve": "",
       "variety": [
         "SQLi"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

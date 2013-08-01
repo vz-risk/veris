@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint100",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/neurocare-20120709.pdf ",
   "attribute": {
     "integrity": {
@@ -30,10 +29,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Neurocare was notified by its payroll processing vendor that it had received instructions from Neurocare to re-route a suspiciously large number of employee automatic payroll deposits.  As Neurocare had not provided such instructions, the account was immediately disabled by the payroll processor.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint100",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -41,16 +43,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint100",
     "timeline": {
       "notification": {
-        "month": 7,
+        "year": 2012,
         "day": 9,
-        "year": 2012
+        "month": 7
       }
     }
   },
@@ -63,9 +64,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -74,7 +72,7 @@
   "victim": [
     {
       "victim_id": "Neurocare, Inc.",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "GA",
       "employee_count": "Unknown",
@@ -83,11 +81,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 6,
-      "day": 26,
       "year": 2012
     }
   },
@@ -105,15 +98,14 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
-    "management": true,
+    "management": "External",
     "assets": [
       {
         "variety": "P - Partner"
       }
     ],
-    "hosting": true
+    "hosting": "External"
   }
 }

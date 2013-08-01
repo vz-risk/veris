@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint150",
-  "security_compromise": "Confirmed",
   "reference": "http://genevalunch.com/2012/01/03/bank-employee-admits-sharing-hildebrand-private-data/ ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "A computer system employee of Bank Sarasin turned himself into police 1 January, it was revealed late Tuesday, after sharing documents linked to currency transactions made by the family of Philipp Hildebrand, chairman of the Swiss National Bank.    The documents were given to an attorney who is close to the UDC, Switzerland\u2019s right-wing People\u2019s Party. The employee, who was promptly fired by the bank says the lawyer made an appointment to meet Christoph Blocher 11 November. Blocher is a former leader of the UDC who was a member of the Swiss government until 2007.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint150",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint150",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 3,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -48,9 +49,6 @@
     "internal": {
       "motive": [
         "Ideology"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "System admin"
@@ -64,20 +62,15 @@
         "iso_currency_code": "USD",
         "amount": 809150000
       },
-      "country": "Switzerland",
-      "notes": "",
+      "country": "CH",
+      "industry": "522110",
       "employee_count": "1001 to 10000",
-      "industry": "522110"
+      "notes": ""
     }
   ],
   "timeline": {
     "incident": {
       "year": 2011
-    },
-    "investigation": {
-      "month": 1,
-      "day": 1,
-      "year": 2012
     }
   },
   "action": {
@@ -90,7 +83,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

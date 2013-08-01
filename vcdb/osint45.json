@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint45",
-  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=11108",
   "attribute": {
     "confidentiality": {
       "notes": "Information on the stolen computer may include medical record number, age, medications, laboratory values or other clinical information. ",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -49,15 +49,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 615,
-      "data_disclosure": "Potentially"
+      "data_total": 615
     }
   },
   "notes": "A desktop computer was reported stolen from a building at Brigham and Women\u2019s Hospital",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "A computer was stolen from building at Brigham and Women's Hospital that contained patients records ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint45",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -65,11 +67,10 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint45",
     "timeline": {
       "notification": {
         "year": 2012
@@ -84,9 +85,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -99,7 +97,7 @@
         "iso_currency_code": "USD",
         "amount": 699000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "Boston's oldest and most prestigious hospitals to form the health care behemoth. ",
       "state": "MA",
       "employee_count": "1001 to 10000",
@@ -111,14 +109,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 10,
+      "year": 2012,
       "day": 16,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 12,
-      "day": 3,
-      "year": 2012
+      "month": 10
     },
     "compromise": {
       "unit": "Unknown"
@@ -143,7 +136,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

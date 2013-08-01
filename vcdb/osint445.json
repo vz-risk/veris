@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint445",
-  "security_compromise": "Confirmed",
   "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
   "attribute": {
     "confidentiality": {
       "notes": "Names, addresses, telephone numbers, job titles, and e-mail addresses dumped on the Internet",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Classified"
@@ -19,15 +19,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 31,
-      "data_disclosure": "Yes"
+      "data_total": 31
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Personal information was dumped onto the Internet.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint445",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -35,16 +37,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "Y",
     "asset": {
       "total": "No"
     },
-    "f500": "Y",
-    "master_id": "osint445",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 23,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -55,9 +56,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -71,7 +69,7 @@
         "iso_currency_code": "USD",
         "amount": 25000000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "Va",
       "employee_count": "50001 to 100000",
@@ -80,9 +78,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -97,7 +92,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

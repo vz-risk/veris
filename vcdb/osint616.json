@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint616",
-  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/Indian-Hackers-Leak-Data-from-Panpacific-University-North-Philippines-269806.shtml ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -19,15 +19,17 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 400,
-      "data_disclosure": "Yes"
+      "data_total": 400
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Indian hackers called Harsha Vardhan Boppana and codie root have breached the website of the Panpacific University North Philippines (punp.edu.ph).  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint616",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -35,16 +37,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint616",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 16,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -56,9 +57,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -68,16 +66,13 @@
     {
       "victim_id": "Panpacific University North Philippines",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "611310",
-      "country": "Philippines"
+      "employee_count": "Unknown",
+      "country": "PH"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -92,7 +87,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

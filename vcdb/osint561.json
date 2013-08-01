@@ -3,7 +3,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint561",
-  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/02/09/economic-development-association-scotland-hacked-and-data-leaked-by-epoch/",
   "attribute": {
     "integrity": {
@@ -13,6 +12,7 @@
     },
     "confidentiality": {
       "notes": "Usernames in clear text, passwords are encrypted.",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 647,
@@ -22,15 +22,17 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 647,
-      "data_disclosure": "Yes"
+      "data_total": 647
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Hacker posts 647 usernames and encrypted passwords to pastebin.com. Method used to access information not provided ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint561",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -38,16 +40,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint561",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 9,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -59,9 +60,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -71,9 +69,9 @@
     {
       "victim_id": "Economic Development Association Scotland",
       "notes": "",
-      "employee_count": "11 to 100",
       "industry": "5419",
-      "country": "United Kingdom"
+      "employee_count": "11 to 100",
+      "country": "GB"
     }
   ],
   "timeline": {
@@ -81,9 +79,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -107,7 +102,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

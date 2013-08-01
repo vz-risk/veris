@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint611",
-  "security_compromise": "Confirmed",
   "reference": "http://www.statesmanjournal.com/article/20120425/NEWS/304250069/State-hospital-suffers-data-theft",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,15 +19,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 618,
-      "data_disclosure": "Potentially"
+      "data_total": 618
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "A theft of patient information from the car of Oregon State Hospital\u2019s chief of psychiatry has breached the privacy of current and former patients.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint611",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -35,16 +37,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint611",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 24,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -55,9 +56,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -71,7 +69,7 @@
         "iso_currency_code": "USD",
         "amount": 12000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "OR",
       "employee_count": "11 to 100",
@@ -80,12 +78,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 4,
+      "year": 2012,
       "day": 20,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 4
     }
   },
   "action": {
@@ -101,7 +96,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

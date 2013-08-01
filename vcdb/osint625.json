@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": "Insignificant"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint625",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/fidelity-20120320.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1,
@@ -17,15 +17,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 1,
-      "data_disclosure": "Yes"
+      "data_total": 1
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "Company provided incorrect fax number to customer resulting in customer sending fax containing PII to incorrect number.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint625",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint625",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 19,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -52,9 +53,6 @@
         "NA"
       ],
       "notes": "",
-      "role": [
-        "Unintentional"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -67,7 +65,7 @@
         "iso_currency_code": "USD",
         "amount": 12000000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MA",
       "employee_count": "25001 to 50000",
@@ -79,14 +77,9 @@
       "unit": "NA"
     },
     "incident": {
-      "month": 2,
+      "year": 2012,
       "day": 28,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 28,
-      "year": 2012
+      "month": 2
     },
     "compromise": {
       "unit": "NA"
@@ -109,7 +102,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "notes": "",
     "assets": [

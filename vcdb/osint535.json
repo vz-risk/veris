@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint535",
-  "security_compromise": "Confirmed",
   "reference": "http://www.theledger.com/article/20120612/NEWS/120619807",
   "attribute": {
     "confidentiality": {
       "notes": "The information on the documents included patient addresses, phone numbers, dates of birth, diagnosis and treatment information, insurance information, and Social Security numbers.",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Classified"
@@ -19,15 +19,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1400,
-      "data_disclosure": "Potentially"
+      "data_total": 1400
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Documents, called Charge Tickets, containing patient information was stolen from Gessler Clinic.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint535",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -35,16 +37,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint535",
     "timeline": {
       "notification": {
-        "month": 6,
+        "year": 2012,
         "day": 12,
-        "year": 2012
+        "month": 6
       }
     }
   },
@@ -55,9 +56,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -71,7 +69,7 @@
         "iso_currency_code": "USD",
         "amount": 20000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "FL",
       "employee_count": "101 to 1000",
@@ -80,12 +78,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 5,
+      "year": 2012,
       "day": 3,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 5
     }
   },
   "action": {
@@ -101,7 +96,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

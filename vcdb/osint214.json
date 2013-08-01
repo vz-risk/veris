@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint214",
-  "security_compromise": "Confirmed",
   "reference": "http://www.phiprivacy.net/?p=9966; http://www.sellersburgrehab.com/our-center/in-the-news/?id=2147531586 February 13, 2013",
   "attribute": {
     "confidentiality": {
       "notes": "Information on the tapes included diagnosis, social security numbers, clinical and financial information such as address, date of birth, insurance number, dates that services were received from Kindred, discharge location, activities of daily living, collections letters, medications received and bank account information.",
+      "data_disclosure": "Unknown",
       "data": [
         {
           "variety": "Bank"
@@ -25,15 +25,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1504,
-      "data_disclosure": "Unknown"
+      "data_total": 1504
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "A safe containing tapes with patient information was stolen.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint214",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -41,11 +43,10 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint214",
     "timeline": {
       "notification": {
         "year": 2012
@@ -60,9 +61,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -71,7 +69,7 @@
   "victim": [
     {
       "victim_id": "Kindred Healthcare Inc d/b/a Kindred Transitional Care And Rehabilititation Sellersburg",
-      "country": "United States",
+      "country": "US",
       "notes": "A break-in occurred at the Kindred Transitional Care and Rehabilitation-Sellersburg\u2019s business office.",
       "state": "IN",
       "employee_count": "11 to 100",
@@ -80,14 +78,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 6,
+      "year": 2012,
       "day": 1,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 6,
-      "day": 4,
-      "year": 2012
+      "month": 6
     },
     "discovery": {
       "unit": "Days"
@@ -106,7 +99,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

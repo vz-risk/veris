@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint592",
-  "security_compromise": "Confirmed",
   "reference": "http://www.latimes.com/business/technology/la-fi-tn-microsoft-hack-azure-20130222,0,6681241.story; http://www.news.com.au/technology/microsoft-xbox-azure-services-taken-offline/story-e6frfro0-1226584080719; http://readwrite.com/2013/02/22/microsofts-rotten-friday-hack-revealed-as-azure-halo-go-down; http://www.thehacknews.org/2013/02/microsofts-azure-service-hit-by-expired.html",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "MICROSOFT online services are going offline around the world, affecting Xbox Live and Windows Azure users. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint592",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "Y",
     "asset": {
       "total": "No"
     },
-    "f500": "Y",
-    "master_id": "osint592",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2013,
         "day": 22,
-        "year": 2013
+        "month": 2
       }
     }
   },
@@ -51,9 +52,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Activist"
@@ -67,7 +65,7 @@
         "iso_currency_code": "USD",
         "amount": 235000000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "WA",
       "employee_count": "50001 to 100000",
@@ -76,12 +74,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 2,
+      "year": 2013,
       "day": 22,
-      "year": 2013
-    },
-    "investigation": {
-      "year": 2013
+      "month": 2
     }
   },
   "action": {
@@ -95,7 +90,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint335",
-  "security_compromise": "Confirmed",
   "reference": "http://triblive.com/news/allegheny/3207432-74/information-university-breach ",
   "attribute": {
     "integrity": {
@@ -13,6 +12,7 @@
     },
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1406,
@@ -22,15 +22,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 1406,
-      "data_disclosure": "Yes"
+      "data_total": 1406
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": " Penn State University officials on Friday began notifying former students of a security breach on a computer server that contained 1,406 Social Security numbers for enrollees at the Altoona campus before 2005.  An operator at Penn State's call center said officials were alerted Sept. 10 that a server at University Park containing the records was infected with malware, software that allows it to communicate with unauthorized outside networks.  Techs took the server offline when officials became aware of the issue. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint335",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -38,16 +40,15 @@
         "data_subject": "Student"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint335",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 29,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -59,9 +60,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -70,7 +68,7 @@
   "victim": [
     {
       "victim_id": "Penn State University",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "PA",
       "employee_count": "Unknown",
@@ -79,11 +77,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 9,
-      "day": 10,
       "year": 2012
     }
   },
@@ -98,7 +91,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

@@ -1,4 +1,7 @@
 {
+  "impact": {
+    "overall_rating": "Unknown"
+  },
   "incident_id": "hhs_osint00081",
   "attribute": {
     "confidentiality": {
@@ -13,8 +16,8 @@
     }
   },
   "discovery_method": "Unknown",
-  "schema_version": "1.0",
-  "source_id": "hhs",
+  "schema_version": "1.2",
+  "security_incident": "Confirmed",
   "plus": {
     "timeline": {
       "notification": {}
@@ -27,10 +30,7 @@
         "Financial"
       ],
       "country": [
-        "United States"
-      ],
-      "role": [
-        "Malicious"
+        "US"
       ],
       "variety": [
         "Unaffiliated"
@@ -41,26 +41,23 @@
     {
       "victim_id": "Blue Cross Blue Shield Association",
       "industry": "524292",
-      "country": "United States",
+      "employee_count": "101 to 1000",
       "state": "Dc",
-      "employee_count": "101 to 1000"
+      "country": "US"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2010,
+      "month": 2,
       "day": 22,
-      "month": 2
-    },
-    "investigation": {
       "year": 2010
     },
     "discovery": {
-      "unit": "Months",
-      "value": 5
+      "value": 5,
+      "unit": "Months"
     }
   },
-  "security_compromise": "Confirmed",
+  "source_id": "hhs",
   "action": {
     "physical": {
       "vector": [

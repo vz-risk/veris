@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint38",
-  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/AG%20Data%20Breach%20Notice%20Letter%2008%2023%2012_0.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "I am writing to inform you that the John Stewart Company (\u201cJSCo\u201d) recently inadvertently included your name, social security number and, in some cases, birth date, in e-mails that were sent to various JSCo employees on August 7, 2012 and August 13, 2012. We regret this inadvertent disclosure and have taken immediate steps to (a) delete the e-mail from every computer to which it was sent, (b) prevent any similar event from occurring in the future, and (c) provide you with assistance to both protect your credit and deal with any issues that may arise from this inadvertent disclosure.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint38",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint38",
     "timeline": {
       "notification": {
-        "month": 8,
+        "year": 2012,
         "day": 23,
-        "year": 2012
+        "month": 8
       }
     }
   },
@@ -48,9 +49,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -64,7 +62,7 @@
         "iso_currency_code": "USD",
         "amount": 28890000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "1001 to 10000",
@@ -73,12 +71,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 8,
+      "year": 2012,
       "day": 7,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 8
     }
   },
   "action": {
@@ -92,7 +87,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

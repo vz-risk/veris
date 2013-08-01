@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint77",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/experian-20120504.pdf",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Unauthorized access to Experian records.  These are typically through their customer's credentials, although none is mentioned in this source doc.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint77",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint77",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 4,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -50,9 +51,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Unknown"
-      ],
       "variety": [
         "Other"
       ]
@@ -65,7 +63,7 @@
         "iso_currency_code": "USD",
         "amount": 576700000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "1001 to 10000",
@@ -74,12 +72,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 2,
+      "year": 2012,
       "day": 13,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 2
     }
   },
   "action": {
@@ -93,7 +88,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

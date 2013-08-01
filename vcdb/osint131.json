@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint131",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/worldpass-20120327.pdf ",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - IT audit",
+  "schema_version": "1.2",
   "summary": "around March 5, 2012 we learn through our IT administrator that we were the victim of cyber attacks by someone who gained unauthorized access to parts of our internal network and data systems.  the cyber attacks may have begun as early as July 2010. The database unlawfully accessed in part contained client booking information including username, e-mail addresses, billing addresses, and payment information. We believe information about some of our customers, including the credit card information, was viewed without authorization. The accessed data was stored in a secure way and was put connected by encryption technology but the perpetrator was able to circumvent the security measures. Immediately upon learning of this unauthorized activity we shut down our entire data system to fully investigate the matter and eliminate any further unlawful access to our system. As of the date of this letter, our systems have been restored and are fully functional and operating with increased system security, including enhanced password protection.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint131",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -34,16 +36,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint131",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 8,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -54,9 +55,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -70,7 +68,7 @@
         "iso_currency_code": "USD",
         "amount": 4100000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "11 to 100",
@@ -79,14 +77,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 7,
+      "year": 2010,
       "day": 31,
-      "year": 2010
-    },
-    "investigation": {
-      "month": 3,
-      "day": 5,
-      "year": 2012
+      "month": 7
     }
   },
   "action": {
@@ -100,7 +93,6 @@
       ]
     }
   },
-  "discovery_method": "Int - IT audit",
   "asset": {
     "assets": [
       {

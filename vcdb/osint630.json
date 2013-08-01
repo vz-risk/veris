@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint630",
-  "security_compromise": "Confirmed",
   "reference": "",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 1103,
@@ -17,15 +17,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1103,
-      "data_disclosure": "Potentially"
+      "data_total": 1103
     }
   },
   "notes": "HHS Breachtool",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "Laptop stolen, no indication of location.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint630",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,11 +35,10 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint630",
     "timeline": {
       "notification": {
         "year": 2012
@@ -52,9 +53,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -67,7 +65,7 @@
         "iso_currency_code": "USD",
         "amount": 98700000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "TN",
       "employee_count": "1001 to 10000",
@@ -76,12 +74,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 10,
+      "year": 2012,
       "day": 11,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 10
     }
   },
   "action": {
@@ -97,7 +92,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "assets": [
       {

@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint548",
-  "security_compromise": "Confirmed",
   "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
   "attribute": {
     "confidentiality": {
       "notes": "Email address with plaintext passwords",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -19,15 +19,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 874,
-      "data_disclosure": "Yes"
+      "data_total": 874
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Employers' and job-seekers email address with plaintext passwords were dumped on the Internet.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint548",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -35,16 +37,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint548",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 4,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -56,9 +57,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -68,16 +66,13 @@
     {
       "victim_id": "Jobs in De Regio (jobsinderegio.nl)",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "51",
-      "country": "Netherlands"
+      "employee_count": "Unknown",
+      "country": "NL"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -92,7 +87,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

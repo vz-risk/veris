@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint82",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/fujifilm-recording-20120917.pdf ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "The email account of one of their employees was accessed without authorization by an unknown individual.  They used the email account and confidential information of Fujifilm to try and commit an act of fraud against the company.  The attempt was not successful.    Exposed data included name, address and SSN.   The data was 1099 reports.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint82",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint82",
     "timeline": {
       "notification": {
-        "month": 9,
+        "year": 2012,
         "day": 17,
-        "year": 2012
+        "month": 9
       }
     }
   },
@@ -53,9 +54,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -68,7 +66,7 @@
         "iso_currency_code": "USD",
         "amount": 28910000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NY",
       "employee_count": "1001 to 10000",
@@ -77,12 +75,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 8,
+      "year": 2012,
       "day": 13,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 8
     }
   },
   "action": {
@@ -91,13 +86,12 @@
       "vector": [
         "Unknown"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": "Distracting"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint601",
-  "security_compromise": "Confirmed",
   "reference": "http://www.reuters.com/article/2012/01/23/us-euronetworldwide-idUSTRE80M2ET20120123 http://digitaltransactions.net/news/story/3405",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Payment processor disclosed that they suffered a data breach. No information was provided regarding how information was breached or how much.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint601",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint601",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 23,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -51,9 +52,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -67,7 +65,7 @@
         "iso_currency_code": "USD",
         "amount": 1270000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "KS",
       "employee_count": "1001 to 10000",
@@ -79,9 +77,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2011
-    },
-    "investigation": {
       "year": 2011
     },
     "compromise": {
@@ -105,7 +100,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

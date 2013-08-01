@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint190",
-  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/03/19/10000-accounts-leaked-from-adult-insider-network/",
   "attribute": {
     "confidentiality": {
       "notes": "Posted username, email address, encrypted password, and salt",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 10679,
@@ -47,15 +47,17 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 10679,
-      "data_disclosure": "Yes"
+      "data_total": 10679
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Hacker compromised Adult Insider Network posted encrypted authentication credentials on public site.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint190",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -63,16 +65,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint190",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 19,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -84,9 +85,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -96,9 +94,9 @@
     {
       "victim_id": "Adult Insider Network",
       "notes": "Not sure how to categorize them.  They are a membership site where webmasters of adult websites can network and share ideas.",
-      "employee_count": "Unknown",
       "industry": "51913",
-      "country": "United States"
+      "employee_count": "Unknown",
+      "country": "US"
     }
   ],
   "timeline": {
@@ -106,9 +104,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -132,7 +127,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

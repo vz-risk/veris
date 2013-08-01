@@ -30,16 +30,14 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Insignificant"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint759",
   "reference": "http://dshs.wa.gov/mediareleases/2013/pr13011.shtml, http://www.king5.com/news/local/Laptop-containing-DSHS-clients-confidential-information-stolen-200642441.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "state": [
-        "Stored unencrypted"
-      ],
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -48,87 +46,13 @@
           "variety": "Personal"
         }
       ],
-      "data_total": 652,
-      "data_disclosure": "Potentially"
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 652
     }
   },
   "notes": "",
-  "discovery_method": "Unknown",
-  "schema_version": "1.0",
-  "summary": "Stolen Laptop",
-  "security_compromise": "Confirmed",
-  "plus": {
-    "timeline": {
-      "notification": {
-        "month": 3,
-        "day": 29,
-        "year": 2013
-      }
-    },
-    "f500": "N",
-    "master_id": "osint759",
-    "asset": {
-      "total": "No"
-    },
-    "attribute": {
-      "confidentiality": {
-        "credit_monitoring": "U",
-        "data_abuse": "U",
-        "data_subject": "Customer"
-      }
-    }
-  },
-  "actor": {
-    "external": {
-      "motive": [
-        "Financial"
-      ],
-      "country": [
-        "Unknown"
-      ],
-      "role": [
-        "Malicious"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
-  "victim": [
-    {
-      "victim_id": "State of Washington Department of Social and Health Services",
-      "country": "United States",
-      "notes": "",
-      "state": "WA",
-      "employee_count": "Unknown",
-      "industry": "921"
-    }
-  ],
-  "timeline": {
-    "exfiltration": {
-      "unit": "NA"
-    },
-    "incident": {
-      "month": 2,
-      "day": 4,
-      "year": 2013
-    },
-    "investigation": {
-      "month": 2,
-      "day": 4,
-      "year": 2013
-    },
-    "compromise": {
-      "unit": "NA"
-    },
-    "containment": {
-      "unit": "Days"
-    },
-    "discovery": {
-      "unit": "Days"
-    }
-  },
-  "source_id": "osint",
   "action": {
     "physical": {
       "vector": [
@@ -142,6 +66,74 @@
       ]
     }
   },
+  "schema_version": "1.2",
+  "summary": "Stolen Laptop",
+  "source_id": "osint",
+  "security_incident": "Confirmed",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Customer"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 29,
+        "month": 3
+      }
+    },
+    "f500": "N",
+    "master_id": "osint759",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "country": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "State of Washington Department of Social and Health Services",
+      "country": "US",
+      "notes": "",
+      "state": "WA",
+      "employee_count": "Unknown",
+      "industry": "921"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "year": 2013,
+      "day": 4,
+      "month": 2
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "Days"
+    },
+    "discovery": {
+      "unit": "Days"
+    }
+  },
+  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

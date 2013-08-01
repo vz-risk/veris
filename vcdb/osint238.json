@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint238",
-  "security_compromise": "Confirmed",
   "reference": "http://www.wxyz.com/dpp/news/region/wayne_county/wayne-county-sends-out-email-blast-containing-some-1300-names-and-social-security-numbers ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1000,
@@ -17,15 +17,17 @@
       "state": [
         "Transmitted unencrypted"
       ],
-      "data_total": 1000,
-      "data_disclosure": "Yes"
+      "data_total": 1000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "The personal information of more than 1000 Wayne County employees is compromised after an email mistake by the county's Department of Personnel/Human Resources.  A spreadsheet containing the data was mistakenly attached to an email about health insurance. The email went out on Friday to members of AFSCME Locals 25, 409, 1659 and 3309. Union officials say about 1300 people received the email.  The attachment contained names, employee ID numbers, social security numbers, birth dates, addresses and other information.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint238",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -33,16 +35,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint238",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 21,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -50,9 +51,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Human resources"
@@ -62,7 +60,7 @@
   "victim": [
     {
       "victim_id": "Wayne County Department of Personnel/Human Resources",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MI",
       "employee_count": "Unknown",
@@ -71,12 +69,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 3,
+      "year": 2012,
       "day": 16,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 3
     }
   },
   "action": {
@@ -90,7 +85,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "assets": [
       {

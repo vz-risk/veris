@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint264",
-  "security_compromise": "Confirmed",
   "reference": "http://www.securitymanagement.com/print/9582, http://www.itworld.com/security/252352/1-million-youporn-users-exposed-data-breach-required-no-security-penetration ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Credentials"
@@ -16,15 +16,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1000000,
-      "data_disclosure": "Yes"
+      "data_total": 1000000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "The email addresses and passwords of more than a million users of the YouPorn sex chat site were exposed to all and sundry this week following a coding error that went undetected for years.  The data - which identifies customers of the smut site, exposing them to potential embarrassment as a result - might also be used in attempts to hack into more sensitive accounts maintained by the same potential victims. Those that use the same or similar passwords for more sensitive accounts (webmail, Facebook, PayPal etc) are most at risk of attack.  Grumble-flick vault YouPorn - unlike porn portal Brazzers, the victim of a similar recent attack that also exposed customers data - wasn't hacked. Instead careless programmers left unencrypted sign-up information on a public-facing web server. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint264",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -32,16 +34,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint264",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 22,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -54,9 +55,6 @@
         "Unknown"
       ],
       "industry": "000000",
-      "role": [
-        "Unintentional"
-      ],
       "notes": ""
     }
   },
@@ -64,21 +62,16 @@
     {
       "victim_id": "YouPorn",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "711",
-      "country": "Sweden"
+      "employee_count": "Unknown",
+      "country": "SE"
     }
   ],
   "timeline": {
     "incident": {
-      "month": 11,
+      "year": 2007,
       "day": 31,
-      "year": 2007
-    },
-    "investigation": {
-      "month": 2,
-      "day": 15,
-      "year": 2012
+      "month": 11
     }
   },
   "action": {
@@ -92,7 +85,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

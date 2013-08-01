@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint204",
-  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/system/files/UBC2905_Letter_1_Fb.pdf? ",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "On February 15, 2012, Union Bank discovered that a former contractor kept proprietary bank data in his possession upon his departure from the bank on January 31, 2012. This data contains with your customer information such as your name, account number, home address, phone number and e-mail address.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint204",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -34,16 +36,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint204",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 6,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -53,9 +54,6 @@
         "Unknown"
       ],
       "notes": "This was a contractor.",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -68,7 +66,7 @@
         "iso_currency_code": "USD",
         "amount": 12530000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "LA",
       "employee_count": "11 to 100",
@@ -77,14 +75,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 1,
+      "year": 2012,
       "day": 31,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 15,
-      "year": 2012
+      "month": 1
     }
   },
   "action": {
@@ -100,7 +93,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

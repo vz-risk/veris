@@ -44,111 +44,30 @@
     },
     "confidentiality": {
       "notes": "Employee email communication was posted to the SEA twitter account. Screenshots of 3 email messages were made public.",
-      "state": [
-        "Stored unencrypted"
-      ],
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 3,
           "variety": "Internal"
         }
       ],
-      "data_total": 3,
-      "data_disclosure": "Yes"
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 3
     }
   },
   "notes": "",
-  "discovery_method": "Unknown",
-  "schema_version": "1.0",
-  "summary": "Syrian Electronic Army uses Social Engineering to gain passwords to systems and then uses the passwords to post unauthorized twitter messages. Also posted content of staff email to their own Twitter feed",
-  "security_compromise": "Confirmed",
-  "plus": {
-    "timeline": {
-      "notification": {
-        "month": 5,
-        "day": 6,
-        "year": 2013
-      }
-    },
-    "f500": "N",
-    "master_id": "osint687",
-    "asset": {
-      "total": "No"
-    },
-    "attribute": {
-      "confidentiality": {
-        "credit_monitoring": "N",
-        "data_abuse": "Y",
-        "data_subject": "Partner"
-      }
-    }
-  },
-  "actor": {
-    "external": {
-      "motive": [
-        "Ideology"
-      ],
-      "country": [
-        "Syrian Arab Republic"
-      ],
-      "notes": "Some question whether to classify variety as state-sponsored or activist group. Group appears to get material support from the government, thus state-sponsored.",
-      "role": [
-        "Malicious"
-      ],
-      "variety": [
-        "State-affiliated"
-      ]
-    }
-  },
-  "victim": [
-    {
-      "victim_id": "theonion.com",
-      "revenue": {
-        "iso_currency_code": "USD",
-        "amount": 7800000
-      },
-      "country": "United States",
-      "notes": "",
-      "state": "IL",
-      "employee_count": "11 to 100",
-      "industry": "519130"
-    }
-  ],
-  "timeline": {
-    "exfiltration": {
-      "unit": "Days"
-    },
-    "incident": {
-      "month": 5,
-      "day": 3,
-      "year": 2013
-    },
-    "investigation": {
-      "month": 5,
-      "day": 6,
-      "year": 2013
-    },
-    "compromise": {
-      "unit": "Days"
-    },
-    "containment": {
-      "unit": "Days"
-    },
-    "discovery": {
-      "unit": "Days"
-    }
-  },
-  "source_id": "osint",
   "action": {
     "hacking": {
       "notes": "Used stolen credentials to log into Twitter and Google Apps.",
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Use of stolen creds"
-      ]
+      ],
+      "cve": ""
     },
     "social": {
       "notes": "threat actor avoided sending messages to technical staff to evade detection.",
@@ -163,9 +82,82 @@
       ]
     }
   },
+  "schema_version": "1.2",
+  "summary": "Syrian Electronic Army uses Social Engineering to gain passwords to systems and then uses the passwords to post unauthorized twitter messages. Also posted content of staff email to their own Twitter feed",
+  "source_id": "osint",
+  "security_incident": "Confirmed",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "N",
+        "data_abuse": "Y",
+        "data_subject": "Partner"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 6,
+        "month": 5
+      }
+    },
+    "f500": "N",
+    "master_id": "osint687",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Ideology"
+      ],
+      "country": [
+        "SY"
+      ],
+      "notes": "Some question whether to classify variety as state-sponsored or activist group. Group appears to get material support from the government, thus state-sponsored.",
+      "variety": [
+        "State-affiliated"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "theonion.com",
+      "revenue": {
+        "iso_currency_code": "USD",
+        "amount": 7800000
+      },
+      "country": "US",
+      "notes": "",
+      "state": "IL",
+      "employee_count": "11 to 100",
+      "industry": "519130"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "Days"
+    },
+    "incident": {
+      "year": 2013,
+      "day": 3,
+      "month": 5
+    },
+    "compromise": {
+      "unit": "Days"
+    },
+    "containment": {
+      "unit": "Days"
+    },
+    "discovery": {
+      "unit": "Days"
+    }
+  },
+  "discovery_method": "Unknown",
   "asset": {
     "notes": "a total of five user accounts were compromised.",
-    "management": true,
+    "management": "External",
     "assets": [
       {
         "variety": "S - Mail"
@@ -177,6 +169,6 @@
         "variety": "P - End-user"
       }
     ],
-    "hosting": true
+    "hosting": "External"
   }
 }

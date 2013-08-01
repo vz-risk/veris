@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint613",
-  "security_compromise": "Confirmed",
   "reference": "http://hackread.com/pakistan-science-foundation-hacked-85-login-accounts-leaked-by-vandathegod/ ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -19,15 +19,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 85,
-      "data_disclosure": "Yes"
+      "data_total": 85
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Pakistan Science Foundation Hacked, 85 login Accounts leaked by @VandaTheGod.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint613",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -35,16 +37,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint613",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2013,
         "day": 4,
-        "year": 2013
+        "month": 1
       }
     }
   },
@@ -56,9 +57,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -68,21 +66,16 @@
     {
       "victim_id": "Pakistan Science Foundation",
       "notes": "PSF has two subsidiary organizations i.e. Pakistan Museum of Natural History (PMNH) and Pakistan Scientific and Technological Information Center (PASTIC). ",
-      "employee_count": "Unknown",
       "industry": "92119",
+      "employee_count": "Unknown",
       "country": "Unknown"
     }
   ],
   "timeline": {
     "incident": {
-      "month": 1,
+      "year": 2013,
       "day": 4,
-      "year": 2013
-    },
-    "investigation": {
-      "month": 1,
-      "day": 4,
-      "year": 2013
+      "month": 1
     }
   },
   "action": {
@@ -96,7 +89,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

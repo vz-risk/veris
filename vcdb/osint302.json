@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint302",
-  "security_compromise": "Confirmed",
   "reference": "http://english.ruvr.ru/2012_11_30/Japan-confesses-data-breach-on-Epsilon-rocket/ ",
   "attribute": {
     "integrity": {
@@ -25,10 +24,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "The Japan Aerospace Exploration Agency (JAXA) has reported a possible data breach on its first Epsilon solid-fueled rocket, Kyodo news agency says.  Spyware was found on one of the agency\u2019s personal computers on November 21. It was immediately disconnected from the local area network.  Experts are now probing into the origins of the virus, which could be a stray one or planted as a result of a hacker attack on JAXA. Among the leaked data JAXA cited the rocket\u2019s parameters, specifics of its engine maintenance and protocols on agency\u2019s meetings.  Japan started developing the next-generation solid propellant rocket, called Epsilon, two years ago. It is superior to the existing H-IIA rocket due to its smaller size, which will allow it to lift light satellites into orbit at a quarter of the H-IIA launch cost.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint302",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -36,16 +38,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint302",
     "timeline": {
       "notification": {
-        "month": 11,
+        "year": 2012,
         "day": 30,
-        "year": 2012
+        "month": 11
       }
     }
   },
@@ -56,9 +57,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -72,19 +70,14 @@
         "iso_currency_code": "USD",
         "amount": 2630000000
       },
-      "country": "Japan",
-      "notes": "",
+      "country": "JP",
+      "industry": "541720",
       "employee_count": "1001 to 10000",
-      "industry": "541720"
+      "notes": ""
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 11,
-      "day": 21,
       "year": 2012
     }
   },
@@ -99,7 +92,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

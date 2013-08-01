@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint635",
-  "security_compromise": "Confirmed",
   "reference": "http://www.cfpsych.org/HIPAA-Breach-Letter.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Payment"
@@ -20,15 +20,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 7250,
-      "data_disclosure": "Yes"
+      "data_total": 7250
     }
   },
   "notes": "HHS Breach Tool",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - customer",
+  "schema_version": "1.2",
   "summary": "Hacking incident at partner hosted website exposes 7,250 records.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint635",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -36,16 +38,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint635",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2013,
         "day": 17,
-        "year": 2013
+        "month": 1
       }
     }
   },
@@ -58,9 +59,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -73,7 +71,7 @@
         "iso_currency_code": "USD",
         "amount": 9800000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MA",
       "employee_count": "1 to 10",
@@ -82,12 +80,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 10,
+      "year": 2012,
       "day": 18,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 10
     }
   },
   "action": {
@@ -96,21 +91,20 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - customer",
   "asset": {
     "notes": "",
-    "management": true,
+    "management": "External",
     "assets": [
       {
         "variety": "S - Web application"
       }
     ],
-    "hosting": true
+    "hosting": "External"
   }
 }

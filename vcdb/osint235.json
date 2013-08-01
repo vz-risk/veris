@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint235",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/washington-university-20120315.pdf ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 4100,
@@ -17,15 +17,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 4100,
-      "data_disclosure": "Yes"
+      "data_total": 4100
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "On February 17, 2012, our client, Washington University in St. Louis discovered that an employee was copying electronic files onto an external hard drive.  While the employee was authorized to see the data in these files, they were not authorized to copy the first onto an external drive that he brought to the office.    The information contained names, SSNs, addresses, and DOB.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint235",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -33,16 +35,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint235",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 15,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -52,9 +53,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "End-user"
       ]
@@ -67,7 +65,7 @@
         "iso_currency_code": "USD",
         "amount": 2310000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MO",
       "employee_count": "1001 to 10000",
@@ -76,11 +74,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 17,
       "year": 2012
     }
   },
@@ -99,9 +92,7 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
-    "personal": true,
     "notes": "The hard drive was brought in by the employee and owned by them.",
     "assets": [
       {
@@ -110,6 +101,7 @@
       {
         "variety": "M - Disk drive"
       }
-    ]
+    ],
+    "ownership": "Employee"
   }
 }

@@ -1,4 +1,7 @@
 {
+  "impact": {
+    "overall_rating": "Unknown"
+  },
   "incident_id": "hhs_osint00034",
   "attribute": {
     "confidentiality": {
@@ -13,8 +16,9 @@
     }
   },
   "discovery_method": "Unknown",
-  "schema_version": "1.0",
-  "security_compromise": "Confirmed",
+  "schema_version": "1.2",
+  "source_id": "hhs",
+  "security_incident": "Confirmed",
   "plus": {
     "timeline": {
       "notification": {}
@@ -29,9 +33,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -41,33 +42,29 @@
     {
       "victim_id": "Washington County EMS",
       "industry": "000000",
+      "country": "US",
       "employee_count": "Unknown",
-      "state": "Tx",
-      "country": "United States"
+      "state": "Tx"
     },
     {
       "victim_id": "City of Seguin - Fire/EMS Department",
       "industry": "922",
-      "country": "United States",
+      "employee_count": "Unknown",
       "state": "TX",
-      "employee_count": "Unknown"
+      "country": "US"
     }
   ],
   "timeline": {
     "incident": {
-      "month": 1,
+      "year": 2013,
       "day": 17,
-      "year": 2013
-    },
-    "investigation": {
-      "year": 2013
+      "month": 1
     },
     "discovery": {
-      "value": 8,
-      "unit": "Months"
+      "unit": "Months",
+      "value": 8
     }
   },
-  "source_id": "hhs",
   "action": {
     "physical": {
       "vector": [

@@ -3,7 +3,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint422",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/yurman-20120207.pdf",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Tax forms were mismailed to contractors, included PII.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint422",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint422",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 3,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -50,9 +51,6 @@
         "NA"
       ],
       "notes": "",
-      "role": [
-        "Unintentional"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -61,7 +59,7 @@
   "victim": [
     {
       "victim_id": "Yurman Design, Inc.",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NY",
       "employee_count": "11 to 100",
@@ -73,9 +71,6 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -99,7 +94,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

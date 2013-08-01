@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint130",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/woodrow-wilson-fellowship-20120618.pdf, http://doj.nh.gov/consumer/security-breaches/documents/woodrow-wilson-fellowship-20120607.pdf ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "in May 2012, the foundation became aware that some Fellowship applicant's personal information may have become publicly accessible during an update of the foundation's website. Due to an IT oversight, certain information was inadvertently placed outside the foundation's Internet firewall, resulting in potential temporary public exposure. Specifically, this application information may have included names, mailing addresses, e-mail addresses, Social Security numbers and other application information such as grades and letters of recommendation. The foundation discovered error on May 17, 2012 and over the following few days successfully placed all of the affected information behind its firewall and removed all traces of the information from the Internet.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint130",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint130",
     "timeline": {
       "notification": {
-        "month": 6,
+        "year": 2012,
         "day": 7,
-        "year": 2012
+        "month": 6
       }
     }
   },
@@ -48,9 +49,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "System admin"
@@ -60,7 +58,7 @@
   "victim": [
     {
       "victim_id": "Woodrow Wilson National Fellowship Foundation",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NJ",
       "employee_count": "Unknown",
@@ -69,11 +67,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 5,
-      "day": 17,
       "year": 2012
     }
   },
@@ -88,7 +81,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

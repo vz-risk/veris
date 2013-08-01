@@ -6,10 +6,9 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Distracting"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint409",
-  "security_compromise": "Confirmed",
   "reference": "doj.nh.gov/consumer/security-breaches/documents/crowne-plaza-columbus-20120518.pdf ",
   "attribute": {
     "integrity": {
@@ -35,10 +34,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - fraud detection",
+  "schema_version": "1.2",
   "summary": "PII and credit card information exposed at hotel ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint409",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -46,16 +48,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint409",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 18,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -68,9 +69,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -79,7 +77,7 @@
   "victim": [
     {
       "victim_id": "Crowne Plaza Columbus",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "OH",
       "employee_count": "11 to 100",
@@ -91,14 +89,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 3,
+      "year": 2012,
       "day": 14,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 4,
-      "day": 2,
-      "year": 2012
+      "month": 3
     },
     "compromise": {
       "unit": "Unknown"
@@ -112,17 +105,16 @@
   },
   "action": {
     "malware": {
+      "variety": [
+        "Unknown"
+      ],
       "vector": [
         "Unknown"
       ],
-      "cve": "",
       "name": "",
-      "variety": [
-        "Unknown"
-      ]
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - fraud detection",
   "asset": {
     "notes": "",
     "assets": [

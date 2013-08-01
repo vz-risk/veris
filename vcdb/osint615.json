@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint615",
-  "security_compromise": "Confirmed",
   "reference": "http://www.esecurityplanet.com/hackers/panda-security-hacked-lulzsec-is-your-website-safe.html ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Unknown",
       "data": [
         {
           "variety": "Credentials"
@@ -19,15 +19,17 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 35,
-      "data_disclosure": "Unknown"
+      "data_total": 35
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Late Tuesday night, at least 35 public facing websites belonging to Panda Security were hacked and defaced by the LulzSec and Anonymous hacking groups.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint615",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -35,16 +37,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint615",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 7,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -55,9 +56,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Activist"
@@ -71,20 +69,17 @@
         "iso_currency_code": "USD",
         "amount": 70000000
       },
-      "country": "Spain",
-      "notes": "",
+      "country": "ES",
+      "industry": "511210",
       "employee_count": "101 to 1000",
-      "industry": "511210"
+      "notes": ""
     }
   ],
   "timeline": {
     "incident": {
-      "month": 3,
+      "year": 2012,
       "day": 6,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 3
     }
   },
   "action": {
@@ -98,11 +93,10 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {
-        "variety": "S - Other server"
+        "variety": "S - Other"
       }
     ]
   }

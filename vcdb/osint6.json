@@ -33,7 +33,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint6",
-  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/ecrime/databreach/reports/sb24-37224, http://doj.nh.gov/consumer/security-breaches/documents/wilton-brands-20121212.pdf, http://www.atg.state.vt.us/issues/consumer-protection/privacy-and-Data-Security/documents-and-resources5/wilton-brands-llc-security-breach-notice-letter-to-consumer.php ",
   "attribute": {
     "confidentiality": {
@@ -50,10 +49,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "On or about October 31, 2012 a service provider of Wilton discovered that a malicious user had added a file to a computer server that hosts www.wilton.com and www.copco.com. During the period of July 19, 2012-October 2, 2012 this activity resulted in the malicious user being able to view some Wilton/Copco user information, including name, address, city, state, telephone, and payment card information, including card number, expiration date and security codes (e.g. CVV2/CVC2/CID). We believe that your personal information could have been accessed as a result of this incident.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint6",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -61,16 +63,15 @@
         "data_subject": ""
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint6",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 10,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -81,9 +82,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -97,7 +95,7 @@
         "iso_currency_code": "USD",
         "amount": 119500000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "www.wilton.com and www.copco.com were affected",
       "state": "IL",
       "employee_count": "1001 to 10000",
@@ -109,11 +107,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 10,
-      "day": 31,
       "year": 2012
     },
     "compromise": {
@@ -137,7 +130,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

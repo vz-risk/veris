@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint610",
-  "security_compromise": "Confirmed",
   "reference": "http://www.efortresses.com/2012-Breaches-Matrix.htm ",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Thousands of workers' pay details were sent to others due to printing error. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint610",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -34,16 +36,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint610",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 31,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -51,9 +52,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -67,17 +65,14 @@
         "iso_currency_code": "USD",
         "amount": 25000000
       },
-      "country": "United Kingdom",
-      "notes": "",
+      "country": "GB",
+      "industry": "541512",
       "employee_count": "101 to 1000",
-      "industry": "541512"
+      "notes": ""
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -92,7 +87,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

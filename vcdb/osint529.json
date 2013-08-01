@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint529",
-  "security_compromise": "Confirmed",
   "reference": "https://www.surveygizmo.com/s3/1134048/veris",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 3178,
@@ -17,15 +17,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 3178,
-      "data_disclosure": "Yes"
+      "data_total": 3178
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Gaming website compromised via undisclosed method. User information in the form of usernames and passwords posted to pastebin.com",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint529",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint529",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 16,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -53,9 +54,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unaffiliated"
@@ -69,10 +67,10 @@
         "iso_currency_code": "USD",
         "amount": 100000
       },
-      "country": "Canada",
-      "notes": "",
+      "country": "CA",
+      "industry": "51913",
       "employee_count": "1 to 10",
-      "industry": "51913"
+      "notes": ""
     }
   ],
   "timeline": {
@@ -80,13 +78,8 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 5,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 5,
-      "day": 16,
-      "year": 2012
+      "year": 2012,
+      "month": 5
     },
     "compromise": {
       "unit": "Unknown"
@@ -109,7 +102,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

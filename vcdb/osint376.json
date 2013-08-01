@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint376",
-  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/former-harris-county-hospital-district-employee-allegedly-sold-patient-information-as-part-of-medicare-kickback-scheme.html ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 3000,
@@ -21,15 +21,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 3000,
-      "data_disclosure": "Yes"
+      "data_total": 3000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Around 3,000 patients of Harris County Hospital District in Houston may have had personal information stolen by a former employee indicted in a federal court this year in a Medicare kickback scheme involving home healthcare operators, according to a Houston Chronicle report.  The hospital district did not name the employee, but the U.S. Department of Justice identified him as Jarvis Thomas, according to the report. Mr. Thomas is accused of selling patient information to Jackson Home Healthcare owner Valdie Jackson, who would allegedly disclose that information to others, according to the report. The charges also allege that Mr. Thomas and Ms. Jackson would use the patient information to bill Medicare for services that were not needed or not provided.  The patient information included names, addresses, telephone numbers and diagnoses. Harris County Hospital District declined to say how the patient data was compromised, according to the report. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint376",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -37,16 +39,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint376",
     "timeline": {
       "notification": {
-        "month": 9,
+        "year": 2012,
         "day": 4,
-        "year": 2012
+        "month": 9
       }
     }
   },
@@ -56,9 +57,6 @@
         "Financial"
       ],
       "notes": "Employee stole data for a Medicare kickback scheme.",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "End-user"
       ]
@@ -67,7 +65,7 @@
   "victim": [
     {
       "victim_id": "Harris County Hospital District",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "TX",
       "employee_count": "11 to 100",
@@ -76,9 +74,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -95,7 +90,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

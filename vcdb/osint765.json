@@ -1,15 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint765",
   "reference": "http://www.deseretnews.com/article/865579041/Life-Flight-informs-patients-of-possible-confidential-information-breach.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "state": [
-        "Stored unencrypted"
-      ],
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 842,
@@ -20,68 +18,13 @@
           "variety": "Personal"
         }
       ],
-      "data_total": 842,
-      "data_disclosure": "Potentially"
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 842
     }
   },
   "notes": "",
-  "discovery_method": "Unknown",
-  "schema_version": "1.0",
-  "summary": "Patients flown by Life Flight helicopters during at least three months of 2004 were advised Friday that their personal information may have been compromised.  The information, collected from patients in April, May and June of that year, was inadvertently put on an employee website where it may have been accessed by individuals outside of the emergency transport company.",
-  "security_compromise": "Confirmed",
-  "plus": {
-    "timeline": {
-      "notification": {
-        "month": 4,
-        "day": 26,
-        "year": 2013
-      }
-    },
-    "f500": "N",
-    "master_id": "osint765",
-    "asset": {
-      "total": "No"
-    },
-    "attribute": {
-      "confidentiality": {
-        "credit_monitoring": "U",
-        "data_abuse": "U",
-        "data_subject": "Patient"
-      }
-    }
-  },
-  "actor": {
-    "internal": {
-      "motive": [
-        "NA"
-      ],
-      "role": [
-        "Unintentional"
-      ],
-      "variety": [
-        "Other"
-      ]
-    }
-  },
-  "victim": [
-    {
-      "victim_id": "Life Flight",
-      "country": "United States",
-      "notes": "",
-      "state": "UT",
-      "employee_count": "Unknown",
-      "industry": "485999"
-    }
-  ],
-  "timeline": {
-    "incident": {
-      "year": 2013
-    },
-    "investigation": {
-      "year": 2013
-    }
-  },
-  "source_id": "osint",
   "action": {
     "error": {
       "notes": " [through Web]",
@@ -93,6 +36,57 @@
       ]
     }
   },
+  "schema_version": "1.2",
+  "summary": "Patients flown by Life Flight helicopters during at least three months of 2004 were advised Friday that their personal information may have been compromised.  The information, collected from patients in April, May and June of that year, was inadvertently put on an employee website where it may have been accessed by individuals outside of the emergency transport company.",
+  "source_id": "osint",
+  "security_incident": "Confirmed",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "U",
+        "data_subject": "Patient"
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 26,
+        "month": 4
+      }
+    },
+    "f500": "N",
+    "master_id": "osint765",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "variety": [
+        "Other"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Life Flight",
+      "country": "US",
+      "notes": "",
+      "state": "UT",
+      "employee_count": "Unknown",
+      "industry": "485999"
+    }
+  ],
+  "timeline": {
+    "incident": {
+      "year": 2013
+    }
+  },
+  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

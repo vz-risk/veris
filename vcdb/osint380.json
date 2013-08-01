@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint380",
-  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/palm-beach-health-department-employee-steals-patient-names-social-security-numbers.html ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 86,
@@ -17,15 +17,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 86,
-      "data_disclosure": "Yes"
+      "data_total": 86
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "The Palm Beach County (Fla.) Health Department issued a public notice that at least 86 patients of its health centers may have had confidential information in their medical records disclosed to an unauthorized source.  The breach occurred when an employee created a client list containing names and Social Security numbers for 86 patients and attempted to mail the list, according to the release. Law enforcement was able to confiscate the list in May, and further investigation showed that the names were used for fraudulent activity. According to the release, the document did not contain bank account, credit card or other personal information.  According to the release, the employee has been removed from access to any and all health department information. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint380",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint380",
     "timeline": {
       "notification": {
-        "month": 8,
+        "year": 2012,
         "day": 6,
-        "year": 2012
+        "month": 8
       }
     }
   },
@@ -52,9 +53,6 @@
         "Financial"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "End-user"
       ]
@@ -63,7 +61,7 @@
   "victim": [
     {
       "victim_id": "Palm Beach County Health Department",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "FL",
       "employee_count": "101 to 1000",
@@ -72,11 +70,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 5,
-      "day": 31,
       "year": 2012
     }
   },
@@ -94,7 +87,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

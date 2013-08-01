@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint248",
-  "security_compromise": "Confirmed",
   "reference": "http://www.templecommunityhospital.com/computer-theft-in-xray-alert/; http://www.phiprivacy.net/?p=10133; http://latimesblogs.latimes.com/lanow/2012/08/patient-data-stolen-from-temple-community-hospital-.html",
   "attribute": {
     "confidentiality": {
       "notes": "The computer stolen contained pictures of CT scans performed that contained patients\u2019 names, the ordering doctor\u2019s names, and the patients\u2019 hospital account numbers. ",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -22,15 +22,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 603,
-      "data_disclosure": "Potentially"
+      "data_total": 603
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Patients personal and medical information was taken from a computer that was in a locked office.   ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint248",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -38,16 +40,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint248",
     "timeline": {
       "notification": {
-        "month": 8,
+        "year": 2012,
         "day": 27,
-        "year": 2012
+        "month": 8
       }
     }
   },
@@ -58,9 +59,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -74,7 +72,7 @@
         "iso_currency_code": "USD",
         "amount": 28000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "101 to 1000",
@@ -83,12 +81,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 7,
+      "year": 2012,
       "day": 3,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 7
     }
   },
   "action": {
@@ -104,7 +99,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

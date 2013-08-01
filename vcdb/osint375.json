@@ -33,7 +33,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint375",
-  "security_compromise": "Confirmed",
   "reference": "http://ozdc.net/archives.php?aid=843 (20130219) http://www.cyberwarnews.info/2012/03/16/christian-teen-forums-hacked-and-accounts-leaked/ (20130219)",
   "attribute": {
     "integrity": {
@@ -43,6 +42,7 @@
     },
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 18000,
@@ -56,15 +56,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 18000,
-      "data_disclosure": "Yes"
+      "data_total": 18000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Christian Teen Forums hacked via SQL injection.  Usernames and email addresses posted to pastebin",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint375",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -72,11 +74,10 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint375",
     "timeline": {
       "notification": {
         "year": 2012
@@ -90,9 +91,6 @@
       ],
       "country": [],
       "notes": "Hacker known as Le0n B3lm0nt",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -102,9 +100,9 @@
     {
       "victim_id": "Christian Teen Forums",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "51913",
-      "country": "Belize"
+      "employee_count": "Unknown",
+      "country": "BZ"
     }
   ],
   "timeline": {
@@ -112,14 +110,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 3,
+      "year": 2012,
       "day": 16,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 3,
-      "day": 16,
-      "year": 2012
+      "month": 3
     },
     "compromise": {
       "unit": "Unknown"
@@ -137,13 +130,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "SQLi"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

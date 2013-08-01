@@ -33,7 +33,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint382",
-  "security_compromise": "Confirmed",
   "reference": "http://talkvietnam.com/2012/10/website-of-vietnams-top-internet-security-firm-hacked/#.USPSIlpASLE (20130219) http://talkvietnam.com/2012/10/suspect-seized-for-hacking-vietnams-top-net-security-site/#.USPSkFpASLE (20130219)",
   "attribute": {
     "confidentiality": {
@@ -45,8 +44,8 @@
     },
     "availability": {
       "duration": {
-        "value": 2.0,
-        "unit": "Days"
+        "unit": "Days",
+        "value": 2.0
       },
       "notes": "",
       "variety": [
@@ -55,10 +54,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Bach Khoa Internetwork Security Company website hacked and DDoSed.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint382",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -66,16 +68,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint382",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 3,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -85,12 +86,9 @@
         "Fun"
       ],
       "country": [
-        "Viet Nam"
+        "VN"
       ],
       "notes": "Attack claimed to be related to Lulzsec.  Unclear if this was a Lulzsec sanctioned attack.",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -100,9 +98,9 @@
     {
       "victim_id": "Bach Khoa Internetwork Security Company",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "517919",
-      "country": "Viet Nam"
+      "employee_count": "Unknown",
+      "country": "VN"
     }
   ],
   "timeline": {
@@ -110,14 +108,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 2,
+      "year": 2012,
       "day": 2,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 3,
-      "year": 2012
+      "month": 2
     },
     "compromise": {
       "unit": "Unknown"
@@ -135,14 +128,13 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Unknown",
         "DoS"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

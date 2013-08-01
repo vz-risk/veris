@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint140",
-  "security_compromise": "Confirmed",
   "reference": "",
   "attribute": {
     "integrity": {
@@ -25,10 +24,13 @@
     }
   },
   "notes": "Source by insider who knew about the breach.",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "One of the HR people's laptop was infected by malware.  The entire contents of the laptop was shipped off to a file sharing site.  It contained full payroll data dump.  Company did not choose to notify--claimed exemption as a government agency.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint140",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -36,16 +38,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint140",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 5,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -58,9 +59,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Unknown"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -73,7 +71,7 @@
         "iso_currency_code": "USD",
         "amount": 32700000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "101 to 1000",
@@ -82,29 +80,23 @@
   ],
   "timeline": {
     "incident": {
-      "month": 11,
+      "year": 2011,
       "day": 19,
-      "year": 2011
-    },
-    "investigation": {
-      "month": 1,
-      "day": 31,
-      "year": 2012
+      "month": 11
     }
   },
   "action": {
     "malware": {
+      "variety": [
+        "Unknown"
+      ],
       "vector": [
         "Unknown"
       ],
-      "cve": "",
       "name": "",
-      "variety": [
-        "Unknown"
-      ]
+      "cve": ""
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

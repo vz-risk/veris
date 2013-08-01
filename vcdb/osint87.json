@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint87",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/home-depot-20120416.pdf ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "An employee accessed certain HR information for unauthorized purposes, with what appear to have been failed attempts to misuse the information to obtain fraudulent credit cards.  The information included name, contact information, SSN, driver's license numbers and financial account information.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint87",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "Y",
     "asset": {
       "total": "No"
     },
-    "f500": "Y",
-    "master_id": "osint87",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 16,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -50,9 +51,6 @@
         "Financial"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Human resources"
       ]
@@ -65,7 +63,7 @@
         "iso_currency_code": "USD",
         "amount": 70400000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "GA",
       "employee_count": "Over 100000",
@@ -74,11 +72,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 3,
-      "day": 15,
       "year": 2012
     }
   },
@@ -94,7 +87,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

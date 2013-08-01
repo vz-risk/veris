@@ -30,20 +30,20 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Distracting"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint171",
-  "security_compromise": "Confirmed",
   "reference": "http://oag.ca.gov/ecrime/databreach/reports/sb24-32315 (20130212) http://doj.nh.gov/consumer/security-breaches/documents/american-pharmacists-20120709.pdf (20130212)",
   "attribute": {
     "integrity": {
       "notes": "",
       "variety": [
-        "Modified configuration"
+        "Modify configuration"
       ]
     },
     "confidentiality": {
       "notes": "We know of 81 records affecting NH residents.  We also know there was an unknown number of victims in CA.  Total record count across all states is unknown.",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 81,
@@ -53,15 +53,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 81,
-      "data_disclosure": "Potentially"
+      "data_total": 81
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Attackers deface website of American Pharmacists Association and accessed credit card numbers of some members",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint171",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -69,16 +71,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint171",
     "timeline": {
       "notification": {
-        "month": 7,
+        "year": 2012,
         "day": 9,
-        "year": 2012
+        "month": 7
       }
     }
   },
@@ -89,9 +90,6 @@
       ],
       "country": [],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -104,7 +102,7 @@
         "iso_currency_code": "USD",
         "amount": 45000000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "DC",
       "employee_count": "101 to 1000",
@@ -116,14 +114,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 4,
+      "year": 2012,
       "day": 23,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 5,
-      "day": 28,
-      "year": 2012
+      "month": 4
     },
     "compromise": {
       "unit": "Unknown"
@@ -141,13 +134,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint463",
-  "security_compromise": "Confirmed",
   "reference": "http://www.kare11.com/news/article/974638/391/Personal-information-of-3700-Minnesota-drivers-leaked ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 3700,
@@ -17,15 +17,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 3700,
-      "data_disclosure": "Yes"
+      "data_total": 3700
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - IT audit",
+  "schema_version": "1.2",
   "summary": "The Minnesota Department of Public Safety Driver and Vehicle Services (DVS) announced Friday that the personal information of 3,700 licensed Minnesota drivers has been compromised.  An internal audit revealed the illegal access. DVS says there are no indications that the data is being used for criminal purposes, but the agency is sending letters to affected individuals to make them aware of the breech.  The DVS says an audit revealed that an employee at a Minnesota car dealer who was authorized to access vehicle data to process consumer sales allegedly provided his system login information to a friend who worked at a vehicle repossession company.  That individual, who did not have authorization to access Minnesota vehicle records, either viewed the data or allowed others within the company to view it. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint463",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint463",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 28,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -52,9 +53,6 @@
         "Financial"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "End-user"
       ]
@@ -63,7 +61,7 @@
   "victim": [
     {
       "victim_id": "Minnesota Department of Public Safety Driver and Vehicle Services (DVS)",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MN",
       "employee_count": "Unknown",
@@ -72,9 +70,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -89,15 +84,14 @@
       ]
     }
   },
-  "discovery_method": "Int - IT audit",
   "asset": {
     "notes": "",
-    "management": true,
+    "management": "External",
     "assets": [
       {
         "variety": "S - Database"
       }
     ],
-    "hosting": true
+    "hosting": "External"
   }
 }

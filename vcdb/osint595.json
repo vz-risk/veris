@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": "Distracting"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint595",
-  "security_compromise": "Confirmed",
   "reference": "http://news.stv.tv/scotland/300202-charity-lost-personal-data-of-more-than-100-people-in-theft/",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 101,
@@ -17,8 +17,7 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 101,
-      "data_disclosure": "Potentially"
+      "data_total": 101
     },
     "availability": {
       "duration": {
@@ -31,10 +30,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "Several USB drives were stolen from an employee's home.  PII for 101 people was stored, unencrypted on the drives.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint595",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -42,16 +44,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint595",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 9,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -61,12 +62,9 @@
         "Financial"
       ],
       "country": [
-        "United Kingdom"
+        "GB"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -79,10 +77,10 @@
         "iso_currency_code": "GBP",
         "amount": 27696681
       },
-      "country": "United Kingdom",
-      "notes": "",
+      "country": "GB",
+      "industry": "813",
       "employee_count": "101 to 1000",
-      "industry": "813"
+      "notes": ""
     }
   ],
   "timeline": {
@@ -90,12 +88,8 @@
       "unit": "Minutes"
     },
     "incident": {
-      "month": 11,
-      "year": 2011
-    },
-    "investigation": {
-      "month": 11,
-      "year": 2011
+      "year": 2011,
+      "month": 11
     },
     "compromise": {
       "unit": "Minutes"
@@ -121,14 +115,13 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
-    "personal": true,
     "notes": "",
     "assets": [
       {
         "variety": "M - Flash drive"
       }
-    ]
+    ],
+    "ownership": "Employee"
   }
 }

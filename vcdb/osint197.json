@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint197",
-  "security_compromise": "Confirmed",
   "reference": "http://www.desertaidsproject.org/notification/; http://www.hhs.gov/ocr/privacy/hipaa/administrative/breachnotificationrule/breachtool.html ",
   "attribute": {
     "confidentiality": {
       "notes": "Information on the computer contained a spreadsheet which included client name, assigned staff person, client status (active, discharged, etc.), internal client identification number, and date of birth",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Personal"
@@ -19,15 +19,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 4400,
-      "data_disclosure": "Potentially"
+      "data_total": 4400
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "A thief gained unauthorized access to the receptionist's office computer at Desert AIDS Project.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint197",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -35,16 +37,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint197",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 19,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -55,9 +56,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -71,7 +69,7 @@
         "iso_currency_code": "USD",
         "amount": 11000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "101 to 1000",
@@ -80,14 +78,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 4,
+      "year": 2012,
       "day": 12,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 4,
-      "day": 13,
-      "year": 2012
+      "month": 4
     },
     "discovery": {
       "unit": "Days"
@@ -106,7 +99,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint642",
-  "security_compromise": "Confirmed",
   "reference": "http://rockville.patch.com/articles/rockville-man-indicted-for-identity-theft-and-tax-fraud, http://www.justice.gov/usao/md/Public-Affairs/press_releases/Press13/TwoBrothersIndictedforTaxFraudandIdentityTheft.html",
   "attribute": {
     "integrity": {
@@ -26,10 +25,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Business owners stole customer information to file fraudulent tax returns.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint642",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -37,15 +39,14 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint642",
     "timeline": {
       "notification": {
-        "month": 4,
-        "year": 2010
+        "year": 2010,
+        "month": 4
       }
     }
   },
@@ -53,9 +54,6 @@
     "internal": {
       "motive": [
         "Financial"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Manager"
@@ -65,7 +63,7 @@
   "victim": [
     {
       "victim_id": "Oligil Tax Services",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MD",
       "employee_count": "Unknown",
@@ -74,12 +72,8 @@
   ],
   "timeline": {
     "incident": {
-      "month": 4,
-      "year": 2007
-    },
-    "investigation": {
-      "month": 1,
-      "year": 2010
+      "year": 2007,
+      "month": 4
     }
   },
   "action": {
@@ -92,7 +86,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

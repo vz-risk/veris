@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint386",
-  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/phoenix-cardiac-surgery-group-pays-100k-in-hipaa-violation-settlement.html, http://www.hhs.gov/news/press/2012pres/04/20120417a.html, http://www.hhs.gov/ocr/privacy/hipaa/enforcement/examples/pcsurgery_agreement.pdf ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1000,
@@ -21,15 +21,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1000,
-      "data_disclosure": "Yes"
+      "data_total": 1000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "On February 19, 2009, OCR notified the Covered Entity of its initiation of an investigation of a complaint alleging that the Covered Entity had impermissibly disclosed electronic protected health information (ePHI) by making it publicly available on the Internet.  From July 3, 2007 until February 6, 2009, Covered Entity posted over 1,000 separate entries of ePHI on a publicly accessible, Internet-based calendar",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint386",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -37,16 +39,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint386",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 17,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -54,9 +55,6 @@
     "internal": {
       "motive": [
         "Other"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Other"
@@ -66,7 +64,7 @@
   "victim": [
     {
       "victim_id": "Phoenix Cardiac Surgery Group",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "AZ",
       "employee_count": "Unknown",
@@ -75,14 +73,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 7,
+      "year": 2007,
       "day": 3,
-      "year": 2007
-    },
-    "investigation": {
-      "month": 2,
-      "day": 6,
-      "year": 2009
+      "month": 7
     }
   },
   "action": {
@@ -96,7 +89,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

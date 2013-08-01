@@ -6,14 +6,14 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Insignificant"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint558",
-  "security_compromise": "Confirmed",
   "reference": "http://www.eastlothiancourier.com/news/roundup/articles/2012/02/09/423493-school-data-loss-apology/ http://www.eastlothian.gov.uk/news/article/1026/council_apologises_for_loss_of_information",
   "attribute": {
     "confidentiality": {
       "notes": "PII included name, school and class information, emergency contact details, and in some cases, medical information.",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1075,
@@ -23,15 +23,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1075,
-      "data_disclosure": "Yes"
+      "data_total": 1075
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "School employee downloaded information, including student PII onto a USB drive to work from home.  USB drive was then lost putting data at risk. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint558",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -39,16 +41,15 @@
         "data_subject": "Student"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint558",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 2,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -58,9 +59,6 @@
         "NA"
       ],
       "notes": "",
-      "role": [
-        "Inappropriate"
-      ],
       "variety": [
         "End-user"
       ]
@@ -70,9 +68,9 @@
     {
       "victim_id": "East Lothian Council",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "921",
-      "country": "United Kingdom"
+      "employee_count": "Unknown",
+      "country": "GB"
     }
   ],
   "timeline": {
@@ -80,9 +78,6 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -115,9 +110,7 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
-    "personal": true,
     "notes": "",
     "assets": [
       {
@@ -126,6 +119,7 @@
       {
         "variety": "M - Flash drive"
       }
-    ]
+    ],
+    "ownership": "Employee"
   }
 }

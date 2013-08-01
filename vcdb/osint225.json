@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint225",
-  "security_compromise": "Confirmed",
   "reference": "http://www.ololrmc.com/body.cfm?id=778&action=detail&ref=1915; http://www.phiprivacy.net/?p=9440 February 13, 2013",
   "attribute": {
     "confidentiality": {
       "notes": "The data included information such as patient name, age, race, dates of admission and discharge from the Intensive Care Unit, and results of treatment.",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,15 +19,17 @@
       "state": [
         "Stored encrypted"
       ],
-      "data_total": 17130,
-      "data_disclosure": "Potentially"
+      "data_total": 17130
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "A laptop was discovered missing from an office at Our Lady of the Lake Regional Medical Center.   ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint225",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -35,16 +37,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint225",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 18,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -55,9 +56,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -71,7 +69,7 @@
         "iso_currency_code": "USD",
         "amount": 827000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "Our Lady of the Lake Regional Medical Center reaches out to Baton Rouge residents with a helping hand.",
       "state": "LA",
       "employee_count": "1001 to 10000",
@@ -80,12 +78,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 3,
+      "year": 2012,
       "day": 16,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 3
     },
     "discovery": {
       "unit": "Months"
@@ -104,7 +99,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

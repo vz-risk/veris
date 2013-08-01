@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint218",
-  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=23715",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 261161,
@@ -21,15 +21,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 261161,
-      "data_disclosure": "Yes"
+      "data_total": 261161
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "    A software sales company affiliated with Softbank Corp. said Thursday that personal information related to up to 261,161 customers may have been compromised from its database due to fraudulent access.      Vector Inc. based in Tokyo said data that may have been stolen include names, addresses and credit card numbers, but that it remains unknown whether such information has been misused.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint218",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -37,16 +39,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint218",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 24,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -57,9 +58,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -73,17 +71,14 @@
         "iso_currency_code": "USD",
         "amount": 38920000000
       },
-      "country": "Japan",
-      "notes": "",
+      "country": "JP",
+      "industry": "55111",
       "employee_count": "10001 to 25000",
-      "industry": "55111"
+      "notes": ""
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -98,7 +93,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

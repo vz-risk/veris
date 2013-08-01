@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint325",
-  "security_compromise": "Confirmed",
   "reference": "http://pymnts.com/news/businesswire-feed/2012/november/26/pinnacle-foods-group-llc-reports-data-breach-individuals-in-multiple-states-could-be-affected-20121126006302/ ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 1818,
@@ -17,15 +17,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 1818,
-      "data_disclosure": "Potentially"
+      "data_total": 1818
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": " Pinnacle Foods Group LLC, a producer, marketer and distributor of branded food products, today announced that the personal information of up to 1,818 individuals in up to 13 states plus Mexico may have been affected by a theft of a company laptop from an employee\u2019s home.  Pinnacle Foods learned that an employee\u2019s laptop was stolen from her home in Clinton, Wis. on October 11, 2012. Company operations and systems were not involved; the breach affected only information residing on the stolen laptop, which was password protected, \u2014including names, social security numbers, driver\u2019s license numbers, credit card numbers, and/or personal information. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint325",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -33,16 +35,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint325",
     "timeline": {
       "notification": {
-        "month": 11,
+        "year": 2012,
         "day": 26,
-        "year": 2012
+        "month": 11
       }
     }
   },
@@ -53,9 +54,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unaffiliated"
@@ -69,7 +67,7 @@
         "iso_currency_code": "USD",
         "amount": 255400000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NJ",
       "employee_count": "1001 to 10000",
@@ -78,14 +76,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 10,
+      "year": 2012,
       "day": 11,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 10,
-      "day": 11,
-      "year": 2012
+      "month": 10
     }
   },
   "action": {
@@ -101,7 +94,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

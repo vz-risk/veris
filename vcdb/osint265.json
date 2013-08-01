@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint265",
-  "security_compromise": "Suspected",
   "reference": "http://www.privacyrights.org/data-breach?order=field_breach_total_value&sort=asc&title=",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "It is suspected that a former employer accessed the personal information of employees and could have misused the information.  ",
   "source_id": "osint",
+  "security_incident": "Suspected",
   "plus": {
+    "master_id": "osint265",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -34,16 +36,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint265",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 23,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -51,9 +52,6 @@
     "internal": {
       "motive": [
         "Grudge"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Other"
@@ -63,7 +61,7 @@
   "victim": [
     {
       "victim_id": "Lake Worth Independent School District",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "TX",
       "employee_count": "11 to 100",
@@ -72,9 +70,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -88,7 +83,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "assets": [
       {

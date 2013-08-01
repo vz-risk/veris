@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint106",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/principal-life-insurance-20120608.pdf ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Principal Life Insurance Company inadvertently provided contract owner information to a distribution partner for contracts sold by a different distribution partner.  This event occurred when the fulfilling a request for contract owner information from this distribution partner.  although the data was transferred securely, the information disclosed contract owners first and last names, addresses, and Social Security numbers for individuals that were not associated with the requesting distribution partner.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint106",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "Y",
     "asset": {
       "total": "No"
     },
-    "f500": "Y",
-    "master_id": "osint106",
     "timeline": {
       "notification": {
-        "month": 6,
+        "year": 2012,
         "day": 8,
-        "year": 2012
+        "month": 6
       }
     }
   },
@@ -50,9 +51,6 @@
         "NA"
       ],
       "notes": "",
-      "role": [
-        "Unintentional"
-      ],
       "variety": [
         "End-user"
       ]
@@ -65,7 +63,7 @@
         "iso_currency_code": "USD",
         "amount": 9180000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "IA",
       "employee_count": "10001 to 25000",
@@ -74,12 +72,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 3,
+      "year": 2012,
       "day": 20,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 3
     }
   },
   "action": {
@@ -93,7 +88,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

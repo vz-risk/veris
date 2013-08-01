@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint207",
-  "security_compromise": "Confirmed",
   "reference": "http://www.idt911.com/en/sitecore/content/GlobalElements/KnowledgeCenter/NewsAlertItems/800694373.aspx, http://www.gazette.net/article/20120127/NEWS/701279589/1034/social-security-some-credit-card-numbers-were-stored-on-public-usm&template=gazette ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 8000,
@@ -21,15 +21,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 8000,
-      "data_disclosure": "Yes"
+      "data_total": 8000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - IT audit",
+  "schema_version": "1.2",
   "summary": "The University System of Maryland recently learned that the server it was using to store the Social Security numbers and credit card information of prospective students was open to the public.  The issue was discovered as part of a study by the state's General Assembly's Office of Legislative Audits between February 2008 and March 2011, according to a report from the Gaithersburg Gazette. In addition to the Social Security and credit card data, students' names and other personal details were listed on a database in plain text.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint207",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -37,16 +39,15 @@
         "data_subject": "Student"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint207",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 27,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -54,9 +55,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -70,7 +68,7 @@
         "iso_currency_code": "USD",
         "amount": 3020000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MD",
       "employee_count": "25001 to 50000",
@@ -79,9 +77,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -96,7 +91,6 @@
       ]
     }
   },
-  "discovery_method": "Int - IT audit",
   "asset": {
     "assets": [
       {

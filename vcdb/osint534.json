@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint534",
-  "security_compromise": "Confirmed",
   "reference": "http://news.georgiahealth.edu/archives/5161 ",
   "attribute": {
     "confidentiality": {
       "notes": "The information on the laptop contained patient name, date of birth, limited diagnosis information and an internal code associated with the patient\u2019s laboratory tests. The records did not include addresses, Social Security numbers or financial information.",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,15 +19,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 513,
-      "data_disclosure": "Potentially"
+      "data_total": 513
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Theft of a laptop computer from a nurse practitioner's home that may have contained patient personal information ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint534",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -35,16 +37,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint534",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 15,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -55,9 +56,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -71,7 +69,7 @@
         "iso_currency_code": "USD",
         "amount": 2000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "GA",
       "employee_count": "1001 to 10000",
@@ -80,12 +78,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 1,
+      "year": 2012,
       "day": 18,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 1
     }
   },
   "action": {
@@ -101,7 +96,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

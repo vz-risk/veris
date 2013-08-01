@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint145",
-  "security_compromise": "Confirmed",
   "reference": "http://m.ibtimes.com/anonymous-spank-naughty-neo-nazis-opblitzkrieg-hack-275692.html, http://www.ibtimes.co.uk/articles/245458/20111108/operation-antisec-anonymous-hackers-expose-finnish-parliamentary.htm, http://www.theregister.co.uk/2012/01/04/anon_op_blitzkrieg/",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Members of Anonymous have re-doubled their offensive against German neo-Nazis.  The hacktivists of Operation Blitzkrieg this week launched a WikiLeaks-style website that aims to expose members of the far-right National Democratic Party (NPD) and other extremist groups, Der Spiegel reports. Nazi-leaks.net (German) already features a list of alleged donors to the NPD. It also hosts what OpBlitzkrieg claims are internal emails, a list of contact details purported to belong to far-right newspaper subscribers, and customer data allegedly hacked from neo-Nazi online stores.  Some of the data, such as the internal emails, had been previously disclosed, but other information is new. The launch of the site this week represents the latest phase of OpBlitzkrieg, which launched early last year with a string of DDoS attacks. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint145",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint145",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 4,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -52,9 +53,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -64,18 +62,15 @@
     {
       "victim_id": "National Democratic Party (NPD)",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "813940",
-      "country": "Germany"
+      "employee_count": "Unknown",
+      "country": "DE"
     }
   ],
   "timeline": {
     "incident": {
-      "month": 1,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "year": 2012,
+      "month": 1
     }
   },
   "action": {
@@ -89,7 +84,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

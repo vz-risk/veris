@@ -37,9 +37,7 @@
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "state": [
-        "Stored unencrypted"
-      ],
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -48,34 +46,47 @@
           "variety": "Internal"
         }
       ],
-      "data_total": 12,
-      "data_disclosure": "Yes"
+      "state": [
+        "Stored unencrypted"
+      ],
+      "data_total": 12
     }
   },
   "notes": "",
-  "discovery_method": "Unknown",
-  "schema_version": "1.0",
+  "action": {
+    "hacking": {
+      "notes": "",
+      "vector": [
+        "Unknown"
+      ],
+      "variety": [
+        "Unknown"
+      ]
+    }
+  },
+  "schema_version": "1.2",
   "summary": "Activist hackers gain access to police data and publish to Internet",
-  "security_compromise": "Confirmed",
+  "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
-    "timeline": {
-      "notification": {
-        "month": 5,
-        "day": 11,
-        "year": 2013
-      }
-    },
-    "f500": "N",
-    "master_id": "osint716",
-    "asset": {
-      "total": "No"
-    },
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
         "data_abuse": "Y",
         "data_subject": "Partner"
       }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 11,
+        "month": 5
+      }
+    },
+    "f500": "N",
+    "master_id": "osint716",
+    "asset": {
+      "total": "No"
     }
   },
   "actor": {
@@ -86,9 +97,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -97,7 +105,7 @@
   "victim": [
     {
       "victim_id": "City of Mobile Police",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "AL",
       "employee_count": "Unknown",
@@ -111,11 +119,6 @@
     "incident": {
       "year": 2013
     },
-    "investigation": {
-      "month": 5,
-      "day": 11,
-      "year": 2013
-    },
     "compromise": {
       "unit": "Unknown"
     },
@@ -126,18 +129,7 @@
       "unit": "Unknown"
     }
   },
-  "source_id": "osint",
-  "action": {
-    "hacking": {
-      "notes": "",
-      "vector": [
-        "Unknown"
-      ],
-      "variety": [
-        "Unknown"
-      ]
-    }
-  },
+  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

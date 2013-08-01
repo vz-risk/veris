@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint196",
-  "security_compromise": "Confirmed",
   "reference": "https://www.privacyrights.org/node/55178",
   "attribute": {
     "confidentiality": {
       "notes": "The lost flash drive contained patient names, Social Security numbers, dates of birth, addresses, telephone numbers, account numbers, diagnoses, and other protected health information.",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Medical"
@@ -19,15 +19,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 5713,
-      "data_disclosure": "Yes"
+      "data_total": 5713
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "A vendor working with patient data for digital conversion from Colon & Digestive lost a flash drive that contained patient names, Social Security numbers, dates of birth, addresses, telephone numbers, account numbers, diagnoses, and other protected health information. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint196",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -35,16 +37,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint196",
     "timeline": {
       "notification": {
-        "month": 10,
+        "year": 2012,
         "day": 19,
-        "year": 2012
+        "month": 10
       }
     }
   },
@@ -52,9 +53,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Other"
@@ -68,7 +66,7 @@
         "iso_currency_code": "USD",
         "amount": 100000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "AZ",
       "employee_count": "Unknown",
@@ -77,14 +75,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 7,
+      "year": 2012,
       "day": 16,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 10,
-      "day": 17,
-      "year": 2012
+      "month": 7
     },
     "discovery": {
       "unit": "Months"
@@ -101,7 +94,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

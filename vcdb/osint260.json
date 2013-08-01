@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint260",
-  "security_compromise": "Confirmed",
   "reference": "http://news.softpedia.com/news/Xbox-Live-Clans-Hacked-Used-Data-Leaked-249116.shtml ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 35000,
@@ -17,15 +17,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 35000,
-      "data_disclosure": "Yes"
+      "data_total": 35000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "An Xbox Live community with around 35,000 members called Xbox Live Clans suffered a data breach, hackers managing to obtain and leak usernames, represented by email addresses, and password hashes.  The hacker alsa7r posted all the information on Pastebin, potentially exposing all the forum\u2019s members.  Those who utilize the same email address and password combination on other sites are recommended to set up a new password for each account and watch out for malicious operations that may target them. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint260",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint260",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 27,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -54,9 +55,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -65,7 +63,7 @@
   "victim": [
     {
       "victim_id": "Xbox Live Clans",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "PA",
       "employee_count": "Unknown",
@@ -74,11 +72,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 1,
-      "day": 27,
       "year": 2012
     }
   },
@@ -93,7 +86,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

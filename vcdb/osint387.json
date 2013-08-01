@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint387",
-  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/phoenix-cardiac-surgery-group-pays-100k-in-hipaa-violation-settlement.html, http://www.hhs.gov/news/press/2012pres/04/20120417a.html, http://www.hhs.gov/ocr/privacy/hipaa/enforcement/examples/pcsurgery_agreement.pdf ",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "The settlement document lists numerous violations.  Each are being modeled separately.",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Phoenix Cardiac Surgery of Phoenix and Prescott, Ariz., has agreed to pay HHS a $100,000 settlement for its failure to comply with HIPAA privacy and security rules.   From September 1, 2005 until November 1, 2009, Covered Entity daily transmitted ePHI from an Internet-based email account to workforce members\u2019 personal Internet-based email accounts.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint387",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -34,16 +36,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint387",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 17,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -51,9 +52,6 @@
     "internal": {
       "motive": [
         "Other"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -63,7 +61,7 @@
   "victim": [
     {
       "victim_id": "Phoenix Cardiac Surgery Group",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "AZ",
       "employee_count": "Unknown",
@@ -72,14 +70,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 9,
+      "year": 2005,
       "day": 1,
-      "year": 2005
-    },
-    "investigation": {
-      "month": 11,
-      "day": 1,
-      "year": 2009
+      "month": 9
     }
   },
   "action": {
@@ -93,7 +86,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

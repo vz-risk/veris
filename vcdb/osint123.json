@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint123",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/trident-university-20120222.pdf ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "On November 29, 2011, Trident detected an unsuccessful attempt by an unidentified person to access a database containing usernames and passwords for current and former student accounts.No other information was contained in the database. The company permanently removed the database from the network and engaged in an external forensic team to assess the nature of the incident.The investigation did not find any evidence that someone successfully obtain access to the database and, based on a review of the available volume history for November and December 2011, there was no unusual market activity to indicate inappropriate access to student accounts. Not only is there no evidence that any students information was accessed by an unauthorized person,Trident is not aware of any reports that student account information has been misused as a result of this incident. However, because student accounts contained names, addresses, dates of birth, and often Social Security numbers, the company is notifying all students whose username and password work in the targeted database and offering them one year of free credit monitoring.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint123",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Student"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint123",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 21,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -52,9 +53,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -63,7 +61,7 @@
   "victim": [
     {
       "victim_id": "Trident University",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "Unknown",
@@ -72,12 +70,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 11,
+      "year": 2011,
       "day": 29,
-      "year": 2011
-    },
-    "investigation": {
-      "year": 2012
+      "month": 11
     }
   },
   "action": {
@@ -91,7 +86,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

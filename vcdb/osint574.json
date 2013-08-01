@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint574",
-  "security_compromise": "Confirmed",
   "reference": "http://www.nbcnews.com/id/47621717/ns/technology_and_science-security/t/data-breach-topples-australian-lego-fans/ ",
   "attribute": {
     "confidentiality": {
       "notes": "Parents who tried to sign up their children to the LEGO Club website potentially had their personal information, including credit card numbers, names, addresses, birth dates and phone numbers may have been exposed. ",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Bank"
@@ -22,15 +22,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 1591,
-      "data_disclosure": "Yes"
+      "data_total": 1591
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "The Australian branch of the toy building company has informed nearly 1,600 people that their personal information, including credit card numbers, may have been compromised due to a website vulnerability. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint574",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -38,16 +40,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint574",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 30,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -59,9 +60,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -71,21 +69,16 @@
     {
       "victim_id": "LEGO Australia",
       "notes": "",
-      "employee_count": "11 to 100",
       "industry": "423920",
-      "country": "Australia"
+      "employee_count": "11 to 100",
+      "country": "AU"
     }
   ],
   "timeline": {
     "incident": {
-      "month": 3,
+      "year": 2012,
       "day": 27,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 5,
-      "day": 5,
-      "year": 2012
+      "month": 3
     }
   },
   "action": {
@@ -99,7 +92,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

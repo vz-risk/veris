@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint329",
-  "security_compromise": "Confirmed",
   "reference": "http://eznotice.com/notices/3319596 (20130217)",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 875,
@@ -51,15 +51,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 875,
-      "data_disclosure": "Potentially"
+      "data_total": 875
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Paper records stolen from the back of a truck in an impound lot.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint329",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -67,16 +69,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint329",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 25,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -86,12 +87,9 @@
         "Unknown"
       ],
       "country": [
-        "United States"
+        "US"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -104,7 +102,7 @@
         "iso_currency_code": "USD",
         "amount": 1200000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "11 to 100",
@@ -116,14 +114,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 1,
+      "year": 2012,
       "day": 26,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 1,
-      "day": 27,
-      "year": 2012
+      "month": 1
     },
     "compromise": {
       "unit": "Unknown"
@@ -149,7 +142,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

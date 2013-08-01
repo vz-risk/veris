@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint348",
-  "security_compromise": "Confirmed",
   "reference": "http://www.beckershospitalreview.com/healthcare-information-technology/8400-patient-records-are-vulnerable-following-theft-at-nyu-langone-medical-center.html, http://www.scmagazine.com/computer-with-patient-data-stolen-from-nyc-hosptial/article/252618/ ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 8400,
@@ -21,15 +21,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 8400,
-      "data_disclosure": "Potentially"
+      "data_total": 8400
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "A desktop computer storing personal health information for approximately 8,400 patients was stolen from NYU Langone Medical Center in New York City, according to an SC Magazine report.  The computer was stolen from the faculty group practice office of John Golfinos, MD, the chairman of the department of neurosurgery. According to the report, the patient information includes names, addresses, dates of birth, telephone numbers and insurance and clinical information. About 5,000 of the lost records contained Social Security numbers.  According to the report, the computer was password protected but unencrypted. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint348",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -37,16 +39,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint348",
     "timeline": {
       "notification": {
-        "month": 8,
+        "year": 2012,
         "day": 1,
-        "year": 2012
+        "month": 8
       }
     }
   },
@@ -57,9 +58,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unaffiliated"
@@ -73,7 +71,7 @@
         "iso_currency_code": "USD",
         "amount": 74200000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NY",
       "employee_count": "1001 to 10000",
@@ -82,9 +80,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -101,7 +96,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

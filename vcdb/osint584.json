@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint584",
-  "security_compromise": "Confirmed",
   "reference": "http://www.cbc.ca/news/canada/new-brunswick/story/2012/05/09/nb-privacy-breach-voters-list-1026.html",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 553000,
@@ -17,15 +17,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 553000,
-      "data_disclosure": "Yes"
+      "data_total": 553000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - unrelated party",
+  "schema_version": "1.2",
   "summary": "CD with voter information was provided to political parties. Extraneous information including drivers license numbers and phone numbers was included.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint584",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint584",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 9,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -50,9 +51,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Manager"
@@ -63,9 +61,9 @@
     {
       "victim_id": "Elections New Brunswick",
       "notes": "",
-      "employee_count": "11 to 100",
       "industry": "921190",
-      "country": "Canada"
+      "employee_count": "11 to 100",
+      "country": "CA"
     }
   ],
   "timeline": {
@@ -73,9 +71,6 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -99,7 +94,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

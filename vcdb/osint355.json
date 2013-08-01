@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint355",
-  "security_compromise": "Confirmed",
   "reference": "http://pastebin.com/uNVgNdaH",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 3223,
@@ -17,15 +17,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 3223,
-      "data_disclosure": "Yes"
+      "data_total": 3223
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "usernames and encrypted pw dumped on pastebin. PHP vulnerability likely used to pop database.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint355",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint355",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 26,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -54,9 +55,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -66,9 +64,9 @@
     {
       "victim_id": "colmic.tv",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "51913",
-      "country": "Italy"
+      "employee_count": "Unknown",
+      "country": "IT"
     }
   ],
   "timeline": {
@@ -76,9 +74,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -102,7 +97,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint15",
-  "security_compromise": "Confirmed",
   "reference": "https://www.wheretofindcare.com/newsletters/2012DataBreaches.pdf February 5, 2012",
   "attribute": {
     "confidentiality": {
       "notes": "It is unknown what data was compromised during the hack. ",
+      "data_disclosure": "Unknown",
       "data": [
         {
           "variety": "Unknown"
@@ -16,15 +16,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 2743,
-      "data_disclosure": "Unknown"
+      "data_total": 2743
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Unauthorized disclosure involving a computer or computers that resulted in the exposure of protected health information.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint15",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -32,11 +34,10 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint15",
     "timeline": {
       "notification": {
         "year": 2012
@@ -47,9 +48,6 @@
     "internal": {
       "motive": [
         "Financial"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -63,7 +61,7 @@
         "iso_currency_code": "USD",
         "amount": 16
       },
-      "country": "United States",
+      "country": "US",
       "notes": "Unauthorized Access/Disclosure through a company computer.  ",
       "state": "AK",
       "employee_count": "101 to 1000",
@@ -75,14 +73,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 12,
+      "year": 2011,
       "day": 20,
-      "year": 2011
-    },
-    "investigation": {
-      "month": 1,
-      "day": 4,
-      "year": 2012
+      "month": 12
     },
     "compromise": {
       "unit": "Unknown"
@@ -105,7 +98,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint217",
-  "security_compromise": "Confirmed",
   "reference": "http://hackmageddon.com/tag/vbcoderz-com/",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "usernames and hashed passwords dumped on the internet by a hacker.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint217",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint217",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 14,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -52,9 +53,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -63,7 +61,7 @@
   "victim": [
     {
       "victim_id": "vBCoderz",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "VA",
       "employee_count": "Unknown",
@@ -72,11 +70,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 3,
-      "day": 14,
       "year": 2012
     }
   },
@@ -91,7 +84,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

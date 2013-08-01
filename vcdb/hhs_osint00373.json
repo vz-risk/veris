@@ -1,4 +1,7 @@
 {
+  "impact": {
+    "overall_rating": "Unknown"
+  },
   "incident_id": "hhs_osint00373",
   "attribute": {
     "confidentiality": {
@@ -13,8 +16,8 @@
     }
   },
   "discovery_method": "Unknown",
-  "schema_version": "1.0",
-  "source_id": "hhs",
+  "schema_version": "1.2",
+  "security_incident": "Confirmed",
   "plus": {
     "master_id": "hhs_osint00373"
   },
@@ -26,9 +29,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -38,22 +38,22 @@
     {
       "victim_id": "DeKalb Medical Center, Inc. d/b/a DeKalb Medical Hillandale",
       "industry": "622110",
-      "country": "United States",
+      "employee_count": "1001 to 10000",
       "state": "Ga",
-      "employee_count": "1001 to 10000"
+      "country": "US"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2010,
+      "month": 7,
       "day": 11,
-      "month": 7
+      "year": 2010
     },
     "discovery": {
       "unit": "Unknown"
     }
   },
-  "security_compromise": "Confirmed",
+  "source_id": "hhs",
   "action": {
     "physical": {
       "vector": [

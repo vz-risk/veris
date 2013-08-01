@@ -33,7 +33,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint7",
-  "security_compromise": "Confirmed",
   "reference": "http://www.prnewswire.com/news-releases/alere-home-monitoring-announces-theft-of-company-owned-laptop-180227241.html",
   "attribute": {
     "confidentiality": {
@@ -45,10 +44,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Employee's personal vehicle was broken into and company laptop was stolen ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint7",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -56,16 +58,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint7",
     "timeline": {
       "notification": {
-        "month": 11,
+        "year": 2012,
         "day": 20,
-        "year": 2012
+        "month": 11
       }
     }
   },
@@ -77,9 +78,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -88,7 +86,7 @@
   "victim": [
     {
       "victim_id": "Alere Home Monitoring, Inc.",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "Over 100000",
@@ -100,14 +98,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 9,
+      "year": 2012,
       "day": 23,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 11,
-      "day": 16,
-      "year": 2012
+      "month": 9
     },
     "compromise": {
       "unit": "Unknown"
@@ -132,7 +125,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

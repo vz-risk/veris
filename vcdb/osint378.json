@@ -33,7 +33,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint378",
-  "security_compromise": "Confirmed",
   "reference": "http://www.ajc.com/news/news/local/ob-gyns-worried-burglaries-fires-are-retaliation/nQT4d/ (20130219) http://www.wsbtv.com/news/news/local/2nd-doctors-office-targeted-laptop-theft/nLchZ/ (20130219)",
   "attribute": {
     "confidentiality": {
@@ -50,10 +49,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Atlanta Women\u2019s Health Group laptop stolen in a targeted attack against abortion providers in the area",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint378",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -61,11 +63,10 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint378",
     "timeline": {
       "notification": {
         "year": 2012
@@ -78,12 +79,9 @@
         "Ideology"
       ],
       "country": [
-        "United States"
+        "US"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -96,7 +94,7 @@
         "iso_currency_code": "USD",
         "amount": 1400000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "GA",
       "employee_count": "11 to 100",
@@ -108,9 +106,6 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -137,7 +132,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

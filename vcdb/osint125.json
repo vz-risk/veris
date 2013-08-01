@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint125",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/university-of-connecticut-20120508.pdf ",
   "attribute": {
     "integrity": {
@@ -25,10 +24,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "an employee responded to a phishing e-mail during the week of April 16, 2012. In doing so the employee provided access to a file that contained payroll related information for individuals were employed with the University dining services the apartment during 2011. This error was discovered on April 23, 2012.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint125",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -36,16 +38,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint125",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 8,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -58,9 +59,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -73,7 +71,7 @@
         "iso_currency_code": "USD",
         "amount": 599540000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CT",
       "employee_count": "1001 to 10000",
@@ -82,13 +80,8 @@
   ],
   "timeline": {
     "incident": {
-      "month": 4,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 4,
-      "day": 23,
-      "year": 2012
+      "year": 2012,
+      "month": 4
     }
   },
   "action": {
@@ -105,7 +98,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

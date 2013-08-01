@@ -3,11 +3,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint489",
-  "security_compromise": "Confirmed",
   "reference": "http://pastebin.com/E8zvHDpS",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Credentials"
@@ -16,15 +16,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 144,
-      "data_disclosure": "Yes"
+      "data_total": 144
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Site hacked and files dumped on pastebin.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint489",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -32,16 +34,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint489",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 19,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -53,9 +54,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -65,9 +63,9 @@
     {
       "victim_id": "DiarioBasta.com",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "51913",
-      "country": "Mexico"
+      "employee_count": "Unknown",
+      "country": "MX"
     }
   ],
   "timeline": {
@@ -75,9 +73,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -101,7 +96,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

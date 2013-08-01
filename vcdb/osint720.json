@@ -49,29 +49,40 @@
     }
   },
   "notes": "",
-  "discovery_method": "Unknown",
-  "schema_version": "1.0",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [
+        "LAN access"
+      ],
+      "variety": [
+        "Data mishandling"
+      ]
+    }
+  },
+  "schema_version": "1.2",
   "summary": "Employee emails unencrypted personal data for students to his home email address in violation of company policy.",
-  "security_compromise": "Suspected",
+  "source_id": "osint",
+  "security_incident": "Suspected",
   "plus": {
-    "timeline": {
-      "notification": {
-        "month": 2,
-        "day": 25,
-        "year": 2013
-      }
-    },
-    "f500": "N",
-    "master_id": "osint720",
-    "asset": {
-      "total": "No"
-    },
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
         "data_abuse": "U",
         "data_subject": "Student"
       }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 25,
+        "month": 2
+      }
+    },
+    "f500": "N",
+    "master_id": "osint720",
+    "asset": {
+      "total": "No"
     }
   },
   "actor": {
@@ -80,9 +91,6 @@
         "Unknown"
       ],
       "notes": "Unknown if employee was planning to misuse the data or was simply moving it so that he could work on it from home.",
-      "role": [
-        "Unknown"
-      ],
       "variety": [
         "Finance"
       ]
@@ -95,7 +103,7 @@
         "iso_currency_code": "USD",
         "amount": 1280000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MN",
       "employee_count": "1001 to 10000",
@@ -107,13 +115,8 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 1,
-      "year": 2013
-    },
-    "investigation": {
-      "month": 1,
-      "day": 28,
-      "year": 2013
+      "year": 2013,
+      "month": 1
     },
     "compromise": {
       "unit": "Unknown"
@@ -125,18 +128,7 @@
       "unit": "Unknown"
     }
   },
-  "source_id": "osint",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [
-        "LAN access"
-      ],
-      "variety": [
-        "Data mishandling"
-      ]
-    }
-  },
+  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

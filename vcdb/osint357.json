@@ -10,16 +10,15 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Painful"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint357",
-  "security_compromise": "Confirmed",
   "reference": "http://www.examiner.com/article/anonymous-strikes-war-profiteering-tear-gas-manufacturer-combined-systems",
   "attribute": {
     "integrity": {
       "notes": "site defacement",
       "variety": [
-        "Modified configuration"
+        "Modify configuration"
       ]
     },
     "confidentiality": {
@@ -51,10 +50,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Anonymous compromises web server and replaces w/ propaganda video.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint357",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -62,16 +64,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint357",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 14,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -81,12 +82,9 @@
         "Ideology"
       ],
       "country": [
-        "United States"
+        "US"
       ],
       "notes": "Anonymous",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -95,7 +93,7 @@
   "victim": [
     {
       "victim_id": "Combined Systems",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "PA",
       "employee_count": "101 to 1000",
@@ -107,14 +105,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 2,
+      "year": 2012,
       "day": 14,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 14,
-      "year": 2012
+      "month": 2
     },
     "compromise": {
       "unit": "Unknown"
@@ -132,13 +125,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

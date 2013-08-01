@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint72",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/centric-group-20130109.pdf ",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Computer system hacked, data included customer name, credit/debit cards, expiration and CVV.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint72",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -34,16 +36,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint72",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2013,
         "day": 9,
-        "year": 2013
+        "month": 1
       }
     }
   },
@@ -54,9 +55,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unaffiliated"
@@ -70,7 +68,7 @@
         "iso_currency_code": "USD",
         "amount": 750000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MO",
       "employee_count": "1001 to 10000",
@@ -79,13 +77,8 @@
   ],
   "timeline": {
     "incident": {
-      "month": 8,
-      "year": 2010
-    },
-    "investigation": {
-      "month": 12,
-      "day": 13,
-      "year": 2012
+      "year": 2010,
+      "month": 8
     }
   },
   "action": {
@@ -99,7 +92,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

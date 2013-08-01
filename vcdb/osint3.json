@@ -33,7 +33,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint3",
-  "security_compromise": "Confirmed",
   "reference": "http://www.tgdaily.com/security-features/61290-home-security-camera-feeds-posted-to-web",
   "attribute": {
     "confidentiality": {
@@ -50,10 +49,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - unrelated party",
+  "schema_version": "1.2",
   "summary": "Images of children in their bedrooms have been freely available on the web, following a security breach by webcam company Trendnet.  The breach affects thousands of feeds, and was caused by an error in code introduced nearly two years ago. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint3",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -61,11 +63,10 @@
         "data_subject": ""
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint3",
     "timeline": {
       "notification": {
         "year": 2012
@@ -76,9 +77,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -92,7 +90,7 @@
         "iso_currency_code": "USD",
         "amount": 51080000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "11 to 100",
@@ -104,9 +102,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -130,7 +125,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - unrelated party",
   "asset": {
     "assets": [
       {

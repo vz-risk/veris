@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint259",
-  "security_compromise": "Confirmed",
   "reference": "http://2fwww.threatpost.com/en_us/blogs/skimmers-hit-patrons-wrigley-field-chicago-restaurants-043012, http://illinoisattorneygeneral.gov/pressroom/2012_04/20120427.html ",
   "attribute": {
     "integrity": {
@@ -25,10 +24,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Six individuals were charged late last week with \u201cskimming\u201d more than $200,000 from victims who used their credit or debit cards at Wrigley Field and other Chicago restaurants.  A press release from Illinois\u2019 Attorney General Lisa Madigan on Friday alleged that Joseph Woods, 32, was the scheme\u2019s ringleader. Woods paid employees to skim information from credit and debit cards used at restaurants around Greater Chicago. Woods gathered this information and later used it to make counterfeit credit cards which he, and an accomplice, Alex Houston, 22, allegedly used to make illegal purchases with.  Woods\u2019 employees, Britain Woods, 33, Essence Houston, 28, Jenette Farrar, 34, and Kenyetta Davis, 31, all of Chicago, were also arraigned on Friday. The four defendants held jobs at 'The Friendly Confines' of Wrigley Field and Ralph Lauren Restaurant, along with local Taco Bell and McDonald\u2019s restaurants. While working there, the employees swiped cards using a small reader given to them by Woods.  Bank accounts hit by the scheme include those with Chase, U.S. Bank, Citibank, Harris Bank, American Express, Bank of America and Fifth Third Bank. While the press release isn't exactly clear how many individuals were affected by the scam, a report from a local CBS affiliate, citing a statement from Assistant Attorney General Ansh Vaidya, claims a few dozen victims were affected from 2007 to 2011.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint259",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -36,16 +38,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "Yes"
     },
-    "f500": "N",
-    "master_id": "osint259",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 27,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -55,9 +56,6 @@
         "Financial"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Cashier"
       ]
@@ -67,12 +65,9 @@
         "Financial"
       ],
       "country": [
-        "United States"
+        "US"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -81,7 +76,7 @@
   "victim": [
     {
       "victim_id": "Wrigley Field",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "IL",
       "employee_count": "Unknown",
@@ -93,7 +88,7 @@
         "iso_currency_code": "USD",
         "amount": 140000
       },
-      "country": "United States",
+      "country": "US",
       "industry": "722511",
       "state": "IL",
       "employee_count": "1 to 10"
@@ -101,23 +96,20 @@
     {
       "victim_id": "MacDonald's Restaurants",
       "industry": "722513",
+      "country": "US",
       "employee_count": "11 to 100",
-      "state": "IL",
-      "country": "United States"
+      "state": "IL"
     },
     {
       "victim_id": "Taco Bell Restaurants",
       "industry": "722513",
+      "country": "US",
       "employee_count": "11 to 100",
-      "state": "IL",
-      "country": "United States"
+      "state": "IL"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2011
-    },
-    "investigation": {
       "year": 2011
     }
   },
@@ -147,7 +139,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

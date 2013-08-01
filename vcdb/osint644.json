@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint644",
-  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=26775",
   "attribute": {
     "integrity": {
@@ -14,6 +13,7 @@
     },
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -22,15 +22,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 65,
-      "data_disclosure": "Yes"
+      "data_total": 65
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "According to court documents, Veronica Niko had access to the department\u2019s LEADER computer system, which, as a receptionist, she was authorized to use to input applicants\u2019 information for assistance requests. What she did, however, beginning in July 2009, was to access the system, take screenshots of applicants\u2019 PII, and print out the screenshots for her husband, Thomas Marshall, who used the information to submit fraudulent tax returns. ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint644",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -38,11 +40,10 @@
         "data_subject": "Other"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint644",
     "timeline": {
       "notification": {
         "year": 2011
@@ -54,9 +55,6 @@
       "motive": [
         "Financial"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Other"
       ]
@@ -65,7 +63,7 @@
   "victim": [
     {
       "victim_id": "Los Angeles County Department of Public Social Services",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "Unknown",
@@ -74,11 +72,8 @@
   ],
   "timeline": {
     "incident": {
-      "month": 7,
-      "year": 2009
-    },
-    "investigation": {
-      "year": 2011
+      "year": 2009,
+      "month": 7
     }
   },
   "action": {
@@ -91,7 +86,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

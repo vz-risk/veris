@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint122",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/transunion-20120312.pdf, https://www.privacyrights.org/node/54879 ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - customer",
+  "schema_version": "1.2",
   "summary": "The company has determined that your personal information (address, Social Security number and other details contained in your credit report) was accessed by an  unidentified person between January 22 and February 15, 2012 without proper authorization. The unauthorized access to your credit Corp. was brought to the company's attention by one of the subscribers, The Manufacturers Life Insurance Company (ManULife) and, as a result, a joint investigation has been initiated.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint122",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "Yes"
     },
-    "f500": "N",
-    "master_id": "osint122",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 12,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -51,9 +52,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -67,10 +65,10 @@
         "iso_currency_code": "USD",
         "amount": 48780000000
       },
-      "country": "Canada",
-      "notes": "",
+      "country": "CA",
+      "industry": "524113",
       "employee_count": "10001 to 25000",
-      "industry": "524113"
+      "notes": ""
     },
     {
       "victim_id": "Manufacturers Life Insurance Company (ManULife)",
@@ -78,7 +76,7 @@
         "iso_currency_code": "USD",
         "amount": 30000000000000
       },
-      "country": "Canada",
+      "country": "CA",
       "industry": "524113",
       "state": "",
       "employee_count": "25001 to 50000"
@@ -86,12 +84,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 2,
+      "year": 2012,
       "day": 15,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 2
     }
   },
   "action": {
@@ -105,7 +100,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - customer",
   "asset": {
     "assets": [
       {

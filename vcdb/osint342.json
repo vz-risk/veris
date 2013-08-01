@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint342",
-  "security_compromise": "Confirmed",
   "reference": "http://www.14news.com/story/20441631/gibson-general-hospital-notifying-patients-of-stolen-laptop-containing-patient-information ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 29000,
@@ -21,15 +21,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 29000,
-      "data_disclosure": "Potentially"
+      "data_total": 29000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Gibson General Hospital has mailed letters to patients informing them of the theft of a hospital laptop containing personal health information.  The laptop was reported stolen, along with several other items, from an employee's home during a burglary on Nov. 27.   The laptop was used by a hospital employee whose job requires 24/7 access to the hospital's electronic medical records system.   On December 26 letters were mailed  to approximately 29,000 patients who received care at Gibson General Hospital since January 2007. The information may have included a patient's name, address, social security number and/or clinical information.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint342",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -37,16 +39,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint342",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 26,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -57,9 +58,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unaffiliated"
@@ -73,7 +71,7 @@
         "iso_currency_code": "USD",
         "amount": 20700000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "IN",
       "employee_count": "101 to 1000",
@@ -82,14 +80,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 11,
+      "year": 2012,
       "day": 27,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 11,
-      "day": 27,
-      "year": 2012
+      "month": 11
     }
   },
   "action": {
@@ -105,7 +98,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

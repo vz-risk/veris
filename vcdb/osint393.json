@@ -6,14 +6,14 @@
         "variety": "Asset and fraud"
       }
     ],
-    "overall_rating": "Insignificant"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint393",
-  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=23272",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 2300,
@@ -23,8 +23,7 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 2300,
-      "data_disclosure": "Potentially"
+      "data_total": 2300
     },
     "availability": {
       "duration": {
@@ -37,10 +36,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - security alarm",
+  "schema_version": "1.2",
   "summary": "The Information Commissioner (The Commissioner) was informed by the Council of the theft of an unencrypted laptop containing a database with child swimming lesson details for 2300 individuals. The information was not of a nature that would be defined as sensitive personal data in the Act.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint393",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -48,16 +50,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint393",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 10,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -69,9 +70,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -81,9 +79,9 @@
     {
       "victim_id": "Craven District Council",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "923",
-      "country": "United Kingdom"
+      "employee_count": "Unknown",
+      "country": "GB"
     }
   ],
   "timeline": {
@@ -92,9 +90,6 @@
     },
     "incident": {
       "year": 2011
-    },
-    "investigation": {
-      "year": 2012
     },
     "compromise": {
       "unit": "Minutes"
@@ -119,7 +114,6 @@
       ]
     }
   },
-  "discovery_method": "Int - security alarm",
   "asset": {
     "assets": [
       {

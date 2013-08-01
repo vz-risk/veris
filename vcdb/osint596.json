@@ -3,7 +3,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint596",
-  "security_compromise": "Confirmed",
   "reference": "http://www.cyberwarnews.info/2012/03/04/electronics-giant-epson-hacked-and-data-leaked-by-anonymous-hacker-anonyintra/",
   "attribute": {
     "integrity": {
@@ -14,6 +13,7 @@
     },
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 67,
@@ -23,15 +23,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 67,
-      "data_disclosure": "Yes"
+      "data_total": 67
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "Epson hacked by Anonymous, posted on pastebin.  Leak contains basic table information. usernames and clear text passwords.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint596",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -39,16 +41,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "Y",
     "asset": {
       "total": "No"
     },
-    "f500": "Y",
-    "master_id": "osint596",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 4,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -61,9 +62,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -76,10 +74,10 @@
         "iso_currency_code": "USD",
         "amount": 10670000000
       },
-      "country": "Japan",
-      "notes": "",
+      "country": "JP",
+      "industry": "334",
       "employee_count": "50001 to 100000",
-      "industry": "334"
+      "notes": ""
     }
   ],
   "timeline": {
@@ -87,14 +85,9 @@
       "unit": "Unknown"
     },
     "incident": {
-      "month": 2,
+      "year": 2012,
       "day": 29,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 2,
-      "day": 29,
-      "year": 2012
+      "month": 2
     },
     "compromise": {
       "unit": "Unknown"
@@ -112,13 +105,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "SQLi"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

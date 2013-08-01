@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint641",
-  "security_compromise": "Confirmed",
   "reference": "http://www.nj.com/warrenreporter/index.ssf/2013/04/warren_hospital_can_ask_intern.html",
   "attribute": {
     "integrity": {
@@ -29,10 +28,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "According to the hospital\u2019s complaint, which was filed on Sept. 1, 2010, \u2014 \u201cJohn Doe One,\u201d an anonymous hacker, accessed Warren Hospital's website on Aug. 17, 2008 and unlawfully and without permission logged onto the hospital's secure mailbox. The hacker then composed and sent to all hospital employees an email with a link to a YouTube video. Both the message and the video compared one of the individual plaintiffs to Adolf Hitler and other dictators, according to court records.  On Oct. 19, 2009, an anonymous hacker using a third IP address allegedly accessed the hospital's website. Using an employee's mailbox, the hacker then allegedly composed and sent an email to all hospital employees accusing more than one of the individual plaintiffs of sexual misconduct and other wrongdoing.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint641",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -40,11 +42,10 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint641",
     "timeline": {
       "notification": {
         "year": 2009
@@ -60,9 +61,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -75,7 +73,7 @@
         "iso_currency_code": "USD",
         "amount": 72300000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NJ",
       "employee_count": "101 to 1000",
@@ -84,12 +82,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 10,
+      "year": 2009,
       "day": 19,
-      "year": 2009
-    },
-    "investigation": {
-      "year": 2009
+      "month": 10
     }
   },
   "action": {
@@ -98,13 +93,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

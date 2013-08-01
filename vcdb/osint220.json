@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint220",
-  "security_compromise": "Confirmed",
   "reference": "http://www.infosecurity-magazine.com/view/23194/vermont-tax-agency-posts-social-security-numbers-federal-tax-ids-online/",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 1577,
@@ -17,15 +17,17 @@
       "state": [
         "Unknown"
       ],
-      "data_total": 1577,
-      "data_disclosure": "Yes"
+      "data_total": 1577
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": " The Vermont Department of Taxes admitted this week that the social security numbers of 1,332 Vermont tax payers and federal ID numbers of 245 businesses were inadvertently posted online.  The personal data were contained in a weekly batch of property transfer tax returns, according to a report by the Burlington Free Press citing a Vermont Department of Taxes statement. The information was available for viewing for two hours on a vendor portion of the tax department's website, the statement said.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint220",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint220",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 12,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -50,9 +51,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -62,7 +60,7 @@
   "victim": [
     {
       "victim_id": "Vermont Department of Taxes",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "VT",
       "employee_count": "101 to 1000",
@@ -71,9 +69,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -88,7 +83,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

@@ -30,7 +30,7 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Insignificant"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint693",
   "reference": "http://www.americanbanker.com/issues/178_94/phh-data-breach-exposes-employee-information-1059140-1.html (20130520) https://oag.ca.gov/ecrime/databreach/reports/sb24-41751 (20130520)",
@@ -49,29 +49,36 @@
     }
   },
   "notes": "",
-  "discovery_method": "Other",
-  "schema_version": "1.0",
+  "action": {
+    "misuse": {
+      "notes": "",
+      "vector": [],
+      "variety": []
+    }
+  },
+  "schema_version": "1.2",
   "summary": "Former employee was indicted for identity fraud. Company proactively notifies employees and applicants for whom that former employee was able to access personal information. No indication that the employee actually misused employee data.",
-  "security_compromise": "Suspected",
+  "source_id": "osint",
+  "security_incident": "Suspected",
   "plus": {
-    "timeline": {
-      "notification": {
-        "month": 5,
-        "day": 15,
-        "year": 2013
-      }
-    },
-    "f500": "N",
-    "master_id": "osint693",
-    "asset": {
-      "total": "No"
-    },
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
         "data_abuse": "U",
         "data_subject": "Partner"
       }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 15,
+        "month": 5
+      }
+    },
+    "f500": "N",
+    "master_id": "osint693",
+    "asset": {
+      "total": "No"
     }
   },
   "actor": {
@@ -80,9 +87,6 @@
         "Unknown"
       ],
       "notes": "It is unknown if the temp employee actually misused the employee data.",
-      "role": [
-        "Unknown"
-      ],
       "variety": [
         "Human resources"
       ]
@@ -95,7 +99,7 @@
         "iso_currency_code": "USD",
         "amount": 129000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NJ",
       "employee_count": "101 to 1000",
@@ -109,11 +113,6 @@
     "incident": {
       "year": 2013
     },
-    "investigation": {
-      "month": 4,
-      "day": 3,
-      "year": 2013
-    },
     "compromise": {
       "unit": "Unknown"
     },
@@ -124,14 +123,7 @@
       "unit": "Unknown"
     }
   },
-  "source_id": "osint",
-  "action": {
-    "misuse": {
-      "notes": "",
-      "vector": [],
-      "variety": []
-    }
-  },
+  "discovery_method": "Other",
   "asset": {
     "notes": "",
     "assets": [

@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint105",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/primex-20120529.pdf ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Medical"
@@ -19,15 +19,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 55,
-      "data_disclosure": "Potentially"
+      "data_total": 55
     }
   },
   "notes": "This is another Impairment Resources incident.  ",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "A tape and external drive were stolen from a partner.  Personal identifying and medical data for up to 14,000 workers comp claimants and auto insurance claimant were included after a burglary.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint105",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -35,16 +37,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint105",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 29,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -54,12 +55,9 @@
         "Financial"
       ],
       "country": [
-        "United States"
+        "US"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -72,7 +70,7 @@
         "iso_currency_code": "USD",
         "amount": 4700000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "NH",
       "employee_count": "11 to 100",
@@ -81,13 +79,8 @@
   ],
   "timeline": {
     "incident": {
-      "month": 12,
-      "year": 2011
-    },
-    "investigation": {
-      "month": 5,
-      "day": 3,
-      "year": 2012
+      "year": 2011,
+      "month": 12
     }
   },
   "action": {
@@ -104,10 +97,9 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
-    "management": true,
+    "management": "External",
     "assets": [
       {
         "variety": "M - Tapes"
@@ -116,6 +108,6 @@
         "variety": "M - Disk drive"
       }
     ],
-    "hosting": true
+    "hosting": "External"
   }
 }

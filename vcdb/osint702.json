@@ -6,100 +6,27 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Insignificant"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint702",
   "reference": "http://home.nzcity.co.nz/news/article.aspx?id=167023&fm=newsmain%2Cnrhl",
   "attribute": {
     "confidentiality": {
       "notes": "",
-      "state": [
-        "Unknown"
-      ],
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 34,
           "variety": "Personal"
         }
       ],
-      "data_total": 34,
-      "data_disclosure": "Yes"
+      "state": [
+        "Unknown"
+      ],
+      "data_total": 34
     }
   },
   "notes": "",
-  "discovery_method": "Other",
-  "schema_version": "1.0",
-  "summary": "Government employee erroneously e-mails client information to unauthorized parties.",
-  "security_compromise": "Confirmed",
-  "plus": {
-    "timeline": {
-      "notification": {
-        "month": 5,
-        "day": 19,
-        "year": 2013
-      }
-    },
-    "f500": "N",
-    "master_id": "osint702",
-    "asset": {
-      "total": "No"
-    },
-    "attribute": {
-      "confidentiality": {
-        "credit_monitoring": "U",
-        "data_abuse": "N",
-        "data_subject": ""
-      }
-    }
-  },
-  "actor": {
-    "internal": {
-      "motive": [
-        "NA"
-      ],
-      "notes": "",
-      "role": [
-        "Unintentional"
-      ],
-      "variety": [
-        "End-user"
-      ]
-    }
-  },
-  "victim": [
-    {
-      "notes": "",
-      "victim_id": "Work and Income New Zealand",
-      "industry": "926",
-      "employee_count": "Unknown",
-      "country": "New Zealand"
-    }
-  ],
-  "timeline": {
-    "exfiltration": {
-      "unit": "NA"
-    },
-    "incident": {
-      "month": 5,
-      "day": 16,
-      "year": 2013
-    },
-    "investigation": {
-      "month": 5,
-      "day": 16,
-      "year": 2013
-    },
-    "compromise": {
-      "unit": "NA"
-    },
-    "containment": {
-      "unit": "Days"
-    },
-    "discovery": {
-      "unit": "Seconds"
-    }
-  },
-  "source_id": "osint",
   "action": {
     "error": {
       "notes": "",
@@ -111,6 +38,71 @@
       ]
     }
   },
+  "schema_version": "1.2",
+  "summary": "Government employee erroneously e-mails client information to unauthorized parties.",
+  "source_id": "osint",
+  "security_incident": "Confirmed",
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "credit_monitoring": "U",
+        "data_abuse": "N",
+        "data_subject": ""
+      }
+    },
+    "timeline": {
+      "notification": {
+        "year": 2013,
+        "day": 19,
+        "month": 5
+      }
+    },
+    "f500": "N",
+    "master_id": "osint702",
+    "asset": {
+      "total": "No"
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "notes": "",
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "victim": [
+    {
+      "victim_id": "Work and Income New Zealand",
+      "notes": "",
+      "country": "NZ",
+      "industry": "926",
+      "employee_count": "Unknown"
+    }
+  ],
+  "timeline": {
+    "exfiltration": {
+      "unit": "NA"
+    },
+    "incident": {
+      "year": 2013,
+      "day": 16,
+      "month": 5
+    },
+    "compromise": {
+      "unit": "NA"
+    },
+    "containment": {
+      "unit": "Days"
+    },
+    "discovery": {
+      "unit": "Seconds"
+    }
+  },
+  "discovery_method": "Other",
   "asset": {
     "notes": "",
     "assets": [

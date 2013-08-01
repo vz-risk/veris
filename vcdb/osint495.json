@@ -3,17 +3,17 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint495",
-  "security_compromise": "Confirmed",
   "reference": "http://www.huffingtonpost.com/2012/03/12/digital-playground-hacked-manwin_n_1340285.html http://nakedsecurity.sophos.com/2012/03/12/digital-playground-passwords/",
   "attribute": {
     "integrity": {
       "notes": "created new directory giving away movies for free; open access.",
       "variety": [
-        "Modified data"
+        "Modify data"
       ]
     },
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 72000,
@@ -37,15 +37,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 72000,
-      "data_disclosure": "Yes"
+      "data_total": 72000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "pr0n website compromised 70,000 user records and 40,000 payment cards at risk. In addition to releasing usernames, passwords and credit card details, The Consortium also made freely available some 52 pornographic movies",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint495",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -53,16 +55,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint495",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 4,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -72,12 +73,9 @@
         "Fun"
       ],
       "country": [
-        "United States"
+        "US"
       ],
       "notes": "The Consortium",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -90,7 +88,7 @@
         "iso_currency_code": "USD",
         "amount": 6000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "11 to 100",
@@ -102,11 +100,8 @@
       "unit": "Minutes"
     },
     "incident": {
-      "month": 2,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "year": 2012,
+      "month": 2
     },
     "compromise": {
       "unit": "Unknown"
@@ -124,13 +119,12 @@
       "vector": [
         "Web application"
       ],
-      "cve": "",
       "variety": [
         "Unknown"
-      ]
+      ],
+      "cve": ""
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "notes": "",
     "assets": [

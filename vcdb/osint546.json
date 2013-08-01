@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint546",
-  "security_compromise": "Confirmed",
   "reference": "http://www.databreaches.net/?p=22776 ",
   "attribute": {
     "confidentiality": {
       "notes": "Names, phone numbers, e-mail addresses, passwords, birth dates, ID numbers, and usernames",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "variety": "Classified"
@@ -19,15 +19,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 160,
-      "data_disclosure": "Potentially"
+      "data_total": 160
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "During an Anti-Israeli cyberattack, the Israel Institute of Technology was compromised.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint546",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -35,16 +37,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "Yes"
     },
-    "f500": "U",
-    "master_id": "osint546",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 11,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -55,9 +56,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Activist"
@@ -71,10 +69,10 @@
         "iso_currency_code": "USD",
         "amount": 484000000
       },
-      "country": "Israel",
-      "notes": "",
+      "country": "IL",
+      "industry": "611310",
       "employee_count": "1001 to 10000",
-      "industry": "611310"
+      "notes": ""
     },
     {
       "victim_id": "TopLinks",
@@ -82,7 +80,7 @@
         "iso_currency_code": "USD",
         "amount": 1000000
       },
-      "country": "Israel",
+      "country": "IL",
       "industry": "334290",
       "state": "",
       "employee_count": "1 to 10"
@@ -93,7 +91,7 @@
         "iso_currency_code": "USD",
         "amount": 293000000
       },
-      "country": "Israel",
+      "country": "IL",
       "industry": "611310",
       "state": "",
       "employee_count": "1001 to 10000"
@@ -104,7 +102,7 @@
         "iso_currency_code": "USD",
         "amount": 15000000
       },
-      "country": "Israel",
+      "country": "IL",
       "industry": "813410",
       "state": "",
       "employee_count": "11 to 100"
@@ -112,23 +110,20 @@
     {
       "victim_id": "ILAN",
       "industry": "611310",
+      "country": "IL",
       "employee_count": "Unknown",
-      "state": "",
-      "country": "Israel"
+      "state": ""
     },
     {
       "victim_id": "SNIP",
       "industry": "722511",
+      "country": "IL",
       "employee_count": "11 to 100",
-      "state": "",
-      "country": "Israel"
+      "state": ""
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -143,7 +138,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint636",
-  "security_compromise": "Confirmed",
   "reference": "http://www.sbcounty.gov/dbh/announcments/2013/Breach.pdf",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 683,
@@ -17,15 +17,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 683,
-      "data_disclosure": "Yes"
+      "data_total": 683
     }
   },
   "notes": "HHS Breach Tool",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "On January 12, 2013, a listing of DBH client information was stolen from the vehicle of a County of San Bernardino, Human Services (HS) employee.  The HS employee\u2019s vehicle was broken into on January 12, 2013, and amongst the items stolen from the vehicle was the list of DBH clients. A police report was immediately filed with the Highland division of the San Bernardino County Sheriff\u2019s Department. Although the list contained minimal information (first name, last name, date of birth and DBH Medical Record number and indication services are received from a DBH clinic), DBH wanted to let the affected clients as well as the public know of the incident.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint636",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint636",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2010,
         "day": 4,
-        "year": 2010
+        "month": 3
       }
     }
   },
@@ -54,9 +55,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unaffiliated"
       ]
@@ -65,7 +63,7 @@
   "victim": [
     {
       "victim_id": "San Bernardino Department of Behavioral Health",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "Unknown",
@@ -74,12 +72,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 1,
+      "year": 2013,
       "day": 12,
-      "year": 2013
-    },
-    "investigation": {
-      "year": 2013
+      "month": 1
     }
   },
   "action": {
@@ -95,7 +90,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

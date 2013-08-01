@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint70",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/college-board-20120113.pdf ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Personal"
@@ -16,15 +16,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 430,
-      "data_disclosure": "Yes"
+      "data_total": 430
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "A spreadsheet containing personal information of 430 individuals who registered for or participated in the November 2011 Chinese Bridge Delegation was not properly secured, and potentially viewable via the internet.  It contained name, DOB, passport number and contact info of the registrants.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint70",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -32,16 +34,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint70",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 13,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -49,9 +50,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "End-user"
@@ -62,21 +60,16 @@
     {
       "victim_id": "College Board",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "6113",
-      "country": "China"
+      "employee_count": "Unknown",
+      "country": "CN"
     }
   ],
   "timeline": {
     "incident": {
-      "month": 1,
+      "year": 2012,
       "day": 4,
-      "year": 2012
-    },
-    "investigation": {
-      "month": 1,
-      "day": 5,
-      "year": 2012
+      "month": 1
     }
   },
   "action": {
@@ -90,7 +83,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

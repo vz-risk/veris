@@ -33,11 +33,11 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint287",
-  "security_compromise": "Confirmed",
   "reference": "http://www.boston.com/whitecoatnotes/2012/05/22/boston-children-hospital-notifies-data-breach-affecting-more-than-patients/SHpxoNkyKf3RwgKPFK2pIM/story.html (20130215) http://www.healthcare-informatics.com/news-item/boston-children-s-hospital-reports-data-breach (20130215) http://www.newsfactor.com/story.xhtml?story_id=12100BIECM3B (20130215) http://www.darkreading.com/compliance/167901112/security/attacks-breaches/240001031/stolen-laptop-exposes-boston-hospital-patient-data.html (20130215)",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 2159,
@@ -47,15 +47,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 2159,
-      "data_disclosure": "Potentially"
+      "data_total": 2159
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "lost laptop unencrypted with patient health data.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint287",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -63,16 +65,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint287",
     "timeline": {
       "notification": {
-        "month": 5,
+        "year": 2012,
         "day": 22,
-        "year": 2012
+        "month": 5
       }
     }
   },
@@ -83,9 +84,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unknown"
@@ -99,7 +97,7 @@
         "iso_currency_code": "USD",
         "amount": 1350000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MA",
       "employee_count": "1001 to 10000",
@@ -111,9 +109,6 @@
       "unit": "NA"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -139,7 +134,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

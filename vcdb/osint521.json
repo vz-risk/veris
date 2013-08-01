@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint521",
-  "security_compromise": "Confirmed",
   "reference": "http://www.winnipegfreepress.com/business/spain-frees-with-conditions-ex-hsbc-employee-wanted-by-switzerland-for-stolen-information-183949381.html ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 154700,
@@ -21,15 +21,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 154700,
-      "data_disclosure": "Yes"
+      "data_total": 154700
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Spain's National Court on Tuesday granted conditional freedom to a former HSBC bank employee who is wanted by Switzerland for stealing confidential information on thousands of customers with Swiss accounts.  The court ordered Herve Falciani's release on the prosecutor's recommendation, which argues that Falciani was co-operating with authorities in several European countries in investigations on tax, money-laundering, corruption and terrorism financing. The prosecutor noted Falciani has been detained for some time and that his extradition case could drag on.  He was ordered to hand over his passport, not to leave Spain and to appear before police every three days. He was also told to establish a residence in Spain and to inform authorities if he moved house.  Falciani, a French-Italian citizen, has been jailed provisionally since being arrested July 1 in Barcelona on a Swiss warrant. He had previously fled Switzerland to France.  The data he allegedly stole about 24,000 customers of HSBC's Swiss subsidiary potentially exposed many people to prosecution by tax authorities in their home countries.  Falciani, who obtained the information between late 2006 and early 2007 when he worked in the bank's information technology development unit, passed the list to French authorities. France's former Finance Minister Christine Lagarde, now head of the International Monetary Fund, later relayed the list to many European Union countries and the United States. France said there were up to 130,000 names involved.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint521",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -37,16 +39,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint521",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 18,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -56,9 +57,6 @@
         "Espionage"
       ],
       "notes": "",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "End-user"
       ]
@@ -71,20 +69,15 @@
         "iso_currency_code": "USD",
         "amount": 105800000
       },
-      "country": "Switzerland",
-      "notes": "",
+      "country": "CH",
+      "industry": "551111",
       "employee_count": "Over 100000",
-      "industry": "551111"
+      "notes": ""
     }
   ],
   "timeline": {
     "incident": {
       "year": 2006
-    },
-    "investigation": {
-      "month": 7,
-      "day": 1,
-      "year": 2012
     }
   },
   "action": {
@@ -99,7 +92,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "notes": "",
     "assets": [

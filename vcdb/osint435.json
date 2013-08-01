@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint435",
-  "security_compromise": "Confirmed",
   "reference": "http://www.eweek.com/security/ca-leak-highlights-weakness-in-net-security-again/ ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 2,
@@ -17,15 +17,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 2,
-      "data_disclosure": "Yes"
+      "data_total": 2
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - unrelated party",
+  "schema_version": "1.2",
   "summary": "A Turkish certificate authority mistakenly issued two intermediate CA certificates to untrusted users, giving them the power to create a certificate for any domain. For the third time in two years, an incident at one of the hundreds of certificate authorities that underpin the security of the Internet allowed a group\u2014or in this case, a machine\u2014the ability to pose as a legitimate online service provider.  In a statement posted Jan. 3, Google announced that its Chrome browser \"detected and blocked an unauthorized digital certificate\" for its domain Dec. 24. The online services giant provided few details, but tracked the certificate back to a legitimate provider of digital encryption and certificate products, TurkTrust. Google updated its Chrome browser to revoke the two powerful certificates that had been mistakenly issued and the certificate created for its own domain.  \"Intermediate CA certificates carry the full authority of the CA, so anyone who has one can use it to create a certificate for any Website they wish to impersonate,\" Google stated as an explanation of its actions.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint435",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -33,16 +35,15 @@
         "data_subject": "Other"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint435",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2013,
         "day": 6,
-        "year": 2013
+        "month": 1
       }
     }
   },
@@ -52,9 +53,6 @@
         "NA"
       ],
       "notes": "",
-      "role": [
-        "Unintentional"
-      ],
       "variety": [
         "System admin"
       ]
@@ -64,18 +62,13 @@
     {
       "victim_id": "TurkTrust",
       "notes": "",
-      "employee_count": "Unknown",
       "industry": "51919",
-      "country": "Turkey"
+      "employee_count": "Unknown",
+      "country": "TR"
     }
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 12,
-      "day": 24,
       "year": 2012
     }
   },
@@ -90,7 +83,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - unrelated party",
   "asset": {
     "notes": "",
     "assets": [

@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint573",
-  "security_compromise": "Confirmed",
   "reference": "http://www.pcworld.com/article/257292/european_league_of_legends_game_players_have_their_account_data_compromised.html",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Hackers gained access to certain personal player data contained in certain EU West and EU Nordic & East databases.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint573",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -34,16 +36,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint573",
     "timeline": {
       "notification": {
-        "month": 6,
+        "year": 2012,
         "day": 11,
-        "year": 2012
+        "month": 6
       }
     }
   },
@@ -55,9 +56,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -66,7 +64,7 @@
   "victim": [
     {
       "victim_id": "League of Legends (LoL)",
-      "country": "United States",
+      "country": "US",
       "notes": "Distributed by Riot Games",
       "state": "CA",
       "employee_count": "Unknown",
@@ -75,12 +73,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 6,
+      "year": 2012,
       "day": 9,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 6
     }
   },
   "action": {
@@ -94,7 +89,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

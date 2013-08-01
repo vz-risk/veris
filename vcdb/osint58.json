@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint58",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/ameriprise-financial-services-20121113.pdf",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Unknown",
+  "schema_version": "1.2",
   "summary": "Account transfer forms were mailed out to clients who never received them.  The documents contained client name, address, SSN, account number and client ID.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint58",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "Y",
     "asset": {
       "total": "No"
     },
-    "f500": "Y",
-    "master_id": "osint58",
     "timeline": {
       "notification": {
-        "month": 11,
+        "year": 2012,
         "day": 13,
-        "year": 2012
+        "month": 11
       }
     }
   },
@@ -48,9 +49,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Unknown"
@@ -64,7 +62,7 @@
         "iso_currency_code": "USD",
         "amount": 10260000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MN",
       "employee_count": "10001 to 25000",
@@ -73,12 +71,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 11,
+      "year": 2012,
       "day": 12,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 11
     }
   },
   "action": {
@@ -92,7 +87,6 @@
       ]
     }
   },
-  "discovery_method": "Unknown",
   "asset": {
     "assets": [
       {

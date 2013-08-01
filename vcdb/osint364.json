@@ -3,7 +3,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint364",
-  "security_compromise": "Confirmed",
   "reference": "http://ethiopiantimes.wordpress.com/2012/01/26/commercial-bank-of-ethiopia-website-hacked-data-leaked-by-sepo/",
   "attribute": {
     "integrity": {
@@ -13,6 +12,7 @@
     },
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 18,
@@ -25,15 +25,17 @@
       "state": [
         "Stored unencrypted"
       ],
-      "data_total": 18,
-      "data_disclosure": "Yes"
+      "data_total": 18
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "DB compromise posted to public website.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint364",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -41,16 +43,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint364",
     "timeline": {
       "notification": {
-        "month": 1,
+        "year": 2012,
         "day": 26,
-        "year": 2012
+        "month": 1
       }
     }
   },
@@ -62,9 +63,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -74,9 +72,9 @@
     {
       "victim_id": "Commercial Bank of Ethiopia",
       "notes": "",
-      "employee_count": "1001 to 10000",
       "industry": "5222",
-      "country": "Ethiopia"
+      "employee_count": "1001 to 10000",
+      "country": "ET"
     }
   ],
   "timeline": {
@@ -84,9 +82,6 @@
       "unit": "Minutes"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -110,7 +105,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {

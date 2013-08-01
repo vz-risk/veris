@@ -1,13 +1,13 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint568",
-  "security_compromise": "Confirmed",
   "reference": "",
   "attribute": {
     "confidentiality": {
       "notes": "A potential data exposure involving a computer containing clinic patient records.  ",
+      "data_disclosure": "Yes",
       "data": [
         {
           "variety": "Medical"
@@ -19,15 +19,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 7000,
-      "data_disclosure": "Yes"
+      "data_total": 7000
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "A potential data exposure involving a computer containing clinic patient records",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint568",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -35,16 +37,15 @@
         "data_subject": "Patient"
       }
     },
+    "f500": "U",
     "asset": {
       "total": "No"
     },
-    "f500": "U",
-    "master_id": "osint568",
     "timeline": {
       "notification": {
-        "month": 2,
+        "year": 2012,
         "day": 23,
-        "year": 2012
+        "month": 2
       }
     }
   },
@@ -52,9 +53,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Other"
@@ -68,7 +66,7 @@
         "iso_currency_code": "USD",
         "amount": 620000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "TX",
       "employee_count": "10001 to 25000",
@@ -77,9 +75,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -94,7 +89,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "assets": [
       {

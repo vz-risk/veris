@@ -6,14 +6,14 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Distracting"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint354",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/claires-20120426.pdf https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&ved=0CDsQFjAA&url=http%3A%2F%2Fwww.oag.state.md.us%2Fidtheft%2FBreach%2520Notices%2FITU%2520215616.pdf&ei=hdkiUerTFOvV0gHl8oGACg&usg=AFQjCNEONyI4lZslv76iJLasImpScUQhmA&bvm=bv.42553238,d.dmQ",
   "attribute": {
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Potentially",
       "data": [
         {
           "amount": 582,
@@ -23,15 +23,17 @@
       "state": [
         "Stored"
       ],
-      "data_total": 582,
-      "data_disclosure": "Potentially"
+      "data_total": 582
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "Lost CD at retail HQ location contained W-2 information on employees. New Hampshire and Maryland disclosures available as OSINT via their respective attorney general sites. 150 notifications in NH, 432 in MD",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint354",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -39,16 +41,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint354",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 26,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -56,9 +57,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "Human resources"
@@ -72,7 +70,7 @@
         "iso_currency_code": "USD",
         "amount": 1400000000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "IL",
       "employee_count": "10001 to 25000",
@@ -84,11 +82,8 @@
       "unit": "NA"
     },
     "incident": {
-      "month": 4,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "year": 2012,
+      "month": 4
     },
     "compromise": {
       "unit": "NA"
@@ -111,7 +106,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "assets": [
       {

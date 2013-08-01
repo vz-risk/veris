@@ -33,7 +33,6 @@
     "overall_rating": "Unknown"
   },
   "incident_id": "osint267",
-  "security_compromise": "Confirmed",
   "reference": "http://www.vvdailypress.com/articles/tossed-34195-files-hesperia.html (20130215) ",
   "attribute": {
     "confidentiality": {
@@ -50,10 +49,13 @@
     }
   },
   "notes": "Some dispute about whether the records were stolen or mishandled.  Opinion seems to be mishandle.",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - law enforcement",
+  "schema_version": "1.2",
   "summary": "Tax business improperly stored or improperly disposed of physical tax records",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint267",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -61,16 +63,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint267",
     "timeline": {
       "notification": {
-        "month": 4,
+        "year": 2012,
         "day": 30,
-        "year": 2012
+        "month": 4
       }
     }
   },
@@ -80,9 +81,6 @@
         "Unknown"
       ],
       "notes": "",
-      "role": [
-        "Unknown"
-      ],
       "variety": [
         "Unknown"
       ]
@@ -95,7 +93,7 @@
         "iso_currency_code": "USD",
         "amount": 95000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "1 to 10",
@@ -107,9 +105,6 @@
       "unit": "Unknown"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     },
     "compromise": {
@@ -133,7 +128,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - law enforcement",
   "asset": {
     "notes": "",
     "assets": [

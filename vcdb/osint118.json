@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint118",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/suntrust-loan-education-20121221.pdf, http://www.atg.state.vt.us/assets/files/SunTrust%20Security%20Breach%20Notice%20Ltr%20to%20consumer.pdf ",
   "attribute": {
     "confidentiality": {
@@ -23,10 +22,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - law enforcement",
+  "schema_version": "1.2",
   "summary": "while executing a search warrant at the home of a former contractor police discovered loan documents pertaining to First Marblhead and Suntrust Loan Education.  The breach was first discovered on October 31, 2012. The company does not know the details of the specific documents.",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint118",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -34,16 +36,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint118",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 21,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -53,19 +54,16 @@
         "Financial"
       ],
       "country": [
-        "United States"
+        "US"
       ],
       "industry": "522110",
-      "role": [
-        "Malicious"
-      ],
       "notes": "F500"
     }
   },
   "victim": [
     {
       "victim_id": "First Marblhead",
-      "country": "United States",
+      "country": "US",
       "notes": "Partner was SunTrust",
       "state": "MA",
       "employee_count": "Unknown",
@@ -74,11 +72,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 10,
-      "day": 31,
       "year": 2012
     }
   },
@@ -94,15 +87,14 @@
       ]
     }
   },
-  "discovery_method": "Ext - law enforcement",
   "asset": {
     "notes": "",
-    "management": true,
+    "management": "External",
     "assets": [
       {
         "variety": "M - Documents"
       }
     ],
-    "hosting": true
+    "hosting": "External"
   }
 }

@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint73",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/database-designs-20120828.pdf ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "The source document is from the point of view of the partner, Database Designs, Inc.  However the two organizations whose data they lost are listed in the Victim list.",
-  "schema_version": "1.0",
+  "discovery_method": "Other",
+  "schema_version": "1.2",
   "summary": "A laptop and flash drive was stolen while in the custody of an employee.  The laptop contained data on business clients.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint73",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "Yes"
     },
-    "f500": "N",
-    "master_id": "osint73",
     "timeline": {
       "notification": {
-        "month": 8,
+        "year": 2012,
         "day": 28,
-        "year": 2012
+        "month": 8
       }
     }
   },
@@ -51,9 +52,6 @@
       ],
       "country": [
         "Unknown"
-      ],
-      "role": [
-        "Malicious"
       ],
       "variety": [
         "Unaffiliated"
@@ -67,7 +65,7 @@
         "iso_currency_code": "USD",
         "amount": 1990000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MA",
       "employee_count": "11 to 100",
@@ -79,7 +77,7 @@
         "iso_currency_code": "USD",
         "amount": 6750000
       },
-      "country": "United States",
+      "country": "US",
       "industry": "813930",
       "state": "MA",
       "employee_count": "11 to 100"
@@ -87,19 +85,16 @@
     {
       "victim_id": "Database Designs Associates, Inc.",
       "industry": "5112",
+      "country": "Unknown",
       "employee_count": "Unknown",
-      "state": "",
-      "country": "Unknown"
+      "state": ""
     }
   ],
   "timeline": {
     "incident": {
-      "month": 7,
+      "year": 2012,
       "day": 17,
-      "year": 2012
-    },
-    "investigation": {
-      "year": 2012
+      "month": 7
     }
   },
   "action": {
@@ -115,7 +110,6 @@
       ]
     }
   },
-  "discovery_method": "Other",
   "asset": {
     "assets": [
       {

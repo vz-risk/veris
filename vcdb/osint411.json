@@ -30,10 +30,9 @@
         "variety": "Response and recovery"
       }
     ],
-    "overall_rating": "Insignificant"
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint411",
-  "security_compromise": "Confirmed",
   "reference": "http://www.10news.com/news/student-faces-federal-charges-accused-of-trying-to-rig-cal-state-san-marcos-election (20130220) http://fox5sandiego.com/2013/02/08/fbi-arrests-cal-state-san-marcos-student-body-candidate/#axzz2LSFf99qA (20130220) http://www.nbcnews.com/technology/technolog/fbi-suspects-student-candidate-hacking-his-own-election-726362 (20130220)",
   "attribute": {
     "integrity": {
@@ -44,6 +43,7 @@
     },
     "confidentiality": {
       "notes": "",
+      "data_disclosure": "Yes",
       "data": [
         {
           "amount": 740,
@@ -53,15 +53,17 @@
       "state": [
         "Transmitted unencrypted"
       ],
-      "data_total": 740,
-      "data_disclosure": "Yes"
+      "data_total": 740
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Int - reported by user",
+  "schema_version": "1.2",
   "summary": "Actor attaches keyloggers to computer lab workstations to collect credentials and rig an election for student body president",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint411",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "N",
@@ -69,16 +71,15 @@
         "data_subject": "Student"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint411",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 15,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -88,9 +89,6 @@
         "Financial"
       ],
       "notes": "Student at the victim university.",
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "End-user"
       ]
@@ -103,7 +101,7 @@
         "iso_currency_code": "USD",
         "amount": 78880000
       },
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "CA",
       "employee_count": "101 to 1000",
@@ -115,11 +113,6 @@
       "unit": "Hours"
     },
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
-      "month": 3,
-      "day": 15,
       "year": 2012
     },
     "compromise": {
@@ -138,10 +131,10 @@
       "vector": [
         "Physical access"
       ],
-      "cve": "",
       "variety": [
         "Use of stolen creds"
-      ]
+      ],
+      "cve": ""
     },
     "physical": {
       "notes": "Attached keylogger to workstations in computer lab.",
@@ -156,7 +149,6 @@
       ]
     }
   },
-  "discovery_method": "Int - reported by user",
   "asset": {
     "notes": "",
     "assets": [

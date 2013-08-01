@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint102",
-  "security_compromise": "Confirmed",
   "reference": "http://doj.nh.gov/consumer/security-breaches/documents/ocean-reef-20120314.pdf ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - audit",
+  "schema_version": "1.2",
   "summary": "A software development consultant working for the Ocean Reef Community was running security checks on confidential community databases being used by the company's software systems vendor, Forte Interactive.  They discovered that the vendor's server didn't have proper protection and was exposed on the internet from 12/8/11 through 1/30/12.  Information exposed includes names, DOB, SSN, driver's license numbers of members and employees.  ",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint102",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "Y",
@@ -31,16 +33,15 @@
         "data_subject": "Customer"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint102",
     "timeline": {
       "notification": {
-        "month": 3,
+        "year": 2012,
         "day": 14,
-        "year": 2012
+        "month": 3
       }
     }
   },
@@ -48,9 +49,6 @@
     "internal": {
       "motive": [
         "NA"
-      ],
-      "role": [
-        "Unintentional"
       ],
       "variety": [
         "System admin"
@@ -60,7 +58,7 @@
   "victim": [
     {
       "victim_id": "Ocean Reef Club",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "FL",
       "employee_count": "Unknown",
@@ -69,14 +67,9 @@
   ],
   "timeline": {
     "incident": {
-      "month": 12,
+      "year": 2011,
       "day": 8,
-      "year": 2011
-    },
-    "investigation": {
-      "month": 1,
-      "day": 30,
-      "year": 2012
+      "month": 12
     }
   },
   "action": {
@@ -90,7 +83,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - audit",
   "asset": {
     "assets": [
       {

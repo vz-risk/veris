@@ -1,9 +1,8 @@
 {
   "impact": {
-    "overall_rating": ""
+    "overall_rating": "Unknown"
   },
   "incident_id": "osint456",
-  "security_compromise": "Confirmed",
   "reference": "http://www.inquisitr.com/440545/anonymous-hacks-the-westboro-baptist-church-posts-all-their-personal-information/, http://www.inquisitr.com/441336/hackers-continue-assault-on-westboro-baptist-church-release-social-security-numbers/#aKOq1KOQJrZHHlTP.99 ",
   "attribute": {
     "confidentiality": {
@@ -20,10 +19,13 @@
     }
   },
   "notes": "",
-  "schema_version": "1.0",
+  "discovery_method": "Ext - actor disclosure",
+  "schema_version": "1.2",
   "summary": "With many people understandably upset that Westboro Baptist Church plans to protest the victims of the Sandy Hook massacre and sing praises to God that children were killed, it is hard not to cheer for Anonymous in their latest battle against the \u201cchurch.\u201d  As The Inquisitr previously reported, the hacktivist group began the latest battle on Saturday when they sent out an updated list of the names and addresses of church members. They later released a video, right before hacking the church\u2019s website, in which they said:      \u201cWe will not allow you to corrupt the minds of America with your seeds of hatred. We will not allow you to inspire aggression to the social factions which you deem inferior. We will render you obsolete. We will destroy you. We are coming.\u201d  And come they did. Using the Twitter accounts @YourAnonNews, @LulzExecutive, @Shm00pLOL, and others, they posted sensitive information about Westboro Baptist Church members. The information included social security numbers, email addresses, phone numbers, dates of birth, and even the family tree (i.e. how the members are connected to each other).",
   "source_id": "osint",
+  "security_incident": "Confirmed",
   "plus": {
+    "master_id": "osint456",
     "attribute": {
       "confidentiality": {
         "credit_monitoring": "U",
@@ -31,16 +33,15 @@
         "data_subject": "Partner"
       }
     },
+    "f500": "N",
     "asset": {
       "total": "No"
     },
-    "f500": "N",
-    "master_id": "osint456",
     "timeline": {
       "notification": {
-        "month": 12,
+        "year": 2012,
         "day": 16,
-        "year": 2012
+        "month": 12
       }
     }
   },
@@ -52,9 +53,6 @@
       "country": [
         "Unknown"
       ],
-      "role": [
-        "Malicious"
-      ],
       "variety": [
         "Activist"
       ]
@@ -63,7 +61,7 @@
   "victim": [
     {
       "victim_id": "Westboro Baptist Church",
-      "country": "United States",
+      "country": "US",
       "notes": "",
       "state": "MA",
       "employee_count": "Unknown",
@@ -72,9 +70,6 @@
   ],
   "timeline": {
     "incident": {
-      "year": 2012
-    },
-    "investigation": {
       "year": 2012
     }
   },
@@ -89,7 +84,6 @@
       ]
     }
   },
-  "discovery_method": "Ext - actor disclosure",
   "asset": {
     "assets": [
       {
