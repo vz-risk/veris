@@ -21,7 +21,7 @@ Version 1.2
         * Added in enumeration for targeted with values of "Unknown", "NA", 
           "Opportunistic", "Targeted"
         * Added "S - Code repository" to enum for asset.variety
-        * Integrity variety, changed instances of "Modified…" to "Modify" to 
+        * Integrity variety, changed instances of "Modified" to "Modify" to 
           match tense
         * Actor motive, added "Convenience" (intentionally bypassing controls 
           for convenience)
