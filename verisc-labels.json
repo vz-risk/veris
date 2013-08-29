@@ -802,7 +802,7 @@
     "Int - fraud detection": "Internal - fraud detection mechanism",
     "Int - incident response": "Internal - discovered while responding to another (separate) incident",
     "Int - log review": "Internal - log review process or SIEM",
-    "Int - reported by user": "Internal - witnessed suspicious actions by threat agent",
+    "Int - reported by user": "Internal - unusual activity or system event reported by end-user",
     "Int - security alarm": "Internal - physical security system alarm",
     "Int - unknown": "Internal - unknown",
     "Other": "Other",
