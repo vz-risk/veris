@@ -1,5 +1,5 @@
 {
-  "description": "VERIS Community Schema 1.2",
+  "description": "VERIS Community Schema 1.2.1",
   "properties": {
     "action": {
       "properties": {
@@ -608,47 +608,61 @@
       "type": "object"
     },
     "victim": {
-      "items": {
-        "properties": {
-          "country": {
-            "required": true,
-            "type": "string"
-          },
-          "employee_count": {
-            "required": true,
-            "type": "string"
-          },
-          "industry": {
-            "required": true,
-            "type": "string"
-          },
-          "locations_affected": {
-            "type": "integer"
-          },
-          "notes": {
-            "type": "string"
-          },
-          "revenue": {
-            "properties": {
-              "amount": {
-                "type": "integer"
-              },
-              "iso_currency_code": {
-                "type": "string"
-              }
-            },
-            "type": "object"
-          },
-          "state": {
-            "type": "string"
-          },
-          "victim_id": {
-            "type": "string"
-          }
+      "properties": {
+        "country": {
+          "required": true,
+          "type": "string"
         },
-        "type": "object"
+        "employee_count": {
+          "required": true,
+          "type": "string"
+        },
+        "industry": {
+          "required": true,
+          "type": "string"
+        },
+        "locations_affected": {
+          "type": "integer"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "revenue": {
+          "properties": {
+            "amount": {
+              "type": "integer"
+            },
+            "iso_currency_code": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "secondary": {
+          "properties": {
+            "amount": {
+              "type": "integer"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "victim_id": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "state": {
+          "type": "string"
+        },
+        "victim_id": {
+          "type": "string"
+        }
       },
-      "type": "array"
+      "type": "object"
     }
   },
   "type": "object"
