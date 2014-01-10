@@ -41,7 +41,10 @@ def handledict(output, label, datadict, arraylist):
     "general function to determine how to handle value"
     skip = [ 'partner_data', 'plus' ]
     debug = True
-    if debug: print "\trunning with label: " + label
+    if debug: print "\trunning with dict label: " + label
+    if label.startswith('plus'):
+        if debug: print "\tskipping " + label
+        return
     mylist = datadict.items()
     for k,v in mylist:
         alabel = k
@@ -73,6 +76,8 @@ def handleAny(output, label, v, arraylist):
             if (type(output[label]) is str):
                 if label.startswith("victim"):
                     print "skipping duplicate victim field..."
+                elif label.startswith("plus"):
+                    print "skipping all plus extensions..."
                 else:
                     if debug: print "\t\t** YES! ** Found string already"
                     output[label] = [output[label], v]
