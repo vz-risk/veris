@@ -5,7 +5,7 @@ Verizon grants you a limited, revocable, personal and nontransferable license to
 http://veriscommunity.net
 
 # JSON Notes
-Learn more about the JSON schema defintion at http://json-schema.org/.  We also are not enforcing the enumerations at the schema level, but instead have a seperate file with the enumerations there.  Those may update a bit more often then the schema itself.
+Learn more about the JSON schema definition at http://json-schema.org/.  We also are not enforcing the enumerations at the schema level, but instead have a separate file with the enumerations.  Those may update a bit more often then the schema itself.
 
 # XML notes
 The XML version has been archived until we can sync the XML with the JSON schema.  The JSON schema represents the latest version of VERIS.
