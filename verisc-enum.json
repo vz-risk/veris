@@ -85,6 +85,7 @@
         "Null byte injection",
         "Offline cracking",
         "OS commanding",
+	"Pass-the-hash",
         "Path traversal",
         "RFI",
         "Reverse engineering",
