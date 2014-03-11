@@ -395,6 +395,7 @@
       "S - Code repository",
       "S - VM host",
       "S - Other",
+      "S - Unknown",
       "N - Access reader",
       "N - Camera",
       "N - Firewall",
