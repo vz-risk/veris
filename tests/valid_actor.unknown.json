@@ -1,0 +1,35 @@
+{
+  "incident": {
+    "action": {
+      "Unknown": {}
+    },
+    "actor": {
+      "unknown": {}
+    },
+    "asset": {
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ]
+    },
+    "attribute": {
+      "integrity": {
+        "variety": [
+          "Defacement"
+        ]
+      }
+    },
+    "discovery_method": "Int - unknown",
+    "incident_id": "test",
+    "schema_version": "1.3",
+    "security_incident": "Confirmed",
+    "timeline": {
+      "incident": {
+        "year": 2014
+      }
+    }
+  },
+  "message": "valid incident with unknown actor. test should pass.",
+  "should": "pass"
+}

@@ -23,7 +23,7 @@ def runTest(inDict):
       print "\t %s %s" % (offendingPath,e.message)
       assert False
     else:
-      print "Validation failed and it should have. %s" % inDict['message']
+      print "Validation failed and it should have. %s %s" % (inDict['message'],e.message)
       pass
 
 def test_Schema():
