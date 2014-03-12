@@ -85,6 +85,7 @@
         "Null byte injection",
         "Offline cracking",
         "OS commanding",
+	"Pass-the-hash",
         "Path traversal",
         "RFI",
         "Reverse engineering",
@@ -171,7 +172,7 @@
       "variety": [
         "Knowledge abuse",
         "Privilege abuse",
-        "Embezzlement",
+        "Possession abuse",
         "Data mishandling",
         "Email misuse",
         "Net misuse",
@@ -208,7 +209,7 @@
       ],
       "variety": [
         "Assault",
-        "Sabotage",
+        "Destruction",
         "Snooping",
         "Surveillance",
         "Tampering",
@@ -327,6 +328,7 @@
       "Grudge",
       "Ideology",
       "Convenience",
+      "Secondary",
       "Unknown",
       "Other"
     ]
@@ -393,6 +395,7 @@
       "S - Code repository",
       "S - VM host",
       "S - Other",
+      "S - Unknown",
       "N - Access reader",
       "N - Camera",
       "N - Firewall",
@@ -475,12 +478,15 @@
           "Bank",
           "Classified",
           "Copyrighted",
+	  "Digital certificate",
           "Medical",
           "Payment",
           "Personal",
           "Internal",
+	  "Source code",
           "System",
           "Secrets",
+	  "Virtual currency",
           "Unknown",
           "Other"
         ]
@@ -505,11 +511,12 @@
     "integrity": {
       "variety": [
         "Created account",
+        "Defacement",
         "Hardware tampering",
         "Alter behavior",
         "Fraudulent transaction",
         "Log tampering",
-        "Misappropriation",
+        "Repurpose",
         "Misrepresentation",
         "Modify configuration",
         "Modify privileges",
