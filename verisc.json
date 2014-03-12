@@ -340,6 +340,7 @@
       "type": "object"
     },
     "asset": {
+      "required":["assets"],
       "properties": {
         "accessibility": {
           "type": "string"
