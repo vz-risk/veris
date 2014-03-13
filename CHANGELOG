@@ -1,0 +1,19 @@
+Version 1.3
+===========
+
+Enumerations
+------------
+
+- Rename Sabotage to Destruction in action.physical.variety
+- Rename Embezzlement to Possession abuse in action.misuse.variety
+- Add Digital certificate to attribute.confidentiality.data.variety
+- Add S - Unknown to asset.variety
+- Add Virtual currency to attribute.confidentiality.data.variety
+- Add Source code to attribute.confidentiality.data.variety
+- Rename Misappropriation to Repurpose
+- Add Defacement to attribute.integrity.variety
+- Add Pass-the-hash to hacking.variety
+- Add Secondary to actor.motive
+
+Schema
+------
