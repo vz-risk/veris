@@ -123,6 +123,7 @@
           "type": "object"
         },
         "misuse": {
+          "additionalProperties":false,
           "properties": {
             "notes": {
               "type": "string"
