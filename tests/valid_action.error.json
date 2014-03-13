@@ -1,13 +1,12 @@
 {
   "incident": {
     "action": {
-      "misuse": {
-        "notes": "test string",
+      "error": {
+        "notes": "this is a test",
         "variety": [
-          "Other"
+          "Loss"
         ],
         "vector": [
-          "Other",
           "Other"
         ]
       }
@@ -49,6 +48,6 @@
       }
     }
   },
-  "message": "action.error.vector has duplicate entries. Test should fail.",
-  "should": "fail"
+  "message": "valid incident with error action. Test should pass.",
+  "should": "pass"
 }

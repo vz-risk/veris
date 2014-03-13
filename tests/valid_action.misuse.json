@@ -7,7 +7,6 @@
           "Other"
         ],
         "vector": [
-          "Other",
           "Other"
         ]
       }
@@ -49,6 +48,6 @@
       }
     }
   },
-  "message": "action.error.vector has duplicate entries. Test should fail.",
-  "should": "fail"
+  "message": "Valid incident with misuse action. Test should pass.",
+  "should": "pass"
 }

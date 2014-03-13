@@ -1,10 +1,10 @@
 {
   "incident": {
     "action": {
-      "error": {
-        "notes": "this is a test",
+      "misuse": {
+        "notes": "test string",
         "variety": [
-          "Loss"
+          "Other"
         ],
         "vector": []
       }
@@ -46,6 +46,6 @@
       }
     }
   },
-  "message": "action.error.vector is empty []. test should fail.",
+  "message": "action.error.vector is empty []. Test should fail.",
   "should": "fail"
 }

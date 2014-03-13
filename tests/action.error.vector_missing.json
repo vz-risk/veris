@@ -1,10 +1,10 @@
 {
   "incident": {
     "action": {
-      "error": {
-        "notes": "this is a test",
+      "misuse": {
+        "notes": "test string",
         "variety": [
-          "Loss"
+          "Other"
         ]
       }
     },
@@ -45,6 +45,6 @@
       }
     }
   },
-  "message": "action.error.vector is missing. test should fail.",
+  "message": "action.error.vector is missing. Test should fail.",
   "should": "fail"
 }
