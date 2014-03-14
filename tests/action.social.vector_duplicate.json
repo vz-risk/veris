@@ -6,11 +6,11 @@
         "target": [
           "Other"
         ],
-        "test": "test string",
         "variety": [
           "Other"
         ],
         "vector": [
+          "Other",
           "Other"
         ]
       }
@@ -52,6 +52,6 @@
       }
     }
   },
-  "message": "action.physical has unrecognized subfields. Test should fail.",
+  "message": "action.social.vector has duplicate values. Test should fail.",
   "should": "fail"
 }

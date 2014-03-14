@@ -6,11 +6,7 @@
         "target": [
           "Other"
         ],
-        "test": "test string",
         "variety": [
-          "Other"
-        ],
-        "vector": [
           "Other"
         ]
       }
@@ -52,6 +48,6 @@
       }
     }
   },
-  "message": "action.physical has unrecognized subfields. Test should fail.",
+  "message": "action.social.vector is missing. Test should fail.",
   "should": "fail"
 }
