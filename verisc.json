@@ -403,10 +403,13 @@
     },
     "attribute": {
       "minProperties": 1,
+      "additionalProperties":false,
       "properties": {
         "availability": {
           "properties": {
             "duration": {
+              "additionalProperties":false,
+              "required":["unit"],
               "properties": {
                 "unit": {
                   "type": "string"
@@ -425,7 +428,8 @@
                 "type": "string"
               },
               "minItems": 1,
-              "type": "array"
+              "type": "array",
+              "uniqueItems":true
             }
           },
           "required": [
