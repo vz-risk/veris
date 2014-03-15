@@ -517,12 +517,15 @@
       "type": "string"
     },
     "impact": {
+      "additionalProperties":false,
       "properties": {
         "iso_currency_code": {
           "type": "string"
         },
         "loss": {
           "items": {
+            "additionalProperties":false,
+            "required":["variety"],
             "properties": {
               "amount": {
                 "type": "number"
