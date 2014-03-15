@@ -481,6 +481,8 @@
           "type": "object"
         },
         "integrity": {
+          "required":["variety"],
+          "additionalProperties":false,
           "properties": {
             "notes": {
               "type": "string"
