@@ -438,9 +438,12 @@
           "type": "object"
         },
         "confidentiality": {
+          "additionalProperties":false,
           "properties": {
             "data": {
               "items": {
+                "additionalProperties":false,
+                "required":["variety"],
                 "properties": {
                   "amount": {
                     "type": "integer"
@@ -468,6 +471,7 @@
                 "type": "string"
               },
               "minItems": 1,
+              "uniqueItems":true,
               "type": "array"
             }
           },
