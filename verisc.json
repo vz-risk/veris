@@ -699,6 +699,7 @@
       "type": "object"
     },
     "victim": {
+      "additionalProperties":false,
       "properties": {
         "country": {
           "type": "string"
@@ -716,6 +717,8 @@
           "type": "string"
         },
         "revenue": {
+          "additionalProperties":false,
+          "minProperties":1,
           "properties": {
             "amount": {
               "type": "integer"
@@ -727,6 +730,8 @@
           "type": "object"
         },
         "secondary": {
+          "additionalProperties":false,
+          "minProperties":1,
           "properties": {
             "amount": {
               "type": "integer"
@@ -738,7 +743,8 @@
               "items": {
                 "type": "string"
               },
-              "type": "array"
+              "type": "array",
+              "minItems":1
             }
           },
           "type": "object"

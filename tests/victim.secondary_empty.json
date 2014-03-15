@@ -1,0 +1,59 @@
+{
+  "incident": {
+    "action": {
+      "Unknown": {}
+    },
+    "actor": {
+      "external": {
+        "country": [
+          "US"
+        ],
+        "motive": [
+          "Ideology"
+        ],
+        "variety": [
+          "Activist"
+        ]
+      }
+    },
+    "asset": {
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ]
+    },
+    "attribute": {
+      "integrity": {
+        "variety": [
+          "Defacement"
+        ]
+      }
+    },
+    "discovery_method": "Int - unknown",
+    "incident_id": "test",
+    "schema_version": "1.3",
+    "security_incident": "Confirmed",
+    "timeline": {
+      "incident": {
+        "year": 2014
+      }
+    },
+    "victim": {
+      "country": "US",
+      "employee_count": "1 to 10",
+      "industry": "000",
+      "locations_affected": 1,
+      "notes": "test",
+      "revenue": {
+        "amount": 1000000,
+        "iso_currency_code": "USD"
+      },
+      "secondary": {},
+      "state": "MN",
+      "victim_id": "test"
+    }
+  },
+  "message": "victim.secondary is empty {}. test should fail.",
+  "should": "fail"
+}
