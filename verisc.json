@@ -574,6 +574,8 @@
     },
     "ioc": {
       "items": {
+        "required":["indicator"],
+        "additionalProperties":false,
         "properties": {
           "comment": {
             "type": "string"
