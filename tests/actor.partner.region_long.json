@@ -13,7 +13,7 @@
           "NA"
         ],
         "notes": "This is a test",
-        "region": "002000"
+        "region": "toolong"
       }
     },
     "asset": {
@@ -40,6 +40,6 @@
       }
     }
   },
-  "message": "valid incident with all partner fields set. Test should pass.",
-  "should": "pass"
+  "message": "actor.partner.region is too long. test should fail.",
+  "should": "fail"
 }
