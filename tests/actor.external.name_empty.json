@@ -11,7 +11,7 @@
         "motive": [
           "NA"
         ],
-        "name":["test1","test2"],
+        "name": [],
         "notes": "test",
         "region": "002000",
         "variety": [
@@ -43,6 +43,6 @@
       }
     }
   },
-  "message": "valid incident with external actor. Expect it to pass.",
-  "should": "pass"
+  "message": "actor.external.name is empty. test should fail.",
+  "should": "fail"
 }
