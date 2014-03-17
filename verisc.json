@@ -353,6 +353,7 @@
     },
     "asset": {
       "additionalProperties": false,
+      "minProperties": 1,
       "properties": {
         "accessibility": {
           "type": "string"
@@ -396,9 +397,6 @@
           "type": "string"
         }
       },
-      "required": [
-        "assets"
-      ],
       "type": "object"
     },
     "attribute": {
