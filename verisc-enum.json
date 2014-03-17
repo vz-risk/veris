@@ -317,6 +317,20 @@
         "System admin",
         "Unknown",
         "Other"
+      ],
+      "job_change": [
+	"Hired",
+	"Promoted",
+	"Lateral move",
+	"Resigned",
+	"Let go",
+	"Demoted",
+	"Passed over",
+	"Unknown",
+	"Other",
+	"Reprimanded",
+	"Job eval",
+	"Personal issues"
       ]
     },
     "motive": [
