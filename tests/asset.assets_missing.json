@@ -42,6 +42,6 @@
       }
     }
   },
-  "message": "asset.assets is missing. test should fail.",
-  "should": "fail"
+  "message": "asset.assets is missing but that is OK. test should pass.",
+  "should": "pass"
 }
