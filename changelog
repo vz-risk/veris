@@ -6,6 +6,8 @@ Schema changes
 
  * Schema has been documented using ietf.org draft 4 specifications
  http://tools.ietf.org/html/draft-fge-json-schema-validation-00
+ * Adds six character region field to actor.external, actor.partner, and
+ victim.
 
 Enumeration changes
 -------------------

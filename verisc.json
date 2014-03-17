@@ -263,6 +263,11 @@
             "notes": {
               "type": "string"
             },
+            "region": {
+              "maxLength": 6,
+              "minLength": 6,
+              "type": "string"
+            },
             "variety": {
               "items": {
                 "type": "string"
@@ -331,6 +336,11 @@
               "uniqueItems": true
             },
             "notes": {
+              "type": "string"
+            },
+            "region": {
+              "maxLength": 6,
+              "minLength": 6,
               "type": "string"
             }
           },
@@ -730,6 +740,11 @@
           "type": "integer"
         },
         "notes": {
+          "type": "string"
+        },
+        "region": {
+          "maxLength": 6,
+          "minLength": 6,
           "type": "string"
         },
         "revenue": {
