@@ -1,0 +1,63 @@
+{
+  "incident": {
+    "action": {
+      "Unknown": {}
+    },
+    "actor": {
+      "external": {
+        "country": [
+          "US"
+        ],
+        "motive": [
+          "Ideology"
+        ],
+        "variety": [
+          "Activist"
+        ]
+      }
+    },
+    "asset": {
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ]
+    },
+    "attribute": {
+      "integrity": {
+        "variety": [
+          "Defacement"
+        ]
+      }
+    },
+    "discovery_method": "Int - unknown",
+    "impact": {
+      "iso_currency_code": "USD",
+      "loss": [
+        {
+          "amount": 100,
+          "max_amount": 100,
+          "min_amount": 10,
+          "rating": "Unknown",
+          "test": "test string",
+          "variety": "Asset and fraud"
+        }
+      ],
+      "notes": "test",
+      "overall_amount": 10.1,
+      "overall_max_amount": 10.1,
+      "overall_min_amount": 8,
+      "overall_rating": "Unknown"
+    },
+    "incident_id": "test",
+    "schema_version": "1.3",
+    "security_incident": "Confirmed",
+    "timeline": {
+      "incident": {
+        "year": 2014
+      }
+    }
+  },
+  "message": "impact.loss.0 has unrecognized subfield. test should fail.",
+  "should": "fail"
+}

@@ -1,0 +1,52 @@
+{
+  "incident": {
+    "action": {
+      "Unknown": {}
+    },
+    "actor": {
+      "external": {
+        "country": [
+          "US"
+        ],
+        "motive": [
+          "Ideology"
+        ],
+        "variety": [
+          "Activist"
+        ]
+      }
+    },
+    "asset": {
+      "accessibility": "Unknown",
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ],
+      "cloud": "Other",
+      "country": "US",
+      "hosting": "External",
+      "management": "External",
+      "notes": "test string",
+      "ownership": "Victim"
+    },
+    "attribute": {
+      "integrity": {
+        "variety": [
+          "Defacement"
+        ]
+      }
+    },
+    "discovery_method": "Int - unknown",
+    "incident_id": "test",
+    "schema_version": "1.3",
+    "security_incident": "Confirmed",
+    "timeline": {
+      "incident": {
+        "year": 2014
+      }
+    }
+  },
+  "message": "valid incident with all asset properties set. test should pass.",
+  "should": "pass"
+}

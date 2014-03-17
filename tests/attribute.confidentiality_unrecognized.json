@@ -1,0 +1,55 @@
+{
+  "incident": {
+    "action": {
+      "Unknown": {}
+    },
+    "actor": {
+      "external": {
+        "country": [
+          "US"
+        ],
+        "motive": [
+          "Ideology"
+        ],
+        "variety": [
+          "Activist"
+        ]
+      }
+    },
+    "asset": {
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ]
+    },
+    "attribute": {
+      "confidentiality": {
+        "data": [
+          {
+            "amount": 1,
+            "variety": "Bank"
+          }
+        ],
+        "data_disclosure": "Yes",
+        "data_total": 1,
+        "notes": "test",
+        "state": [
+          "Stored"
+        ],
+        "test": "test string"
+      }
+    },
+    "discovery_method": "Int - unknown",
+    "incident_id": "test",
+    "schema_version": "1.3",
+    "security_incident": "Confirmed",
+    "timeline": {
+      "incident": {
+        "year": 2014
+      }
+    }
+  },
+  "message": "attribute.confidentiality has an unrecognized subfield. test should fail.",
+  "should": "fail"
+}
