@@ -4,6 +4,9 @@ Version 1.3
 Schema changes
 --------------
 
+ * Schema has been documented using ietf.org draft 4 specifications
+ http://tools.ietf.org/html/draft-fge-json-schema-validation-00
+
 Enumeration changes
 -------------------
 
