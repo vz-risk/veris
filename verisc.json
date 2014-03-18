@@ -300,6 +300,14 @@
               "minItems": 1,
               "type": "array",
               "uniqueItems": true
+            },
+            "job_change": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
             }
           },
           "required": [

@@ -1,0 +1,44 @@
+{
+  "incident": {
+    "action": {
+      "Unknown": {}
+    },
+    "actor": {
+      "internal": {
+        "motive": [
+          "NA"
+        ],
+	"job_change": "Reprimanded",
+        "notes": "This is a test",
+        "variety": [
+          "Auditor"
+        ]
+      }
+    },
+    "asset": {
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ]
+    },
+    "attribute": {
+      "integrity": {
+        "variety": [
+          "Defacement"
+        ]
+      }
+    },
+    "discovery_method": "Int - unknown",
+    "incident_id": "test",
+    "schema_version": "1.3",
+    "security_incident": "Confirmed",
+    "timeline": {
+      "incident": {
+        "year": 2014
+      }
+    }
+  },
+  "message": "actor.internal.job_change is not an array. Test should fail.",
+  "should": "fail"
+}
