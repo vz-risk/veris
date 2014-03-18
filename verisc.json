@@ -507,6 +507,9 @@
       },
       "type": "object"
     },
+    "campaign_id": {
+      "type": "string"
+    },
     "confidence": {
       "type": "string"
     },
@@ -604,9 +607,6 @@
     },
     "plus": {},
     "reference": {
-      "type": "string"
-    },
-    "related_incidents": {
       "type": "string"
     },
     "schema_version": {
