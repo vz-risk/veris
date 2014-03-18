@@ -1,0 +1,54 @@
+{
+  "incident": {
+    "action": {
+      "error": {
+        "notes": "this is a test",
+        "variety": [
+          "Loss",
+          "Loss"
+        ],
+        "vector": [
+          "Other"
+        ]
+      }
+    },
+    "actor": {
+      "external": {
+        "country": [
+          "US"
+        ],
+        "motive": [
+          "Ideology"
+        ],
+        "variety": [
+          "Activist"
+        ]
+      }
+    },
+    "asset": {
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ]
+    },
+    "attribute": {
+      "integrity": {
+        "variety": [
+          "Defacement"
+        ]
+      }
+    },
+    "discovery_method": "Int - unknown",
+    "incident_id": "test",
+    "schema_version": "1.3",
+    "security_incident": "Confirmed",
+    "timeline": {
+      "incident": {
+        "year": 2014
+      }
+    }
+  },
+  "message": "actor.error.variety has duplicate values. test should fail.",
+  "should": "fail"
+}

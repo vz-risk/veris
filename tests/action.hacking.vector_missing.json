@@ -1,0 +1,51 @@
+{
+  "incident": {
+    "action": {
+      "hacking": {
+        "cve": "test",
+        "notes": "test",
+        "variety": [
+          "XSS"
+        ]
+      }
+    },
+    "actor": {
+      "external": {
+        "country": [
+          "US"
+        ],
+        "motive": [
+          "Ideology"
+        ],
+        "variety": [
+          "Activist"
+        ]
+      }
+    },
+    "asset": {
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ]
+    },
+    "attribute": {
+      "integrity": {
+        "variety": [
+          "Defacement"
+        ]
+      }
+    },
+    "discovery_method": "Int - unknown",
+    "incident_id": "test",
+    "schema_version": "1.3",
+    "security_incident": "Confirmed",
+    "timeline": {
+      "incident": {
+        "year": 2014
+      }
+    }
+  },
+  "message": "action.hacking.vector is missing. test should fail.",
+  "should": "fail"
+}
