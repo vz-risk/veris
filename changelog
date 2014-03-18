@@ -6,6 +6,7 @@ Schema changes
 
  * Schema has been documented using ietf.org draft 4 specifications
  http://tools.ietf.org/html/draft-fge-json-schema-validation-00
+ * renames the related_incidents field to campaign_id
 
 Enumeration changes
 -------------------
