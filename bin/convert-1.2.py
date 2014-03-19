@@ -10,18 +10,18 @@ import copy
 
 # set globs to "source" : "dest" for json files
 # can create more than one if multiple locations
-globs = { "veris/*.json" : "new-veris/" }
+globs = { "data/*.json" : "new-veris/" }
 
 json_data=open("country_to_code.json").read()
 countryMap = json.loads(json_data)
-to_version = "1.2"
+to_version = "1.2.1"
 
 def fixCountry(country):
     # convert to 1.1 naming
     if country=="Russian Federation":
         country = "Russia"
-    if country=="United States of America":
-        country = "United States"
+    if country=="United States":
+        country = "United States of America"
     if country=="":
         country = "Unknown"
     # convert to 1.2 naming
