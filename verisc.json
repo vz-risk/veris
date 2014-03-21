@@ -522,6 +522,9 @@
     "discovery_method": {
       "type": "string"
     },
+    "discovery_notes": {
+      "type": "string"
+    },
     "impact": {
       "additionalProperties": false,
       "properties": {
