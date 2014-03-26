@@ -20,7 +20,7 @@
       "accessibility": "Unknown",
       "assets": [],
       "cloud": "Other",
-      "country": "US",
+      "country": ["US"],
       "hosting": "External",
       "management": "External",
       "notes": "test string",

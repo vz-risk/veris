@@ -17,13 +17,11 @@
       }
     },
     "asset": {
-      "accessibility": "Unknown",
-      "cloud": "Other",
-      "country": ["US"],
-      "hosting": "External",
-      "management": "External",
-      "notes": "test string",
-      "ownership": "Victim"
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ]
     },
     "attribute": {
       "integrity": {
@@ -34,6 +32,7 @@
     },
     "discovery_method": "Int - unknown",
     "incident_id": "test",
+    "related_incidents": "test string",
     "schema_version": "1.3",
     "security_incident": "Confirmed",
     "timeline": {
@@ -42,6 +41,6 @@
       }
     }
   },
-  "message": "asset.assets is missing but that is OK. test should pass.",
-  "should": "pass"
+  "message": "related_incidents is no longer a valid field. changed to campaign_id. Test should fail.",
+  "should": "fail"
 }
