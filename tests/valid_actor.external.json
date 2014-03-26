@@ -4,16 +4,19 @@
       "Unknown": {}
     },
     "actor": {
-      "partner": {
+      "external": {
         "country": [
           "US"
         ],
-        "industry": "000",
         "motive": [
           "NA"
         ],
-        "notes": "This is a test",
-        "region": "002000"
+        "name":["test1","test2"],
+        "notes": "test",
+        "region": "002000",
+        "variety": [
+          "Other"
+        ]
       }
     },
     "asset": {
@@ -40,6 +43,6 @@
       }
     }
   },
-  "message": "valid incident with all partner fields set. Test should pass.",
+  "message": "valid incident with external actor. Expect it to pass.",
   "should": "pass"
 }

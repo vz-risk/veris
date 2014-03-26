@@ -260,7 +260,20 @@
               "type": "array",
               "uniqueItems": true
             },
+            "name": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
             "notes": {
+              "type": "string"
+            },
+            "region": {
+              "maxLength": 6,
+              "minLength": 6,
               "type": "string"
             },
             "variety": {
@@ -331,6 +344,11 @@
               "uniqueItems": true
             },
             "notes": {
+              "type": "string"
+            },
+            "region": {
+              "maxLength": 6,
+              "minLength": 6,
               "type": "string"
             }
           },
@@ -733,6 +751,11 @@
           "type": "integer"
         },
         "notes": {
+          "type": "string"
+        },
+        "region": {
+          "maxLength": 6,
+          "minLength": 6,
           "type": "string"
         },
         "revenue": {
