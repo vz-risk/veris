@@ -1,13 +1,12 @@
 {
   "incident": {
     "action": {
-      "error": {
+      "misuse": {
         "notes": "test string",
         "variety": [
-          "Loss"
+          "test"
         ],
         "vector": [
-          "Other",
           "Other"
         ]
       }
@@ -49,6 +48,6 @@
       }
     }
   },
-  "message": "action.error.vector has duplicate entries. Test should fail.",
+  "message": "action.misuse.variety has unrecognized value. test should fail.",
   "should": "fail"
 }

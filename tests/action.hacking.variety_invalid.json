@@ -1,14 +1,14 @@
 {
   "incident": {
     "action": {
-      "error": {
-        "notes": "test string",
+      "hacking": {
+        "cve": "test",
+        "notes": "test",
         "variety": [
-          "Loss"
+          "test"
         ],
         "vector": [
-          "Other",
-          "Other"
+          "VPN"
         ]
       }
     },
@@ -49,6 +49,6 @@
       }
     }
   },
-  "message": "action.error.vector has duplicate entries. Test should fail.",
+  "message": "action.hacking.variety has unrecognized value. test should fail.",
   "should": "fail"
 }

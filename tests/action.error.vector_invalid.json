@@ -7,8 +7,7 @@
           "Loss"
         ],
         "vector": [
-          "Other",
-          "Other"
+          "test"
         ]
       }
     },
@@ -49,6 +48,6 @@
       }
     }
   },
-  "message": "action.error.vector has duplicate entries. Test should fail.",
+  "message": "action.error.vector has unrecognized value. test should fail.",
   "should": "fail"
 }

@@ -1,14 +1,10 @@
 {
   "incident": {
     "action": {
-      "error": {
-        "notes": "test string",
+      "environmental": {
+        "notes": "this is a test.",
         "variety": [
-          "Loss"
-        ],
-        "vector": [
-          "Other",
-          "Other"
+          "test"
         ]
       }
     },
@@ -49,6 +45,6 @@
       }
     }
   },
-  "message": "action.error.vector has duplicate entries. Test should fail.",
+  "message": "action.environmental.variety has unrecognized value. test should fail.",
   "should": "fail"
 }
