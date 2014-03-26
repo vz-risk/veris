@@ -6,7 +6,6 @@ import simplejson
 import nose
 import os
 from jsonschema import validate, ValidationError
-import glob
 import argparse
 import logging
 
