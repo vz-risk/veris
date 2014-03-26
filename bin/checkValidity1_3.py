@@ -7,6 +7,7 @@ import nose
 import os
 from jsonschema import validate, ValidationError
 import argparse
+import ConfigParser
 import logging
 
 def buildSchema(schema,enum):
@@ -66,10 +67,17 @@ if __name__ == '__main__':
     parser.add_argument("-s","--schema", help="schema file to validate with", default="../verisc.json")
     parser.add_argument("-e","--enum", help="enumeration file to validate with",default="../verisc-enum.json")
     parser.add_argument("-l","--logging",choices=["critical","warning","info"], help="Minimum logging level to display", default="warning")
+    parser.add_argument("-p","--path", help="comma-separated list of paths to search for incidents", default="../data")
     args = parser.parse_args()
     logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO}
     logging.basicConfig(level=logging_remap[args.logging])
     logging.info("Now starting checkValidity.")
+
+    config = ConfigParser.ConfigParser()
+    path_to_parse = config.get('VERIS', 'datapath')
+    data_path = path_to_parse.split(',')
+    if args.path:
+        data_path.append(args.path)
 
     try:
         sk = simplejson.loads(open(args.schema).read())
