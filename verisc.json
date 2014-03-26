@@ -382,7 +382,9 @@
           "type": "string"
         },
         "country": {
-          "type": "string"
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
         },
         "hosting": {
           "type": "string"
@@ -505,6 +507,9 @@
       },
       "type": "object"
     },
+    "campaign_id": {
+      "type": "string"
+    },
     "confidence": {
       "type": "string"
     },
@@ -518,6 +523,9 @@
       "type": "string"
     },
     "discovery_method": {
+      "type": "string"
+    },
+    "discovery_notes": {
       "type": "string"
     },
     "impact": {
@@ -602,9 +610,6 @@
     },
     "plus": {},
     "reference": {
-      "type": "string"
-    },
-    "related_incidents": {
       "type": "string"
     },
     "schema_version": {

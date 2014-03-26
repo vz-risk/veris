@@ -18,8 +18,16 @@
     },
     "asset": {
       "accessibility": "Unknown",
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ],
       "cloud": "Other",
-      "country": ["US"],
+      "country": [
+        "US",
+        "US"
+      ],
       "hosting": "External",
       "management": "External",
       "notes": "test string",
@@ -42,6 +50,6 @@
       }
     }
   },
-  "message": "asset.assets is missing but that is OK. test should pass.",
-  "should": "pass"
+  "message": "asset.country has duplicate entries. Test should fail.",
+  "should": "fail"
 }

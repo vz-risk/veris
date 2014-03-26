@@ -18,8 +18,13 @@
     },
     "asset": {
       "accessibility": "Unknown",
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ],
       "cloud": "Other",
-      "country": ["US"],
+      "country": [],
       "hosting": "External",
       "management": "External",
       "notes": "test string",
@@ -42,6 +47,6 @@
       }
     }
   },
-  "message": "asset.assets is missing but that is OK. test should pass.",
-  "should": "pass"
+  "message": "asset.country is empty []. Test should fail.",
+  "should": "fail"
 }
