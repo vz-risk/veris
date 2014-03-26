@@ -105,8 +105,22 @@ if __name__ == '__main__':
 # Now we can build the schema which will be used to validate our incidents
     schema = buildSchema(sk,en)
     logging.info("schema assembled successfully.")
-    # Now we will loop through all the files in the destination path(s) and use validate on them
-    for eachPath in data_path:
-      print(eachPath)
+    # Make this less nested. Too much spacebar
+    for eachDir in data_path:
+      for eachFile in os.listdir(eachDir):
+        if eachFile.endswith('.json'):
+          incident_file = os.path.join(eachDir,eachFile)
+          try:
+            incident = simplejson.loads(open(incident_file).read())
+          except simplejson.scanner.JSONDecodeError:
+            logging.warning("ERROR: "+incident_file+" did not parse properly. Skipping")
+            continue
+
+          try:
+            validate(incident,schema)
+          except ValidationError as e:
+            offendingPath = '.'.join(str(x) for x in e.path)
+            logging.warning("ERROR in %s. %s %s" % (incident_file,offendingPath,e.message))
+
 
     logging.info("checkValidity complete")
