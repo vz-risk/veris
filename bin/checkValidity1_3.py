@@ -1,6 +1,8 @@
 #TODO Need to make this parse an argument for the file path that is going to be examined
 #TODO Make it so you can specify these things in a config file rather than command line. Command line
 # should override config file. Both should override built-in defaults
+#TODO should specify a default config file.
+#TODO should check if the config file exists before trying to use it.
 
 import simplejson
 import nose
@@ -49,7 +51,7 @@ def buildSchema(schema,enum):
 # timeline
     for each in ['compromise','containment','discovery','exfiltration']:
         schema['properties']['timeline']['properties'][each]['properties']['unit']['pattern'] = '|'.join(enum['timeline']['unit'])
-    
+
 # victim
     schema['properties']['victim']['properties']['country']['pattern'] = '|'.join(enum['country'])
     schema['properties']['victim']['properties']['employee_count']['pattern'] = '|'.join(enum['victim']['employee_count'])
@@ -101,9 +103,7 @@ if __name__ == '__main__':
     schema = buildSchema(sk,en)
     logging.info("schema assembled successfully.")
     # Now we will loop through all the files in the destination path(s) and use validate on them
+    for eachPath in data_path:
+      print(eachPath)
 
     logging.info("checkValidity complete")
-
-                
-
-
