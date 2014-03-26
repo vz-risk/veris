@@ -24,7 +24,7 @@
         }
       ],
       "cloud": "Other",
-      "country": ["US"],
+      "country": [],
       "hosting": "External",
       "management": "External",
       "notes": "test string",
@@ -47,6 +47,6 @@
       }
     }
   },
-  "message": "valid incident with all asset properties set. test should pass.",
-  "should": "pass"
+  "message": "asset.country is empty []. Test should fail.",
+  "should": "fail"
 }

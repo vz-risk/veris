@@ -24,7 +24,10 @@
         }
       ],
       "cloud": "Other",
-      "country": ["US"],
+      "country": [
+        "US",
+        "US"
+      ],
       "hosting": "External",
       "management": "External",
       "notes": "test string",
@@ -47,6 +50,6 @@
       }
     }
   },
-  "message": "valid incident with all asset properties set. test should pass.",
-  "should": "pass"
+  "message": "asset.country has duplicate entries. Test should fail.",
+  "should": "fail"
 }

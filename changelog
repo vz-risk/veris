@@ -6,6 +6,8 @@ Schema changes
 
  * Schema has been documented using ietf.org draft 4 specifications
  http://tools.ietf.org/html/draft-fge-json-schema-validation-00
+ * Changes asset.country to an array so that we can model assets that exist in
+ multiple countries.
 
 Enumeration changes
 -------------------
