@@ -260,7 +260,20 @@
               "type": "array",
               "uniqueItems": true
             },
+            "name": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
             "notes": {
+              "type": "string"
+            },
+            "region": {
+              "maxLength": 6,
+              "minLength": 6,
               "type": "string"
             },
             "variety": {
@@ -340,6 +353,11 @@
             },
             "notes": {
               "type": "string"
+            },
+            "region": {
+              "maxLength": 6,
+              "minLength": 6,
+              "type": "string"
             }
           },
           "required": [
@@ -361,6 +379,7 @@
     },
     "asset": {
       "additionalProperties": false,
+      "minProperties": 1,
       "properties": {
         "accessibility": {
           "type": "string"
@@ -389,7 +408,9 @@
           "type": "string"
         },
         "country": {
-          "type": "string"
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
         },
         "hosting": {
           "type": "string"
@@ -404,9 +425,6 @@
           "type": "string"
         }
       },
-      "required": [
-        "assets"
-      ],
       "type": "object"
     },
     "attribute": {
@@ -515,6 +533,9 @@
       },
       "type": "object"
     },
+    "campaign_id": {
+      "type": "string"
+    },
     "confidence": {
       "type": "string"
     },
@@ -528,6 +549,9 @@
       "type": "string"
     },
     "discovery_method": {
+      "type": "string"
+    },
+    "discovery_notes": {
       "type": "string"
     },
     "impact": {
@@ -612,9 +636,6 @@
     },
     "plus": {},
     "reference": {
-      "type": "string"
-    },
-    "related_incidents": {
       "type": "string"
     },
     "schema_version": {
@@ -738,6 +759,11 @@
           "type": "integer"
         },
         "notes": {
+          "type": "string"
+        },
+        "region": {
+          "maxLength": 6,
+          "minLength": 6,
           "type": "string"
         },
         "revenue": {

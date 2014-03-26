@@ -17,18 +17,11 @@
       }
     },
     "asset": {
-      "accessibility": "Unknown",
       "assets": [
         {
           "variety": "S - Unknown"
         }
-      ],
-      "cloud": "Other",
-      "country": ["US"],
-      "hosting": "External",
-      "management": "External",
-      "notes": "test string",
-      "ownership": "Victim"
+      ]
     },
     "attribute": {
       "integrity": {
@@ -45,8 +38,30 @@
       "incident": {
         "year": 2014
       }
+    },
+    "victim": {
+      "country": "US",
+      "employee_count": "1 to 10",
+      "industry": "000",
+      "locations_affected": 1,
+      "notes": "test",
+      "region": "short",
+      "revenue": {
+        "amount": 1000000,
+        "iso_currency_code": "USD"
+      },
+      "secondary": {
+        "amount": 2,
+        "notes": "test",
+        "victim_id": [
+          "test1",
+          "test2"
+        ]
+      },
+      "state": "MN",
+      "victim_id": "test"
     }
   },
-  "message": "valid incident with all asset properties set. test should pass.",
-  "should": "pass"
+  "message": "victim.region is too short. test should fail.",
+  "should": "fail"
 }

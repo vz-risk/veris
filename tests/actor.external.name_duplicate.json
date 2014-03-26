@@ -9,21 +9,25 @@
           "US"
         ],
         "motive": [
-          "Ideology"
+          "NA"
         ],
+        "name": [
+          "test1",
+          "test1"
+        ],
+        "notes": "test",
+        "region": "002000",
         "variety": [
-          "Activist"
+          "Other"
         ]
       }
     },
     "asset": {
-      "accessibility": "Unknown",
-      "cloud": "Other",
-      "country": ["US"],
-      "hosting": "External",
-      "management": "External",
-      "notes": "test string",
-      "ownership": "Victim"
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ]
     },
     "attribute": {
       "integrity": {
@@ -42,6 +46,6 @@
       }
     }
   },
-  "message": "asset.assets is missing but that is OK. test should pass.",
-  "should": "pass"
+  "message": "actor.external.name has duplicate values. test should fail.",
+  "should": "fail"
 }

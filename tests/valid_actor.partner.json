@@ -12,7 +12,8 @@
         "motive": [
           "NA"
         ],
-        "notes": "this is a test"
+        "notes": "This is a test",
+        "region": "002000"
       }
     },
     "asset": {
@@ -39,6 +40,6 @@
       }
     }
   },
-  "message": "Valid incident with partner actor. Expect it to pass.",
+  "message": "valid incident with all partner fields set. Test should pass.",
   "should": "pass"
 }
