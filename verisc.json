@@ -341,6 +341,9 @@
               "uniqueItems": true
             },
             "industry": {
+              "maxLength":6,
+              "minLength":2,
+              "pattern":"\\d{2}-?\\d{1,4}",
               "type": "string"
             },
             "motive": {
@@ -753,6 +756,9 @@
           "type": "string"
         },
         "industry": {
+          "maxLength":6,
+          "minLength":2,
+          "pattern":"\\d{2}-?\\d{1,4}",
           "type": "string"
         },
         "locations_affected": {
