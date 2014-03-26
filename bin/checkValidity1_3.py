@@ -1,5 +1,3 @@
-#TODO Need to make this parse arguments. Schema file and enum file should default to ../verisc.json but allow
-# the user to specify a different path.
 #TODO Need to make this parse an argument for the file path that is going to be examined
 #TODO Make it so you can specify these things in a config file rather than command line. Command line
 # should override config file. Both should override built-in defaults
