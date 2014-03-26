@@ -7,6 +7,8 @@ Schema changes
  * Schema has been documented using ietf.org draft 4 specifications
  http://tools.ietf.org/html/draft-fge-json-schema-validation-00
  * renames the related_incidents field to campaign_id
+ * Changes asset.country to an array so that we can model assets that exist in
+ multiple countries.
 
 Enumeration changes
 -------------------
@@ -21,6 +23,7 @@ Enumeration changes
   * Added Defacement to attribute.integrity.variety
   * Added Pass-the-hash to hacking.variety
   * Added Secondary to actor.motive
+  * Added Software update to malware.vector
 
 Version 1.2
 ===========

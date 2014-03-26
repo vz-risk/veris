@@ -381,7 +381,9 @@
           "type": "string"
         },
         "country": {
-          "type": "string"
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
         },
         "hosting": {
           "type": "string"
@@ -523,6 +525,9 @@
       "type": "string"
     },
     "discovery_method": {
+      "type": "string"
+    },
+    "discovery_notes": {
       "type": "string"
     },
     "impact": {
