@@ -75,6 +75,8 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging_remap[args.logging])
     logging.info("Now starting checkValidity.")
 
+    # Do we want to fix this? Should command line OVERRIDE config file
+    # or just add to the list of places to look?
     #config = ConfigParser.ConfigParser()
     #path_to_parse = config.get('VERIS', 'datapath')
     #data_path = path_to_parse.split(',')
