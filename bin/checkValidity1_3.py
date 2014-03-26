@@ -103,6 +103,7 @@ if __name__ == '__main__':
     # Do we want to fix this? Should command line OVERRIDE config file
     # or just add to the list of places to look?
     config = ConfigParser.ConfigParser()
+    config.read('checkValidity.cfg')
     data_path = []
     if args.path:
         data_path = args.path.split(',')
