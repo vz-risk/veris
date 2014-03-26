@@ -343,7 +343,7 @@
             "industry": {
               "maxLength":6,
               "minLength":2,
-              "pattern":"\\d{2}-?\\d{1,4}",
+              "pattern":"\\d{2}-?\\d{0,4}",
               "type": "string"
             },
             "motive": {
@@ -758,7 +758,7 @@
         "industry": {
           "maxLength":6,
           "minLength":2,
-          "pattern":"\\d{2}-?\\d{1,4}",
+          "pattern":"\\d{2}-?\\d{0,4}",
           "type": "string"
         },
         "locations_affected": {
