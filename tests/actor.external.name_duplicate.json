@@ -11,7 +11,10 @@
         "motive": [
           "NA"
         ],
-        "name":["test1","test2"],
+        "name": [
+          "test1",
+          "test1"
+        ],
         "notes": "test",
         "region": "002000",
         "variety": [
@@ -43,6 +46,6 @@
       }
     }
   },
-  "message": "valid incident with external actor. Expect it to pass.",
-  "should": "pass"
+  "message": "actor.external.name has duplicate values. test should fail.",
+  "should": "fail"
 }

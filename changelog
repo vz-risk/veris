@@ -8,6 +8,8 @@ Schema changes
  http://tools.ietf.org/html/draft-fge-json-schema-validation-00
  * Adds six character region field to actor.external, actor.partner, and
  victim.
+ * Adds actor.external.name, an array of strings used to identify the actor
+ such as 'Syrian Electronic Army' or 'Zero Cool'.
 
 Enumeration changes
 -------------------
