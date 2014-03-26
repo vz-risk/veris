@@ -65,11 +65,12 @@ def buildSchema(schema,enum):
 # end of buildSchema()
 
 if __name__ == '__main__':
+    # TODO: implement config file options for all of these
     parser = argparse.ArgumentParser(description="Checks a set of json files to see if they are valid VERIS incidents")
     parser.add_argument("-s","--schema", help="schema file to validate with", default="../verisc.json")
     parser.add_argument("-e","--enum", help="enumeration file to validate with",default="../verisc-enum.json")
     parser.add_argument("-l","--logging",choices=["critical","warning","info"], help="Minimum logging level to display", default="warning")
-    parser.add_argument("-p","--path", nargs='+', help="comma-separated list of paths to search for incidents", default="../data")
+    parser.add_argument("-p","--path", nargs='+', help="comma-separated list of paths to search for incidents")
     args = parser.parse_args()
     logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO}
     logging.basicConfig(level=logging_remap[args.logging])
@@ -77,12 +78,18 @@ if __name__ == '__main__':
 
     # Do we want to fix this? Should command line OVERRIDE config file
     # or just add to the list of places to look?
-    #config = ConfigParser.ConfigParser()
-    #path_to_parse = config.get('VERIS', 'datapath')
-    #data_path = path_to_parse.split(',')
+    config = ConfigParser.ConfigParser()
     data_path = []
     if args.path:
-        data_path += args.path
+        data_path = args.path.split(',')
+    else: # only use config option if nothing is specified on the command line
+        try:
+            path_to_parse = config.get('VERIS', 'datapath')
+            data_path = path_to_parse.split(',')
+        except ConfigParser.Error:
+            print "No path found in config file, continuing..."
+            data_path = [ '.' ]
+            pass
 
     try:
         sk = simplejson.loads(open(args.schema).read())
