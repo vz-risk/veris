@@ -83,9 +83,43 @@ def buildSchema(schema, enum):
     for each in ['confidence', 'cost_corrective_action', 'discovery_method', 'security_incident', 'targeted']:
         schema['properties'][each]['pattern'] = '|'.join(enum[each])
 
-    return schema
+    return schema # end of buildSchema()
 
-# end of buildSchema()
+def checkMalwareIntegrity(inDict):
+  if 'malware' in inDict['action']:
+    if 'Software installation' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
+      raise ValidationError("Malware present, but no Software installation in attribute.integrity.variety")
+  return True
+
+def checkSocialIntegrity(inDict):
+  if 'social' in inDict['action']:
+    if 'Alter behavior' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
+      raise ValidationError("acton.social present, but Alter behavior not in attribute.integrity.variety")
+  return True
+
+def checkSQLMisappropriation(inDict):
+  if 'SQLi' in inDict.get('action',{}).get('hacking',{}).get('variety',[]):
+    if 'Misappropriation' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
+      raise ValidationError("action.hacking.SQLi present but Misappropriation not in attribute.integrity.variety")
+  return True
+
+def checkSecurityIncident(inDict):
+  if inDict['security_incident'] == "Confirmed":
+    if 'attribute' not in inDict:
+      raise ValidationError("security_incident Confirmed but attribute section not present")
+  return True
+
+def checkLossTheftAvailability(inDict):
+  expectLoss = False
+  if 'Theft' in inDict.get('action',{}).get('physical',{}).get('variety',[]):
+    expectLoss = True
+  if 'Loss' in inDict.get('action',{}).get('error',{}).get('variety',[]):
+    expectLoss = True
+  if expectLoss:
+    if 'Loss' not in inDict.get('attribute',{}).get('availability',{}).get('variety',[]):
+      raise ValidationError("action.physical.theft or action.error.loss present but attribute.availability.loss not present")
+  return True
+
 
 if __name__ == '__main__':
     # TODO: implement config file options for all of these
@@ -151,6 +185,11 @@ if __name__ == '__main__':
 
                 try:
                     validate(incident, schema)
+                    checkMalwareIntegrity(incident)
+                    checkSocialIntegrity(incident)
+                    checkSQLMisappropriation(incident)
+                    checkSecurityIncident(incident)
+                    checkLossTheftAvailability(incident)
                 except ValidationError as e:
                     offendingPath = '.'.join(str(x) for x in e.path)
                     logging.warning("ERROR in %s. %s %s" % (incident_file, offendingPath, e.message))
