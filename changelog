@@ -15,6 +15,7 @@ Schema changes
  * Changes asset.country to an array so that we can model assets that exist in
  multiple countries.
  * Adds a discovery_notes field to describe the discovery in greater detail.
+ * Changes victim.country to an array rather than a string.
 
 Enumeration changes
 -------------------
