@@ -62,6 +62,6 @@
       "victim_id": "test"
     }
   },
-  "message": "victim.industry is too short. test should fail.",
+  "message": "Valid incident with a range in the victim.industry field.",
   "should": "pass"
 }
