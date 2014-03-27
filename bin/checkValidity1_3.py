@@ -1,7 +1,3 @@
-#TODO Need to make this parse an argument for the file path that is going to be examined
-#TODO Make it so you can specify these things in a config file rather than command line. Command line
-# should override config file. Both should override built-in defaults
-#TODO should specify a default config file.
 #TODO should check if the config file exists before trying to use it.
 
 import simplejson
@@ -11,6 +7,7 @@ from jsonschema import validate, ValidationError
 import argparse
 import ConfigParser
 import logging
+from glob import glob
 
 
 def buildSchema(schema, enum):
@@ -138,16 +135,16 @@ if __name__ == '__main__':
     # or just add to the list of places to look?
     config = ConfigParser.ConfigParser()
     config.read('checkValidity.cfg')
-    data_path = []
+    data_paths = []
     if args.path:
-        data_path = args.path
+        data_paths = args.path
     else:  # only use config option if nothing is specified on the command line
         try:
             path_to_parse = config.get('VERIS', 'datapath')
-            data_path = path_to_parse.strip().split('\n')
+            data_paths = path_to_parse.strip().split('\n')
         except ConfigParser.Error:
             print "No path found in config file, continuing..."
-            data_path = ['.']
+            data_paths = ['.']
             pass
 
     try:
@@ -172,26 +169,24 @@ if __name__ == '__main__':
     schema = buildSchema(sk, en)
     logging.info("schema assembled successfully.")
 
-    # Make this less nested. Too much spacebar
-    for eachDir in data_path:
-        for eachFile in os.listdir(eachDir):
-            if eachFile.endswith('.json'):
-                incident_file = os.path.join(eachDir, eachFile)
-                try:
-                    incident = simplejson.loads(open(incident_file).read())
-                except simplejson.scanner.JSONDecodeError:
-                    logging.warning("ERROR: " + incident_file + " did not parse properly. Skipping")
-                    continue
+    data_paths = [x + '/*.json' for x in data_paths]
+    for eachDir in data_paths:
+        for eachFile in glob(eachDir):
+          try:
+              incident = simplejson.loads(open(eachFile).read())
+          except simplejson.scanner.JSONDecodeError:
+              logging.warning("ERROR: %s did not parse properly. Skipping" % eachFile)
+              continue
 
-                try:
-                    validate(incident, schema)
-                    checkMalwareIntegrity(incident)
-                    checkSocialIntegrity(incident)
-                    checkSQLMisappropriation(incident)
-                    checkSecurityIncident(incident)
-                    checkLossTheftAvailability(incident)
-                except ValidationError as e:
-                    offendingPath = '.'.join(str(x) for x in e.path)
-                    logging.warning("ERROR in %s. %s %s" % (incident_file, offendingPath, e.message))
+          try:
+              validate(incident, schema)
+              checkMalwareIntegrity(incident)
+              checkSocialIntegrity(incident)
+              checkSQLMisappropriation(incident)
+              checkSecurityIncident(incident)
+              checkLossTheftAvailability(incident)
+          except ValidationError as e:
+              offendingPath = '.'.join(str(x) for x in e.path)
+              logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message))
 
     logging.info("checkValidity complete")
