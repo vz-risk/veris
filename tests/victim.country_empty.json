@@ -40,6 +40,7 @@
       }
     },
     "victim": {
+      "country": [],
       "employee_count": "1 to 10",
       "industry": "000",
       "locations_affected": 2,
@@ -61,6 +62,6 @@
       "victim_id": "test"
     }
   },
-  "message": "victim.country is missing. Test should fail.",
+  "message": "victim.country array is empty. Test should fail.",
   "should": "fail"
 }
