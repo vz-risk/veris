@@ -40,7 +40,7 @@
       }
     },
     "victim": {
-      "country": "US",
+      "country": ["US"],
       "employee_count": "1 to 10",
       "industry": "000",
       "locations_affected": 1,
