@@ -30,6 +30,7 @@ Enumeration changes
   * Added Pass-the-hash to hacking.variety
   * Added Secondary to actor.motive
   * Added Software update to malware.vector
+  * Added Skimmer to action.physical.variety
 
 Version 1.2
 ===========
