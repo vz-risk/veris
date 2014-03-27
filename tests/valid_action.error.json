@@ -36,6 +36,11 @@
         "variety": [
           "Defacement"
         ]
+      },
+      "availability": {
+        "variety": [
+          "Loss"
+        ]
       }
     },
     "discovery_method": "Int - unknown",

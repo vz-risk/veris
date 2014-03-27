@@ -44,7 +44,7 @@ schema['properties']['impact']['properties']['overall_rating']['patter'] = '|'.j
 # timeline
 for each in ['compromise','containment','discovery','exfiltration']:
     schema['properties']['timeline']['properties'][each]['properties']['unit']['pattern'] = '|'.join(enum['timeline']['unit'])
-    
+
 # victim
 schema['properties']['victim']['properties']['country']['pattern'] = '|'.join(enum['country'])
 schema['properties']['victim']['properties']['employee_count']['pattern'] = '|'.join(enum['victim']['employee_count'])
