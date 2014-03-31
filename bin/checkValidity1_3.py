@@ -38,8 +38,8 @@ def buildSchema(schema, enum):
     # asset properties
     schema['properties']['asset']['properties']['assets']['items']['properties']['variety']['pattern'] = '|'.join(
         enum['asset']['variety'])
-    for each in ['accessibility', 'cloud', 'hosting', 'management', 'ownership']:
-        schema['properties']['asset']['properties'][each]['pattern'] = '|'.join(enum['asset'][each])
+    schema['properties']['asset']['properties']['governance']['items']['enum'] = \
+        enum['asset']['governance']
 
     # attribute properties
     schema['properties']['attribute']['properties']['availability']['properties']['variety']['items']['enum'] = \

@@ -24,8 +24,8 @@ schema['properties']['actor']['properties']['partner']['properties']['country'][
 
 # asset properties
 schema['properties']['asset']['properties']['assets']['items']['properties']['variety']['pattern'] = '|'.join(enum['asset']['variety'])
-for each in ['accessibility','cloud','hosting','management','ownership']:
-    schema['properties']['asset']['properties'][each]['pattern'] = '|'.join(enum['asset'][each])
+schema['properties']['asset']['properties']['governance']['items']['enum'] = \
+    enum['asset']['governance']
 
 # attribute properties
 schema['properties']['attribute']['properties']['availability']['properties']['variety']['items']['enum'] = enum['attribute']['availability']['variety']
@@ -54,29 +54,29 @@ schema['properties']['victim']['properties']['revenue']['properties']['iso_curre
 for each in ['confidence','cost_corrective_action','discovery_method','security_incident','targeted']:
     schema['properties'][each]['pattern'] = '|'.join(enum[each])
 
-def runTest(inDict):
+def runTest(inDict, testFileName):
   try:
     validate(inDict['incident'],schema)
     if inDict['should'] == "pass":
-      print "Validation passed properly. %s" % inDict['message']
+      print "%s: Validation passed properly. %s" % (testFileName,inDict['message'])
       pass
     else:
       # Validation passed but it should have failed. Explain.
-      print "validation passed but it should have failed. %s" % inDict['message']
+      print "%s: validation passed but it should have failed. %s" % (testFileName,inDict['message'])
       assert False
   except ValidationError as e:
     if inDict['should'] == "pass":
       # Validation failed but it should have passed. Explain yourself
       offendingPath = '.'.join(str(x) for x in e.path)
-      print "Validation failed but should have passed %s" % inDict['message']
+      print "%s: Validation failed but should have passed %s" % (testFileName,inDict['message'])
       print "\t %s %s" % (offendingPath,e.message)
       assert False
     else:
-      print "Validation failed and it should have. %s %s" % (inDict['message'],e.message)
+      print "%s: Validation failed and it should have. %s %s" % (testFileName,inDict['message'],e.message)
       pass
 
 def test_Schema():
   for eachTestFile in os.listdir('./tests'):
     if eachTestFile.endswith('.json'):
       test = simplejson.loads(open('./tests/'+eachTestFile).read())
-      yield runTest, test
+      yield runTest, test, eachTestFile

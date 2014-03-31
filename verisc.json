@@ -384,9 +384,6 @@
       "additionalProperties": false,
       "minProperties": 1,
       "properties": {
-        "accessibility": {
-          "type": "string"
-        },
         "assets": {
           "items": {
             "additionalProperties": false,
@@ -415,16 +412,15 @@
           "type": "array",
           "uniqueItems": true
         },
-        "hosting": {
-          "type": "string"
-        },
-        "management": {
-          "type": "string"
+        "governance": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
         },
         "notes": {
-          "type": "string"
-        },
-        "ownership": {
           "type": "string"
         }
       },
