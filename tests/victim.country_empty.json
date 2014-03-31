@@ -40,10 +40,10 @@
       }
     },
     "victim": {
-      "country": ["US"],
+      "country": [],
       "employee_count": "1 to 10",
       "industry": "000",
-      "locations_affected": 1,
+      "locations_affected": 2,
       "notes": "test",
       "region": "002000",
       "revenue": {
@@ -62,6 +62,6 @@
       "victim_id": "test"
     }
   },
-  "message": "valid incident with all victim fields present. test should pass.",
-  "should": "pass"
+  "message": "victim.country array is empty. Test should fail.",
+  "should": "fail"
 }

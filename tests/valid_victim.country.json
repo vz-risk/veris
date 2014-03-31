@@ -40,10 +40,10 @@
       }
     },
     "victim": {
-      "country": ["US"],
+      "country": ["US", "MX"],
       "employee_count": "1 to 10",
       "industry": "000",
-      "locations_affected": 1,
+      "locations_affected": 2,
       "notes": "test",
       "region": "002000",
       "revenue": {

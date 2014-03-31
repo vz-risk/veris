@@ -750,7 +750,12 @@
       "additionalProperties": false,
       "properties": {
         "country": {
-          "type": "string"
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
         },
         "employee_count": {
           "type": "string"
