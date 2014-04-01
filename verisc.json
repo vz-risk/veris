@@ -152,15 +152,8 @@
           "type": "object"
         },
         "physical": {
+          "additionalProperties": false,
           "properties": {
-            "location": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
             "notes": {
               "type": "string"
             },
@@ -183,8 +176,7 @@
           },
           "required": [
             "vector",
-            "variety",
-            "location"
+            "variety"
           ],
           "type": "object"
         },

@@ -7,7 +7,9 @@
           "Other"
         ],
         "vector": [
-          "Other"
+          "Privileged access",
+          "Bypassed controls",
+          "Disabled controls"
         ]
       }
     },
@@ -48,6 +50,6 @@
       }
     }
   },
-  "message": "Valid incident with physical action. Test should pass.",
-  "should": "pass"
+  "message": "action.physical.vector contains v1.2 values which are no longer valid. test should fail.",
+  "should": "fail"
 }

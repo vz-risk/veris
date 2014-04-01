@@ -11,7 +11,6 @@ for each in ['hacking','malware','social','error','misuse','physical']:
     schema['properties']['action']['properties'][each]['properties']['variety']['items']['enum'] = enum['action'][each]['variety']
     schema['properties']['action']['properties'][each]['properties']['vector']['items']['enum'] = enum['action'][each]['vector']
 schema['properties']['action']['properties']['environmental']['properties']['variety']['items']['enum'] = enum['action']['environmental']['variety']
-schema['properties']['action']['properties']['physical']['properties']['location']['items']['enum'] = enum['action']['physical']['location']
 schema['properties']['action']['properties']['social']['properties']['target']['items']['enum'] = enum['action']['social']['target']
 
 # actor enumerations

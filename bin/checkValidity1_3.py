@@ -19,8 +19,6 @@ def buildSchema(schema, enum):
         enum['action'][each]['vector']
     schema['properties']['action']['properties']['environmental']['properties']['variety']['items']['enum'] = \
     enum['action']['environmental']['variety']
-    schema['properties']['action']['properties']['physical']['properties']['location']['items']['enum'] = \
-    enum['action']['physical']['location']
     schema['properties']['action']['properties']['social']['properties']['target']['items']['enum'] = \
     enum['action']['social']['target']
 

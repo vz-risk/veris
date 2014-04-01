@@ -194,7 +194,7 @@
       ]
     },
     "physical": {
-      "location": [
+      "vector": [
         "Partner facility",
         "Partner vehicle",
         "Personal residence",
@@ -210,7 +210,9 @@
       ],
       "variety": [
         "Assault",
+        "Bypassed controls",
         "Destruction",
+        "Disabled controls",
         "Skimming",
         "Snooping",
         "Surveillance",
@@ -218,15 +220,6 @@
         "Theft",
         "Wiretapping",
         "Connection",
-        "Unknown",
-        "Other"
-      ],
-      "vector": [
-        "Privileged access",
-        "Visitor privileges",
-        "Bypassed controls",
-        "Disabled controls",
-        "Uncontrolled location",
         "Unknown",
         "Other"
       ]
