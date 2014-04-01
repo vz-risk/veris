@@ -20,7 +20,10 @@ Schema changes
 and replaces them with a single enumeration; asset.governance. This is intended to
 capture interesting facts about the management of the asset but is not intended to
 be all-inclusive or apply to all assets. E.g. there would be no selection if a person
-was the affected asset. 
+was the affected asset.
+ * Removes the existing physical.vector enumeration and renames physical.location to
+physical.vector. Some of the values from the old physical.vector are now in
+physical.variety.
 
 Enumeration changes
 -------------------
