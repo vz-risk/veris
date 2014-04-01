@@ -17,10 +17,16 @@
       }
     },
     "asset": {
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ],
       "cloud": "Other",
       "country": [
         "US"
       ],
+      "governance": [],
       "notes": "test string"
     },
     "attribute": {
@@ -40,6 +46,6 @@
       }
     }
   },
-  "message": "asset.assets is missing but that is OK. test should pass.",
-  "should": "pass"
+  "message": "asset.governance is empty []. test should fail.",
+  "should": "fail"
 }

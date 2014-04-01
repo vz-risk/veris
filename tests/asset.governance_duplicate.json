@@ -17,9 +17,18 @@
       }
     },
     "asset": {
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ],
       "cloud": "Other",
       "country": [
         "US"
+      ],
+      "governance": [
+        "Personally owned",
+        "Personally owned"
       ],
       "notes": "test string"
     },
@@ -40,6 +49,6 @@
       }
     }
   },
-  "message": "asset.assets is missing but that is OK. test should pass.",
-  "should": "pass"
+  "message": "asset.governance has duplicate values. test should fail.",
+  "should": "fail"
 }

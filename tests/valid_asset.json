@@ -17,18 +17,19 @@
       }
     },
     "asset": {
-      "accessibility": "Unknown",
       "assets": [
         {
           "variety": "S - Unknown"
         }
       ],
       "cloud": "Other",
-      "country": ["US"],
-      "hosting": "External",
-      "management": "External",
-      "notes": "test string",
-      "ownership": "Victim"
+      "country": [
+        "US"
+      ],
+      "governance": [
+        "Personally owned"
+      ],
+      "notes": "test string"
     },
     "attribute": {
       "integrity": {

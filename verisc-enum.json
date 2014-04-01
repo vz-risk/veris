@@ -350,13 +350,6 @@
     ]
   },
   "asset": {
-    "accessibility": [
-      "External",
-      "Internal",
-      "Isolated",
-      "Unknown",
-      "NA"
-    ],
     "cloud": [
       "Hypervisor",
       "Partner application",
@@ -367,27 +360,13 @@
       "Unknown",
       "Other"
     ],
-    "hosting": [
-      "Internal",
-      "External shared",
-      "External dedicated",
-      "External",
-      "Unknown",
-      "NA"
-    ],
-    "management": [
-      "Internal",
-      "External",
-      "Unknown",
-      "NA"
-    ],
-    "ownership": [
-      "Victim",
-      "Employee",
-      "Partner",
-      "Customer",
-      "Unknown",
-      "NA"
+    "governance" : [
+      "Personally owned",
+      "3rd party owned",
+      "3rd party managed",
+      "3rd party hosted",
+      "Internally isolated",
+      "Unknown"
     ],
     "variety": [
       "S - Authentication",

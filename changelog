@@ -16,6 +16,11 @@ Schema changes
  multiple countries.
  * Adds a discovery_notes field to describe the discovery in greater detail.
  * Changes victim.country to an array rather than a string.
+ * Removes asset.management, asset.hosting, asset.ownership, and asset.accessibility
+and replaces them with a single enumeration; asset.governance. This is intended to
+capture interesting facts about the management of the asset but is not intended to
+be all-inclusive or apply to all assets. E.g. there would be no selection if a person
+was the affected asset. 
 
 Enumeration changes
 -------------------
@@ -40,54 +45,54 @@ Schema changes
 --------------
   * Removed investigation date completely
   * Added field for target section, called "targeted" (not required)
-  * Replaced "personal" boolean with "ownership" field for enumeration 
+  * Replaced "personal" boolean with "ownership" field for enumeration
 listing
   * Changed "management" boolean into enumeration listing
   * Changed "hosting" boolean into enumeration listing
-  * Added field "accessibility" for enumeration listing, for where the 
-asset is in the network (internal facing or internet facing, etc), 
+  * Added field "accessibility" for enumeration listing, for where the
+asset is in the network (internal facing or internet facing, etc),
 will not be associated on a per asset basis.
   * Changed "asset" to be required
   * Make attribute section not required (near miss, false alarms, etc)
   * Change "security_compromise" to "security_incident" to make it more
-clear what this variable tracks. This essentially asks "Was this 
-event a security incident (defined as an event in which a security 
+clear what this variable tracks. This essentially asks "Was this
+event a security incident (defined as an event in which a security
 attribute (C/P, I/A, A/U) of an asset was compromised).
 
 Enumeration changes
 -------------------
   * Removed "No" from 'security_incident' (formerly security_compromise),
 and add options of "False positive" and "Near miss" *Need feedback
-  * Added in enumeration for targeted with values of "Unknown", "NA", 
+  * Added in enumeration for targeted with values of "Unknown", "NA",
 "Opportunistic", "Targeted"
   * Added "S - Code repository" to enum for asset.variety
-  * Integrity variety, changed instances of "Modified" to "Modify" to 
+  * Integrity variety, changed instances of "Modified" to "Modify" to
 match tense
-  * Actor motive, added "Convenience" (intentionally bypassing controls 
+  * Actor motive, added "Convenience" (intentionally bypassing controls
 for convenience)
-  * Discovery method, added "Int - Unknown" and "Ext - Unknown" 
+  * Discovery method, added "Int - Unknown" and "Ext - Unknown"
   * Hacking variety: Added "Virtual machine escape"
-  * Ownership, created enumerations of "Victim", "Employee", "Partner", 
+  * Ownership, created enumerations of "Victim", "Employee", "Partner",
 "Customer", "Unknown", "NA"
-  * Management, created enumerations of "Internal", "External", 
+  * Management, created enumerations of "Internal", "External",
 "Unknown","NA"
-  * Hosting, created enumerations of "Internal", "External - shared", 
+  * Hosting, created enumerations of "Internal", "External - shared",
 "External - dedicated", "External", "Unknown", "NA"
-  * Cloud, changed enumerations to be the component of cloud: 
-"Hypervisor", "Partner application", "Hosting governance", 
-"Customer attack", "Hosting error", "User breakout", "Unknown", 
+  * Cloud, changed enumerations to be the component of cloud:
+"Hypervisor", "Partner application", "Hosting governance",
+"Customer attack", "Hosting error", "User breakout", "Unknown",
 "Other"
-  * accessibility, created enumerations of "External", "Internal", 
-"Isolated", "Unknown", "NA"  
-  * Malware variety, added "Click fraud" to represent 
+  * accessibility, created enumerations of "External", "Internal",
+"Isolated", "Unknown", "NA"
+  * Malware variety, added "Click fraud" to represent
 "Click Fraud/Bitcoin mining"
   * Asset variety, changed "U - ATM" to "T - ATM" (kiosk/public facing
 user device)
-  * Asset variety, changed "U - Gas terminal" to "T - Gas terminal" 
+  * Asset variety, changed "U - Gas terminal" to "T - Gas terminal"
 (kiosk/public facing user device)
   * Asset variety, changed "U - PED pad" to "T - PED pad" (kiosk/public
 facing user device)
-  * Asset variety, changed "U - Kiosk" to "T - Kiosk" (kiosk/public 
+  * Asset variety, changed "U - Kiosk" to "T - Kiosk" (kiosk/public
 facing user device)
   * Hacking vector: Added "Partner" to represent partner connection or
 credential
