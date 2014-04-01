@@ -790,6 +790,7 @@
     "Ext - unknown",
     "Int - antivirus",
     "Int - incident response",
+    "Int - infrastructure monitoring"
     "Int - financial audit",
     "Int - fraud detection",
     "Int - HIDS",

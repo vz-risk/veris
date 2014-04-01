@@ -40,6 +40,8 @@ Enumeration changes
   * Added Secondary to actor.motive
   * Added Software update to malware.vector
   * Added Skimmer to action.physical.variety
+ * Adds many new enumerations to discovery_method, including some for incidents
+discovered by a partner organization.
 
 Version 1.2
 ===========
