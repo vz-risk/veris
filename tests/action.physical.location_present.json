@@ -2,6 +2,9 @@
   "incident": {
     "action": {
       "physical": {
+        "location": [
+          "Other"
+        ],
         "notes": "test string",
         "variety": [
           "Other"
@@ -48,6 +51,6 @@
       }
     }
   },
-  "message": "action.physical.location is missing. test should fail.",
+  "message": "action.physical.location is present which is no longer valid in v1.3. Test should fail.",
   "should": "fail"
 }
