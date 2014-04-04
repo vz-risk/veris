@@ -485,6 +485,15 @@
         "No",
         "Unknown"
       ],
+      "data_victim": [
+        "Customer",
+        "Employee",
+        "Other",
+        "Partner",
+        "Patient",
+        "Student",
+        "Unknown"
+      ],
       "state": [
         "Stored",
         "Stored encrypted",
@@ -790,7 +799,7 @@
     "Ext - unknown",
     "Int - antivirus",
     "Int - incident response",
-    "Int - infrastructure monitoring"
+    "Int - infrastructure monitoring",
     "Int - financial audit",
     "Int - fraud detection",
     "Int - HIDS",

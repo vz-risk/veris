@@ -484,6 +484,14 @@
             "data_total": {
               "type": "integer"
             },
+            "data_victim": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
             "notes": {
               "type": "string"
             },

@@ -34,7 +34,7 @@
         "data_disclosure": "Yes",
         "data_total": 1,
         "data_victim": [
-          "Other"
+          "test"
         ],
         "notes": "test",
         "state": [
@@ -52,6 +52,6 @@
       }
     }
   },
-  "message": "Valid incident with all confidentiality values set. Test should pass.",
-  "should": "pass"
+  "message": "attribute.confidentiality.data_victim has invalid value. test should fail.",
+  "should": "fail"
 }
