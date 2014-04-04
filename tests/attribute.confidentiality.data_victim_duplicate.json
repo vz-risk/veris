@@ -34,6 +34,7 @@
         "data_disclosure": "Yes",
         "data_total": 1,
         "data_victim": [
+          "Other",
           "Other"
         ],
         "notes": "test",
@@ -52,6 +53,6 @@
       }
     }
   },
-  "message": "Valid incident with all confidentiality values set. Test should pass.",
-  "should": "pass"
+  "message": "attribute.confidentiality.data_victim has duplicate value. test should fail.",
+  "should": "fail"
 }

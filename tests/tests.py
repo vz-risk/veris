@@ -33,7 +33,7 @@ schema['properties']['attribute']['properties']['confidentiality']['properties']
 schema['properties']['attribute']['properties']['confidentiality']['properties']['data_disclosure']['pattern'] = '|'.join(enum['attribute']['confidentiality']['data_disclosure'])
 schema['properties']['attribute']['properties']['confidentiality']['properties']['state']['items']['enum'] = enum['attribute']['confidentiality']['state']
 schema['properties']['attribute']['properties']['integrity']['properties']['variety']['items']['enum'] = enum['attribute']['integrity']['variety']
-
+schema['properties']['attribute']['properties']['confidentiality']['properties']['data_victim']['items']['enum'] = enum['attribute']['confidentiality']['data_victim']
 # impact
 schema['properties']['impact']['properties']['iso_currency_code']['patter'] = '|'.join(enum['iso_currency_code'])
 schema['properties']['impact']['properties']['loss']['items']['properties']['variety']['pattern'] = '|'.join(enum['impact']['loss']['variety'])
