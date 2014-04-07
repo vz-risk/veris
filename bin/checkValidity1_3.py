@@ -92,10 +92,10 @@ def checkSocialIntegrity(inDict):
       raise ValidationError("acton.social present, but Alter behavior not in attribute.integrity.variety")
   return True
 
-def checkSQLMisappropriation(inDict):
+def checkSQLiRepurpose(inDict):
   if 'SQLi' in inDict.get('action',{}).get('hacking',{}).get('variety',[]):
-    if 'Misappropriation' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
-      raise ValidationError("action.hacking.SQLi present but Misappropriation not in attribute.integrity.variety")
+    if 'Repurpose' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
+      raise ValidationError("action.hacking.SQLi present but Repurpose not in attribute.integrity.variety")
   return True
 
 def checkSecurityIncident(inDict):
@@ -180,7 +180,7 @@ if __name__ == '__main__':
               validate(incident, schema)
               checkMalwareIntegrity(incident)
               checkSocialIntegrity(incident)
-              checkSQLMisappropriation(incident)
+              checkSQLiRepurpose(incident)
               checkSecurityIncident(incident)
               checkLossTheftAvailability(incident)
           except ValidationError as e:
