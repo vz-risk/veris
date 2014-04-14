@@ -85,7 +85,7 @@
         "Null byte injection",
         "Offline cracking",
         "OS commanding",
-	"Pass-the-hash",
+        "Pass-the-hash",
         "Path traversal",
         "RFI",
         "Reverse engineering",
@@ -162,6 +162,7 @@
         "Network propagation",
         "Remote injection",
         "Removable media",
+	"Software update",
         "Web drive-by",
         "Web download",
         "Unknown",
@@ -193,7 +194,7 @@
       ]
     },
     "physical": {
-      "location": [
+      "vector": [
         "Partner facility",
         "Partner vehicle",
         "Personal residence",
@@ -209,22 +210,16 @@
       ],
       "variety": [
         "Assault",
+        "Bypassed controls",
         "Destruction",
+        "Disabled controls",
+        "Skimming",
         "Snooping",
         "Surveillance",
         "Tampering",
         "Theft",
         "Wiretapping",
         "Connection",
-        "Unknown",
-        "Other"
-      ],
-      "vector": [
-        "Privileged access",
-        "Visitor privileges",
-        "Bypassed controls",
-        "Disabled controls",
-        "Uncontrolled location",
         "Unknown",
         "Other"
       ]
@@ -317,6 +312,20 @@
         "System admin",
         "Unknown",
         "Other"
+      ],
+      "job_change": [
+	"Hired",
+	"Promoted",
+	"Lateral move",
+	"Resigned",
+	"Let go",
+	"Demoted",
+	"Passed over",
+	"Unknown",
+	"Other",
+	"Reprimanded",
+	"Job eval",
+	"Personal issues"
       ]
     },
     "motive": [
@@ -334,13 +343,6 @@
     ]
   },
   "asset": {
-    "accessibility": [
-      "External",
-      "Internal",
-      "Isolated",
-      "Unknown",
-      "NA"
-    ],
     "cloud": [
       "Hypervisor",
       "Partner application",
@@ -351,27 +353,13 @@
       "Unknown",
       "Other"
     ],
-    "hosting": [
-      "Internal",
-      "External shared",
-      "External dedicated",
-      "External",
-      "Unknown",
-      "NA"
-    ],
-    "management": [
-      "Internal",
-      "External",
-      "Unknown",
-      "NA"
-    ],
-    "ownership": [
-      "Victim",
-      "Employee",
-      "Partner",
-      "Customer",
-      "Unknown",
-      "NA"
+    "governance" : [
+      "Personally owned",
+      "3rd party owned",
+      "3rd party managed",
+      "3rd party hosted",
+      "Internally isolated",
+      "Unknown"
     ],
     "variety": [
       "S - Authentication",
@@ -478,15 +466,15 @@
           "Bank",
           "Classified",
           "Copyrighted",
-	  "Digital certificate",
+          "Digital certificate",
           "Medical",
           "Payment",
           "Personal",
           "Internal",
-	  "Source code",
+          "Source code",
           "System",
           "Secrets",
-	  "Virtual currency",
+          "Virtual currency",
           "Unknown",
           "Other"
         ]
@@ -495,6 +483,15 @@
         "Yes",
         "Potentially",
         "No",
+        "Unknown"
+      ],
+      "data_victim": [
+        "Customer",
+        "Employee",
+        "Other",
+        "Partner",
+        "Patient",
+        "Student",
         "Unknown"
       ],
       "state": [
@@ -802,16 +799,28 @@
     "Ext - unknown",
     "Int - antivirus",
     "Int - incident response",
+    "Int - infrastructure monitoring",
     "Int - financial audit",
     "Int - fraud detection",
     "Int - HIDS",
-    "Int - IT audit",
+    "Int - IT review",
     "Int - log review",
     "Int - NIDS",
     "Ext - law enforcement",
     "Int - security alarm",
-    "Int - reported by user",
+    "Int - reported by employee",
     "Int - unknown",
+    "Prt - monitoring service",
+    "Prt - audit",
+    "Prt - antivirus",
+    "Prt - incident response",
+    "Prt - Unknown",
+    "Prt - Other",
+    "Ext - incident response",
+    "Ext - found documents",
+    "Ext - suspicious traffic",
+    "Ext - emergency response team",
+    "Int - data loss prevention",
     "Unknown",
     "Other"
   ],

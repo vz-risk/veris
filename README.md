@@ -1,6 +1,9 @@
-# Terms of Use
-Verizon grants you a limited, revocable, personal and nontransferable license to use the Verizon Enterprise Risk and Incident Sharing Framework for purposes of collecting, organizing and reporting security incident information for non-commercial purposes.  For purposes of this paragraph, "non-commercial purposes" includes organizing and reporting security incident information according to the framework, whether or not for compensation.  But "non-commercial" does not include any attempt to obtain compensation for providing access to, use of, or rights in the framework. 
+# Running validation tests
+Unit tests are written in nose, so you'll need to `pip install nose`. Then from the root of the repository, run `nosetests`. Python will automatically run 
+the tests in the tests folder. If you want detailed output you can run `nosetests --nocapture`.
 
+## Writing unit tests
+Each unit test is a VERIS json object wrapped inside another object. Each test object has three keys, "incident" should be a VERIS json object; "should" indicates whether the incident should pass or fail validation; "message is a string that explains why the incident should or should not pass validation."
 #---
 http://veriscommunity.net
 
