@@ -3,6 +3,20 @@ import argparse
 import logging
 from glob import glob
 
+def getCountryCode():
+    country_codes = sj.loads(open('all.json').read())
+    country_code_remap = {'Unknown':'000000'}
+    for eachCountry in country_codes:
+        try:
+            country_code_remap[eachCountry['alpha-2']] = eachCountry['region-code']
+        except:
+            country_code_remap[eachCountry['alpha-2']] = "000"
+        try:
+            country_code_remap[eachCountry['alpha-2']] += eachCountry['sub-region-code']
+        except:
+            country_code_remap[eachCountry['alpha-2']] += "000"
+    return country_code_remap
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Converts VERIS 1.2 incidents to v1.3")
     parser.add_argument("-l", "--logging", choices=["critical", "warning", "info"],
@@ -12,6 +26,8 @@ if __name__ == '__main__':
     logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL, 'info': logging.INFO}
     logging.basicConfig(level=logging_remap[args.logging])
     data_paths = [x + '/*.json' for x in args.path]
+    country_region = getCountryCode()
+
     for eachDir in data_paths:
         for eachFile in glob(eachDir):
           logging.info("Now processing %s" % eachFile)
@@ -35,6 +51,27 @@ if __name__ == '__main__':
           if type(incident.get('victim',{}).get('country',[])) != type(list()):
             logging.info("\tChanging victim.country to list.")
             incident['victim']['country'] = [incident['victim']['country']]
+
+          # Create region codes
+          logging.info("\tWriting region codes")
+          if 'country' in incident['actor'].get('external',{}):
+            incident['actor']['external']['region'] = []
+            for each in incident['actor']['external']['country']:
+              incident['actor']['external']['region'].append(country_region[each])
+          if 'country' in incident['actor'].get('partner',{}):
+            incident['actor']['partner']['region'] = []
+            for each in incident['actor']['partner']['country']:
+              incident['actor']['partner']['region'].append(country_region[each])
+          if 'country' in incident['victim']:
+            incident['victim']['region'] = []
+            for each in incident['victim']['country']:
+              incident['victim']['region'].append(country_region[each])
+          if 'region' in incident['actor'].get('external',{}):
+            incident['actor']['external']['region'] = list(set(incident['actor']['external']['region']))
+          if 'region' in incident['actor'].get('partner',{}):
+            incident['actor']['partner']['region'] = list(set(incident['actor']['partner']['region']))
+          if 'region' in incident['victim']:
+            incident['victim']['region'] = list(set(incident['victim']['region']))
 
           # Build a whole new physical section
           if 'physical' in incident['action']:

@@ -45,7 +45,7 @@
       "industry": "31-33",
       "locations_affected": 1,
       "notes": "test",
-      "region": "002000",
+      "region": ["002000"],
       "revenue": {
         "amount": 1000000,
         "iso_currency_code": "USD"

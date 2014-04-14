@@ -13,7 +13,7 @@
         ],
         "name":["test1","test2"],
         "notes": "test",
-        "region": "002000",
+        "region": ["002000"],
         "variety": [
           "Other"
         ]
