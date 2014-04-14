@@ -13,7 +13,7 @@
           "NA"
         ],
         "notes": "This is a test",
-        "region": "002000"
+        "region": ["002000"]
       }
     },
     "asset": {

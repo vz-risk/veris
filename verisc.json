@@ -264,9 +264,14 @@
               "type": "string"
             },
             "region": {
-              "maxLength": 6,
-              "minLength": 6,
-              "type": "string"
+              "items": {
+                "type": "string",
+                "maxLength":6,
+                "minLength":6
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
             },
             "variety": {
               "items": {
@@ -350,9 +355,14 @@
               "type": "string"
             },
             "region": {
-              "maxLength": 6,
-              "minLength": 6,
-              "type": "string"
+              "items": {
+                "type": "string",
+                "maxLength":6,
+                "minLength":6
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
             }
           },
           "required": [
@@ -769,9 +779,14 @@
           "type": "string"
         },
         "region": {
-          "maxLength": 6,
-          "minLength": 6,
-          "type": "string"
+          "items": {
+            "type": "string",
+            "maxLength":6,
+            "minLength":6
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
         },
         "revenue": {
           "additionalProperties": false,
