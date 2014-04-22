@@ -37,6 +37,9 @@ if __name__ == '__main__':
               logging.warning("ERROR: %s did not parse properly. Skipping" % eachFile)
               continue
 
+          # Update the schema version
+          incident['schema_version'] = "1.3.0"
+
           # Make the external actor country a list
           if type(incident.get('actor',{}).get('external',{}).get('country',[])) != type(list()):
             logging.info("\tChanging actor.external.country to list.")
