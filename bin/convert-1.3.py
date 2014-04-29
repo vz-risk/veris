@@ -140,6 +140,7 @@ if __name__ == '__main__':
           # Rename related_incidents
           if incident.get('related_incidents',"") != "":
             incident['campaign_id'] = incident['related_incidents']
+          if "related_incidents" in incident:
             incident.pop('related_incidents')
 
           #Now save the finished incident
