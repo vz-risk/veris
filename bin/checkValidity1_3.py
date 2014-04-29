@@ -9,8 +9,10 @@ import ConfigParser
 import logging
 from glob import glob
 
+defaultSchema = "../verisc.json"
+defaultEnum = "../verisc-enum.json"
 
-def buildSchema(schema, enum):
+def buildSchema(schema, enum, plus):
     # All of the action enumerations
     for each in ['hacking', 'malware', 'social', 'error', 'misuse', 'physical']:
         schema['properties']['action']['properties'][each]['properties']['variety']['items']['enum'] = \
@@ -78,6 +80,9 @@ def buildSchema(schema, enum):
     for each in ['confidence', 'cost_corrective_action', 'discovery_method', 'security_incident', 'targeted']:
         schema['properties'][each]['pattern'] = '|'.join(enum[each])
 
+    # Plus section
+    schema['properties']['plus'] =  plus
+
     return schema # end of buildSchema()
 
 def checkMalwareIntegrity(inDict):
@@ -119,20 +124,47 @@ def checkLossTheftAvailability(inDict):
 if __name__ == '__main__':
     # TODO: implement config file options for all of these
     parser = argparse.ArgumentParser(description="Checks a set of json files to see if they are valid VERIS incidents")
-    parser.add_argument("-s", "--schema", help="schema file to validate with", default="../verisc.json")
-    parser.add_argument("-e", "--enum", help="enumeration file to validate with", default="../verisc-enum.json")
-    parser.add_argument("-l", "--logging", choices=["critical", "warning", "info"],
+    parser.add_argument("-s", "--schema", help="schema file to validate with")
+    parser.add_argument("-e", "--enum", help="enumeration file to validate with")
+    parser.add_argument("-l", "--logging", choices=["critical", "warning", "info", "debug"],
                         help="Minimum logging level to display", default="warning")
     parser.add_argument("-p", "--path", nargs='+', help="list of paths to search for incidents")
+    parser.add_argument("-u", "--plus", help="optional schema for plus section")
     args = parser.parse_args()
-    logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL, 'info': logging.INFO}
+    logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL, 'info': logging.INFO, 'debug': logging.DEBUG}
     logging.basicConfig(level=logging_remap[args.logging])
     logging.info("Now starting checkValidity.")
 
-    # Do we want to fix this? Should command line OVERRIDE config file
-    # or just add to the list of places to look?
     config = ConfigParser.ConfigParser()
-    config.read('checkValidity.cfg')
+    config.read('_checkValidity.cfg')
+
+    if args.schema:
+      schema_file = args.schema
+    else:
+      try:
+        schema_file = config.get('VERIS','schemafile')
+      except ConfigParser.Error:
+        logging.warning("No schemafile specified in config file. Using default")
+        schema_file = defaultSchema
+
+    if args.enum:
+      enum_file = args.enum
+    else:
+      try:
+        enum_file = config.get('VERIS','enumfile')
+      except ConfigParser.Error:
+        logging.warning("No enumfile specified in config file. Using default")
+        enum_file = defaultEnum
+
+    if args.plus:
+      plus_file = args.plus
+    else:
+      try:
+        plus_file = config.get('VERIS','plusfile')
+      except ConfigParser.Error:
+        logging.warning("No plus file specified in config file. Using empty")
+        plus_file = "empty"
+
     data_paths = []
     if args.path:
         data_paths = args.path
@@ -141,12 +173,12 @@ if __name__ == '__main__':
             path_to_parse = config.get('VERIS', 'datapath')
             data_paths = path_to_parse.strip().split('\n')
         except ConfigParser.Error:
-            print "No path found in config file, continuing..."
+            logging.warning("No path specified in config file. Using default")
             data_paths = ['.']
             pass
 
     try:
-        sk = simplejson.loads(open(args.schema).read())
+        sk = simplejson.loads(open(schema_file).read())
     except IOError:
         logging.critical("ERROR: schema file not found. Cannot continue.")
         exit(1)
@@ -155,7 +187,7 @@ if __name__ == '__main__':
         exit(1)
 
     try:
-        en = simplejson.loads(open(args.enum).read())
+        en = simplejson.loads(open(enum_file).read())
     except IOError:
         logging.critical("ERROR: enumeration file is not found. Cannot continue.")
         exit(1)
@@ -163,13 +195,26 @@ if __name__ == '__main__':
         logging.critical("ERROR: enumeration file is not parsing properly. Cannot continue.")
         exit(1)
 
+    if plus_file == "empty":
+      pl = {}
+    else:
+      try:
+        pl = simplejson.loads(open(plus_file).read())
+      except IOError:
+        logging.critical("ERROR: plus file is not found. Unable to validate plus section.")
+        pl = {}
+      except simplejson.scanner.JSONDecodeError:
+        logging.critical("ERROR: plus file is not parsing properly. Unable to validate plus section.")
+        pl = {}
+
     # Now we can build the schema which will be used to validate our incidents
-    schema = buildSchema(sk, en)
+    schema = buildSchema(sk, en, pl)
     logging.info("schema assembled successfully.")
 
     data_paths = [x + '/*.json' for x in data_paths]
     for eachDir in data_paths:
         for eachFile in glob(eachDir):
+          logging.debug("Now validating %s" % eachFile)
           try:
               incident = simplejson.loads(open(eachFile).read())
           except simplejson.scanner.JSONDecodeError:
