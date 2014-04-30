@@ -55,6 +55,11 @@ if __name__ == '__main__':
             logging.info("\tChanging victim.country to list.")
             incident['victim']['country'] = [incident['victim']['country']]
 
+          # Make the asset country a list
+          if type(incident.get('asset',{}).get('country',[])) != type(list()):
+            logging.info("\tChanging asset.country to list.")
+            incident['asset']['country'] = [incident['asset']['country']]
+
           # Create region codes
           logging.info("\tWriting region codes")
           if 'country' in incident['actor'].get('external',{}):
@@ -135,6 +140,7 @@ if __name__ == '__main__':
           # Rename related_incidents
           if incident.get('related_incidents',"") != "":
             incident['campaign_id'] = incident['related_incidents']
+          if "related_incidents" in incident:
             incident.pop('related_incidents')
 
           #Now save the finished incident
