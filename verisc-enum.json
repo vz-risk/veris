@@ -162,7 +162,7 @@
         "Network propagation",
         "Remote injection",
         "Removable media",
-	"Software update",
+	      "Software update",
         "Web drive-by",
         "Web download",
         "Unknown",
@@ -205,6 +205,9 @@
         "Victim work area",
         "Victim public area",
         "Victim grounds",
+        "Visitor privileges",
+        "Uncontrolled location",
+        "Privileged access"
         "Unknown",
         "Other"
       ],
@@ -213,7 +216,7 @@
         "Bypassed controls",
         "Destruction",
         "Disabled controls",
-        "Skimming",
+        "Skimmer",
         "Snooping",
         "Surveillance",
         "Tampering",
@@ -314,18 +317,18 @@
         "Other"
       ],
       "job_change": [
-	"Hired",
-	"Promoted",
-	"Lateral move",
-	"Resigned",
-	"Let go",
-	"Demoted",
-	"Passed over",
-	"Unknown",
-	"Other",
-	"Reprimanded",
-	"Job eval",
-	"Personal issues"
+      	"Hired",
+      	"Promoted",
+      	"Lateral move",
+      	"Resigned",
+      	"Let go",
+      	"Demoted",
+      	"Passed over",
+      	"Unknown",
+      	"Other",
+      	"Reprimanded",
+      	"Job eval",
+      	"Personal issues"
       ]
     },
     "motive": [

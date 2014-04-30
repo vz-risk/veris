@@ -85,6 +85,7 @@
         "Offline cracking": "Offline password or key cracking (e.g., rainbow tables, Hashcat, JtR)",
         "Other": "Other",
         "Path traversal": "Path traversal",
+        "Pass-the-hash": "Pass-the-hash",
         "RFI": "Remote file inclusion",
         "Reverse engineering": "Reverse engineering",
         "Routing detour": "Routing detour",
@@ -162,6 +163,7 @@
         "Other": "Other",
         "Remote injection": "Remotely injected by agent (i.e. via SQLi)",
         "Removable media": "Removable storage media or devices",
+        "Software update": "Included in automated software update",
         "Unknown": "Unknown",
         "Web download": "Web via user-executed or downloaded content",
         "Web drive-by": "Web via auto-executed or \"drive-by\" infection"
@@ -171,11 +173,11 @@
       "variety": {
         "Data mishandling": "Handling of data in an unapproved manner",
         "Email misuse": "Inappropriate use of email or IM",
-        "Embezzlement": "Embezzlement, skimming, and related fraud",
         "Illicit content": "Storage or distribution of illicit content",
         "Knowledge abuse": "Abuse of private or entrusted knowledge",
         "Net misuse": "Inappropriate use of network or Web access",
         "Other": " Other",
+        "Possession abuse": "Abuse of physical access to asset",
         "Privilege abuse": "Abuse of system access privileges",
         "Unapproved hardware": "Use of unapproved hardware or devices",
         "Unapproved software": "Use of unapproved software or services",
@@ -192,25 +194,14 @@
       }
     },
     "physical": {
-      "location": {
-        "Other": "Other",
-        "Partner facility": "Partner facility or area",
-        "Partner vehicle": "Partner vehicle (e.g., delivery truck)",
-        "Personal residence": "Personal residence",
-        "Personal vehicle": "Personal vehicle",
-        "Public facility": "Public facility or area",
-        "Public vehicle": "Public vehicle (e.g., plane, taxi)",
-        "Unknown": "Unknown",
-        "Victim grounds": "Victim outdoor grounds",
-        "Victim public area": "Victim public or customer area (e.g., lobby, storefront)",
-        "Victim secure area": "Victim high security area (e.g., server room, R&D labs)",
-        "Victim work area": "Victim private or work area (e.g., office space)"
-      },
       "variety": {
         "Assault": "Assault (threats or acts of physical violence)",
+        "Bypassed controls": "Bypassed physical barriers or controls",
+        "Disabled controls": "Disabled physical barriers or controls",
         "Connection": "Connection",
         "Other": "Other",
-        "Sabotage": "Sabotage (deliberate damaging or disabling)",
+        "Destruction": "Destruction (deliberate damaging or disabling)",
+        "Skimmer": "Installing card skimming device",
         "Snooping": "Snooping (sneak about to gain info or access)",
         "Surveillance": "Surveillance (monitoring and observation)",
         "Tampering": "Tampering (alter physical form or function)",
@@ -219,12 +210,20 @@
         "Wiretapping": "Wiretapping (Physical tap to comms line)"
       },
       "vector": {
-        "Bypassed controls": "Bypassed physical barriers or controls",
-        "Disabled controls": "Disabled physical barriers or controls",
         "Other": "Other",
+        "Partner facility": "Partner facility or area",
+        "Partner vehicle": "Partner vehicle (e.g., delivery truck)",
+        "Personal residence": "Personal residence",
+        "Personal vehicle": "Personal vehicle",
+        "Public facility": "Public facility or area",
+        "Public vehicle": "Public vehicle (e.g., plane, taxi)",
         "Privileged access": "Held privileged access to location",
         "Uncontrolled location": "The location was uncontrolled (public)",
         "Unknown": "Unknown",
+        "Victim grounds": "Victim outdoor grounds",
+        "Victim public area": "Victim public or customer area (e.g., lobby, storefront)",
+        "Victim secure area": "Victim high security area (e.g., server room, R&D labs)",
+        "Victim work area": "Victim private or work area (e.g., office space)",
         "Visitor privileges": "Given temporary visitor access"
       }
     },
@@ -316,6 +315,20 @@
         "Other": "Other",
         "System admin": "System or network administrator",
         "Unknown": "Unknown"
+      },
+      "job_change": {
+        "Hired": "Recently hired",
+        "Promoted": "Recently promoted",
+        "Lateral move": "Lateral move",
+        "Resigned": "Recently resigned",
+        "Let go": "Fired, laid off, or let go",
+        "Demoted": "Recently demoted or hours reduced",
+        "Passed over": "Recently passed over for promotion",
+        "Unknown": "Unknown",
+        "Other": "Other",
+        "Reprimanded": "Recently reprimanded",
+        "Job eval": "Recent poor job evaluation",
+        "Personal issues": "Personal issues"
       }
     },
     "motive": {
@@ -328,6 +341,7 @@
       "Ideology": "Ideology or protest",
       "NA": "Not Applicable (unintentional action)",
       "Other": "Other",
+      "Secondary": "Aid in a different attack",
       "Unknown": "Unknown"
     }
   },
@@ -348,6 +362,14 @@
       "Partner application": "Application vulnerability in partner-developed application",
       "Unknown": "Unknown",
       "User breakout": "Elevation of privilege by another customer in shared environment"
+    },
+    "governance" : {
+      "Personally owned": "Personally owned asset",
+      "3rd party owned": "Owned by 3rd party",
+      "3rd party managed": "Managed by 3rd party",
+      "3rd party hosted": "Hosted by 3rd party",
+      "Internally isolated": "Isolated internal asset",
+      "Unknown": "Unknown"
     },
     "hosting": {
       "External": "Externally hosted (unsure if dedicated or shared)",
@@ -436,6 +458,7 @@
       "S - SCADA": "Server - SCADA system",
       "S - VM host": "Server - Virtual Host",
       "S - Web application": "Server - Web application",
+      "S - Unknown": "Server - Unknown",
       "T - ATM": "Public Terminal - Automated Teller Machine (ATM)",
       "T - Gas terminal": "Public Terminal - Gas \"pay-at-the-pump\" terminal",
       "T - Kiosk": "Public Terminal - Self-service kiosk",
@@ -475,13 +498,16 @@
           "Classified": "Classified information",
           "Copyrighted": "Copyrighted material",
           "Credentials": "Authentication credentials (e.g., pwds, OTPs, biometrics)",
+          "Digital certificate": "Digital certificate",
           "Internal": "Sensitive internal data (e.g., plans, reports, emails)",
           "Medical": "Medical records",
           "Other": "Other",
           "Payment": "Payment card data (e.g., PAN, PIN, CVV2, Expiration)",
           "Personal": "Personal or identifying information (e.g., addr, ID#, credit score)",
           "Secrets": "Trade secrets",
+          "Source code": "Source code",
           "System": "System information (e.g., config info, open services)",
+          "Virtual currency": "Virtual currency",
           "Unknown": "Unknown"
         }
       },
@@ -490,6 +516,15 @@
         "Potentially": "Potentially (at risk)",
         "Unknown": "Unknown",
         "Yes": "Yes (confirmed)"
+      },
+      "data_victim": {
+        "Customer": "Customer",
+        "Employee": "Employee",
+        "Other": "Other",
+        "Partner": "Partner",
+        "Patient": "Patient",
+        "Student": "Student",
+        "Unknown": "Unknown"
       },
       "state": {
         "Processed": "Processed",
@@ -506,10 +541,11 @@
       "variety": {
         "Alter behavior": "Influence or alter human behavior",
         "Created account": "Created new user account",
+        "Defacement": "Deface content",
         "Fraudulent transaction": "Initiate fraudulent transaction",
         "Hardware tampering": "Hardware tampering or physical alteration",
         "Log tampering": "Log tampering or modification",
-        "Misappropriation": "Misappropriation",
+        "Repurpose": "Repurpose the asset",
         "Misrepresentation": "Misrepresentation",
         "Modify configuration": "Modified configuration or services",
         "Modify data": "Modified stored data or content",
