@@ -833,7 +833,6 @@
     "Ext - monitoring service": "External - managed security event monitoring service",
     "Ext - suspicious traffic": "External - Report of suspicious traffic",
     "Ext - unknown": "External - unknown",
-    "Ext - unrelated party": "External - reported by unrelated external party (not customer, partner, law enforcement)",
     "Int - HIDS": "Internal - host IDS or file integrity monitoring",
     "Int - IT review": "Internal - Informal IT review",
     "Int - NIDS": "Internal - network IDS or IPS alert",
