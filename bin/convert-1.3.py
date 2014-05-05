@@ -2,6 +2,7 @@ import simplejson as sj
 import argparse
 import logging
 from glob import glob
+import os
 
 def getCountryCode():
     country_codes = sj.loads(open('all.json').read())
@@ -22,6 +23,7 @@ if __name__ == '__main__':
     parser.add_argument("-l", "--logging", choices=["critical", "warning", "info"],
                         help="Minimum logging level to display", default="warning")
     parser.add_argument("-p", "--path", nargs='+', help="list of paths to search for incidents")
+    parser.add_argument("-o", "--output", help="output file to write new files. Default is to overwrite.")
     args = parser.parse_args()
     logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL, 'info': logging.INFO}
     logging.basicConfig(level=logging_remap[args.logging])
@@ -144,6 +146,9 @@ if __name__ == '__main__':
             incident.pop('related_incidents')
 
           #Now save the finished incident
-          outfile = open(eachFile,'w')
+          if args.output:
+            outfile = open(os.path.join(args.output,os.path.basename(eachFile)),'w')
+          else:
+            outfile = open(eachFile,'w')
           outfile.write(sj.dumps(incident,indent=2,sort_keys=True))
           outfile.close()
