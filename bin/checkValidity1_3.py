@@ -1,4 +1,4 @@
-#TODO should check if the config file exists before trying to use it.
+# TODO should check if the config file exists before trying to use it.
 
 import simplejson
 import nose
@@ -12,84 +12,87 @@ from glob import glob
 defaultSchema = "../verisc.json"
 defaultEnum = "../verisc-enum.json"
 
+
 def buildSchema(schema, enum, plus):
     # All of the action enumerations
     for each in ['hacking', 'malware', 'social', 'error', 'misuse', 'physical']:
         schema['properties']['action']['properties'][each]['properties']['variety']['items']['enum'] = \
-        enum['action'][each]['variety']
+            enum['action'][each]['variety']
         schema['properties']['action']['properties'][each]['properties']['vector']['items']['enum'] = \
-        enum['action'][each]['vector']
+            enum['action'][each]['vector']
     schema['properties']['action']['properties']['environmental']['properties']['variety']['items']['enum'] = \
-    enum['action']['environmental']['variety']
+        enum['action']['environmental']['variety']
     schema['properties']['action']['properties']['social']['properties']['target']['items']['enum'] = \
-    enum['action']['social']['target']
+        enum['action']['social']['target']
 
     # actor enumerations
     for each in ['external', 'internal', 'partner']:
         schema['properties']['actor']['properties'][each]['properties']['motive']['items']['enum'] = enum['actor'][
             'motive']
     schema['properties']['actor']['properties']['external']['properties']['variety']['items']['enum'] = \
-    enum['actor']['external']['variety']
+        enum['actor']['external']['variety']
     schema['properties']['actor']['properties']['internal']['properties']['variety']['items']['enum'] = \
-    enum['actor']['internal']['variety']
+        enum['actor']['internal']['variety']
     schema['properties']['actor']['properties']['external']['properties']['country']['items']['enum'] = enum['country']
     schema['properties']['actor']['properties']['partner']['properties']['country']['items']['enum'] = enum['country']
 
     # asset properties
-    schema['properties']['asset']['properties']['assets']['items']['properties']['variety']['pattern'] = '|'.join(
-        enum['asset']['variety'])
+    schema['properties']['asset']['properties']['assets']['items']['properties']['variety']['enum'] = \
+        enum['asset']['variety']
     schema['properties']['asset']['properties']['governance']['items']['enum'] = \
         enum['asset']['governance']
 
     # attribute properties
     schema['properties']['attribute']['properties']['availability']['properties']['variety']['items']['enum'] = \
-    enum['attribute']['availability']['variety']
+        enum['attribute']['availability']['variety']
     schema['properties']['attribute']['properties']['availability']['properties']['duration']['properties']['unit'][
-        'pattern'] = '|'.join(enum['timeline']['unit'])
+        'enum'] = enum['timeline']['unit']
     schema['properties']['attribute']['properties']['confidentiality']['properties']['data']['items']['properties'][
-        'variety']['pattern'] = '|'.join(enum['attribute']['confidentiality']['data']['variety'])
+        'variety']['enum'] = enum['attribute']['confidentiality']['data']['variety']
     schema['properties']['attribute']['properties']['confidentiality']['properties']['data_disclosure'][
-        'pattern'] = '|'.join(enum['attribute']['confidentiality']['data_disclosure'])
+        'enum'] = enum['attribute']['confidentiality']['data_disclosure']
     schema['properties']['attribute']['properties']['confidentiality']['properties']['state']['items']['enum'] = \
-    enum['attribute']['confidentiality']['state']
+        enum['attribute']['confidentiality']['state']
     schema['properties']['attribute']['properties']['integrity']['properties']['variety']['items']['enum'] = \
-    enum['attribute']['integrity']['variety']
+        enum['attribute']['integrity']['variety']
 
     # impact
-    schema['properties']['impact']['properties']['iso_currency_code']['patter'] = '|'.join(enum['iso_currency_code'])
-    schema['properties']['impact']['properties']['loss']['items']['properties']['variety']['pattern'] = '|'.join(
-        enum['impact']['loss']['variety'])
-    schema['properties']['impact']['properties']['loss']['items']['properties']['rating']['pattern'] = '|'.join(
-        enum['impact']['loss']['rating'])
-    schema['properties']['impact']['properties']['overall_rating']['patter'] = '|'.join(
-        enum['impact']['overall_rating'])
+    schema['properties']['impact']['properties']['iso_currency_code']['enum'] = enum['iso_currency_code']
+    schema['properties']['impact']['properties']['loss']['items']['properties']['variety']['enum'] = \
+        enum['impact']['loss']['variety']
+    schema['properties']['impact']['properties']['loss']['items']['properties']['rating']['enum'] = \
+        enum['impact']['loss']['rating']
+    schema['properties']['impact']['properties']['overall_rating']['enum'] = \
+        enum['impact']['overall_rating']
 
     # timeline
     for each in ['compromise', 'containment', 'discovery', 'exfiltration']:
-        schema['properties']['timeline']['properties'][each]['properties']['unit']['pattern'] = '|'.join(
-            enum['timeline']['unit'])
+        schema['properties']['timeline']['properties'][each]['properties']['unit']['enum'] = \
+            enum['timeline']['unit']
 
     # victim
-    schema['properties']['victim']['properties']['country']['pattern'] = '|'.join(enum['country'])
-    schema['properties']['victim']['properties']['employee_count']['pattern'] = '|'.join(
-        enum['victim']['employee_count'])
-    schema['properties']['victim']['properties']['revenue']['properties']['iso_currency_code']['pattern'] = '|'.join(
-        enum['iso_currency_code'])
+    schema['properties']['victim']['properties']['country']['items']['enum'] = enum['country']
+    schema['properties']['victim']['properties']['employee_count']['enum'] = \
+        enum['victim']['employee_count']
+    schema['properties']['victim']['properties']['revenue']['properties']['iso_currency_code']['enum'] = \
+        enum['iso_currency_code']
 
     # Randoms
     for each in ['confidence', 'cost_corrective_action', 'discovery_method', 'security_incident', 'targeted']:
-        schema['properties'][each]['pattern'] = '|'.join(enum[each])
+        schema['properties'][each]['enum'] = enum[each]
 
     # Plus section
-    schema['properties']['plus'] =  plus
+    schema['properties']['plus'] = plus
 
-    return schema # end of buildSchema()
+    return schema  # end of buildSchema()
+
 
 def checkMalwareIntegrity(inDict):
-  if 'malware' in inDict['action']:
-    if 'Software installation' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
-      raise ValidationError("Malware present, but no Software installation in attribute.integrity.variety")
-  return True
+    if 'malware' in inDict['action']:
+        if 'Software installation' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
+          raise ValidationError("Malware present, but no Software installation in attribute.integrity.variety")
+    return True
+
 
 def checkSocialIntegrity(inDict):
   if 'social' in inDict['action']:
@@ -97,17 +100,20 @@ def checkSocialIntegrity(inDict):
       raise ValidationError("acton.social present, but Alter behavior not in attribute.integrity.variety")
   return True
 
+
 def checkSQLiRepurpose(inDict):
   if 'SQLi' in inDict.get('action',{}).get('hacking',{}).get('variety',[]):
     if 'Repurpose' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
       raise ValidationError("action.hacking.SQLi present but Repurpose not in attribute.integrity.variety")
   return True
 
+
 def checkSecurityIncident(inDict):
   if inDict['security_incident'] == "Confirmed":
     if 'attribute' not in inDict:
       raise ValidationError("security_incident Confirmed but attribute section not present")
   return True
+
 
 def checkLossTheftAvailability(inDict):
   expectLoss = False
@@ -210,6 +216,7 @@ if __name__ == '__main__':
     # Now we can build the schema which will be used to validate our incidents
     schema = buildSchema(sk, en, pl)
     logging.info("schema assembled successfully.")
+    logging.debug(simplejson.dumps(schema,indent=2,sort_keys=True))
 
     data_paths = [x + '/*.json' for x in data_paths]
     for eachDir in data_paths:
