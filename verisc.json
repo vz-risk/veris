@@ -646,7 +646,10 @@
     "notes": {
       "type": "string"
     },
-    "plus": {},
+    "plus": {
+      "type":"object",
+      "properties":{}
+    },
     "reference": {
       "type": "string"
     },
