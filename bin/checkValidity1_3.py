@@ -128,7 +128,7 @@ def checkLossTheftAvailability(inDict):
 
 def checkPlusAttributeConsistency(inDict):
   if 'confidentiality' in inDict.get('plus', {}).get('attribute', {}):
-    if 'confidentiality' not in inDict.get('attributes', {}):
+    if 'confidentiality' not in inDict.get('attribute', {}):
       raise ValidationError("plus.attribute.confidentiality present but confidentiality is not an affected attribute.")
 
 
