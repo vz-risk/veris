@@ -126,6 +126,11 @@ def checkLossTheftAvailability(inDict):
       raise ValidationError("action.physical.theft or action.error.loss present but attribute.availability.loss not present")
   return True
 
+def checkPlusAttributeConsistency(inDict):
+  if 'confidentiality' in inDict.get('plus', {}).get('attribute', {}):
+    if 'confidentiality' not in inDict.get('attributes', {}):
+      raise ValidationError("plus.attribute.confidentiality present but confidentiality is not an affected attribute.")
+
 
 if __name__ == '__main__':
     # TODO: implement config file options for all of these
@@ -235,6 +240,7 @@ if __name__ == '__main__':
               checkSQLiRepurpose(incident)
               checkSecurityIncident(incident)
               checkLossTheftAvailability(incident)
+              checkPlusAttributeConsistency(incident)
           except ValidationError as e:
               offendingPath = '.'.join(str(x) for x in e.path)
               logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message))
