@@ -10,6 +10,7 @@
           "additionalProperties": false,
           "properties": {
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "variety": {
@@ -30,6 +31,7 @@
           "additionalProperties": false,
           "properties": {
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "variety": {
@@ -62,6 +64,7 @@
               "type": "string"
             },
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "variety": {
@@ -97,6 +100,7 @@
               "type": "string"
             },
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "variety": {
@@ -126,6 +130,7 @@
           "additionalProperties": false,
           "properties": {
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "variety": {
@@ -155,6 +160,7 @@
           "additionalProperties": false,
           "properties": {
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "variety": {
@@ -184,6 +190,7 @@
           "additionalProperties": false,
           "properties": {
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "target": {
@@ -221,6 +228,7 @@
         "unknown": {
           "properties": {
             "notes": {
+              "minLength": 1,
               "type": "string"
             }
           },
@@ -261,6 +269,7 @@
               "uniqueItems": true
             },
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "region": {
@@ -301,6 +310,7 @@
               "uniqueItems": true
             },
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "variety": {
@@ -352,6 +362,7 @@
               "uniqueItems": true
             },
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "region": {
@@ -374,6 +385,7 @@
         "unknown": {
           "properties": {
             "notes": {
+              "minLength": 1,
               "type": "string"
             }
           },
@@ -426,6 +438,7 @@
           "uniqueItems": true
         },
         "notes": {
+          "minLength": 1,
           "type": "string"
         }
       },
@@ -453,6 +466,7 @@
               "type": "object"
             },
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "variety": {
@@ -506,6 +520,7 @@
               "uniqueItems": true
             },
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "state": {
@@ -526,6 +541,7 @@
           "additionalProperties": false,
           "properties": {
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "variety": {
@@ -564,6 +580,7 @@
       "type": "string"
     },
     "discovery_notes": {
+      "minLength": 1,
       "type": "string"
     },
     "impact": {
@@ -601,6 +618,7 @@
           "type": "array"
         },
         "notes": {
+          "minLength": 1,
           "type": "string"
         },
         "overall_amount": {
@@ -644,6 +662,7 @@
       "type": "array"
     },
     "notes": {
+      "minLength": 1,
       "type": "string"
     },
     "plus": {
@@ -782,6 +801,7 @@
           "type": "integer"
         },
         "notes": {
+          "minLength": 1,
           "type": "string"
         },
         "region": {
@@ -815,6 +835,7 @@
               "type": "integer"
             },
             "notes": {
+              "minLength": 1,
               "type": "string"
             },
             "victim_id": {

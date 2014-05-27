@@ -1,10 +1,13 @@
 {
   "incident": {
     "action": {
-      "environmental": {
-        "notes": "these are notes", 
+      "error": {
+        "notes": "", 
         "variety": [
-          "Unknown"
+          "Loss"
+        ], 
+        "vector": [
+          "Other"
         ]
       }
     }, 
@@ -29,6 +32,11 @@
       ]
     }, 
     "attribute": {
+      "availability": {
+        "variety": [
+          "Loss"
+        ]
+      }, 
       "integrity": {
         "variety": [
           "Defacement"
@@ -45,6 +53,6 @@
       }
     }
   }, 
-  "message": "valid incident with error action. test should pass.", 
-  "should": "pass"
+  "message": "action.error.notes is present but empty. test should fail.", 
+  "should": "fail"
 }

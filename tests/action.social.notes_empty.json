@@ -1,10 +1,16 @@
 {
   "incident": {
     "action": {
-      "environmental": {
-        "notes": "these are notes", 
+      "social": {
+        "notes": "", 
+        "target": [
+          "Other"
+        ], 
         "variety": [
-          "Unknown"
+          "Other"
+        ], 
+        "vector": [
+          "Other"
         ]
       }
     }, 
@@ -31,7 +37,7 @@
     "attribute": {
       "integrity": {
         "variety": [
-          "Defacement"
+          "Alter behavior"
         ]
       }
     }, 
@@ -45,6 +51,6 @@
       }
     }
   }, 
-  "message": "valid incident with error action. test should pass.", 
-  "should": "pass"
+  "message": "action.social.notes is present but empty. test should fail.", 
+  "should": "fail"
 }

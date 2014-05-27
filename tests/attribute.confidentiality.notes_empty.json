@@ -1,12 +1,7 @@
 {
   "incident": {
     "action": {
-      "environmental": {
-        "notes": "these are notes", 
-        "variety": [
-          "Unknown"
-        ]
-      }
+      "Unknown": {}
     }, 
     "actor": {
       "external": {
@@ -29,9 +24,21 @@
       ]
     }, 
     "attribute": {
-      "integrity": {
-        "variety": [
-          "Defacement"
+      "confidentiality": {
+        "data": [
+          {
+            "amount": 1, 
+            "variety": "Bank"
+          }
+        ], 
+        "data_disclosure": "Yes", 
+        "data_total": 1, 
+        "data_victim": [
+          "Other"
+        ], 
+        "notes": "", 
+        "state": [
+          "Stored"
         ]
       }
     }, 
@@ -45,6 +52,6 @@
       }
     }
   }, 
-  "message": "valid incident with error action. test should pass.", 
-  "should": "pass"
+  "message": "attribute.confidentiality.notes is present but empty. test should fail", 
+  "should": "fail"
 }

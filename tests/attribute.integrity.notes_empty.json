@@ -1,12 +1,7 @@
 {
   "incident": {
     "action": {
-      "environmental": {
-        "notes": "these are notes", 
-        "variety": [
-          "Unknown"
-        ]
-      }
+      "Unknown": {}
     }, 
     "actor": {
       "external": {
@@ -30,6 +25,7 @@
     }, 
     "attribute": {
       "integrity": {
+        "notes": "", 
         "variety": [
           "Defacement"
         ]
@@ -45,6 +41,6 @@
       }
     }
   }, 
-  "message": "valid incident with error action. test should pass.", 
-  "should": "pass"
+  "message": "attribute.integrity.notes is present but empty. test should fail", 
+  "should": "fail"
 }

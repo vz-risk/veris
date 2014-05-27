@@ -1,12 +1,7 @@
 {
   "incident": {
     "action": {
-      "environmental": {
-        "notes": "these are notes", 
-        "variety": [
-          "Unknown"
-        ]
-      }
+      "Unknown": {}
     }, 
     "actor": {
       "external": {
@@ -43,8 +38,34 @@
       "incident": {
         "year": 2014
       }
+    }, 
+    "victim": {
+      "country": [
+        "US"
+      ], 
+      "employee_count": "1 to 10", 
+      "industry": "000", 
+      "locations_affected": 1, 
+      "notes": "", 
+      "region": [
+        "002000"
+      ], 
+      "revenue": {
+        "amount": 1000000, 
+        "iso_currency_code": "USD"
+      }, 
+      "secondary": {
+        "amount": 2, 
+        "notes": "test", 
+        "victim_id": [
+          "test1", 
+          "test2"
+        ]
+      }, 
+      "state": "MN", 
+      "victim_id": "test"
     }
   }, 
-  "message": "valid incident with error action. test should pass.", 
-  "should": "pass"
+  "message": "victim.notes is present but empty. test should fail", 
+  "should": "fail"
 }

@@ -1,12 +1,7 @@
 {
   "incident": {
     "action": {
-      "environmental": {
-        "notes": "these are notes", 
-        "variety": [
-          "Unknown"
-        ]
-      }
+      "Unknown": {}
     }, 
     "actor": {
       "external": {
@@ -29,9 +24,14 @@
       ]
     }, 
     "attribute": {
-      "integrity": {
+      "availability": {
+        "duration": {
+          "unit": "Days", 
+          "value": 1
+        }, 
+        "notes": "", 
         "variety": [
-          "Defacement"
+          "Loss"
         ]
       }
     }, 
@@ -45,6 +45,6 @@
       }
     }
   }, 
-  "message": "valid incident with error action. test should pass.", 
-  "should": "pass"
+  "message": "attribute.availability.notes is present but empty. test should fail", 
+  "should": "fail"
 }

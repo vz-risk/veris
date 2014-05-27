@@ -1,10 +1,13 @@
 {
   "incident": {
     "action": {
-      "environmental": {
-        "notes": "these are notes", 
+      "physical": {
+        "notes": "", 
         "variety": [
-          "Unknown"
+          "Other"
+        ], 
+        "vector": [
+          "Other"
         ]
       }
     }, 
@@ -45,6 +48,6 @@
       }
     }
   }, 
-  "message": "valid incident with error action. test should pass.", 
-  "should": "pass"
+  "message": "action.physical.notes is present but empty. test should fail.", 
+  "should": "fail"
 }

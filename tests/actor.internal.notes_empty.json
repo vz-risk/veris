@@ -1,23 +1,16 @@
 {
   "incident": {
     "action": {
-      "environmental": {
-        "notes": "these are notes", 
-        "variety": [
-          "Unknown"
-        ]
-      }
+      "Unknown": {}
     }, 
     "actor": {
-      "external": {
-        "country": [
-          "US"
-        ], 
+      "internal": {
         "motive": [
-          "Ideology"
+          "NA"
         ], 
+        "notes": "", 
         "variety": [
-          "Activist"
+          "Auditor"
         ]
       }
     }, 
@@ -45,6 +38,6 @@
       }
     }
   }, 
-  "message": "valid incident with error action. test should pass.", 
-  "should": "pass"
+  "message": "actor.internal.notes is present but empty. test should fail", 
+  "should": "fail"
 }

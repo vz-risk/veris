@@ -1,12 +1,7 @@
 {
   "incident": {
     "action": {
-      "environmental": {
-        "notes": "these are notes", 
-        "variety": [
-          "Unknown"
-        ]
-      }
+      "Unknown": {}
     }, 
     "actor": {
       "external": {
@@ -26,7 +21,15 @@
         {
           "variety": "S - Unknown"
         }
-      ]
+      ], 
+      "cloud": "Other", 
+      "country": [
+        "US"
+      ], 
+      "governance": [
+        "Personally owned"
+      ], 
+      "notes": ""
     }, 
     "attribute": {
       "integrity": {
@@ -45,6 +48,6 @@
       }
     }
   }, 
-  "message": "valid incident with error action. test should pass.", 
-  "should": "pass"
+  "message": "asset.notes is present but empty. test should fail.", 
+  "should": "fail"
 }

@@ -1,10 +1,14 @@
 {
   "incident": {
     "action": {
-      "environmental": {
-        "notes": "these are notes", 
+      "hacking": {
+        "cve": "test", 
+        "notes": "", 
         "variety": [
-          "Unknown"
+          "XSS"
+        ], 
+        "vector": [
+          "VPN"
         ]
       }
     }, 
@@ -45,6 +49,6 @@
       }
     }
   }, 
-  "message": "valid incident with error action. test should pass.", 
-  "should": "pass"
+  "message": "action.hacking.notes is present but empty. test should fail.", 
+  "should": "fail"
 }
