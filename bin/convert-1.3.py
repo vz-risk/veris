@@ -4,28 +4,72 @@ import logging
 from glob import glob
 import os
 
+
 def getCountryCode():
     country_codes = sj.loads(open('all.json').read())
-    country_code_remap = {'Unknown':'000000'}
+    country_code_remap = {'Unknown': '000000'}
     for eachCountry in country_codes:
         try:
-            country_code_remap[eachCountry['alpha-2']] = eachCountry['region-code']
+            country_code_remap[eachCountry['alpha-2']] = \
+                eachCountry['region-code']
         except:
             country_code_remap[eachCountry['alpha-2']] = "000"
         try:
-            country_code_remap[eachCountry['alpha-2']] += eachCountry['sub-region-code']
+            country_code_remap[eachCountry['alpha-2']] += \
+                eachCountry['sub-region-code']
         except:
             country_code_remap[eachCountry['alpha-2']] += "000"
     return country_code_remap
 
+
+def getField(current, txt):
+    tsplit = txt.split('.', 1)
+    if tsplit[0] in current:
+        result = current[tsplit[0]]
+        if len(tsplit) > 1:
+            result = getField(result, tsplit[1])
+    else:
+        result = None
+    return result
+
+
+def grepText(incident, searchFor):
+    txtFields = ['summary', "notes", "victim.notes", "actor.external.notes",
+                 "actor.internal.notes", "actor.partner.notes",
+                 "actor.unknown.notes", "action.malware.notes",
+                 "action.hacking.notes", "action.social.notes",
+                 "action.misuse.notes", "action.physical.notes",
+                 "action.error.notes", "action.environmental.notes",
+                 "asset.notes", "attribute.confidentiality.notes",
+                 "attribute.integrity.notes", "attribute.availability.notes",
+                 "impact.notes", "plus.analyst_notes", "plus.pci.notes"]
+    foundAny = False
+    for txtField in txtFields:
+        curText = getField(incident, txtField)
+        if isinstance(curText, basestring):
+          # TODO Ask Jay if it was right to comment out the following line
+          # if searchFor.lower() in incident['summary'].lower():
+          if searchFor.lower() in curText:
+              foundAny = True
+              break
+        # could be extended to look for fields in lists
+    return foundAny
+
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Converts VERIS 1.2 incidents to v1.3")
-    parser.add_argument("-l", "--logging", choices=["critical", "warning", "info"],
-                        help="Minimum logging level to display", default="warning")
-    parser.add_argument("-p", "--path", nargs='+', help="list of paths to search for incidents")
-    parser.add_argument("-o", "--output", help="output file to write new files. Default is to overwrite.")
+    descriptionText = "Converts VERIS 1.2 incidents to v1.3"
+    helpText = "output file to write new files. Default is to overwrite."
+    parser = argparse.ArgumentParser(description=descriptionText)
+    parser.add_argument("-l", "--logging", choices=["critical",
+                                                    "warning", "info"],
+                        help="Minimum logging level to display",
+                        default="warning")
+    parser.add_argument("-p", "--path", nargs='+',
+                        help="list of paths to search for incidents")
+    parser.add_argument("-o", "--output",
+                        help=helpText)
     args = parser.parse_args()
-    logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL, 'info': logging.INFO}
+    logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL,
+                     'info': logging.INFO}
     logging.basicConfig(level=logging_remap[args.logging])
     data_paths = [x + '/*.json' for x in args.path]
     country_region = getCountryCode()
@@ -36,39 +80,49 @@ if __name__ == '__main__':
           try:
               incident = sj.loads(open(eachFile).read())
           except sj.scanner.JSONDecodeError:
-              logging.warning("ERROR: %s did not parse properly. Skipping" % eachFile)
+              logging.warning(
+                  "ERROR: %s did not parse properly. Skipping" % eachFile)
               continue
 
           # Update the schema version
           incident['schema_version'] = "1.3.0"
 
           # Make the external actor country a list
-          if type(incident.get('actor',{}).get('external',{}).get('country',[])) != type(list()):
+          if type(incident.get('actor', {})
+                          .get('external', {})
+                          .get('country', [])) != type(list()):
             logging.info("\tChanging actor.external.country to list.")
-            incident['actor']['external']['country'] = [incident['actor']['external']['country']]
+            incident['actor']['external']['country'] = \
+                [incident['actor']['external']['country']]
 
           # Make the partner actor country a list
-          if type(incident.get('actor',{}).get('partner',{}).get('country',[])) != type(list()):
+          if type(incident.get('actor', {})
+                          .get('partner', {})
+                          .get('country', [])) != type(list()):
             logging.info("\tChanging actor.partner.country to list.")
-            incident['actor']['partner']['country'] = [incident['actor']['external']['country']]
+            incident['actor']['partner']['country'] = \
+                [incident['actor']['external']['country']]
 
           # Make the victim country a list
-          if type(incident.get('victim',{}).get('country',[])) != type(list()):
+          if type(incident.get('victim', {})
+                          .get('country', [])) != type(list()):
             logging.info("\tChanging victim.country to list.")
             incident['victim']['country'] = [incident['victim']['country']]
 
           # Make the asset country a list
-          if type(incident.get('asset',{}).get('country',[])) != type(list()):
+          if type(incident.get('asset', {})
+                          .get('country', [])) != type(list()):
             logging.info("\tChanging asset.country to list.")
             incident['asset']['country'] = [incident['asset']['country']]
 
           # Create region codes
           logging.info("\tWriting region codes")
-          if 'country' in incident['actor'].get('external',{}):
+          if 'country' in incident['actor'].get('external', {}):
             incident['actor']['external']['region'] = []
             for each in incident['actor']['external']['country']:
-              incident['actor']['external']['region'].append(country_region[each])
-          if 'country' in incident['actor'].get('partner',{}):
+              incident['actor']['external']['region'].append(
+                  country_region[each])
+          if 'country' in incident['actor'].get('partner', {}):
             incident['actor']['partner']['region'] = []
             for each in incident['actor']['partner']['country']:
               incident['actor']['partner']['region'].append(country_region[each])
@@ -144,6 +198,15 @@ if __name__ == '__main__':
             incident['campaign_id'] = incident['related_incidents']
           if "related_incidents" in incident:
             incident.pop('related_incidents')
+
+          # Defacement:
+          # if hacking action exist, search for any summary/notes for "deface" (defaced, defacement)
+          # and add the new hacking variety
+          if 'hacking' in incident['action']:
+            if grepText(incident, 'deface'):
+              incident['attribute']['integrity'] = incident['attribute'].get('integrity', {})
+              incident['attribute']['integrity']['variety'] = incident['attribute']['integrity'].get('variety', [])
+              incident['attribute']['integrity']['variety'].append('Defacement')
 
           #Now save the finished incident
           if args.output:
