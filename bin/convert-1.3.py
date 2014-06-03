@@ -47,9 +47,11 @@ def grepText(incident, searchFor):
     for txtField in txtFields:
         curText = getField(incident, txtField)
         if isinstance(curText, basestring):
-            if searchFor.lower() in incident['summary'].lower():
-                foundAny = True
-                break
+          # TODO Ask Jay if it was right to comment out the following line
+          # if searchFor.lower() in incident['summary'].lower():
+          if searchFor.lower() in curText:
+              foundAny = True
+              break
         # could be extended to look for fields in lists
     return foundAny
 
@@ -78,39 +80,49 @@ if __name__ == '__main__':
           try:
               incident = sj.loads(open(eachFile).read())
           except sj.scanner.JSONDecodeError:
-              logging.warning("ERROR: %s did not parse properly. Skipping" % eachFile)
+              logging.warning(
+                  "ERROR: %s did not parse properly. Skipping" % eachFile)
               continue
 
           # Update the schema version
           incident['schema_version'] = "1.3.0"
 
           # Make the external actor country a list
-          if type(incident.get('actor',{}).get('external',{}).get('country',[])) != type(list()):
+          if type(incident.get('actor', {})
+                          .get('external', {})
+                          .get('country', [])) != type(list()):
             logging.info("\tChanging actor.external.country to list.")
-            incident['actor']['external']['country'] = [incident['actor']['external']['country']]
+            incident['actor']['external']['country'] = \
+                [incident['actor']['external']['country']]
 
           # Make the partner actor country a list
-          if type(incident.get('actor',{}).get('partner',{}).get('country',[])) != type(list()):
+          if type(incident.get('actor', {})
+                          .get('partner', {})
+                          .get('country', [])) != type(list()):
             logging.info("\tChanging actor.partner.country to list.")
-            incident['actor']['partner']['country'] = [incident['actor']['external']['country']]
+            incident['actor']['partner']['country'] = \
+                [incident['actor']['external']['country']]
 
           # Make the victim country a list
-          if type(incident.get('victim',{}).get('country',[])) != type(list()):
+          if type(incident.get('victim', {})
+                          .get('country', [])) != type(list()):
             logging.info("\tChanging victim.country to list.")
             incident['victim']['country'] = [incident['victim']['country']]
 
           # Make the asset country a list
-          if type(incident.get('asset',{}).get('country',[])) != type(list()):
+          if type(incident.get('asset', {})
+                          .get('country', [])) != type(list()):
             logging.info("\tChanging asset.country to list.")
             incident['asset']['country'] = [incident['asset']['country']]
 
           # Create region codes
           logging.info("\tWriting region codes")
-          if 'country' in incident['actor'].get('external',{}):
+          if 'country' in incident['actor'].get('external', {}):
             incident['actor']['external']['region'] = []
             for each in incident['actor']['external']['country']:
-              incident['actor']['external']['region'].append(country_region[each])
-          if 'country' in incident['actor'].get('partner',{}):
+              incident['actor']['external']['region'].append(
+                  country_region[each])
+          if 'country' in incident['actor'].get('partner', {}):
             incident['actor']['partner']['region'] = []
             for each in incident['actor']['partner']['country']:
               incident['actor']['partner']['region'].append(country_region[each])
@@ -186,6 +198,15 @@ if __name__ == '__main__':
             incident['campaign_id'] = incident['related_incidents']
           if "related_incidents" in incident:
             incident.pop('related_incidents')
+
+          # Defacement:
+          # if hacking action exist, search for any summary/notes for "deface" (defaced, defacement)
+          # and add the new hacking variety
+          if 'hacking' in incident['action']:
+            if grepText(incident, 'deface'):
+              incident['attribute']['integrity'] = incident['attribute'].get('integrity', {})
+              incident['attribute']['integrity']['variety'] = incident['attribute']['integrity'].get('variety', [])
+              incident['attribute']['integrity']['variety'].append('Defacement')
 
           #Now save the finished incident
           if args.output:
