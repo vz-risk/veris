@@ -29,35 +29,16 @@
       <div class="inner clearfix">
         <section id="main-content">
           <h3>
-<a name="VERIS-start" class="anchor" href="#VERIS-start"><span class="octicon octicon-link"></span></a>VERIS</h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-<p>The Vocabulary for Event Recording and Incident Sharing (VERIS) is a set of metrics designed to provide a common language for describing security incidents in a structured and repeatable manner. VERIS is a response to one of the most critical and persistent challenges in the security industry - a lack of quality information. VERIS targets this problem by helping organizations to collect useful incident-related information and to share that information - anonymously and responsibly - with others. The overall goal is to lay a foundation from which we can constructively and cooperatively learn from our experiences to better measure and manage risk.
-
-This site serves as a central hub for all things VERIS. On it, you will find information and resources for leveraging VERIS in your organization as well as interacting with the growing community of users. We hope you'll become part of that community, and help build a set of valuable information that benefits us all.
-
-</p>
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
 <pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
 $ git checkout gh-pages
 </code></pre>
 
-<a name="VERIS-Resources" class="anchor" href="#VERIS-Resources"><span class="octicon octicon-link"></span></a>VERIS Resources</h4>
-
-<p>overview: A brief summary of VERIS and what it can do for you.
-
-schema: The latest VERIS schema files are available on GitHub. We moved from v1.2 to 1.3 in 2014 (currently in json format) and will be maintaining a regular update schedule from this time forward (probably annually or bi-annually).
-
-documentation: This wiki is the primary source of supporting documentation pertaining to the VERIS Community schema. When the current update process is complete, it will provide additional guidance and commentary on the schema and its use.
-
-data: The VERIS Community Database (VCDB) is an open and free repository of publicly-reported security incidents in VERIS format. You can grab the raw data or use an interactive dashboard.
-
-publications: We encourage those using VERIS to share incidents and/or publish their findings with the community. Those we know of are listed below (If this list looks short, that's because it is; wanna help us extend it?).
-
-Verizon's Data Breach Investigations Reports (DBIR) contain statistics from thousands of incidents classified using VERIS, and are available here.
-interact: We know mailing lists have lost much of their former glory, but they're still a pretty good way to interact with a large group. VERIS has one, and you can sign up here
-
-assistance: If you need to directly contact those responsible for developing and overseeing VERIS, send an email to admin {at} veriscommunity {dot} net.</p>
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
 <h3>
 <a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
