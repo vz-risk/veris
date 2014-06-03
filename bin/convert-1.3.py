@@ -47,8 +47,6 @@ def grepText(incident, searchFor):
     for txtField in txtFields:
         curText = getField(incident, txtField)
         if isinstance(curText, basestring):
-          # TODO Ask Jay if it was right to comment out the following line
-          # if searchFor.lower() in incident['summary'].lower():
           if searchFor.lower() in curText:
               foundAny = True
               break
