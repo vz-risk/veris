@@ -47,8 +47,6 @@ def grepText(incident, searchFor):
     for txtField in txtFields:
         curText = getField(incident, txtField)
         if isinstance(curText, basestring):
-          # TODO Ask Jay if it was right to comment out the following line
-          # if searchFor.lower() in incident['summary'].lower():
           if searchFor.lower() in curText:
               foundAny = True
               break
@@ -130,40 +128,44 @@ if __name__ == '__main__':
             incident['victim']['region'] = []
             for each in incident['victim']['country']:
               incident['victim']['region'].append(country_region[each])
-          if 'region' in incident['actor'].get('external',{}):
-            incident['actor']['external']['region'] = list(set(incident['actor']['external']['region']))
-          if 'region' in incident['actor'].get('partner',{}):
-            incident['actor']['partner']['region'] = list(set(incident['actor']['partner']['region']))
+          if 'region' in incident['actor'].get('external', {}):
+            incident['actor']['external']['region'] = \
+                list(set(incident['actor']['external']['region']))
+          if 'region' in incident['actor'].get('partner', {}):
+            incident['actor']['partner']['region'] = \
+                list(set(incident['actor']['partner']['region']))
           if 'region' in incident['victim']:
-            incident['victim']['region'] = list(set(incident['victim']['region']))
+            incident['victim']['region'] = \
+                list(set(incident['victim']['region']))
 
           # Build a whole new physical section
           if 'physical' in incident['action']:
             logging.info("\tbuilding a new physical section")
-            new_physical = {'variety':[],'vector':[]}
+            new_physical = {'variety': [], 'vector': []}
             new_physical['vector'] = incident['action']['physical']['location']
             new_physical['variety'] = incident['action']['physical']['variety']
             for each in incident['action']['physical']['vector']:
-              if each in ["Bypassed controls","Disabled controls"]:
+              if each in ["Bypassed controls", "Disabled controls"]:
                 new_physical['variety'].append(each)
             incident['action']['physical'] = new_physical
 
           # management, hosting, ownership, accessibility
           logging.info("\tFixing the asset management, hosting, ownership, and accessibility")
           incident['asset']['governance'] = []
-          if 'Victim' in incident['asset'].get('ownership',[]):
+          if 'Victim' in incident['asset'].get('ownership', []):
             incident['asset']['governance'].append("Personally owned")
-          if 'Partner' in incident['asset'].get('ownership',[]):
+          if 'Partner' in incident['asset'].get('ownership', []):
             incident['asset']['governance'].append("3rd party owned")
-          if 'External' in incident['asset'].get('management',[]):
+          if 'External' in incident['asset'].get('management', []):
             incident['asset']['governance'].append("3rd party managed")
           for h in ['External shared', 'External dedicated', 'External']:
-            if h in incident['asset'].get('hosting',[]):
+            if h in incident['asset'].get('hosting', []):
                 incident['asset']['governance'].append("3rd party hosted")
-          incident['asset']['governance'] = list(set(incident['asset']['governance']))
+          incident['asset']['governance'] = \
+              list(set(incident['asset']['governance']))
           if len(incident['asset']['governance']) == 0:
             incident['asset'].pop('governance')
-          if 'Isolated' in incident['asset'].get('accessibility',[]):
+          if 'Isolated' in incident['asset'].get('accessibility', []):
             incident['asset']['governance'].append("Internally isolated")
           if 'management' in incident['asset']:
             incident['asset'].pop('management')
@@ -183,7 +185,7 @@ if __name__ == '__main__':
 
           # Rename embezzlement to posession abuse
           logging.info("\tRenaming embezzlement to posession abuse")
-          if 'Embezzlement' in incident['action'].get('misuse',{}).get('variety',[]):
+          if 'Embezzlement' in incident['action'].get('misuse', {}).get('variety', []):
             pos = incident['action']['misuse']['variety'].index('Embezzlement')
             incident['action']['misuse']['variety'][pos] = "Possession abuse"
 
@@ -204,9 +206,30 @@ if __name__ == '__main__':
           # and add the new hacking variety
           if 'hacking' in incident['action']:
             if grepText(incident, 'deface'):
-              incident['attribute']['integrity'] = incident['attribute'].get('integrity', {})
-              incident['attribute']['integrity']['variety'] = incident['attribute']['integrity'].get('variety', [])
+              incident['attribute']['integrity'] = \
+                  incident['attribute'].get('integrity', {})
+              incident['attribute']['integrity']['variety'] = \
+                  incident['attribute']['integrity'].get('variety', [])
               incident['attribute']['integrity']['variety'].append('Defacement')
+
+          # Skimmer:
+          # if action.physical.variety = Tampering AND
+          # if asset.assets.variety = Term/Kiosk AND
+          # if attribute.confidentiality.data.variety = Payment
+          # Then replace the Tampering value in physical variety to "Skimmer"
+          terminal = False
+          payment = False
+          tampering = 'Tampering' in incident['action'].get('physical', {}).get('variety', [])
+          for each in incident['attribute'].get('confidentiality', {}).get('data', []):
+              if each['variety'] == "Payment":
+                payment = True
+          for each in incident['asset'].get('assets', []):
+            if each['variety'].lower().startswith('t - '):
+              terminal = True
+          if terminal and tampering and payment:
+            index = incident['action']['physical']['variety'].index('Tampering')
+            incident['action']['physical']['variety'][index] = 'Skimmer'
+
 
           #Now save the finished incident
           if args.output:
