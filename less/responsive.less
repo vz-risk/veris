@@ -1,0 +1,299 @@
+// ------------------------------------
+// Responsive: Large desktop and up
+// ------------------------------------
+
+@media (min-width: 1200px) and (min-height: 800px) {
+
+	html {
+		font-size: 18px;
+	}
+
+	body.home {
+		background-position: 50% 0%;
+	}
+
+	// reset .btn-small fz after setting it to 0 by default for removing spacing in display-inline element
+	.btn-group > .btn-small {
+		font-size: 16px;
+	}
+
+	// reset .btn fz after setting it to 0 by default for removing spacing in display-inline element
+	.btn-group > .btn {
+		font-size: 18px;
+	}
+
+}
+
+
+
+// ------------------------------------
+// Responsive: Tablet to desktop
+// ------------------------------------
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+	html {
+		font-size: 11px;
+	}
+
+	body.home {
+		background-position: 50% -18%;
+	}
+
+	// reset .btn-small fz after setting it to 0 by default for removing spacing in display-inline element
+	.btn-group > .btn-small {
+		font-size: 10px;
+	}
+
+	// reset .btn fz after setting it to 0 by default for removing spacing in display-inline element
+	.btn-group > .btn {
+		font-size: 11px;
+	}
+
+	// ------------------------------------
+	// $Background Slideshow (in Home)
+	// ------------------------------------
+	.cbp-bislideshow:before {
+		background: rgba(255,251,241,.75); /* IE */
+		background: -moz-linear-gradient(left,  rgba(255,251,241,1) 0%, rgba(255,251,241,0.75) 40em, rgba(255,251,241,0.25) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,251,241,1)), color-stop(40em,rgba(255,251,241,0.75)), color-stop(100%,rgba(255,251,241,0.25))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left,  rgba(255,251,241,1) 0%,rgba(255,251,241,0.75) 40em,rgba(255,251,241,0.25) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left,  rgba(255,251,241,1) 0%,rgba(255,251,241,0.75) 40em,rgba(255,251,241,0.25) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left,  rgba(255,251,241,1) 0%,rgba(255,251,241,0.75) 40em,rgba(255,251,241,0.25) 100%); /* IE10+ */
+		background: linear-gradient(to right,  rgba(255,251,241,1) 0%,rgba(255,251,241,0.75) 40em,rgba(255,251,241,0.25) 100%); /* W3C */
+	}
+
+}
+
+
+
+// ------------------------------------
+// Responsive: Landscape phone to desktop/tablet
+// ------------------------------------
+
+@media (max-width: 767px) {
+
+	// reset lateral pagging on body a set on .container
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	body.home {
+		background-image: none;
+	}
+
+	header {
+		height: auto;
+		background-color: @linkColorHover;
+
+		.affix {
+			position: static;
+			height: auto;
+			background: none;
+		}
+	}
+
+	.main {
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+	}
+
+	.container {}
+
+	h1 small,
+	h2 small,
+	h3 small,
+	h4 small,
+	h5 small,
+	h6 small {
+		display: block;
+	}
+
+	.thumbnail {
+		display: inline-block;
+		max-width: 480px;
+	}
+
+	// reduced input min-height on > 768px display
+	.input-large,
+	.input-xlarge,
+	.input-xxlarge,
+	input[class*="span"],
+	select[class*="span"],
+	textarea[class*="span"],
+	.uneditable-input {
+		min-height: 2.5em;
+		line-height: 2em;
+	}
+
+	// box
+	.box {
+		max-width: 360px;
+		margin-bottom: 1.5em;
+	}
+		.box-best {
+			top: 0;
+		}
+
+	// header
+	header {}
+		.navbar .brand {
+			width: 50%;
+			height: 1.3em;
+			position: static;
+			display: inline-block;
+			text-align: left;
+			float: left;
+			margin: .25em 0 0 .5em;
+			padding: 0;
+			background: url(../img/logo-h.png) no-repeat 0 0;
+			.background-size(contain);
+
+			img {
+				display: none;
+			}
+		}
+
+	.section-breadcrumb {
+		margin-left: -1.5em;
+		margin-right: -1.5em;
+	}
+
+	.section-jumbotron {
+		height: auto;
+		text-align: center;
+		padding: 1em 1.5em;
+		margin-bottom: 0;
+		background: url(../img/blur.jpg) repeat-x 50% 0%;
+		margin-left: -1.5em;
+		margin-right: -1.5em;
+
+		img {
+			height: 16em;
+		}
+
+		.slogan {
+			max-width: 480px;
+			margin: 1em auto;
+		}
+
+	}
+
+	//  FAQ
+	.faq-item {
+		list-style: disc;
+	}
+	.faq-question:before {
+		display: none;
+	}
+
+	footer {
+		.widget {
+			padding-bottom: 1em;
+			margin-bottom: 1em;
+			border-bottom: 1px solid @linkColor;
+		}
+
+		.container:after {
+			display: none;
+		}
+	}
+
+
+	// Tabs visible on mobile
+	.tab-content .tab-pane {
+		display: block;
+	}
+
+}
+
+
+// ------------------------------------
+// UP TO LANDSCAPE PHONE
+// ------------------------------------
+
+@media (max-width: 480px) {
+
+}
+
+
+
+
+
+
+// ------------------------------------
+// Responsive: Navbar
+// ------------------------------------
+
+@media (max-width: @navbarCollapseWidth) {
+
+	.navbar-fixed-top {
+		position: static;
+		margin: 0;
+
+		.container {
+			width: auto;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	body {
+		padding-top: 0;
+	}
+
+	.navbar {
+
+		.btn-navbar {
+			padding: 2px 6px;
+			margin: .5em 1em 0 0;
+			.btn-secondary();
+			background-image: none !important;
+			text-shadow: none;
+
+			&:hover,
+			&:focus {
+				background-image: none !important;
+			}
+		}
+
+		.nav {
+			margin-top: .5em;
+			text-align: left;
+		}
+
+		.nav > li > a {
+			border: none;
+			padding: .25em;
+			font-weight: normal;
+
+			&:focus,
+			&:hover {
+				color: @color1;
+			}
+		}
+
+		.nav-collapse .dropdown-menu a {
+			color: @grayLighter;
+			padding: .25em;
+			font-weight: inherit;
+
+			&:hover,
+			&:focus {
+				background-color: @white;
+				color: @color1;
+			}
+		}
+	}
+
+	.navbar .nav li.dropdown.open > .dropdown-toggle,
+	.navbar .nav li.dropdown.active > .dropdown-toggle,
+	.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+		background-color: @color3;
+		color: @color1;
+	}
+
+}
+

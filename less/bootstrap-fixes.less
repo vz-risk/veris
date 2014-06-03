@@ -1,0 +1,159 @@
+// ------------------------------------
+// $Bootstrap Fixes
+// ------------------------------------
+html {
+	font-size: 14px;
+}
+
+body {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.5em;
+	margin: 0;
+	font-weight: @headingsFontWeight;
+	margin-bottom: .5em;
+	text-transform: uppercase;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+	display: block;
+	font-size: 60%;
+	font-weight: 200;
+	line-height: 1.25;
+	text-transform: lowercase;
+	color: @color5;
+}
+
+h5 {
+	font-weight: bold;
+}
+
+// define <hr> for separator
+hr {
+	margin: 2.5em 0;
+}
+hr.hr-small {
+	margin: 1em 0;
+}
+hr.hr-large {
+	margin: 5em 0;
+}
+
+// set font-size & line-height in %
+.lead {
+	font-size: 120%;
+	line-height: 140%;
+}
+
+// fix vertical alignment when input and btn are inline
+.btn {
+	vertical-align: top;
+}
+
+// add margin bottom to figure
+figure {
+	margin: 0 0 @baseFontSize 0;
+}
+
+// reset blockquote style
+blockquote p {
+	font-weight: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+// reset .btn-small font-size after setting it to 0 by default for removing spacing in display-inline element
+.btn-group > .btn-small {
+	font-size: 14px;
+}
+
+// reset .btn font-size after setting it to 0 by default for removing spacing in display-inline element
+.btn-group > .btn {
+	font-size: 16px;
+}
+
+// force width: 206px; to auto
+input, textarea, .uneditable-input {
+	width: auto;
+}
+
+// carousel reset line-height
+.carousel {
+	line-height: inherit;
+}
+
+// carousel adjust vertical align constrols
+.carousel-control {
+	top: 50%;
+}
+
+// force to recalculate font-size & line-height
+.popover-title {
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+}
+
+// remove unnecessary space on dropdown divider
+.dropdown-menu .divider {
+	margin: 0;
+}
+
+// smallerized "icon-" inside btn-small
+.btn.btn-small [class^="icon-"],
+.btn.btn-small [class*=" icon-"] {
+	font-size: 90%;
+}
+
+.btn-link [class^="icon-"],
+.btn-link [class*=" icon-"] {
+	text-shadow: none;
+}
+
+// reset strange height & line-height
+select,
+input[type="file"] {
+	height: inherit;
+	line-height: inherit;
+}
+
+// remove margin bottom on .control-group
+.control-group {
+	margin-bottom: 0;
+}
+
+// fix align text on lists with icons
+ul.icons-ul li [class^="icon-"],
+ul.icons-ul li [class*=" icon-"] {
+	margin-right: 0;
+}
+
+// add margin bottom to every li
+ul.spaced li {
+	margin-bottom: 1em;
+}
+
+// prevent images became bigger on ie
+.media-object img,
+img.media-object {
+	width: 64px;
+	height: 64px;
+	min-width: 64px;
+	min-height: 64px;
+}
+
+// set font-size for <pre>
+pre {
+	font-size: 1em;
+}

@@ -1,0 +1,1114 @@
+
+// ------------------------------------
+// $Base elements
+// ------------------------------------
+
+body {}
+
+body > .container {
+	margin: 0;
+}
+
+blockquote {
+	padding-left: 17px;
+
+	p {
+		font-style: italic;
+	}
+
+	.icon-4x {
+		color: @linkColor;
+	}
+}
+
+
+
+figure {
+	a {
+		.icon-border {
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			text-align: center;
+			margin: 0 auto;
+		}
+
+		&:hover i {
+			text-decoration: none;
+		}
+	}
+
+	img {
+		border-bottom: 3px solid @linkColor;
+	}
+}
+
+
+a {
+	.transition(0.25s);
+
+	&:hover {
+		.transition(0.25s);
+	}
+	&:focus {
+		outline: none !important;
+	}
+}
+
+
+
+// ------------------------------------
+// $nav
+// ------------------------------------
+.navbar {
+	position: relative;
+	z-index: 10;
+	margin: 0;
+
+	.nav {
+		width: 100%;
+		text-align: center;
+		font-weight: 100;
+		text-transform: uppercase;
+
+		& > li {
+			float: none;
+
+			&.active a,
+			&.active a:hover,
+			&.active a:focus {
+				color: @color3;
+				background-color: transparent;
+				.box-shadow(none);
+			}
+
+			& > a {
+				display: block;
+				padding: .25em 0;
+				color: @grayLighter;
+				text-shadow: none;
+
+				&:hover,
+				&:focus {
+					color: @color3;
+				}
+			}
+		}
+	}
+
+	.brand {
+		width: 100%;
+		padding: 0;
+		margin: 2em 0;
+		text-align: center;
+
+		img {
+			display: inline;
+		}
+	}
+
+}
+
+.navbar-inner {
+	background: none;
+	border: none;
+	.box-shadow(none);
+	.reset-filter();
+}
+
+
+
+// Dropdown menu
+.dropdown-menu {
+	position: static;
+	top: auto;
+	left: auto;
+	float: none;
+	.border-radius(0);
+	.box-shadow(none);
+	background: none;
+	border: none;
+	min-width: 0;
+	margin-bottom: 1em;
+
+	&:before,
+	&:after {
+		display: none !important;
+	}
+
+	& > li > a {
+		color: @grayLighter;
+		padding-left: 0;
+		padding-right: 0;
+		font-weight: inherit;
+
+		&:hover,
+		&:focus {
+			background: none;
+			color: @color3;
+		}
+	}
+
+	.active > a,
+	.active > a:hover,
+	.active > a:focus {
+		background: none;
+		color: @color3;
+	}
+}
+
+	.navbar .nav li.dropdown.open > .dropdown-toggle,
+	.navbar .nav li.dropdown.active > .dropdown-toggle,
+	.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+		background: none;
+		color: @color3;
+	}
+
+
+header aside {
+	position: absolute;
+	bottom: 1em;
+	margin-left: 0 !important;
+
+	p {
+		font-size: 90%;
+		color: @gray;
+
+		a {
+			color: @color5;
+
+			&:hover,
+			&:focus {
+				color: @color3;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.btn {
+		display: block;
+		.border-radius(50%);
+		background: fade(@color5, 50%);
+		color: @grayLight;
+		width: 2em;
+		height: 2em;
+		padding: 0;
+		text-align: center;
+
+		&:focus,
+		&:hover {
+			background-color: @color3;
+			color: @grayDarker;
+		}
+
+		i[class^="icon-"],
+		i[class*=" icon-"] {
+			font-size: 110%;
+			margin: 0;
+			vertical-align: middle;
+			line-height: 2.5em;
+		}
+	}
+}
+
+// ------------------------------------
+// $icon
+// ------------------------------------
+
+[class^="icon-"],
+[class*=" icon-"] {
+	margin-right: .5em;
+}
+
+.icon-padded {
+	padding: .3em 0 0 .3em;
+	color: @linkColor;
+}
+
+.icon-5x {
+	font-size: 5em;
+	&.icon-border {
+		border-width: 5px;
+		.border-radius(6px);
+	}
+}
+.icon-6x {
+	font-size: 6em;
+	&.icon-border {
+		border-width: 6px;
+		.border-radius(50%);
+	}
+}
+.icon-7x {
+	font-size: 7em;
+	&.icon-border {
+		border-width: 7px;
+		.border-radius(50%);
+	}
+}
+.icon-8x {
+	font-size: 8em;
+	&.icon-border {
+		border-width: 8px;
+		.border-radius(50%);
+	}
+}
+
+.icon-border {
+	border-color: fade(@color5, 25%);
+}
+
+
+
+// ------------------------------------
+// $btn
+// ------------------------------------
+
+.btn {
+	background: @btnBackground;
+	border: none;
+	.border-radius(@baseBorderRadius);
+	.box-shadow(none);
+	text-shadow: none;
+	padding: .5em 2em;
+	.transition(0.25s);
+	text-transform: uppercase;
+
+	&:hover,
+	&:focus {
+		background-color: @btnBackgroundHighlight;
+		.transition(0.25s);
+	}
+}
+
+.btn-link,
+.btn-link:active,
+.btn-link[disabled] {
+  background-color: transparent;
+  background-image: none;
+  .box-shadow(none);
+  padding: .25em .5em;
+}
+.btn-link {
+  border-color: transparent;
+  cursor: pointer;
+  color: @linkColor;
+  .border-radius(0);
+}
+.btn-link:hover,
+.btn-link:focus {
+  color: @linkColorHover;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.btn-link[disabled]:hover,
+.btn-link[disabled]:focus {
+  color: @grayDark;
+  text-decoration: none;
+}
+
+
+// Set the backgrounds
+// -------------------------
+.btn-primary {
+	background-color: @btnPrimaryBackground;
+
+	&:hover,
+	&:focus {
+		background-color: @btnPrimaryBackgroundHighlight;
+	}
+}
+// Warning appears are orange
+.btn-warning {
+	background-color: @btnWarningBackground;
+
+	&:hover,
+	&:focus {
+		background-color: @btnWarningBackgroundHighlight;
+	}
+}
+// Danger and error appear as red
+.btn-danger {
+	background-color: @btnDangerBackground;
+
+	&:hover,
+	&:focus {
+		background-color: @btnDangerBackgroundHighlight;
+	}
+}
+// Success appears as green
+.btn-success {
+	background-color: @btnSuccessBackground;
+
+	&:hover,
+	&:focus {
+		background-color: @btnSuccessBackgroundHighlight;
+	}
+}
+// Info appears as a neutral blue
+.btn-info {
+	background-color: @btnInfoBackground;
+
+	&:hover,
+	&:focus {
+		background-color: @btnInfoBackgroundHighlight;
+	}
+}
+// Inverse appears as dark gray
+.btn-inverse {
+	background-color: @btnInverseBackground;
+
+	&:hover,
+	&:focus {
+		background-color: @btnInverseBackgroundHighlight;
+	}
+}
+
+.btn-link:hover,
+.btn-link:focus {
+	text-decoration: none;
+}
+.btn-secondary {
+	color: contrast(@secondaryColor, @grayDark, @white) !important;
+	background-color: @btnSecondaryBackground;
+
+	&:hover,
+	&:focus {
+		background-color: @btnSecondaryBackgroundHighlight;
+	}
+}
+
+.btn-squared {
+	width: 2em;
+	padding: .2em .2em;
+	// padding-bottom: .2em;
+	text-align: center;
+
+	[class^="icon-"],
+	[class*=" icon-"] {
+		margin-right: 0;
+	}
+
+}
+
+
+
+
+
+.tabs-left > .nav-tabs > li.active > a {
+	background-color: @color4 !important;
+}
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+	background-color: fade(@color5, 25%);
+}
+
+// make the icon black if the tab is active
+li.active a i {
+	color: @textColor;
+}
+
+
+
+
+
+// ------------------------------------
+// $breadcrumb
+// ------------------------------------
+
+.section-breadcrumb {
+	display: none;
+	margin: 0;
+	padding: 0;
+}
+
+	.breadcrumb {
+		margin-bottom: 0;
+		background-color: transparent;
+	}
+
+
+
+
+// ------------------------------------
+// $pagination
+// ------------------------------------
+
+.pagination ul {
+	.box-shadow(none);
+}
+	.pagination ul > li > a,
+	.pagination ul > li > span {
+		border: none;
+	}
+
+
+
+
+
+// ------------------------------------
+// $thumbnails
+// ------------------------------------
+
+.thumbnail {
+	border: none;
+	.box-shadow(none);
+	.border-radius(0);
+	padding: 0;
+	background-color: fade(@color5, 25%);
+
+	img {
+		border-bottom: 3px solid @linkColor;
+	}
+
+	.caption {
+		padding: 1em;
+	}
+}
+
+a.thumbnail:hover,
+a.thumbnail:focus {
+	.box-shadow(none);
+
+	img {
+		border-color: @linkColorHover;
+	}
+}
+
+
+
+
+
+// ------------------------------------
+// $accordion
+// ------------------------------------
+
+.accordion-group {
+	.border-radius(0);
+	border: none;
+}
+.accordion-heading {
+
+	.accordion-toggle {
+		background-color: @grayLight;
+		color: @white;
+
+		&:hover {
+			background-color: @linkColor;
+			color: @white;
+			text-decoration: none;
+		}
+	}
+}
+
+.accordion-body {
+	background-color: @grayLighter;
+}
+
+
+
+
+
+// ------------------------------------
+// $hover-figcaption
+// ------------------------------------
+
+figure.hover-figcaption {
+	max-width: 450px;
+
+	a {
+		position: relative;
+		display: block;
+		overflow: hidden;
+
+		.figcaption {
+			position: absolute;
+			.box-sizing(border-box);
+			width: 100%;
+			height: 50%;
+			bottom: -50%;
+			left: 0;
+			padding: 1em;
+			background-color: @linkColorHover;
+			background-color: fade(@linkColorHover, 75%);
+			transition: all .25s ease-in;
+			color: @white;
+		}
+
+		&:hover .figcaption {
+			bottom: 0;
+		}
+	}
+}
+
+
+
+
+
+// ------------------------------------
+// $box
+// ------------------------------------
+
+.box {
+	.popover();
+	display: block;
+	position: relative;
+	max-width: none;
+	overflow: hidden;
+	.border-radius(0);
+	border: none;
+	padding: 0;
+	.box-shadow(none);
+	border-bottom: 3px solid @linkColor;
+	margin-bottom: 1em;
+	z-index: 1;
+}
+	.box-title {
+		.popover-title();
+		padding: 8px @baseLineHeight;
+		.border-radius(0);
+		border: none;
+		background: @linkColorHover;
+		color: @white;
+	}
+	.box-content {
+		.popover-content();
+		padding: @baseLineHeight;
+		background: @grayLighter;
+
+		.lead {
+			margin-bottom: 1em;
+			border-bottom: 1px solid #ccc;
+			border-bottom: 1px solid rgba(0,0,0,.2);
+		}
+	}
+
+
+	.box-best {
+		top: -@baseLineHeight;
+		font-size: 120%;
+	}
+	.no-shadow {
+		.box-shadow(none);
+	}
+	.box-shadow {
+		.box-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+	}
+
+	.ribbon,
+	.ribbon-top {
+		position: absolute;
+		width: 100%;
+		top: 10%;
+		right: -35%;
+		font-size: 75%;
+		background-color: @linkColor;
+		color: @white;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		.rotate(45deg);
+
+	}
+	.ribbon-bottom {
+		top: auto;
+		bottom: 10%;
+		right: -35%;
+		.rotate(-45deg);
+	}
+	.ribbon-muted {
+		background-color: @gray;
+	}
+
+	.lt-ie9 .ribbon {
+		display: none;
+	}
+
+
+
+
+// ------------------------------------
+// $widget
+// ------------------------------------
+
+.widget {
+	margin-bottom: 3em;
+
+	.thumbnails {
+		margin-left: -10px;
+
+		& > li {
+			display: inline-block;
+			margin-left: 10px;
+			margin-bottom: 10px;
+		}
+
+		// for ie
+		img {
+			width: 64px;
+			height: 64px;
+			min-width: 64px;
+			min-height: 64px;
+		}
+	}
+}
+
+
+
+
+
+
+// ------------------------------------
+// $Article
+// ------------------------------------
+
+article {
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 1.5em;
+	}
+
+	figure {
+		margin-bottom: 1.5em;
+
+		img {
+			margin-bottom: 0;
+		}
+	}
+
+	img {
+		margin-bottom: 1em;
+	}
+}
+
+
+
+
+
+
+
+
+// ------------------------------------
+// $carousel
+// ------------------------------------
+
+.carousel {
+	.carousel-control,
+	.carousel-control:hover {
+		color: @white;
+	}
+}
+
+.carousel-mini {
+	.carousel-nav {
+		position: absolute;
+		right: 0;
+		top: -3em;
+	}
+}
+
+
+
+
+
+// ------------------------------------
+// $map
+// ------------------------------------
+
+.section-map-background {
+	min-height: 18em;
+
+	.box-content {
+		background-color: @color4;
+	}
+}
+	.map {
+		width: 100%;
+		min-height: 18em;
+		border-top: 3px solid @linkColor;
+		border-bottom: 3px solid @linkColor;
+
+		img {
+			max-width: none;
+		}
+	}
+
+
+
+
+
+// ------------------------------------
+// $map on bacground
+// ------------------------------------
+
+.map-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+.section-contact-background [class^="span"],
+.section-contact-background [class*=" span"] {
+	position: relative;
+	z-index: 2;
+}
+
+
+
+
+
+// ------------------------------------
+// $faq
+// ------------------------------------
+
+.faq-list {}
+	.faq-item {
+		margin-bottom: 2.5em;
+		list-style: none;
+	}
+		.faq-question {
+			position: relative;
+			margin-bottom: .5em;
+
+			// add "icon-question-sign" before text
+			&:before {
+				font-family: FontAwesome;
+				font-weight: normal;
+				font-style: normal;
+				text-decoration: inherit;
+				-webkit-font-smoothing: antialiased;
+				content: "\f059";
+
+				font-size: 2em;
+				position: absolute;
+				left: -1.5em;
+				color: @linkColor;
+			}
+
+		}
+		.faq-answer {
+			&:before {
+				content: "— ";
+
+			}
+		}
+
+
+
+
+
+
+// ------------------------------------
+// $section-content
+// ------------------------------------
+
+.section-content {
+	position: relative;
+	padding: 5em 0;
+	// border-bottom: 1px solid #eeeeee;
+}
+	.section-title {
+		line-height: 1.25em;
+		margin-bottom: 1em;
+		font-weight: 100;
+		text-transform: uppercase;
+		color: @color2;
+	}
+
+	.section-jumbotron {
+		height: 25em;
+		margin-bottom: 5em;
+		padding-bottom: 0;
+		text-align: left;
+		color: @white;
+		text-shadow: 1px 1px 1px @grayLighter;
+		border: none;
+
+		h1 {
+			font-weight: bold;
+			margin-bottom: 0;
+		}
+
+		.extra {
+			visibility: visible;
+			background: url(../img/iPad-elemind05.png) no-repeat 0 0;
+			.background-size(contain);
+			height: 32em;
+			padding: 11em 4.5em 0;
+		}
+	}
+		.section-jumbotron-mini {
+			padding: 0;
+			height: 6em;
+		}
+	.section-content-mini {
+		padding: 1em 0;
+	}
+
+	.slogan {
+		color: @grayDark;
+		margin-top: 4em;
+	}
+
+
+
+
+
+// ------------------------------------
+// $header
+// ------------------------------------
+
+header {
+	// background-color: @linkColorHover;
+	// height: 1279px;
+}
+
+header .affix {
+	background-color: @grayDarker;
+	height: 100%;
+}
+
+
+
+
+
+
+
+// ------------------------------------
+// $hoverdir
+// ------------------------------------
+
+.hoverdir-item {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	max-width: 450px;
+}
+	.hoverdir-content {
+		position: absolute;
+		background-color: @linkColorHover;
+		background-color: fade(@linkColorHover, 75%);
+		width: 100%;
+		height: 100%;
+		text-align: center;
+
+		.btn-wrap {
+			display: block;
+			position: relative;
+			top: 50%;
+			margin-top: -1em;
+		}
+	}
+
+
+
+
+
+// ------------------------------------
+// $form errors
+// ------------------------------------
+.control-group.error {
+	input {
+		background-color: @errorBackground;
+		margin-bottom: 0;
+	}
+}
+
+
+
+
+
+
+// ------------------------------------
+// $flexslider
+// ------------------------------------
+
+.flexslider-wrap {
+	overflow: hidden;
+}
+.flexslider {
+	background-color: transparent;
+	border: none;
+	.border-radius(0);
+	.box-shadow(none);
+	border-bottom: 3px solid @linkColor;
+}
+
+	// change bullets color
+	.flex-control-paging li a {
+		background-color: @grayLighter;
+
+		&:hover {
+			background-color: @linkColorHover;
+		}
+		&.flex-active {
+			background-color: @linkColor;
+		}
+	}
+
+	// change navigation arrows
+	.flex-direction-nav {
+		a {
+			background: none;
+			text-indent: 0;
+			font-size: 0;
+		}
+
+		a:before {
+			display: block;
+			width: 30px;
+			line-height: 30px;
+			background-color: @gray;
+			color: @white;
+			text-align: center;
+			font-family: FontAwesome;
+			font-size: 30px;
+			font-weight: normal;
+			font-style: normal;
+			text-decoration: inherit;
+			-webkit-font-smoothing: antialiased;
+			content: "\f105";
+		}
+
+		a:hover,
+		a:hover:before {
+			text-decoration: none;
+		}
+
+		a.flex-prev {
+			left: -50px;
+		}
+		a.flex-next {
+			right: -50px;
+		}
+		a.flex-prev:before {
+			content: "\f104";
+		}
+	}
+
+	.flexslider:hover .flex-prev {
+		left: 20px;
+	}
+	.flexslider:hover .flex-next {
+		right: 20px;
+	}
+
+
+
+
+// ------------------------------------
+// $documentation
+// ------------------------------------
+.documentation {
+	.section-content {
+		padding: 2em 0;
+
+		h3 {
+			margin-top: 3.5em;
+		}
+	}
+}
+.documentation-nav {
+	.nav {
+		background-color: @color4;
+		z-index: 10;
+	}
+}
+
+
+
+
+
+// ------------------------------------
+// $Background Slideshow (in Home)
+// ------------------------------------
+.cbp-bislideshow:before {
+	display: block;
+	content: '';
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+
+	background: rgba(255,251,241,.75); /* IE */
+	background: -moz-linear-gradient(left,  rgba(255,251,241,1) 0%, rgba(255,251,241,0.75) 40em, rgba(255,251,241,0.1) 70em); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,251,241,1)), color-stop(40em,rgba(255,251,241,0.75)), color-stop(70em,rgba(255,251,241,0.1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(255,251,241,1) 0%,rgba(255,251,241,0.75) 40em,rgba(255,251,241,0.1) 70em); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(255,251,241,1) 0%,rgba(255,251,241,0.75) 40em,rgba(255,251,241,0.1) 70em); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(255,251,241,1) 0%,rgba(255,251,241,0.75) 40em,rgba(255,251,241,0.1) 70em); /* IE10+ */
+	background: linear-gradient(to right,  rgba(255,251,241,1) 0%,rgba(255,251,241,0.75) 40em,rgba(255,251,241,0.1) 70em); /* W3C */
+}
+
+.cbp-bicontrols {
+	position: fixed;
+	width: auto;
+	height: auto;
+	margin: 0;
+	top: 0;
+	right: 2em;
+	left: auto;
+	z-index: 10;
+
+	span {
+		float: left !important;
+		width: 4em;
+		height: 4em;
+	}
+}
+
+.cbp-bicontrols span:before {
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: inherit;
+	-webkit-font-smoothing: antialiased;
+	font-size: 30px;
+	color: @white;
+	// text-shadow: 1px 1px 1px fade(@color1, 50%);
+}
+
+span.cbp-biplay:before {
+    content: "\f04b"; // icon-play
+}
+
+span.cbp-bipause:before {
+    content: "\f04c"; // icon-pause
+}
+
+span.cbp-binext:before {
+    content: "\f054"; // icon-chevron-right
+}
+
+span.cbp-biprev:before {
+    content: "\f053"; // icon-chevron-left
+}
+
+
+.lt-ie9 .cbp-bislideshow,
+.lt-ie9 .cbp-bicontrols {
+	display: none;
+}
+
+
+
+
+// ------------------------------------
+// $intro (in Home)
+// ------------------------------------
+.section-intro {
+	padding-bottom: 1em;
+
+	h4 {
+		font-weight: normal;
+	}
+}
+
+
+
