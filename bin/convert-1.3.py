@@ -191,12 +191,12 @@ if __name__ == '__main__':
 
           # Rename misappropriation to Repurpose
           logging.info("\tRenaming misappropriation to repurpose")
-          if 'Misappropriation' in incident['attribute'].get('integrity',{}).get('variety',[]):
+          if 'Misappropriation' in incident['attribute'].get('integrity', {}).get('variety', []):
             pos = incident['attribute']['integrity']['variety'].index('Misappropriation')
             incident['attribute']['integrity']['variety'][pos] = "Repurpose"
 
           # Rename related_incidents
-          if incident.get('related_incidents',"") != "":
+          if incident.get('related_incidents', "") != "":
             incident['campaign_id'] = incident['related_incidents']
           if "related_incidents" in incident:
             incident.pop('related_incidents')
@@ -230,11 +230,29 @@ if __name__ == '__main__':
             index = incident['action']['physical']['variety'].index('Tampering')
             incident['action']['physical']['variety'][index] = 'Skimmer'
 
+          # Find any empty notes strings and get rid of them.
+          if incident.get('notes', 'none') == "":
+            incident.pop('notes')
+          for each in ['malware', 'hacking', 'social', 'misuse', 'error',
+                       'physical', 'environmental', 'unknown']:
+            if incident['action'].get(each, {}).get('notes', 'none') == "":
+              incident['action'][each].pop('notes')
+          for each in ['external', 'internal', 'partner', 'unknown']:
+            if incident['actor'].get(each, {}).get('notes', 'none') == "":
+              incident['actor'][each].pop('notes')
+          for each in ['confidentiality', 'integrity', 'availability']:
+            if incident['attribute'].get(each, {}).get('notes', 'none') == "":
+              incident['attribute'][each].pop('notes')
+          for each in ['asset', 'impact', 'victim']:
+            if incident.get(each, {}).get('notes', 'none') == "":
+              incident[each].pop('notes')
+          if incident['victim'].get('secondary', {}).get('notes', 'none') == "":
+            incident['victim']['secondary'].pop('notes')
 
-          #Now save the finished incident
+          # Now save the finished incident
           if args.output:
-            outfile = open(os.path.join(args.output,os.path.basename(eachFile)),'w')
+            outfile = open(os.path.join(args.output, os.path.basename(eachFile)), 'w')
           else:
-            outfile = open(eachFile,'w')
-          outfile.write(sj.dumps(incident,indent=2,sort_keys=True))
+            outfile = open(eachFile, 'w')
+          outfile.write(sj.dumps(incident, indent=2, sort_keys=True))
           outfile.close()
