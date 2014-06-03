@@ -4,28 +4,70 @@ import logging
 from glob import glob
 import os
 
+
 def getCountryCode():
     country_codes = sj.loads(open('all.json').read())
-    country_code_remap = {'Unknown':'000000'}
+    country_code_remap = {'Unknown': '000000'}
     for eachCountry in country_codes:
         try:
-            country_code_remap[eachCountry['alpha-2']] = eachCountry['region-code']
+            country_code_remap[eachCountry['alpha-2']] = \
+                eachCountry['region-code']
         except:
             country_code_remap[eachCountry['alpha-2']] = "000"
         try:
-            country_code_remap[eachCountry['alpha-2']] += eachCountry['sub-region-code']
+            country_code_remap[eachCountry['alpha-2']] += \
+                eachCountry['sub-region-code']
         except:
             country_code_remap[eachCountry['alpha-2']] += "000"
     return country_code_remap
 
+
+def getField(current, txt):
+    tsplit = txt.split('.', 1)
+    if tsplit[0] in current:
+        result = current[tsplit[0]]
+        if len(tsplit) > 1:
+            result = getField(result, tsplit[1])
+    else:
+        result = None
+    return result
+
+
+def grepText(incident, searchFor):
+    txtFields = ['summary', "notes", "victim.notes", "actor.external.notes",
+                 "actor.internal.notes", "actor.partner.notes",
+                 "actor.unknown.notes", "action.malware.notes",
+                 "action.hacking.notes", "action.social.notes",
+                 "action.misuse.notes", "action.physical.notes",
+                 "action.error.notes", "action.environmental.notes",
+                 "asset.notes", "attribute.confidentiality.notes",
+                 "attribute.integrity.notes", "attribute.availability.notes",
+                 "impact.notes", "plus.analyst_notes", "plus.pci.notes"]
+    foundAny = False
+    for txtField in txtFields:
+        curText = getField(incident, txtField)
+        if isinstance(curText, basestring):
+            if searchFor.lower() in incident['summary'].lower():
+                foundAny = True
+                break
+        # could be extended to look for fields in lists
+    return foundAny
+
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Converts VERIS 1.2 incidents to v1.3")
-    parser.add_argument("-l", "--logging", choices=["critical", "warning", "info"],
-                        help="Minimum logging level to display", default="warning")
-    parser.add_argument("-p", "--path", nargs='+', help="list of paths to search for incidents")
-    parser.add_argument("-o", "--output", help="output file to write new files. Default is to overwrite.")
+    descriptionText = "Converts VERIS 1.2 incidents to v1.3"
+    helpText = "output file to write new files. Default is to overwrite."
+    parser = argparse.ArgumentParser(description=descriptionText)
+    parser.add_argument("-l", "--logging", choices=["critical",
+                                                    "warning", "info"],
+                        help="Minimum logging level to display",
+                        default="warning")
+    parser.add_argument("-p", "--path", nargs='+',
+                        help="list of paths to search for incidents")
+    parser.add_argument("-o", "--output",
+                        help=helpText)
     args = parser.parse_args()
-    logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL, 'info': logging.INFO}
+    logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL,
+                     'info': logging.INFO}
     logging.basicConfig(level=logging_remap[args.logging])
     data_paths = [x + '/*.json' for x in args.path]
     country_region = getCountryCode()
