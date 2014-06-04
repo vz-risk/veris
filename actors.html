@@ -98,16 +98,6 @@
                                     <i class="icon-angle-right pull-right"></i>
                                     Threat Actors
                                 </a></li>
-                                   <ul class="nav nav-pills nav-stacked">
-                                     <li class="icon-angle-right pull-left"></i>
-                                     Motive
-                                     <li class="icon-angle-right pull-left"></i>
-                                     Variety
-                                     <li class="icon-angle-right pull-left"></i>
-                                     Origin (Country)
-                                     <li class="icon-angle-right pull-left"></i>
-                                     Notes
-                                   </ul>
                                 <li><a href="#section-external">
                                     <i class="icon-angle-right pull-right"></i>
                                     External Actors
@@ -124,146 +114,49 @@
                         </div>
                         <div class="span6 offset3">
                             <h2 class="section-title">
-                                Features
+                                Threat Actors
                                 <small>
-                                    No more
-                                    <i>"Lorem ipsum"</i>
+                                    Entities that cause or contribute to an incident are referred to as threat actors.
                                 </small>
                             </h2>
 
-                            <!-- .................................... $Threat Actors .................................... -->
-                            <section class="section-content section-actors" id="section-actors">
-                                <h3 class="section-title">
-                                    Threat Actors
-
-                                </h3>
-                                <p>Entities that cause or contribute to an incident are referred to as threat actors. There can be more than one actor involved in any particular incident, and their actions can be malicious or non-malicious, intentional or unintentional, causal or contributory. VERIS recognizes three primary categories of threat actors - External, Internal, and Partner.
+                            <p>There can be more than one actor involved in any particular incident, and their actions can be malicious or non-malicious, intentional or unintentional, causal or contributory. VERIS recognizes three primary categories of threat actors - External, Internal, and Partner.</p>
+<p>
 
 <i>VERIS classification note: If the actor’s role in the breach is limited to a contributory error, the actor would not be included here. For example, if an insider’s unintentional misconfiguration of an application left it vulnerable to attack, the insider would not be considered a threat actor if the application were successfully breached by another actor. An insider who deliberately steals data or whose inappropriate behavior (e.g., policy violations) facilitated the breach would be considered a threat actor in the breach.</i>
 
 </p>
+
+                            <!-- .................................... $External Actors .................................... -->
+                            <section class="section-content section-external" id="section-external">
+                                <h3 class="section-title">
+                                    External Actors
+
+                                </h3>
+                                <p>External threats originate from sources outside of the organization and its network of partners. Examples include criminal groups, lone hackers, former employees, and government entities. Also includes God (as in “acts of”), “Mother Nature,” and random chance. Typically, no trust or privilege is implied for external entities.
+
+</p>
                             </section>
 
-                            <!-- .................................... $HTML5 CSS3 .................................... -->
-                            <section class="section-content section-html5-css3" id="section-html5-css3">
+                            <!-- .................................... $Internal Actors .................................... -->
+                            <section class="section-content section-internal" id="section-internal">
                                 <h3 class="section-title">
-                                    HTML5 + CSS3
-                                    <small>power to the W3C</small>
+                                    Internal Actors
+
                                 </h3>
-                                <p>We wrote this theme using clear and simple HTML5 and CSS3 syntaxes. Resulting code is valid, properly indented and well commented.</p>
+                                <p>Internal threats are those originating from within the organization. This encompasses company full-time employees, independent contractors, interns, and other staff. Insiders are trusted and privileged (some more than others).</p>
                             </section>
 
-                            <!-- .................................... $LESS .................................... -->
-                            <section class="section-content section-less" id="section-less">
+                            <!-- .................................... $Partner Actors .................................... -->
+                            <section class="section-content section-partner" id="section-partner">
                                 <h3 class="section-title">
-                                    LESS
-                                    <small>do more with less</small>
+                                    Partner Actors
+
                                 </h3>
-                                <p>The <strong>CSS</strong> of this theme is written using <strong><a href="http://lesscss.org/">LESS</a></strong>, a preprocessor which allows to exploit all of Bootstrap potential.</p>
-                                <pre>.section-content {&#x000A;    position: relative;&#x000A;    padding: 5em 0;&#x000A;    border-bottom: 1px solid @grayLighter;&#x000A;&#x000A;    .section-title {&#x000A;        line-height: 1.25em;&#x000A;        margin-bottom: 1em;&#x000A;        font-weight: normal;&#x000A;    }&#x000A;}</pre>
-                                <p>Of course, it's not mandatory that you also use LESS - although we strongly recommended it; you can achieve whatever you need by simply editing our clear CSS code.</p>
+                                <p>Partners include any third party sharing a business relationship with the organization. This includes suppliers, vendors, hosting providers, outsourced IT support, etc. some level of trust and privilege is usually implied between business partners.</p>
+
                             </section>
 
-                            <!-- .................................... $Responsive .................................... -->
-                            <section class="section-content section-responsive" id="section-responsive">
-                                <h3 class="section-title">
-                                    Responsive
-                                    <small>#RWD</small>
-                                </h3>
-                                <p>When you change window's width, Bootstrap automatically adapts columns' width and placement, possibly by means of serialization. This template does this and more for you.</p>
-                                <p>When you vary the width and <strong>height</strong> of the window, we also modify the font-size, so that all spaces are filled with text snippets and images, always achieving visually appealing layouts.</p>
-                                <pre>@media (min-width: 1200px) and (min-height: 800px)&#x000A;{&#x000A;    html { font-size: 18px; }&#x000A;}</pre>
-                                <p>
-                                    <a class="btn btn-small fancybox" href="img/documentation/responsive-rct-l.jpg">View example</a>
-                                </p>
-                            </section>
-
-                            <!-- .................................... $FontAwesome .................................... -->
-                            <section class="section-content section-fontawesome" id="section-fontawesome">
-                                <h3 class="section-title">
-                                    Font Awesome
-                                    <small>really awesome</small>
-                                </h3>
-                                <p>Why using rastered images when we can exploit powerful font icons? <strong><a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a></strong> is the best solution to combine with Twitter Bootstrap.</p>
-                                <pre>&lt;!-- simple icon --&gt;&#x000A;&lt;p&gt;&#x000A;    &lt;i class=&quot;icon-envelope&quot;&gt;&lt;/i&gt;&#x000A;    text text text&#x000A;&lt;/p&gt;&#x000A;&#x000A;&lt;!-- button with icon --&gt;&#x000A;&lt;a class=&quot;btn&quot; href=&quot;#&quot;&gt;&#x000A;    &lt;i class=&quot;icon-envelope&quot;&gt;&lt;/i&gt;&#x000A;&lt;/a&gt;&#x000A;&#x000A;&lt;!-- button with text and icon --&gt;&#x000A;&lt;a class=&quot;btn&quot; href=&quot;#&quot;&gt;&#x000A;    &lt;i class=&quot;icon-envelope&quot;&gt;&lt;/i&gt;&#x000A;    text text&#x000A;&lt;/a&gt;</pre>
-                                <p>It's easy to integrate and use, and you don't need to know anything more than what you already know!</p>
-                            </section>
-
-                            <!-- .................................... $Background Slideshow .................................... -->
-                            <section class="section-content section-background-slideshow" id="section-background-slideshow">
-                                <h3 class="section-title">
-                                    Background Slideshow
-                                    <small>A fullscreen background slideshow with autoplay functionality.</small>
-                                </h3>
-                                <p>We integrated a simple fullscreen background slideshow with auto-play and controls to navigate and pause.</p>
-                                <p>Thanks to <strong><a href="http://tympanus.net/codrops/2013/04/17/background-slideshow/">Codrops</a></strong></p>
-                            </section>
-
-                            <!-- .................................... $FitVids .................................... -->
-                            <section class="section-content section-fitvids" id="section-fitvids">
-                                <h3 class="section-title">
-                                    FitVids
-                                    <small>fluid width video embeds</small>
-                                </h3>
-                                <p>A theme can not be considered responsive if all of its content does not resize properly, depending on the device on which it is displayed. That's why we have chosen <strong><a href="http://fitvidsjs.com/">FitVids</a></strong>, a simple, lightweight jQuery plugin which allows for fluid videos to be displayed.</p>
-                                <pre>&lt;div class=&quot;fitvids&quot;&gt;&#x000A;    &lt;iframe src=&quot;...&quot;&gt;&lt;/iframe&gt;&#x000A;&lt;/div&gt;</pre>
-                                <p>Nothing could be simpler...</p>
-                            </section>
-
-                            <!-- .................................... $FlexSlider .................................... -->
-                            <section class="section-content section-flexslider" id="section-flexslider">
-                                <h3 class="section-title">
-                                    FlexSlider
-                                    <small>only the best</small>
-                                </h3>
-                                <p><strong><a href="http://flexslider.woothemes.com/">FlexSlider</a></strong> is the best responsive slider. Period.</p>
-                                <pre>&lt;div class=&quot;flexslider&quot;&gt;&#x000A;  &lt;ul class=&quot;slides&quot;&gt;&#x000A;    &lt;li&gt;&lt;img src=&quot;image.jpg&quot;&gt;&lt;/li&gt;&#x000A;    &lt;li&gt;&lt;img src=&quot;image.jpg&quot;&gt;&lt;/li&gt;&#x000A;    &lt;li&gt;&lt;img src=&quot;image.jpg&quot;&gt;&lt;/li&gt;&#x000A;    &lt;li&gt;&lt;img src=&quot;image.jpg&quot;&gt;&lt;/li&gt;&#x000A;  &lt;/ul&gt;&#x000A;&lt;/div&gt;</pre>
-                                <p>It's easy to use and ready for responsive design, the best solution for sites requiring the maximum degree of compatibility with desktop and mobile devices.</p>
-                            </section>
-
-                            <!-- .................................... $Masonry .................................... -->
-                            <section class="section-content section-masonry" id="section-masonry">
-                                <h3 class="section-title">
-                                    Masonry
-                                    <small>align everything</small>
-                                </h3>
-                                <p><strong><a href="http://masonry.desandro.com/">Masonry</a></strong> is a dynamic layout plugin for jQuery. The flip-side of CSS floats. When you need to <a href="feature-masonry-isotope.html#section-masonry">align a series of boxes</a> there is no better solution than this. It's easy to use and offers an high degree of compatibility with older browsers.</p>
-                                <pre>&lt;div class=&quot;masonry&quot; id=&quot;container-masonry&quot;&gt;&#x000A;    &lt;div class=&quot;span3 masonry-item&quot;&gt;&#x000A;        &lt;!-- content goes here --&gt;&#x000A;    &lt;/div&gt;&#x000A;    &lt;div class=&quot;span3 masonry-item&quot;&gt;&#x000A;        &lt;!-- content goes here --&gt;&#x000A;    &lt;/div&gt;&#x000A;    ...&#x000A;&lt;/div&gt;</pre>
-                                <p>If you're wondering what would happen if the same content had been <a href="feature-masonry-isotope.html#section-masonry-without">displayed without this plugin</a> ...take a look here!</p>
-                            </section>
-
-                            <!-- .................................... $Isotope .................................... -->
-                            <section class="section-content section-isotope" id="section-isotope">
-                                <h3 class="section-title">
-                                    Isotope
-                                    <small>filter everything</small>
-                                </h3>
-                                <p>If you need to filter content via Javascript <strong><a href="http://isotope.metafizzy.co/">Isotope</a></strong> is the perfect solution.</p>
-                                <pre>&lt;div class=&quot;isotope&quot; id=&quot;container-isotope&quot;&gt;&#x000A;    &lt;div class=&quot;span3 isotope-item filter-x&quot;&gt;&#x000A;        &lt;!-- content goes here --&gt;&#x000A;    &lt;/div&gt;&#x000A;    &lt;div class=&quot;span3 isotope-item filter-y&quot;&gt;&#x000A;        &lt;!-- content goes here --&gt;&#x000A;    &lt;/div&gt;&#x000A;    ...&#x000A;&lt;/div&gt;</pre>
-                                <p>As you can see in <a href="feature-masonry-isotope.html#section-isotope">this example</a>, the plugin has been optimized to run well at any resolution without sacrificing aesthetics and performance.</p>
-                            </section>
-
-                            <!-- .................................... $Hoverdir .................................... -->
-                            <section class="section-content section-hoverdir" id="section-hoverdir">
-                                <h3 class="section-title">
-                                    Hoverdir
-                                    <small>direction-aware hover effect</small>
-                                </h3>
-                                <p>Direction-Aware Hover Effect</p>
-                                <pre>&lt;div class=&quot;hoverdir&quot;&gt;&#x000A;    &lt;div class=&quot;hoverdir-item&quot;&gt;&#x000A;        &lt;img src=&quot;image.jpg&quot;&gt;&#x000A;        &lt;div class=&quot;hoverdir-bg&quot;&gt;&#x000A;            &lt;div class=&quot;hoverdir-content&quot;&gt;&#x000A;                &lt;!-- buttons goes here --&gt;&#x000A;            &lt;/div&gt;&#x000A;        &lt;/div&gt;&#x000A;    &lt;/div&gt;&#x000A;&lt;/div&gt;</pre>
-                                <p>A <a href="feature-gallery.html#section-hoverdir-gallery">nice effect</a> to use in a gallery. Fully customizable and easy to integrate into any page.</p>
-                            </section>
-
-                            <!-- .................................... $Fancybox .................................... -->
-                            <section class="section-content section-fancybox" id="section-fancybox">
-                                <h3 class="section-title">
-                                    Fancybox
-                                    <small>zooming everything</small>
-                                </h3>
-                                <p><a href="http://fancyapps.com/fancybox/">FancyBox</a> offers a nice and elegant way to add zooming functionality for images, html content and multi-media on your webpages. It is built on the top of the popular JavaScript framework jQuery and it is both easy to implement and customize.</p>
-                                <pre>&lt;a class=&quot;fancybox&quot; href=&quot;big-image.jpg&quot;&gt;&#x000A;    &lt;img src=&quot;image.jpg&quot;&gt;&#x000A;&lt;/a&gt;</pre>
-                                <p>Simply add the class "fancybox" to a link and magic happens!</p>
-                            </section>
                         </div>
                     </div>
                 </section>
