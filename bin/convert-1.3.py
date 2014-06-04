@@ -1,8 +1,9 @@
-import simplejson as sj
+import json as sj
 import argparse
 import logging
 from glob import glob
 import os
+from fnmatch import fnmatch
 
 
 def getCountryCode():
@@ -61,25 +62,32 @@ if __name__ == '__main__':
                                                     "warning", "info"],
                         help="Minimum logging level to display",
                         default="warning")
-    parser.add_argument("-p", "--path", nargs='+',
-                        help="list of paths to search for incidents")
-    parser.add_argument("-o", "--output",
+    parser.add_argument("-p", "--path", required=True,
+                        help="top level folder to search for incidents")
+    parser.add_argument("-o", "--output", required=True,
                         help=helpText)
     args = parser.parse_args()
     logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL,
                      'info': logging.INFO}
     logging.basicConfig(level=logging_remap[args.logging])
-    data_paths = [x + '/*.json' for x in args.path]
     country_region = getCountryCode()
 
-    for eachDir in data_paths:
-        for eachFile in glob(eachDir):
-          logging.info("Now processing %s" % eachFile)
+    assert args.path != args.output, "Source and destination must differ"
+    for dirpath, dirnames, filenames in os.walk(args.path):
+      filenames = filter(lambda fname: fnmatch(fname, "*.json"), filenames)
+      if filenames:
+        dir_ = os.path.join(args.output, dirpath[1:])
+        os.makedirs(dir_)
+        for fname in filenames:
+          in_fname = os.path.join(dirpath,fname)
+          out_fname = os.path.join(dir_, fname)
+
+          logging.info("Now processing %s" % in_fname)
           try:
-              incident = sj.loads(open(eachFile).read())
+              incident = sj.loads(open(in_fname).read())
           except sj.scanner.JSONDecodeError:
               logging.warning(
-                  "ERROR: %s did not parse properly. Skipping" % eachFile)
+                  "ERROR: %s did not parse properly. Skipping" % in_fname)
               continue
 
           # Update the schema version
@@ -249,10 +257,8 @@ if __name__ == '__main__':
           if incident['victim'].get('secondary', {}).get('notes', 'none') == "":
             incident['victim']['secondary'].pop('notes')
 
-          # Now save the finished incident
-          if args.output:
-            outfile = open(os.path.join(args.output, os.path.basename(eachFile)), 'w')
-          else:
-            outfile = open(eachFile, 'w')
-          outfile.write(sj.dumps(incident, indent=2, sort_keys=True))
+          # Now to save the incident
+          logging.info("Writing new file to %s" % out_fname)
+          outfile = open(out_fname, 'w')
+          outfile.write(sj.dumps(incident, sort_keys=True, indent=2))
           outfile.close()
