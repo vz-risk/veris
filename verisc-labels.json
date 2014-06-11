@@ -40,7 +40,7 @@
         "Maintenance error": "Maintenance error",
         "Malfunction": "Technical malfunction or glitch",
         "Misconfiguration": "Misconfiguration",
-        "Misdelivery": "Misdelivery (direct or deliver to wrong recipient)",
+        "Misdelivery": "Misdelivery (send wrong info or to wrong recipient)",
         "Misinformation": "Misinformation (unintentionally giving false info)",
         "Omission": "Omission (something intended, but not done)",
         "Other": "Other",
