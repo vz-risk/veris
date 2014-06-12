@@ -843,7 +843,7 @@
     "Int - incident response": "Internal - discovered while responding to another (separate) incident",
     "Int - infrastructure monitoring": "Internal - Infrastructure monitoring",
     "Int - log review": "Internal - log review process or SIEM",
-    "Int - reported by employee": "Internal - Employee reporting",
+    "Int - reported by employee": "Internal - reported by employee (saw something odd)",
     "Int - security alarm": "Internal - physical security system alarm",
     "Int - unknown": "Internal - unknown",
     "Other": "Other",
