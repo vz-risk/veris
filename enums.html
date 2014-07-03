@@ -12,7 +12,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>Features | Resie</title>
+    <title>Enumerations</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="description">
     <meta content="elemind.com" name="author">
@@ -52,10 +52,15 @@
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-                <li class="nav-actors"><a href="actors.html">Actors</a></li>
-                <li class="nav-actions"><a href="actions.html">Actions</a></li>
-                <li class="nav-assets"><a href="assets.html">Assets</a></li>
-                <li class="nav-attributes"><a href="attributes.html">Attributes</a></li>
+                <li class="nav-incident_desc"><a href="#section-incident_desc">Incident Description Enumerations</a></li>
+                <li class="nav-victim"><a href="#section-victims">Victim Enumerations</a></li>
+                <li class="nav-actor"><a href="#section-actors">Actor Enumerations</a></li>
+                <li class="nav-action"><a href="#section-actions">Action Enumerations</a></li>
+                <li class="nav-asset"><a href="#section-asset">Asset Enumerations</a></li>
+                <li class="nav-attributes"><a href="#section-attributes">Attribute Enumerations</a></li>
+                <li class="nav-timeline"><a href="#section-timeline">Timeline Enumerations</a></li>
+                <li class="nav-impact"><a href="#section-impact">Impact Enumerations</a></li>
+                <li class="nav-repeated"><a href="#section-repeated">Repeated Enumerations</a></li>
             </ul>
         </li>
         <li class="nav-discovery"><a href="discovery.html">Discovery & Response</a></li>
@@ -99,121 +104,1289 @@
                     <div class="row">
                         <div class="span3 documentation-nav affix hidden-phone">
                             <ul class="nav nav-pills nav-stacked">
-                                <li class="active"><a href="#section-actors">
+                                <li class="active"><a href="#section-incident_desc">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Threat Actors
+                                    Incident Description Enumerations
                                 </a></li>
-                                <li><a href="#section-external">
+                                <li><a href="#section-victims">
                                     <i class="icon-angle-right pull-right"></i>
-                                    External Actors
+                                    Victim Enumerations
                                 </a></li>
-                                <li><a href="#section-internal">
+                                <li><a href="#section-actors">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Internal Actors
+                                    Actor Enumerations
                                 </a></li>
-                                <li><a href="#section-partner">
+                                <li><a href="#section-actions">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Partner Actors
+                                    Action Enumerations
                                 </a></li>
-                            </ul>
+                                <li><a href="#section-asset">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Asset Enumerations
+                                </a></li>
+                                <li><a href="#section-attributes">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Attribute Enumerations
+                                </a></li>
+                                <li><a href="#section-timeline">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Timeline Enumerations
+                                </a></li>
+                                <li><a href="#section-impact">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Impact Enumerations
+                                </a></li>
+                                <li><a href="#section-repeated">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Repeated Enumerations
+                                </a></li>
+                          </ul>
                         </div>
                         <div class="span6 offset3">
                             <h2 class="section-title">
-                                Threat Actors
-                                <small>
-                                    Entities that cause or contribute to an incident are referred to as threat actors
-                                </small>
+                                Schema Enumerations
                             </h2>
 
-                            <p>There can be more than one actor involved in any particular incident, and their actions can be malicious or non-malicious, intentional or unintentional, causal or contributory. VERIS recognizes three primary categories of threat actors - External, Internal, and Partner.</p>
-<p>
+                            <p>Since the early days of VERIS, creating and maintaining its many enumerated lists remains one of our primary challenges. An enumeration-less schema would would solve a lot of development woes, but we believe the enumerations are a fundamental part of the “common language” component of VERIS. In early 2012, we made the decision to split enumerations into their own schema - still part of VERIS, but separate from the core schema. This was done to minimize the amount of changes affecting the core schema (the enum lists tend to change more often and more substantially than the core elements).</p>
+                            <p>If you are using VERIS, you should treat the <a href "https://github.com/vz-risk/veris/blob/master/verisc-enum.json">enumerations in JSON</a> as well as the <a href="https://github.com/vz-risk/veris/blob/master/verisc-labels.json">labels in JSON</a> as the primary source for all lists and labels. We have included them here as a central point of reference in human readable format.</p>
+                            <p>This page will list the enumeration and label. Each of the enumerations are set up as links and if there is more detail on the enumeration, it will be on the subsequent detailed page.</p>
 
-<i>VERIS classification note: If the actor’s role in the breach is limited to a contributory error, the actor would not be included here. For example, if an insider’s unintentional misconfiguration of an application left it vulnerable to attack, the insider would not be considered a threat actor if the application were successfully breached by another actor. An insider who deliberately steals data or whose inappropriate behavior (e.g., policy violations) facilitated the breach would be considered a threat actor in the breach.</i>
 
-</p>
 
-                            <!-- .................................... $External Actors .................................... -->
-                            <section class="section-content section-external" id="section-external">
+                            <!-- .................................... $Incident Description Enumerations .................................... -->
+                            <section class="section-content section-incident_desc" id="section-incident_desc">
                                 <h3 class="section-title">
-                                    External Actors
+                                    Incident Description Enumerations
 
                                 </h3>
-                                <p>External threats originate from sources outside of the organization and its network of partners. Examples include criminal groups, lone hackers, former employees, and government entities. Also includes God (as in “acts of”), “Mother Nature,” and random chance. Typically, no trust or privilege is implied for external entities.</p>
-
                                 <h4>
-                                  Role **DEPRECATED IN V1.2**
-                                </h4>
-                                <p><b>Variable Name: </b>actor.external.role (string)</p>
-
-                                <h4>
-                                  Motive
-                                </h4>
-                                <p><b>Question Text: </b>What motives drove the external actor(s) to act?</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorxmotive">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.motive</i> (string)</p>
-                                <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actors and an internal actor, different motives may be assigned for each.</p>
-                                <p><b>Miscellaneous: </b>N/A</p>
-
-                                <h4>
-                                  Variety
+                                  security_incident
                                 </h4>
 
-                                <p><b>Question Text: </b>What varieties of external actors were involved?</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorexternalvariety">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.variety</i> (string)</p>
-                                <p><b>Purpose: </b>Identifying the specific variety helps assess the resources, capabilities, and tendencies of the actor.</p>
-                                <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b>If the actor is a former employee, then make sure to select the External variety of “Former employee” instead of an insider. If the former employee uses their still-active account, that falls under Misuse.</p>
+                                <p><b>Confirmed: </b>Yes - Confirmed</p>
+                                <p><b>Suspected: </b>Suspected</p>
+                                <p><b>False positive: </b>False positive (response triggered, but no incident)</p>
+                                <p><b>Near miss: </b>Near miss (actions did not compromise asset)</p>
 
                                 <h4>
-                                  Origin (country)
+                                  confidence
                                 </h4>
 
-                                <p><b>Question Text: </b>What are the geographic origins of the external actor(s)?</p>
-                                <p><b>User notes: </b>Reserve this for the actual countries from which the actor is operating, rather than basing it solely on IP geolocation.</p>
-                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.country</i> (string)</p>
-                                <p><b>Purpose: </b>Identifies the geographic origin of the actor, which is useful on multiple investigatory, operational, and strategic levels.</p>
-                                <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found <a href="http://www.iso.org/iso/country_codes.htm">here</a>. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
-                                <p><b>Miscellaneous: </b>Reserving this for the actor's origin and collecting IPs separately allows the best of both worlds. We can track both the origin (and national ties) of threat actors and the location of the assets they use for malicious purposes.</p>
+                                <p><b>High: </b>High confidence</p>
+                                <p><b>Medium: </b>Medium confidence</p>
+                                <p><b>Low: </b>Low confidence</p>
+                                <p><b>None: </b>No confidence</p>
+
+                                <h4>
+                                  discovery_method
+                                </h4>
+
+
+                                <p><b>Ext - actor disclosure: </b>disclosed by threat agent (e.g., public brag, private blackmail)</p>
+                                <p><b>Ext - fraud detection: </b>External - fraud detection (e.g., CPP)</p>
+                                <p><b>Ext - monitoring service: </b>External - managed security event monitoring service</p>
+                                <p><b>Ext - customer: </b>External - reported by customer or partner affected by the incident</p>
+                                <p><b>Ext - unrelated party: </b>External - reported by unrelated external party (not customer, partner, law enforcement)</p>
+                                <p><b>Ext - audit: </b>External - security audit or scan</p>
+                                <p><b>Ext - unknown: </b>External - unknown</p>
+                                <p><b>Int - antivirus: </b>Internal - antivirus alert</p>
+                                <p><b>Int - incident response: </b>Internal - discovered while responding to another (separate) incident</p>
+                                <p><b>Int - financial audit: </b>Internal - financial audit and reconciliation process</p>
+                                <p><b>Int - fraud detection: </b>Internal - fraud detection mechanism</p>
+                                <p><b>Int - HIDS: </b>Internal - host IDS or file integrity monitoring</p>
+                                <p><b>Int - IT audit: </b>Internal - IT audit or scan</p>
+                                <p><b>Int - log review: </b>Internal - log review process or SIEM</p>
+                                <p><b>Int - NIDS: </b>Internal - network IDS or IPS alert</p>
+                                <p><b>Ext - law enforcement: </b>Internal - notified by law enforcement or government agency</p>
+                                <p><b>Int - security alarm: </b>Internal - physical security system alarm</p>
+                                <p><b>Int - reported by user: </b>Internal - witnessed suspicious actions by threat agent</p>
+                                <p><b>Int - unknown: </b>Internal - unknown</p>
+                                <p><b>Unknown: </b>Unknown</p>
+                                <p><b>Other: </b>Other</p>
+
 
 
                                 <h4>
-                                  Notes
+                                  targeted
                                 </h4>
 
-                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about the external actor(s).</p>
-                                <p><b>User notes: </b>Names or affiliations of threat groups involved would be particularly useful to record here.</p>
-                                <p><b>Question type: </b>text field</p>
-                                <p><b>Variable name: </b><i>actor.external.notes</i> (string)</p>
-                                <p><b>Purpose: </b>Catch-alls are handy</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actor and an internal actor, different notes may be recorded for each.</p>
-                                <p><b>Miscellaneous: </b>Names or affiliations of threat actors or groups involved would be particularly useful to record here.</p>
+                                <p><b>Opportunistic: </b>Victim attacked because they exhibited a weakness the actor knew how to exploit</p>
+                                <p><b>Targeted: </b>Victim chosen as target then actor determined what weaknesses could be </p>
+                                <p><b>Unknown: </b>Unknown</p>
+                                <p><b>NA: </b>Not applicable</p>
+
+
+                                <h4>
+                                  cost_corrective_action
+                                </h4>
+
+                                <p><b>Simple and cheap: </b>Simple and cheap</p>
+                                <p><b>Difficult and expensive: </b>Difficult and expensive</p>
+                                <p><b>Something in-between: </b>Something in-between</p>
+                                <p><b>Unknown: </b>Unknown</p>
 
 
                             </section>
 
-                            <!-- .................................... $Internal Actors .................................... -->
-                            <section class="section-content section-internal" id="section-internal">
+                            <!-- .................................... $Victims .................................... -->
+                            <section class="section-content section-victims" id="section-victims">
                                 <h3 class="section-title">
-                                    Internal Actors
-
-                                </h3>
-                                <p>Internal threats are those originating from within the organization. This encompasses company full-time employees, independent contractors, interns, and other staff. Insiders are trusted and privileged (some more than others).</p>
+                                    Victim Enumerations
                             </section>
 
-                            <!-- .................................... $Partner Actors .................................... -->
-                            <section class="section-content section-partner" id="section-partner">
-                                <h3 class="section-title">
-                                    Partner Actors
+                                <h4>
+                                  victim.employee_count
+                                </h4>
 
-                                </h3>
-                                <p>Partners include any third party sharing a business relationship with the organization. This includes suppliers, vendors, hosting providers, outsourced IT support, etc. some level of trust and privilege is usually implied between business partners.</p>
+                                <p><b>1 to 10: </b>1 to 10 employees</p>
+                                <p><b>11 to 100: </b>11 to 100 employees</p>
+                                <p><b>101 to 1000: </b>101 to 1,000 employees</p>
+                                <p><b>1001 to 10000: </b>1,001 to 10,000 employees</p>
+                                <p><b>10001 to 25000: </b>10,001 to 25,000 employees</p>
+                                <p><b>25001 to 50000: </b>25,001 to 50,000 employees</p>
+                                <p><b>50001 to 100000: </b>50,001 to 100,000 employees</p>
+                                <p><b>Over 100000: </b>Over 100,0001 employees</p>
+                                <p><b>Small: </b>Small organizations (1,000 employees or less)</p>
+                                <p><b>Large: </b>Large organizations (over 1,000 employees)</p>
+                                <p><b>Unknown: </b>Unknown number of employees</p>
+
+
+                            <!-- .................................... $Actors .................................... -->
+                            <section class="section-content section-actors" id="section-actors">
+                                <h3 class="section-title">
+                                    Actor Enumerations
 
                             </section>
+
+                            <h4>
+                              actor.x.motive
+                            </h4>
+
+                            <p><b>NA: </b>Not Applicable (unintentional action)</p>
+                            <p><b>Espionage: </b>Espionage or competitive advantage</p>
+                            <p><b>Fear: </b>Fear or duress</p>
+                            <p><b>Financial: </b>Financial or personal gain</p>
+                            <p><b>Fun: </b>Fun, curiosity, or pride</p>
+                            <p><b>Grudge: </b>Grudge or personal offense</p>
+                            <p><b>Ideology: </b>Ideology or protest</p>
+                            <p><b>Convenience: </b>Convenience of expediency</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
+
+                            <p><i>Note: actor.x.motive may be used in three areas: actor.external.motive, actor.internal.motive and actor.partner.motive</i></p>
+                            <p></p><p></p>
+
+                            <h4>
+                              actor.external.variety
+                            </h4>
+
+                            <p><b>Activist: </b>Activist group</p>
+                            <p><b>Auditor: </b>Auditor</p>
+                            <p><b>Competitor: </b>Competitor</p>
+                            <p><b>Customer: </b>Customer (B2C)</p>
+                            <p><b>Force majeure: </b>Force majeure (nature and chance)</p>
+                            <p><b>Former employee: </b>Former employee (no longer had access)</p>
+                            <p><b>Nation-state: </b>Nation-state</p>
+                            <p><b>Organized crime: </b>Organized or professional criminal group</p>
+                            <p><b>Acquaintance: </b>Relative or acquaintance of employee</p>
+                            <p><b>State-affiliated: </b>State-sponsored or affiliated group</p>
+                            <p><b>Terrorist: </b>Terrorist group</p>
+                            <p><b>Unaffiliated: </b>Unaffiliated person(s)</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
+
+                            <h4>
+                              actor.internal.variety
+                            </h4>
+
+                            <p><b>Auditor: </b>Auditor</p>
+                            <p><b>Call center: </b>Call center staff</p>
+                            <p><b>Cashier: </b>Cashier, teller, or waiter</p>
+                            <p><b>End-user: </b>End-user or regular employee</p>
+                            <p><b>Executive: </b>Executive or upper management</p>
+                            <p><b>Finance: </b>Finance or accounting staff</p>
+                            <p><b>Helpdesk: </b>Helpdesk staff</p>
+                            <p><b>Human resources: </b>Human resources staff</p>
+                            <p><b>Maintenance: </b>Maintenance or janitorial staff</p>
+                            <p><b>Manager: </b>Manager or supervisor</p>
+                            <p><b>Guard: </b>Security guard</p>
+                            <p><b>Developer: </b>Software developer</p>
+                            <p><b>System admin: </b>System or network administrator</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
+
+
+
+                          <!-- .................................... $Actions .................................... -->
+                          <section class="section-content section-actions" id="section-actions">
+                            <h3 class="section-title">
+                              Action Enumerations
+
+                            </h3>
+
+                            </section>
+
+                            <h4>
+                              action.malware.variety
+                            </h4>
+
+                            <p><b>Adware: </b>Adware</p>
+                            <p><b>Backdoor: </b>Backdoor (enable remote access)</p>
+                            <p><b>Brute force: </b>Brute force attack</p>
+                            <p><b>Capture app data: </b>Capture data from application or system process</p>
+                            <p><b>Capture stored data: </b>Capture data stored on system disk</p>
+                            <p><b>Client-side attack: </b>Client-side or browser attack (e.g., redirection, XSS, MitB)</p>
+                            <p><b>Click fraud: </b>Click fraud or Bitcoin mining</p>
+                            <p><b>C2: </b>Command and control (C2)</p>
+                            <p><b>Destroy data: </b>Destroy or corrupt stored data</p>
+                            <p><b>Disable controls: </b>Disable or interfere with security controls</p>
+                            <p><b>DoS: </b>Denial of Service attack</p>
+                            <p><b>Downloader: </b>Downloader (pull updates or other malware)</p>
+                            <p><b>Exploit vuln: </b>Exploit vulnerability in code (vs misconfig or weakness)</p>
+                            <p><b>Export data: </b>Export data to another site or system</p>
+                            <p><b>Packet sniffer: </b>Packet sniffer (capture data from network)</p>
+                            <p><b>Password dumper: </b>Password dumper (extract credential hashes)</p>
+                            <p><b>Ram scraper: </b>Ram scraper or memory parser (capture data from volatile memory)</p>
+                            <p><b>Ransomware: </b>Ransomware (encrypt or seize stored data)</p>
+                            <p><b>Rootkit: </b>Rootkit (maintain local privileges and stealth)</p>
+                            <p><b>Scan network: </b>Scan or footprint network</p>
+                            <p><b>Spam: </b>Send spam</p>
+                            <p><b>Spyware/Keylogger: </b>Spyware, keylogger or form-grabber (capture user input or activity)</p>
+                            <p><b>SQL injection: </b>SQL injection attack</p>
+                            <p><b>Adminware: </b>System or network utilities (e.g., PsTools, Netcat)</p>
+                            <p><b>Worm: </b>Worm (propagate to other systems or devices)</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
+
+
+
+                            <h4>
+                              action.malware.vector
+                            </h4>
+
+                            <p><b>Direct install: </b>Directly installed or inserted by threat agent (after system access)</p>
+                            <p><b>Download by malware: </b>Downloaded and installed by local malware</p>
+                            <p><b>Email autoexecute: </b>Email via automatic execution</p>
+                            <p><b>Email link: </b>Email via embedded link</p>
+                            <p><b>Email attachment : </b>Email via user-executed attachment</p>
+                            <p><b>Instant messaging: </b>Instant Messaging</p>
+                            <p><b>Network propagation: </b>Network propagation</p>
+                            <p><b>Remote injection: </b>Remotely injected by agent (i.e. via SQLi)</p>
+                            <p><b>Removable media: </b>Removable storage media or devices</p>
+                            <p><b>Web drive-by: </b>Web via auto-executed or “drive-by” infection</p>
+                            <p><b>Web download: </b>Web via user-executed or downloaded content</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
+<hr>
+                            <h4>
+                              action.hacking.variety
+                            </h4>
+
+                            <p><b>Abuse of functionality: </b>Abuse of functionality</p>
+                            <p><b>Brute force: </b>Brute force or password guessing attacks</p>
+                            <p><b>Buffer overflow: </b>Buffer overflow</p>
+                            <p><b>Cache poisoning: </b>Cache poisoning</p>
+                            <p><b>Session prediction: </b>Credential or session prediction</p>
+                            <p><b>CSRF: </b>Cross-site request forgery</p>
+                            <p><b>XSS: </b>Cross-site scripting</p>
+                            <p><b>Cryptanalysis: </b>Cryptanalysis</p>
+                            <p><b>DoS: </b>Denial of service</p>
+                            <p><b>Footprinting: </b>Footprinting and fingerprinting</p>
+                            <p><b>Forced browsing: </b>Forced browsing or predictable resource location</p>
+                            <p><b>Format string attack: </b>Format string attack</p>
+                            <p><b>Fuzz testing: </b>Fuzz testing</p>
+                            <p><b>HTTP request smuggling: </b>HTTP request smuggling</p>
+                            <p><b>HTTP request splitting: </b>HTTP request splitting</p>
+                            <p><b>Integer overflows: </b>Integer overflows</p>
+                            <p><b>LDAP injection: </b>LDAP injection</p>
+                            <p><b>Mail command injection: </b>Mail command injection</p>
+                            <p><b>MitM: </b>Man-in-the-middle attack</p>
+                            <p><b>Null byte injection: </b>Null byte injection</p>
+                            <p><b>Offline cracking: </b>Offline password or key cracking (e.g., rainbow tables, Hashcat, JtR)</p>
+                            <p><b>OS commanding: </b>OS commanding</p>
+                            <p><b>Path traversal : </b>Path traversal </p>
+                            <p><b>RFI: </b>Remote file inclusion</p>
+                            <p><b>Reverse engineering: </b>Reverse engineering</p>
+                            <p><b>Routing detour: </b>Routing detour </p>
+                            <p><b>Session fixation: </b>Session fixation</p>
+                            <p><b>Session replay: </b>Session replay</p>
+                            <p><b>Soap array abuse: </b>Soap array abuse</p>
+                            <p><b>Special element injection: </b>Special element injection</p>
+                            <p><b>SQLi: </b></p>
+                            <p><b>SSI injection: </b>SSI injection</p>
+                            <p><b>URL redirector abuse: </b>URL redirector abuse</p>
+                            <p><b>Use of backdoor or C2: </b></p>
+                            <p><b>Use of stolen creds: </b></p>
+                            <p><b>XML attribute blowup: </b>XML attribute blowup</p>
+                            <p><b>XML entity expansion: </b>XML entity expansion</p>
+                            <p><b>XML external entities: </b>XML external entities</p>
+                            <p><b>XML injection: </b>XML injection</p>
+                            <p><b>XPath injection: </b>XPath injection</p>
+                            <p><b>XQuery injection: </b>XQuery injection</p>
+                            <p><b>Virtual machine escape: </b>Virtual machine escape</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
+
+
+                            <h4>
+                              action.hacking.vector
+                            </h4>
+
+                            <p><b>3rd party desktop: </b>3rd party online desktop sharing (LogMeIn, Go2Assist)</p>
+                            <p><b>Backdoor or C2: </b>Backdoor or command and control channel</p>
+                            <p><b>Desktop sharing: </b>Graphical desktop sharing (RDP, VNC, PCAnywhere, Citrix)</p>
+                            <p><b>Physical access: </b>Physical access or connection (i.e., at keyboard or via cable)</p>
+                            <p><b>Command shell: </b>Remote shell</p>
+                            <p><b>Partner: </b>Partner connection or credential</p>
+                            <p><b>VPN: </b>VPN</p>
+                            <p><b>Web application: </b>Web application</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
+
+<hr>
+                            <h4>
+                              action.social.variety
+                            </h4>
+
+                            <p><b>Baiting: </b>Baiting (planting infected media)</p>
+                            <p><b>Bribery: </b>Bribery or solicitation</p>
+                            <p><b>Elicitation: </b>Elicitation (subtle extraction of info through conversation)</p>
+                            <p><b>Extortion: </b>Extortion or blackmail</p>
+                            <p><b>Forgery: </b>Forgery or counterfeiting (fake hardware, software, documents, etc)</p>
+                            <p><b>Influence: </b>Influence tactics (Leveraging authority or obligation, framing, etc)</p>
+                            <p><b>Scam: </b>Online scam or hoax (e.g., scareware, 419 scam, auction fraud)</p>
+                            <p><b>Phishing: </b>Phishing (or any type of *ishing)</p>
+                            <p><b>Pretexting: </b>Pretexting (dialogue leveraging invented scenario)</p>
+                            <p><b>Propaganda: </b>Propaganda or disinformation</p>
+                            <p><b>Spam: </b>Spam (unsolicited or undesired email and advertisements)</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
+
+
+
+                            <h4>
+                              action.social.vector
+                            </h4>
+
+                            <p><b>Documents: </b>Documents</p>
+                            <p><b>Email: </b>Email</p>
+                            <p><b>In-person: </b>In-person</p>
+                            <p><b>IM: </b>Instant messaging</p>
+                            <p><b>Phone: </b>Phone</p>
+                            <p><b>Removable media: </b>Removable storage media</p>
+                            <p><b>SMS: </b>SMS or texting</p>
+                            <p><b>Social media: </b>Social media or networking</p>
+                            <p><b>Software: </b>Software</p>
+                            <p><b>Website: </b>Website</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
+
+
+                            <h4>
+                              action.social.target
+                            </h4>
+
+                            <p><b>Auditor: </b>Auditor</p>
+                            <p><b>Call center: </b>Call center staff</p>
+                            <p><b>Cashier: </b>Cashier, teller, or waiter</p>
+                            <p><b>Customer: </b>Customer (B2C)</p>
+                            <p><b>End-user: </b>End-user or regular employee</p>
+                            <p><b>Executive: </b>Executive or upper management</p>
+                            <p><b>Finance: </b>Finance or accounting staff</p>
+                            <p><b>Former employee: </b>Former employee</p>
+                            <p><b>Helpdesk: </b>Helpdesk staff</p>
+                            <p><b>Human resources: </b>Human resources staff</p>
+                            <p><b>Maintenance: </b>Maintenance or janitorial staff</p>
+                            <p><b>Manager: </b>Manager or supervisor</p>
+                            <p><b>Partner: </b>Partner (B2B)</p>
+                            <p><b>Guard: </b>Security guard</p>
+                            <p><b>Developer: </b>Software developer</p>
+                            <p><b>System admin: </b>System or network administrator</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
+<hr>
+                            <h4>
+                              action.misuse.variety
+                            </h4>
+
+                            <p><b>Knowledge abuse: </b>Abuse of private or entrusted knowledge</p>
+                            <p><b>Privilege abuse: </b>Abuse of system access privileges</p>
+                            <p><b>Embezzlement: </b>Embezzlement, skimming, and related fraud</p>
+                            <p><b>Data mishandling: </b>Handling of data in an unapproved manner</p>
+                            <p><b>Email misuse: </b>Inappropriate use of email or IM</p>
+                            <p><b>Net misuse: </b>Inappropriate use of network or Web access</p>
+                            <p><b>Illicit content: </b>Storage or distribution of illicit content</p>
+                            <p><b>Unapproved workaround: </b>Unapproved workaround or shortcut</p>
+                            <p><b>Unapproved hardware: </b>Use of unapproved hardware or devices</p>
+                            <p><b>Unapproved software: </b>Use of unapproved software or services</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
+
+                              <h4>
+                                action.misuse.vector
+                              </h4>
+
+                              <p><b>Physical access: </b>Physical access within corporate facility</p>
+                              <p><b>LAN access: </b>Local network access within corporate facility</p>
+                              <p><b>Remote access: </b>Remote access connection to corporate network (i.e. VPN)</p>
+                              <p><b>Non-corporate: </b>Non-corporate facilities or networks</p>
+                              <p><b>Unknown: </b>Unknown</p>
+                              <p><b>Other: </b>Other</p>
+                              <hr>
+                              <h4>
+                                action.physical.variety
+                              </h4>
+
+                              <p><b>Assault: </b>Assault (threats or acts of physical violence)</p>
+                              <p><b>Sabotage: </b>Sabotage (deliberate damaging or disabling)</p>
+                              <p><b>Snooping: </b>Snooping (sneak about to gain info or access)</p>
+                              <p><b>Surveillance: </b>Surveillance (monitoring and observation)</p>
+                              <p><b>Tampering: </b>Tampering (alter physical form or function)</p>
+                              <p><b>Theft: </b>Theft (taking assets without permission)</p>
+                              <p><b>Wiretapping: </b>Wiretapping (Physical tap to comms line)</p>
+                              <p><b>Unknown: </b>Unknown</p>
+                              <p><b>Other: </b>Other</p>
+
+
+                              <h4>
+                                action.physical.location
+                              </h4>
+
+                              <p><b>Partner facility: </b>Partner facility or area</p>
+                              <p><b>Partner vehicle: </b>Partner vehicle (e.g., delivery truck)</p>
+                              <p><b>Personal residence: </b>Personal residence</p>
+                              <p><b>Personal vehicle: </b>Personal vehicle</p>
+                              <p><b>Public facility: </b>Public facility or area</p>
+                              <p><b>Public vehicle: </b>Public vehicle (e.g., plane, taxi)</p>
+                              <p><b>Victim secure area: </b>Victim high security area (e.g., server room, R&D labs)</p>
+                              <p><b>Victim work area: </b>Victim private or work area (e.g., office space)</p>
+                              <p><b>Victim public area: </b>Victim public or customer area (e.g., lobby, storefront)</p>
+                              <p><b>Victim grounds: </b>Victim outdoor grounds</p>
+                              <p><b>Unknown: </b>Unknown</p>
+                              <p><b>Other: </b>Other</p>
+
+
+                              <h4>
+                                action.physical.vector
+                              </h4>
+
+                              <p><b>Privileged access: </b>Held privileged access to location</p>
+                              <p><b>Visitor privileges: </b>Given temporary visitor access</p>
+                              <p><b>Bypassed controls: </b>Bypassed physical barriers or controls</p>
+                              <p><b>Disabled controls: </b>Disabled physical barriers or controls</p>
+                              <p><b>Uncontrolled location: </b>The location was uncontrolled (public)</p>
+                              <p><b>Unknown: </b>Unknown</p>
+                              <p><b>Other: </b>Other</p>
+
+
+                              <hr>
+                              <h4>
+                                action.error.variety
+                              </h4>
+
+                              <p><b>Classification error: </b>Classification or labeling error</p>
+                              <p><b>Data entry error: </b>Data entry error</p>
+                              <p><b>Disposal error: </b>Disposal error</p>
+                              <p><b>Gaffe: </b>Gaffe (social or verbal slip)</p>
+                              <p><b>Loss: </b>Loss or misplacement</p>
+                              <p><b>Maintenance error: </b>Maintenance error</p>
+                              <p><b>Misconfiguration: </b>Misconfiguration</p>
+                              <p><b>Misdelivery: </b>Misdelivery (direct or deliver to wrong recipient)</p>
+                              <p><b>Misinformation: </b>Misinformation (unintentionally giving false info)</p>
+                              <p><b>Omission: </b>Omission (something intended, but not done)</p>
+                              <p><b>Physical accidents: </b> Physical accidents (e.g., drops, bumps, spills)</p>
+                              <p><b>Capacity shortage: </b>Poor capacity planning</p>
+                              <p><b>Programming error: </b>Programming error (flaws or bugs in custom code)</p>
+                              <p><b>Publishing error: </b>Publishing error (private info to public doc or site)</p>
+                              <p><b>Malfunction: </b>Technical malfunction or glitch</p>
+                              <p><b>Unknown: </b>Unknown</p>
+                              <p><b>Other: </b>Other</p>
+
+
+                              <h4>
+                                action.error.vector
+                              </h4>
+
+                              <p><b>Random error: </b>Random error (no reason, no fault)</p>
+                              <p><b>Carelessness: </b>Carelessness</p>
+                              <p><b>Inadequate personnel: </b>Inadequate or insufficient personnel</p>
+                              <p><b>Inadequate processes: </b>Inadequate or insufficient processes</p>
+                              <p><b>Inadequate technology: </b>Inadequate or insufficient technology resources</p>
+                              <p><b>Unknown: </b>Unknown</p>
+                              <p><b>Other: </b>Other</p>
+
+
+                              <hr>
+                              <h4>
+                                action.environmental.variety
+                              </h4>
+
+                              <p><b>Deterioration: </b>Deterioration and degradation</p>
+                              <p><b>Earthquake: </b>Earthquake</p>
+                              <p><b>EMI: </b>Electromagnetic interference (EMI)</p>
+                              <p><b>ESD: </b>Electrostatic discharge (ESD)</p>
+                              <p><b>Temperature: </b>Extreme temperature</p>
+                              <p><b>Fire: </b>Fire</p>
+                              <p><b>Flood: </b>Flood</p>
+                              <p><b>Hazmat: </b>Hazardous material</p>
+                              <p><b>Humidity: </b>Humidity</p>
+                              <p><b>Hurricane: </b>Hurricane</p>
+                              <p><b>Ice: </b>Ice and snow</p>
+                              <p><b>Landslide: </b>Landslide</p>
+                              <p><b>Lightning: </b>Lightning</p>
+                              <p><b>Meteorite: </b>Meteorite</p>
+                              <p><b>Particulates: </b>Particulate matter (e.g., dust, smoke)</p>
+                              <p><b>Pathogen: </b>Pathogen</p>
+                              <p><b>Power failure: </b>Power failure or fluctuation</p>
+                              <p><b>Tornado: </b>Tornado</p>
+                              <p><b>Tsunami: </b>Tsunami</p>
+                              <p><b>Vermin: </b>Vermin</p>
+                              <p><b>Volcano: </b>Volcanic eruption</p>
+                              <p><b>Leak: </b>Water leak</p>
+                              <p><b>Wind: </b>Wind</p>
+                              <p><b>Unknown: </b>Unknown</p>
+                              <p><b>Other: </b>Other</p>
+
+                              <!-- .................................... $Assets .................................... -->
+                              <section class="section-content section-asset" id="section-asset">
+                                <h3 class="section-title">
+                                  Asset Enumerations
+
+                                </h3>
+                              </section>
+
+                              <h4>
+                                asset.variety
+                              </h4>
+
+                              <p><b>S - Authentication: </b>Server - Authentication</p>
+                              <p><b>S - Backup: </b>Server - Backup</p>
+                              <p><b>S - Database: </b>Server - Database</p>
+                              <p><b>S - DHCP: </b>Server - DHCP</p>
+                              <p><b>S - Directory: </b>Server - Directory (LDAP, AD)</p>
+                              <p><b>S - DCS: </b>Server - Distributed control system (DCS)</p>
+                              <p><b>S - DNS: </b>Server - DNS</p>
+                              <p><b>S - File: </b>Server - File</p>
+                              <p><b>S - Log: </b>Server - Log or event management</p>
+                              <p><b>S - Mail: </b>Server - Mail</p>
+                              <p><b>S - Mainframe : </b>Server - Mainframe</p>
+                              <p><b>S - Payment switch: </b>Server - Payment switch or gateway</p>
+                              <p><b>S - POS controller: </b>Server - POS controller</p>
+                              <p><b>S - Print: </b>Server - Print</p>
+                              <p><b>S - Proxy: </b>Server - Proxy</p>
+                              <p><b>S - Remote access: </b>Server - Remote access</p>
+                              <p><b>S - SCADA: </b>Server - SCADA system</p>
+                              <p><b>S - Web application: </b>Server - Web application</p>
+                              <p><b>S - Code repository: </b>Server - Code repository</p>
+                              <p><b>S - VM host: </b>Server - Virtual Host</p>
+                              <p><b>S - Other: </b>Server - Other/Unknown</p>
+                              <p><b>N - Access reader: </b>Network - Access control reader (e.g., badge, biometric)</p>
+                              <p><b>N - Camera: </b>Network - Camera or surveillance system</p>
+                              <p><b>N - Firewall: </b>Network - Firewall</p>
+                              <p><b>N - HSM: </b>Network - Hardware security module (HSM)</p>
+                              <p><b>N - IDS: </b>Network - IDS or IPs</p>
+                              <p><b>N - Broadband: </b>Network - Mobile broadband network</p>
+                              <p><b>N - PBX: </b>Network - Private branch exchange (PBX)</p>
+                              <p><b>N - Private WAN: </b>Network - Private WAN</p>
+                              <p><b>N - PLC: </b>Network - Programmable logic controller (PLC)</p>
+                              <p><b>N - Public WAN: </b>Network - Public WAN</p>
+                              <p><b>N - RTU: </b>Network - Remote terminal unit (RTU)</p>
+                              <p><b>N - Router or switch: </b>Network - Router or switch</p>
+                              <p><b>N - SAN: </b>Network - Storage area network (SAN)</p>
+                              <p><b>N - Telephone: </b>Network - Telephone</p>
+                              <p><b>N - VoIP adapter: </b>Network - VoIP adapter</p>
+                              <p><b>N - LAN: </b>Network - Wired LAN</p>
+                              <p><b>N - WLAN: </b>Network - Wireless LAN</p>
+                              <p><b>N - Other: </b>Network - Other/Unknown</p>
+                              <p><b>U - Auth token: </b>User Device - Authentication token or device</p>
+                              <p><b>U - Desktop: </b>User Device - Desktop or workstation</p>
+                              <p><b>U - Laptop: </b>User Device - Laptop</p>
+                              <p><b>U - Media: </b>User Device - Media player or recorder</p>
+                              <p><b>U - Mobile phone: </b>User Device - Mobile phone or smartphone</p>
+                              <p><b>U - Peripheral: </b>User Device - Peripheral (e.g., printer, copier, fax)</p>
+                              <p><b>U - POS terminal: </b>User Device - POS terminal</p>
+                              <p><b>U - Tablet: </b>User Device - Tablet</p>
+                              <p><b>U - Telephone: </b>User Device - Telephone</p>
+                              <p><b>U - VoIP phone: </b>User Device - VoIP phone</p>
+                              <p><b>U - Other: </b>User Device - Other/Unknown</p>
+                              <p><b>T - ATM: </b>Public Terminal - Automated Teller Machine (ATM)</p>
+                              <p><b>T - PED pad: </b>Public Terminal - Detached PIN pad or card reader</p>
+                              <p><b>T - Gas terminal: </b>Public Terminal - Gas “pay-at-the-pump” terminal</p>
+                              <p><b>T - Kiosk: </b>Public Terminal - Self-service kiosk</p>
+                              <p><b>T - Other: </b>Public Terminal - Other/Unknown</p>
+                              <p><b>M - Tapes: </b>Media - Backup tapes</p>
+                              <p><b>M - Disk media: </b>Media - Disk media (e.g., CDs, DVDs)</p>
+                              <p><b>M - Documents: </b>Media - Documents</p>
+                              <p><b>M - Flash drive: </b>Media - Flash drive or card</p>
+                              <p><b>M - Disk drive: </b>Media - Hard disk drive</p>
+                              <p><b>M - Smart card: </b>Media - Identity smart card</p>
+                              <p><b>M - Payment card: </b>Media - Payment card (e.g., magstripe, EMV)</p>
+                              <p><b>M - Other: </b>Media - Other/Unknown</p>
+                              <p><b>P - System admin: </b>People - Administrator</p>
+                              <p><b>P - Auditor: </b>People - Auditor</p>
+                              <p><b>P - Call center: </b>People - Call center</p>
+                              <p><b>P - Cashier: </b>People - Cashier</p>
+                              <p><b>P - Customer: </b>People - Customer</p>
+                              <p><b>P - Developer: </b>People - Developer</p>
+                              <p><b>P - End-user: </b>People - End-user</p>
+                              <p><b>P - Executive: </b>People - Executive</p>
+                              <p><b>P - Finance: </b>People - Finance</p>
+                              <p><b>P - Former employee: </b>People - Former employee</p>
+                              <p><b>P - Guard: </b>People - Guard</p>
+                              <p><b>P - Helpdesk: </b>People - Helpdesk</p>
+                              <p><b>P - Human resources: </b>People - Human resources</p>
+                              <p><b>P - Maintenance: </b>People - Maintenance</p>
+                              <p><b>P - Manager: </b>People - Manager</p>
+                              <p><b>P - Partner: </b>People - Manager</p>
+                              <p><b>P - Other: </b>People - Other/Unknown</p>
+                              <p><b>Unknown: </b>Unknown</p>
+
+                              <h4>
+                                asset.accessibility
+                              </h4>
+
+                                <p><b>External: </b>Publicly accessible</p>
+                                <p><b>Internal: </b>Internally accessible</p>
+                                <p><b>Isolated: </b>Internally isolated or restricted environment</p>
+                                <p><b>Unknown: </b>Unknown</p>
+                                <p><b>NA: </b>Not applicable</p>
+
+
+                                <h4>
+                                  asset.ownership
+                                </h4>
+
+                                <p><b>Victim: </b>Victim owned</p>
+                                <p><b>Employee: </b>Employee owned</p>
+                                <p><b>Partner: </b>Partner owned</p>
+                                <p><b>Customer: </b>Customer owned</p>
+                                <p><b>Unknown: </b>Unknown</p>
+                                <p><b>NA: </b>Not applicable</p>
+
+
+                                <h4>
+                                  asset.management
+                                </h4>
+
+                                <p><b>Internal: </b>Internally managed</p>
+                                <p><b>External: </b>Externally managed</p>
+                                <p><b>Unknown: </b>Unknown</p>
+                                <p><b>NA: </b>Not applicable</p>
+
+                                <h4>
+                                  asset.hosting
+                                </h4>
+
+                                  <p><b>Internal: </b>Internally hosted</p>
+                                  <p><b>External shared: </b>Externally hosted in a shared envirnoment</p>
+                                  <p><b>External dedicated: </b>Externally hosted in a dedicated envirnoment</p>
+                                  <p><b>External: </b>Externally hosted (unsure if dedicated or shared)</p>
+                                  <p><b>Unknown: </b>Unknown</p>
+                                  <p><b>NA: </b>Not applicable</p>
+
+                                  <h4>
+                                    asset.cloud
+                                  </h4>
+
+                                  <p><b>Hypervisor: </b>Hypervisor break-out attack</p>
+                                  <p><b>Partner application: </b>Application vulnerability in partner-developed application</p>
+                                  <p><b>Hosting governance: </b>Lack of security process or procedure by hosting provider</p>
+                                  <p><b>Customer attack: </b>Penetration of another web site on shared device</p>
+                                  <p><b>Hosting error: </b>Misconfiguration or error by hosting provider</p>
+                                  <p><b>User breakout: </b>Elevation of privilege by another customer in shared environment</p>
+                                  <p><b>Unknown: </b>Unknown</p>
+                                  <p><b>Other: </b>Other</p>
+
+
+
+
+                                  <!-- .................................... $Atributes .................................... -->
+                                  <section class="section-content section-attributes" id="section-attributes">
+                                    <h3 class="section-title">
+                                      Attribute Enumerations
+
+                                    </h3>
+                                  </section>
+
+                                  <h4>
+                                    attribute.confidentiality.data_disclosure
+                                  </h4>
+
+                                  <p><b>Yes: </b>Yes (confirmed)</p>
+                                  <p><b>Potentially: </b>Potentially (at risk)</p>
+                                  <p><b>No: </b>No</p>
+                                  <p><b>Unknown: </b>Unknown</p>
+
+
+                                  <h4>
+                                    attribute.confidentiality.data.variety
+                                  </h4>
+
+                                  <p><b>Credentials: </b>Authentication credentials (e.g., pwds, OTPs, biometrics)</p>
+                                  <p><b>Bank: </b>Bank account data</p>
+                                  <p><b>Classified: </b>Classified information</p>
+                                  <p><b>Copyrighted: </b>Copyrighted material</p>
+                                  <p><b>Medical: </b>Medical records</p>
+                                  <p><b>Payment: </b>Payment card data (e.g., PAN, PIN, CVV2, Expiration)</p>
+                                  <p><b>Personal: </b>Personal or identifying information (e.g., addr, ID#, credit score)</p>
+                                  <p><b>Internal: </b>Sensitive internal data (e.g., plans, reports, emails)</p>
+                                  <p><b>System: </b>System information (e.g., config info, open services)</p>
+                                  <p><b>Secrets: </b>Trade secrets</p>
+                                  <p><b>Unknown: </b>Unknown</p>
+                                  <p><b>Other: </b>Other</p>
+
+                                  <h4>
+                                    attribute.confidentiality.state
+                                  </h4>
+
+                                  <p><b>Stored: </b>Stored</p>
+                                  <p><b>Stored encrypted: </b>Stored encrypted</p>
+                                  <p><b>Stored unencrypted: </b>Stored unencrypted</p>
+                                  <p><b>Transmitted: </b>Transmitted</p>
+                                  <p><b>Transmitted encrypted: </b>Transmitted encrypted</p>
+                                  <p><b>Transmitted unencrypted: </b>Transmitted unencrypted</p>
+                                  <p><b>Processed: </b>Processed</p>
+                                  <p><b>Unknown: </b>Unknown</p>
+
+                                  <h4>
+                                    attribute.integrity.variety
+                                  </h4>
+
+                                  <p><b>Created account: </b>Created new user account</p>
+                                  <p><b>Hardware tampering: </b>Hardware tampering or physical alteration</p>
+                                  <p><b>Alter behavior: </b>Influence or alter human behavior</p>
+                                  <p><b>Fraudulent transaction: </b>Initiate fraudulent transaction</p>
+                                  <p><b>Log tampering: </b>Log tampering or modification</p>
+                                  <p><b>Misappropriation: </b>Misappropriation</p>
+                                  <p><b>Misrepresentation: </b>Misrepresentation</p>
+                                  <p><b>Modify configuration: </b>Modified configuration or services</p>
+                                  <p><b>Modify privileges: </b>Modified privileges or permissions</p>
+                                  <p><b>Modify data: </b>Modified stored data or content</p>
+                                  <p><b>Software installation: </b>Software installation or code modification</p>
+                                  <p><b>Unknown: </b>Unknown</p>
+                                  <p><b>Other: </b>Other</p>
+
+                                  <h4>
+                                    attribute.availability.variety
+                                  </h4>
+
+                                  <p><b>Destruction: </b>Destruction</p>
+                                  <p><b>Loss: </b>Loss</p>
+                                  <p><b>Interruption: </b>Interruption</p>
+                                  <p><b>Degradation: </b>Performance Degradation</p>
+                                  <p><b>Acceleration: </b>Acceleration</p>
+                                  <p><b>Obscuration: </b>Conversion or obscuration</p>
+                                  <p><b>Unknown: </b>Unknown</p>
+                                  <p><b>Other: </b>Other</p>
+
+
+
+                                  <!-- .................................... $Timeline .................................... -->
+                                  <section class="section-content section-timeline" id="section-timeline">
+                                    <h3 class="section-title">
+                                      Timeline Enumerations
+
+                                    </h3>
+                                  </section>
+
+                                  <h4>
+                                    timeline.unit
+                                  </h4>
+
+                                  <p><b>NA: </b>NA</p>
+                                  <p><b>Seconds: </b>Seconds</p>
+                                  <p><b>Minutes: </b>Minutes</p>
+                                  <p><b>Hours: </b>Hours</p>
+                                  <p><b>Days: </b>Days</p>
+                                  <p><b>Weeks: </b>Weeks</p>
+                                  <p><b>Months: </b>Months</p>
+                                  <p><b>Years: </b>Years</p>
+                                  <p><b>Never: </b>Never</p>
+                                  <p><b>Unknown: </b>Unknown</p>
+
+
+                                  <!-- .................................... $Impact .................................... -->
+                                  <section class="section-content section-impact" id="section-impact">
+                                    <h3 class="section-title">
+                                      Impact Enumerations
+
+                                    </h3>
+                                  </section>
+
+                                  <h4>
+                                    impact.overall_rating
+                                  </h4>
+
+                                  <p><b>Insignificant: </b>Insignificant: Impact absorbed by normal activities</p>
+                                  <p><b>Distracting: </b>Distracting: Limited “hard costs”, but impact felt through having to deal with the incident rather than conducting normal duties</p>
+                                  <p><b>Painful: </b>Painful: Limited “hard costs”, but impact felt through having to deal with the incident rather than conducting normal duties</p>
+                                  <p><b>Damaging: </b>Damaging: Real and serious effect on the “bottom line” and/or long-term ability to generate revenue</p>
+                                  <p><b>Catastrophic: </b>Catastrophic: A business-ending event (don't choose this if the victim will continue operations)</p>
+                                  <p><b>Unknown: </b>Unknown</p>
+
+                                  <h4>
+                                    impact.loss.variety
+                                  </h4>
+
+
+                                  <p><b>Asset and fraud: </b>Asset and fraud-related losses</p>
+                                  <p><b>Brand damage: </b>Brand and market damage</p>
+                                  <p><b>Business disruption : </b>Business disruption</p>
+                                  <p><b>Operating costs: </b>Increased operating costs</p>
+                                  <p><b>Legal and regulatory: </b>Legal and regulatory costs</p>
+                                  <p><b>Competitive advantage: </b>Loss of competitive advantage</p>
+                                  <p><b>Response and recovery: </b>Response and recovery costs</p>
+
+
+                                  <h4>
+                                    impact.loss.rating
+                                  </h4>
+
+                                  <p><b>Major: </b>Major</p>
+                                  <p><b>Moderate: </b>Moderate</p>
+                                  <p><b>Minor: </b>Minor</p>
+                                  <p><b>None: </b>None</p>
+                                  <p><b>Unknown: </b>Unknown</p>
+
+
+                                    <!-- .................................... $Repeated .................................... -->
+                                    <section class="section-content section-repeated" id="section-repeated">
+                                      <h3 class="section-title">
+                                        Repeated Enumerations
+
+                                      </h3>
+                                    </section>
+
+<h4>
+  country
+</h4>
+
+
+<p><b>AD : </b>Andorra</p>
+<p><b>AE : </b>United Arab Emirates</p>
+<p><b>AF : </b>Afghanistan</p>
+<p><b>AG : </b>Antigua and Barbuda</p>
+<p><b>AI : </b>Anguilla</p>
+<p><b>AL : </b>Albania</p>
+<p><b>AM : </b>Armenia</p>
+<p><b>AO : </b>Angola</p>
+<p><b>AQ : </b>Antarctica</p>
+<p><b>AR : </b>Argentina</p>
+<p><b>AS : </b>American Samoa</p>
+<p><b>AT : </b>Austria</p>
+<p><b>AU : </b>Australia</p>
+<p><b>AW : </b>Aruba</p>
+<p><b>AX : </b>Aland Islands</p>
+<p><b>AZ : </b>Azerbaijan</p>
+<p><b>BA : </b>Bosnia and Herzegovina</p>
+<p><b>BB : </b>Barbados</p>
+<p><b>BD : </b>Bangladesh</p>
+<p><b>BE : </b>Belgium</p>
+<p><b>BF : </b>Burkina Faso
+<p><b>BG : </b>Bulgaria</p>
+<p><b>BH : </b>Bahrain</p>
+<p><b>BI : </b>Burundi</p>
+<p><b>BJ : </b>Benin</p>
+<p><b>BL : </b>Saint-Barthelemy</p>
+<p><b>BM : </b>Bermuda</p>
+<p><b>BN : </b>Brunei Darussalam</p>
+<p><b>BO : </b>Bolivia</p>
+<p><b>BQ : </b>Bonaire, Saint Eustatius and Saba</p>
+<p><b>BR : </b>Brazil</p>
+<p><b>BS : </b>Bahamas</p>
+<p><b>BT : </b>Bhutan</p>
+<p><b>BV : </b>Bouvet Island</p>
+<p><b>BW : </b>Botswana</p>
+<p><b>BY : </b>Belarus</p>
+<p><b>BZ : </b>Belize</p>
+<p><b>CA : </b>Canada</p>
+<p><b>CC : </b>Cocos (Keeling) Islands</p>
+<p><b>CD : </b>Congo, Democratic Republic of the</p>
+<p><b>CF : </b>Central African Republic</p>
+<p><b>CG : </b>Congo</p>
+<p><b>CH : </b>Switzerland</p>
+<p><b>CI : </b>Cote d'Ivoire</p>
+<p><b>CK : </b>Cook Islands</p>
+<p><b>CL : </b>Chile</p>
+<p><b>CM : </b>Cameroon</p>
+<p><b>CN : </b>China</p>
+<p><b>CO : </b>Colombia</p>
+<p><b>CR : </b>Costa Rica</p>
+<p><b>CU : </b>Cuba</p>
+<p><b>CV : </b>Cape Verde</p>
+<p><b>CW : </b>Curacao</p>
+<p><b>CX : </b>Christmas Island</p>
+<p><b>CY : </b>Cyprus</p>
+<p><b>CZ : </b>Czech Republic</p>
+<p><b>DE : </b>Germany</p>
+<p><b>DJ : </b>Djibouti</p>
+<p><b>DK : </b>Denmark</p>
+<p><b>DM : </b>Dominica</p>
+<p><b>DO : </b>Dominican Republic</p>
+<p><b>DZ : </b>Algeria</p>
+<p><b>EC : </b>Ecuador</p>
+<p><b>EE : </b>Estonia</p>
+<p><b>EG : </b>Egypt</p>
+<p><b>EH : </b>Western Sahara</p>
+<p><b>ER : </b>Eritrea</p>
+<p><b>ES : </b>Spain</p>
+<p><b>ET : </b>Ethiopia</p>
+<p><b>FI : </b>Finland</p>
+<p><b>FJ : </b>Fiji</p>
+<p><b>FK : </b>Faeroe Islands</p>
+<p><b>FM : </b>Micronesia (Federated States of)</p>
+<p><b>FO : </b>Falkland Islands (Malvinas)</p>
+<p><b>FR : </b>France</p>
+<p><b>GA : </b>Gabon</p>
+<p><b>GB : </b>United Kingdom</p>
+<p><b>GD : </b>Grenada</p>
+<p><b>GE : </b>Georgia</p>
+<p><b>GF : </b>French Guiana</p>
+<p><b>GG : </b>Guernsey</p>
+<p><b>GH : </b>Ghana</p>
+<p><b>GI : </b>Gibraltar</p>
+<p><b>GL : </b>Greenland</p>
+<p><b>GM : </b>Gambia</p>
+<p><b>GN : </b>Guinea</p>
+<p><b>GP : </b>Guadeloupe</p>
+<p><b>GQ : </b>Equatorial Guinea</p>
+<p><b>GR : </b>Greece</p>
+<p><b>GS : </b>South Georgia and the South Sandwich Islands</p>
+<p><b>GT : </b>Guatemala</p>
+<p><b>GU : </b>Guam</p>
+<p><b>GW : </b>Guinea-Bissau</p>
+<p><b>GY : </b>Guyana</p>
+<p><b>HK : </b>Hong Kong</p>
+<p><b>HM : </b>Heard Island and McDonal Islands</p>
+<p><b>HN : </b>Honduras</p>
+<p><b>HR : </b>Croatia</p>
+<p><b>HT : </b>Haiti</p>
+<p><b>HU : </b>Hungary</p>
+<p><b>ID : </b>Indonesia</p>
+<p><b>IE : </b>Ireland</p>
+<p><b>IL : </b>Israel</p>
+<p><b>IM : </b>Isle of Man</p>
+<p><b>IN : </b>India</p>
+<p><b>IO : </b>British Virgin Islands</p>
+<p><b>IQ : </b>Iraq</p>
+<p><b>IR : </b>Iran (Islamic Republic of)</p>
+<p><b>IS : </b>Iceland</p>
+<p><b>IT : </b>Italy</p>
+<p><b>JE : </b>Jersey</p>
+<p><b>JM : </b>Jamaica</p>
+<p><b>JO : </b>Jordan</p>
+<p><b>JP : </b>Japan</p>
+<p><b>KE : </b>Kenya</p>
+<p><b>KG : </b>Kyrgyzstan</p>
+<p><b>KH : </b>Cambodia</p>
+<p><b>KI : </b>Kiribati</p>
+<p><b>KM : </b>Comoros</p>
+<p><b>KN : </b>Saint Kitts and Nevis</p>
+<p><b>KP : </b>Korea, Democratic People's Republic of</p>
+<p><b>KR : </b>Korea, Republic of</p>
+<p><b>KW : </b>Kuwait</p>
+<p><b>KY : </b>Cayman Islands</p>
+<p><b>KZ : </b>Kazakhstan</p>
+<p><b>LA : </b>Lao People's Democratic Republic</p>
+<p><b>LB : </b>Lebanon</p>
+<p><b>LC : </b>Saint Lucia</p>
+<p><b>LI : </b>Liechtenstein</p>
+<p><b>LK : </b>Sri Lanka</p>
+<p><b>LR : </b>Liberia</p>
+<p><b>LS : </b>Lesotho</p>
+<p><b>LT : </b>Lithuania</p>
+<p><b>LU : </b>Luxembourg</p>
+<p><b>LV : </b>Latvia</p>
+<p><b>LY : </b>Libya</p>
+<p><b>MA : </b>Morocco</p>
+<p><b>MC : </b>Monaco</p>
+<p><b>MD : </b>Moldova, Republic of</p>
+<p><b>ME : </b>Montenegro</p>
+<p><b>MF : </b>Saint Martin (French part)</p>
+<p><b>MG : </b>Madagascar</p>
+<p><b>MH : </b>Marshall Islands</p>
+<p><b>MK : </b>Macedonia, The former Yugoslav Republic of</p>
+<p><b>ML : </b>Mali</p>
+<p><b>MM : </b>Myanmar</p>
+<p><b>MN : </b>Mongolia</p>
+<p><b>MO : </b>Macao</p>
+<p><b>MP : </b>Northern Mariana Islands</p>
+<p><b>MQ : </b>Martinique</p>
+<p><b>MR : </b>Mauritania</p>
+<p><b>MS : </b>Montserrat</p>
+<p><b>MT : </b>Malta</p>
+<p><b>MU : </b>Mauritius</p>
+<p><b>MV : </b>Maldives</p>
+<p><b>MW : </b>Malawi</p>
+<p><b>MX : </b>Mexico</p>
+<p><b>MY : </b>Malaysia</p>
+<p><b>MZ : </b>Mozambique</p>
+<p><b>NA : </b>Namibia</p>
+<p><b>NC : </b>New Caledonia</p>
+<p><b>NE : </b>Niger</p>
+<p><b>NF : </b>Norfolk Island</p>
+<p><b>NG : </b>Nigeria</p>
+<p><b>NI : </b>Nicaragua</p>
+<p><b>NL : </b>Netherlands</p>
+<p><b>NO : </b>Norway</p>
+<p><b>NP : </b>Nepal</p>
+<p><b>NR : </b>Nauru</p>
+<p><b>NU : </b>Niue</p>
+<p><b>NZ : </b>New Zealand</p>
+<p><b>OM : </b>Oman</p>
+<p><b>Other : </b>Other</p>
+<p><b>PA : </b>Panama</p>
+<p><b>PE : </b>Peru</p>
+<p><b>PF : </b>French Polynesia</p>
+<p><b>PG : </b>Papua New Guinea</p>
+<p><b>PH : </b>Philippines</p>
+<p><b>PK : </b>Pakistan</p>
+<p><b>PL : </b>Poland</p>
+<p><b>PM : </b>Saint Pierre and Miquelon</p>
+<p><b>PN : </b>Pitcairn</p>
+<p><b>PR : </b>Puerto Rico</p>
+<p><b>PS : </b>Palestinian Territory, Occupied</p>
+<p><b>PT : </b>Portugal</p>
+<p><b>PW : </b>Palau</p>
+<p><b>PY : </b>Paraguay</p>
+<p><b>QA : </b>Qatar</p>
+<p><b>RE : </b>Reunion</p>
+<p><b>RO : </b>Romania
+<p><b>RS : </b>Serbia</p>
+<p><b>RU : </b>Russian Federation</p>
+<p><b>RW : </b>Rwanda</p>
+<p><b>SA : </b>Saudi Arabia</p>
+<p><b>SB : </b>Solomon Islands</p>
+<p><b>SC : </b>Seychelles</p>
+<p><b>SD : </b>Sudan</p>
+<p><b>SE : </b>Sweden</p>
+<p><b>SG : </b>Singapore</p>
+<p><b>SH : </b>Saint Helena</p>
+<p><b>SI : </b>Slovenia</p>
+<p><b>SJ : </b>Svalbard and Jan Mayen Islands</p>
+<p><b>SK : </b>Slovakia</p>
+<p><b>SL : </b>Sierra Leone</p>
+<p><b>SM : </b>San Marino</p>
+<p><b>SN : </b>Senegal</p>
+<p><b>SO : </b>Somalia</p>
+<p><b>SR : </b>Suriname</p>
+<p><b>SS : </b>South Sudan</p>
+<p><b>ST : </b>Sao Tome and Principe</p>
+<p><b>SV : </b>El Salvador</p>
+<p><b>SX : </b>Sint Maarten (Dutch part)</p>
+<p><b>SY : </b>Syrian Arab Republic</p>
+<p><b>SZ : </b>Swaziland</p>
+<p><b>TC : </b>Turks and Caicos Islands</p>
+<p><b>TD : </b>Chad</p>
+<p><b>TF : </b>French Southern Territories</p>
+<p><b>TG : </b>Togo</p>
+<p><b>TH : </b>Thailand</p>
+<p><b>TJ : </b>Tajikistan</p>
+<p><b>TK : </b>Tokelau</p>
+<p><b>TL : </b>Timor-Leste</p>
+<p><b>TM : </b>Turkmenistan</p>
+<p><b>TN : </b>Tunisia</p>
+<p><b>TO : </b>Tonga</p>
+<p><b>TR : </b>Turkey</p>
+<p><b>TT : </b>Trinidad and Tobago</p>
+<p><b>TV : </b>Tuvalu</p>
+<p><b>TW : </b>Taiwan, Province of China</p>
+<p><b>TZ : </b>Tanzania, United Republic of</p>
+<p><b>UA : </b>Ukraine</p>
+<p><b>UG : </b>Uganda</p>
+<p><b>UM : </b>United States Minor Outlying Islands</p>
+<p><b>US : </b>United States of America</p>
+<p><b>UY : </b>Uruguay</p>
+<p><b>UZ : </b>Uzbekistan</p>
+<p><b>Unknown : </b>Unknown</p>
+<p><b>VA : </b>Holy See</p>
+<p><b>VC : </b>Saint Vincent and the Grenadines</p>
+<p><b>VE : </b>Venezuela (Bolivarian Republic of)</p>
+<p><b>VG : </b>British Virgin Islands</p>
+<p><b>VI : </b>United States Virgin Islands</p>
+<p><b>VN : </b>Viet Nam</p>
+<p><b>VU : </b>Vanuatu</p>
+<p><b>WF : </b>Wallis and Futuna Islands</p>
+<p><b>WS : </b>Samoa</p>
+<p><b>YE : </b>Yemen</p>
+<p><b>YT : </b>Mayotte</p>
+<p><b>ZA : </b>South Africa</p>
+<p><b>ZM : vZambia</p>
+<p><b>ZW : </b>Zimbabwe</p>
+
+
+
+<h4>
+  iso_currency_code
+</h4>
+
+
+<p><b>AED : </b>AED - UAE Dirham</b>
+<p><b>AFN : </b>AFN - Afghani</b>
+<p><b>ALL : </b>ALL - Lek</b>
+<p><b>AMD : </b>AMD - Armenian Dram</b>
+<p><b>ANG : </b>ANG - Netherlands Antillean Guilder</b>
+<p><b>AOA : </b>AOA - Kwanza</b>
+<p><b>ARS : </b>ARS - Argentine Peso</b>
+<p><b>AUD : </b>AUD - Australian Dollar</b>
+<p><b>AWG : </b>AWG - Aruban Florin</b>
+<p><b>AZN : </b>AZN - Azerbaijanian Manat</b>
+<p><b>BAM : </b>BAM - Convertible Mark</b>
+<p><b>BBD : </b>BBD - Barbados Dollar</b>
+<p><b>BDT : </b>BDT - Taka</b>
+<p><b>BGN : </b>BGN - Bulgarian Lev</b>
+<p><b>BHD : </b>BHD - Bahraini Dinar</b>
+<p><b>BIF : </b>BIF - Burundi Franc</b>
+<p><b>BMD : </b>BMD - Bermudian Dollar</b>
+<p><b>BND : </b>BND - Brunei Dollar</b>
+<p><b>BOB : </b>BOB - Boliviano</b>
+<p><b>BRL : </b>BRL - Brazilian Real</b>
+<p><b>BSD : </b>BSD - Bahamian Dollar</b>
+<p><b>BTN : </b>BTN - Ngultrum</b>
+<p><b>BWP : </b>BWP - Pula</b>
+<p><b>BYR : </b>BYR - Belarussian Ruble</b>
+<p><b>BZD : </b>BZD - Belize Dollar</b>
+<p><b>CAD : </b>CAD - Canadian Dollar</b>
+<p><b>CDF : </b>CDF - Congolese Franc</b>
+<p><b>CHF : </b>CHF - Swiss Franc</b>
+<p><b>CLP : </b>CLP - Chilean Peso</b>
+<p><b>CNY : </b>CNY - Yuan Renminbi</b>
+<p><b>COP : </b>COP - Colombian Peso</b>
+<p><b>CRC : </b>CRC - Costa Rican Colon</b>
+<p><b>CUC : </b>CUC - Peso Convertible</b>
+<p><b>CUP : </b>CUP - Cuban Peso</b>
+<p><b>CVE : </b>CVE - Cape Verde Escudo</b>
+<p><b>CZK : </b>CZK - Czech Koruna</b>
+<p><b>DJF : </b>DJF - Djibouti Franc</b>
+<p><b>DKK : </b>DKK - Danish Krone</b>
+<p><b>DOP : </b>DOP - Dominican Peso</b>
+<p><b>DZD : </b>DZD - Algerian Dinar</b>
+<p><b>EGP : </b>EGP - Egyptian Pound</b>
+<p><b>ERN : </b>ERN - Nakfa</b>
+<p><b>ETB : </b>ETB - Ethiopian Birr</b>
+<p><b>EUR : </b>EUR - Euro</b>
+<p><b>FJD : </b>FJD - Fiji Dollar</b>
+<p><b>FKP : </b>FKP - Falkland Islands Pound</b>
+<p><b>GBP : </b>GBP - Pound Sterling</b>
+<p><b>GEL : </b>GEL - Lari</b>
+<p><b>GGP : </b>GGP - Guernsey pound</b>
+<p><b>GHS : </b>GHS - Ghana Cedi</b>
+<p><b>GIP : </b>GIP - Gibraltar Pound</b>
+<p><b>GMD : </b>GMD - Dalasi</b>
+<p><b>GNF : </b>GNF - Guinea Franc</b>
+<p><b>GTQ : </b>GTQ - Quetzal</b>
+<p><b>GYD : </b>GYD - Guyana Dollar</b>
+<p><b>HKD : </b>HKD - Hong Kong Dollar</b>
+<p><b>HNL : </b>HNL - Lempira</b>
+<p><b>HRK : </b>HRK - Croatian Kuna</b>
+<p><b>HTG : </b>HTG - Gourde</b>
+<p><b>HUF : </b>HUF - Forint</b>
+<p><b>IDR : </b>IDR - Rupiah</b>
+<p><b>ILS : </b>ILS - New Israeli Sheqel</b>
+<p><b>IMP : </b>IMP - Isle of Man Pound</b>
+<p><b>INR : </b>INR - Indian Rupee</b>
+<p><b>IQD : </b>IQD - Iraqi Dinar</b>
+<p><b>IRR : </b>IRR - Iranian Rial</b>
+<p><b>ISK : </b>ISK - Iceland Krona</b>
+<p><b>JEP : </b>JEP - Jersey pound</b>
+<p><b>JMD : </b>JMD - Jamaican Dollar</b>
+<p><b>JOD : </b>JOD - Jordanian Dinar</b>
+<p><b>JPY : </b>JPY - Yen</b>
+<p><b>KES : </b>KES - Kenyan Shilling</b>
+<p><b>KGS : </b>KGS - Som</b>
+<p><b>KHR : </b>KHR - Riel</b>
+<p><b>KMF : </b>KMF - Comoro Franc</b>
+<p><b>KPW : </b>KPW - North Korean Won</b>
+<p><b>KRW : </b>KRW - South Korean Won</b>
+<p><b>KWD : </b>KWD - Kuwaiti Dinar</b>
+<p><b>KYD : </b>KYD - Cayman Islands Dollar</b>
+<p><b>KZT : </b>KZT - Tenge</b>
+<p><b>LAK : </b>LAK - Kip</b>
+<p><b>LBP : </b>LBP - Lebanese Pound</b>
+<p><b>LKR : </b>LKR - Sri Lanka Rupee</b>
+<p><b>LRD : </b>LRD - Liberian Dollar</b>
+<p><b>LSL : </b>LSL - Loti</b>
+<p><b>LTL : </b>LTL - Lithuanian Litas</b>
+<p><b>LVL : </b>LVL - Latvian Lats</b>
+<p><b>LYD : </b>LYD - Libyan Dinar</b>
+<p><b>MAD : </b>MAD - Moroccan Dirham</b>
+<p><b>MDL : </b>MDL - Moldovan Leu</b>
+<p><b>MGA : </b>MGA - Malagasy Ariary</b>
+<p><b>MKD : </b>MKD - Denar</b>
+<p><b>MMK : </b>MMK - Kyat</b>
+<p><b>MNT : </b>MNT - Tugrik</b>
+<p><b>MOP : </b>MOP - Pataca</b>
+<p><b>MRO : </b>MRO - Ouguiya</b>
+<p><b>MUR : </b>MUR - Mauritius Rupee</b>
+<p><b>MVR : </b>MVR - Rufiyaa</b>
+<p><b>MWK : </b>MWK - Kwacha</b>
+<p><b>MXN : </b>MXN - Mexican Peso</b>
+<p><b>MYR : </b>MYR - Malaysian Ringgit</b>
+<p><b>MZN : </b>MZN - Mozambique Metical</b>
+<p><b>NAD : </b>NAD - Namibia Dollar</b>
+<p><b>NGN : </b>NGN - Naira</b>
+<p><b>NIO : </b>NIO - Cordoba Oro</b>
+<p><b>NOK : </b>NOK - Norwegian Krone</b>
+<p><b>NPR : </b>NPR - Nepalese Rupee</b>
+<p><b>NZD : </b>NZD - New Zealand Dollar</b>
+<p><b>OMR : </b>OMR - Rial Omani</b>
+<p><b>PAB : </b>PAB - Balboa</b>
+<p><b>PEN : </b>PEN - Nuevo Sol</b>
+<p><b>PGK : </b>PGK - Kina</b>
+<p><b>PHP : </b>PHP - Philippine Peso</b>
+<p><b>PKR : </b>PKR - Pakistan Rupee</b>
+<p><b>PLN : </b>PLN - Zloty</b>
+<p><b>PYG : </b>PYG - Guarani</b>
+<p><b>QAR : </b>QAR - Qatari Rial</b>
+<p><b>RON : </b>RON - New Romanian Leu</b>
+<p><b>RSD : </b>RSD - Serbian Dinar</b>
+<p><b>RUB : </b>RUB - Russian Ruble</b>
+<p><b>RWF : </b>RWF - Rwanda Franc</b>
+<p><b>SAR : </b>SAR - Saudi Riyal</b>
+<p><b>SBD : </b>SBD - Solomon Islands Dollar</b>
+<p><b>SCR : </b>SCR - Seychelles Rupee</b>
+<p><b>SDG : </b>SDG - Sudanese Pound</b>
+<p><b>SEK : </b>SEK - Swedish Krona</b>
+<p><b>SGD : </b>SGD - Singapore Dollar</b>
+<p><b>SHP : </b>SHP - Saint Helena Pound</b>
+<p><b>SLL : </b>SLL - Leone</b>
+<p><b>SOS : </b>SOS - Somali Shilling</b>
+<p><b>SPL : </b>SPL - Seborga Luigino</b>
+<p><b>SRD : </b>SRD - Surinam Dollar</b>
+<p><b>STD : </b>STD - Dobra</b>
+<p><b>SVC : </b>SVC - El Salvador Colon</b>
+<p><b>SYP : </b>SYP - Syrian Pound</b>
+<p><b>SZL : </b>SZL - Lilangeni</b>
+<p><b>THB : </b>THB - Baht</b>
+<p><b>TJS : </b>TJS - Somoni</b>
+<p><b>TMT : </b>TMT - Turkmenistan New Manat</b>
+<p><b>TND : </b>TND - Tunisian Dinar</b>
+<p><b>TOP : </b>TOP - Pa'anga</b>
+<p><b>TRY : </b>TRY - Turkish Lira</b>
+<p><b>TTD : </b>TTD - Trinidad and Tobago Dollar</b>
+<p><b>TVD : </b>TVD - Tuvalu Dollar</b>
+<p><b>TWD : </b>TWD - New Taiwan Dollar</b>
+<p><b>TZS : </b>TZS - Tanzanian Shilling</b>
+<p><b>UAH : </b>UAH - Hryvnia</b>
+<p><b>UGX : </b>UGX - Uganda Shilling</b>
+<p><b>USD : </b>USD - US Dollar</b>
+<p><b>UYU : </b>UYU - Peso Uruguayo</b>
+<p><b>UZS : </b>UZS - Uzbekistan Sum</b>
+<p><b>VEF : </b>VEF - Bolivar</b>
+<p><b>VND : </b>VND - Dong</b>
+<p><b>VUV : </b>VUV - Vatu</b>
+<p><b>WST : </b>WST - Tala</b>
+<p><b>XAF : </b>XAF - CFA Franc BEAC</b>
+<p><b>XCD : </b>XCD - East Caribbean Dollar</b>
+<p><b>XDR : </b>XDR - SDR (Special Drawing Right)</b>
+<p><b>XOF : </b>XOF - CFA Franc BCEAO</b>
+<p><b>XPF : </b>XPF - CFP Franc</b>
+<p><b>YER : </b>YER - Yemeni Rial</b>
+<p><b>ZAR : </b>ZAR - South African Rand</b>
+<p><b>ZMK : </b>ZMK - Zambian Kwacha</b>
+<p><b>ZWD : </b>ZWD - Zimbabwean Dollar A/06</b>
+
+
 
                         </div>
                     </div>
