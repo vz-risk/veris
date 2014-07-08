@@ -12,7 +12,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>Features | Resie</title>
+    <title>Victim Demographics</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="description">
     <meta content="elemind.com" name="author">
@@ -99,121 +99,258 @@
                     <div class="row">
                         <div class="span3 documentation-nav affix hidden-phone">
                             <ul class="nav nav-pills nav-stacked">
-                                <li class="active"><a href="#section-actors">
+                                <li><a href="#section-victim-id">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Threat Actors
+                                    Victim ID
                                 </a></li>
-                                <li><a href="#section-external">
+                                <li><a href="#section-primary-industry">
                                     <i class="icon-angle-right pull-right"></i>
-                                    External Actors
+                                    Primary Industry
                                 </a></li>
-                                <li><a href="#section-internal">
+                                <li><a href="#section-country-of-operation">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Internal Actors
+                                    Country of operation
                                 </a></li>
-                                <li><a href="#section-partner">
-                                    <i class="icon-angle-right pull-right"></i>
-                                    Partner Actors
+                                <li><a href="#section-state">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  State
+                                </a></li>
+                                <li><a href="#section-number-of-employees">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Number of employees
+                                </a></li>
+                                <li><a href="#section-annual-revenue">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Annual revenue
+                                </a></li>
+                                <li><a href="#section-locations-affected">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Locations Affected
+                                </a></li>
+                                <li><a href="#section-notes">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Notes
+                                </a></li>
+                                <li><a href="#section-additional-guidance">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Additional Guidance
                                 </a></li>
                             </ul>
                         </div>
                         <div class="span6 offset3">
                             <h2 class="section-title">
-                                Threat Actors
-                                <small>
-                                    Entities that cause or contribute to an incident are referred to as threat actors
-                                </small>
+                                Victim Demographics
                             </h2>
 
-                            <p>There can be more than one actor involved in any particular incident, and their actions can be malicious or non-malicious, intentional or unintentional, causal or contributory. VERIS recognizes three primary categories of threat actors - External, Internal, and Partner.</p>
+                            <p>The Victim Demographics section describes (but does not identify) the organization affected by the incident. The primary purpose is to aid comparisons between different types of organizations (across industries, sizes, regions, etc) or departments within a single organization. While any number of organizational characteristics could be tracked, those listed below provide an adequate basis for interesting and useful comparisons.</p>
 <p>
-
-<i>VERIS classification note: If the actor’s role in the breach is limited to a contributory error, the actor would not be included here. For example, if an insider’s unintentional misconfiguration of an application left it vulnerable to attack, the insider would not be considered a threat actor if the application were successfully breached by another actor. An insider who deliberately steals data or whose inappropriate behavior (e.g., policy violations) facilitated the breach would be considered a threat actor in the breach.</i>
-
+Organizations using VERIS to track incidents internally may (depending on circumstances) want to pre-populate some or all of the demographic variables rather than prompting the user for them upon each submission.
 </p>
 
-                            <!-- .................................... $External Actors .................................... -->
-                            <section class="section-content section-external" id="section-external">
+                            <!-- .................................... $Victim ID .................................... -->
+                            <section class="section-content section-victim-id" id="section-victim-id">
                                 <h3 class="section-title">
-                                    External Actors
+                                    Victim ID
 
                                 </h3>
-                                <p>External threats originate from sources outside of the organization and its network of partners. Examples include criminal groups, lone hackers, former employees, and government entities. Also includes God (as in “acts of”), “Mother Nature,” and random chance. Typically, no trust or privilege is implied for external entities.</p>
 
-                                <h4>
-                                  Role **DEPRECATED IN V1.2**
-                                </h4>
-                                <p><b>Variable Name: </b>actor.external.role (string)</p>
-
-                                <h4>
-                                  Motive
-                                </h4>
-                                <p><b>Question Text: </b>What motives drove the external actor(s) to act?</p>
+                                <p><b>Question Text: </b>Victim organization ID:</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorxmotive">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.motive</i> (string)</p>
-                                <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actors and an internal actor, different motives may be assigned for each.</p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i>victim.victim_id</i> (string)</p>
+                                <p><b>Purpose: </b>To associate incidents with the entity that was affected by them (without identifying the entity itself). Even in anonymous incident sharing scenarios, this can be useful for many purposes. For instance, it is necessary to study things like the average number of incidents per organization, why certain organizations suffer more incidents, whether certain corrective actions lead to reduced incidents/losses, etc.</p>
+                                <p><b>Developer notes: </b>If you plan to share incident with others, we suggest not making your org's name part of the victim ID. In certain situations (incident tracking within a single organization), this field may be auto-populated rather than prompting the user.</p>
+                                <p><b>Miscellaneous: </b></p>
+                                <ul>
+                                  <li>
+                                    Many VERIS users won't need this field at all - either because they're using it internally or because they're using it anonymously. Assuming you do want to record and share the victim name (i.e., if you're contributing to VCDB), the most important thing is to record a “proper” and recognizable form of the name to aid analysis.
+                                  </a></li>
+                                  <li>
+                                    If the victim's name is not known, leave victim_id blank. If you record something like “Unknown retailer,” it makes it difficult to distinguish that from a real name during analysis.
+                                  </a></li>
+                                  <li>
+                                    Always use the full/official name of the victim rather than abbreviations or shortened versions. For orgs like “IBM,” where the acronym is the official name, use that. This will help maintain consistent records (i.e., it's hard for a database to know that “BOA” and “Bank of America” are the same entity).
+                                  </a></li>
+                                  <li>
+                                    If the victim is a national government agency, always use the two-digit ISO country country code with no periods (e.g, “US Department of the Treasury” instead of “U.S.” or “United States.” Beyond that, try to use the full official name (e.g., “US Department of the Treasury” rather than “US Treasury Department” or “U.S. Dept of Treasury.”
+                                  </a></li>
+                                  <li>
+                                    If the victim is a state or local government agency, always use the “City of…” or “State of…” format. So New York Fire Department would be “City of New York Fire Department.”
+                                  </a></li>
+                                </ul>
+                            </section>
+
+
+
+
+                            <!-- .................................... $Primary Industry .................................... -->
+                            <section class="section-content section-primary-industry" id="section-primary-industry">
+                                <h3 class="section-title">
+                                    Primary Industry
+
+                                </h3>
+
+                                <p><b>Question Text: </b>Primary industry (NAICS code):</p>
+                                <p><b>User notes: </b>VERIS uses standard NAICS codes to identify industries. Record the appropriate code here, using at least 3 digits of the full 6 digit code (the more specific, the better). If multiple industries apply, enter the code of the business group that experienced the incident. NAICS provides descriptions at http://www.census.gov/cgi-bin/sssd/naics/naicsrch?chart=2012.</p>
+                                <p><b>Question type: </b>text field or enumerated list (single-select)</p>
+                                <p><b>Variable name: </b><i>victim.industry</i> (string)</p>
+                                <p><b>Purpose: </b>Allows industry-specific analysis, trending, and comparisons.</p>
+                                <p><b>Developer notes: </b>We recommend making it as easy as possible for the user to locate and select the appropriate industry code (e.g., a picklist). If appropriate, auto-populate this field rather than prompting the user for it. The application should be configured to require at least 3 digits of the full 6 digit code in order to provide sufficient specificity.</p>
+                                <p><b>Miscellaneous: </b></p>
+                                <ul>
+                                  <li>
+                                    The full 6 digit NAICS code is preferred for industry over selecting from the enumerated list.
+                                  </a></li>
+                                  <li>
+                                    Use the “Nonstore retailer” code of 454111 for online/eCommerce retailers.
+                                  </a></li>
+
+                                </ul>
+
+                            </section>
+
+
+
+
+                            <!-- .................................... $Country of operation .................................... -->
+                            <section class="section-content section-country-of-operation" id="section-country-of-operation">
+                                <h3 class="section-title">
+                                    Country of operation
+
+                                </h3>
+
+                                <p><b>Question Text: </b>Country of operation:</p>
+                                <p><b>User notes: </b>If multinational, enter the primary location of the business group that experienced the incident.</p>
+                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-repeated">enumerated list</a> (single-select)</p>
+                                <p><b>Variable name: </b><i>victim.country</i> (string)</p>
+                                <p><b>Purpose: </b>Allows geographic analysis, trending, and comparisons.</p>
+                                <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found here: http://www.iso.org/iso/country_codes.htm. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
+                                <p><b>Miscellaneous: </b>VERIS specifies two datapoints pertaining to the geographic location of the victim: country and region. We include both because each has a slightly different use case. Collecting the country allows more specificity for trending, while the less-specific region provides another level of de-identification. We leave it up to the user to decide which most meets their needs.</p>
+
+                            </section>
+
+
+
+
+                            <!-- .................................... $State .................................... -->
+                            <section class="section-content section-state" id="section-state">
+                                <h3 class="section-title">
+                                    State
+
+                                </h3>
+
+                                <p><b>Question Text: </b>State/region of operation:</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i>victim.state</i> (string)</p>
+                                <p><b>Purpose: </b>Allows more specific in-country geographic analysis, trending, and comparisons if desired.</p>
+                                <p><b>Developer notes: </b>N/A</p>
                                 <p><b>Miscellaneous: </b>N/A</p>
 
-                                <h4>
-                                  Variety
-                                </h4>
+                            </section>
 
-                                <p><b>Question Text: </b>What varieties of external actors were involved?</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorexternalvariety">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.variety</i> (string)</p>
-                                <p><b>Purpose: </b>Identifying the specific variety helps assess the resources, capabilities, and tendencies of the actor.</p>
+
+
+
+                            <!-- .................................... $Number of employees .................................... -->
+                            <section class="section-content section-number-of-employees" id="section-number-of-employees">
+                                <h3 class="section-title">
+                                    Number of employees
+
+                                </h3>
+
+                                <p><b>Question Text: </b>Approximate number of employees:</p>
+                                <p><b>User notes: </b>The size of the entire organization is preferred rather than the particular division, branch, location, etc affected. For an independent or individually-owned and operated franchise, however, the size of that particular franchise location is usually more fitting.</p>
+                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-victims">enumerated list</a> (single-select)</p>
+                                <p><b>Variable name: </b><i>victim.employee_count</i> (string)</p>
+                                <p><b>Purpose: </b>Allows analysis, trending, and comparisons based on organizational size.</p>
                                 <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b>If the actor is a former employee, then make sure to select the External variety of “Former employee” instead of an insider. If the former employee uses their still-active account, that falls under Misuse.</p>
+                                <p><b>Miscellaneous: </b>While the exact number could be used, ranges allow for interesting comparisons and provide some measure of de-identification for data sharing purposes. We have, however, considered moving toward an exact number to enable better correlation and analysis. If you have a preference either way, let us know.</p>
 
-                                <h4>
-                                  Origin (country)
-                                </h4>
-
-                                <p><b>Question Text: </b>What are the geographic origins of the external actor(s)?</p>
-                                <p><b>User notes: </b>Reserve this for the actual countries from which the actor is operating, rather than basing it solely on IP geolocation.</p>
-                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.country</i> (string)</p>
-                                <p><b>Purpose: </b>Identifies the geographic origin of the actor, which is useful on multiple investigatory, operational, and strategic levels.</p>
-                                <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found <a href="http://www.iso.org/iso/country_codes.htm">here</a>. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
-                                <p><b>Miscellaneous: </b>Reserving this for the actor's origin and collecting IPs separately allows the best of both worlds. We can track both the origin (and national ties) of threat actors and the location of the assets they use for malicious purposes.</p>
+                            </section>
 
 
-                                <h4>
-                                  Notes
-                                </h4>
 
-                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about the external actor(s).</p>
-                                <p><b>User notes: </b>Names or affiliations of threat groups involved would be particularly useful to record here.</p>
+
+                            <!-- .................................... $Annual revenue .................................... -->
+                            <section class="section-content section-annual-revenue" id="section-annual-revenue">
+                                <h3 class="section-title">
+                                    Annual revenue
+
+                                </h3>
+
+                                <p><b>Question Text: </b>Annual revenue: </p>
+                                <p><b>User notes: </b>If you plan to share this information and are concerned that the revenue could be used to identify your organization, round the figure sufficiently to provide an extra level of de-identification.</p>
+                                <p><b>Question type: </b>text field for <i>amount</i> and enumerated list (single-select) for <i>iso_currency_code</i></p>
+                                <p><b>Variable name: </b><i>victim.revenue</i> (comprised of the amount (integer) and <i>iso_currency_code</i> (string) </p>
+                                <p><b>Purpose: </b>Allows analysis, trending, and comparisons based on organizational revenue (another indicator of size).</p>
+                                <p><b>Developer notes: </b>An amount and a currency is included. Depending on your circumstances, it may make sense to preset and default currency rather than prompting the user for it each time. We recommend making it as easy as possible for the user to locate and select the appropriate currency code (e.g., a picklist).</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                            </section>
+
+
+
+
+                            <!-- .................................... $Locations Affected .................................... -->
+                            <section class="section-content section-locations-affected" id="section-locations-affected">
+                                <h3 class="section-title">
+                                    Locations Affected
+
+                                </h3>
+
+                                <p><b>Question Text: </b>Number of locations affected by this incident:</p>
+                                <p><b>User notes: </b>For instance, a central intrusion that spreads to multiple regional offices. Note: this assumes all locations belong to a single victim organization. If spread across multiple victims, treat as separate incidents.</p>
                                 <p><b>Question type: </b>text field</p>
-                                <p><b>Variable name: </b><i>actor.external.notes</i> (string)</p>
-                                <p><b>Purpose: </b>Catch-alls are handy</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actor and an internal actor, different notes may be recorded for each.</p>
-                                <p><b>Miscellaneous: </b>Names or affiliations of threat actors or groups involved would be particularly useful to record here.</p>
-
+                                <p><b>Variable name: </b><i>victim.locations_affected</i> (integer)</p>
+                                <p><b>Purpose: </b>Gives a sense of scale for the incident with respect to the organization affected.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
                             </section>
 
-                            <!-- .................................... $Internal Actors .................................... -->
-                            <section class="section-content section-internal" id="section-internal">
+
+
+
+                            <!-- .................................... $Notes .................................... -->
+                            <section class="section-content section-notes" id="section-notes">
                                 <h3 class="section-title">
-                                    Internal Actors
+                                    Notes
 
                                 </h3>
-                                <p>Internal threats are those originating from within the organization. This encompasses company full-time employees, independent contractors, interns, and other staff. Insiders are trusted and privileged (some more than others).</p>
+
+                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about the victim in this incident.</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i>victim.notes</i> (string)</p>
+                                <p><b>Purpose: </b>Catch-alls are handy.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
                             </section>
 
-                            <!-- .................................... $Partner Actors .................................... -->
-                            <section class="section-content section-partner" id="section-partner">
+
+
+
+                            <!-- .................................... $Additional Guidance .................................... -->
+                            <section class="section-content section-additional-guidance" id="section-additional-guidance">
                                 <h3 class="section-title">
-                                    Partner Actors
+                                    Additional Guidance
 
                                 </h3>
-                                <p>Partners include any third party sharing a business relationship with the organization. This includes suppliers, vendors, hosting providers, outsourced IT support, etc. some level of trust and privilege is usually implied between business partners.</p>
-
+                                <p>Single vs multiple incidents</p>
+<ul>
+  <li>
+    It is sometimes difficult to determine the difference between multiple separate incidents and a single incident with multiple sequential events. For instance, the August 2013 attack against the New York Times could be seen as one multi-staged incident involving three victims (the Indian ISP, Melbourne IT, and NYT), but could also be considered three distinct, but related, incidents. In such cases, there is no “right or wrong” method, but data quality requires a consistent approach. Standard procedure with VERIS is to treat these as separate incidents that can be associated using the related_incidents field. As a rule, incidents in VERIS have only one primary victim.
+  </a></li>
+  <li>
+    Mass defacements and DDoS/DoS attacks can make this single vs multiple incident determination particularly difficult. Such reports often state that “547 sites defaced/DoS'd by #Actor” with few other details. It's not possible (at least not without a lot of effort) to determine if that involves a single compromised hosting provider that affected 547 hosted sites, whether those sites represent 547 unique victims, etc. In such cases, record “Mass Event” for the victim_id. Leave country, employee_count, and industry blank unless they are shared by the entire set of victims/sites/etc (e.g., they are all Indonesian). Record the total number of sites (or whatever) defaced/DoS'd in the secondary_amount field. If specific sites or names are given, copy/paste those in the secondary_id feld. Then record whatever other details are given as normal.
+  </a></li>
+</ul>
                             </section>
+
+
+
 
                         </div>
                     </div>

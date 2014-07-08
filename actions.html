@@ -12,7 +12,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>Features | Resie</title>
+    <title>Actions</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="description">
     <meta content="elemind.com" name="author">
@@ -99,125 +99,487 @@
                     <div class="row">
                         <div class="span3 documentation-nav affix hidden-phone">
                             <ul class="nav nav-pills nav-stacked">
-                                <li class="active"><a href="#section-actors">
+                                <li class="active"><a href="#section-malware">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Threat Actors
+                                    Malware
                                 </a></li>
-                                <li><a href="#section-external">
+                                <li><a href="#section-hacking">
                                     <i class="icon-angle-right pull-right"></i>
-                                    External Actors
+                                    Hacking
                                 </a></li>
-                                <li><a href="#section-internal">
+                                <li><a href="#section-social">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Internal Actors
+                                    Social
                                 </a></li>
-                                <li><a href="#section-partner">
+                                <li><a href="#section-misuse">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Partner Actors
+                                    Misuse
+                                </a></li>
+                                <li><a href="#section-physical">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Physical
+                                </a></li>
+                                <li><a href="#section-error">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Error
+                                </a></li>
+                                <li><a href="#section-environmental">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Environmental
                                 </a></li>
                             </ul>
                         </div>
                         <div class="span6 offset3">
                             <h2 class="section-title">
-                                Threat Actors
-                                <small>
-                                    Entities that cause or contribute to an incident are referred to as threat actors
-                                </small>
+                                Threat Actions
                             </h2>
 
-                            <p>There can be more than one actor involved in any particular incident, and their actions can be malicious or non-malicious, intentional or unintentional, causal or contributory. VERIS recognizes three primary categories of threat actors - External, Internal, and Partner.</p>
+                            <p>Threat actions describe what the threat actor(s) did to cause or contribute to the incident. Every incident has at least one, but most will comprise multiple actions (and often across multiple categories). VERIS uses 7 primary categories of threat actions: Malware, Hacking, Social, Misuse, Physical, Error, and Environmental.</p>
 <p>
-
-<i>VERIS classification note: If the actor’s role in the breach is limited to a contributory error, the actor would not be included here. For example, if an insider’s unintentional misconfiguration of an application left it vulnerable to attack, the insider would not be considered a threat actor if the application were successfully breached by another actor. An insider who deliberately steals data or whose inappropriate behavior (e.g., policy violations) facilitated the breach would be considered a threat actor in the breach.</i>
-
 </p>
 
-                            <!-- .................................... $External Actors .................................... -->
-                            <section class="section-content section-external" id="section-external">
+                            <!-- .................................... $Malware .................................... -->
+                            <section class="section-content section-malware" id="section-malware">
                                 <h3 class="section-title">
-                                    External Actors
+                                    Malware
 
                                 </h3>
-                                <p>External threats originate from sources outside of the organization and its network of partners. Examples include criminal groups, lone hackers, former employees, and government entities. Also includes God (as in “acts of”), “Mother Nature,” and random chance. Typically, no trust or privilege is implied for external entities.</p>
+                                <p>Malware is any <b>mal</b>icious soft<b>ware</b>, script, or code run on a device that alters its state or function without the owner’s informed consent. Examples include viruses, worms, spyware, keyloggers, backdoors, etc.</p>
 
-                                <h4>
-                                  Role **DEPRECATED IN V1.2**
-                                </h4>
-                                <p><b>Variable Name: </b>actor.external.role (string)</p>
-
-                                <h4>
-                                  Motive
-                                </h4>
-                                <p><b>Question Text: </b>What motives drove the external actor(s) to act?</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorxmotive">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.motive</i> (string)</p>
-                                <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actors and an internal actor, different motives may be assigned for each.</p>
-                                <p><b>Miscellaneous: </b>N/A</p>
 
                                 <h4>
                                   Variety
                                 </h4>
 
-                                <p><b>Question Text: </b>What varieties of external actors were involved?</p>
+                                <p><b>Question Text: </b>What varieties or functions of malware were involved?</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorexternalvariety">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.variety</i> (string)</p>
-                                <p><b>Purpose: </b>Identifying the specific variety helps assess the resources, capabilities, and tendencies of the actor.</p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.malware.variety</i> (string)</p>
+                                <p><b>Purpose: </b>In the short term, variety is necessary to adequately describe the incident and its ramifications. In the long term, it gives insight into the evolving nature of malware and how criminals use it.</p>
                                 <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b>If the actor is a former employee, then make sure to select the External variety of “Former employee” instead of an insider. If the former employee uses their still-active account, that falls under Misuse.</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
                                 <h4>
-                                  Origin (country)
+                                  Vector
                                 </h4>
 
-                                <p><b>Question Text: </b>What are the geographic origins of the external actor(s)?</p>
-                                <p><b>User notes: </b>Reserve this for the actual countries from which the actor is operating, rather than basing it solely on IP geolocation.</p>
-                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.country</i> (string)</p>
-                                <p><b>Purpose: </b>Identifies the geographic origin of the actor, which is useful on multiple investigatory, operational, and strategic levels.</p>
-                                <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found <a href="http://www.iso.org/iso/country_codes.htm">here</a>. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
-                                <p><b>Miscellaneous: </b>Reserving this for the actor's origin and collecting IPs separately allows the best of both worlds. We can track both the origin (and national ties) of threat actors and the location of the assets they use for malicious purposes.</p>
+                                <p><b>Question Text: </b>What were the vectors or paths of infection?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.malware.vector</i> (string)</p>
+                                <p><b>Purpose: </b>Understanding how malware was introduced into the network or system is essential to assessing control weaknesses/vulnerabilities and identifying mitigation strategies.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                                <h4>
+                                  Vulnerabilities
+                                </h4>
+
+                                <p><b>Question Text: </b>Enter any CVEs exploited by this malware.</p>
+                                <p><b>User notes: </b>If it was a zero day with no CVE, note that and provide any details you can.</p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i>action.malware.cve</i> (string)</p>
+                                <p><b>Purpose: </b>Identifying the specific vulnerability exploited is useful on many levels. It enables one to determine the percentage of malware that exploit vulnerabilities and which ones are exploited. The vulnerability ID also allows for useful secondary metrics like how long the vulnerability was publicly known, whether a patch existed (and for how long), etc.</p>
+                                <p><b>Developer notes: </b></p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
+                                <h4>
+                                  Common Name
+                                </h4>
+
+                                <p><b>Question Text: </b>Common name or strain:</p>
+                                <p><b>User notes: </b>E.g., name given by AV vendor.</p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i>action.malware.name</i> (string)</p>
+                                <p><b>Purpose: </b>Collecting (and hopefully sharing) attributes like these can aid more effective detection and response.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
 
                                 <h4>
                                   Notes
                                 </h4>
 
-                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about the external actor(s).</p>
-                                <p><b>User notes: </b>Names or affiliations of threat groups involved would be particularly useful to record here.</p>
+                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about malware in this incident.</p>
+                                <p><b>User notes: </b>Hashes and other IOCs can be supplied in a later section.</p>
                                 <p><b>Question type: </b>text field</p>
-                                <p><b>Variable name: </b><i>actor.external.notes</i> (string)</p>
+                                <p><b>Variable name: </b><i>action.malware.notes</i> (string)</p>
                                 <p><b>Purpose: </b>Catch-alls are handy</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actor and an internal actor, different notes may be recorded for each.</p>
-                                <p><b>Miscellaneous: </b>Names or affiliations of threat actors or groups involved would be particularly useful to record here.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
 
                             </section>
 
-                            <!-- .................................... $Internal Actors .................................... -->
-                            <section class="section-content section-internal" id="section-internal">
+
+                            <!-- .................................... $Hacking .................................... -->
+                            <section class="section-content section-hacking" id="section-hacking">
                                 <h3 class="section-title">
-                                    Internal Actors
+                                    Hacking
 
                                 </h3>
-                                <p>Internal threats are those originating from within the organization. This encompasses company full-time employees, independent contractors, interns, and other staff. Insiders are trusted and privileged (some more than others).</p>
+                                <p>Hacking is defined within VERIS as all attempts to intentionally access or harm information assets without (or exceeding) authorization by circumventing or thwarting logical security mechanisms. Includes brute force, SQL injection, cryptanalysis, denial of service attacks, etc.</p>
+                                <p>VERIS classification note: There is an action category for Hacking and for Misuse. Both can utilize similar vectors and achieve similar results; in Misuse, the actor was granted access/privileges (and used them inappropriately), whereas with Hacking, access/privileges are obtained illegitimately.</p>
+
+                                <h4>
+                                  Variety
+                                </h4>
+
+                                <p><b>Question Text: </b>What varieties or methods of hacking were involved?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.hacking.variety</i> (string)</p>
+                                <p><b>Purpose: </b>The specific variety involved is essential to adequately describing the incident, assessing control weaknesses/vulnerabilities, and identifying mitigation strategies.</p>
+                                <p><b>Developer notes: </b>The list of hacking varieties is quite long. You may wish to organize them into categories (e.g., “Authentication Attacks”) to aid users. The categories themselves should not be selectable.</p>
+                                <p><b>Miscellaneous: </b>VERIS uses <a href="http://projects.webappsec.org/w/page/13246978/Threat%20Classification">WASC's Threat Classification</a> as a baseline for this list; descriptions of these attacks can be found there. We have considered incorporating or allowing other attack classifications (e.g., <a href="http://capec.mitre.org">CAPEC</a>), and would appreciate feedback from the community on this.</p>
+
+                                <h4>
+                                  Vector
+                                </h4>
+
+                                <p><b>Question Text: </b>What was the vector or path of attack?</p>
+                                <p><b>User notes: </b>This refers to intermediate assets or services exploited rather than the terminal point or target asset of the attack.</p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.hacking.vector</i> (string)</p>
+                                <p><b>Purpose: </b>The vector of attack supplements information regarding the type selected above. In some cases, the same type of action conducted through different vectors requires very different defenses.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>While certainly not exhaustive, we have found this simple list to be useful in the majority of cases and specific enough for the intended purpose. An alternative might be to use a path/vector aligned with layers in the OSI model. This enumerated list could certainly be broadened and improved by the community.</p>
+
+                                <h4>
+                                  Vulnerabilities
+                                </h4>
+
+                                <p><b>Question Text: </b>Enter any CVEs exploited through hacking.</p>
+                                <p><b>User notes: </b>If it was a zero day with no CVE, note that and provide any details you can.</p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i>action.hacking.cve</i> (string)</p>
+                                <p><b>Purpose: </b>Identifying the specific vulnerability exploited is useful on many levels. It enables one to determine the percentage of attacks that exploit vulnerabilities and which ones are exploited. The CVE also allows for useful secondary metrics like how long the vulnerability was publicly known, whether a patch existed (and for how long), etc.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
+                                <h4>
+                                  Notes
+                                </h4>
+
+                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about hacking in this incident.</p>
+                                <p><b>User notes: </b>For example, the variety and peak bandwidth would be useful to record for a DoS attack.</p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i>action.hacking.notes</i> (string)</p>
+                                <p><b>Purpose: </b>Catch-alls are handy</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
                             </section>
 
-                            <!-- .................................... $Partner Actors .................................... -->
-                            <section class="section-content section-partner" id="section-partner">
+
+                            <!-- .................................... $Social .................................... -->
+                            <section class="section-content section-social" id="section-social">
                                 <h3 class="section-title">
-                                    Partner Actors
+                                    Social
 
                                 </h3>
-                                <p>Partners include any third party sharing a business relationship with the organization. This includes suppliers, vendors, hosting providers, outsourced IT support, etc. some level of trust and privilege is usually implied between business partners.</p>
+                                <p>Social tactics employ deception, manipulation, intimidation, etc to exploit the human element, or users, of information assets. Includes pretexting, phishing, blackmail, threats, scams, etc.</p>
+
+
+                                <h4>
+                                  Variety
+                                </h4>
+
+                                <p><b>Question Text: </b>What varieties of social tactics were involved?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.social.variety</i> (string)</p>
+                                <p><b>Purpose: </b>The specific variety involved is essential to adequately describing the incident, assessing control weaknesses/vulnerabilities, and identifying mitigation strategies.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                                <h4>
+                                  Vector
+                                </h4>
+
+                                <p><b>Question Text: </b>What vectors or communication channels were used?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.social.vector</i> (string)</p>
+                                <p><b>Purpose: </b>Because the social tactics can be conducted through different vectors (e.g., pretexting over the phone or in-person), this helps to further establish policies and procedures and educate employees to recognize and resist social tactics.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                                <h4>
+
+                                  Target
+                                </h4>
+
+                                <p><b>Question Text: </b>Who was the target of these social tactics?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.social.target</i> (string)</p>
+                                <p><b>Purpose: </b>Knowing who is targeted helps to focus policies and procedures and better educate appropriate employees to recognize and resist social attacks.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>Technically speaking, the human targets of a social attack should be represented as an Asset (People category ) in the A4 model. We ask specifically for it here because many forget to include them in the assets section. Please indulge us and pardon the redundancy.</p>
+
+
+                                <h4>
+                                  Notes
+                                </h4>
+
+                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about social tactics in this incident.</p>
+                                <p><b>User notes: </b>For instance, provide a bit more context for a particularly clever social engineering ploy. Also, if they misrepresented their identity, who did they purport to be?</p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i>action.social.notes</i> (string)</p>
+                                <p><b>Purpose: </b>Catch-alls are handy</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
 
                             </section>
 
-                        </div>
-                    </div>
-                </section>
+
+
+                            <!-- .................................... $Misuse .................................... -->
+                            <section class="section-content section-misuse" id="section-misuse">
+                                <h3 class="section-title">
+                                    Misuse
+
+                                </h3>
+                                <p>Misuse is defined as the use of entrusted organizational resources or privileges for any purpose or manner contrary to that which was intended. Includes administrative abuse, use policy violations, use of non-approved assets, etc. These actions can be malicious or non-malicious in nature. Misuse is exclusive to parties that enjoy a degree of trust from the organization, such as insiders and partners.</p>
+                                <p>VERIS classification note: There is an action category for Hacking and for Misuse. Both can utilize similar vectors and achieve similar results; in Misuse, the actor was granted access/privileges (and used them inappropriately), whereas with Hacking, access/privileges are obtained illegitimately.</p>
+
+                                <h4>
+                                  Variety
+                                </h4>
+
+                                <p><b>Question Text: </b>What varieties of misuse were involved?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.misuse.variety</i> (string)</p>
+                                <p><b>Purpose: </b>The specific variety involved is essential to adequately describing the incident, assessing control weaknesses/vulnerabilities, and identifying mitigation strategies.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                                <h4>
+                                  Vector
+                                </h4>
+
+                                <p><b>Question Text: </b>What vectors or access methods were misused?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.misuse.vector</i> (string)</p>
+                                <p><b>Purpose: </b>Identifying the vector helps to further establish policies and procedures to deter, prevent, and detect misuse.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                                <h4>
+                                  Notes
+                                </h4>
+
+                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about misuse in this incident.</p>
+                                <p><b>User notes: </b>For instance, strange behaviors that precipitated the actions described above.</p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i>action.misuse.notes</i> (string)</p>
+                                <p><b>Purpose: </b>Catch-alls are handy</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
+                            </section>
+
+
+
+                            <!-- .................................... $Physical .................................... -->
+                            <section class="section-content section-physical" id="section-physical">
+                                <h3 class="section-title">
+                                    Physical
+
+                                </h3>
+                                <p>Physical actions encompass deliberate threats that involve proximity, possession, or force. Includes theft, tampering, snooping, sabotage, local device access, assault, etc.</p>
+                                <p>VERIS classification note: Natural hazards and power failures are often classified under physical threats. We include such events in the Environmental category and restrict the Physical category to intentional actions perpetrated by a human actor. This is done for several reasons, including the assessment of threat frequency and the alignment of controls.</p>
+
+                                <h4>
+                                  Variety
+                                </h4>
+
+                                <p><b>Question Text: </b>What varieties of physical attacks were involved?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b></p>
+                                <p><b>Variable name: </b><i></i></p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b></p>
+
+                                <h4>
+                                  Vector
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b></p>
+                                <p><b>Variable name: </b><i></i></p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b></p>
+
+                                <h4>
+                                  Origin (country)
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b></p>
+                                <p><b>Miscellaneous: </b></p>
+
+
+                                <h4>
+                                  Notes
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b></p>
+                                <p><b>Variable name: </b><i></i></p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b></p>
+                                <p><b>Miscellaneous: </b></p>
+
+
+                            </section>
+
+
+
+                            <!-- .................................... $Error .................................... -->
+                            <section class="section-content section-error" id="section-error">
+                                <h3 class="section-title">
+                                    Error
+
+                                </h3>
+                                <p>Malware is any malicious software, script, or code run on a device that alters its state or function without the owner’s informed consent. Examples include viruses, worms, spyware, keyloggers, backdoors, etc.</p>
+
+
+                                <h4>
+                                  Variety
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b></p>
+                                <p><b>Variable name: </b><i></i></p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b></p>
+
+                                <h4>
+                                  Vector
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b></p>
+                                <p><b>Variable name: </b><i></i></p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b></p>
+
+                                <h4>
+                                  Origin (country)
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b></p>
+                                <p><b>Miscellaneous: </b></p>
+
+
+                                <h4>
+                                  Notes
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b></p>
+                                <p><b>Variable name: </b><i></i></p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b></p>
+                                <p><b>Miscellaneous: </b></p>
+
+
+                            </section>
+
+
+
+                            <!-- .................................... $Environmental .................................... -->
+                            <section class="section-content section-environmental" id="section-environmental">
+                                <h3 class="section-title">
+                                    Environmental
+
+                                </h3>
+                                <p>Malware is any malicious software, script, or code run on a device that alters its state or function without the owner’s informed consent. Examples include viruses, worms, spyware, keyloggers, backdoors, etc.</p>
+
+
+                                <h4>
+                                  Variety
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b></p>
+                                <p><b>Variable name: </b><i></i></p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b></p>
+
+                                <h4>
+                                  Vector
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b></p>
+                                <p><b>Variable name: </b><i></i></p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b></p>
+
+                                <h4>
+                                  Origin (country)
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b></p>
+                                <p><b>Miscellaneous: </b></p>
+
+
+                                <h4>
+                                  Notes
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b></p>
+                                <p><b>Variable name: </b><i></i></p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b></p>
+                                <p><b>Miscellaneous: </b></p>
+
+
+                            </section>
+
+
+
+
+
 
 
             </div><!-- /main span9 -->

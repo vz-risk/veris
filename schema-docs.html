@@ -12,7 +12,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>Features | Resie</title>
+    <title>VERIS Schema</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="description">
     <meta content="elemind.com" name="author">
@@ -99,121 +99,68 @@
                     <div class="row">
                         <div class="span3 documentation-nav affix hidden-phone">
                             <ul class="nav nav-pills nav-stacked">
-                                <li class="active"><a href="#section-actors">
+                                <li class="active"><a href="incident-track.html">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Threat Actors
+                                    Incident Tracking
                                 </a></li>
-                                <li><a href="#section-external">
+                                <li><a href="victim-demo.html">
                                     <i class="icon-angle-right pull-right"></i>
-                                    External Actors
+                                    Victim Demographics
                                 </a></li>
-                                <li><a href="#section-internal">
+                                <li><a href="incident-desc.html">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Internal Actors
+                                    Incident Description
                                 </a></li>
-                                <li><a href="#section-partner">
+                                <li><a href="discovery.html">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Partner Actors
+                                    Discovery & Response
+                                </a></li>
+                                <li><a href="impact.html">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Impact Assessment
                                 </a></li>
                             </ul>
                         </div>
                         <div class="span6 offset3">
                             <h2 class="section-title">
-                                Threat Actors
-                                <small>
-                                    Entities that cause or contribute to an incident are referred to as threat actors
-                                </small>
+                                VERIS schema documentation
                             </h2>
-
-                            <p>There can be more than one actor involved in any particular incident, and their actions can be malicious or non-malicious, intentional or unintentional, causal or contributory. VERIS recognizes three primary categories of threat actors - External, Internal, and Partner.</p>
-<p>
-
-<i>VERIS classification note: If the actor’s role in the breach is limited to a contributory error, the actor would not be included here. For example, if an insider’s unintentional misconfiguration of an application left it vulnerable to attack, the insider would not be considered a threat actor if the application were successfully breached by another actor. An insider who deliberately steals data or whose inappropriate behavior (e.g., policy violations) facilitated the breach would be considered a threat actor in the breach.</i>
-
-</p>
-
-                            <!-- .................................... $External Actors .................................... -->
-                            <section class="section-content section-external" id="section-external">
-                                <h3 class="section-title">
-                                    External Actors
-
-                                </h3>
-                                <p>External threats originate from sources outside of the organization and its network of partners. Examples include criminal groups, lone hackers, former employees, and government entities. Also includes God (as in “acts of”), “Mother Nature,” and random chance. Typically, no trust or privilege is implied for external entities.</p>
-
-                                <h4>
-                                  Role **DEPRECATED IN V1.2**
-                                </h4>
-                                <p><b>Variable Name: </b>actor.external.role (string)</p>
-
-                                <h4>
-                                  Motive
-                                </h4>
-                                <p><b>Question Text: </b>What motives drove the external actor(s) to act?</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorxmotive">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.motive</i> (string)</p>
-                                <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actors and an internal actor, different motives may be assigned for each.</p>
-                                <p><b>Miscellaneous: </b>N/A</p>
-
-                                <h4>
-                                  Variety
-                                </h4>
-
-                                <p><b>Question Text: </b>What varieties of external actors were involved?</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorexternalvariety">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.variety</i> (string)</p>
-                                <p><b>Purpose: </b>Identifying the specific variety helps assess the resources, capabilities, and tendencies of the actor.</p>
-                                <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b>If the actor is a former employee, then make sure to select the External variety of “Former employee” instead of an insider. If the former employee uses their still-active account, that falls under Misuse.</p>
-
-                                <h4>
-                                  Origin (country)
-                                </h4>
-
-                                <p><b>Question Text: </b>What are the geographic origins of the external actor(s)?</p>
-                                <p><b>User notes: </b>Reserve this for the actual countries from which the actor is operating, rather than basing it solely on IP geolocation.</p>
-                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.country</i> (string)</p>
-                                <p><b>Purpose: </b>Identifies the geographic origin of the actor, which is useful on multiple investigatory, operational, and strategic levels.</p>
-                                <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found <a href="http://www.iso.org/iso/country_codes.htm">here</a>. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
-                                <p><b>Miscellaneous: </b>Reserving this for the actor's origin and collecting IPs separately allows the best of both worlds. We can track both the origin (and national ties) of threat actors and the location of the assets they use for malicious purposes.</p>
+                            <p>This documentation is intended to supplement the VERIS schema by providing additional guidance to users and developers. For each variable included in the schema, a repeating set of information is given here including suggested text questions, user and developer notes, why we think it's important, etc.</p>
+<p></p>
+<p>We organize this documentation in five major sections, each designed to capture a different aspect of the incident narrative. When viewed in aggregate, they give the business a tangible idea of cause and severity. The five sections are:</p>
+<ul>
+<li ><a href="incident-track.html">
+    Incident Tracking
+</a></li>
+<li><a href="victim-demo.html">
+    Victim Demographics
+</a></li>
+<li><a href="incident-desc.html">
+    Incident Description
+</a></li>
+<li><a href="discovery.html">
+    Discovery & Response
+</a></li>
+<li><a href="impact.html">
+  Impact Assessment
+</a></li>
+</ul>
+<p>Each section contains items that align with those described in the schema. Those included do not represent everything one might collect regarding a security incident. Instead, VERIS attempts to strike a balance between usefulness and completeness. If something is interesting from a research standpoint but does not directly provide security management with actionable information, it is likely not included. In certain sections, we identify additional metrics that, while not formally included, might be of interest should users desire to collect them. Done properly, VERIS can create not only a view of what happened in a specific incident, but allow the incident to be viewed in context with a broader body of knowledge.</p>
+<p></p>
+<h2 class="section-title">
+    Explanation of format
+</h2>
+<p>Within the schema documentation on this site, the following information is given for each VERIS element:</p>
+<p><b>Question text: </b>Suggested wording for questions within a VERIS-based application.</p>
+<p><b>User notes: </b>Offers helpful information or tips for users of a VERIS-based application.</p>
+<p><b>Question type: </b>Identifies the type of question/answer (e.g., text field vs enumerated list).</p>
+<p><b>Variable name: </b>Identifies the name of the schema variable(s).</p>
+<p><b>Enumerations: </b>Identifies the name of the enumerated list associated with this variable. Enumerations can be found in the verisc.lib.xml or veris-enum.json documents.</p>
+<p><b>Purpose: </b>Explains why we think the element is worth having in VERIS.</p>
+<p><b>Developer notes: </b>Offers helpful information or tips to developers of VERIS-based applications.</p>
+<p><b>Miscellaneous: </b>Like it sounds; a catch-all for anything else.</p>
 
 
-                                <h4>
-                                  Notes
-                                </h4>
-
-                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about the external actor(s).</p>
-                                <p><b>User notes: </b>Names or affiliations of threat groups involved would be particularly useful to record here.</p>
-                                <p><b>Question type: </b>text field</p>
-                                <p><b>Variable name: </b><i>actor.external.notes</i> (string)</p>
-                                <p><b>Purpose: </b>Catch-alls are handy</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actor and an internal actor, different notes may be recorded for each.</p>
-                                <p><b>Miscellaneous: </b>Names or affiliations of threat actors or groups involved would be particularly useful to record here.</p>
-
-
-                            </section>
-
-                            <!-- .................................... $Internal Actors .................................... -->
-                            <section class="section-content section-internal" id="section-internal">
-                                <h3 class="section-title">
-                                    Internal Actors
-
-                                </h3>
-                                <p>Internal threats are those originating from within the organization. This encompasses company full-time employees, independent contractors, interns, and other staff. Insiders are trusted and privileged (some more than others).</p>
-                            </section>
-
-                            <!-- .................................... $Partner Actors .................................... -->
-                            <section class="section-content section-partner" id="section-partner">
-                                <h3 class="section-title">
-                                    Partner Actors
-
-                                </h3>
-                                <p>Partners include any third party sharing a business relationship with the organization. This includes suppliers, vendors, hosting providers, outsourced IT support, etc. some level of trust and privilege is usually implied between business partners.</p>
-
-                            </section>
 
                         </div>
                     </div>

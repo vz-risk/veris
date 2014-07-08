@@ -12,7 +12,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>Actors</title>
+    <title>Features | Resie</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="description">
     <meta content="elemind.com" name="author">
@@ -99,6 +99,10 @@
                     <div class="row">
                         <div class="span3 documentation-nav affix hidden-phone">
                             <ul class="nav nav-pills nav-stacked">
+                              <li><a href="#section-actor-variables">
+                                <i class="icon-angle-right pull-right"></i>
+                                Actor Variables
+                              </a></li>
                                 <li><a href="#section-external">
                                     <i class="icon-angle-right pull-right"></i>
                                     External Actors
@@ -127,6 +131,51 @@
 <i>VERIS classification note: If the actor’s role in the breach is limited to a contributory error, the actor would not be included here. For example, if an insider’s unintentional misconfiguration of an application left it vulnerable to attack, the insider would not be considered a threat actor if the application were successfully breached by another actor. An insider who deliberately steals data or whose inappropriate behavior (e.g., policy violations) facilitated the breach would be considered a threat actor in the breach.</i>
 
 </p>
+                          <!-- .................................... $Actor Variables .................................... -->
+                          <section class="section-content section-actor-variables" id="section-actor-variables">
+                            <h3 class="section-title">
+                              Actor Variables
+                              <small>
+                                Applies to External, Internal, and Partner actors
+                              </small>
+
+                            </h3>
+
+                                <h4>
+                                  Motive
+                                </h4>
+
+                                <p><b>Question Text: </b>What motives drove the actor(s) to act?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-actors">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>actor.x.motive</i> (string)</p>
+                                <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
+                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actors and an internal actor, different motives may be assigned for each.</p>
+
+                                <h4>
+                                  Values
+
+                                  <small>
+                                    Multi-select: choose all that apply
+                                  </small>
+                                </h4>
+
+                                <p><b>NA: </b>Not Applicable (unintentional action)</p>
+                                <p><b>Espionage: </b>Espionage or competitive advantage</p>
+                                <p><b>Fear: </b>Fear or duress</p>
+                                <p><b>Financial: </b>Financial or personal gain</p>
+                                <p><b>Fun: </b>Fun, curiosity, or pride</p>
+                                <p><b>Grudge: </b>Grudge or personal offense</p>
+                                <p><b>Ideology: </b>Ideology or protest</p>
+                                <p><b>Convenience: </b>Convenience of expediency</p>
+                                <p><b>Secondary: </b>Aid in a different attack</p>
+                                <p><b>Unknown: </b>Unknown</p>
+                                <p><b>Other: </b>Other</p>
+
+
+
+
+                            </section>
 
 
                             <!-- .................................... $External Actors .................................... -->
@@ -137,47 +186,53 @@
                                 </h3>
                                 <p>External threats originate from sources outside of the organization and its network of partners. Examples include criminal groups, lone hackers, former employees, and government entities. Also includes God (as in “acts of”), “Mother Nature,” and random chance. Typically, no trust or privilege is implied for external entities.</p>
 
-                                <h4>Motive</h4>
+                                <h4>
+                                  Actor.external.variety
 
-                                <p><b>Question Text: </b>What motives drove the external actor(s) to act?</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-actors">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.motive</i> (string)</p>
-                                <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actors and an internal actor, different motives may be assigned for each</p>
-                                <p><b>Miscellaneous: </b>N/A</p>
-
-                                <h4>Variety</h4>
+                                  <small>
+                                    Applies to External Actors
+                                  </small>
+                                </h4>
 
                                 <p><b>Question Text: </b>What varieties of external actors were involved?</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-actors">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.variety</i> (string)</p>
-                                <p><b>Purpose: </b>Identifying the specific variety helps assess the resources, capabilities, and tendencies of the actor.</p>
-                                <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b>f the actor is a former employee, then make sure to select the External variety of “Former employee” instead of an insider. If the former employee uses their still-active account, that falls under Misuse.</p>
+                                <p><i>If the actor is a former employee, then make sure to select the External variety of “Former employee” instead of an insider. If the former employee uses their still-active account, that falls under Misuse.</i></p>
+
+                              <h4>
+                                Values
+
+                                <small>
+                                  Multi-select: choose all that apply
+                                </small>
+                              </h4>
+
+                              <p><b>Acquaintance: </b>Relative or acquaintance of employee</p>
+                              <p><b>Activist: </b>Activist group</p>
+                              <p><b>Auditor: </b>Auditor</p>
+                              <p><b>Competitor: </b>Competitor</p>
+                              <p><b>Customer: </b>Customer (B2C)</p>
+                              <p><b>Force majeure: </b>Force majeure (nature and chance)</p>
+                              <p><b>Former employee: </b>Former employee (no longer had access)</p>
+                              <p><b>Nation-state: </b>Nation-state</p>
+                              <p><b>Organized crime: </b>Organized or professional criminal group</p>
+                              <p><b>State-affiliated: </b>State-sponsored or affiliated group</p>
+                              <p><b>Terrorist: </b>Terrorist group</p>
+                              <p><b>Unaffiliated: </b>Unaffiliated person(s)</p>
+                              <p><b>Unknown: </b>Unknown</p>
+                              <p><b>Other: </b>Other</p>
 
 
-                                <h4>Origin (country)</h4>
-
-                                <p><b>Question Text: </b>What are the geographic origins of the external actor(s)?</p>
-                                <p><b>User notes: </b>Reserve this for the actual countries from which the actor is operating, rather than basing it solely on IP geolocation.</p>
-                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-repeated">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.country</i> (string)</p>
-                                <p><b>Purpose: </b>Identifies the geographic origin of the actor, which is useful on multiple investigatory, operational, and strategic levels.</p>
-                                <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found here: http://www.iso.org/iso/country_codes.htm. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
-                                <p><b>Miscellaneous: </b>Reserving this for the actor's origin and collecting IPs separately allows the best of both worlds. We can track both the origin (and national ties) of threat actors and the location of the assets they use for malicious purposes./p>
 
 
-                                  <h4>Notes</h4>
+                                <h4>
+                                  Actor.external.name
+                                  <small>
+                                    Applies to External Actors
+                                  </small>
+                                </h4>
 
-                                  <p><b>Question Text: </b>Enter any additional details you deem noteworthy about the external actor(s).</p>
-                                  <p><b>User notes: </b>Names or affiliations of threat groups involved would be particularly useful to record here.</p>
-                                  <p><b>Question type: </b>text field</p>
-                                  <p><b>Variable name: </b><i>actor.external.notes</i> (string)</p>
-                                  <p><b>Purpose: </b>Catch-alls are handy</p>
-                                  <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actor and an internal actor, different notes may be recorded for each.</p>
-                                  <p><b>Miscellaneous: </b>Names or affiliations of threat actors or groups involved would be particularly useful to record here.</p>
+                                <p><b>Question Text: </b>What are the names of the external actors were involved?</p>
+                                <p><b>Purpose: </b>Names can be used to track a threat actor over time or to link threat actors described to different intelligence groups.</p>
+                                <p><b>Developer notes: </b>Name is an array of strings. Each string should be a unique name given to the threat actor. The name can be the actual name of a person, a code name given by an intelligence group, or a handle used by the actor.</p>
 
 
                             </section>
@@ -189,17 +244,42 @@
 
                                 </h3>
                                 <p>Internal threats are those originating from within the organization. This encompasses company full-time employees, independent contractors, interns, and other staff. Insiders are trusted and privileged (some more than others).</p>
+                            </section>
 
 
-                                <h4>Motive</h4>
 
-                                <p><b>Question Text: </b>What motives drove the internal actor(s) to act?</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-repeated">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.internal.motive</i> (string)</p>
-                                <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actor and an internal actor, different motives may be assigned for each.</p>
-                                <p><b>Miscellaneous: </b>N/A</p>
+                            <h4>
+                              Actor.internal.job_change
+                              <small>
+                                Applies to Internal Actors
+                              </small>
+                            </h4>
+
+                            <p><b>Question Text: </b>Were there any recent job actions involving the internal actor?</p>
+                            <p><b>Purpose: </b>Used to track how job actions may influence an internal actor to take action.</p>
+
+                            <h4>
+                              Values
+
+                              <small>
+                                Multi-select: choose all that apply
+                              </small>
+                            </h4>
+
+                            <p><b>Hired: </b>Recently hired</p>
+                            <p><b>Promoted: </b>Recently promoted</p>
+                            <p><b>Lateral move: </b>Lateral move</p>
+                            <p><b>Resigned: </b>Recently resigned</p>
+                            <p><b>Let go: </b>Fired, laid off, or let go</p>
+                            <p><b>Demoted: </b>Recently demoted or hours reduced</p>
+                            <p><b>Passed over: </b>Recently passed over for promotion</p>
+                            <p><b>Reprimanded: </b>Recently reprimanded</p>
+                            <p><b>Job eval: </b>Recent poor job evaluation</p>
+                            <p><b>Personal issues: </b>Personal issues</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
+
+
 
 
                             <h4>
@@ -207,25 +287,41 @@
                             </h4>
 
                             <p><b>Question Text: </b>What varieties of internal actors were involved?</p>
-                            <p><b>User notes: </b>If the employee resigned or was let go before the incident, select “former employee” under External actors instead.</p>
-                            <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-actors">enumerated list</a> (multi-select)</p>
-                            <p><b>Variable name: </b><i>actor.internal.variety</i> (string)</p>
                             <p><b>Purpose: </b>Identifying the specific variety helps assess the resources, capabilities, and tendencies of the actor.</p>
-                            <p><b>User notes: </b>N/A</p>
+                            <p><b>User notes: </b>If the employee resigned or was let go before the incident, select “former employee” under External actors instead.</p>
+
+
+                            <h4>
+                              Values
+                              <small>
+                                Multi-select: choose all that apply
+                              </small>
+                            </h4>
+
+                            <p><b>Auditor: </b>Recently hired</p>
+                            <p><b>Call center: </b>Recently promoted</p>
+                            <p><b>Cashier: </b>Lateral move</p>
+                            <p><b>End-user: </b>Recently resigned</p>
+                            <p><b>Executive: </b>Fired, laid off, or let go</p>
+                            <p><b>Finance: </b>Recently demoted or hours reduced</p>
+                            <p><b>Helpdesk: </b>Recently passed over for promotion</p>
+                            <p><b>Human resources: </b>Recently reprimanded</p>
+                            <p><b>Maintenance: </b>Recent poor job evaluation</p>
+                            <p><b>Manager: </b>Personal issues</p>
+                            <p><b>Guard: </b>Unknown</p>
+                            <p><b>Developer: </b>Other</p>
+                            <p><b>System admin: </b>Unknown</p>
+                            <p><b>Unknown: </b>Unknown</p>
+                            <p><b>Other: </b>Other</p>
 
 
                             <h4>
                               Notes
                             </h4>
 
-                            <p><b>Question Text: </b>Enter any additional details you deem noteworthy about the internal actor(s).</p>
-                            <p><b>User notes: </b>Odd behaviors exhibited by the insider prior to or during the incident would be particularly useful to record here. Relevant job/role changes (e.g., fired) would be as well.</p>
-                            <p><b>Question type: </b>text field</p>
-                            <p><b>Variable name: </b><i>actor.internal.notes</i> (string)</p>
-                            <p><b>Purpose: </b>Catch-alls are handy</p>
-                            <p><b>User notes: </b>N/A</p>
+                            <p>This is just a free-text field where the analyst can record any relevant information that was not adequately described by the other variables or which explains the choices the analyst made in coding the incident.</p>
 
-                          </section>
+
 
                             <!-- .................................... $Partner Actors .................................... -->
                             <section class="section-content section-partner" id="section-partner">
@@ -236,45 +332,7 @@
                                 <p>Partners include any third party sharing a business relationship with the organization. This includes suppliers, vendors, hosting providers, outsourced IT support, etc. some level of trust and privilege is usually implied between business partners.</p>
 
 
-                                <h4>Motive</h4>
 
-                                <p><b>Question Text: </b>What motives drove the partner(s) to act?</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-actors">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.partner.motive</i> (string)</p>
-                                <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actor and an internal actor, different motives may be assigned for each.</p>
-                                <p><b>Miscellaneous: </b>N/A</p>
-
-                                <h4>Industry</h4>
-
-                                <p><b>Question Text: </b>Which industry best describes the services provided by the partner(s)?</p>
-                                <p><b>User notes: </b>If multiple, chose the option most closely associated with the partner services involved in the incident. VERIS uses standard NAIC codes for this list of industries. If you would like to enter a more specific code (e.g., full 6 digits), select the “other” option, and enter the desired code. NAICS provides descriptions at http://www.census.gov/cgi-bin/sssd/naics/naicsrch?chart=2012.</p>
-                                <p><b>Question type: </b>text field or enumerated list (single-select)</p>
-                                <p><b>Variable name: </b><i>actor.partner.industry</i> (string)</p>
-                                <p><b>Purpose: </b>Identifying the partner's industry (or the services provided) helps to assess and manage risk in dealing with 3rd parties.</p>
-                                <p><b>Developer notes: </b>We recommend making it as easy as possible for the user to locate and select the appropriate industry code (e.g., a picklist). If appropriate, auto-populate this field rather than prompting the user for it. The application should be configured to require at least 3 digits of the full 6 digit code in order to provide sufficient specificity.</p>
-                                <p><b>Miscellaneous: </b>N/A</p>
-
-                                <h4>Origin (country)</h4>
-
-                                <p><b>Question Text: </b>What is the partner's country of operation?</p>
-                                <p><b>User notes: </b>If multinational, select the primary location of the business group involved in the incident.</p>
-                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-repeated">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.partner.country</i> (string)</p>
-                                <p><b>Purpose: </b>Identifies the geographic origin of the actor, which is useful on multiple investigatory, operational, and strategic levels.</p>
-                                <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found here: http://www.iso.org/iso/country_codes.htm. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
-                                <p><b>Miscellaneous: </b>N/A</p>
-
-                                <h4>Notes</h4>
-
-                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about the partner(s).</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b>text field</p>
-                                <p><b>Variable name: </b><i>actor.partner.notes</i> (string)</p>
-                                <p><b>Purpose: </b>Catch-alls are handy</p>
-                                <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b>N/A</p>
 
                             </section>
 
