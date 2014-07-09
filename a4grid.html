@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--
+                            |   _)             |            _)  |
+   _ \  _ \  _ \   _` |   _| _|  |   _|  |  |  |   _` |   _| |   _|  |  |
+  .__/ .__/ .__/ \__,_| _| \__| _| \__| \_,_| _| \__,_| _|  _| \__| \_, |
+ _|   _|   _|                                                       ___/
+                                                tailored web design
+-->
+<!--[if lt IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>The A4 Grid</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="elemind.com" name="author">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/libs/modernizr.min.js"></script>
+    <link href="ico/favicon.ico" rel="shortcut icon">
+    <link href="ico/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="ico/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="ico/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+</head>
+<body class="features" data-spy="scroll" data-target=".documentation-nav">
+    <div class="container">
+        <div class="row">
+
+            <!-- .................................... $header .................................... -->
+            <header class="span3">
+                <div class="affix">
+                    <div class="navbar span3">
+                        <div class="navbar-inner">
+                            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+                                <i class="icon-reorder"></i>
+                            </a>
+                            <a class="brand span2" href="index.html">
+                                <img alt="" src="img/logo.png">
+                            </a>
+<nav class="nav-collapse collapse">
+    <ul class="nav">
+        <li class="nav-home active"><a href="index.html">VERIS Overview</a></li>
+        <li class="nav-enums"><a href="schema-docs.html">Schema Documentation</a></li>
+        <li class="nav-enums"><a href="incident-track.html">Incident Tracking</a></li>
+        <li class="nav-enums"><a href="victim-demo.html">Victim Demographics</a></li>
+        <li class="nav-enums"><a href="incident-desc.html">Incident Description</a></li>
+
+        <li class="dropdown nav-schema">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Incident Details
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="nav-actors"><a href="actors.html">Actors</a></li>
+                <li class="nav-actions"><a href="actions.html">Actions</a></li>
+                <li class="nav-assets"><a href="assets.html">Assets</a></li>
+                <li class="nav-attributes"><a href="attributes.html">Attributes</a></li>
+            </ul>
+        </li>
+        <li class="nav-discovery"><a href="discovery.html">Discovery & Response</a></li>
+        <li class="nav-impact"><a href="impact.html">Impact Assessment</a></li>
+        <li class="nav-indicators"><a href="indicators.html">Indicators</a></li>
+        <li class="dropdown nav-examples">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Samples & Examples
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="nav-input-form"><a href="example-form.html">Example Input Form</a></li>
+                <li class="nav-classification-examples"><a href="class-examples.html">Classification Examples</a></li>
+                <li class="nav-map-to-schemas"><a href="veris-mapping.html">Map VERIS to other Schemas</a></li>
+            </ul>
+        </li>
+        <li class="nav-enums"><a href="enums.html">Schema Enumerations</a></li>
+        <li class="nav-vcdb"><a href="vcdb.html">VERIS Community Database</a></li>
+        <li class="nav-a4grid"><a href="a4grid.html">The A4 Grid</a></li>
+
+    </ul>
+</nav>
+</div><!-- /navbar-inner -->
+</div><!-- /navbar -->
+<aside class="span3 text-center hidden-phone">
+<ul class="social inline">
+<li><a class="btn btn-small" href="#"><i class="icon-facebook"></i></a></li>
+<li><a class="btn btn-small" href="#"><i class="icon-twitter"></i></a></li>
+<li><a class="btn btn-small" href="#"><i class="icon-linkedin"></i></a></li>
+</ul>
+<p>Designed by <a href="http://ppparticularity.com">ppparticularity</a></p>
+</aside>
+</div><!-- /affix -->
+</header>
+
+            <div class="main span9">
+
+                <!-- .................................... $Content .................................... -->
+                <section class="section-content">
+
+                        <div class="span6 offset3">
+                            <h2 class="section-title">
+                                The VERIS A4 Grid
+                            </h2>
+
+                            <p>The A4 grid is a way to organize and visualize the main categories of actors, actions, assets, and attributes in the VERIS threat model. For more explanation on the “4 A’s,” see the <a href="incident-desc.html">Incident Description</a> section of this wiki. If we calculate all the combinations of the high-level categories for each of the A's (3 Actors, 7 Actions, 5 Assets, and 3 Attributes), 315 possibilities emerge. These 315 A-A-A-A combinations form the intersections of the A4 Grid as laid out in the figure below.</p>
+                            <p>
+                              <a img alt="" src="img/a4-grid-counts.png">
+                              </a>
+                            </p>
+                            <p>The numbers at each intersection provide a simple way to reference a particular combination of A's. For instance, #1 describes incidents that include an external actor, malware action, server asset, and confidentiality attribute at some point in the event chain. It does NOT necessarily mean that an external actor installed malware that compromised the confidentiality of a server (this is why nonsensical intersections like Malware-People still have #s). In other words, the intersections represent ASSOCIATIONS WITHIN AN INCIDENT, not a direct connection between those specific A's. Note that it is possible to create these direction connections through event modeling using VERIS, but that process is non-trivial and beyond most incident description/reporting needs.</p>
+
+                            <!-- .................................... $Creating the grid .................................... -->
+                            <section class="section-content section-creating-the-grid" id="section-creating-the-grid">
+                                <h3 class="section-title">
+                                    Creating the grid
+                                </h3>
+
+                                <p>Understanding the basic structure of the A4 grid is one thing; populating it with data to use as a visualization tool is another thing entirely. Since many have asked about producing VERIS grid visualizations (e.g., Figure 6 in the 2013 DBIR), we'll briefly demonstrate how that's accomplished. Hopefully, it will get you moving down the right track if you want to crank out some of these for your own VERIS dataset.</p>
+                                <p>Suppose you “VERISized” the typical state-affiliated espionage breach. It may involve external actors, malware, hacking, and social actions, server, desktop, and people assets (maybe other categories too), and at least the attributes of confidentiality and integrity. If you associate all those possible combinations in grid form, you'd have something that looks like the figure below. Remember that this doesn't suggest that malware infected people or that the attacker socially engineered a server - it means those things were observed within the same incident (i.e., social tactics did, indirectly at least, contribute to the loss of confidentiality of a server).</p>
+                                <p>
+                                  <a img alt="" src="img/a4-grid-sample.png">
+                                  </a>
+                                </p>
+                                <p>Now suppose you VERISized numerous incidents and wanted to see which a4 associations were most common across the dataset. Depending on your toolset, you'd set up some kind of routine that essentially “count the number of incidents that include external actors AND malware actions AND server assets AND confidentiality attributes, then divide that by total incidents.” We produced Figure 6 in the 2013 DBIR in similar fashion using R.</p>
+                                <p>
+                                  <a img alt="" src="img/fig6_13dbir.png">
+                                  </a>
+                                </p>
+
+
+
+                                <p>It's worth noting that it is *possible to create a grid based only on direct associations between the A's, but it's more time-consuming to collect and store incident data to allow this. This “event modeling” creates a progressive sequence of distinct threat events (similar to “kill chain” format). Examples and guidelines around event modeling using VERIS will be published at a later date for those interested in exploring it further.</p>
+
+
+                            </section>
+
+
+                        </div>
+                    </div>
+                </section>
+
+
+            </div><!-- /main span9 -->
+
+        </div><!-- /row -->
+    </div><!-- /container -->
+
+    <!-- .................................... $scripts .................................... -->
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="js/libs/jquery.ui.map.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/libs/jquery.fancybox.min.js"></script>
+    <script src="js/libs/jquery.hoverdir.min.js"></script>
+    <script src="js/libs/jquery.isotope.min.js"></script>
+    <script src="js/libs/jquery.masonry.min.js"></script>
+    <script src="js/libs/jquery.fitvids.min.js"></script>
+    <script src="js/libs/jquery.flexslider.min.js"></script>
+    <script src="js/libs/jquery.imagesloaded.min.js"></script>
+    <script src="js/libs/cbpBGSlideshow.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
