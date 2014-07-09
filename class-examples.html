@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<!--
+                            |   _)             |            _)  |
+   _ \  _ \  _ \   _` |   _| _|  |   _|  |  |  |   _` |   _| |   _|  |  |
+  .__/ .__/ .__/ \__,_| _| \__| _| \__| \_,_| _| \__,_| _|  _| \__| \_, |
+ _|   _|   _|                                                       ___/
+                                                tailored web design
+-->
+<!--[if lt IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Classification Examples</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="elemind.com" name="author">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/libs/modernizr.min.js"></script>
+    <link href="ico/favicon.ico" rel="shortcut icon">
+    <link href="ico/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="ico/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="ico/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+</head>
+<body class="features" data-spy="scroll" data-target=".documentation-nav">
+    <div class="container">
+        <div class="row">
+
+            <!-- .................................... $header .................................... -->
+            <header class="span3">
+                <div class="affix">
+                    <div class="navbar span3">
+                        <div class="navbar-inner">
+                            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+                                <i class="icon-reorder"></i>
+                            </a>
+                            <a class="brand span2" href="index.html">
+                                <img alt="" src="img/logo.png">
+                            </a>
+<nav class="nav-collapse collapse">
+    <ul class="nav">
+        <li class="nav-home active"><a href="index.html">VERIS Overview</a></li>
+        <li class="nav-enums"><a href="schema-docs.html">Schema Documentation</a></li>
+        <li class="nav-enums"><a href="incident-track.html">Incident Tracking</a></li>
+        <li class="nav-enums"><a href="victim-demo.html">Victim Demographics</a></li>
+        <li class="nav-enums"><a href="incident-desc.html">Incident Description</a></li>
+
+        <li class="dropdown nav-schema">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Incident Details
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="nav-actors"><a href="actors.html">Actors</a></li>
+                <li class="nav-actions"><a href="actions.html">Actions</a></li>
+                <li class="nav-assets"><a href="assets.html">Assets</a></li>
+                <li class="nav-attributes"><a href="attributes.html">Attributes</a></li>
+            </ul>
+        </li>
+        <li class="nav-discovery"><a href="discovery.html">Discovery & Response</a></li>
+        <li class="nav-impact"><a href="impact.html">Impact Assessment</a></li>
+        <li class="nav-indicators"><a href="indicators.html">Indicators</a></li>
+        <li class="dropdown nav-examples">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Samples & Examples
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="nav-input-form"><a href="https://incident.veriscommunity.net/s3/example">Example Input Form</a></li>
+                <li class="nav-classification-examples"><a href="class-examples.html">Classification Examples</a></li>
+                <li class="nav-map-to-schemas"><a href="veris-mapping.html">Map VERIS to other Schemas</a></li>
+            </ul>
+        </li>
+        <li class="nav-enums"><a href="enums.html">Schema Enumerations</a></li>
+        <li class="nav-vcdb"><a href="vcdb.html">VERIS Community Database</a></li>
+        <li class="nav-a4grid"><a href="a4grid.html">The A4 Grid</a></li>
+
+
+    </ul>
+</nav>
+</div><!-- /navbar-inner -->
+</div><!-- /navbar -->
+<aside class="span3 text-center hidden-phone">
+<ul class="social inline">
+<li><a class="btn btn-small" href="#"><i class="icon-facebook"></i></a></li>
+<li><a class="btn btn-small" href="#"><i class="icon-twitter"></i></a></li>
+<li><a class="btn btn-small" href="#"><i class="icon-linkedin"></i></a></li>
+</ul>
+<p>Designed by <a href="http://ppparticularity.com">ppparticularity</a></p>
+</aside>
+</div><!-- /affix -->
+</header>
+
+            <div class="main span9">
+
+                <!-- .................................... $Content .................................... -->
+                <section class="section-content">
+                    <div class="row">
+                        <div class="span3 documentation-nav affix hidden-phone">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="active"><a href="#section-lost-device">
+                                    <i class="icon-angle-right pull-right"></i>
+                                    Lost Device
+                                </a></li>
+                                <li><a href="#section-stolen-device">
+                                    <i class="icon-angle-right pull-right"></i>
+                                    Stolen Device
+                                </a></li>
+                                <li><a href="#section-misdelivery">
+                                    <i class="icon-angle-right pull-right"></i>
+                                    Misdelivery
+                                </a></li>
+                                <li><a href="#section-publishing">
+                                    <i class="icon-angle-right pull-right"></i>
+                                    Publishing Error
+                                </a></li>
+                                <li><a href="#section-email-abuse">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Email Abuse
+                                </a></li>
+                            </ul>
+                        </div>
+                        <div class="span6 offset3">
+                            <h2 class="section-title">
+                                Topic Specific Guidance
+                            </h2>
+
+                            <p></p>
+                            <h3>Discovery Method</h3>
+
+                            <p>In January 2014 the Verizon RISK team had a question about what discovery method to use for a particular incident. In this case the customer had purchased antivirus protection but had failed to update the signatures. The antivirus company detected malicious activity from the victim network another way and notified them. What is the discovery method in this case?</p>
+                            <p></p>
+                            <ul>
+                              <li>
+                                Int - antivirus
+                              </a></li>
+                              <li>
+                                Ext - Monitoring Service
+                              </a></li>
+                              <li>
+                                Ext - Unrelated party
+                              </a></li>
+                            </ul>
+
+                            <p>The RISK team quickly eliminated antivirus as an option. Although it was their antivirus company that detected the malware, the detection was not internal and shouldn't be listed that way. The question of whether to use monitoring service or unrelated party came about because the victim does not pay for a monitoring service. However, since there is a business relationship with the antivirus company it seems like unrelated party isn't a good choice either. In the end, the RISK team decided that the notification of the victim happened because the victim was a customer of the antivirus company and the monitoring was a 'value-add' that they got from being an antivirus customer. So we decided to use External Monitoring Service.</p>
+                            <p>But let's say for the sake of example that we know the device was stolen. Specifically, someone broke into an employee's vehicle and took a corporate-issued laptop from the backseat. This incident is not complex to VERISize because (typically) there will only be one actor, action, and asset. We assume here that the device is password-protected with full disk encryption implemented.</p>
+
+                            <!-- .................................... $Lost Device .................................... -->
+                            <section class="section-content section-lost-device" id="section-lost-device">
+                                <h3 class="section-title">
+                                    Classification Example: Lost Device
+
+                                </h3>
+                                <p>One of the most common incidents reported by organizations or all types and sizes is the loss of mobile devices, such as laptops or mobile phones. This can be either due to employee error or theft of the asset by an external party. In many cases it will be difficult to know if a missing device was lost or stolen, but we suggest classifying it as a 'Loss' (internal.error) rather than 'Theft' (external.physical) unless there is good reason to suspect the latter. This is not a blind/unwarranted assumption; if one is unsure what happened to the device, the variety of 'Loss' is appropriate and historical data shows devices are lost far more often than stolen.</p>
+                                <p>We will focus this example on a lost device scenario, specifically a lost laptop. This incident is one of the least complex to VERISize because (typically) there will only be one actor, action, and asset. We assume here that the device is password-protected with full disk encryption implemented.</p>
+                                <p><i>It is a very common error to see stolen laptops modeled as a confidentiality loss, but not a corresponding availability loss. Remember, the organization has lost the use of an asset. Availability should be listed in the affected attributes.</i></p>
+
+
+                                <h4>
+                                  Incident Description
+                                </h4>
+
+                                <h5>
+                                  Actor: Internal
+                                </h5>
+
+                                <p>Motive: N/A</p>
+                                <p>Actor Variety: End-user</p>
+
+                                <h5>
+                                  Action:  Error
+                                </h5>
+
+                                <p>Action Variety: Loss</p>
+                                <p>Vector: Carelessness</p>
+
+                                <h4>
+                                  Asset
+                                </h4>
+
+                                <p>Variety: Laptop</p>
+                                <p>Ownership: Victim</p>
+
+
+                                <h4>
+                                  Attribute: Confidentiality, Availability
+                                </h4>
+
+                                <p>Data dislosure: No</p>
+                                <p>Notes: Laptop was password protected and encrypted</p>
+                                <p>Availabilty Variety: Loss</p>
+
+                                <h3>
+                                  Rationale
+                                </h3>
+
+                                <p>The classification of this everyday incident is pretty straightforward. The actor in this example is assumed to be a typical 'End-user', but could be any other variety of insider or partner as well. The action is simply 'Loss' under the Error category and the asset variety is 'Laptop', which could easily be modified to record lost phones, documents, etc. Since VERIS' attribute of Confidentiality also encompasses the notion of loss of possession or control, it is included for all lost assets. The more obvious attribute of Availability is also recorded unless the device and all data since the last backup can be fully recovered.</p>
+                                <p>In this case, the device is password protected and encrypted, and unless there is positive evidence of data disclosure, we can record 'No' for that variable under Confidentiality. *If* it wasn't password protected and/or encrypted, we'd need to change that to 'Potentially' to account for the fact that our data is now at-risk of disclosure. Moreover, the variety and amount of the data involved would need to be included. *If* we received evidence that data was disclosed to unauthorized parties (e.g., it's posted on the web or used for fraud), we'd need to record 'Yes' for the data_disclosure variable.</p>
+
+
+                                <h3>
+                                  JSON output
+                                </h3>
+
+                                <pre><code>
+{
+  "action": {
+    "error": {
+      "variety": [
+        "Loss"
+      ],
+      "vector": [
+        "Carelessness"
+      ]
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "variety": [
+        "End-user"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  },
+  "attribute": {
+    "availability": {
+      "variety": [
+        "Loss"
+      ]
+    },
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 16,
+          "variety": "Personal"
+        }
+      ],
+      "data_disclosure": "Potentially",
+      "data_total": 16,
+      "notes": "",
+      "state": [
+        "Stored unencrypted"
+      ]
+    }
+  },
+  "discovery_method": "Other",
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "demo001",
+  "reference": "http://www.youtube.com/watch?v=_T35QhLx_KI",
+  "schema_version": "1.2",
+  "security_incident": "Confirmed",
+  "summary": "Unencrypted laptop lost or misplaced by a hapless employee.",
+  "timeline": {
+    "incident": {
+      "year": 2013
+    }
+  },
+  "victim": [
+    {
+      "country": "US",
+      "employee_count": "1 to 10",
+      "industry": 621111,
+      "notes": "",
+      "state": "NY",
+      "victim_id": "Vandelay Industries"
+    }
+  ]
+}
+
+</code></pre>
+
+
+                            </section>
+
+
+
+                            <!-- .................................... $Stolen Device .................................... -->
+                            <section class="section-content section-stolen-device" id="section-stolen-device">
+                                <h3 class="section-title">
+                                    Classification Example: Stolen Device
+
+                                </h3>
+                                <p>A common incident reported by all organizations is the theft of mobile devices, such as laptops or mobile phones. In many cases it will be difficult to know if a missing device was lost or stolen, but we suggest classifying it as a 'loss' (internal.error) rather than 'theft' (external.physical) unless there is good reason to suspect the latter. This is not a blind/unwarranted assumption; if one is unsure what happened to the device, the variety of 'loss or misplacement' is appropriate and historical data shows devices are lost far more often than stolen.</p>
+                                <p>But let's say for the sake of example that we know the device was stolen. Specifically, someone broke into an employee's vehicle and took a corporate-issued laptop from the backseat. This incident is not complex to VERISize because (typically) there will only be one actor, action, and asset. We assume here that the device is password-protected with full disk encryption implemented.</p>
+                                <p><i>It is a very common error to see stolen laptops modeled as a confidentiality loss, but not a corresponding availability loss. Remember, the organization has lost the use of an asset. Availability should be listed in the affected attributes.</i></p>
+                                <p>The main difference in classifying a lost laptop versus a stolen laptop is changing the threat actor and the action taken. Rather than an internal actor, the actor is assumed to be external. And instead of <i>Error</i> the action is <i>Physical</i>.</p>
+
+                                <h4>
+                                  Incident Description
+                                </h4>
+
+                                <h5>
+                                  Actor: External
+                                </h5>
+
+                                <p>Motive: Financial</p>
+                                <p>Actor Variety: Unaffiliated</p>
+
+                                <h5>
+                                  Action:  Physical
+                                </h5>
+
+                                <p>Action Variety: Theft</p>
+                                <p>Location: Personal vehicle</p>
+                                <p>Vector: Disabled controls</p>
+
+                                <h4>
+                                  Asset
+                                </h4>
+
+                                <p>Variety: Laptop</p>
+                                <p>Ownership: Victim</p>
+
+
+                                <h4>
+                                  Attribute: Confidentiality, Availability
+                                </h4>
+
+                                <p>Data dislosure: No</p>
+                                <p>Notes: Laptop was password protected and encrypted</p>
+                                <p>Availabilty Variety: Loss</p>
+
+                                <h3>
+                                  Rationale
+                                </h3>
+
+                                <p>The classification of this everyday incident is pretty straightforward. The actor in this example is assumed to be a typical thief ('Unaffiliated'), but could be any other variety of external, insider, or partner as well. The action variety is 'Theft' under the Physical action, and we've recorded a vector of 'Disabled controls' and location of 'Personal vehicle' to capture that the thief smashed the window of the employee's card.</p>
+                                <p>A variation on this could be that the thief picked the lock, in which case the physical.vector of 'Bypassed controls' would be more suitable. The location can also be modified if the laptop was stolen from the corporate office ('Victim work area'), a store or restaurant ('Public facility'), or the employee's house ('Personal residence'). And so forth.</p>
+                                <p>The asset variety here is 'Laptop', but that could easily be modified to record stolen phones, documents, etc. Since VERIS' attribute of <a href="attributes.html#section-confidentiality">Confidentiality</a> also encompasses the notion of loss of possession or control, it is included for all lost assets. The more obvious attribute of <a href="attributes.html#section-availability">Availability</a> is also recorded unless the device and all data since the last backup can be fully recovered.</p>
+                                <p>In this case, the device is password protected and encrypted, and unless there is positive evidence of data disclosure, we can record 'No' for that variable under Confidentiality. *If* it wasn't password protected and/or encrypted, we'd need to change that to 'Potentially' to account for the fact that our data is now at-risk of disclosure. Moreover, the variety and amount of the data involved would need to be included. *If* we received evidence that data was disclosed to unauthorized parties (e.g., it's posted on the web or used for fraud), we'd need to record 'Yes' for the data_disclosure variable.</p>
+
+
+                                <h3>
+                                  JSON output
+                                </h3>
+
+                                <pre><code>
+{
+  "action": {
+    "physical": {
+      "location": [
+        "Personal vehicle"
+      ],
+      "variety": [
+        "Theft"
+      ],
+      "vector": [
+        "Disabled controls"
+      ]
+    }
+  },
+  "actor": {
+    "external": {
+      "motive": [
+        "Financial"
+      ],
+      "variety": [
+        "Unaffiliated"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Laptop"
+      }
+    ]
+  },
+  "attribute": {
+    "availability": {
+      "variety": [
+        "Loss"
+      ]
+    },
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 16,
+          "variety": "Personal"
+        }
+      ],
+      "data_disclosure": "Potentially",
+      "data_total": 16,
+      "notes": "",
+      "state": [
+        "Stored unencrypted"
+      ]
+    }
+  },
+  "discovery_method": "Other",
+  "impact": {
+    "overall_rating": "Unknown"
+  },
+  "incident_id": "demo001",
+  "reference": "http://www.youtube.com/watch?v=67L0pbneT2w",
+  "schema_version": "1.2",
+  "security_incident": "Confirmed",
+  "summary": "laptop stolen when someone broke into employee car.",
+  "timeline": {
+    "incident": {
+      "year": 2013
+    }
+  },
+  "victim": [
+    {
+      "country": "US",
+      "employee_count": "1 to 10",
+      "industry": 522293,
+      "notes": "",
+      "state": "NY",
+      "victim_id": "Art Vandelay, LLC."
+    }
+  ]
+}
+
+</code></pre>
+
+
+                            </section>
+
+
+
+                            <!-- .................................... $Misdelivery .................................... -->
+                            <section class="section-content section-misdelivery" id="section-misdelivery">
+                                <h3 class="section-title">
+                                    Classification Example: Misdelivery
+
+                                </h3>
+                                <p>Misdelivery is a type of <a href="actions.html#section-error">Error</a> where the actor accidentally sends confidential assets or data to the wrong recipient. This can occur via electronic communication like emails and IMs as well as physical assets like documents and backup tapes. The classification of misdelivery hinges on the motive of the actor; it must be an unintentional action. If the actor intended to send confidential information to an unauthorized person then the action would be considered <a href="actions.html#section-misuse">Misuse</a> rather than error.</p>
+                                <p>We will focus this example on a lost device scenario, specifically a lost laptop. This incident is one of the least complex to VERISize because (typically) there will only be one actor, action, and asset. We assume here that the device is password-protected with full disk encryption implemented.</p>
+                                <p><i>It is a very common error to see stolen laptops modeled as a confidentiality loss, but not a corresponding availability loss. Remember, the organization has lost the use of an asset. Availability should be listed in the affected attributes.</i></p>
+
+
+                                <h4>
+                                  Incident Description
+                                </h4>
+
+                                <h5>
+                                  Actor: Internal
+                                </h5>
+
+                                <p>Motive: N/A</p>
+                                <p>Actor Variety: End-user</p>
+
+                                <h5>
+                                  Action:  Error
+                                </h5>
+
+                                <p>Action Variety: Misdelivery</p>
+                                <p>Vector: Inadequate processes</p>
+
+                                <h4>
+                                  Asset
+                                </h4>
+
+                                <p>Variety: M - Documents</p>
+                                <p>Ownership: Victim</p>
+
+
+                                <h4>
+                                  Attribute: Confidentiality
+                                </h4>
+
+                                <p>Data dislosure: Yes</p>
+                                <p>Notes: Documents were mailed to the wrong recipient due to an off-by-one error</p>
+
+
+                                <h3>
+                                  Rationale
+                                </h3>
+
+                                <p>The actor in this example is assumed to be a typical 'End-user', but could be any other variety of insider or partner as well. The action variety is simply 'Misdelivery' under the Error category and the asset variety is 'M - Documents', which could easily be modified for backup tapes or any other offline asset that might be sent through the mail. If email or 'soft' copies of documents are misdelivered, the asset is likely 'U - Desktop' or 'U - Laptop', since the user most likely composed the email and/or attached documents stored on such devices. Naturally, other varieties of end-user devices and servers can be affected as well; it all depends on where the data was before it was misdelivered.</p>
+                                <p>In terms of attributes, misdeliveries will always compromise the <a href="attributes.html#section-confidentiality">Confidentiality</a> of the asset due to the loss of possession or control. In this case, we'll assume the envelope containing the documents was opened and that the recipient then contacted the organization to let them know about the mix-up. This should be marked as 'Yes' for data disclosure, even if nobody else but that one individual saw it and he/she never did anything malicious with it (i.e., the documents were still seen by an unauthorized party). A variation on this would be encrypted backup tapes sent to the wrong address; unless there is positive evidence to the contrary, we would record 'No' for data disclosure in this scenario.</p>
+                                <p>Many times, misdelivered documents are saved electronically and so the victim organization is not deprived of the use of the asset. If, however, the assets or data cannot be recovered, it is appropriate to include <a href="attributes.html#section-availability">Availability</a> as an affected attribute.</p>
+
+                                <h3>
+                                  JSON output
+                                </h3>
+
+                                <pre><code>
+{
+  "action": {
+    "error": {
+      "variety": [
+        "Misdelivery"
+      ],
+      "vector": [
+        "Inadequate processes"
+      ]
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "variety": [
+        "End user"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "M - Documents"
+      }
+    ]
+  },
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1337,
+          "variety": "Personal"
+        }
+      ],
+      "data_disclosure": "Yes",
+      "data_total": 1337
+    }
+  },
+  "incident_id": "demo003",
+  "reference": "http://youtu.be/icDXNHF-oEw",
+  "schema_version": "1.2",
+  "security_incident": "Confirmed",
+  "summary": "Documents were mailed to the wrong people due to an off-by-one error.",
+  "timeline": {
+    "incident": {
+      "year": 2013
+    }
+  },
+  "victim": [
+    {
+      "country": "US",
+      "employee_count": "1 to 10",
+      "industry": "336611",
+      "state": "NY",
+      "victim_id": "Kramerica Industries"
+    }
+  ]
+}
+</code></pre>
+
+
+                            </section>
+
+
+
+                            <!-- .................................... $Publishing .................................... -->
+                            <section class="section-content section-publishing" id="section-publishing">
+                                <h3 class="section-title">
+                                    Classification Example: Publishing Error
+
+                                </h3>
+                                <p>Publishing error is a type of Error where the actor puts non-public data in a public forum such as a web site, or a newspaper. Typically this is a mistake that involves non-public data on a server being accidentally placed in a folder that is being served up by web server software.</p>
+                                <p></p>
+
+
+                                <h4>
+                                  Incident Description
+                                </h4>
+
+                                <h5>
+                                  Actor: Internal
+                                </h5>
+
+                                <p>Motive: N/A</p>
+                                <p>Actor Variety: End-user</p>
+
+                                <h5>
+                                  Action:  Error
+                                </h5>
+
+                                <p>Action Variety: Publishing error</p>
+                                <p>Vector: Inadequate processes</p>
+
+                                <h4>
+                                  Asset
+                                </h4>
+
+                                <p>Variety: S - Web application</p>
+                                <p>Ownership: Victim</p>
+
+
+                                <h4>
+                                  Attribute: Confidentiality
+                                </h4>
+
+                                <p>Data dislosure: Yes</p>
+
+
+                                <h4>
+                                  Discovery Method: External unrelated party
+                                </h4>
+
+
+                                <h3>
+                                  Rationale
+                                </h3>
+
+                                <p>The actor in this example is assumed to be a typical 'End-user', but could be any other variety of insider or partner as well. The action variety is simply 'Publishing error' under the Error category and the asset variety in this example is a web server. The motive is NA for errors because the actor did not intend for anything to happen.</p>
+                                <p>In terms of attributes, misdeliveries will always compromise the <a href="attributes.html#section-confidentiality">Confidentiality</a> of the asset due to the loss of possession or control. However, it is not always certain that a data disclosure has occurred. In this example, the publishing error was reported by an external unrelated party which means that data disclosure must be set to yes because we know that at least one unauthorized person has seen the mispublished data. However, if the error was discovered internally and there isn't any concrete evidence that the document has been viewed by unauthorized persons then this could be set to Potentially.</p>
+                                <p>The vector of the publishing error is inadequate process in this example, although the vector is often unknown. Inadequate process would be an appropriate choice if there was no checking mechanism in place to ensure that only authorized data is being published.</p>
+
+                                <h3>
+                                  JSON output
+                                </h3>
+
+                                <pre><code>
+{
+  "action": {
+    "error": {
+      "variety": [
+        "Publishing error"
+      ],
+      "vector": [
+        "Inadequate processes"
+      ]
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "NA"
+      ],
+      "variety": [
+        "End user"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "S - Web application"
+      }
+    ]
+  },
+  "attribute": {
+    "confidentiality": {
+      "data": [
+        {
+          "amount": 1337,
+          "variety": "Personal"
+        }
+      ],
+      "data_disclosure": "Yes",
+      "data_total": 1337
+    }
+  },
+  "incident_id": "demo004",
+  "reference": "http://youtu.be/P-NYDW5whpw",
+  "schema_version": "1.2",
+  "security_incident": "Confirmed",
+  "discovery_method":"Ext - unrelated party",
+  "summary": "Spreadsheet containing personal information was saved to a folder that was being indexed by Apache web server.",
+  "timeline": {
+    "incident": {
+      "year": 2013
+    }
+  },
+  "victim": [
+    {
+      "country": "US",
+      "employee_count": "1 to 10",
+      "industry": "336611",
+      "state": "NY",
+      "victim_id": "Kruger Industrial Smoothing"
+    }
+  ]
+}
+</code></pre>
+
+
+                            </section>
+
+
+
+                            <!-- .................................... $Email Abuse .................................... -->
+                            <section class="section-content section-email-abuse" id="section-email-abuse">
+                                <h3 class="section-title">
+                                    Classification Example: Email Abuse
+
+                                </h3>
+                                <p>It is fairly common to see employees misuse email in a way that compromises the confidentiality of an organization's private data. One common example is when a user emails a sensitive document to a personal email account to work on it from home. This situation can be confusing because there are several action varieties that might describe this, and there is a good argument for more than one affected asset as well. When coding an incident where there is only one action, it is best to find the single most appropriate option.</p>
+                                <p>For example, if an employee uses corporate email for personal use or for sending work documents to apersonal email account against policy, then it is an example of <a href="actions.html#section-misuse">misuse:Email</a> misuse. A similar scenario is where an employee uploads sensitive documents to a service like Dropbox, which is not email abuse but is <a href="actions.html#section-misuse">misuse:Use of unapproved software</a>. Typically, an incident will not include both email misuse and use of unapproved software if there is only one action.</p>
+                                <p>If the organization has a policy in place that mandates, for instance, that all files stored on non-corporate systems must be encrypted, then include “email misuse” OR “unapproved software”AND <a href="actions.html#section-misuse">misuse:data mishandling</a>.</p>
+                                <p>In all of these cases, the affected asset is the workstation that user is using to upload or email documents. Unless the email server itself is compromised it should not be listed among the affected assets.</p>
+
+                                <h4>
+                                  Incident Description
+                                </h4>
+
+                                <h5>
+                                  Actor: Internal
+                                </h5>
+
+                                <p>Motive: Convenience</p>
+                                <p>Actor Variety: End-user</p>
+
+                                <h5>
+                                  Action:  Misuse
+                                </h5>
+
+                                <p>Action Variety: Email misuse</p>
+                                <p>Vector: LAN access</p>
+
+                                <h4>
+                                  Asset
+                                </h4>
+
+                                <p>Variety: U - Desktop</p>
+                                <p>Ownership: Victim</p>
+
+
+                                <h4>
+                                  Attribute: Confidentiality, Availability
+                                </h4>
+
+                                <p>Data dislosure: Potentially</p>
+
+
+                                <h3>
+                                  JSON output
+                                </h3>
+
+                                <pre><code>
+{
+  "action": {
+    "misuse": {
+      "variety": [
+        "Email misuse"
+      ],
+      "vector": [
+        "LAN access"
+      ]
+    }
+  },
+  "actor": {
+    "internal": {
+      "motive": [
+        "Convenience"
+      ],
+      "variety": [
+        "End user"
+      ]
+    }
+  },
+  "asset": {
+    "assets": [
+      {
+        "variety": "U - Desktop"
+      }
+    ],
+    "ownership": "Victim"
+  },
+  "attribute": {
+    "confidentiality": {
+      "data_disclosure": "Potentially"
+    }
+  },
+  "reference": "http://youtu.be/WhWavua-1FI",
+  "victim": [
+    {
+      "country": "US",
+      "employee_count": "100 to 1000",
+      "industry": "515210",
+      "state": "NY",
+      "victim_id": "Plaza Cable"
+    }
+  ]
+}
+
+</code></pre>
+
+
+                            </section>
+
+
+
+
+
+
+
+            </div><!-- /main span9 -->
+
+        </div><!-- /row -->
+    </div><!-- /container -->
+
+    <!-- .................................... $scripts .................................... -->
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="js/libs/jquery.ui.map.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/libs/jquery.fancybox.min.js"></script>
+    <script src="js/libs/jquery.hoverdir.min.js"></script>
+    <script src="js/libs/jquery.isotope.min.js"></script>
+    <script src="js/libs/jquery.masonry.min.js"></script>
+    <script src="js/libs/jquery.fitvids.min.js"></script>
+    <script src="js/libs/jquery.flexslider.min.js"></script>
+    <script src="js/libs/jquery.imagesloaded.min.js"></script>
+    <script src="js/libs/cbpBGSlideshow.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
