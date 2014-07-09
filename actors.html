@@ -75,7 +75,7 @@
         <li class="nav-enums"><a href="enums.html">Schema Enumerations</a></li>
         <li class="nav-vcdb"><a href="vcdb.html">VERIS Community Database</a></li>
         <li class="nav-a4grid"><a href="a4grid.html">The A4 Grid</a></li>
-        <li class="nav-mail-list"><a href="mail-list.html">Mailing List</a></li>
+
 
     </ul>
 </nav>
@@ -141,7 +141,7 @@
 
                                 <p><b>Question Text: </b>What motives drove the external actor(s) to act?</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-actors">enumerated list</a> (multi-select)</p>
+                                <p><b>Question type: </b><a href="enums.html#section-actors">enumerated list</a> (multi-select)</p>
                                 <p><b>Variable name: </b><i>actor.external.motive</i> (string)</p>
                                 <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
                                 <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actors and an internal actor, different motives may be assigned for each</p>
@@ -151,7 +151,7 @@
 
                                 <p><b>Question Text: </b>What varieties of external actors were involved?</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-actors">enumerated list</a> (multi-select)</p>
+                                <p><b>Question type: </b><a href="enums.html#section-actors">enumerated list</a> (multi-select)</p>
                                 <p><b>Variable name: </b><i>actor.external.variety</i> (string)</p>
                                 <p><b>Purpose: </b>Identifying the specific variety helps assess the resources, capabilities, and tendencies of the actor.</p>
                                 <p><b>Developer notes: </b>N/A</p>
@@ -162,7 +162,7 @@
 
                                 <p><b>Question Text: </b>What are the geographic origins of the external actor(s)?</p>
                                 <p><b>User notes: </b>Reserve this for the actual countries from which the actor is operating, rather than basing it solely on IP geolocation.</p>
-                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-repeated">enumerated list</a> (multi-select)</p>
+                                <p><b>Question type: </b><a href="enums.html#section-repeated">enumerated list</a> (multi-select)</p>
                                 <p><b>Variable name: </b><i>actor.external.country</i> (string)</p>
                                 <p><b>Purpose: </b>Identifies the geographic origin of the actor, which is useful on multiple investigatory, operational, and strategic levels.</p>
                                 <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found here: http://www.iso.org/iso/country_codes.htm. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
@@ -195,7 +195,7 @@
 
                                 <p><b>Question Text: </b>What motives drove the internal actor(s) to act?</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-repeated">enumerated list</a> (multi-select)</p>
+                                <p><b>Question type: </b><a href="enums.html#section-repeated">enumerated list</a> (multi-select)</p>
                                 <p><b>Variable name: </b><i>actor.internal.motive</i> (string)</p>
                                 <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
                                 <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actor and an internal actor, different motives may be assigned for each.</p>
@@ -208,7 +208,7 @@
 
                             <p><b>Question Text: </b>What varieties of internal actors were involved?</p>
                             <p><b>User notes: </b>If the employee resigned or was let go before the incident, select “former employee” under External actors instead.</p>
-                            <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-actors">enumerated list</a> (multi-select)</p>
+                            <p><b>Question type: </b><a href="enums.html#section-actors">enumerated list</a> (multi-select)</p>
                             <p><b>Variable name: </b><i>actor.internal.variety</i> (string)</p>
                             <p><b>Purpose: </b>Identifying the specific variety helps assess the resources, capabilities, and tendencies of the actor.</p>
                             <p><b>User notes: </b>N/A</p>
@@ -240,7 +240,7 @@
 
                                 <p><b>Question Text: </b>What motives drove the partner(s) to act?</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-actors">enumerated list</a> (multi-select)</p>
+                                <p><b>Question type: </b><a href="enums.html#section-actors">enumerated list</a> (multi-select)</p>
                                 <p><b>Variable name: </b><i>actor.partner.motive</i> (string)</p>
                                 <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
                                 <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actor and an internal actor, different motives may be assigned for each.</p>
@@ -260,7 +260,7 @@
 
                                 <p><b>Question Text: </b>What is the partner's country of operation?</p>
                                 <p><b>User notes: </b>If multinational, select the primary location of the business group involved in the incident.</p>
-                                <p><b>Question type: </b><a href="http://vz-risk.github.io/veris/enums.html#section-repeated">enumerated list</a> (multi-select)</p>
+                                <p><b>Question type: </b><a href="enums.html#section-repeated">enumerated list</a> (multi-select)</p>
                                 <p><b>Variable name: </b><i>actor.partner.country</i> (string)</p>
                                 <p><b>Purpose: </b>Identifies the geographic origin of the actor, which is useful on multiple investigatory, operational, and strategic levels.</p>
                                 <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found here: http://www.iso.org/iso/country_codes.htm. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>

@@ -12,7 +12,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>Features | Resie</title>
+    <title>Impact Assessment</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="description">
     <meta content="elemind.com" name="author">
@@ -75,7 +75,6 @@
         <li class="nav-enums"><a href="enums.html">Schema Enumerations</a></li>
         <li class="nav-vcdb"><a href="vcdb.html">VERIS Community Database</a></li>
         <li class="nav-a4grid"><a href="a4grid.html">The A4 Grid</a></li>
-        <li class="nav-mail-list"><a href="mail-list.html">Mailing List</a></li>
 
     </ul>
 </nav>
@@ -99,119 +98,135 @@
                     <div class="row">
                         <div class="span3 documentation-nav affix hidden-phone">
                             <ul class="nav nav-pills nav-stacked">
-                                <li class="active"><a href="#section-actors">
+                                <li class="active"><a href="#section-loss-categorization">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Threat Actors
+                                    Loss categorization
                                 </a></li>
-                                <li><a href="#section-external">
+                                <li><a href="#section-loss-estimation">
                                     <i class="icon-angle-right pull-right"></i>
-                                    External Actors
+                                    Loss estimation
                                 </a></li>
-                                <li><a href="#section-internal">
+                                <li><a href="#section-estimation-currency">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Internal Actors
+                                    Estimation currency
                                 </a></li>
-                                <li><a href="#section-partner">
+                                <li><a href="#section-impact-rating">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Partner Actors
+                                    Impact Rating
+                                </a></li>
+                                <li><a href="#section-notes">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Notes
                                 </a></li>
                             </ul>
                         </div>
                         <div class="span6 offset3">
                             <h2 class="section-title">
-                                Threat Actors
-                                <small>
-                                    Entities that cause or contribute to an incident are referred to as threat actors
-                                </small>
+                                Impact Assessment
+
                             </h2>
 
-                            <p>There can be more than one actor involved in any particular incident, and their actions can be malicious or non-malicious, intentional or unintentional, causal or contributory. VERIS recognizes three primary categories of threat actors - External, Internal, and Partner.</p>
+                            <p>One of the more important pieces of information about an incident is the impact it has on the organization. Unfortunately the true scope and extent of consequences can be difficult to measure since a wide array of tangible and intangible costs can be involved. With this in mind, the VERIS leverages three perspectives of impact in order to provide an understanding and measure of consequence associated with the incident. Together they seek to 1) categorize the varieties of losses experienced, 2) estimate their magnitude, and 3) capture a qualitative assessment of the overall effect on the organization.</p>
 <p>
-
-<i>VERIS classification note: If the actor’s role in the breach is limited to a contributory error, the actor would not be included here. For example, if an insider’s unintentional misconfiguration of an application left it vulnerable to attack, the insider would not be considered a threat actor if the application were successfully breached by another actor. An insider who deliberately steals data or whose inappropriate behavior (e.g., policy violations) facilitated the breach would be considered a threat actor in the breach.</i>
 
 </p>
 
-                            <!-- .................................... $External Actors .................................... -->
-                            <section class="section-content section-external" id="section-external">
+                            <!-- .................................... $Loss Categorization .................................... -->
+                            <section class="section-content section-loss-categorization" id="section-loss-categorization">
                                 <h3 class="section-title">
-                                    External Actors
+                                    Loss categorization
 
                                 </h3>
-                                <p>External threats originate from sources outside of the organization and its network of partners. Examples include criminal groups, lone hackers, former employees, and government entities. Also includes God (as in “acts of”), “Mother Nature,” and random chance. Typically, no trust or privilege is implied for external entities.</p>
 
-                                <h4>
-                                  Role **DEPRECATED IN V1.2**
-                                </h4>
-                                <p><b>Variable Name: </b>actor.external.role (string)</p>
 
-                                <h4>
-                                  Motive
-                                </h4>
-                                <p><b>Question Text: </b>What motives drove the external actor(s) to act?</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorxmotive">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.motive</i> (string)</p>
-                                <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actors and an internal actor, different motives may be assigned for each.</p>
+                                <p><b>Question Text: </b>What varieties of losses were experienced as a result of this incident? If known, enter a loss estimate for each.</p>
+                                <p><b>User notes: </b>VERIS divides impact into two basic categories, direct and indirect. Direct impacts are losses directly resulting from the threat actor’s actions against an organizational assets (as opposed to indirect categories of loss that are caused by the actions of others like auditors, customers, shareholders, etc). Indirect impacts are losses resulting from a stakeholder’s (i.e. regulator, customer, auditor, lawyer) reaction to the incident (which are admittedly more difficult to quantify).</p>
+                                <p><b>Question type: </b><a href="enums.html#section-impact">enumerated list</a> (multi-select) for <i>variety</i>; <a href="enums.html#section-impact">enumerated list</a> (single-select) for <i>rating</i>; text field for <i>amount, min_amount,</i> and <i>max_amount</i></p>
+                                <p><b>Variable name: </b><i>impact.loss </i> (comprised of the <i>variety</i> (string), <i>rating</i> (string), and <i>amount, min_amount, max_amount</i> (number) variables)</p>
+                                <p><b>Purpose: </b>Identify the types of impact experienced after an incident, and indicate how overall losses are distributed among them.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>This is admittedly a bit confusing as documented above. Basically, the user should be able to select all varieties of losses that apply and then be able to provide a relative rating (minor, moderate, major) and/or a quantitative estimate ($) of losses for each variety selected. Furthermore, we allow a triangular distribution (expected, min, max) to be specified for the loss estimates for each variety. All of this is optional, so you can use/record as much or as little of this as you like.</p>
+
+
+                            </section>
+
+                            <!-- .................................... $Loss Estimation .................................... -->
+                            <section class="section-content section-loss-estimation" id="section-loss-estimation">
+                                <h3 class="section-title">
+                                    Loss estimation
+
+                                </h3>
+
+
+                                <p><b>Question Text: </b>Estimate of total losses attributed to (or expected for) this incident.</p>
+                                <p><b>User notes: </b>In providing an estimate, consider all the loss varieties identified above.</p>
+                                <p><b>Question type: </b>text field(s)</p>
+                                <p><b>Variable name: </b><i>impact.overall_amount</i> (number), <i>impact.overall_min_amount</i> (number), <i>impact.overall_max_amount</i> (number)</p>
+                                <p><b>Purpose: </b>Quantifying the impact of an incident (even using broad estimations) is a useful exercise for many reasons. It allows for direct comparison with other incidents and helps to put security-related losses in context with other types of risk. Furthermore, since impact is an essential component of risk, tracking losses is important to fueling risk assessment and treatment efforts. It also provides fodder for some very interesting metrics around spending and losses within the security program.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>We allow a triangular distribution (expected, min, max) to be specified for the estimate of overall losses. Those wishing to enable more advanced analysis and modeling are encouraged collect the three values as opposed to a single point estimate.</p>
+
+
+                            </section>
+
+                            <!-- .................................... $Estimation Currency .................................... -->
+                            <section class="section-content section-estimation-currency" id="section-estimation-currency">
+                                <h3 class="section-title">
+                                    Estimation currency
+
+                                </h3>
+
+
+
+                                <p><b>Question Text: </b>Select currency for loss estimations provided for this incident.</p>
+                                <p><b>User notes: </b>In providing an estimate, consider all the loss varieties identified above.</p>
+                                <p><b>Question type: </b><a href="enums.html#section-repeated">enumerated list</a> (single-select)</p>
+                                <p><b>Variable name: </b><i>impact.iso_currency_code</i> (string)</p>
+                                <p><b>Purpose: </b>Allows for normalization across estimates using different currencies.</p>
+                                <p><b>Developer notes: </b>Depending on your circumstances, it may make sense to preset and default currency rather than prompting the user for it each time. We recommend making it as easy as possible for the user to locate and select the appropriate currency code (e.g., a picklist).</p>
                                 <p><b>Miscellaneous: </b>N/A</p>
 
-                                <h4>
-                                  Variety
-                                </h4>
 
-                                <p><b>Question Text: </b>What varieties of external actors were involved?</p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorexternalvariety">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.variety</i> (string)</p>
-                                <p><b>Purpose: </b>Identifying the specific variety helps assess the resources, capabilities, and tendencies of the actor.</p>
-                                <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b>If the actor is a former employee, then make sure to select the External variety of “Former employee” instead of an insider. If the former employee uses their still-active account, that falls under Misuse.</p>
-
-                                <h4>
-                                  Origin (country)
-                                </h4>
-
-                                <p><b>Question Text: </b>What are the geographic origins of the external actor(s)?</p>
-                                <p><b>User notes: </b>Reserve this for the actual countries from which the actor is operating, rather than basing it solely on IP geolocation.</p>
-                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.country</i> (string)</p>
-                                <p><b>Purpose: </b>Identifies the geographic origin of the actor, which is useful on multiple investigatory, operational, and strategic levels.</p>
-                                <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found <a href="http://www.iso.org/iso/country_codes.htm">here</a>. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
-                                <p><b>Miscellaneous: </b>Reserving this for the actor's origin and collecting IPs separately allows the best of both worlds. We can track both the origin (and national ties) of threat actors and the location of the assets they use for malicious purposes.</p>
+                            </section>
 
 
-                                <h4>
-                                  Notes
-                                </h4>
+                            <!-- .................................... $Impact Rating .................................... -->
+                            <section class="section-content section-impact-rating" id="section-impact-rating">
+                                <h3 class="section-title">
+                                    Impact Rating
 
-                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about the external actor(s).</p>
-                                <p><b>User notes: </b>Names or affiliations of threat groups involved would be particularly useful to record here.</p>
+                                </h3>
+
+
+
+                                <p><b>Question Text: </b>How would you rate the overall impact of this incident to the organization?</p>
+                                <p><b>User notes: </b>In rating the impact, consider all the varieties of losses listed under the “Impact categorization” question.</p>
+                                <p><b>Question type: </b><a href="enums.html#section-impact">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>impact.overall_rating</i> (string)</p>
+                                <p><b>Purpose: </b>Provides a sense for the relative impact of the incident to the organization. The scale is constructed around the notion of an injury to help answer the simple (but important) question of “How bad did it hurt?”.</p>
+                                <p><b>Developer notes: </b>Even though the enumeration file only includes the rating level (e.g., “Damaging”), we suggest including the full definition in the user interface to aid common interpretation of the ratings among users.</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
+                            </section>
+
+                            <!-- .................................... $Notes .................................... -->
+                            <section class="section-content section-notes" id="section-notes">
+                                <h3 class="section-title">
+                                    Notes
+
+                                </h3>
+
+
+
+                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about the impact of this incident.</p>
+                                <p><b>User notes: </b>In providing an estimate, consider all the loss varieties identified above.</p>
                                 <p><b>Question type: </b>text field</p>
-                                <p><b>Variable name: </b><i>actor.external.notes</i> (string)</p>
+                                <p><b>Variable name: </b><i>impact.notes</i> (string)</p>
                                 <p><b>Purpose: </b>Catch-alls are handy</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actor and an internal actor, different notes may be recorded for each.</p>
-                                <p><b>Miscellaneous: </b>Names or affiliations of threat actors or groups involved would be particularly useful to record here.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
-
-                            </section>
-
-                            <!-- .................................... $Internal Actors .................................... -->
-                            <section class="section-content section-internal" id="section-internal">
-                                <h3 class="section-title">
-                                    Internal Actors
-
-                                </h3>
-                                <p>Internal threats are those originating from within the organization. This encompasses company full-time employees, independent contractors, interns, and other staff. Insiders are trusted and privileged (some more than others).</p>
-                            </section>
-
-                            <!-- .................................... $Partner Actors .................................... -->
-                            <section class="section-content section-partner" id="section-partner">
-                                <h3 class="section-title">
-                                    Partner Actors
-
-                                </h3>
-                                <p>Partners include any third party sharing a business relationship with the organization. This includes suppliers, vendors, hosting providers, outsourced IT support, etc. some level of trust and privilege is usually implied between business partners.</p>
 
                             </section>
 

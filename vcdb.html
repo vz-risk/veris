@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--
+                            |   _)             |            _)  |
+   _ \  _ \  _ \   _` |   _| _|  |   _|  |  |  |   _` |   _| |   _|  |  |
+  .__/ .__/ .__/ \__,_| _| \__| _| \__| \_,_| _| \__,_| _|  _| \__| \_, |
+ _|   _|   _|                                                       ___/
+                                                tailored web design
+-->
+<!--[if lt IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>The VERIS Community Database (VCDB)</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="elemind.com" name="author">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/libs/modernizr.min.js"></script>
+    <link href="ico/favicon.ico" rel="shortcut icon">
+    <link href="ico/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="ico/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="ico/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+</head>
+<body class="features" data-spy="scroll" data-target=".documentation-nav">
+    <div class="container">
+        <div class="row">
+
+            <!-- .................................... $header .................................... -->
+            <header class="span3">
+                <div class="affix">
+                    <div class="navbar span3">
+                        <div class="navbar-inner">
+                            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+                                <i class="icon-reorder"></i>
+                            </a>
+                            <a class="brand span2" href="index.html">
+                                <img alt="" src="img/logo.png">
+                            </a>
+<nav class="nav-collapse collapse">
+    <ul class="nav">
+        <li class="nav-home active"><a href="index.html">VERIS Overview</a></li>
+        <li class="nav-enums"><a href="schema-docs.html">Schema Documentation</a></li>
+        <li class="nav-enums"><a href="incident-track.html">Incident Tracking</a></li>
+        <li class="nav-enums"><a href="victim-demo.html">Victim Demographics</a></li>
+        <li class="nav-enums"><a href="incident-desc.html">Incident Description</a></li>
+
+        <li class="dropdown nav-schema">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Incident Details
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="nav-actors"><a href="actors.html">Actors</a></li>
+                <li class="nav-actions"><a href="actions.html">Actions</a></li>
+                <li class="nav-assets"><a href="assets.html">Assets</a></li>
+                <li class="nav-attributes"><a href="attributes.html">Attributes</a></li>
+            </ul>
+        </li>
+        <li class="nav-discovery"><a href="discovery.html">Discovery & Response</a></li>
+        <li class="nav-impact"><a href="impact.html">Impact Assessment</a></li>
+        <li class="nav-indicators"><a href="indicators.html">Indicators</a></li>
+        <li class="dropdown nav-examples">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Samples & Examples
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="nav-input-form"><a href="example-form.html">Example Input Form</a></li>
+                <li class="nav-classification-examples"><a href="class-examples.html">Classification Examples</a></li>
+                <li class="nav-map-to-schemas"><a href="veris-mapping.html">Map VERIS to other Schemas</a></li>
+            </ul>
+        </li>
+        <li class="nav-enums"><a href="enums.html">Schema Enumerations</a></li>
+        <li class="nav-vcdb"><a href="vcdb.html">VERIS Community Database</a></li>
+        <li class="nav-a4grid"><a href="a4grid.html">The A4 Grid</a></li>
+
+    </ul>
+</nav>
+</div><!-- /navbar-inner -->
+</div><!-- /navbar -->
+<aside class="span3 text-center hidden-phone">
+<ul class="social inline">
+<li><a class="btn btn-small" href="#"><i class="icon-facebook"></i></a></li>
+<li><a class="btn btn-small" href="#"><i class="icon-twitter"></i></a></li>
+<li><a class="btn btn-small" href="#"><i class="icon-linkedin"></i></a></li>
+</ul>
+<p>Designed by <a href="http://ppparticularity.com">ppparticularity</a></p>
+</aside>
+</div><!-- /affix -->
+</header>
+
+            <div class="main span9">
+
+                <!-- .................................... $Content .................................... -->
+                <section class="section-content">
+                    <div class="row">
+                        <div class="span3 documentation-nav affix hidden-phone">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="active"><a href="#section-problem">
+                                    <i class="icon-angle-right pull-right"></i>
+                                    The Problem
+                                </a></li>
+                                <li><a href="#section-contributions">
+                                    <i class="icon-angle-right pull-right"></i>
+                                    Our Contributions to the Solution
+                                </a></li>
+                                <li><a href="#section-use">
+                                    <i class="icon-angle-right pull-right"></i>
+                                    What can you do with this data?
+                                </a></li>
+                                <li><a href="#section-future-work">
+                                    <i class="icon-angle-right pull-right"></i>
+                                    Future Work
+                                </a></li>
+                            </ul>
+                        </div>
+                        <div class="span6 offset3">
+                            <h2 class="section-title">
+                                The VERIS Community Database (VCDB)
+                            </h2>
+
+                            <p>Information sharing is a complex and challenging undertaking. If done correctly, everyone involved benefits from the collective intelligence. If done poorly, it may mislead participants or create a learning opportunity for our adversaries. The Verizon RISK Team supports and participates in a variety of information sharing initiatives and research efforts. We continue to drive the publication of the <a href="http://www.verizonenterprise.com/DBIR/">Verizon Data Breach Investigations Report (DBIR)</a> annually, where we have an unprecedented number of new data-sharing partners, and we are committed to keeping the report publicly available and free to download. We regularly receive inquiries about our dataset, and our ability to share further, but we are limited in what data we can share in raw format due to agreements with our partners and customers.
+
+                            </p>
+                            <p><a href="https://github.com/vz-risk/VCDB">Go straight to the data</a>
+                            </p>
+
+                            <!-- .................................... $The Problem .................................... -->
+                            <section class="section-content section-problem" id="section-problem">
+                              <h3 class="section-title">
+                                The Problem
+
+                              </h3>
+
+
+                              <p>While there are a handful of efforts to capture security incidents that are publicly disclosed, there is no unrestricted, comprehensive raw dataset available for download on security incidents that is sufficiently rich to support both community research and corporate decision-making. There are organizations that collect—and in some form—disseminate aggregated collections, but they are either not in a format that lends itself to ease of data manipulation and transformation required for research, or the underlying data are not freely and publicly available for use. This gap has long hampered researchers who are studying the problems surrounding security incidents, as well as the risk managers who are starved for reliable data upon which to base their risk calculations.</p>
+
+
+
+                            </section>
+
+                            <!-- .................................... $Our Contribution .................................... -->
+                            <section class="section-content section-contributions" id="section-contributions">
+                              <h3 class="section-title">
+                                Our Contributions to the Solution
+
+                              </h3>
+
+
+                              <p>To address this problem that has plagued the community, we are pleased to announce the <a href="http://www.vcdb.org">VERIS Community Database (VCDB)</a>, which aims to collect and disseminate data breach information for all publicly disclosed data breaches. The data are coded into VERIS format and we also provided the dataset in an <a href="http://vcdb.org/explore.html">interactive visualization</a> available for public use. We encourage you to visit the site and interact with the data. The initial release has just over 1,200 incidents, primarily from 2012 and 2013. Data sources include the Department of Health and Human Services (HHS) incidents, the sites of the various Attorneys General that provide breach notification source documents, media reports and press releases. We intend to continue to augment this dataset to capture as many incidents as possible so that others can benefit. Given the initial makeup of the data, care should be taken when basing decisions on it until it has become more comprehensive and representative. The data are currently biased towards the Health sector since nearly half of the incidents come from the HHS publications.</p>
+                              <p>We realize that while a graphic interface is useful to most of the potential consumers of this data, some would like to be able to get the details of each incident. We are also releasing the same data in JSON format from our <a href="https://github.com/vz-risk/VCDB">GitHub repository</a>. There you will find individual JSON files for each incident in the dataset, including the original URLs we used when coding the cases.</p>
+
+
+                            </section>
+
+                            <!-- .................................... $Usage .................................... -->
+                            <section class="section-content section-use" id="section-use">
+                              <h3 class="section-title">
+                                What can you do with this data?
+
+                              </h3>
+
+
+                              <p>You can “ask” it questions—think of something you’d like to know and start looking into the data to answer the question. Prove or disprove an assumption you have made in your own work. You can make direct comparison between the findings in the DBIR and the public data to see how they differ. You can filter by industry and organization size and see how your organization stacks up against companies of the same size and industry. If you use VERIS in your workplace, you can make comparisons against your own data as well (which is a good reason to look at adopting VERIS). Eventually, this will become a rich, freely available data source for conducting this type of ad hoc research.</p>
+                              <p>So try it out—click on the graphic above to launch the interactive visualization. This is a work in progress and we are committed to making the resource investment to keep it updated regularly. Note the tabs across the top—they show more detailed views of each of their respective topics. We will be adding additional views as we develop this resource, and we’d love to hear from you—the users of this tool and data—of additional views you’d be interested in.</p>
+
+
+                            </section>
+
+
+
+                            <!-- .................................... $Future Work .................................... -->
+                            <section class="section-content section-future-work" id="section-future-work">
+                              <h3 class="section-title">
+                                Future Work
+
+                              </h3>
+
+
+                              <p>We have plans to eventually branch out this dataset and also capture more than just data breaches—which are defined as incidents that compromise the confidentiality attribute of the data in question. We are interested in looking at all types of security incidents and continue to disseminate our data publicly to the community. Ideally, we will be able to build a dataset that captures the incidents that impact any of the security attributes in VERIS. If you are interested in getting involved, let us know—we want to encourage community involvement in this project.</p>
+
+
+
+                            </section>
+
+
+
+
+                        </div>
+                    </div>
+                </section>
+
+
+            </div><!-- /main span9 -->
+
+        </div><!-- /row -->
+    </div><!-- /container -->
+
+    <!-- .................................... $scripts .................................... -->
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="js/libs/jquery.ui.map.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/libs/jquery.fancybox.min.js"></script>
+    <script src="js/libs/jquery.hoverdir.min.js"></script>
+    <script src="js/libs/jquery.isotope.min.js"></script>
+    <script src="js/libs/jquery.masonry.min.js"></script>
+    <script src="js/libs/jquery.fitvids.min.js"></script>
+    <script src="js/libs/jquery.flexslider.min.js"></script>
+    <script src="js/libs/jquery.imagesloaded.min.js"></script>
+    <script src="js/libs/cbpBGSlideshow.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
