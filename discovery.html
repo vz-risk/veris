@@ -12,7 +12,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>Features | Resie</title>
+    <title>Discovery and Response</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="description">
     <meta content="elemind.com" name="author">
@@ -75,7 +75,6 @@
         <li class="nav-enums"><a href="enums.html">Schema Enumerations</a></li>
         <li class="nav-vcdb"><a href="vcdb.html">VERIS Community Database</a></li>
         <li class="nav-a4grid"><a href="a4grid.html">The A4 Grid</a></li>
-        <li class="nav-mail-list"><a href="mail-list.html">Mailing List</a></li>
 
     </ul>
 </nav>
@@ -99,121 +98,391 @@
                     <div class="row">
                         <div class="span3 documentation-nav affix hidden-phone">
                             <ul class="nav nav-pills nav-stacked">
-                                <li class="active"><a href="#section-actors">
+                                <li class="active"><a href="#section-incident-timeline">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Threat Actors
+                                    Incident Timeline
                                 </a></li>
-                                <li><a href="#section-external">
+                                <li><a href="#section-discovery-method">
                                     <i class="icon-angle-right pull-right"></i>
-                                    External Actors
+                                    Discovery Method
                                 </a></li>
-                                <li><a href="#section-internal">
+                                <li><a href="#section-root-causes">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Internal Actors
+                                    Root Causes
                                 </a></li>
-                                <li><a href="#section-partner">
+                                <li><a href="#section-corrective-actions">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Partner Actors
+                                    Corrective Actions
+                                </a></li>
+                                <li><a href="#section-target-opportunistic">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Targeted vs Opportunistic
+                                </a></li>
+                                <li><a href="#section-additional-guidance">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Additional Guidance
                                 </a></li>
                             </ul>
                         </div>
                         <div class="span6 offset3">
                             <h2 class="section-title">
-                                Threat Actors
-                                <small>
-                                    Entities that cause or contribute to an incident are referred to as threat actors
-                                </small>
+                                Response
                             </h2>
 
-                            <p>There can be more than one actor involved in any particular incident, and their actions can be malicious or non-malicious, intentional or unintentional, causal or contributory. VERIS recognizes three primary categories of threat actors - External, Internal, and Partner.</p>
+                            <p>This section focuses on the timeline of the events, how the incident was discovered, and lessons learned during the response and remediation process. It provides useful insight into the detection and defensive capabilities of the organization and helps identify corrective actions needed place to detect and/or prevent similar incidents in the future.</p>
 <p>
 
 <i>VERIS classification note: If the actor’s role in the breach is limited to a contributory error, the actor would not be included here. For example, if an insider’s unintentional misconfiguration of an application left it vulnerable to attack, the insider would not be considered a threat actor if the application were successfully breached by another actor. An insider who deliberately steals data or whose inappropriate behavior (e.g., policy violations) facilitated the breach would be considered a threat actor in the breach.</i>
 
 </p>
 
-                            <!-- .................................... $External Actors .................................... -->
-                            <section class="section-content section-external" id="section-external">
+                            <!-- .................................... $Incident Timeline .................................... -->
+                            <section class="section-content section-incident-timeline" id="section-incident-timeline">
                                 <h3 class="section-title">
-                                    External Actors
+                                    Incident Timeline
 
                                 </h3>
-                                <p>External threats originate from sources outside of the organization and its network of partners. Examples include criminal groups, lone hackers, former employees, and government entities. Also includes God (as in “acts of”), “Mother Nature,” and random chance. Typically, no trust or privilege is implied for external entities.</p>
+
+                                <p>The timeline of events leading up to and following an incident varies greatly depending on a multitude of factors. VERIS tracks the following incident milestones, not all of which are applicable to every incident:</p>
+                                <ol>
+                                    <li>
+                                      First malicious action: <i>Beginning of the threat actor's malicious actions against the victim. Port scans, initiating a brute-force attack, and even physical recon, are a few examples. This is only relevant to intentional and malicious actions.</i>
+                                    </a></li>
+                                    <li>
+                                      Initial compromise: <i>First point at which a security attribute (C/P, I/A, A/U) of an information asset was compromised.</i>
+                                    </a></li>
+                                    <li>
+                                      Data exfiltration: <i>First point at which non-public data was taken from the victim environment. Only applicable to data compromise events.</i>
+                                    </a></li>
+                                    <li>
+                                      Incident discovery: <i>When the organization first learned the incident had occurred.</i>
+                                    </a></li>
+                                    <li>
+                                      Containment/restoration: <i>Point at which the incident is contained (e.g., the “bleeding is stopped”) or restored (e.g., fully functional)”.</i>
+                                    </a></li>
+                                  </ol>
+                                  <p>Time framing the incident yields extremely useful metrics about threat actors and their actions, security readiness, resiliency, and response of victims, and a host of other factors. Note that the method of tracking timeline information has changed a few times since we published the VERIS framework. Most recently, we changed from collecting a timestamp for each phase to a timespan between phases (which is how it was originally).</p>
+
 
                                 <h4>
-                                  Role **DEPRECATED IN V1.2**
+                                  Incident date
                                 </h4>
-                                <p><b>Variable Name: </b>actor.external.role (string)</p>
+                                <p><b>Question Text: </b>When did the incident occur?</p>
+                                <p><b>User notes: </b>The first point at which a security attribute (C/P, I/A, A/U) of an information asset was compromised. Record time in hh:mm:ss UTC offset format (e.g. 15:18:27 -0500).</p>
+                                <p><b>Question type: </b>Date and time field</p>
+                                <p><b>Variable name: </b><i>timeline.incident</i>(comprised of the <i>year</i> (integer), <i>month</i> (integer), <i>day</i> (integer), <i>time</i> (string) variables)</p>
+                                <p><b>Purpose: </b>Contributes to the construction of a timeline for the incident, which is useful for reporting, trending, and analysis.</p>
+                                <p><b>Developer notes: </b>Rather than using a single date field, we separated day, month, and year. We did this because it may not be desirable to use the exact date of the incident in certain situations where the information is to be shared anonymously with other organizations. As such, only the year is required; day, month, and time are optional. We recommend that organizations record the exact date and time when using VERIS for internal incident tracking. When sharing with others, such organizations can omit time/day/month as desired. You may wish to display this in the 'Incident Tracking' section in the application, as it fits well there from a user perspective.</p>
+                                <p><b>Miscellaneous: </b>There are many different approaches to dating incidents among organizations. We suggest the point of initial compromise the most appropriate option to as the primary date for time-based analysis and trending of incidents (e.g., creating stats for all 2012 incidents). It is usually not the culmination of the incident (i.e., it could be the first evidence of availability loss during a DDoS attack or the initial intrusion into the network before any subsequent actions).</p>
+
+                                <h4>
+                                  Time to compromise
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>timeline.compromise</i> (single-select) for <i>unit</i> and text field for <i>value</i> (number)</p>
+                                <p><b>Purpose: </b>Contributes to the construction of a timeline for the incident, which is useful for reporting, trending, and analysis.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                                <h4>
+                                  Time to exfiltration
+                                </h4>
+
+                                <p><b>Question Text: </b>Initial compromise TO data exfiltration:</p>
+                                <p><b>User notes: </b>Select an appropriate unit of time (e.g., minutes or days) and then specify a value (i.e., the exact number of minutes or days). While we offer options for weeks, months, and years, consider specifying the number of days instead to increase precision (i.e., 79 days is more precise than 2 or 3 months).</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a>  (single-select) for <i>unit</i> and text field for <i>value</i></p>
+                                <p><b>Variable name: </b><i>imeline.exfiltration</i> (comprised of the <i>unit</i> (string; enumeration) and v<i>value</i> (number variables)</p>
+                                <p><b>Purpose: </b>Contributes to the construction of a timeline for the incident, which is useful for reporting, trending, and analysis.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
+                                <h4>
+                                  Time to discovery
+                                </h4>
+
+                                <p><b>Question Text: </b>Initial compromise TO incident discovery:</p>
+                                <p><b>User notes: </b>Select an appropriate unit of time (e.g., minutes or days) and then specify a value (i.e., the exact number of minutes or days). While we offer options for weeks, months, and years, consider specifying the number of days instead to increase precision (i.e., 79 days is more precise than 2 or 3 months).</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (single-select) for <i>unit</i> and text field for <i>value</i></p>
+                                <p><b>Variable name: </b><i>timeline.discovery</i> (comprised of the <i>unit</i> (string; enumeration) and <i>value</i> (number) variables)</p>
+                                <p><b>Purpose: </b>Contributes to the construction of a timeline for the incident, which is useful for reporting, trending, and analysis.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
+                                <h4>
+                                  Time to containment
+                                </h4>
+
+                                <p><b>Question Text: </b>Initial compromise TO containment/restoration:</p>
+                                <p><b>User notes: </b>Select an appropriate unit of time (e.g., minutes or days) and then specify a value (i.e., the exact number of minutes or days). While we offer options for weeks, months, and years, consider specifying the number of days instead to increase precision (i.e., 79 days is more precise than 2 or 3 months).</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (single-select) for <i>unit</i> and text field for <i>value</i></p>
+                                <p><b>Variable name: </b><i>timeline.containment</i> (comprised of the <i>unit</i> (string; enumeration) and <i>value</i> (number) variables)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
+
+                            </section>
+
+                            <!-- .................................... $Discovery Method .................................... -->
+                            <section class="section-content section-discovery-method" id="section-discovery-method">
+                                <h3 class="section-title">
+                                    Discovery Method
+
+                                </h3>
+
+                                <p><b>Question Text: </b>How was the incident discovered?</p>
+                                <p><b>User notes: </b>If more than one discovery method was involved, select the primary (or first) means of discovery (what tipped them off?).</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (single-select)</p>
+                                <p><b>Variable name: </b><i>discovery_method</i> (string)</p>
+                                <p><b>Purpose: </b>Identifies how the incident was discovered, which says a great deal about the detective capabilities and readiness of the organization.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
+                            </section>
+
+
+                            <!-- .................................... $Root Causes .................................... -->
+                            <section class="section-content section-root-causes" id="section-root-causes">
+                                <h3 class="section-title">
+                                    Root Causes
+
+                                </h3>
 
                                 <h4>
                                   Motive
                                 </h4>
-                                <p><b>Question Text: </b>What motives drove the external actor(s) to act?</p>
+                                <p><b>Question Text: </b></p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorxmotive">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.motive</i> (string)</p>
-                                <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actors and an internal actor, different motives may be assigned for each.</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
                                 <p><b>Miscellaneous: </b>N/A</p>
 
                                 <h4>
                                   Variety
                                 </h4>
 
-                                <p><b>Question Text: </b>What varieties of external actors were involved?</p>
+                                <p><b>Question Text: </b></p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorexternalvariety">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.variety</i> (string)</p>
-                                <p><b>Purpose: </b>Identifying the specific variety helps assess the resources, capabilities, and tendencies of the actor.</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
                                 <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b>If the actor is a former employee, then make sure to select the External variety of “Former employee” instead of an insider. If the former employee uses their still-active account, that falls under Misuse.</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
                                 <h4>
                                   Origin (country)
                                 </h4>
 
-                                <p><b>Question Text: </b>What are the geographic origins of the external actor(s)?</p>
-                                <p><b>User notes: </b>Reserve this for the actual countries from which the actor is operating, rather than basing it solely on IP geolocation.</p>
-                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.country</i> (string)</p>
-                                <p><b>Purpose: </b>Identifies the geographic origin of the actor, which is useful on multiple investigatory, operational, and strategic levels.</p>
-                                <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found <a href="http://www.iso.org/iso/country_codes.htm">here</a>. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
-                                <p><b>Miscellaneous: </b>Reserving this for the actor's origin and collecting IPs separately allows the best of both worlds. We can track both the origin (and national ties) of threat actors and the location of the assets they use for malicious purposes.</p>
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
 
                                 <h4>
                                   Notes
                                 </h4>
 
-                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about the external actor(s).</p>
-                                <p><b>User notes: </b>Names or affiliations of threat groups involved would be particularly useful to record here.</p>
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
                                 <p><b>Question type: </b>text field</p>
-                                <p><b>Variable name: </b><i>actor.external.notes</i> (string)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
                                 <p><b>Purpose: </b>Catch-alls are handy</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actor and an internal actor, different notes may be recorded for each.</p>
-                                <p><b>Miscellaneous: </b>Names or affiliations of threat actors or groups involved would be particularly useful to record here.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
 
                             </section>
 
-                            <!-- .................................... $Internal Actors .................................... -->
-                            <section class="section-content section-internal" id="section-internal">
+
+                            <!-- .................................... $Corrective Actions .................................... -->
+                            <section class="section-content section-corrective-actions" id="section-corrective-actions">
                                 <h3 class="section-title">
-                                    Internal Actors
+                                    Corrective Actions
 
                                 </h3>
-                                <p>Internal threats are those originating from within the organization. This encompasses company full-time employees, independent contractors, interns, and other staff. Insiders are trusted and privileged (some more than others).</p>
+
+                                <h4>
+                                  Motive
+                                </h4>
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                                <h4>
+                                  Variety
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                                <h4>
+                                  Origin (country)
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
+                                <h4>
+                                  Notes
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b>Catch-alls are handy</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
                             </section>
 
-                            <!-- .................................... $Partner Actors .................................... -->
-                            <section class="section-content section-partner" id="section-partner">
+
+                            <!-- .................................... $Targeted vs Opportunistic .................................... -->
+                            <section class="section-content section-target-opportunistic" id="section-target-opportunistic">
                                 <h3 class="section-title">
-                                    Partner Actors
+                                    Targeted vs Opportunistic
 
                                 </h3>
-                                <p>Partners include any third party sharing a business relationship with the organization. This includes suppliers, vendors, hosting providers, outsourced IT support, etc. some level of trust and privilege is usually implied between business partners.</p>
+
+                                <h4>
+                                  Motive
+                                </h4>
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                                <h4>
+                                  Variety
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                                <h4>
+                                  Origin (country)
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
+                                <h4>
+                                  Notes
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b>Catch-alls are handy</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
 
                             </section>
+
+
+                            <!-- .................................... $Additional Guidance .................................... -->
+                            <section class="section-content section-additional-guidance" id="section-additional-guidance">
+                                <h3 class="section-title">
+                                    Additional Guidance
+
+                                </h3>
+
+                                <h4>
+                                  Motive
+                                </h4>
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                                <h4>
+                                  Variety
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+                                <h4>
+                                  Origin (country)
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#section-timeline">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b></p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
+                                <h4>
+                                  Notes
+                                </h4>
+
+                                <p><b>Question Text: </b></p>
+                                <p><b>User notes: </b></p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i></i> (string)</p>
+                                <p><b>Purpose: </b>Catch-alls are handy</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
+
+
+                            </section>
+
 
                         </div>
                     </div>

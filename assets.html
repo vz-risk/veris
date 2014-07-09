@@ -12,7 +12,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>Features | Resie</title>
+    <title>Assets</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="description">
     <meta content="elemind.com" name="author">
@@ -75,7 +75,6 @@
         <li class="nav-enums"><a href="enums.html">Schema Enumerations</a></li>
         <li class="nav-vcdb"><a href="vcdb.html">VERIS Community Database</a></li>
         <li class="nav-a4grid"><a href="a4grid.html">The A4 Grid</a></li>
-        <li class="nav-mail-list"><a href="mail-list.html">Mailing List</a></li>
 
     </ul>
 </nav>
@@ -99,121 +98,178 @@
                     <div class="row">
                         <div class="span3 documentation-nav affix hidden-phone">
                             <ul class="nav nav-pills nav-stacked">
-                                <li class="active"><a href="#section-actors">
+                                <li class="active"><a href="#section-variety">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Threat Actors
+                                    Variety
                                 </a></li>
-                                <li><a href="#section-external">
+                                <li><a href="#section-ownership">
                                     <i class="icon-angle-right pull-right"></i>
-                                    External Actors
+                                    Ownership
                                 </a></li>
-                                <li><a href="#section-internal">
+                                <li><a href="#section-management">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Internal Actors
+                                    Management
                                 </a></li>
-                                <li><a href="#section-partner">
+                                <li><a href="#section-hosting">
                                     <i class="icon-angle-right pull-right"></i>
-                                    Partner Actors
+                                    Hosting
+                                </a></li>
+                                <li><a href="#section-accessibility">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Accessibility
+                                </a></li>
+                                <li><a href="#section-cloud">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Cloud
+                                </a></li>
+                                <li><a href="#section-notes">
+                                  <i class="icon-angle-right pull-right"></i>
+                                  Notes
                                 </a></li>
                             </ul>
                         </div>
                         <div class="span6 offset3">
                             <h2 class="section-title">
-                                Threat Actors
-                                <small>
-                                    Entities that cause or contribute to an incident are referred to as threat actors
-                                </small>
+                                Compromised Assets
                             </h2>
 
-                            <p>There can be more than one actor involved in any particular incident, and their actions can be malicious or non-malicious, intentional or unintentional, causal or contributory. VERIS recognizes three primary categories of threat actors - External, Internal, and Partner.</p>
+                            <p>This section describes the information assets that were compromised during the incident. “Compromised” refers to any loss of confidentiality/possession, integrity/authenticity, availability/utility (primary security attributes). Naturally, an incident can involve multiple assets and affect multiple attributes of those assets.</p>
 <p>
-
-<i>VERIS classification note: If the actor’s role in the breach is limited to a contributory error, the actor would not be included here. For example, if an insider’s unintentional misconfiguration of an application left it vulnerable to attack, the insider would not be considered a threat actor if the application were successfully breached by another actor. An insider who deliberately steals data or whose inappropriate behavior (e.g., policy violations) facilitated the breach would be considered a threat actor in the breach.</i>
 
 </p>
 
-                            <!-- .................................... $External Actors .................................... -->
-                            <section class="section-content section-external" id="section-external">
+                            <!-- .................................... $Variety .................................... -->
+                            <section class="section-content section-variety" id="section-variety">
                                 <h3 class="section-title">
-                                    External Actors
+                                    Variety
 
                                 </h3>
-                                <p>External threats originate from sources outside of the organization and its network of partners. Examples include criminal groups, lone hackers, former employees, and government entities. Also includes God (as in “acts of”), “Mother Nature,” and random chance. Typically, no trust or privilege is implied for external entities.</p>
+                                <p></p>
 
-                                <h4>
-                                  Role **DEPRECATED IN V1.2**
-                                </h4>
-                                <p><b>Variable Name: </b>actor.external.role (string)</p>
-
-                                <h4>
-                                  Motive
-                                </h4>
-                                <p><b>Question Text: </b>What motives drove the external actor(s) to act?</p>
+                                <p><b>Question Text: </b>What varieties (and number) of assets were compromised during this incident?</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorxmotive">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.motive</i> (string)</p>
-                                <p><b>Purpose: </b>Motive is an key component of understanding and defending against intelligent threat actors.</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actors and an internal actor, different motives may be assigned for each.</p>
+                                <p><b>Question type: </b><a href="enums.html#section-asset">enumerated list</a> (multi-select) for <i>variety</i> and text field for <i>amount</i></p>
+                                <p><b>Variable name: </b><i>asset.variety</i> (comprised of the <i>name</i> (string) and <i>amount</i> (integer) variables)</p>
+                                <p><b>Purpose: </b>The specific variety involved is essential to adequately describing the incident, assessing control weaknesses/vulnerabilities, determining impact, and identifying mitigation strategies.</p>
+                                <p><b>Developer notes: </b>The list of asset varieties is quite long. You may wish to organize them into categories (e.g., “Servers”) to aid users. The categories themselves should not be selectable.</p>
+                                <p><b>Miscellaneous: </b>The list is not exhaustive. It includes assets commonly used in a typical organization along with a few specialized types that, while not common, are well-known in certain applications (i.e., SCADA).</p>
+
+                            </section>
+
+
+                            <!-- .................................... $Ownership .................................... -->
+                            <section class="section-content section-ownership" id="section-ownership">
+                                <h3 class="section-title">
+                                    Ownership
+
+                                </h3>
+                                <p></p>
+
+                                <p><b>Question Text: </b>Who owns the asset(s) affected by this incident?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-asset">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>asset.ownership</i> (string)</p>
+                                <p><b>Purpose: </b>Especially interesting of late due to trends like BYOD (Bring Your Own Device).</p>
+                                <p><b>Developer notes: </b>>N/A</p>
+                                <p><b>Miscellaneous: </b>More than one can be chosen because the answer may be different for each asset involved.</p>
+
+                            </section>
+
+
+                            <!-- .................................... $Management .................................... -->
+                            <section class="section-content section-management" id="section-management">
+                                <h3 class="section-title">
+                                    Management
+
+                                </h3>
+                                <p></p>
+
+                                <p><b>Question Text: </b>Who manages (or administers) the asset(s) affected by this incident?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-asset">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>asset.management</i> (string)</p>
+                                <p><b>Purpose: </b>Trends over time can inform risk assessment and sourcing decisions.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>More than one can be chosen because the answer may be different for each asset involved.</p>
+
+                            </section>
+
+
+                            <!-- .................................... $Hosting .................................... -->
+                            <section class="section-content section-hosting" id="section-hosting">
+                                <h3 class="section-title">
+                                    Hosting
+
+                                </h3>
+                                <p></p>
+
+                                <p><b>Question Text: </b>Who hosts (or stores) the asset(s) affected by this incident?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-asset">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>asset.hosting</i> (string)</p>
+                                <p><b>Purpose: </b>Trends over time can inform risk assessment and sourcing decisions.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>More than one can be chosen because the answer may be different for each asset involved.</p>
+
+                            </section>
+
+
+                            <!-- .................................... $Accessibility .................................... -->
+                            <section class="section-content section-accessibility" id="section-accessibility">
+                                <h3 class="section-title">
+                                    Accessibility
+
+                                </h3>
+                                <p></p>
+
+                                <p><b>Question Text: </b>What is the network accessibility of the asset(s) affected by this incident?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-asset">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>asset.hosting</i> (string)</p>
+                                <p><b>Purpose: </b>Trends over time can inform risk assessment and deployment/zoning decisions.</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>NMore than one can be chosen because the answer may be different for each asset involved.</p>
+
+                            </section>
+
+
+                            <!-- .................................... $Cloud .................................... -->
+                            <section class="section-content section-cloud" id="section-cloud">
+                                <h3 class="section-title">
+                                    Cloud
+
+                                </h3>
+                                <p></p>
+
+                                <p><b>Question Text: </b>If hosted “in the cloud,” was this a contributing factor to the incident?</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b><a href="enums.html#section-asset">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>asset.hosting</i> (string)</p>
+                                <p><b>Purpose: </b>Trends over time can inform risk assessment and deployment/zoning decisions.</p>
+                                <p><b>Developer notes: </b>N/A</p>
                                 <p><b>Miscellaneous: </b>N/A</p>
 
-                                <h4>
-                                  Variety
-                                </h4>
+                            </section>
 
-                                <p><b>Question Text: </b>What varieties of external actors were involved?</p>
+
+                            <!-- .................................... $Notes .................................... -->
+                            <section class="section-content section-notes" id="section-notes">
+                                <h3 class="section-title">
+                                    Notes
+
+                                </h3>
+                                <p></p>
+
+                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about assets involved in this incident.</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b><a href="enums.html#actorexternalvariety">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.variety</i> (string)</p>
-                                <p><b>Purpose: </b>Identifying the specific variety helps assess the resources, capabilities, and tendencies of the actor.</p>
-                                <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b>If the actor is a former employee, then make sure to select the External variety of “Former employee” instead of an insider. If the former employee uses their still-active account, that falls under Misuse.</p>
-
-                                <h4>
-                                  Origin (country)
-                                </h4>
-
-                                <p><b>Question Text: </b>What are the geographic origins of the external actor(s)?</p>
-                                <p><b>User notes: </b>Reserve this for the actual countries from which the actor is operating, rather than basing it solely on IP geolocation.</p>
-                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i>actor.external.country</i> (string)</p>
-                                <p><b>Purpose: </b>Identifies the geographic origin of the actor, which is useful on multiple investigatory, operational, and strategic levels.</p>
-                                <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found <a href="http://www.iso.org/iso/country_codes.htm">here</a>. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
-                                <p><b>Miscellaneous: </b>Reserving this for the actor's origin and collecting IPs separately allows the best of both worlds. We can track both the origin (and national ties) of threat actors and the location of the assets they use for malicious purposes.</p>
-
-
-                                <h4>
-                                  Notes
-                                </h4>
-
-                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about the external actor(s).</p>
-                                <p><b>User notes: </b>Names or affiliations of threat groups involved would be particularly useful to record here.</p>
                                 <p><b>Question type: </b>text field</p>
-                                <p><b>Variable name: </b><i>actor.external.notes</i> (string)</p>
+                                <p><b>Variable name: </b><i>asset.notes</i> (string)</p>
                                 <p><b>Purpose: </b>Catch-alls are handy</p>
-                                <p><b>Developer notes: </b>While this is common to all categories of actors, it is inherited and associated with each. In other words, if an incident involves both an external actor and an internal actor, different notes may be recorded for each.</p>
-                                <p><b>Miscellaneous: </b>Names or affiliations of threat actors or groups involved would be particularly useful to record here.</p>
-
-
-                            </section>
-
-                            <!-- .................................... $Internal Actors .................................... -->
-                            <section class="section-content section-internal" id="section-internal">
-                                <h3 class="section-title">
-                                    Internal Actors
-
-                                </h3>
-                                <p>Internal threats are those originating from within the organization. This encompasses company full-time employees, independent contractors, interns, and other staff. Insiders are trusted and privileged (some more than others).</p>
-                            </section>
-
-                            <!-- .................................... $Partner Actors .................................... -->
-                            <section class="section-content section-partner" id="section-partner">
-                                <h3 class="section-title">
-                                    Partner Actors
-
-                                </h3>
-                                <p>Partners include any third party sharing a business relationship with the organization. This includes suppliers, vendors, hosting providers, outsourced IT support, etc. some level of trust and privilege is usually implied between business partners.</p>
+                                <p><b>Developer notes: </b>>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
                             </section>
+
 
                         </div>
                     </div>

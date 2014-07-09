@@ -75,7 +75,7 @@
         <li class="nav-enums"><a href="enums.html">Schema Enumerations</a></li>
         <li class="nav-vcdb"><a href="vcdb.html">VERIS Community Database</a></li>
         <li class="nav-a4grid"><a href="a4grid.html">The A4 Grid</a></li>
-        <li class="nav-mail-list"><a href="mail-list.html">Mailing List</a></li>
+
 
     </ul>
 </nav>
@@ -404,48 +404,48 @@
 
                                 <p><b>Question Text: </b>What varieties of physical attacks were involved?</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b></p>
-                                <p><b>Variable name: </b><i></i></p>
-                                <p><b>Purpose: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.physical.variety</i> (string)</p>
+                                <p><b>Purpose: </b>The specific variety involved is essential to adequately describing the incident, assessing control weaknesses/vulnerabilities, and identifying mitigation strategies.</p>
                                 <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b></p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
                                 <h4>
                                   Vector
                                 </h4>
 
-                                <p><b>Question Text: </b></p>
+                                <p><b>Question Text: </b>How was access gained to the location(s)?</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b></p>
-                                <p><b>Variable name: </b><i></i></p>
-                                <p><b>Purpose: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.physical.vector</i> (string)</p>
+                                <p><b>Purpose: </b>The way in which physical access was obtained has a direct bearing on which controls can effectively prevent it.</p>
                                 <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b></p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
                                 <h4>
-                                  Origin (country)
+                                  Location
                                 </h4>
 
-                                <p><b>Question Text: </b></p>
+                                <p><b>Question Text: </b>Where did these physical attacks occur?</p>
                                 <p><b>User notes: </b></p>
-                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i></i> (string)</p>
-                                <p><b>Purpose: </b></p>
-                                <p><b>Developer notes: </b></p>
-                                <p><b>Miscellaneous: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.physical.location</i> (string)</p>
+                                <p><b>Purpose: </b>Further informs mitigation strategies. Depending on the location whole groups of controls may not apply (i.e., biometric access to corporate facilities does not protect a laptop left in a car).</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
 
                                 <h4>
                                   Notes
                                 </h4>
 
-                                <p><b>Question Text: </b></p>
-                                <p><b>User notes: </b></p>
-                                <p><b>Question type: </b></p>
-                                <p><b>Variable name: </b><i></i></p>
-                                <p><b>Purpose: </b></p>
-                                <p><b>Developer notes: </b></p>
-                                <p><b>Miscellaneous: </b></p>
+                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about physical attacks in this incident.</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i>action.physical.notes</i> (string)</p>
+                                <p><b>Purpose: </b>Catch-alls are handy</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
 
                             </section>
@@ -458,57 +458,45 @@
                                     Error
 
                                 </h3>
-                                <p>Malware is any malicious software, script, or code run on a device that alters its state or function without the owner’s informed consent. Examples include viruses, worms, spyware, keyloggers, backdoors, etc.</p>
+                                <p>Error broadly encompasses anything done (or left undone) incorrectly or inadvertently. Includes omissions, misconfigurations, programming errors, trips and spills, malfunctions, etc. It does NOT include something done (or left undone) intentionally or by default that later proves to be unwise or inadequate.</p>
 
 
                                 <h4>
                                   Variety
                                 </h4>
 
-                                <p><b>Question Text: </b></p>
+                                <p><b>Question Text: </b>What varieties of errors were involved?</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b></p>
-                                <p><b>Variable name: </b><i></i></p>
-                                <p><b>Purpose: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.error.variety</i> (string)</p>
+                                <p><b>Purpose: </b>The specific variety involved is essential to adequately describing the incident, assessing control weaknesses/vulnerabilities, and identifying mitigation strategies.</p>
                                 <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b></p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
                                 <h4>
                                   Vector
                                 </h4>
 
-                                <p><b>Question Text: </b></p>
+                                <p><b>Question Text: </b>Why did these errors occur?</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b></p>
-                                <p><b>Variable name: </b><i></i></p>
-                                <p><b>Purpose: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.error.vector</i> (string)</p>
+                                <p><b>Purpose: </b>Helps establish policies and procedures and educate employees on how errors can be avoided.</p>
                                 <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b></p>
-
-                                <h4>
-                                  Origin (country)
-                                </h4>
-
-                                <p><b>Question Text: </b></p>
-                                <p><b>User notes: </b></p>
-                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i></i> (string)</p>
-                                <p><b>Purpose: </b></p>
-                                <p><b>Developer notes: </b></p>
-                                <p><b>Miscellaneous: </b></p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
 
                                 <h4>
                                   Notes
                                 </h4>
 
-                                <p><b>Question Text: </b></p>
-                                <p><b>User notes: </b></p>
-                                <p><b>Question type: </b></p>
-                                <p><b>Variable name: </b><i></i></p>
-                                <p><b>Purpose: </b></p>
-                                <p><b>Developer notes: </b></p>
-                                <p><b>Miscellaneous: </b></p>
+                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about errors in this incident.</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i>action.error.notes</i> (string)</p>
+                                <p><b>Purpose: </b>Catch-alls are handy</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
 
                             </section>
@@ -521,57 +509,32 @@
                                     Environmental
 
                                 </h3>
-                                <p>Malware is any malicious software, script, or code run on a device that alters its state or function without the owner’s informed consent. Examples include viruses, worms, spyware, keyloggers, backdoors, etc.</p>
+                                <p>The Environmental category not only includes natural events such as earthquakes and floods, but also hazards associated with the immediate environment or infrastructure in which assets are located. The latter encompasses power failures, electrical interference, pipe leaks, and atmospheric conditions.</p>
 
 
                                 <h4>
                                   Variety
                                 </h4>
 
-                                <p><b>Question Text: </b></p>
+                                <p><b>Question Text: </b>What varieties of environmental events were involved?</p>
                                 <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b></p>
-                                <p><b>Variable name: </b><i></i></p>
-                                <p><b>Purpose: </b></p>
+                                <p><b>Question type: </b><a href="enums.html#section-actions">enumerated list</a> (multi-select)</p>
+                                <p><b>Variable name: </b><i>action.environmental.variety</i> (string)</p>
+                                <p><b>Purpose: </b>Helps establish strategies to avoid or recover from environmental events.</p>
                                 <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b></p>
-
-                                <h4>
-                                  Vector
-                                </h4>
-
-                                <p><b>Question Text: </b></p>
-                                <p><b>User notes: </b>N/A</p>
-                                <p><b>Question type: </b></p>
-                                <p><b>Variable name: </b><i></i></p>
-                                <p><b>Purpose: </b></p>
-                                <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b></p>
-
-                                <h4>
-                                  Origin (country)
-                                </h4>
-
-                                <p><b>Question Text: </b></p>
-                                <p><b>User notes: </b></p>
-                                <p><b>Question type: </b><a href="enums.html#xcountry">enumerated list</a> (multi-select)</p>
-                                <p><b>Variable name: </b><i></i> (string)</p>
-                                <p><b>Purpose: </b></p>
-                                <p><b>Developer notes: </b></p>
-                                <p><b>Miscellaneous: </b></p>
-
+                                <p><b>Miscellaneous: </b>N/A</p>
 
                                 <h4>
                                   Notes
                                 </h4>
 
-                                <p><b>Question Text: </b></p>
-                                <p><b>User notes: </b></p>
-                                <p><b>Question type: </b></p>
-                                <p><b>Variable name: </b><i></i></p>
-                                <p><b>Purpose: </b></p>
-                                <p><b>Developer notes: </b></p>
-                                <p><b>Miscellaneous: </b></p>
+                                <p><b>Question Text: </b>Enter any additional details you deem noteworthy about environmental events in this incident.</p>
+                                <p><b>User notes: </b>N/A</p>
+                                <p><b>Question type: </b>text field</p>
+                                <p><b>Variable name: </b><i>action.environmental.notes</i> (string)</p>
+                                <p><b>Purpose: </b>Catch-alls are handy</p>
+                                <p><b>Developer notes: </b>N/A</p>
+                                <p><b>Miscellaneous: </b>N/A</p>
 
 
                             </section>
