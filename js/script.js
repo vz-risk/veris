@@ -34,9 +34,9 @@
 	// ------------------------------------
 	// Background Slideshow
 	// ------------------------------------
-    $(function() {
-        cbpBGSlideshow.init();
-    });
+  //  $(function() {
+  //      cbpBGSlideshow.init();
+  //  });
 
 
 
