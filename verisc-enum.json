@@ -162,7 +162,7 @@
         "Network propagation",
         "Remote injection",
         "Removable media",
-	      "Software update",
+        "Software update",
         "Web drive-by",
         "Web download",
         "Unknown",
@@ -317,18 +317,18 @@
         "Other"
       ],
       "job_change": [
-      	"Hired",
-      	"Promoted",
-      	"Lateral move",
-      	"Resigned",
-      	"Let go",
-      	"Demoted",
-      	"Passed over",
-      	"Unknown",
-      	"Other",
-      	"Reprimanded",
-      	"Job eval",
-      	"Personal issues"
+        "Hired",
+        "Promoted",
+        "Lateral move",
+        "Resigned",
+        "Let go",
+        "Demoted",
+        "Passed over",
+        "Unknown",
+        "Other",
+        "Reprimanded",
+        "Job eval",
+        "Personal issues"
       ]
     },
     "motive": [
@@ -346,6 +346,13 @@
     ]
   },
   "asset": {
+    "accessibility": [
+      "External",
+      "Internal",
+      "Isolated",
+      "NA",
+      "Unknown"
+    ],
     "cloud": [
       "Hypervisor",
       "Partner application",
@@ -363,6 +370,28 @@
       "3rd party hosted",
       "Internally isolated",
       "Unknown"
+    ],
+    "hosting" : [
+      "External",
+      "External dedicated",
+      "External shared",
+      "Internal",
+      "NA",
+      "Unknown"
+    ],
+    "management": [
+      "External",
+      "Internal",
+      "NA",
+      "Unknown"
+    ],
+    "ownership": [
+      "Customera",
+      "Employee",
+      "NA",
+      "Partner",
+      "Unknown",
+      "Victim"
     ],
     "variety": [
       "S - Authentication",
@@ -816,8 +845,8 @@
     "Prt - audit",
     "Prt - antivirus",
     "Prt - incident response",
-    "Prt - unknown",
-    "Prt - other",
+    "Prt - Unknown",
+    "Prt - Other",
     "Ext - incident response",
     "Ext - found documents",
     "Ext - suspicious traffic",
