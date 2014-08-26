@@ -40,8 +40,9 @@
                             </a>
 <nav class="nav-collapse collapse">
     <ul class="nav">
-        <li class="nav-home active"><a href="index.html">Home</a></li>
-        <li class="nav-home active"><a href="veris-overview.html">VERIS Overview</a></li>
+        <li class="nav-home"><a href="index.html">Home</a></li>
+        <li class="nav-home active"><a href="#">Quick Start</a></li>
+        <li class="nav-home"><a href="veris-overview.html">VERIS Overview</a></li>
         <li class="nav-enums"><a href="schema-docs.html">Schema Documentation</a></li>
         <li class="nav-enums"><a href="incident-track.html">Incident Tracking</a></li>
         <li class="nav-enums"><a href="victim-demo.html">Victim Demographics</a></li>
@@ -101,6 +102,24 @@
                             <h2 class="section-title">
                                 Getting Started with VERIS
                             </h2>
+
+                            <p>This guide is aimed at organizations that are
+                            considering   adopting the VERIS framework and is
+                            intended to help    ease into the framework. It
+                            starts from a very basic adoption   and gradually
+                            moves towards adopting more and more   of the
+                            framework. Organizations that are considering
+                            adopting VERIS should read this guide</p>
+
+                            <div class="well"><strong>But, why?</strong> VERIS
+                            is a tool to help   and organization collect
+                            incident data in a consistent way    to support
+                            decision making. An organization's   use of VERIS
+                            should be consistent with the type and level   of
+                            decision making they wish to support. If you're
+                            considering   adopting VERIS you should ask yourself
+                            "What do I want to know?"   and prioritize the
+                            elements of VERIS that support that decision.</div>
 
                             <p>VERIS can be a little bit intimidating to look at.
                             The important thing to remember is that the
@@ -191,6 +210,15 @@
                               security incidents and have a small program that
                               pulls from the database, modifies the data as
                               needed and writes it into your VERIS table.
+
+                            <div class="well">One idea that is often helpful is
+                            for an   organization to go through their ticketing
+                            system and create a    mapping of their fields to
+                            corresponding VERIS fields.   This allows them to
+                            make at least some immediate use of data they
+                            already have because it can be translated into
+                            VERIS.</div>
+
 
                             <h2 class="section-title">
                               Add top-level enumerations
@@ -327,27 +355,39 @@
                             VERIS doesn't have to be complicated.</p>
 
 
-                          <h2 class="section-title">
-                            Customize and privatize
-                          </h2>
-                          <p>VERIS was designed with sharing in mind, but not
-                            everything you want to record is fit for sharing. You
-                            might also have some extra things that you want to
-                            record but for which a VERIS variable does not exist.
-                            Not to worry, VERIS has you covered with the plus section.</p>
-                          <p>Plus is the anything goes section of a VERIS record.
-                            So, for example, you might want to track which of your
-                            employees was the lead investigator on an incident.
-                            No problem, just make a record called plus.investigator or
-                            plus.lead or whatever you want to call it. You can have
-                            a variable for whether or not the incident is resolved. You
-                            could put information in there that does have an associated VERIS
-                            varible but which you would like to keep private anyway.</p>
-                          <p>When you share the incident (should you ever decide to) you
-                            can leave out any variable that starts with "plus." If
-                            you're sharing a JSON representation of an incident, you can
-                            leave out plus all together or just send an empty plus
-                            section ("plus":{}).</p>
+                          <h2 class="section-title">   Customize and privatize
+                          </h2> <p>VERIS was designed with sharing in mind, but
+                          not   everything you want to record is fit for
+                          sharing. You   might also have some extra things that
+                          you want to   record but for which a VERIS variable
+                          does not exist.   Not to worry, VERIS has you covered
+                          with the plus section.</p> <p>Plus is the anything
+                          goes section of a VERIS record.   So, for example, you
+                          might want to track which of your   employees was the
+                          lead investigator on an incident.   No problem, just
+                          make a record called plus.investigator or   plus.lead
+                          or whatever you want to call it. You can have   a
+                          variable for whether or not the incident is resolved.
+                          You   could put information in there that does have an
+                          associated VERIS   varible but which you would like to
+                          keep private anyway.</p> <p>When you share the
+                          incident (should you ever decide to) you   can leave
+                          out any variable that starts with "plus." If   you're
+                          sharing a JSON representation of an incident, you can
+                          leave out plus all together or just send an empty plus
+                          section ("plus":{}).</p>
+
+                          <div class="well">This is <strong>your</strong>
+                          implementation    intended to answer
+                          <strong>your</strong> questions. Do not feel like you
+                          have to VERISize every one-off malware infection or
+                          policy violation because you've adopted VERIS. Just
+                          because    VERIS <strong>can</strong> model these
+                          incidents doesn't mean    that it is a good use of
+                          your time. However, if you want to    know how most
+                          malware takes root in your organization then it
+                          might make sense to VERISize every infection. It's up
+                          to you.</div>
 
 
                           <h2 class="section-title">
