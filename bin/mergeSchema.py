@@ -29,6 +29,8 @@ def buildSchema(schema, enum, plus):
         enum['actor']['external']['variety']
     schema['properties']['actor']['properties']['internal']['properties']['variety']['items']['enum'] = \
         enum['actor']['internal']['variety']
+    schema['properties']['actor']['properties']['internal']['properties']['job_change']['items']['enum'] = \
+        enum['actor']['internal']['job_change']
     schema['properties']['actor']['properties']['external']['properties']['country']['items']['enum'] = enum['country']
     schema['properties']['actor']['properties']['partner']['properties']['country']['items']['enum'] = enum['country']
 
