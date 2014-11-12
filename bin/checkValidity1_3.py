@@ -135,6 +135,7 @@ def checkPlusAttributeConsistency(inDict):
 if __name__ == '__main__':
     # TODO: implement config file options for all of these
     parser = argparse.ArgumentParser(description="Checks a set of json files to see if they are valid VERIS incidents")
+    parser.add_argument("-m", "--merge", help="fully merged json file. Overrides --schema, --enum, and --plus")
     parser.add_argument("-s", "--schema", help="schema file to validate with")
     parser.add_argument("-e", "--enum", help="enumeration file to validate with")
     parser.add_argument("-l", "--logging", choices=["critical", "warning", "info", "debug"],
@@ -149,32 +150,75 @@ if __name__ == '__main__':
     config = ConfigParser.ConfigParser()
     config.read('_checkValidity.cfg')
 
-    if args.schema:
-      schema_file = args.schema
+    if args.merge:
+        try:
+            schema = simplejson.loads(open(args.merge).read())
+        except IOError:
+            logging.critical("ERROR: merge file not found. Cannot continue.")
+            exit(1)
+        except simplejson.scanner.JSONDecodeError:
+            logging.critical("ERROR: merge file is not parsing properly. Cannot continue.")
+            exit(1)
     else:
-      try:
-        schema_file = config.get('VERIS','schemafile')
-      except ConfigParser.Error:
-        logging.warning("No schemafile specified in config file. Using default")
-        schema_file = defaultSchema
+        if args.schema:
+          schema_file = args.schema
+        else:
+          try:
+            schema_file = config.get('VERIS','schemafile')
+          except ConfigParser.Error:
+            logging.warning("No schemafile specified in config file. Using default")
+            schema_file = defaultSchema
 
-    if args.enum:
-      enum_file = args.enum
-    else:
-      try:
-        enum_file = config.get('VERIS','enumfile')
-      except ConfigParser.Error:
-        logging.warning("No enumfile specified in config file. Using default")
-        enum_file = defaultEnum
+        if args.enum:
+          enum_file = args.enum
+        else:
+          try:
+            enum_file = config.get('VERIS','enumfile')
+          except ConfigParser.Error:
+            logging.warning("No enumfile specified in config file. Using default")
+            enum_file = defaultEnum
 
-    if args.plus:
-      plus_file = args.plus
-    else:
-      try:
-        plus_file = config.get('VERIS','plusfile')
-      except ConfigParser.Error:
-        logging.warning("No plus file specified in config file. Using empty")
-        plus_file = "empty"
+        if args.plus:
+          plus_file = args.plus
+        else:
+          try:
+            plus_file = config.get('VERIS','plusfile')
+          except ConfigParser.Error:
+            logging.warning("No plus file specified in config file. Using empty")
+            plus_file = "empty"
+
+        try:
+            sk = simplejson.loads(open(schema_file).read())
+        except IOError:
+            logging.critical("ERROR: schema file not found. Cannot continue.")
+            exit(1)
+        except simplejson.scanner.JSONDecodeError:
+            logging.critical("ERROR: schema file is not parsing properly. Cannot continue.")
+            exit(1)
+
+        try:
+            en = simplejson.loads(open(enum_file).read())
+        except IOError:
+            logging.critical("ERROR: enumeration file is not found. Cannot continue.")
+            exit(1)
+        except simplejson.scanner.JSONDecodeError:
+            logging.critical("ERROR: enumeration file is not parsing properly. Cannot continue.")
+            exit(1)
+
+        if plus_file == "empty":
+          pl = {}
+        else:
+          try:
+            pl = simplejson.loads(open(plus_file).read())
+          except IOError:
+            logging.critical("ERROR: plus file is not found. Unable to validate plus section.")
+            pl = {}
+          except simplejson.scanner.JSONDecodeError:
+            logging.critical("ERROR: plus file is not parsing properly. Unable to validate plus section.")
+            pl = {}
+
+        # Now we can build the schema which will be used to validate our incidents
+        schema = buildSchema(sk, en, pl)
 
     data_paths = []
     if args.path:
@@ -187,43 +231,11 @@ if __name__ == '__main__':
             logging.warning("No path specified in config file. Using default")
             data_paths = ['.']
             pass
-
-    try:
-        sk = simplejson.loads(open(schema_file).read())
-    except IOError:
-        logging.critical("ERROR: schema file not found. Cannot continue.")
-        exit(1)
-    except simplejson.scanner.JSONDecodeError:
-        logging.critical("ERROR: schema file is not parsing properly. Cannot continue.")
-        exit(1)
-
-    try:
-        en = simplejson.loads(open(enum_file).read())
-    except IOError:
-        logging.critical("ERROR: enumeration file is not found. Cannot continue.")
-        exit(1)
-    except simplejson.scanner.JSONDecodeError:
-        logging.critical("ERROR: enumeration file is not parsing properly. Cannot continue.")
-        exit(1)
-
-    if plus_file == "empty":
-      pl = {}
-    else:
-      try:
-        pl = simplejson.loads(open(plus_file).read())
-      except IOError:
-        logging.critical("ERROR: plus file is not found. Unable to validate plus section.")
-        pl = {}
-      except simplejson.scanner.JSONDecodeError:
-        logging.critical("ERROR: plus file is not parsing properly. Unable to validate plus section.")
-        pl = {}
-
-    # Now we can build the schema which will be used to validate our incidents
-    schema = buildSchema(sk, en, pl)
     logging.info("schema assembled successfully.")
     logging.debug(simplejson.dumps(schema,indent=2,sort_keys=True))
 
     data_paths = [x + '/*.json' for x in data_paths]
+    incident_counter = 0
     for eachDir in data_paths:
         for eachFile in glob(eachDir):
           logging.debug("Now validating %s" % eachFile)
@@ -244,5 +256,9 @@ if __name__ == '__main__':
           except ValidationError as e:
               offendingPath = '.'.join(str(x) for x in e.path)
               logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message))
+
+          incident_counter += 1
+          if incident_counter % 100 == 0:
+              logging.info("%s incident validated" % incident_counter)
 
     logging.info("checkValidity complete")
