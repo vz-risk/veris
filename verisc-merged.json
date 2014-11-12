@@ -849,6 +849,20 @@
           "properties": {
             "job_change": {
               "items": {
+                "enum": [
+                  "Hired", 
+                  "Promoted", 
+                  "Lateral move", 
+                  "Resigned", 
+                  "Let go", 
+                  "Demoted", 
+                  "Passed over", 
+                  "Unknown", 
+                  "Other", 
+                  "Reprimanded", 
+                  "Job eval", 
+                  "Personal issues"
+                ], 
                 "type": "string"
               }, 
               "minItems": 1, 
