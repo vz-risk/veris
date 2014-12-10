@@ -763,7 +763,9 @@
               "type": "string"
             },
             "year": {
-              "type": "integer"
+              "type": "integer",
+              "maximum": 2015,
+              "minimum": 1950
             }
           },
           "required": [
