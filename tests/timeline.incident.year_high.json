@@ -1,0 +1,47 @@
+{
+  "incident": {
+    "action": {
+      "Unknown": {}
+    },
+    "actor": {
+      "external": {
+        "country": [
+          "US"
+        ],
+        "motive": [
+          "Ideology"
+        ],
+        "variety": [
+          "Activist"
+        ]
+      }
+    },
+    "asset": {
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ]
+    },
+    "attribute": {
+      "integrity": {
+        "variety": [
+          "Defacement"
+        ]
+      }
+    },
+    "campaign_id": "test string",
+    "discovery_method": "Int - unknown",
+    "discovery_notes": "these are test notes",
+    "incident_id": "test",
+    "schema_version": "1.3",
+    "security_incident": "Confirmed",
+    "timeline": {
+      "incident": {
+        "year": 2020
+      }
+    }
+  },
+  "message": "timeline.incident.year is too high. Expect it to fail.",
+  "should": "fail"
+}
