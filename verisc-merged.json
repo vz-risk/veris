@@ -2075,6 +2075,8 @@
               "type": "string"
             }, 
             "year": {
+              "maximum": 2015, 
+              "minimum": 1950, 
               "type": "integer"
             }
           }, 
