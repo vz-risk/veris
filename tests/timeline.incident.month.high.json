@@ -1,0 +1,48 @@
+{
+  "incident": {
+    "action": {
+      "Unknown": {}
+    },
+    "actor": {
+      "external": {
+        "country": [
+          "US"
+        ],
+        "motive": [
+          "Ideology"
+        ],
+        "variety": [
+          "Activist"
+        ]
+      }
+    },
+    "asset": {
+      "assets": [
+        {
+          "variety": "S - Unknown"
+        }
+      ]
+    },
+    "attribute": {
+      "integrity": {
+        "variety": [
+          "Defacement"
+        ]
+      }
+    },
+    "campaign_id": "test string",
+    "discovery_method": "Int - unknown",
+    "discovery_notes": "these are test notes",
+    "incident_id": "test",
+    "schema_version": "1.3",
+    "security_incident": "Confirmed",
+    "timeline": {
+      "incident": {
+        "year": 2014,
+        "month": 13
+      }
+    }
+  },
+  "message": "timeline.incident.month is too big. Expect to fail.",
+  "should": "fail"
+}

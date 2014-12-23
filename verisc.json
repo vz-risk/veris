@@ -754,10 +754,14 @@
           "additionalProperties": false,
           "properties": {
             "day": {
-              "type": "integer"
+              "type": "integer",
+              "maximum": 31,
+              "minimum": 1
             },
             "month": {
-              "type": "integer"
+              "type": "integer",
+              "maximum": 12,
+              "minimum": 1
             },
             "time": {
               "type": "string"
