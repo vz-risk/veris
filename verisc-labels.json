@@ -373,8 +373,8 @@
     },
     "hosting": {
       "External": "Externally hosted (unsure if dedicated or shared)",
-      "External dedicated": "Externally hosted in a dedicated envirnoment",
-      "External shared": "Externally hosted in a shared envirnoment",
+      "External dedicated": "Externally hosted in a dedicated environment",
+      "External shared": "Externally hosted in a shared environment",
       "Internal": "Internally hosted",
       "NA": "Not applicable",
       "Unknown": "Unknown"
