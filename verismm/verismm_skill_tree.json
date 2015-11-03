@@ -35,18 +35,69 @@
               },
               "Coverage": 1.0,
               "Skills": {
-                "Action 2": {
+                "Action 2 - Technical": {
+                  "Description": "Record the detailed action category.",
+                  "Level": 3,
+                  "Record": {
+                    "action.hacking.variety": null,
+                    "action.malware.variety": null,
+                    "action.malware.vector": null
+                  },
+                  "Coverage": 0.75,
+                  "Skills": {
+                    "Action 3 - Technical": {
+                      "Description": "Record action vectors.",
+                      "Level": 4,
+                      "Record": {
+                        "action.hacking.vector": null
+                      },
+                      "Coverage": 0.75,
+                      "Skills": {
+                        "Action 4": null,
+                        "Quality 1": null,
+                        "Year to Year 1": null
+                      }
+                    },
+                    "Targeted 1": null,
+                    "Pattern": null,
+                    "Attack Graph": null
+                  }
+                },
+                "Action 2 - Blended": {
+                  "Description": "Record the detailed action category.",
+                  "Level": 3,
+                  "Record": {
+                    "action.misuse.variety": null,
+                    "action.social.variety": null
+                  },
+                  "Coverage": 0.75,
+                  "Skills": {
+                    "Action 3 - Blended": {
+                      "Description": "Record action vectors.",
+                      "Level": 4,
+                      "Record": {
+                        "action.misuse.vector": null,
+                        "action.social.vector": null
+                      },
+                      "Coverage": 0.75,
+                      "Skills": {
+                        "Action 4": null,
+                        "Quality 1": null,
+                        "Year to Year 1": null
+                      }
+                    },
+                    "Targeted 1": null,
+                    "Pattern": null,
+                    "Attack Graph": null
+                  }
+                },
+                "Action 2 - Non-Technical": {
                   "Description": "Record the detailed action category.",
                   "Level": 3,
                   "Record": {
                     "action.environmental.variety": null,
                     "action.error.variety": null,
-                    "action.hacking.variety": null,
-                    "action.malware.variety": null,
-                    "action.malware.vector": null,
-                    "action.misuse.variety": null,
-                    "action.physical.variety": null,
-                    "action.social.variety": null
+                    "action.physical.variety": null
                   },
                   "Coverage": 0.75,
                   "Skills": {
@@ -55,41 +106,16 @@
                       "Level": 4,
                       "Record": {
                         "action.error.vector": null,
-                        "action.hacking.vector": null,
-                        "action.misuse.vector": null,
-                        "action.physical.vector": null,
-                        "action.social.vector": null
+                        "action.physical.vector": null
                       },
                       "Coverage": 0.75,
                       "Skills": {
-                        "Action 4": {
-                          "Description": "Record action details.",
-                          "Level": 5,
-                          "Record": {
-                            "action.hacking.cve": null,
-                            "action.malware.name": null,
-                            "action.malware.cve": null,
-                            "action.social.target": null
-                          },
-                          "Coverage": 0.75,
-                          "Skills": {}
-                        },
+                        "Action 4": null,
                         "Quality 1": null,
                         "Year to Year 1": null
                       }
                     },
-                    "Targeted 1": {
-                      "Description": "Is the incident targetted or not?",
-                      "Level": 3,
-                      "Record": {
-                        "target": null
-                      },
-                      "Coverage": 1.0,
-                      "Skills": {
-                        "Quality 1": null,
-                        "Year to Year 1": null
-                      }
-                    },
+                    "Targeted 1": null,
                     "Pattern": null,
                     "Attack Graph": null
                   }
@@ -450,6 +476,30 @@
       },
       "Coverage": 3,
       "Skills": {}
+    },
+    "Action 4": {
+      "Description": "Record action details.",
+      "Level": 5,
+      "Record": {
+        "action.hacking.cve": null,
+        "action.malware.name": null,
+        "action.malware.cve": null,
+        "action.social.target": null
+      },
+      "Coverage": 0.75,
+      "Skills": {}
+    },
+    "Targeted 1": {
+      "Description": "Is the incident targetted or not?",
+      "Level": 3,
+      "Record": {
+        "target": null
+      },
+      "Coverage": 1.0,
+      "Skills": {
+        "Quality 1": null,
+        "Year to Year 1": null
+      }
     }
   }
 }
