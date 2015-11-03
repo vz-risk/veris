@@ -64,7 +64,7 @@
                       "Skills": {
                         "Action 4": {
                           "Description": "Record action details.",
-                          "Level": 6,
+                          "Level": 5,
                           "Record": {
                             "action.hacking.cve": null,
                             "action.malware.name": null,
@@ -131,7 +131,7 @@
                       "Skills": {
                         "Actor 4": {
                           "Description": "Record full details",
-                          "Level": 6,
+                          "Level": 5,
                           "Record": {
                             "actor.internal.job_change": null,
                             "actor.external.name": null,
@@ -240,7 +240,7 @@
         },
         "Incident 2": {
           "Description": "Additional details describing the incident.",
-          "Level": 7,
+          "Level": 6,
           "Record": {
             "campaign_id": null,
             "reference": null,
@@ -301,7 +301,7 @@
               "Skills": {
                 "Victim 3": {
                   "Description": "Record complete victim information.",
-                  "Level": 6,
+                  "Level": 5,
                   "Record": {
                     "victim.state": null,
                     "victim.secondary.amount": null,
@@ -398,7 +398,7 @@
     },
     "Quality 1": {
       "Description": "Quality metrics greater than 7.",
-      "Level": 5,
+      "Level": 4,
       "Record": {
         "quality": null
       },
@@ -406,7 +406,7 @@
       "Skills": {
         "Impact 1": {
           "Description": "Record rating and variety information about the impact of the incident.",
-          "Level": 6,
+          "Level": 5,
           "Record": {
             "impact.overall_rating": null,
             "impact.loss.rating": null,
@@ -416,7 +416,7 @@
           "Skills": {
             "Impact 2": {
               "Description": "Record loss information about the incident.",
-              "Level": 7,
+              "Level": 6,
               "Record": {
                 "impact.iso_currency_code": null,
                 "impact.loss.amount": null,
@@ -427,7 +427,7 @@
               "Skills": {
                 "Controls 1": {
                   "Description": "Record the failed controls and implemented mitigations.",
-                  "Level": 8,
+                  "Level": 7,
                   "Record": {
                     "control_failure": null,
                     "corrective_action": null,
