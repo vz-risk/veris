@@ -1,0 +1,455 @@
+{
+  "Version": 0.1,
+  "Skills" : {
+    "Incident 1" : {
+      "Description" : "Record that an incident occurred",
+      "Level": 1,
+      "Record" : {
+        "Incident_id": null, 
+        "security_incident": null,
+        "schema_version": null
+      },
+      "Skills": {
+        "Four A's": {
+          "Description": "Actor, Action, Asset, and Attribute are all Unknown",
+          "Level": 1,
+          "Record": {
+            "action.Unknown": null,
+            "actor.Unknown": null,
+            "asset.assets.variety": "Unknown",
+            "attribute.Unknown": null
+          },
+          "Coverage": 1.0,
+          "Skills": {
+            "Action 1": {
+              "Description" : "Record the major action category.",
+              "Level": 2,
+              "Record" : {
+                    "action.misuse.variety": "Unknown", 
+                    "action.error.variety": "Unknown", 
+                    "action.environmental.variety": "Unknown", 
+                    "action.physical.variety": "Unknown", 
+                    "action.hacking.variety": "Unknown", 
+                    "action.malware.variety": "Unknown", 
+                    "action.social.variety": "Unknown"
+              },
+              "Coverage": 1.0,
+              "Skills": {
+                "Action 2": {
+                  "Description": "Record the detailed action category.",
+                  "Level": 3,
+                  "Record": {
+                    "action.environmental.variety": null,
+                    "action.error.variety": null,
+                    "action.hacking.variety": null,
+                    "action.malware.variety": null,
+                    "action.malware.vector": null,
+                    "action.misuse.variety": null,
+                    "action.physical.variety": null,
+                    "action.social.variety": null
+                  },
+                  "Coverage": 0.75,
+                  "Skills": {
+                    "Action 3": {
+                      "Description": "Record action vectors.",
+                      "Level": 4,
+                      "Record": {
+                        "action.error.vector": null,
+                        "action.hacking.vector": null,
+                        "action.misuse.vector": null,
+                        "action.physical.vector": null,
+                        "action.social.vector": null
+                      },
+                      "Coverage": 0.75,
+                      "Skills": {
+                        "Action 4": {
+                          "Description": "Record action details.",
+                          "Level": 6,
+                          "Record": {
+                            "action.hacking.cve": null,
+                            "action.malware.name": null,
+                            "action.malware.cve": null,
+                            "action.social.target": null
+                          },
+                          "Coverage": 0.75,
+                          "Skills": {}
+                        },
+                        "Quality 1": null,
+                        "Year to Year 1": null
+                      }
+                    },
+                    "Targeted 1": {
+                      "Description": "Is the incident targetted or not?",
+                      "Level": 3,
+                      "Record": {
+                        "target": null
+                      },
+                      "Coverage": 1.0,
+                      "Skills": {
+                        "Quality 1": null,
+                        "Year to Year 1": null
+                      }
+                    },
+                    "Pattern": null,
+                    "Attack Graph": null
+                  }
+                }
+              }
+            },
+            "Actor 1": {
+              "Desscription": "Record the major actor category",
+              "Level": 2,
+              "Record": {
+                "actor.external.variety": "Unknown",
+                "actor.internal.variety": "Unknown",
+                "actor.partner.variety": "Unknown"
+              },
+              "Coverage": 1.0,
+              "Skills": {
+                "Actor 2": {
+                  "Description": "Record actor motive.",
+                  "Level": 3,
+                  "Record": {
+                    "actor.external.motive": null,
+                    "actor.internal.motive": null,
+                    "actor.partner.motive": null
+                  },
+                  "Coverage": 0.75,
+                  "Skills": {
+                    "Actor 3": {
+                      "Description": "Record actor detailed variety and country",
+                      "Level": 4,
+                      "Record": {
+                        "actor.external.variety": null,
+                        "actor.internal.variety": null,
+                        "actor.partner.variety": null,
+                        "actor.external.country": null,
+                        "actor.internal.country": null,
+                        "actor.partner.country": null
+                      },
+                      "Coverage": 0.75,
+                      "Skills": {
+                        "Actor 4": {
+                          "Description": "Record full details",
+                          "Level": 6,
+                          "Record": {
+                            "actor.internal.job_change": null,
+                            "actor.external.name": null,
+                            "actor.external.region": null,
+                            "actor.partner.industry": null,
+                            "actor.partner.region": null,
+                            "actor.partner.industry2": null
+                          },
+                          "Coverage": 0.1,
+                          "Skills": {}
+                        },
+                        "Quality 1": null,
+                        "Year to Year 1": null
+                      }
+                    }
+                  }
+                },
+                "Pattern": null
+              }
+            },
+            "Asset 1": {
+              "Description": "Record the major asset variety.",
+              "Level": 2,
+              "Record": {
+                "asset.assets.variety": [
+                  "S - Unknown",
+                  "N - Unknown",
+                  "U - Unknown",
+                  "T - Unknown",
+                  "M - Unknown",
+                  "P - Unknown"
+                ]
+              },
+              "Coverage": 0.5,
+              "Skills": {
+                "Asset 2": {
+                  "Description": "Record detailed asset variety",
+                  "Level": 3,
+                  "Record": {
+                    "asset.assets.variety": null
+                  },
+                  "Coverage": 0.5,
+                  "Skills": {
+                    "Asset 3": {
+                      "Description": "record full asset details",
+                      "Level": 4,
+                      "Record": {
+                        "asset.cloud": null,
+                        "asset.country": null,
+                        "asset.governance": null,
+                        "asset.assets.amount": null
+                      },
+                      "Coverage": 0.1,
+                      "Skills": {}
+                    },
+                    "Quality 1": null,
+                    "Year to Year 1": null
+                  }
+                },
+                "Pattern": null
+              }
+            },
+            "Attribute 1": {
+              "Description": "Record the major attribute compromised.",
+              "Level": 2,
+              "Record": {
+                "attribute.confidentiality.data.variety": "Unknown",
+                "attribute.availability.variety": "Unknown",
+                "attribute.integrity.variety": "Unknown",
+                    "attribute.confidentiality.data_disclosure": null
+              },
+              "Coverage": 1.0,
+              "Skills": {
+                "Attribute 2": {
+                  "Description": "Record detailed attribute data.",
+                  "Level": 3,
+                  "Record": {
+                    "attribute.confidentiality.data.variety": null,
+                    "attribute.integrity.variety": null,
+                    "attribute.availability.variety": null,
+                    "attribute.confidentiality.data_total": null 
+                  },
+                  "Coverage": 1.0,
+                  "Skills": {
+                    "Attribute 3": {
+                      "Description": "Record full attribute details",
+                      "Level": 4,
+                      "Record": {
+                        "attribute.confidentiality.state": null,
+                        "attribute.confidentiality.data_victim": null,
+                        "attribute.availability.duration.unit": null,
+                        "attribute.availability.duration.value": null
+                      },
+                      "Coverage": 0.5,
+                      "Skills": {}
+                    },
+                    "Quality 1": null,
+                    "Year to Year 1": null,
+                    "Pattern": null,
+                    "Attack Graph": null
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Incident 2": {
+          "Description": "Additional details describing the incident.",
+          "Level": 7,
+          "Record": {
+            "campaign_id": null,
+            "reference": null,
+            "summary": null,
+            "notes": null,
+            "discovery_notes": null
+          },
+          "Coverage": 0.1,
+          "Skills": {}
+        },
+        "Discovery Method 1": {
+          "Description": "Record the major descovery methods",
+          "Level": 2,
+          "Record": {
+            "discovery_method": [
+              "Ext - unknown",
+              "Int - Unknown",
+              "Prt - Unknown",
+              "Unknown",
+              "Other"
+            ]
+          },
+          "Coverage": 1.0,
+          "Skills": {
+            "Discovery Method 2": {
+              "Description": "Record detailed discovery method.",
+              "Level": 3,
+              "Record": {
+                "discovery_method": null
+              },
+              "Coverage": 0.75,
+              "Skills": {
+                "Quality 1": null,
+                "Year to Year 1": null
+              }
+            }
+          }
+        },
+        "Victim 1": {
+          "Description": "Record basic victim information.",
+          "Level": 2,
+          "Record": {
+            "victim.region": null,
+            "victim.industry2": null,
+            "victim.employee_count": ["Large", "Small"]
+          },
+          "Coverage": 1.0,
+          "Skills": {
+            "Victim 2": {
+              "Description": "Record detailed victim information.",
+              "Level": 3,
+              "Record": {
+                "victim.country": null,
+                "victim.employee_count": null,
+                "victim.industry": null
+              },
+              "Coverage": 1.0,
+              "Skills": {
+                "Victim 3": {
+                  "Description": "Record complete victim information.",
+                  "Level": 6,
+                  "Record": {
+                    "victim.state": null,
+                    "victim.secondary.amount": null,
+                    "victim.locations_affected": null,
+                    "victim.revenue.amount": null,
+                    "victim.revenue.iso_currency_code": null
+                  },
+                  "Coverage": 0.1,
+                  "Skills": {}
+                },
+                "Quality 1": null,
+                "Year to Year 1": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Timeline 1": {
+      "Description": "Record a date for the incident",
+      "Level": 1,
+      "Record": {
+        "timeline.incident.day": null,
+        "timeline.incident.month": null,
+        "timeline.incident.year": null
+      },
+      "Coverage": 1.0,
+      "Skills": {
+        "Timeline 2": {
+          "Description": "Record incident compromise time and discovery time",
+          "Level": 2,
+          "Record": {
+            "timeline.compromise.unit": null,
+            "timeline.discovery.unit": null
+          },
+          "Coverage": 1.0,
+          "Skills": {
+            "Timeline 3": {
+              "Description": "Record full incident timeline",
+              "Level": 4,
+              "Record": {
+                "timeline.compromise.value": null,
+                "timeline.discovery.value": null,
+                "timeline.exfiltration.unit": null,
+                "timeline.containment.unit": null,
+                "timeline.exfiltration.value": null,
+                "timeline.containment.value": null
+              },
+              "Coverage": 0.6,
+              "Skills": {
+                "Quality 1": null,
+                "Year to Year 1": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Pattern": {
+      "Description": "Record fields necessary to apply an incident to a pattern.",
+      "Level": 3,
+      "Record": {
+        "action.physical.variety": ["Skimmer", "Tampering", "Theft"],
+        "attribute.confidentiality.data.variety": "Payment",
+        "actor.external.motive": "Espionage",
+        "actor.external.variety": "State-affiliated",
+        "asset.assets.variety": ["S - POS controller", "U - POS terminal"],
+        "action.hacking.variety": "DoS",
+        "action.hacking.vector": "Web application",
+        "action.misuse.variety": null,
+        "action.malware.variety": null,
+        "action.malware.vector": "Direct install",
+        "action.error.variety": ["Loss", null]
+      },
+      "Coverage": 1.0,
+      "Skills": {}
+    },
+    "Attack Graph": {
+      "Description": "Record action varieties, malware vecors, and attribute varieties.",
+      "Level": 3,
+      "Record": {
+        "action.hacking.variety": null,
+        "action.misuse.variety": null,
+        "action.malware.variety": null,
+        "action.physical.variety": null,
+        "action.social.variety": null,
+        "action.malware.vector": null,
+        "attribute.availability.variety": null,
+        "attribute.confidentiality.data.variety": null,
+        "attribute.integrity.variety": null
+      },
+      "Coverage": 1.0,
+      "Skills": {}
+    },
+    "Quality 1": {
+      "Description": "Quality metrics greater than 7.",
+      "Level": 5,
+      "Record": {
+        "quality": null
+      },
+      "Coverage": 7,
+      "Skills": {
+        "Impact 1": {
+          "Description": "Record rating and variety information about the impact of the incident.",
+          "Level": 6,
+          "Record": {
+            "impact.overall_rating": null,
+            "impact.loss.rating": null,
+            "impact.loss.variety": null
+          },
+          "Coverage": 1.0,
+          "Skills": {
+            "Impact 2": {
+              "Description": "Record loss information about the incident.",
+              "Level": 7,
+              "Record": {
+                "impact.iso_currency_code": null,
+                "impact.loss.amount": null,
+                "impact.loss.min_amount": null,
+                "impact.loss.max_amount": null
+              },
+              "Coverage": 1.0,
+              "Skills": {
+                "Controls 1": {
+                  "Description": "Record the failed controls and implemented mitigations.",
+                  "Level": 8,
+                  "Record": {
+                    "control_failure": null,
+                    "corrective_action": null,
+                    "cost_corrective_action": null
+                  },
+                  "Coverage": 1.0,
+                  "Skills": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Year to Year 1": {
+      "Description": "Record VERIS records over multiple years.",
+      "Level": 4,
+      "Record": {
+        "timeline.incident.year": null
+      },
+      "Coverage": 3,
+      "Skills": {}
+    }
+  }
+}
