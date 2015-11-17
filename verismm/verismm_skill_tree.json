@@ -10,7 +10,7 @@
         "schema_version": null
       },
       "Skills": {
-        "Four A's": {
+        "Four A's 1": {
           "Description": "Actor, Action, Asset, and Attribute are all Unknown",
           "Level": 1,
           "Record": {
@@ -261,11 +261,12 @@
                   }
                 }
               }
-            }
+            },
+            "Four A's 2": null
           }
         },
         "Incident 2": {
-          "Description": "Additional details describing the incident.",
+          "Description": "Record additional notes describing the incident.",
           "Level": 6,
           "Record": {
             "campaign_id": null,
@@ -274,8 +275,10 @@
             "notes": null,
             "discovery_notes": null
           },
-          "Coverage": 0.1,
-          "Skills": {}
+          "Coverage": 0.2,
+          "Skills": {
+            "Four A's 2": null
+          }
         },
         "Discovery Method 1": {
           "Description": "Record the major descovery methods",
@@ -493,13 +496,74 @@
       "Description": "Is the incident targetted or not?",
       "Level": 3,
       "Record": {
-        "target": null
+        "targeted": null
       },
       "Coverage": 1.0,
       "Skills": {
         "Quality 1": null,
         "Year to Year 1": null
       }
-    }
+    },
+    "Four A's 2": {
+      "Description": "Record basic notes about the 4 A's.",
+      "Level": 6,
+      "Record": {
+        "actor.unknown.notes": null,
+        "asset.notes": null,
+        "action.unknown.notes": null,
+        "attribute.unknown.notes": null
+      },
+      "Coverage": 0.5,
+      "Skills": {
+        "Incident 3": {
+          "Description": "Detailed notes describing the incident.",
+          "Level": 7,
+          "Record": {
+            "impact.notes": null,
+            "victim.notes": null,
+            "victim.secondary.notes": null
+          },
+          "Coverage": 0.3,
+          "Skills": {}
+        },
+        "Attribute 4": {
+          "Description": "Record notes about specific attributes.",
+          "Level": 7,
+          "Record": {
+            "attribute.integrity.notes": null,
+            "attribute.confidentiality.notes": null,
+            "attribute.availability.notes": null
+          },
+          "Coverage": 0.3,
+          "Skills": {}
+        },
+        "Action 5": {
+          "Description": "Record notes about specific actions.",
+          "Level": 7,
+          "Record": {
+            "action.physical.notes": null,
+            "action.misuse.notes": null,
+            "action.environmental.notes": null,
+            "action.error.notes": null,
+            "action.hacking.notes": null,
+            "action.social.notes": null,
+            "action.malware.notes": null
+          },
+          "Coverage": 0.1,
+          "Skills": {}
+        },
+        "Actor 5": {
+          "Description": "Record notes on specific actors.",
+          "Level": 7,
+          "Record": {
+            "actor.external.notes": null,
+            "actor.internal.notes": null,
+            "actor.partner.notes": null
+          },
+          "Coverage": 0.3,
+          "Skills": {}
+        }
+      }
+    },
   }
 }
