@@ -12,6 +12,7 @@ Level 1
     * timeline.incident.month: all
     * timeline.incident.year: all
     * timeline.incident.day: all
+
 Level 2
   * Timeline 2
     * timeline.compromise.unit: all
@@ -41,6 +42,7 @@ Level 2
     * attribute.confidentiality.data_disclosure: all
     * attribute.integrity.variety: Unknown
     * attribute.availability.variety: Unknown
+
 Level 3
   * Asset 2
     * asset.assets.variety: all
@@ -94,6 +96,7 @@ Level 3
     * action.error.variety: all
     * action.physical.variety: all
     * action.environmental.variety: all
+
 Level 4
   * Asset 3
     * asset.governance: all
@@ -131,6 +134,7 @@ Level 4
     * action.social.vector: all
   * Action 3 - Technical
     * action.hacking.vector: all
+
 Level 5
   * Actor 4
     * actor.partner.industry2: all
@@ -154,6 +158,7 @@ Level 5
     * impact.overall_rating: all
     * impact.loss.rating: all
     * impact.loss.variety: all
+
 Level 6
   * Incident 2
     * notes: all
@@ -171,6 +176,7 @@ Level 6
     * impact.loss.amount: all
     * impact.loss.min_amount: all
     * impact.iso_currency_code: all
+
 Level 7
   * Actor 5
     * actor.internal.notes: all
@@ -196,3 +202,4 @@ Level 7
     * attribute.confidentiality.notes: all
     * attribute.availability.notes: all
     * attribute.integrity.notes: all
+
