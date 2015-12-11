@@ -33,3 +33,4 @@ for level in skills:
         print "  * {0}".format(skill)
         for record in skills[level][skill]:
             print "    * {0}".format(record)
+    print ""
