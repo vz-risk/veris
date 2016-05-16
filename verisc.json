@@ -1,582 +1,753 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/schema",
   "additionalProperties": false,
-  "description": "VERIS Community Schema 1.3",
+  "description": "VERIS Community Schema 1.4 development",
   "properties": {
-    "action": {
-      "minProperties": 1,
-      "properties": {
-        "environmental": {
-          "additionalProperties": false,
+    "steps": {
+        "type": "array",
+        "uniqueItems": false,
+        "items": {
+          "type": "object",
           "properties": {
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "variety": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "variety"
-          ],
-          "type": "object"
-        },
-        "error": {
-          "additionalProperties": false,
-          "properties": {
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "variety": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "vector": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "variety",
-            "vector"
-          ],
-          "type": "object"
-        },
-        "hacking": {
-          "additionalProperties": false,
-          "properties": {
-            "cve": {
-              "type": "string"
-            },
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "variety": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "vector": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "vector",
-            "variety"
-          ],
-          "type": "object"
-        },
-        "malware": {
-          "additionalProperties": false,
-          "properties": {
-            "cve": {
-              "type": "string"
-            },
-            "name": {
-              "type": "string"
-            },
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "variety": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "vector": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "vector",
-            "variety"
-          ],
-          "type": "object"
-        },
-        "misuse": {
-          "additionalProperties": false,
-          "properties": {
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "variety": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "vector": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "vector",
-            "variety"
-          ],
-          "type": "object"
-        },
-        "physical": {
-          "additionalProperties": false,
-          "properties": {
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "variety": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "vector": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "vector",
-            "variety"
-          ],
-          "type": "object"
-        },
-        "social": {
-          "additionalProperties": false,
-          "properties": {
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "target": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "variety": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "vector": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "vector",
-            "variety",
-            "target"
-          ],
-          "type": "object"
-        },
-        "unknown": {
-          "properties": {
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            }
-          },
-          "type": "object"
-        }
-      },
-      "type": "object"
-    },
-    "actor": {
-      "additionalProperties": false,
-      "minProperties": 1,
-      "properties": {
-        "external": {
-          "additionalProperties": false,
-          "properties": {
-            "country": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "motive": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "name": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "region": {
-              "items": {
-                "type": "string",
-                "maxLength":6,
-                "minLength":6
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "variety": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "country",
-            "variety",
-            "motive"
-          ],
-          "type": "object"
-        },
-        "internal": {
-          "additionalProperties": false,
-          "properties": {
-            "motive": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "variety": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "job_change": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "motive",
-            "variety"
-          ],
-          "type": "object"
-        },
-        "partner": {
-          "additionalProperties": false,
-          "properties": {
-            "country": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "industry": {
-              "maxLength":6,
-              "minLength":2,
-              "pattern":"\\d{2}-?\\d{0,4}",
-              "type": "string"
-            },
-            "motive": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "region": {
-              "items": {
-                "type": "string",
-                "maxLength":6,
-                "minLength":6
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "country",
-            "motive"
-          ],
-          "type": "object"
-        },
-        "unknown": {
-          "properties": {
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            }
-          },
-          "type": "object"
-        }
-      },
-      "type": "object"
-    },
-    "asset": {
-      "additionalProperties": false,
-      "minProperties": 1,
-      "properties": {
-        "assets": {
-          "items": {
-            "additionalProperties": false,
-            "properties": {
-              "amount": {
-                "type": "integer"
-              },
-              "variety": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "variety"
-            ],
-            "type": "object"
-          },
-          "minItems": 1,
-          "type": "array",
-          "uniqueItems": true
-        },
-        "cloud": {
-          "type": "string"
-        },
-        "country": {
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "type": "array",
-          "uniqueItems": true
-        },
-        "governance": {
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "type": "array",
-          "uniqueItems": true
-        },
-        "notes": {
-          "minLength": 1,
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "attribute": {
-      "additionalProperties": false,
-      "minProperties": 1,
-      "properties": {
-        "availability": {
-          "properties": {
-            "duration": {
-              "additionalProperties": false,
+            "action": {
+              "minProperties": 1,
               "properties": {
-                "unit": {
+                "environmental": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "variety": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "variety"
+                  ],
+                  "type": "object"
+                },
+                "error": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "variety": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "vector": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "variety",
+                    "vector"
+                  ],
+                  "type": "object"
+                },
+                "hacking": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "cve": {
+                      "type": "string"
+                    },
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "variety": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "vector": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "vector",
+                    "variety"
+                  ],
+                  "type": "object"
+                },
+                "malware": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "cve": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "variety": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "vector": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "vector",
+                    "variety"
+                  ],
+                  "type": "object"
+                },
+                "misuse": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "variety": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "vector": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "vector",
+                    "variety"
+                  ],
+                  "type": "object"
+                },
+                "physical": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "variety": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "vector": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "vector",
+                    "variety"
+                  ],
+                  "type": "object"
+                },
+                "social": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "target": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "variety": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "vector": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "vector",
+                    "variety",
+                    "target"
+                  ],
+                  "type": "object"
+                },
+                "unknown": {
+                  "properties": {
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "actor": {
+              "additionalProperties": false,
+              "minProperties": 1,
+              "properties": {
+                "external": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "country": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "motive": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "name": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "region": {
+                      "items": {
+                        "type": "string",
+                        "maxLength":6,
+                        "minLength":6
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "variety": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "country",
+                    "variety",
+                    "motive"
+                  ],
+                  "type": "object"
+                },
+                "internal": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "motive": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "variety": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "job_change": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "motive",
+                    "variety"
+                  ],
+                  "type": "object"
+                },
+                "partner": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "country": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "industry": {
+                      "maxLength":6,
+                      "minLength":2,
+                      "pattern":"\\d{2}-?\\d{0,4}",
+                      "type": "string"
+                    },
+                    "motive": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "region": {
+                      "items": {
+                        "type": "string",
+                        "maxLength":6,
+                        "minLength":6
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "country",
+                    "motive"
+                  ],
+                  "type": "object"
+                },
+                "unknown": {
+                  "properties": {
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "asset": {
+              "additionalProperties": false,
+              "minProperties": 1,
+              "properties": {
+                "assets": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "amount": {
+                        "type": "integer"
+                      },
+                      "variety": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "variety"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "cloud": {
                   "type": "string"
                 },
-                "value": {
-                  "type": "number"
+                "country": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "governance": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "notes": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "attribute": {
+              "additionalProperties": false,
+              "minProperties": 1,
+              "properties": {
+                "availability": {
+                  "properties": {
+                    "duration": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "unit": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "unit"
+                      ],
+                      "type": "object"
+                    },
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "variety": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "variety"
+                  ],
+                  "type": "object"
+                },
+                "confidentiality": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "data": {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "amount": {
+                            "type": "integer"
+                          },
+                          "variety": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "variety"
+                        ],
+                        "type": "object"
+                      },
+                      "minItems": 1,
+                      "type": "array"
+                    },
+                    "data_disclosure": {
+                      "type": "string"
+                    },
+                    "data_total": {
+                      "type": "integer"
+                    },
+                    "data_victim": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "state": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "data_disclosure"
+                  ],
+                  "type": "object"
+                },
+                "integrity": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "variety": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "variety"
+                  ],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "confidence": {
+              "type": "string"
+            },
+            "control_failure": {
+              "type": "string"
+            },
+            "discovery_method": {
+              "type": "string"
+            },
+            "timeline": {
+              "additionalProperties": false,
+              "properties": {
+                "compromise": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "unit": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "unit"
+                  ],
+                  "type": "object"
+                },
+                "containment": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "unit": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "unit"
+                  ],
+                  "type": "object"
+                },
+                "discovery": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "unit": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "unit"
+                  ],
+                  "type": "object"
+                },
+                "exfiltration": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "unit": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "unit"
+                  ],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "victim": {
+              "additionalProperties": false,
+              "properties": {
+                "country": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "employee_count": {
+                  "type": "string"
+                },
+                "industry": {
+                  "maxLength":6,
+                  "minLength":2,
+                  "pattern":"\\d{2}-?\\d{0,4}",
+                  "type": "string"
+                },
+                "locations_affected": {
+                  "type": "integer"
+                },
+                "notes": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "region": {
+                  "items": {
+                    "type": "string",
+                    "maxLength":6,
+                    "minLength":6
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "revenue": {
+                  "additionalProperties": false,
+                  "minProperties": 1,
+                  "properties": {
+                    "amount": {
+                      "type": "integer"
+                    },
+                    "iso_currency_code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "secondary": {
+                  "additionalProperties": false,
+                  "minProperties": 1,
+                  "properties": {
+                    "amount": {
+                      "type": "integer"
+                    },
+                    "notes": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "victim_id": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                },
+                "state": {
+                  "type": "string"
+                },
+                "victim_id": {
+                  "type": "string"
                 }
               },
               "required": [
-                "unit"
+                "country",
+                "employee_count",
+                "industry"
               ],
               "type": "object"
-            },
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "variety": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
             }
           },
           "required": [
-            "variety"
-          ],
-          "type": "object"
-        },
-        "confidentiality": {
-          "additionalProperties": false,
-          "properties": {
-            "data": {
-              "items": {
-                "additionalProperties": false,
-                "properties": {
-                  "amount": {
-                    "type": "integer"
-                  },
-                  "variety": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "variety"
-                ],
-                "type": "object"
-              },
-              "minItems": 1,
-              "type": "array"
-            },
-            "data_disclosure": {
-              "type": "string"
-            },
-            "data_total": {
-              "type": "integer"
-            },
-            "data_victim": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "state": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "data_disclosure"
-          ],
-          "type": "object"
-        },
-        "integrity": {
-          "additionalProperties": false,
-          "properties": {
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "variety": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "variety"
-          ],
-          "type": "object"
+            //"actor",
+            //"action",
+            "discovery_method"
+            //"asset",
+            //"timeline"
+          ]
+          // by having no 'required' 4A's, we allow steps to be missing any given value
+          // unfortunately, this also means it's possible schema-wise to enter an incident
+          // without any of the 4A's.  As such, required fields must be tested for
+          // separately from schema validation.
         }
-      },
-      "type": "object"
     },
     "campaign_id": {
-      "type": "string"
-    },
-    "confidence": {
-      "type": "string"
-    },
-    "control_failure": {
       "type": "string"
     },
     "corrective_action": {
       "type": "string"
     },
     "cost_corrective_action": {
-      "type": "string"
-    },
-    "discovery_method": {
       "type": "string"
     },
     "discovery_notes": {
@@ -667,8 +838,28 @@
     },
     "plus": {
       "type":"object",
-      "properties":{}
+      "properties":{},
+      "additionalProperties": true
     },
+    // Trying to decide how to represent subsets like patterns, secondary-motive, dridex, 
+    //   malicious vs non-malicious
+    // This is here as a placeholder. Subsets may be only a verisr thing and not a VERIS thing at all.
+//    "subsets": {
+//      "type":"array",
+//      "uniqueItems": false,
+//      "items": {
+//        "type": "object",
+//        "properties": {
+//          "name": {
+//            "type": "string",
+//            "minLength": 1
+//          },
+//          "value": {
+//            "type": "boolean"
+//          }
+//        }
+//      }
+//    },
     "reference": {
       "type": "string"
     },
@@ -690,66 +881,6 @@
     "timeline": {
       "additionalProperties": false,
       "properties": {
-        "compromise": {
-          "additionalProperties": false,
-          "properties": {
-            "unit": {
-              "type": "string"
-            },
-            "value": {
-              "type": "number"
-            }
-          },
-          "required": [
-            "unit"
-          ],
-          "type": "object"
-        },
-        "containment": {
-          "additionalProperties": false,
-          "properties": {
-            "unit": {
-              "type": "string"
-            },
-            "value": {
-              "type": "number"
-            }
-          },
-          "required": [
-            "unit"
-          ],
-          "type": "object"
-        },
-        "discovery": {
-          "additionalProperties": false,
-          "properties": {
-            "unit": {
-              "type": "string"
-            },
-            "value": {
-              "type": "number"
-            }
-          },
-          "required": [
-            "unit"
-          ],
-          "type": "object"
-        },
-        "exfiltration": {
-          "additionalProperties": false,
-          "properties": {
-            "unit": {
-              "type": "string"
-            },
-            "value": {
-              "type": "number"
-            }
-          },
-          "required": [
-            "unit"
-          ],
-          "type": "object"
-        },
         "incident": {
           "additionalProperties": false,
           "properties": {
@@ -768,7 +899,7 @@
             },
             "year": {
               "type": "integer",
-              "maximum": 2015,
+              "maximum": 2020,  // bumping this out to a more reasonable time.  still needs regular updating. -GDB 04/16/16
               "minimum": 1950
             }
           },
@@ -782,99 +913,16 @@
         "incident"
       ],
       "type": "object"
-    },
-    "victim": {
-      "additionalProperties": false,
-      "properties": {
-        "country": {
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "type": "array",
-          "uniqueItems": true
-        },
-        "employee_count": {
-          "type": "string"
-        },
-        "industry": {
-          "maxLength":6,
-          "minLength":2,
-          "pattern":"\\d{2}-?\\d{0,4}",
-          "type": "string"
-        },
-        "locations_affected": {
-          "type": "integer"
-        },
-        "notes": {
-          "minLength": 1,
-          "type": "string"
-        },
-        "region": {
-          "items": {
-            "type": "string",
-            "maxLength":6,
-            "minLength":6
-          },
-          "minItems": 1,
-          "type": "array",
-          "uniqueItems": true
-        },
-        "revenue": {
-          "additionalProperties": false,
-          "minProperties": 1,
-          "properties": {
-            "amount": {
-              "type": "integer"
-            },
-            "iso_currency_code": {
-              "type": "string"
-            }
-          },
-          "type": "object"
-        },
-        "secondary": {
-          "additionalProperties": false,
-          "minProperties": 1,
-          "properties": {
-            "amount": {
-              "type": "integer"
-            },
-            "notes": {
-              "minLength": 1,
-              "type": "string"
-            },
-            "victim_id": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "type": "object"
-        },
-        "state": {
-          "type": "string"
-        },
-        "victim_id": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "country",
-        "employee_count",
-        "industry"
-      ],
-      "type": "object"
     }
   },
+  // Required 4A properties moved to steps where they may or may not exist in any given step and so
+  //  cannot be required and must be checked manually rather than against the schema. - GDB 05/16/16
   "required": [
-    "actor",
-    "action",
-    "discovery_method",
+    //"actor",
+    //"action",
+    //"discovery_method",
     "schema_version",
-    "asset",
+    //"asset",
     "timeline",
     "incident_id",
     "security_incident"
