@@ -728,12 +728,20 @@
               "type": "object"
             }
           },
-          "required": [
-            //"actor",
-            //"action",
-            "discovery_method"
-            //"asset",
-            //"timeline"
+          "oneOf": [
+            {"required": [
+              //"actor",
+              //"action",
+              "attribute",
+              "discovery_method"
+              //"asset",
+            ]},
+            {"required": [
+              //"actor",
+              "action",
+              "discovery_method"
+              //"asset",
+            ]}
           ]
           // by having no 'required' 4A's, we allow steps to be missing any given value
           // unfortunately, this also means it's possible schema-wise to enter an incident
