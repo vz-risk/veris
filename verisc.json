@@ -3,7 +3,7 @@
   "additionalProperties": false,
   "description": "VERIS Community Schema 1.4 development",
   "properties": {
-    "steps": {
+    "step": {
         "type": "array",
         "uniqueItems": false,
         "items": {
