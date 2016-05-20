@@ -404,7 +404,9 @@
               "additionalProperties": false,
               "minProperties": 1,
               "properties": {
-                "assets": {
+                "server": {
+                },
+                "network": {
                   "items": {
                     "additionalProperties": false,
                     "properties": {
@@ -423,6 +425,89 @@
                   "minItems": 1,
                   "type": "array",
                   "uniqueItems": true
+                },
+                "user device": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "amount": {
+                        "type": "integer"
+                      },
+                      "variety": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "variety"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "public terminal": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "amount": {
+                        "type": "integer"
+                      },
+                      "variety": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "variety"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "media": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "amount": {
+                        "type": "integer"
+                      },
+                      "variety": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "variety"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "people": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "amount": {
+                        "type": "integer"
+                      },
+                      "variety": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "variety"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "unknown": {
+                  "type": "string"
                 },
                 "cloud": {
                   "type": "string"
@@ -448,7 +533,30 @@
                   "type": "string"
                 }
               },
-              "type": "object"
+              "type": "object",
+              "oneOf": [
+                {"required": [
+                  "server"
+                ]},
+                {"required": [
+                  "network"
+                ]},
+                {"required": [
+                  "user device"
+                ]},
+                {"required": [
+                  "public termianl"
+                ]},
+                {"required": [
+                  "media"
+                ]},
+                {"required": [
+                  "people"
+                ]},
+                {"required": [
+                  "other"
+                ]}
+              ]
             },
             "attribute": {
               "additionalProperties": false,
