@@ -111,10 +111,10 @@
             "XSS": "Cross-site scripting"
           },
           "vector": {
-            "3rd party desktop": "3rd party online desktop sharing (LogMeIn, Go2Assist)",
+            "3rd party desktop": "3rd party online desktop sharing (LogMeIn, Go2Assist) installed separately",
             "Backdoor or C2": "Backdoor or command and control channel",
             "Command shell": "Remote shell",
-            "Desktop sharing": "Graphical desktop sharing (RDP, VNC, PCAnywhere, Citrix)",
+            "Desktop sharing": "Graphical desktop sharing (RDP, VNC, PCAnywhere, Citrix) legitimately resident",
             "Other": "Other",
             "Partner": "Partner connection or credential",
             "Physical access": "Physical access or connection (i.e., at keyboard or via cable) ",
@@ -282,8 +282,7 @@
       },
       "actor": {
         "external": {
-          "variety": {
-            "Acquaintance": "Relative or acquaintance of employee",
+ƒdata            "Acquaintance": "Relative or acquaintance of employee",
             "Activist": "Activist group",
             "Auditor": "Auditor",
             "Competitor": "Competitor",
@@ -321,7 +320,7 @@
             "Hired": "Recently hired",
             "Promoted": "Recently promoted",
             "Lateral move": "Lateral move",
-            "Resigned": "Recently resigned",
+            "Resigned": "Preparing to resign / recently resigned",
             "Let go": "Fired, laid off, or let go",
             "Demoted": "Recently demoted or hours reduced",
             "Passed over": "Recently passed over for promotion",
@@ -419,7 +418,7 @@
             "Print": "Print",
             "Proxy": "Proxy",
             "Remote access": "Remote access",
-            "SCADA": "SCADA system",
+            "ICS": "Industrial Control and SCADA systems",
             "VM host": "Virtual Host",
             "Web application": "Web application",
             "Unknown": "Server but variety not known",
@@ -567,7 +566,8 @@
             "Transmitted": "Transmitted",
             "Transmitted encrypted": "Transmitted encrypted",
             "Transmitted unencrypted": "Transmitted unencrypted",
-            "Unknown": "Unknown"
+            "Unknown": "Unknown",
+            "Printed": "Data printed in human-readable format"
           }
         },
         "integrity": {
@@ -606,8 +606,8 @@
       "Ext - law enforcement": "Internal - notified by law enforcement or government agency",
       "Ext - monitoring service": "External - managed security event monitoring service",
       "Ext - suspicious traffic": "External - Report of suspicious traffic",
-      "Ext - unknown": "External - unknown",
-      "Ext - "
+      "Ext - unknown": "External - unknown external variety",
+      "Ext - other": "External - other external variety not listed",
       "Int - HIDS": "Internal - host IDS or file integrity monitoring",
       "Int - IT review": "Internal - Informal IT review",
       "Int - NIDS": "Internal - network IDS or IPS alert",
@@ -620,10 +620,11 @@
       "Int - log review": "Internal - log review process or SIEM",
       "Int - reported by employee": "Internal - reported by employee who saw something odd",
       "Int - security alarm": "Internal - physical security system alarm",
-      "Int - unknown": "Internal - unknown",
+      "Int - unknown": "Internal - unknown internal variety",
+      "Int - other": "Internal - other internal variety not listed",
       "Other": "Other",
-      "Prt - Other": "Partner - Other",
-      "Prt - Unknown": "Partner - Unknown",
+      "Prt - Other": "Partner - Other partner variety not listed",
+      "Prt - Unknown": "Partner - Unknown partner variety not listed",
       "Prt - antivirus": "Partner - Notified by antivirus company but not through AV product",
       "Prt - audit": "Partner - Audit performed by a partner organization",
       "Prt - incident response": "Partner - notified while investigating another incident",
