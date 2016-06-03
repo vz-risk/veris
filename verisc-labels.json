@@ -840,6 +840,7 @@
     "Ext - monitoring service": "External - managed security event monitoring service",
     "Ext - suspicious traffic": "External - Report of suspicious traffic",
     "Ext - unknown": "External - unknown",
+    "Ext - other: Discovery method was external and known but not listed"
     "Int - HIDS": "Internal - host IDS or file integrity monitoring",
     "Int - IT review": "Internal - Informal IT review",
     "Int - NIDS": "Internal - network IDS or IPS alert",
@@ -853,9 +854,10 @@
     "Int - reported by employee": "Internal - reported by employee who saw something odd",
     "Int - security alarm": "Internal - physical security system alarm",
     "Int - unknown": "Internal - unknown",
+    "Int - other: Discovery method was internal and known but not listed"
     "Other": "Other",
-    "Prt - Other": "Partner - Other",
-    "Prt - Unknown": "Partner - Unknown",
+    "Prt - other": "Discovery method was partner and known but not listed",
+    "Prt - unknown": "Partner - Unknown",
     "Prt - antivirus": "Partner - Notified by antivirus company but not through AV product",
     "Prt - audit": "Partner - Audit performed by a partner organization",
     "Prt - incident response": "Partner - notified while investigating another incident",
