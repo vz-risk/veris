@@ -540,7 +540,8 @@
         "Transmitted": "Transmitted",
         "Transmitted encrypted": "Transmitted encrypted",
         "Transmitted unencrypted": "Transmitted unencrypted",
-        "Unknown": "Unknown"
+        "Unknown": "Unknown",
+        "Printed": "Data printed in human-readable format"
       }
     },
     "integrity": {
