@@ -104,7 +104,12 @@ if __name__ == '__main__':
             ("U - Other", "U - Unknown")
           ]:
             if enum[0] in incident.get("asset", {}).get("assets", []):
-              incident["asset"]["assets"] = [enum.replace(e[0], e[1])  for e in incident["asset"]["assets"]]
+              incident["asset"]["assets"] = [e.replace(enum[0], enum[1])  for e in incident["asset"]["assets"]]
+
+          # Replace asset S - SCADA with S - ICS
+          # Issue 104, Commit f8b7387
+          if "S - SCADA" in incident.get("asset", {}).get("assets", []):
+            incident["asset"]["assets"] = [e.replace("S - SCADA", "S - ICS") for e in incident["asset"]["assets"]]  
 
           # Now to save the incident
           logging.info("Writing new file to %s" % out_fname)
