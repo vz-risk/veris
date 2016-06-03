@@ -723,6 +723,10 @@
       "type":"object",
       "properties":{}
     },
+    "subsets": {
+      "type":"object",
+      "properties":{}
+    },
     "reference": {
       "type": "string"
     },
