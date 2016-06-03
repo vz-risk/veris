@@ -461,7 +461,7 @@
       "S - Print": "Server - Print",
       "S - Proxy": "Server - Proxy",
       "S - Remote access": "Server - Remote access",
-      "S - SCADA": "Server - SCADA system",
+      "S - ICS": "Server - Industrial Control System (ICS).  Includes Supervisory Control And Data Acquisition (SCADA) systems.",
       "S - VM host": "Server - Virtual Host",
       "S - Web application": "Server - Web application",
       "S - Unknown": "Server - Unknown",
