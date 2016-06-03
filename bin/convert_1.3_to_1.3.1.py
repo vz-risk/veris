@@ -111,6 +111,14 @@ if __name__ == '__main__':
           if "S - SCADA" in incident.get("asset", {}).get("assets", []):
             incident["asset"]["assets"] = [e.replace("S - SCADA", "S - ICS") for e in incident["asset"]["assets"]]  
 
+
+          # Replace Prt - Other/Unknown with Prt - other/unknown
+          # Issue 75, Commit a99325a
+          if "Prt - Other" == incident.get("discovery_method", ""):
+            incident["discovery_method"] = "Prt - other"
+          if "Prt - Unknown" == incident.get("discovery_method", ""):
+            incident["discovery_method"] = "Prt - unknown"
+
           # Now to save the incident
           logging.info("Writing new file to %s" % out_fname)
           outfile = open(out_fname, 'w')
