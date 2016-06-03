@@ -885,7 +885,7 @@
       "Damaging": "Damaging: Real and serious effect on the \"bottom line\" and/or long-term ability to generate revenue",
       "Distracting": "Distracting: Limited \"hard costs\", but impact felt through having to deal with the incident rather than conducting normal duties",
       "Insignificant": "Insignificant: Impact absorbed by normal activities",
-      "Painful": "Painful: Limited \"hard costs\", but impact felt through having to deal with the incident rather than conducting normal duties",
+      "Painful": "Painful: Moderate \"hard costs\", and impact felt through having to deal with the incident rather than conducting normal duties has quantifiable indirect costs",
       "Unknown": "Unknown"
     }
   },
