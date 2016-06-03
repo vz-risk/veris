@@ -494,6 +494,9 @@
         "notes": {
           "minLength": 1,
           "type": "string"
+        },
+        "total_amount": {
+          "type": "number"
         }
       },
       "type": "object"
