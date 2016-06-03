@@ -82,6 +82,15 @@
               "minItems": 1,
               "type": "array",
               "uniqueItems": true
+            },
+            "Infiltrate": {
+              "type": "boolean"
+            },
+            "Exfiltrate": {
+              "type": "boolean"
+            },
+            "Elevate": {
+              "type": "boolean"
             }
           },
           "required": [
@@ -118,6 +127,15 @@
               "minItems": 1,
               "type": "array",
               "uniqueItems": true
+            },
+            "Infiltrate": {
+              "type": "boolean"
+            },
+            "Exfiltrate": {
+              "type": "boolean"
+            },
+            "Elevate": {
+              "type": "boolean"
             }
           },
           "required": [
@@ -148,6 +166,15 @@
               "minItems": 1,
               "type": "array",
               "uniqueItems": true
+            },
+            "Infiltrate": {
+              "type": "boolean"
+            },
+            "Exfiltrate": {
+              "type": "boolean"
+            },
+            "Elevate": {
+              "type": "boolean"
             }
           },
           "required": [
@@ -178,6 +205,15 @@
               "minItems": 1,
               "type": "array",
               "uniqueItems": true
+            },
+            "Infiltrate": {
+              "type": "boolean"
+            },
+            "Exfiltrate": {
+              "type": "boolean"
+            },
+            "Elevate": {
+              "type": "boolean"
             }
           },
           "required": [
@@ -216,6 +252,15 @@
               "minItems": 1,
               "type": "array",
               "uniqueItems": true
+            },
+            "Infiltrate": {
+              "type": "boolean"
+            },
+            "Exfiltrate": {
+              "type": "boolean"
+            },
+            "Elevate": {
+              "type": "boolean"
             }
           },
           "required": [
@@ -230,6 +275,15 @@
             "notes": {
               "minLength": 1,
               "type": "string"
+            },
+            "Infiltrate": {
+              "type": "boolean"
+            },
+            "Exfiltrate": {
+              "type": "boolean"
+            },
+            "Elevate": {
+              "type": "boolean"
             }
           },
           "type": "object"
