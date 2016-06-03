@@ -3,91 +3,106 @@
 
 import json
 import jsonschema
+import argparse
+import logging
+import copy
 
-defaultSchema = "../verisc.json"
-defaultEnum = "../verisc-enum.json"
+DEFAULTSCHEMA = "../verisc.json"
+DEFAULTLABELS = "../verisc-labels.json"
+MERGED = '../verisc-merged.json'
+KEYNAMES = '../keynames-real.txt'
+ENUM = "../verisc-enum.json"
 
 
-def buildSchema(schema, enum, plus):
-    # All of the action enumerations
-    for each in ['hacking', 'malware', 'social', 'error',
-                 'misuse', 'physical']:
-        schema['properties']['action']['properties'][each]['properties']['variety']['items']['enum'] = \
-            enum['action'][each]['variety']
-        schema['properties']['action']['properties'][each]['properties']['vector']['items']['enum'] = \
-            enum['action'][each]['vector']
-    schema['properties']['action']['properties']['environmental']['properties']['variety']['items']['enum'] = \
-        enum['action']['environmental']['variety']
-    schema['properties']['action']['properties']['social']['properties']['target']['items']['enum'] = \
-        enum['action']['social']['target']
+class objdict(dict):
+    def __getattr__(self, name):
+        try:
+            return self.recursive_getattr(self, name)
+        except:
+            raise AttributeError("No such attribute: " + name)
 
-    # actor enumerations
-    for each in ['external', 'internal', 'partner']:
-        schema['properties']['actor']['properties'][each]['properties']['motive']['items']['enum'] = enum['actor'][
-            'motive']
-    schema['properties']['actor']['properties']['external']['properties']['variety']['items']['enum'] = \
-        enum['actor']['external']['variety']
-    schema['properties']['actor']['properties']['internal']['properties']['variety']['items']['enum'] = \
-        enum['actor']['internal']['variety']
-    schema['properties']['actor']['properties']['internal']['properties']['job_change']['items']['enum'] = \
-        enum['actor']['internal']['job_change']
-    schema['properties']['actor']['properties']['external']['properties']['country']['items']['enum'] = enum['country']
-    schema['properties']['actor']['properties']['partner']['properties']['country']['items']['enum'] = enum['country']
+    def __setattr__(self, name, value):
+        try:
+            self.recursive_setattr(self, name, value)
+        except:
+            raise AttributeError("No such attribute: " + name)
+    
+    def __delattr__(self, name):
+        try:
+            self.recursive_delattr(self, name)
+        except:
+            raise AttributeError("No such attribute: " + name)
 
-    # asset properties
-    schema['properties']['asset']['properties']['assets']['items']['properties']['variety']['enum'] = \
-        enum['asset']['variety']
-    schema['properties']['asset']['properties']['governance']['items']['enum'] = \
-        enum['asset']['governance']
+    def recursive_setattr(self, o, name, value):
+        name = name.split(".", 1)
+        if len(name) > 1:
+            self.recursive_setattr(o[name[0]], name[1], value)
+        else:
+            o[name[0]] = value
 
-    # attribute properties
-    schema['properties']['attribute']['properties']['availability']['properties']['variety']['items']['enum'] = \
-        enum['attribute']['availability']['variety']
-    schema['properties']['attribute']['properties']['availability']['properties']['duration']['properties']['unit'][
-        'enum'] = enum['timeline']['unit']
-    schema['properties']['attribute']['properties']['confidentiality']['properties']['data']['items']['properties'][
-        'variety']['enum'] = enum['attribute']['confidentiality']['data']['variety']
-    schema['properties']['attribute']['properties']['confidentiality']['properties']['data_disclosure'][
-        'enum'] = enum['attribute']['confidentiality']['data_disclosure']
-    schema['properties']['attribute']['properties']['confidentiality']['properties']['state']['items']['enum'] = \
-        enum['attribute']['confidentiality']['state']
-    schema['properties']['attribute']['properties']['integrity']['properties']['variety']['items']['enum'] = \
-        enum['attribute']['integrity']['variety']
+    def recursive_getattr(self, o, name):
+        name = name.split(".", 1)
+        if len(name) > 1:
+            return self.recursive_getattr(o[name[0]], name[1])
+        else:
+            return o[name[0]]
 
-    # impact
-    schema['properties']['impact']['properties']['iso_currency_code']['enum'] = enum['iso_currency_code']
-    schema['properties']['impact']['properties']['loss']['items']['properties']['variety']['enum'] = \
-        enum['impact']['loss']['variety']
-    schema['properties']['impact']['properties']['loss']['items']['properties']['rating']['enum'] = \
-        enum['impact']['loss']['rating']
-    schema['properties']['impact']['properties']['overall_rating']['enum'] = \
-        enum['impact']['overall_rating']
+    def recursive_delattr(self, o, name):
+        name = name.split(".", 1)
+        if len(name) > 1:
+            self.recursive_delattr(o[name[0]], name[1])
+        else:
+            del o[name[0]]
 
-    # timeline
-    for each in ['compromise', 'containment', 'discovery', 'exfiltration']:
-        schema['properties']['timeline']['properties'][each]['properties']['unit']['enum'] = \
-            enum['timeline']['unit']
+def recurse_keys(d, lbl):
+    keys = set()
+    for k,v in d.iteritems():
+        if type(v) == dict:
+            keys = keys.union(recurse_keys(v, (lbl + (k,))))
+        else:
+            keys.add(lbl)
+        return keys
 
-    # victim
-    schema['properties']['victim']['properties']['country']['items']['enum'] = enum['country']
-    schema['properties']['victim']['properties']['employee_count']['enum'] = \
-        enum['victim']['employee_count']
-    schema['properties']['victim']['properties']['revenue']['properties']['iso_currency_code']['enum'] = \
-        enum['iso_currency_code']
-
-    # Randoms
-    for each in ['confidence', 'cost_corrective_action', 'discovery_method', 'security_incident', 'targeted']:
-        schema['properties'][each]['enum'] = enum[each]
-
-    # Plus section
-    schema['properties']['plus'] = plus
-
-    return schema  # end of buildSchema()
 
 if __name__ == '__main__':
-  schema = json.loads(open(defaultSchema).read())
-  enum = json.loads(open(defaultEnum).read())
-  merged = buildSchema(schema, enum, {})
-  outfile = open('../verisc-merged.json', 'w')
-  outfile.write(json.dumps(merged, sort_keys=True, indent=2))
-  outfile.close()
+    descriptionText = """This script merges the schema file and labels file.
+    Optionally, it can also generate the enums file and the keynames file."""
+    parser = argparse.ArgumentParser(description=descriptionText)
+    parser.add_argument("-s", "--schema",
+                        help="schema file.", default=DEFAULTSCHEMA)
+    parser.add_argument("-l", "--labels",
+                        help="the labels file.", default=DEFAULTLABELS)
+    parser.add_argument("-o", "--output",
+                        help="the location of the merged output file.", default=MERGED)
+    parser.add_argument("-e", "--enum", help="The name of the enums file if desired. (Normally '../<schame name>-enum.json'.)", default=None)
+    parser.add_argument("-k", "--keynames", help="The name of the keynames file if desired. (normally '../keynames-real.txt'.)", default=None)
+    parser.add_argument("--logging", choices=["critical",
+                                                    "warning", "info"],
+                        help="Minimum logging level to display",
+                        default="warning")
+    args = parser.parse_args()
+    logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL,
+                     'info': logging.INFO}
+    logging.basicConfig(level=logging_remap[args.logging])
+    schema = objdict(json.loads(open(args.schema).read()))
+    labels = objdict(json.loads(open(args.labels).read()))
+    # get the keys to join
+    keys = recurse_keys(labels, ())
+    # write the keys out
+    if args.keynames is not None:
+        with open(args.keynames, 'w') as keynames_handle:
+            for key in keys:
+                keynames_handle.write(".".join(key) + "\n")
+    # write the enums out
+    if args.enum is not None:
+        veris_enum = copy.deepcopy(labels)
+        for key in keys:
+            setattr(veris_enum, ".".join(key), getattr(labels, ".".join(key)).keys())
+        with open(args.enum, 'w') as enum_handle:
+            json.dump(veris_enum, enum_handle)
+    # Add the enumerations to the schema file
+    for key in keys:
+        setattr(schema, "properties." + ".properties.".join(key) + ".enum", getattr(labels, ".".join(key)).keys())
+    # write the merged schema
+    with open(args.output, 'w') as outfile_handle:
+        json.dump(schema, outfile_handle, sort_keys=True, indent=2)
