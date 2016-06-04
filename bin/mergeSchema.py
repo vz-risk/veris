@@ -54,14 +54,26 @@ class objdict(dict):
         else:
             del o[name[0]]
 
-def recurse_keys(d, lbl):
-    keys = set()
-    for k,v in d.iteritems():
+def recurse_schema(d, lbl, name, keys=set()):
+    if d['type'] == "object":
+        lbl = lbl + "properties."
+        for k, v in d['properties'].iteritems():
+            keys = keys.union(recurse_schema(v, lbl, name + "." + k))
+    elif d['type'] == "array":
+        lbl = lbl + "items."
+        keys = keys.union(recurse_schema(d['items'], lbl, name))
+    else:
+        keys.add(name[1:])
+    return keys
+
+
+def recurse_keys(d, lbl, keys=set()):
+    for k, v in d.iteritems():
         if type(v) == dict:
-            keys = keys.union(recurse_keys(v, (lbl + (k,))))
+            keys = keys.union(recurse_keys(v, (lbl + (k,)), keys))
         else:
             keys.add(lbl)
-        return keys
+    return keys
 
 
 if __name__ == '__main__':
@@ -76,33 +88,51 @@ if __name__ == '__main__':
                         help="the location of the merged output file.", default=MERGED)
     parser.add_argument("-e", "--enum", help="The name of the enums file if desired. (Normally '../<schame name>-enum.json'.)", default=None)
     parser.add_argument("-k", "--keynames", help="The name of the keynames file if desired. (normally '../keynames-real.txt'.)", default=None)
-    parser.add_argument("--logging", choices=["critical",
-                                                    "warning", "info"],
+    parser.add_argument("--logging", choices=["critical", "warning", "info", "debug"],
                         help="Minimum logging level to display",
                         default="warning")
     args = parser.parse_args()
     logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL,
-                     'info': logging.INFO}
+                     'info': logging.INFO, 'debug': logging.DEBUG}
     logging.basicConfig(level=logging_remap[args.logging])
-    schema = objdict(json.loads(open(args.schema).read()))
-    labels = objdict(json.loads(open(args.labels).read()))
+    with open(args.schema, 'r') as filehandle:
+        schema = json.load(filehandle)
+    with open(args.labels, 'r') as filehandle:
+        labels = json.load(filehandle)
+    #schema = json.loads(open(args.schema).read())
+    #labels = json.loads(open(args.labels).read())
     # get the keys to join
+    logging.debug(labels.keys())
     keys = recurse_keys(labels, ())
+    logging.debug(keys)
     # write the keys out
     if args.keynames is not None:
+        keynames = recurse_schema(schema, "", "")
+        keynames = list(keynames)
+        keynames.sort()
         with open(args.keynames, 'w') as keynames_handle:
-            for key in keys:
-                keynames_handle.write(".".join(key) + "\n")
+            for keyname in keynames:
+                keynames_handle.write(keyname + "\n")
+    # convert to objects to help with parsing
+    schema = objdict(schema)
+    labels = objdict(labels)
     # write the enums out
     if args.enum is not None:
         veris_enum = copy.deepcopy(labels)
         for key in keys:
             setattr(veris_enum, ".".join(key), getattr(labels, ".".join(key)).keys())
         with open(args.enum, 'w') as enum_handle:
-            json.dump(veris_enum, enum_handle)
+            json.dump(veris_enum, enum_handle, sort_keys=True, indent=2)
     # Add the enumerations to the schema file
     for key in keys:
-        setattr(schema, "properties." + ".properties.".join(key) + ".enum", getattr(labels, ".".join(key)).keys())
+        name = "properties."
+        for i in range(len(key)-1):
+            # tacking 'properties.' on to the end of 'items.' rather than having separate logic for arrays and objects
+            #   is kind of a hack, but I think it'll work for all intended uses for the script. - gdb 06/03/16
+            name = name + key[i] + "." + {"array": "items.properties.", "object": "properties."}[getattr(schema, name + key[i] + ".type")]
+        logging.info("Updating key " + name)
+        logging.debug("Adding keys {0}".format(getattr(labels, ".".join(key)).keys()))
+        setattr(schema, name + "enum", getattr(labels, ".".join(key)).keys())
     # write the merged schema
     with open(args.output, 'w') as outfile_handle:
         json.dump(schema, outfile_handle, sort_keys=True, indent=2)
