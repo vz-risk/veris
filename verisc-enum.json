@@ -166,6 +166,7 @@
         "Unknown", 
         "Email autoexecute", 
         "Web download", 
+        "Email unknown", 
         "Other"
       ]
     }, 
@@ -470,6 +471,7 @@
       "S - Unknown", 
       "Other", 
       "S - Other", 
+      "N - NAS", 
       "S - Code repository", 
       "P - Developer", 
       "M - Smart card", 
