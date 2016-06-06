@@ -158,6 +158,7 @@
         "Email attachment": "Email via user-executed attachment",
         "Email autoexecute": "Email via automatic execution",
         "Email link": "Email via embedded link",
+        "Email unknown": "Email but sub-variety (attachment, autoexecute, link, etc) not known",
         "Instant messaging": "Instant Messaging",
         "Network propagation": "Network propagation",
         "Other": "Other",
