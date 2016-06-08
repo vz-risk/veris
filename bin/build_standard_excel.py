@@ -101,6 +101,10 @@ ORDER = [
     "discovery_notes",
     "targeted"
 ]
+DEFAULT_COLUMNS = [
+    "repeat",
+    "incident_id"
+]
 ENUMS_OVERRIDE = {
     "actor.external.country": "country",
     "actor.partner.country": "country",
@@ -110,9 +114,9 @@ ENUMS_OVERRIDE = {
     "victim.revenue.iso_currency_code": "iso_currency_code"
 }
 INFILE = "../verisc-merged.json"
-EXAMPLES = "../tests/"
 OUTFILE = "../VERIS_Standard_Excel.xlsx"
 LABELS = "../verisc-labels.json"
+MAX_EXAMPLES = 20
 
 
 ########### NOT USER EDITABLE BELOW THIS POINT #################
@@ -122,6 +126,8 @@ LABELS = "../verisc-labels.json"
 import argparse
 import json
 import xlsxwriter
+import glob
+import random
 
 ## SETUP
 __author__ = "Gabriel Bassett"
@@ -140,7 +146,9 @@ parser.add_argument('-v', '--verbose',
 parser.add_argument('--log', help='Location of log file', default=LOG)
 parser.add_argument('-s', '--schema', help='The merged schema file to generate the standard excel file based on.', default=INFILE)
 parser.add_argument('-l', '--labels', help='If desired, include a labels file and they will be included in the standard excel.', default=LABELS)
-parser.add_argument('-t', '--test_examples', help='A directory of veris test objects to turn back into examples.')
+parser.add_argument('-t', '--test_examples', help=  'A directory of veris json files to convert to examples. ' +
+                                                    '(VCDB is a good option for this, but note the VCDB schema is not the same as verisc.) ' +
+                                                    'If more than {0}, {0} will be randomly chosen.'.format(MAX_EXAMPLES), type=str, default=None)
 parser.add_argument('-o', '--output', help='The excel file name to write (including xlsx extension).', default=OUTFILE)
 args = parser.parse_args()
 
@@ -165,7 +173,9 @@ except:
 
 
 ## FUNCTION DEFINITION
-def recurse_schema(d, lbl, name, keys=set(), enums=dict()):
+def recurse_schema(d, lbl, name):
+    keys=set()
+    enums=dict()
     if d['type'] == "object":
         lbl = lbl + "properties."
         for k, v in d['properties'].iteritems():
@@ -184,7 +194,8 @@ def recurse_schema(d, lbl, name, keys=set(), enums=dict()):
     return keys, enums
 
 
-def recurse_labels(d, name, labels_list=dict()):
+def recurse_labels(d, name):
+    labels_list=dict()
     for k, v in d.iteritems():
         if type(v) == dict:
             labels_list.update(recurse_labels(v, name + "." + k))
@@ -196,6 +207,30 @@ def recurse_labels(d, name, labels_list=dict()):
     return labels_list
 
 
+def recurse_veris(o, name):
+    flat_dict=dict()
+    if type(o) == dict:
+        for k, v in o.iteritems():
+            flat_dict.update(recurse_veris(v, name + "." + k))
+    elif type(o) == list:
+        for item in o:
+            if type(item) == dict:
+                    if "amount" in item:
+                        enum = u"{0}:{1}".format(item["variety"], item['amount'])
+                    else:
+                        enum = u'{0}'.format(item["variety"])
+                    if name[1:] + ".variety" in flat_dict:
+                        flat_dict[name[1:] + ".variety"] = flat_dict[name[1:] + ".variety"] + ",{0}".format(enum)
+                    else:
+                        flat_dict[name[1:] + ".variety"] = u"{0}".format(enum)
+            else:
+                if name[1:] in flat_dict:
+                    flat_dict[name[1:]] = flat_dict[name[1:]] + u",{0}".format(item)
+                else:
+                    flat_dict[name[1:]] = u"{0}".format(item)
+    else:
+        flat_dict[name[1:]] = unicode(o)
+    return flat_dict
 
 ## MAIN LOOP EXECUTION
 def main():
@@ -272,12 +307,48 @@ def main():
 
 
     # Build examples from Test VERIS records.
-    try:
-        testfiles = glob.glob(args.test_examples.rstrip("/") + "/*.json")
-    except:
-        logging.info("No test files found.")
-    for filename in testfiles:
-        pass # TODO.  Load the files and create a table out of it.
+    if args.test_examples is not None:
+        try:
+            testfiles = glob.glob(args.test_examples.rstrip("/") + "/*.json")
+        except:
+            logging.info("No test files found.")
+        if len(testfiles) > MAX_EXAMPLES:
+            testfiles = random.sample(testfiles, MAX_EXAMPLES)
+        #logging.debug(testfiles)
+        # read in and flatten files
+        records = []
+        for filename in testfiles:
+            with open(filename, 'r') as filehandle:
+                j = json.load(filehandle)
+                #logging.debug(j)
+                record = recurse_veris(j, "")
+                #logging.debug(record)
+            records.append(record)
+        # get columns
+        columns = set(DEFAULT_COLUMNS)
+        for record in records:
+            #logging.debug(record.keys())
+            columns = columns.union(record.keys())
+        #logging.debug(columns)
+        # order columns
+        sorted_columns = []
+        for i in range(len(ORDER)):
+            sorted_columns = sorted_columns + sorted([k for k in columns if k.startswith(ORDER[i])])
+        sorted_columns = sorted_columns + sorted(list(set(columns).difference(sorted_columns)))
+        #logging.debug(sorted_columns)
+        # write header
+        row = 0
+        for i in range(len(sorted_columns)):
+            example.write(row, i, sorted_columns[i])
+        row += 1
+        #logging.debug(records)
+        for record in records:
+            for k, v in record.iteritems():
+                example.write(row, sorted_columns.index(k), v)
+            row += 1
+        # add a 'repeat' for the last 2
+        example.write(row-2, 0, 25) # 25 is just hardcoded number for example
+        example.write(row-1, 0, 5) # 5 is just hardcoded number for example
 
     workbook.close()
     logging.info('Ending main loop.')
