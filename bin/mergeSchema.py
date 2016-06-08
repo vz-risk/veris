@@ -75,6 +75,11 @@ def recurse_keys(d, lbl, keys=set()):
             keys.add(lbl)
     return keys
 
+def rchop(thestring, ending):
+  if thestring.endswith(ending):
+    return thestring[:-len(ending)]
+  return thestring
+
 
 if __name__ == '__main__':
     descriptionText = """This script merges the schema file and labels file.
@@ -132,7 +137,7 @@ if __name__ == '__main__':
             name = name + key[i] + "." + {"array": "items.properties.", "object": "properties."}.get(getattr(schema, name + key[i] + ".type"), "") # append properties or nothing
         logging.info("Updating key " + name)
         logging.debug("Adding keys {0}".format(getattr(labels, ".".join(key)).keys()))
-        setattr(schema, name[:-11] + "enum", getattr(labels, ".".join(key)).keys())  # the :-12 removes the trailing 'properties.'
+        setattr(schema, rchop(name, "properties.") + "enum", getattr(labels, ".".join(key)).keys())
     # write the merged schema
     with open(args.output, 'w') as outfile_handle:
         json.dump(schema, outfile_handle, sort_keys=True, indent=2)
