@@ -472,7 +472,19 @@
           "type": "array",
           "uniqueItems": true
         },
+        "accessibility": {
+          "type": "string"
+        },
+        "hosting": {
+          "type": "string"
+        },
         "cloud": {
+          "type": "string"
+        },
+        "management": {
+          "type": "string"
+        },
+        "ownership": {
           "type": "string"
         },
         "country": {
