@@ -132,7 +132,7 @@ if __name__ == '__main__':
             name = name + key[i] + "." + {"array": "items.properties.", "object": "properties."}[getattr(schema, name + key[i] + ".type")]
         logging.info("Updating key " + name)
         logging.debug("Adding keys {0}".format(getattr(labels, ".".join(key)).keys()))
-        setattr(schema, name + "enum", getattr(labels, ".".join(key)).keys())
+        setattr(schema, name[:-11] + "enum", getattr(labels, ".".join(key)).keys())  # the :-12 removes the trailing 'properties.'
     # write the merged schema
     with open(args.output, 'w') as outfile_handle:
         json.dump(schema, outfile_handle, sort_keys=True, indent=2)
