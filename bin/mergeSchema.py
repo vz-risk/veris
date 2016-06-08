@@ -126,10 +126,10 @@ if __name__ == '__main__':
     # Add the enumerations to the schema file
     for key in keys:
         name = "properties."
-        for i in range(len(key)-1):
+        for i in range(len(key)):
             # tacking 'properties.' on to the end of 'items.' rather than having separate logic for arrays and objects
             #   is kind of a hack, but I think it'll work for all intended uses for the script. - gdb 06/03/16
-            name = name + key[i] + "." + {"array": "items.properties.", "object": "properties."}[getattr(schema, name + key[i] + ".type")]
+            name = name + key[i] + "." + {"array": "items.properties.", "object": "properties."}.get(getattr(schema, name + key[i] + ".type"), "") # append properties or nothing
         logging.info("Updating key " + name)
         logging.debug("Adding keys {0}".format(getattr(labels, ".".join(key)).keys()))
         setattr(schema, name[:-11] + "enum", getattr(labels, ".".join(key)).keys())  # the :-12 removes the trailing 'properties.'

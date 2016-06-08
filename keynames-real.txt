@@ -57,12 +57,16 @@ actor.partner.motive
 actor.partner.notes
 actor.partner.region
 actor.unknown.notes
+asset.accessibility
 asset.assets.amount
 asset.assets.variety
 asset.cloud
 asset.country
 asset.governance
+asset.hosting
+asset.management
 asset.notes
+asset.ownership
 asset.total_amount
 attribute.availability.duration.unit
 attribute.availability.duration.value
