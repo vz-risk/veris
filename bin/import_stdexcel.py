@@ -9,6 +9,7 @@ import uuid
 import hashlib # convert incident_id to UUID
 import copy
 import logging
+#import multiprocessing # used for multiprocessing logger
 import re
 from datetime import datetime
 import ConfigParser
@@ -26,6 +27,12 @@ cfg = {
     'quiet': False,
     'repositories': ""
 }
+#logger = multiprocessing.get_logger()
+logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
+                 50: logging.CRITICAL, 40: logging.ERROR, 30: logging.WARNING, 20: logging.INFO, 10: logging.DEBUG, 0: logging.CRITICAL}
+FORMAT = '%(asctime)19s - %(processName)s {0} - %(levelname)s - %(message)s'
+logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d/%Y %H:%M:%S')
+logger = logging.getLogger()
 
 def reqSchema(v, base="", mykeylist={}):
     "given schema in v, returns a list of keys and it's type"
@@ -123,13 +130,13 @@ def openJSON(filename):
 def compareFromTo(label, fromArray, toArray):
     if isinstance(fromArray, basestring):
         if fromArray not in toArray:
-            logging.warning("%s: %s has invalid enumeration: \"%s\"", iid, label, fromArray)
+            logger.warning("%s: %s has invalid enumeration: \"%s\"", iid, label, fromArray)
     else:
         if len(fromArray) == 0:
-            logging.warning("%s: %s has no values in enumeration", iid, label)
+            logger.warning("%s: %s has no values in enumeration", iid, label)
         for item in fromArray:
             if item not in toArray:
-                logging.warning("%s: %s has invalid enumeration: \"%s\"", iid, label, item)
+                logger.warning("%s: %s has invalid enumeration: \"%s\"", iid, label, item)
 
 
 
@@ -137,21 +144,21 @@ def compareFromTo(label, fromArray, toArray):
 def compareCountryFromTo(label, fromArray, toArray):
     if isinstance(fromArray, basestring):
         if fromArray not in toArray:
-            logging.warning("%s: %s has invalid enumeration[1]: \"%s\"", iid, label, fromArray)
+            logger.warning("%s: %s has invalid enumeration[1]: \"%s\"", iid, label, fromArray)
     else:
         if len(fromArray) == 0:
-            logging.warning("%s: %s has no values in enumeration", iid, label)
+            logger.warning("%s: %s has no values in enumeration", iid, label)
         for idx, item in enumerate(fromArray):
             if item not in toArray:
                 if item == "USA":
-                    logging.warning("%s: %s was set to 'USA', converting to 'US'", iid, label)
+                    logger.warning("%s: %s was set to 'USA', converting to 'US'", iid, label)
                     fromArray[idx] = "US"
                 elif item == "UK":
-                    logging.warning("%s: %s was set to 'UK', converting to 'GB'", iid, label)
+                    logger.warning("%s: %s was set to 'UK', converting to 'GB'", iid, label)
                     fromArray[idx] = "GB"
                 else:
                     fromArray[idx] = "Unknown"
-                    logging.warning("%s: %s has invalid enumeration[2]: \"%s\", converting to 'Unknown'", iid, label, item)
+                    logger.warning("%s: %s has invalid enumeration[2]: \"%s\", converting to 'Unknown'", iid, label, item)
     if type(fromArray) == "str":
         fromArray = [ fromArray ]
     return(fromArray)
@@ -161,29 +168,29 @@ def compareCountryFromTo(label, fromArray, toArray):
 
 def checkIndustry(label, industry):
     if not industry.isdigit() and not industry in [ "31-33", "44-45", "48-49" ]:
-        logging.warning("%s: %s is not numbers: \"%s\"", iid, label, industry)
+        logger.warning("%s: %s is not numbers: \"%s\"", iid, label, industry)
         # retString.append("must be numbers or one of 31-33, 44-45, 48-49")
 
 def checkEnum(incident, schema, country_region, cfg=cfg):
     if 'security_incident' not in incident:
-        logging.warning("%s: security_incident not found (required)", iid)
+        logger.warning("%s: security_incident not found (required)", iid)
     else:
         compareFromTo('security_incident', incident['security_incident'], schema['security_incident'])
     if 'victim' not in incident:
-        logging.info("%s: auto-filled Unknown for victim section", iid)
+        logger.info("%s: auto-filled Unknown for victim section", iid)
         incident['victim'] = { 'employee_count' : 'Unknown', 'industry':"00", 'country': [ "Unknown" ], 'notes':'auto-filled Unknown' }
     victim = incident['victim']
     if 'employee_count' not in victim:
-        logging.info("%s: auto-filled Unknown for victim.employee_count", iid)
+        logger.info("%s: auto-filled Unknown for victim.employee_count", iid)
         victim['employee_count'] = "Unknown"
     compareFromTo('victim.employee_count', victim['employee_count'], schema['victim']['employee_count'])
     if 'industry' not in victim:
-        logging.info("%s: auto-filled Unknown for victim.industry", iid)
+        logger.info("%s: auto-filled Unknown for victim.industry", iid)
         victim['industry'] = "00"
     checkIndustry('victim.industry', victim['industry'])
 
     if 'country' not in victim:
-        logging.info("%s: auto-filled Unknown for victim.country", iid)
+        logger.info("%s: auto-filled Unknown for victim.country", iid)
         victim['country'] = [ "Unknown" ]
 
     # CC
@@ -191,39 +198,39 @@ def checkEnum(incident, schema, country_region, cfg=cfg):
 
 
     if 'actor' not in incident:
-        logging.info("%s: auto-filled Unknown for entire actor section", iid)
+        logger.info("%s: auto-filled Unknown for entire actor section", iid)
         incident['actor'] = { 'unknown' : { 'notes':'auto-filled Unknown' } }
     if 'external' in incident['actor']:
         actor = incident['actor']['external']
         if 'motive' not in actor:
-            logging.info("%s: auto-filled Unknown for actor.external.motive", iid)
+            logger.info("%s: auto-filled Unknown for actor.external.motive", iid)
             actor['motive'] = [ "Unknown" ]
         if len(actor['motive']) == 0:
-            logging.info("%s: auto-filled Unknown for empty array in actor.external.motive", iid)
+            logger.info("%s: auto-filled Unknown for empty array in actor.external.motive", iid)
             actor['motive'] = [ "Unknown" ]
         compareFromTo('actor.external.motive', actor['motive'], schema['actor']['external']['motive'])
         if 'variety' not in actor:
-            logging.info("%s: auto-filled Unknown for actor.external.variety", iid)
+            logger.info("%s: auto-filled Unknown for actor.external.variety", iid)
             actor['variety'] = [ "Unknown" ]
         if len(actor['variety']) == 0:
-            logging.info("%s: auto-filled Unknown for empty array in actor.external.variety", iid)
+            logger.info("%s: auto-filled Unknown for empty array in actor.external.variety", iid)
             actor['variety'] = [ "Unknown" ]
         compareFromTo('actor.external.variety', actor['variety'], schema['actor']['external']['variety'])
 
         if 'country' in actor:
             if len(actor['country']) == 0:
-                logging.info("%s: auto-filled Unknown for empty array in actor.external.country", iid)
+                logger.info("%s: auto-filled Unknown for empty array in actor.external.country", iid)
                 actor['country'] = [ "Unknown" ]
             #else:
                 # only add region if it doesn't exist at all in the incident.
                 # if 'external_region' not in incident['plus']:
-                #     logging.info("%s: auto-filled plus.external_region from the actor.external.country", iid)
+                #     logger.info("%s: auto-filled plus.external_region from the actor.external.country", iid)
                 #     incident['plus']['external_region'] = [ country_region[c] for c in actor['country'] ]
                 # elif len(incident['plus']['external_region']) < len(actor['country']):
-                #     logging.info("%s: auto-filled plus.external_region from the actor.external.country (len region < actor.country", iid)
+                #     logger.info("%s: auto-filled plus.external_region from the actor.external.country (len region < actor.country", iid)
                 #     incident['plus']['external_region'] = [ country_region[c] for c in actor['country'] ]
         else:
-            logging.info("%s: auto-filled Unknown for actor.external.country", iid)
+            logger.info("%s: auto-filled Unknown for actor.external.country", iid)
             actor['country'] = [ "Unknown" ]
 
         if 'plus' not in incident:
@@ -237,33 +244,33 @@ def checkEnum(incident, schema, country_region, cfg=cfg):
     if 'internal' in incident['actor']:
         actor = incident['actor']['internal']
         if 'motive' not in actor:
-            logging.info("%s: auto-filled Unknown for actor.internal.motive", iid)
+            logger.info("%s: auto-filled Unknown for actor.internal.motive", iid)
             actor['motive'] = [ "Unknown" ]
         if len(actor['motive']) == 0:
-            logging.info("%s: auto-filled Unknown for empty array in actor.internal.motive", iid)
+            logger.info("%s: auto-filled Unknown for empty array in actor.internal.motive", iid)
             actor['motive'] = [ "Unknown" ]
         compareFromTo('actor.internal.motive', actor['motive'], schema['actor']['internal']['motive'])
         if 'variety' not in actor:
-            logging.info("%s: auto-filled Unknown for actor.internal.variety", iid)
+            logger.info("%s: auto-filled Unknown for actor.internal.variety", iid)
             actor['variety'] = [ "Unknown" ]
         if len(actor['variety']) == 0:
-            logging.info("%s: auto-filled Unknown for empty array in actor.internal.variety", iid)
+            logger.info("%s: auto-filled Unknown for empty array in actor.internal.variety", iid)
             actor['variety'] = [ "Unknown" ]
         compareFromTo('actor.internal.variety', actor['variety'], schema['actor']['internal']['variety'])
     if 'partner' in incident['actor']:
         actor = incident['actor']['partner']
         if 'motive' not in actor:
-            logging.info("%s: auto-filled Unknown for actor.partner.motive", iid)
+            logger.info("%s: auto-filled Unknown for actor.partner.motive", iid)
             actor['motive'] = [ "Unknown" ]
         if len(actor['motive']) == 0:
-            logging.info("%s: auto-filled Unknown for empty array in actor.partner.motive", iid)
+            logger.info("%s: auto-filled Unknown for empty array in actor.partner.motive", iid)
             actor['motive'] = [ "Unknown" ]
         compareFromTo('actor.partner.motive', actor['motive'], schema['actor']['partner']['motive'])
         if 'country' not in actor:
-            logging.info("%s: auto-filled Unknown for actor.partner.country", iid)
+            logger.info("%s: auto-filled Unknown for actor.partner.country", iid)
             actor['country'] = [ "Unknown" ]
         if len(actor['country']) == 0:
-            logging.info("%s: auto-filled Unknown for empty array in actor.partner.country", iid)
+            logger.info("%s: auto-filled Unknown for empty array in actor.partner.country", iid)
             actor['country'] = [ "Unknown" ]
         # compareFromTo('actor.partner.variety', actor['variety'], schema['actor']['partner']['country'])
 
@@ -273,42 +280,42 @@ def checkEnum(incident, schema, country_region, cfg=cfg):
 
 
         if 'industry' not in actor:
-            logging.info("%s: auto-filled Unknown for actor.partner.industry", iid)
+            logger.info("%s: auto-filled Unknown for actor.partner.industry", iid)
             actor['industry'] = "00"
         checkIndustry('actor.partner.industry', actor['industry'])
 
     if 'action' not in incident:
-        logging.info("%s: auto-filled Unknown for entire action section", iid)
+        logger.info("%s: auto-filled Unknown for entire action section", iid)
         incident['action'] = { "unknown" : { "notes" : "auto-filled Unknown" } }
 
     for action in ['malware', 'hacking', 'social', 'misuse', 'physical', 'error']:
         if action in incident['action']:
             for method in ['variety', 'vector']:
                 if method not in incident['action'][action]:
-                    logging.info("%s: auto-filled Unknown for action.%s.%s", iid, action, method)
+                    logger.info("%s: auto-filled Unknown for action.%s.%s", iid, action, method)
                     incident['action'][action][method] = [ 'Unknown' ]
                 if len(incident['action'][action][method]) == 0:
-                    logging.info("%s: auto-filled Unknown for empty array in action.%s.%s", iid, action, method)
+                    logger.info("%s: auto-filled Unknown for empty array in action.%s.%s", iid, action, method)
                     incident['action'][action][method] = [ 'Unknown' ]
                 astring = 'action.' + action + '.' + method
                 compareFromTo(astring, incident['action'][action][method], schema['action'][action][method])
             if action == "physical":
                 method = "vector"
                 if method not in incident['action'][action]:
-                    logging.info("%s: auto-filled Unknown for action.%s.%s", iid, action, method)
+                    logger.info("%s: auto-filled Unknown for action.%s.%s", iid, action, method)
                     incident['action'][action][method] = [ 'Unknown' ]
                 if len(incident['action'][action][method]) == 0:
-                    logging.info("%s: auto-filled Unknown for empty array in action.%s.%s", iid, action, method)
+                    logger.info("%s: auto-filled Unknown for empty array in action.%s.%s", iid, action, method)
                     incident['action'][action][method] = [ 'Unknown' ]
                 astring = 'action.' + action + '.' + method
                 compareFromTo(astring, incident['action'][action][method], schema['action'][action][method])
             if action == "social":
                 method = "target"
                 if method not in incident['action'][action]:
-                    logging.info("%s: auto-filled Unknown for action.%s.%s", iid, action, method)
+                    logger.info("%s: auto-filled Unknown for action.%s.%s", iid, action, method)
                     incident['action'][action][method] = [ 'Unknown' ]
                 if len(incident['action'][action][method]) == 0:
-                    logging.info("%s: auto-filled Unknown for empty array in action.%s.%s", iid, action, method)
+                    logger.info("%s: auto-filled Unknown for empty array in action.%s.%s", iid, action, method)
                     incident['action'][action][method] = [ 'Unknown' ]
                 astring = 'action.' + action + '.' + method
                 compareFromTo(astring, incident['action'][action][method], schema['action'][action][method])
@@ -316,23 +323,23 @@ def checkEnum(incident, schema, country_region, cfg=cfg):
     if action in incident['action']:
         method = "variety"
         if method not in incident['action'][action]:
-            logging.info("%s: auto-filled Unknown for action.%s.%s", iid, action, method)
+            logger.info("%s: auto-filled Unknown for action.%s.%s", iid, action, method)
             incident['action'][action][method] = [ 'Unknown' ]
         if len(incident['action'][action][method]) == 0:
-            logging.info("%s: auto-filled Unknown for empty array in action.%s.%s", iid, action, method)
+            logger.info("%s: auto-filled Unknown for empty array in action.%s.%s", iid, action, method)
             incident['action'][action][method] = [ 'Unknown' ]
         astring = 'action.' + action + '.' + method
         compareFromTo(astring, incident['action'][action][method], schema['action'][action][method])
 
     if 'asset' not in incident:
-        logging.info("%s: auto-filled Unknown for entire asset section", iid)
+        logger.info("%s: auto-filled Unknown for entire asset section", iid)
         incident['asset'] = { "assets" : [ { "variety" : "Unknown" } ] }
     if 'assets' not in incident['asset']:
-        logging.info("%s: auto-filled Unknown for asset.asseets section", iid)
+        logger.info("%s: auto-filled Unknown for asset.asseets section", iid)
         incident['asset']['assets'] = [ { "variety" : "Unknown" } ]
     for index, asset in enumerate(incident['asset']['assets']):
         if 'variety' not in asset:
-            logging.info("%s: auto-filled Unknown for asset.asseets.variety ", iid)
+            logger.info("%s: auto-filled Unknown for asset.asseets.variety ", iid)
             asset['variety'] = "Unknown"
         compareFromTo('asset.assets.' + str(index) + '.variety', asset['variety'], schema['asset']['assets']['variety'])
     for method in ["cloud", "accessibility", "ownership", "management", "hosting"]:
@@ -340,20 +347,20 @@ def checkEnum(incident, schema, country_region, cfg=cfg):
             compareFromTo('asset.'+method, incident['asset'][method], schema['asset'][method])
 
     if 'attribute' not in incident:
-        logging.info("%s: no attribute section is found (not required)", iid)
+        logger.info("%s: no attribute section is found (not required)", iid)
     else:
         if 'confidentiality' in incident['attribute']:
             if 'data' not in incident['attribute']['confidentiality']:
-                logging.info("%s: auto-filled Unknown for attribute.confidentiality.data.variety ", iid)
+                logger.info("%s: auto-filled Unknown for attribute.confidentiality.data.variety ", iid)
                 incident['attribute']['confidentiality']['data'] = [ { 'variety' : 'Unknown' } ]
             if len(incident['attribute']['confidentiality']['data']) == 0:
-                logging.info("%s: auto-filled Unknown for empty attribute.confidentiality.data.variety ", iid)
+                logger.info("%s: auto-filled Unknown for empty attribute.confidentiality.data.variety ", iid)
                 incident['attribute']['confidentiality']['data'] = [ { 'variety' : 'Unknown' } ]
             for index, datatype in enumerate(incident['attribute']['confidentiality']['data']):
                 astring = 'attribute.confidentiality.data.' + str(index) + '.variety'
                 compareFromTo(astring, datatype['variety'], schema['attribute']['confidentiality']['data']['variety'])
             if 'data_disclosure' not in incident['attribute']['confidentiality']:
-                logging.warning("%s: data_disclosure not present (required if confidentiality present)", iid)
+                logger.warning("%s: data_disclosure not present (required if confidentiality present)", iid)
             else:
                 astring = 'attribute.confidentiality.data_disclosure'
                 compareFromTo(astring, incident['attribute']['confidentiality']['data_disclosure'], schema['attribute']['confidentiality']['data_disclosure'])
@@ -363,26 +370,26 @@ def checkEnum(incident, schema, country_region, cfg=cfg):
         for attribute in ['integrity', 'availability']:
             if attribute in incident['attribute']:
                 if 'variety' not in incident['attribute'][attribute]:
-                    logging.info("%s: auto-filled Unknown for attribute.%s.variety", iid, attribute)
+                    logger.info("%s: auto-filled Unknown for attribute.%s.variety", iid, attribute)
                     incident['attribute'][attribute]['variety'] = [ 'Unknown' ]
                 if len(incident['attribute'][attribute]['variety']) == 0:
-                    logging.info("%s: auto-filled Unknown for empty attribute.%s.variety", iid, attribute)
+                    logger.info("%s: auto-filled Unknown for empty attribute.%s.variety", iid, attribute)
                     incident['attribute'][attribute]['variety'] = [ 'Unknown' ]
                 astring = 'attribute.' + attribute + '.variety'
                 compareFromTo(astring, incident['attribute'][attribute]['variety'], schema['attribute'][attribute]['variety'])
                 # only for availability
                 if 'duration' in incident['attribute'][attribute]:
                     if 'unit' not in incident['attribute'][attribute]['duration']:
-                        logging.info("%s: auto-filled Unknown for attribute.%s.duration.unit", iid, attribute)
+                        logger.info("%s: auto-filled Unknown for attribute.%s.duration.unit", iid, attribute)
                         incident['attribute'][attribute]['duration']['unit'] = "unit"
                     astring = 'attribute.' + attribute + '.duration.unit'
                     compareFromTo(astring, incident['attribute'][attribute]['duration']['unit'], schema['timeline']['unit'])
 
     if 'timeline' not in incident: 
-        logging.info("{0}: timeline section missing, auto-fillng in {1}".format(iid, cfg["year"]-1))
+        logger.info("{0}: timeline section missing, auto-fillng in {1}".format(iid, cfg["year"]-1))
         incident['timeline'] = { 'incident' : { 'year' : cfg["year"]-1 } }
     if 'incident' not in incident['timeline']:
-        logging.info("{0}: timeline.incident section missing, auto-fillng in {1}".format(iid, cfg["year"]-1))
+        logger.info("{0}: timeline.incident section missing, auto-fillng in {1}".format(iid, cfg["year"]-1))
         incident['timeline']['incident'] = { 'year' : cfg["year"]-1 }
         # assume that the schema validator will verify number
     for timeline in ['compromise', 'exfiltration', 'discovery', 'containment']:
@@ -392,7 +399,7 @@ def checkEnum(incident, schema, country_region, cfg=cfg):
                 compareFromTo(astring, incident['timeline'][timeline]['unit'], schema['timeline']['unit'])
 
     if 'discovery_method' not in incident:
-        logging.info("%s: auto-filled Unknown for discovery_method", iid)
+        logger.info("%s: auto-filled Unknown for discovery_method", iid)
         incident['discovery_method'] = "Unknown"
     compareFromTo('discovery_method', incident['discovery_method'], schema['discovery_method'])
     if incident.has_key('cost_corrective_action'):
@@ -423,23 +430,23 @@ def checkEnum(incident, schema, country_region, cfg=cfg):
             astring = 'plus.' + method
             compareFromTo(astring, incident['plus'][method], schema['plus'][method])
     if 'dbir_year' not in incident['plus'] and cfg['vcdb'] != True:
-        logging.warning("{0}: missing plus.dbir_year, auto-filled {1}".format(iid, cfg["year"]))
+        logger.warning("{0}: missing plus.dbir_year, auto-filled {1}".format(iid, cfg["year"]))
         incident['plus']['dbir_year'] = cfg["year"]
     if ('source_id' not in incident or cfg["force_analyst"]) and 'source' in cfg:
         incident['source_id'] = cfg['source']
     mydate = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     if 'created' not in incident['plus']:
-        logging.info("%s: auto-filling now() for plus.created", iid)
+        logger.info("%s: auto-filling now() for plus.created", iid)
         incident['plus']['created'] = mydate
     if 'modified' not in incident['plus']:
-        logging.info("%s: auto-filling now() for plus.modified", iid)
+        logger.info("%s: auto-filling now() for plus.modified", iid)
         incident['plus']['modified'] = mydate
     if 'master_id' not in incident['plus']:
         if 'incident_id' in incident:
             master_id = incident['incident_id']
         else:
             master_id = "notblank"
-        logging.info("%s: auto-filling plus.master_id to %s", iid, master_id)
+        logger.info("%s: auto-filling plus.master_id to %s", iid, master_id)
         incident['plus']['master_id'] = master_id
     return incident
 
@@ -452,7 +459,7 @@ def parseComplex(field, inline, labels):
         out = {}
         for index, s in enumerate(entry):
             if index > len(labels):
-                logging.warning("%s: failed to parse complex field %s, more entries seperated by colons than labels, skipping", iid, field)
+                logger.warning("%s: failed to parse complex field %s, more entries seperated by colons than labels, skipping", iid, field)
                 return
             elif len(s):
                 out[labels[index]] = s
@@ -663,14 +670,26 @@ def getCountryCode(countryfile):  # Removed default of 'all.json' - GDB
 # jscehma = openJSON("verisvz.json")
 
 
-def main(cfg, logger):
+def main(cfg):
+    formatter = logging.Formatter(FORMAT.format(" - " + "/".join(cfg["input"].split("/")[-2:])))
+    logger = logging.getLogger()
+    ch = logging.StreamHandler()
+    ch.setLevel(logging_remap[cfg["log_level"]])
+    ch.setFormatter(formatter)
+    logger.addHandler(ch)
+    if "log_file" in cfg and cfg["log_file"] is not None:
+        fh = logging.FileHandler(cfg["log_file"])
+        fh.setLevel(logging_remap[cfg["log_level"]])
+        fh.setFormatter(formatter)
+        logger.addHandler(fh)
+
     try:
         # Added to file read to catch multiple columns with same name which causes second column to overwrite first. - GDB
         file_handle = open(cfg["input"], 'rU')
         csv_reader = csv.reader(file_handle)
         l = csv_reader.next()
         if len(l) > len(set(l)):
-            logging.error(l)
+            logger.error(l)
             raise KeyError("Input file has multiple columns of the same name.  Please create unique columns and rerun.")
             file_handle.close()
             exit(1)
@@ -679,18 +698,18 @@ def main(cfg, logger):
             infile = csv.DictReader(file_handle)
 #        infile = csv.DictReader(open(args.filename,'rU'))  # Old File Read - gdb
     except IOError:
-        logging.critical("ERROR: Input file not found.")
+        logger.critical("ERROR: Input file not found.")
         exit(1)
 
     try:
         jschema = openJSON(cfg["schemafile"])
     except IOError:
-        logging.critical("ERROR: Schema file not found.")
+        logger.critical("ERROR: Schema file not found.")
         exit(1)
     try:
         jenums = openJSON(cfg["enumfile"])
     except IOError:
-        logging.critical("ERROR: Enumeration file not found.")
+        logger.critical("ERROR: Enumeration file not found.")
         exit(1)
 
     reqfields = reqSchema(jschema)
@@ -699,11 +718,11 @@ def main(cfg, logger):
     for f in infile.fieldnames:
         if f not in sfields:
             if f != "repeat":
-                logging.warning("column will not be used: %s. May be inaccurate for 'plus' columns.", f)
+                logger.warning("column will not be used: %s. May be inaccurate for 'plus' columns.", f)
     if 'plus.analyst' not in infile.fieldnames:
-        logging.warning("the optional plus.analyst field is not found in the source document")
+        logger.warning("the optional plus.analyst field is not found in the source document")
     if 'source_id' not in infile.fieldnames:
-        logging.warning("the optional source_id field is not found in the source document")
+        logger.warning("the optional source_id field is not found in the source document")
 
     row = 0
     for incident in infile:
@@ -712,26 +731,26 @@ def main(cfg, logger):
         try:
             incident = { x:incident[x].strip() for x in incident }
         except AttributeError as e:
-            logging.error("Error removing white space from feature {0} on row {1}.".format(x, row))
+            logger.error("Error removing white space from feature {0} on row {1}.".format(x, row))
             raise e
 
         if 'incident_id' in incident:
             iid = incident['incident_id']
         else:
             iid = "srcrow_" + str(row)
-        # logging.warning("This includes the row number")
+        # logger.warning("This includes the row number")
         repeat = 1
-        logging.info("-----> parsing incident %s", iid)
+        logger.info("-----> parsing incident %s", iid)
         if incident.has_key('repeat'):
             if incident['repeat'].lower()=="ignore" or incident['repeat'] == "0":
-                logging.info("Skipping row %s", iid)
+                logger.info("Skipping row %s", iid)
                 continue
             repeat = isnum(incident['repeat'])
             if not repeat:
                 repeat = 1
         if incident.has_key('security_incident'):
             if incident['security_incident'].lower()=="no":
-                logging.info("Skipping row %s", iid)
+                logger.info("Skipping row %s", iid)
                 continue
         outjson = convertCSV(incident, cfg)
         country_region = getCountryCode(cfg["countryfile"])
@@ -749,12 +768,13 @@ def main(cfg, logger):
             # outjson['plus']['master_id'] = outjson['incident_id']  ###
             repeat -= 1
             if repeat > 0:
-                logging.info("Repeating %s more times on %s", repeat, iid)
+                logger.info("Repeating %s more times on %s", repeat, iid)
 
     file_handle.close()
 
 iid = ""  # setting global
 if __name__ == '__main__':
+
     parser = argparse.ArgumentParser(description="Convert Standard Excel (csv) format to VERIS 1.3 schema-compatible JSON files")
     parser.add_argument("-i", "--input", help="The csv file containing the data")
     parser.add_argument("-l","--log_level",choices=["critical","warning","info","debug"], help="Minimum logging level to display")
@@ -774,8 +794,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     args = {k:v for k,v in vars(args).iteritems() if v is not None}
 
-    logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG}
-    logging.basicConfig(level=logging_remap[args['log_level']])
+    logger.setLevel(logging_remap[args['log_level']])
 
     # Parse the config file
     try:
@@ -796,9 +815,9 @@ if __name__ == '__main__':
         else:
             cfg["year"] = int(datetime.now().year)
         cfg["vcdb"] = {True:True, False:False, "false":False, "true":True}[cfg["vcdb"].lower()]
-        logging.debug("config import succeeded.")
+        logger.debug("config import succeeded.")
     except Exception as e:
-        logging.warning("config import failed.")
+        logger.warning("config import failed.")
         #raise e
         pass
 
@@ -812,25 +831,26 @@ if __name__ == '__main__':
     if 'source' not in cfg or not cfg['source']:
         cfg['source'] = cfg['input'].split("/")[-2].lower()
         cfg['source'] = ''.join(e for e in cfg['source'] if e.isalnum())
-        logging.warning("Source not defined.  Using the directory of the input file {0} instead.".format(cfg['source']))
+        logger.warning("Source not defined.  Using the directory of the input file {0} instead.".format(cfg['source']))
 
     # Quick test to replace any placeholders accidentally left in the config
     for k, v in cfg.iteritems():
         if k not in  ["repositories", "source"] and type(v) == str:
             cfg[k] = v.format(repositories=cfg["repositories"], partner_name=cfg["source"])
 
-    logging.basicConfig(level=logging_remap[cfg["log_level"]],
-          format='%(asctime)19s %(levelname)8s %(message)s', datefmt='%m/%d/%Y %H:%M:%S')
+    logger.setLevel(logging_remap[cfg["log_level"]])
     if cfg["log_file"] is not None:
-        logging.FileHandler(cfg["log_file"])
+        fh = FileHandler(cfg["log_file"])
+        fh.setLevel(logging_remap[cfg["log_level"]])
+        logger.addHandler(fh)
     # format='%(asctime)s %(levelname)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
-    logging.debug(args)
-    logging.debug(cfg)
+    logger.debug(args)
+    logger.debug(cfg)
 
     # call the main loop which yields json incidents
-    logging.info("Output files will be written to %s",cfg["output"])
-    for iid, incident_json in main(cfg, logging):
+    logger.info("Output files will be written to %s",cfg["output"])
+    for iid, incident_json in main(cfg):
         # write the json to a file
         if cfg["output"].endswith("/"):
             dest = cfg["output"] + incident_json['plus']['master_id'] + '.json'
@@ -838,7 +858,7 @@ if __name__ == '__main__':
         else:
             dest = cfg["output"] + '/' + incident_json['plus']['master_id'] + '.json'
             # dest = args.output + '/' + outjson['incident_id'] + '.json'
-        logging.info("%s: writing file to %s", iid, dest)
+        logger.info("%s: writing file to %s", iid, dest)
         try:
             fwrite = open(dest, 'w')
             fwrite.write(json.dumps(incident_json, indent=2, sort_keys=True))
