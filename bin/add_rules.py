@@ -42,7 +42,9 @@ __author__ = "Gabriel Bassett"
 
 ## FUNCTION DEFINITION
 # stdexcel
-def addRules(iid, incident, inRow):
+def addRules(incident):
+    iid = incident["incident_id"]
+    inRow = incident["plus"]["row_number"]
     # Takes in an incident and applies rules for internal consistency and consistency with previous incidents
 
 
@@ -207,61 +209,68 @@ def addRules(iid, incident, inRow):
 
     # if the secondary victim has no additional information then add a note
     # about that.
-    if 'secondary' in inIncident['victim'] and len(inIncident['victim'].get('secondary', {})) == 0:
-      inIncident['victim']['secondary']['notes'] = "No additional information."
+    if 'secondary' in incident['victim'] and len(incident['victim'].get('secondary', {})) == 0:
+      incident['victim']['secondary']['notes'] = "No additional information."
       logging.info("Secondary victim, but no additional info so adding victim.secondary.notes to document it.")
 
     # If the hacking vector was "web application", add S - Web Application to "asset.assets"
-    if 'hacking' in inIncident['action'].keys() and "Web application" in inIncident['action']['hacking']['vector']:
-        if 'asset' not in inIncident.keys():
-            logging.info("Added asset object to response %s since it wasn't there.",inRow)
-            inIncident['asset'] = {}
-        if 'assets' not in inIncident['asset'].keys():
-            logging.info("Added asset.assets list to response %s since it wasn't there.",inRow)
-            inIncident['asset']['assets'] = []
-        if "S - Web application" not in [d.get("variety", "") for d in inIncident['asset']['assets']]:
-            logging.info("Added asset.assets.variety.S - Web application to action.hacking.vector.Web application incident for response {0}".format(inRow))
+    if 'hacking' in incident['action'].keys() and "Web application" in incident['action']['hacking']['vector']:
+        if 'asset' not in incident.keys():
+            logging.info("Added asset object to response %s since it wasn't there.",iid)
+            incident['asset'] = {}
+        if 'assets' not in incident['asset'].keys():
+            logging.info("Added asset.assets list to response %s since it wasn't there.",iid)
+            incident['asset']['assets'] = []
+        if "S - Web application" not in [d.get("variety", "") for d in incident['asset']['assets']]:
+            logging.info("Added asset.assets.variety.S - Web application to action.hacking.vector.Web application incident for response {0}".format(iid))
 # sg_to_vcdb
-def makeValid(iid, inIncident,inRow):
+def makeValid(incident):
+    iid = incident["incident_id"]
+    inRow = incident["plus"]["row_number"]
 
     # Unknown victims have NAICS code of "000", not just one zero
-    if incident['victim']['industry'].lower() in ['0','unknown']:
+    if incident['victim']['industry'].lower().strip("0") in ['0','unknown', ""]:
         incident['victim']['industry'] = "000"
+        logging.info("replacing unknown victim.industry with '000' in {0}".format(iid))
 
     # KDT the script sometimes produces incidents with an asset array that has
     # no entries. I'm too lazy to figure out where that happens so I'll just
     # check for it here and fix it.
     if len(incident['asset']['assets']) < 1:
         incident['asset']['assets'].append({'variety':'Unknown'})
+        logging.info("No asset varieties listed in {0} so adding asset.assets.variety.Unknown".format(iid))
 
     # make sure variety and vector are in actions and of correct length
     if 'action' not in incident:
         incident['action'] = { "Unknown" : {} }
+        logging.info("No action so adding action.Unknown to {0}".format(iid))
     for action in ['hacking', 'malware', 'social', 'environmental', 'physical', 'misuse', 'error']:
-        if action in inIncident['action'].keys():
-            if 'variety' not in inIncident['action'][action].keys():
-                inIncident['action'][action]['variety'] = []
-            if len(inIncident['action'][action]['variety']) == 0:
-                logging.info("Adding {0} variety to response {1} because it wasn't in there.".format(action,inRow))
-                inIncident['action'][action]['variety'].append("Unknown")
-            if action != 'environmental' and 'vector' not in inIncident['action'][action].keys():
-                inIncident['action'][action]['vector'] = []
-            if  action != 'environmental' and len(inIncident['action'][action]['vector']) == 0:
-                logging.info("Adding {0} vector to response {1} because it wasn't in there.".format(action,inRow))
-                inIncident['action'][action]['vector'].append("Unknown") 
+        if action in incident['action'].keys():
+            if 'variety' not in incident['action'][action].keys():
+                incident['action'][action]['variety'] = []
+            if len(incident['action'][action]['variety']) == 0:
+                logging.info("Adding {0} variety to response {1} because it wasn't in there.".format(action,iid))
+                incident['action'][action]['variety'].append("Unknown")
+            if action != 'environmental' and 'vector' not in incident['action'][action].keys():
+                incident['action'][action]['vector'] = []
+            if  action != 'environmental' and len(incident['action'][action]['vector']) == 0:
+                logging.info("Adding {0} vector to response {1} because it wasn't in there.".format(action,iid))
+                incident['action'][action]['vector'].append("Unknown") 
 
     # if confidentiality then there should be something in the data array
-    if 'confidentiality' in inIncident['attribute']:
-        if 'data' not in inIncident['attribute']['confidentiality']:
-            inIncident['attribute']['confidentiality']['data'] = []
-        if len(inIncident['attribute']['confidentiality']['data']) == 0:
-            inIncident['attribute']['confidentiality']['data'].append({'variety':'Unknown'})
+    if 'confidentiality' in incident['attribute']:
+        if 'data' not in incident['attribute']['confidentiality']:
+            incident['attribute']['confidentiality']['data'] = []
+        if len(incident['attribute']['confidentiality']['data']) == 0:
+            logging.info("Adding attribute.confidentiality.data.variety:Unknown to {0} because attribute.confidentiality exists without data variety.".format(iid))
+            incident['attribute']['confidentiality']['data'].append({'variety':'Unknown'})
 
     # if confidentiality was not affected then it shouldn't be in the plus
     # section either. Usually just has credit_monitoring unknown anyway.
-    if 'confidentiality' not in inIncident['attribute'] and \
-      inIncident['plus'].get('attribute', {}).keys() == ['confidentiality']:
-        inIncident['plus'].pop('attribute')
+    if 'confidentiality' not in incident['attribute'] and \
+      incident['plus'].get('attribute', {}).keys() == ['confidentiality']:
+        logging.info("attribute.confidentiality not in record so removing attribute from plus for record {0}.".format(iid))
+        incident['plus'].pop('attribute')
 
 
 ## MAIN LOOP EXECUTION

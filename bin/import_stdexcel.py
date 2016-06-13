@@ -734,11 +734,13 @@ def main(cfg):
             logger.error("Error removing white space from feature {0} on row {1}.".format(x, row))
             raise e
 
-        if 'incident_id' in incident:
-            iid = incident['incident_id']
-        else:
-            iid = "srcrow_" + str(row)
+        #if 'incident_id' in incident:
+        #    iid = incident['incident_id']
+        #else:
+        #    iid = "srcrow_" + str(row)
         # logger.warning("This includes the row number")
+        iid = incident['incident_id']  # there should always be an incident ID so commented out above. - gdb 061316
+
         repeat = 1
         logger.info("-----> parsing incident %s", iid)
         if incident.has_key('repeat'):
