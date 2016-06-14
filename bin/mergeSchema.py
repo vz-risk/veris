@@ -54,7 +54,7 @@ class objdict(dict):
         else:
             del o[name[0]]
 
-def recurse_schema(d, lbl, name, keys=set()):
+def keynames(d, lbl, name, keys=set()):
     if d['type'] == "object":
         lbl = lbl + "properties."
         for k, v in d['properties'].iteritems():
@@ -75,10 +75,51 @@ def recurse_keys(d, lbl, keys=set()):
             keys.add(lbl)
     return keys
 
+
 def rchop(thestring, ending):
   if thestring.endswith(ending):
     return thestring[:-len(ending)]
   return thestring
+
+
+def merge(schema, labels):
+    # get the keys to join
+    logging.debug(labels.keys())
+    keys = recurse_keys(labels, ())
+    logging.debug(keys)
+
+    # convert to objects to help with parsing
+    schema = objdict(schema)
+    labels = objdict(labels)
+
+    # Add the enumerations to the schema file
+    for key in keys:
+        name = "properties."
+        for i in range(len(key)):
+            # tacking 'properties.' on to the end of 'items.' rather than having separate logic for arrays and objects
+            #   is kind of a hack, but I think it'll work for all intended uses for the script. - gdb 06/03/16
+            name = name + key[i] + "." + {"array": "items.properties.", "object": "properties."}.get(getattr(schema, name + key[i] + ".type"), "") # append properties or nothing
+        logging.info("Updating key " + name)
+        try:
+            logging.debug("Adding keys {0}".format(getattr(labels, ".".join(key)).keys()))
+        except:
+            logging.debug(key)
+            raise
+        setattr(schema, rchop(name, "properties.") + "enum", getattr(labels, ".".join(key)).keys())
+
+    return schema
+
+def enums(schema, labels):
+    # convert to objects to help with parsing
+    schema = objdict(schema)
+    labels = objdict(labels)
+    keys = recurse_keys(labels, ())
+    if args.enum is not None:
+        veris_enum = copy.deepcopy(labels)
+        for key in keys:
+            setattr(veris_enum, ".".join(key), getattr(labels, ".".join(key)).keys())
+    return veris_enum
+
 
 
 if __name__ == '__main__':
@@ -106,38 +147,23 @@ if __name__ == '__main__':
         labels = json.load(filehandle)
     #schema = json.loads(open(args.schema).read())
     #labels = json.loads(open(args.labels).read())
-    # get the keys to join
-    logging.debug(labels.keys())
-    keys = recurse_keys(labels, ())
-    logging.debug(keys)
+
+     # write the merged schema
+    merged = merge(schema, labels)
+    with open(args.output, 'w') as outfile_handle:
+        json.dump(merged, outfile_handle, sort_keys=True, indent=2)
+
     # write the keys out
     if args.keynames is not None:
-        keynames = recurse_schema(schema, "", "")
+        keynames = keynames(schema, "", "")
         keynames = list(keynames)
         keynames.sort()
         with open(args.keynames, 'w') as keynames_handle:
             for keyname in keynames:
                 keynames_handle.write(keyname + "\n")
-    # convert to objects to help with parsing
-    schema = objdict(schema)
-    labels = objdict(labels)
+
     # write the enums out
     if args.enum is not None:
-        veris_enum = copy.deepcopy(labels)
-        for key in keys:
-            setattr(veris_enum, ".".join(key), getattr(labels, ".".join(key)).keys())
+        veris_enum = enums(schema, labels)
         with open(args.enum, 'w') as enum_handle:
             json.dump(veris_enum, enum_handle, sort_keys=True, indent=2)
-    # Add the enumerations to the schema file
-    for key in keys:
-        name = "properties."
-        for i in range(len(key)):
-            # tacking 'properties.' on to the end of 'items.' rather than having separate logic for arrays and objects
-            #   is kind of a hack, but I think it'll work for all intended uses for the script. - gdb 06/03/16
-            name = name + key[i] + "." + {"array": "items.properties.", "object": "properties."}.get(getattr(schema, name + key[i] + ".type"), "") # append properties or nothing
-        logging.info("Updating key " + name)
-        logging.debug("Adding keys {0}".format(getattr(labels, ".".join(key)).keys()))
-        setattr(schema, rchop(name, "properties.") + "enum", getattr(labels, ".".join(key)).keys())
-    # write the merged schema
-    with open(args.output, 'w') as outfile_handle:
-        json.dump(schema, outfile_handle, sort_keys=True, indent=2)

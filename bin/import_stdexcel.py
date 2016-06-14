@@ -671,7 +671,7 @@ def getCountryCode(countryfile):  # Removed default of 'all.json' - GDB
 
 
 def main(cfg):
-    formatter = logging.Formatter(FORMAT.format(" - " + "/".join(cfg["input"].split("/")[-2:])))
+    formatter = logging.Formatter(FORMAT.format("- " + "/".join(cfg["input"].split("/")[-2:])))
     logger = logging.getLogger()
     ch = logging.StreamHandler()
     ch.setLevel(logging_remap[cfg["log_level"]])

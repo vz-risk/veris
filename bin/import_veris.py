@@ -34,6 +34,7 @@ import ConfigParser
 import imp
 import os
 import json
+from jsonschema import ValidationError, Draft4Validator
 
 ## SETUP
 __author__ = "Gabriel Bassett"
@@ -83,6 +84,7 @@ def main(cfg):
         except Exception as e:
             logger.warning("{0} with file {1} didn't import due to {2}".format(name, scripts[name], e))
             scripts[name] = None
+    # import
 
 
     # get the partner name
@@ -173,6 +175,8 @@ if __name__ == '__main__':
     parser.add_argument("--dbir-private", required=False, help="The location of the dbirR repository.")
     parser.add_argument("-s","--schemafile", help="The JSON schema file")
     parser.add_argument("-e","--enumfile", help="The JSON file with VERIS enumerations")
+    parser.add_argument("--labelfile", help="The JSON file with VERIS labels.  Required along with schemafile if mergedfile not provided.")
+    parser.add_argument("-m", "--mergedfile", help="The JSON file with a merged schema.")
     parser.add_argument("--vcdb",help="Convert the data for use in VCDB",action="store_true")
     parser.add_argument("--version", help="The version of veris in use")
     parser.add_argument('--conf', help='The location of the config file', default="./_checkValidity.cfg")
@@ -190,7 +194,7 @@ if __name__ == '__main__':
         cfg_key = {
             'GENERAL': ['input', 'output', 'dbirR', 'veris_scripts'],
             'LOGGING': ['level', 'log_file'],
-            'VERIS': ['version', 'schemafile', 'enumfile', 'vcdb', 'year', 'countryfile']
+            'VERIS': ['version', 'schemafile', 'enumfile', 'mergedfile', 'labelfile', 'vcdb', 'year', 'countryfile']
         }
         for section in cfg_key.keys():
             if config.has_section(section):
@@ -220,14 +224,45 @@ if __name__ == '__main__':
     logger.debug(args)
     logger.debug(cfg)
 
+
+    # import the rules module
+    rules = imp.load_source("addrules", cfg.get("veris", "../").rstrip("/") + "/bin/rules.py")
+    # import the merge schemas module
+    mergeSchema = imp.load_source("mergeSchema", cfg.get("veris", "../").rstrip("/") + "/bin/mergeSchema.py")
+    # import validation module
+    checkValidity = imp.load_source("checkValidity", cfg.get("veris", "../").rstrip("/") + "/bin/checkValidity.py")
+
+
+    # create validator
+    try:
+        with open(cfg['mergedfile'], 'r') as filehandle:
+            merged = json.load(filehandle)
+    except:
+        with open(cfg['schemafile'], 'r') as filehandle:
+            schema = json.load(filehandle)
+        with open(cfg['labelfile'], 'r') as filehandle:
+            labels = json.load(filehandle)
+        merged = mergeSchema.merge(schema, labels)
+    validator = Draft4Validator(merged)
+
+
     # TODO - Paralellize these steps per record. (Code is in main because when run as module, code is run in import_all_partners)
     for iid, incident_json in main(cfg):
 
-        # TODO: run correlated fields using script
+
+        # run correlated fields using script
+        incident_json = rules.makeValid(incident_json)
+        incident_json = rules.addRules(incident_json)
 
 
-        # TODO: verify records
-
+        # Verify records
+        try:
+            #validate(incident, schema)
+            validator.validate(incident_json)
+            checkValidity.main(incident_json)
+        except ValidationError as e:
+            offendingPath = '.'.join(str(x) for x in e.path)
+            logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message))
 
         # write the json to a file
         if cfg["output"].endswith("/"):
