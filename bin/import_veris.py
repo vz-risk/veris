@@ -245,8 +245,6 @@ if __name__ == '__main__':
         merged = mergeSchema.merge(schema, labels)
     validator = Draft4Validator(merged)
 
-
-    # TODO - Paralellize these steps per record. (Code is in main because when run as module, code is run in import_all_partners)
     for iid, incident_json in main(cfg):
 
 

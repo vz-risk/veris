@@ -62,6 +62,25 @@ logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d
 logger = logging.getLogger()
 
 ## FUNCTION DEFINITION
+
+### Functionality redundant with check in schema - gdb 061516
+#def checkIndustry(label, industry):
+#    if not industry.isdigit() and not industry in [ "31-33", "44-45", "48-49" ]:
+#        logger.warning("%s: %s is not numbers: \"%s\"", iid, label, industry)
+#        # retString.append("must be numbers or one of 31-33, 44-45, 48-49")
+
+### Functionality redundant with checkValidity.py - gdb 061516
+#def compareFromTo(label, fromArray, toArray):
+#    if isinstance(fromArray, basestring):
+#        if fromArray not in toArray:
+#            logger.warning("%s: %s has invalid enumeration: \"%s\"", iid, label, fromArray)
+#    else:
+#        if len(fromArray) == 0:
+#            logger.warning("%s: %s has no values in enumeration", iid, label)
+#        for item in fromArray:
+#            if item not in toArray:
+#                logger.warning("%s: %s has invalid enumeration: \"%s\"", iid, label, item)
+
 def addRules(incident):
     iid = incident["incident_id"]
     inRow = incident["plus"]["row_number"]
@@ -251,6 +270,8 @@ def makeValid(incident):
     iid = incident["incident_id"]
     inRow = incident["plus"]["row_number"]
 
+    ### Rules from import SG
+
     # Unknown victims have NAICS code of "000", not just one zero
     if incident['victim']['industry'].lower().strip("0") in ['0','unknown', ""]:
         incident['victim']['industry'] = "000"
@@ -294,6 +315,290 @@ def makeValid(incident):
       incident['plus'].get('attribute', {}).keys() == ['confidentiality']:
         logger.info("attribute.confidentiality not in record so removing attribute from plus for record {0}.".format(iid))
         incident['plus'].pop('attribute')
+
+    ### Rules from import std_excel
+    # Removed comparisons to schema as those happen in checkValidity.py -gdb 061516
+#def checkEnum(incident, schema, country_region, cfg=cfg):
+    ## INCIDENT ##
+    if 'security_incident' not in incident:
+        logger.warning("%s: security_incident not found (required)", iid)
+    #else:
+    #    compareFromTo('security_incident', incident['security_incident'], schema['security_incident'])
+    if 'master_id' not in incident['plus']:
+        if 'incident_id' in incident:
+            master_id = incident['incident_id']
+        else:
+            master_id = "notblank"
+        logger.info("%s: auto-filling plus.master_id to %s", iid, master_id)
+        incident['plus']['master_id'] = master_id
+
+    ## VICTIM ##
+    if 'victim' not in incident:
+        logger.info("%s: auto-filled Unknown for victim section", iid)
+        incident['victim'] = { 'employee_count' : 'Unknown', 'industry':"000", 'country': [ "Unknown" ], 'notes':'auto-filled Unknown' }
+    victim = incident['victim']
+    if 'employee_count' not in victim:
+        logger.info("%s: auto-filled Unknown for victim.employee_count", iid)
+        victim['employee_count'] = "Unknown"
+    #compareFromTo('victim.employee_count', victim['employee_count'], schema['victim']['employee_count'])
+    if 'industry' not in victim:
+        logger.info("%s: auto-filled Unknown for victim.industry", iid)
+        victim['industry'] = "000"
+    #checkIndustry('victim.industry', victim['industry'])  # redundant with schema check. -gdb 061516
+
+    if 'country' not in victim:
+        logger.info("%s: auto-filled Unknown for victim.country", iid)
+        victim['country'] = [ "Unknown" ]
+
+    # CC
+    #victim['country'] = compareCountryFromTo('victim.country', victim['country'], schema['victim']['country'])
+
+    ## ACTOR ##
+    if 'actor' not in incident:
+        logger.info("%s: auto-filled Unknown for entire actor section", iid)
+        incident['actor'] = { 'unknown' : { 'notes':'auto-filled Unknown' } }
+    if 'external' in incident['actor']:
+        actor = incident['actor']['external']
+        if 'motive' not in actor:
+            logger.info("%s: auto-filled Unknown for actor.external.motive", iid)
+            actor['motive'] = [ "Unknown" ]
+        if len(actor['motive']) == 0:
+            logger.info("%s: auto-filled Unknown for empty array in actor.external.motive", iid)
+            actor['motive'] = [ "Unknown" ]
+        #compareFromTo('actor.external.motive', actor['motive'], schema['actor']['external']['motive'])
+        if 'variety' not in actor:
+            logger.info("%s: auto-filled Unknown for actor.external.variety", iid)
+            actor['variety'] = [ "Unknown" ]
+        if len(actor['variety']) == 0:
+            logger.info("%s: auto-filled Unknown for empty array in actor.external.variety", iid)
+            actor['variety'] = [ "Unknown" ]
+        #compareFromTo('actor.external.variety', actor['variety'], schema['actor']['external']['variety'])
+
+        if 'country' in actor:
+            if len(actor['country']) == 0:
+                logger.info("%s: auto-filled Unknown for empty array in actor.external.country", iid)
+                actor['country'] = [ "Unknown" ]
+            #else:
+                # only add region if it doesn't exist at all in the incident.
+                # if 'external_region' not in incident['plus']:
+                #     logger.info("%s: auto-filled plus.external_region from the actor.external.country", iid)
+                #     incident['plus']['external_region'] = [ country_region[c] for c in actor['country'] ]
+                # elif len(incident['plus']['external_region']) < len(actor['country']):
+                #     logger.info("%s: auto-filled plus.external_region from the actor.external.country (len region < actor.country", iid)
+                #     incident['plus']['external_region'] = [ country_region[c] for c in actor['country'] ]
+        else:
+            logger.info("%s: auto-filled Unknown for actor.external.country", iid)
+            actor['country'] = [ "Unknown" ]
+
+        #if 'plus' not in incident:  # check already exists below. -gdb 061516
+        #    incident['plus'] = {}
+        ## CC
+        #actor['country'] = compareCountryFromTo('actor.external.country', actor['country'], schema['actor']['external']['country'])
+
+
+    if 'internal' in incident['actor']:
+        actor = incident['actor']['internal']
+        if 'motive' not in actor:
+            logger.info("%s: auto-filled Unknown for actor.internal.motive", iid)
+            actor['motive'] = [ "Unknown" ]
+        if len(actor['motive']) == 0:
+            logger.info("%s: auto-filled Unknown for empty array in actor.internal.motive", iid)
+            actor['motive'] = [ "Unknown" ]
+        #compareFromTo('actor.internal.motive', actor['motive'], schema['actor']['internal']['motive'])
+        if 'variety' not in actor:
+            logger.info("%s: auto-filled Unknown for actor.internal.variety", iid)
+            actor['variety'] = [ "Unknown" ]
+        if len(actor['variety']) == 0:
+            logger.info("%s: auto-filled Unknown for empty array in actor.internal.variety", iid)
+            actor['variety'] = [ "Unknown" ]
+        #compareFromTo('actor.internal.variety', actor['variety'], schema['actor']['internal']['variety'])
+    if 'partner' in incident['actor']:
+        actor = incident['actor']['partner']
+        if 'motive' not in actor:
+            logger.info("%s: auto-filled Unknown for actor.partner.motive", iid)
+            actor['motive'] = [ "Unknown" ]
+        if len(actor['motive']) == 0:
+            logger.info("%s: auto-filled Unknown for empty array in actor.partner.motive", iid)
+            actor['motive'] = [ "Unknown" ]
+        #compareFromTo('actor.partner.motive', actor['motive'], schema['actor']['partner']['motive'])
+        if 'country' not in actor:
+            logger.info("%s: auto-filled Unknown for actor.partner.country", iid)
+            actor['country'] = [ "Unknown" ]
+        if len(actor['country']) == 0:
+            logger.info("%s: auto-filled Unknown for empty array in actor.partner.country", iid)
+            actor['country'] = [ "Unknown" ]
+        # compareFromTo('actor.partner.variety', actor['variety'], schema['actor']['partner']['country'])
+
+
+        # CC
+        actor['country'] = compareCountryFromTo('actor.partner.country', actor['country'], schema['actor']['partner']['country'])
+
+
+        if 'industry' not in actor:
+            logger.info("%s: auto-filled Unknown for actor.partner.industry", iid)
+            actor['industry'] = "00"
+        checkIndustry('actor.partner.industry', actor['industry'])
+
+    ## ACTION ##
+    if 'action' not in incident:
+        logger.info("%s: auto-filled Unknown for entire action section", iid)
+        incident['action'] = { "unknown" : { "notes" : "auto-filled Unknown" } }
+
+    for action in ['malware', 'hacking', 'social', 'misuse', 'physical', 'error']:
+        if action in incident['action']:
+            for method in ['variety', 'vector']:
+                if method not in incident['action'][action]:
+                    logger.info("%s: auto-filled Unknown for action.%s.%s", iid, action, method)
+                    incident['action'][action][method] = [ 'Unknown' ]
+                if len(incident['action'][action][method]) == 0:
+                    logger.info("%s: auto-filled Unknown for empty array in action.%s.%s", iid, action, method)
+                    incident['action'][action][method] = [ 'Unknown' ]
+                #astring = 'action.' + action + '.' + method
+                #compareFromTo(astring, incident['action'][action][method], schema['action'][action][method])
+            if action == "physical":
+                method = "vector"
+                if method not in incident['action'][action]:
+                    logger.info("%s: auto-filled Unknown for action.%s.%s", iid, action, method)
+                    incident['action'][action][method] = [ 'Unknown' ]
+                if len(incident['action'][action][method]) == 0:
+                    logger.info("%s: auto-filled Unknown for empty array in action.%s.%s", iid, action, method)
+                    incident['action'][action][method] = [ 'Unknown' ]
+                #astring = 'action.' + action + '.' + method
+                #compareFromTo(astring, incident['action'][action][method], schema['action'][action][method])
+            if action == "social":
+                method = "target"
+                if method not in incident['action'][action]:
+                    logger.info("%s: auto-filled Unknown for action.%s.%s", iid, action, method)
+                    incident['action'][action][method] = [ 'Unknown' ]
+                if len(incident['action'][action][method]) == 0:
+                    logger.info("%s: auto-filled Unknown for empty array in action.%s.%s", iid, action, method)
+                    incident['action'][action][method] = [ 'Unknown' ]
+                #astring = 'action.' + action + '.' + method
+                #compareFromTo(astring, incident['action'][action][method], schema['action'][action][method])
+    action = 'environmental'
+    if action in incident['action']:
+        method = "variety"
+        if method not in incident['action'][action]:
+            logger.info("%s: auto-filled Unknown for action.%s.%s", iid, action, method)
+            incident['action'][action][method] = [ 'Unknown' ]
+        if len(incident['action'][action][method]) == 0:
+            logger.info("%s: auto-filled Unknown for empty array in action.%s.%s", iid, action, method)
+            incident['action'][action][method] = [ 'Unknown' ]
+        #astring = 'action.' + action + '.' + method
+        #compareFromTo(astring, incident['action'][action][method], schema['action'][action][method])
+
+    ## ASSET ##
+    if 'asset' not in incident:
+        logger.info("%s: auto-filled Unknown for entire asset section", iid)
+        incident['asset'] = { "assets" : [ { "variety" : "Unknown" } ] }
+    if 'assets' not in incident['asset']:
+        logger.info("%s: auto-filled Unknown for asset.asseets section", iid)
+        incident['asset']['assets'] = [ { "variety" : "Unknown" } ]
+    for index, asset in enumerate(incident['asset']['assets']):
+        if 'variety' not in asset:
+            logger.info("%s: auto-filled Unknown for asset.asseets.variety ", iid)
+            asset['variety'] = "Unknown"
+        #compareFromTo('asset.assets.' + str(index) + '.variety', asset['variety'], schema['asset']['assets']['variety'])
+    #for method in ["cloud", "accessibility", "ownership", "management", "hosting"]:
+        #if method in incident:
+            #compareFromTo('asset.'+method, incident['asset'][method], schema['asset'][method])
+
+    ## ATTRIBUTE ##
+    if 'attribute' not in incident:
+        logger.info("%s: no attribute section is found (not required)", iid)
+    else:
+        if 'confidentiality' in incident['attribute']:
+            if 'data' not in incident['attribute']['confidentiality']:
+                logger.info("%s: auto-filled Unknown for attribute.confidentiality.data.variety ", iid)
+                incident['attribute']['confidentiality']['data'] = [ { 'variety' : 'Unknown' } ]
+            if len(incident['attribute']['confidentiality']['data']) == 0:
+                logger.info("%s: auto-filled Unknown for empty attribute.confidentiality.data.variety ", iid)
+                incident['attribute']['confidentiality']['data'] = [ { 'variety' : 'Unknown' } ]
+            #for index, datatype in enumerate(incident['attribute']['confidentiality']['data']):
+                #astring = 'attribute.confidentiality.data.' + str(index) + '.variety'
+                #compareFromTo(astring, datatype['variety'], schema['attribute']['confidentiality']['data']['variety'])
+            if 'data_disclosure' not in incident['attribute']['confidentiality']:
+                logger.warning("%s: data_disclosure not present (required if confidentiality present)", iid)
+                incident['attribute']['confidentiality']['data_disclosure'] = "Unknown"
+            #else:
+                #astring = 'attribute.confidentiality.data_disclosure'
+                #compareFromTo(astring, incident['attribute']['confidentiality']['data_disclosure'], schema['attribute']['confidentiality']['data_disclosure'])
+            #if 'state' in incident['attribute']['confidentiality']:
+                #astring = 'attribute.confidentiality.state'
+                #compareFromTo(astring, incident['attribute']['confidentiality']['state'], schema['attribute']['confidentiality']['state'])
+        for attribute in ['integrity', 'availability']:
+            if attribute in incident['attribute']:
+                if 'variety' not in incident['attribute'][attribute]:
+                    logger.info("%s: auto-filled Unknown for attribute.%s.variety", iid, attribute)
+                    incident['attribute'][attribute]['variety'] = [ 'Unknown' ]
+                if len(incident['attribute'][attribute]['variety']) == 0:
+                    logger.info("%s: auto-filled Unknown for empty attribute.%s.variety", iid, attribute)
+                    incident['attribute'][attribute]['variety'] = [ 'Unknown' ]
+                #astring = 'attribute.' + attribute + '.variety'
+                #compareFromTo(astring, incident['attribute'][attribute]['variety'], schema['attribute'][attribute]['variety'])
+                # only for availability
+                if 'duration' in incident['attribute'][attribute]:
+                    if 'unit' not in incident['attribute'][attribute]['duration']:
+                        logger.info("%s: auto-filled Unknown for attribute.%s.duration.unit", iid, attribute)
+                        incident['attribute'][attribute]['duration']['unit'] = "unit"
+                    #astring = 'attribute.' + attribute + '.duration.unit'
+                    #compareFromTo(astring, incident['attribute'][attribute]['duration']['unit'], schema['timeline']['unit'])
+
+    ## TIMELINE ##
+    if 'timeline' not in incident: 
+        logger.info("{0}: timeline section missing, auto-fillng in {1}".format(iid, cfg["year"]-1))
+        incident['timeline'] = { 'incident' : { 'year' : cfg["year"]-1 } }
+    if 'incident' not in incident['timeline']:
+        logger.info("{0}: timeline.incident section missing, auto-fillng in {1}".format(iid, cfg["year"]-1))
+        incident['timeline']['incident'] = { 'year' : cfg["year"]-1 }
+        # assume that the schema validator will verify number
+    #for timeline in ['compromise', 'exfiltration', 'discovery', 'containment']:
+        #astring = 'timeline.' + timeline + '.unit'
+        #if timeline in incident['timeline']:
+            #if 'unit' in incident['timeline'][timeline]:
+                #compareFromTo(astring, incident['timeline'][timeline]['unit'], schema['timeline']['unit'])
+
+    ## DISCOVERY METHOD ##
+    if 'discovery_method' not in incident:
+        logger.info("%s: auto-filled Unknown for discovery_method", iid)
+        incident['discovery_method'] = "Unknown"
+    #compareFromTo('discovery_method', incident['discovery_method'], schema['discovery_method'])
+    #if incident.has_key('cost_corrective_action'):
+        #compareFromTo('cost_corrective_action', incident['cost_corrective_action'], schema['cost_corrective_action'])
+    #if incident.has_key('targeted'):
+        #compareFromTo('targeted', incident['targeted'], schema['targeted'])
+    #if incident.has_key('impact'):
+        #if incident.has_key('overall_rating'):
+            #compareFromTo('impact.overall_rating', incident['impact']['overall_rating'], schema['impact']['overall_rating'])
+        #if incident.has_key('iso_currency_code'):
+            #compareFromTo('impact.iso_currency_code', incident['impact']['iso_currency_code'], schema['iso_currency_code'])
+        #if incident['impact'].has_key('loss'):
+            #for index, loss in enumerate(incident['impact']['loss']):
+                #if loss.has_key('variety'):
+                    #astring = 'impact.loss.' + str(index) + '.variety'
+                    #compareFromTo(astring, loss['variety'], schema['impact']['loss']['variety'])
+                #if loss.has_key('rating'):
+                    #astring = 'impact.loss.' + str(index) + '.rating'  # added g to the end of '.ratin' - GDB
+                    #compareFromTo(astring, loss['rating'], schema['impact']['loss']['rating'])
+
+    if 'plus' not in incident:
+        incident['plus'] = {}
+    #for method in ['attack_difficulty_legacy', 'attack_difficulty_initial', 'attack_difficulty_subsequent']:
+        #if incident['plus'].has_key(method):
+            #astring = 'plus.' + method
+            #compareFromTo(astring, incident['plus'][method], schema['plus']['attack_difficulty'])
+    #for method in ['analysis_status', 'public_disclosure', 'security_maturity']:
+        #if incident['plus'].has_key(method):
+            #astring = 'plus.' + method
+            #compareFromTo(astring, incident['plus'][method], schema['plus'][method])
+ 
+    mydate = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+    if 'created' not in incident['plus']:
+        logger.info("%s: auto-filling now() for plus.created", iid)
+        incident['plus']['created'] = mydate
+    if 'modified' not in incident['plus']:
+        logger.info("%s: auto-filling now() for plus.modified", iid)
+        incident['plus']['modified'] = mydate
 
     return incident
 
