@@ -37,6 +37,7 @@ import argparse
 import ConfigParser
 import os
 import json
+from datetime import datetime
 
 
 ## SETUP
@@ -81,10 +82,43 @@ logger = logging.getLogger()
 #            if item not in toArray:
 #                logger.warning("%s: %s has invalid enumeration: \"%s\"", iid, label, item)
 
-def addRules(incident):
+
+#def compareCountryFromTo(label, fromArray, toArray):
+def compareCountryFromTo(label, fromArray, iid):
+    #if isinstance(fromArray, basestring):
+    #    if fromArray not in toArray:
+    #        logger.warning("%s: %s has invalid enumeration[1]: \"%s\"", iid, label, fromArray)
+    #else:
+    if len(fromArray) == 0:
+        logger.warning("%s: %s has no values in enumeration", iid, label)
+    for idx, item in enumerate(fromArray):
+#        if item not in toArray:
+        if item.upper() == "USA":
+            logger.warning("%s: %s was set to 'USA', converting to 'US'", iid, label)
+            fromArray[idx] = "US"
+        elif item.upper() == "UK":
+            logger.warning("%s: %s was set to 'UK', converting to 'GB'", iid, label)
+            fromArray[idx] = "GB"
+        else:
+            fromArray[idx] = "Unknown"
+            logger.warning("%s: %s has invalid enumeration[2]: \"%s\", converting to 'Unknown'", iid, label, item)
+    if type(fromArray) == "str":
+        fromArray = [ fromArray ]
+    return(fromArray)
+
+
+def addRules(incident, cfg):
     iid = incident["incident_id"]
     inRow = incident["plus"]["row_number"]
     # Takes in an incident and applies rules for internal consistency and consistency with previous incidents
+
+    # The schema should have an import year
+    #checkEnum(outjson, jenums, country_region, cfg)
+    if incident.get('plus', {}).get('dbir_year', None) is None and cfg['vcdb'] != True:
+        logger.warning("{0}: missing plus.dbir_year, auto-filled {1}".format(iid, cfg["year"]))
+        incident['plus']['dbir_year'] = cfg["year"]
+    if ('source_id' not in incident or cfg["force_analyst"]) and 'source' in cfg:
+        incident['source_id'] = cfg['source']
 
 
     # Malware always has an integrity attribute
@@ -266,55 +300,12 @@ def addRules(incident):
     return incident
 
 
-def makeValid(incident):
+def makeValid(incident, cfg):
     iid = incident["incident_id"]
     inRow = incident["plus"]["row_number"]
 
-    ### Rules from import SG
-
-    # Unknown victims have NAICS code of "000", not just one zero
-    if incident['victim']['industry'].lower().strip("0") in ['0','unknown', ""]:
-        incident['victim']['industry'] = "000"
-        logger.info("replacing unknown victim.industry with '000' in {0}".format(iid))
-
-    # KDT the script sometimes produces incidents with an asset array that has
-    # no entries. I'm too lazy to figure out where that happens so I'll just
-    # check for it here and fix it.
-    if len(incident['asset']['assets']) < 1:
-        incident['asset']['assets'].append({'variety':'Unknown'})
-        logger.info("No asset varieties listed in {0} so adding asset.assets.variety.Unknown".format(iid))
-
-    # make sure variety and vector are in actions and of correct length
-    if 'action' not in incident:
-        incident['action'] = { "Unknown" : {} }
-        logger.info("No action so adding action.Unknown to {0}".format(iid))
-    for action in ['hacking', 'malware', 'social', 'environmental', 'physical', 'misuse', 'error']:
-        if action in incident['action'].keys():
-            if 'variety' not in incident['action'][action].keys():
-                incident['action'][action]['variety'] = []
-            if len(incident['action'][action]['variety']) == 0:
-                logger.info("Adding {0} variety to response {1} because it wasn't in there.".format(action, iid))
-                incident['action'][action]['variety'].append("Unknown")
-            if action != 'environmental' and 'vector' not in incident['action'][action].keys():
-                incident['action'][action]['vector'] = []
-            if  action != 'environmental' and len(incident['action'][action]['vector']) == 0:
-                logger.info("Adding {0} vector to response {1} because it wasn't in there.".format(action, iid))
-                incident['action'][action]['vector'].append("Unknown") 
-
-    # if confidentiality then there should be something in the data array
-    if 'confidentiality' in incident['attribute']:
-        if 'data' not in incident['attribute']['confidentiality']:
-            incident['attribute']['confidentiality']['data'] = []
-        if len(incident['attribute']['confidentiality']['data']) == 0:
-            logger.info("Adding attribute.confidentiality.data.variety:Unknown to {0} because attribute.confidentiality exists without data variety.".format(iid))
-            incident['attribute']['confidentiality']['data'].append({'variety':'Unknown'})
-
-    # if confidentiality was not affected then it shouldn't be in the plus
-    # section either. Usually just has credit_monitoring unknown anyway.
-    if 'confidentiality' not in incident['attribute'] and \
-      incident['plus'].get('attribute', {}).keys() == ['confidentiality']:
-        logger.info("attribute.confidentiality not in record so removing attribute from plus for record {0}.".format(iid))
-        incident['plus'].pop('attribute')
+    with open(cfg['schemafile'], "r") as filehandle:
+        schema = json.load(filehandle)
 
     ### Rules from import std_excel
     # Removed comparisons to schema as those happen in checkValidity.py -gdb 061516
@@ -350,8 +341,13 @@ def makeValid(incident):
         logger.info("%s: auto-filled Unknown for victim.country", iid)
         victim['country'] = [ "Unknown" ]
 
+    # Unknown victims have NAICS code of "000", not just one zero
+    if incident['victim']['industry'].lower().strip("0") in ['0','unknown', ""]:
+        incident['victim']['industry'] = "000"
+        logger.info("replacing unknown victim.industry with '000' in {0}".format(iid))
+
     # CC
-    #victim['country'] = compareCountryFromTo('victim.country', victim['country'], schema['victim']['country'])
+    victim['country'] = compareCountryFromTo('victim.country', victim['country'], iid) #, schema['victim']['country'])
 
     ## ACTOR ##
     if 'actor' not in incident:
@@ -393,7 +389,7 @@ def makeValid(incident):
         #if 'plus' not in incident:  # check already exists below. -gdb 061516
         #    incident['plus'] = {}
         ## CC
-        #actor['country'] = compareCountryFromTo('actor.external.country', actor['country'], schema['actor']['external']['country'])
+        actor['country'] = compareCountryFromTo('actor.external.country', actor['country'], iid) #, schema['actor']['external']['country'])
 
 
     if 'internal' in incident['actor']:
@@ -431,13 +427,13 @@ def makeValid(incident):
 
 
         # CC
-        actor['country'] = compareCountryFromTo('actor.partner.country', actor['country'], schema['actor']['partner']['country'])
+        actor['country'] = compareCountryFromTo('actor.partner.country', actor['country'], iid) #, schema['actor']['partner']['country'])
 
 
         if 'industry' not in actor:
             logger.info("%s: auto-filled Unknown for actor.partner.industry", iid)
-            actor['industry'] = "00"
-        checkIndustry('actor.partner.industry', actor['industry'])
+            actor['industry'] = "000"
+        #checkIndustry('actor.partner.industry', actor['industry'])
 
     ## ACTION ##
     if 'action' not in incident:
@@ -591,6 +587,50 @@ def makeValid(incident):
         #if incident['plus'].has_key(method):
             #astring = 'plus.' + method
             #compareFromTo(astring, incident['plus'][method], schema['plus'][method])
+
+
+    ### Rules from import SG
+
+    # KDT the script sometimes produces incidents with an asset array that has
+    # no entries. I'm too lazy to figure out where that happens so I'll just
+    # check for it here and fix it.
+    if len(incident['asset']['assets']) < 1:
+        incident['asset']['assets'].append({'variety':'Unknown'})
+        logger.info("No asset varieties listed in {0} so adding asset.assets.variety.Unknown".format(iid))
+
+    # make sure variety and vector are in actions and of correct length
+    if 'action' not in incident:
+        incident['action'] = { "Unknown" : {} }
+        logger.info("No action so adding action.Unknown to {0}".format(iid))
+    for action in ['hacking', 'malware', 'social', 'environmental', 'physical', 'misuse', 'error']:
+        if action in incident['action'].keys():
+            if 'variety' not in incident['action'][action].keys():
+                incident['action'][action]['variety'] = []
+            if len(incident['action'][action]['variety']) == 0:
+                logger.info("Adding {0} variety to response {1} because it wasn't in there.".format(action, iid))
+                incident['action'][action]['variety'].append("Unknown")
+            if action != 'environmental' and 'vector' not in incident['action'][action].keys():
+                incident['action'][action]['vector'] = []
+            if  action != 'environmental' and len(incident['action'][action]['vector']) == 0:
+                logger.info("Adding {0} vector to response {1} because it wasn't in there.".format(action, iid))
+                incident['action'][action]['vector'].append("Unknown") 
+
+    # if confidentiality then there should be something in the data array
+    if 'confidentiality' in incident['attribute']:
+        if 'data' not in incident['attribute']['confidentiality']:
+            incident['attribute']['confidentiality']['data'] = []
+        if len(incident['attribute']['confidentiality']['data']) == 0:
+            logger.info("Adding attribute.confidentiality.data.variety:Unknown to {0} because attribute.confidentiality exists without data variety.".format(iid))
+            incident['attribute']['confidentiality']['data'].append({'variety':'Unknown'})
+
+    # if confidentiality was not affected then it shouldn't be in the plus
+    # section either. Usually just has credit_monitoring unknown anyway.
+    if 'confidentiality' not in incident['attribute'] and \
+      incident['plus'].get('attribute', {}).keys() == ['confidentiality']:
+        logger.info("attribute.confidentiality not in record so removing attribute from plus for record {0}.".format(iid))
+        incident['plus'].pop('attribute')
+
+
  
     mydate = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     if 'created' not in incident['plus']:
@@ -645,9 +685,9 @@ def main(cfg):
                 logger.warning("Unable to load {0}.".format(filename))
                 continue
             # add 'unknowns' as appropriate
-            incident = makeValid(incident)
+            incident = makeValid(incident, cfg)
             # add rules
-            incident = addRules(incident)
+            incident = addRules(incident, cfg)
             # save it back out
             if overwrite:
                 json.dump(incident, filehandle)

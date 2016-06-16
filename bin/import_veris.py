@@ -148,6 +148,22 @@ def main(cfg):
 #        source
 #    ])
     for iid, incident_json in scripts[script].main(cfg):
+
+        # run correlated fields using script
+        incident_json = rules.makeValid(incident_json, cfg)
+        incident_json = rules.addRules(incident_json, cfg)
+
+
+        # Verify records
+        try:
+            #validate(incident, schema)
+            validator.validate(incident_json)
+            checkValidity.main(incident_json)
+        except ValidationError as e:
+            offendingPath = '.'.join(str(x) for x in e.path)
+            logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message))
+
+        # return the updated, validated, incident
         yield iid, incident_json
 
 
@@ -192,7 +208,7 @@ if __name__ == '__main__':
         config = ConfigParser.SafeConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
-            'GENERAL': ['input', 'output', 'dbirR', 'veris_scripts'],
+            'GENERAL': ['input', 'output', 'dbir-private', 'veris'],
             'LOGGING': ['level', 'log_file'],
             'VERIS': ['version', 'schemafile', 'enumfile', 'mergedfile', 'labelfile', 'vcdb', 'year', 'countryfile']
         }
@@ -246,21 +262,6 @@ if __name__ == '__main__':
     validator = Draft4Validator(merged)
 
     for iid, incident_json in main(cfg):
-
-
-        # run correlated fields using script
-        incident_json = rules.makeValid(incident_json)
-        incident_json = rules.addRules(incident_json)
-
-
-        # Verify records
-        try:
-            #validate(incident, schema)
-            validator.validate(incident_json)
-            checkValidity.main(incident_json)
-        except ValidationError as e:
-            offendingPath = '.'.join(str(x) for x in e.path)
-            logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message))
 
         # write the json to a file
         if cfg["output"].endswith("/"):

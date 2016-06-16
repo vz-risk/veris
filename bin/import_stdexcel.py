@@ -126,27 +126,6 @@ def openJSON(filename):
         parsed = None
     return parsed
 
-def compareCountryFromTo(label, fromArray, toArray):
-    if isinstance(fromArray, basestring):
-        if fromArray not in toArray:
-            logger.warning("%s: %s has invalid enumeration[1]: \"%s\"", iid, label, fromArray)
-    else:
-        if len(fromArray) == 0:
-            logger.warning("%s: %s has no values in enumeration", iid, label)
-        for idx, item in enumerate(fromArray):
-            if item not in toArray:
-                if item == "USA":
-                    logger.warning("%s: %s was set to 'USA', converting to 'US'", iid, label)
-                    fromArray[idx] = "US"
-                elif item == "UK":
-                    logger.warning("%s: %s was set to 'UK', converting to 'GB'", iid, label)
-                    fromArray[idx] = "GB"
-                else:
-                    fromArray[idx] = "Unknown"
-                    logger.warning("%s: %s has invalid enumeration[2]: \"%s\", converting to 'Unknown'", iid, label, item)
-    if type(fromArray) == "str":
-        fromArray = [ fromArray ]
-    return(fromArray)
 
 
 def parseComplex(field, inline, labels):
@@ -328,6 +307,7 @@ def convertCSV(incident, cfg=cfg):
     for enum in ['overall_rating', 'iso_currency_code', 'notes']:
         addValue(incident, 'impact.'+enum, out, 'string')
     # plus
+    out['plus'] = {}
     plusfields = ['master_id', 'investigator', 'issue_id', 'casename', 'analyst',
             'analyst_notes', 'public_disclosure', 'analysis_status',
             'attack_difficulty_legacy', 'attack_difficulty_subsequent',
@@ -455,12 +435,7 @@ def main(cfg):
                 continue
         outjson = convertCSV(incident, cfg)
         country_region = getCountryCode(cfg["countryfile"])
-        #checkEnum(outjson, jenums, country_region, cfg)
-        if 'dbir_year' not in outjson['plus'] and cfg['vcdb'] != True:
-            logger.warning("{0}: missing plus.dbir_year, auto-filled {1}".format(iid, cfg["year"]))
-            outjson['plus']['dbir_year'] = cfg["year"]
-        if ('source_id' not in outjson or cfg["force_analyst"]) and 'source' in cfg:
-            outjson['source_id'] = cfg['source']
+
         #addRules(outjson)  # moved to add_rules.py, imported and run by import_veris.py. -gdb 06/09/16
 
 
