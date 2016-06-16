@@ -115,8 +115,8 @@ def addRules(incident, cfg):
     # The schema should have an import year
     #checkEnum(outjson, jenums, country_region, cfg)
     if incident.get('plus', {}).get('dbir_year', None) is None and cfg['vcdb'] != True:
-        logger.warning("{0}: missing plus.dbir_year, auto-filled {1}".format(iid, cfg["year"]))
-        incident['plus']['dbir_year'] = cfg["year"]
+        logger.warning("{0}: missing plus.dbir_year, auto-filled {1}".format(iid, int(cfg["year"])))
+        incident['plus']['dbir_year'] = int(cfg["year"])
     if ('source_id' not in incident or cfg["force_analyst"]) and 'source' in cfg:
         incident['source_id'] = cfg['source']
 
@@ -542,11 +542,11 @@ def makeValid(incident, cfg):
 
     ## TIMELINE ##
     if 'timeline' not in incident: 
-        logger.info("{0}: timeline section missing, auto-fillng in {1}".format(iid, cfg["year"]-1))
-        incident['timeline'] = { 'incident' : { 'year' : cfg["year"]-1 } }
+        logger.info("{0}: timeline section missing, auto-fillng in {1}".format(iid, int(cfg["year"])-1))
+        incident['timeline'] = { 'incident' : { 'year' : int(cfg["year"])-1 } }
     if 'incident' not in incident['timeline']:
-        logger.info("{0}: timeline.incident section missing, auto-fillng in {1}".format(iid, cfg["year"]-1))
-        incident['timeline']['incident'] = { 'year' : cfg["year"]-1 }
+        logger.info("{0}: timeline.incident section missing, auto-fillng in {1}".format(iid, int(cfg["year"])-1))
+        incident['timeline']['incident'] = { 'year' : int(cfg["year"])-1 }
         # assume that the schema validator will verify number
     #for timeline in ['compromise', 'exfiltration', 'discovery', 'containment']:
         #astring = 'timeline.' + timeline + '.unit'

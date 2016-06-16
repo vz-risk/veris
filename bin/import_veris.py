@@ -66,108 +66,139 @@ logger = logging.getLogger()
 pass
 
 
+class importVeris():
+    scripts = None
+    cfg = None
+    rules = None
+    mergeSchema = None
+    checkValidity = None
+    validator = None
 
-## MAIN LOOP EXECUTION
-def main(cfg):
-    logger.info('Beginning main loop.')
+    def __init__(self, cfg=None):
+        self.cfg = cfg
 
-    # import the 4 different veris conversion scripts
-    scripts = {"vzir": cfg.get("dbir-private", "").rstrip("/") + "/bin/sg-to-dbir1_3.py",
-               "vcdb": cfg.get("dbir-private", "").rstrip("/") + "/bin/sg-to-vcdb1_3.py",
-               "sg": cfg.get("dbir-private", "").rstrip("/") + "/bin/sgpartner_to_dbir.py",
-               "stdexcel": cfg.get("veris", "").rstrip("/") + "/bin/import_stdexcel.py"
-               }
-    for name, script in scripts.iteritems():
+        # import the 4 different veris conversion scripts
+        self.scripts = {"vzir": cfg.get("dbir-private", "").rstrip("/") + "/bin/sg-to-dbir1_3.py",
+                   "vcdb": cfg.get("dbir-private", "").rstrip("/") + "/bin/sg-to-vcdb1_3.py",
+                   "sg": cfg.get("dbir-private", "").rstrip("/") + "/bin/sgpartner_to_dbir.py",
+                   "stdexcel": cfg.get("veris", "").rstrip("/") + "/bin/import_stdexcel.py"
+                   }
+        for name, script in self.scripts.iteritems():
+            try:
+                logger.debug("Importing {0} from {1}.".format(name, self.scripts[name]))
+                self.scripts[name] = imp.load_source(name, script)
+            except Exception as e:
+                logger.warning("{0} with file {1} didn't import due to {2}".format(name, self.scripts[name], e))
+                self.scripts[name] = None
+        # import
+       # import the rules module
+        self.rules = imp.load_source("addrules", cfg.get("veris", "../").rstrip("/") + "/bin/rules.py")
+        # import the merge schemas module
+        self.mergeSchema = imp.load_source("mergeSchema", cfg.get("veris", "../").rstrip("/") + "/bin/mergeSchema.py")
+        # import validation module
+        self.checkValidity = imp.load_source("checkValidity", cfg.get("veris", "../").rstrip("/") + "/bin/checkValidity.py")
+
+
+        # create validator
         try:
-            logger.debug("Importing {0} from {1}.".format(name, scripts[name]))
-            scripts[name] = imp.load_source(name, script)
-        except Exception as e:
-            logger.warning("{0} with file {1} didn't import due to {2}".format(name, scripts[name], e))
-            scripts[name] = None
-    # import
+            with open(cfg['mergedfile'], 'r') as filehandle:
+                merged = json.load(filehandle)
+        except:
+            with open(cfg['schemafile'], 'r') as filehandle:
+                schema = json.load(filehandle)
+            with open(cfg['labelfile'], 'r') as filehandle:
+                labels = json.load(filehandle)
+            merged = self.mergeSchema.merge(schema, labels)
+        self.validator = Draft4Validator(merged)
+
+    ## MAIN LOOP EXECUTION
+    def main(self, cfg=None):
+        if cfg is None:
+            cfg = self.cfg
+
+        logger.info('Beginning main loop.')
+
+        # get the partner name
+        source = cfg['input'].split("/")[-2].lower()
+        source = ''.join([e for e in source if e.isalnum()])
+
+        if source not in cfg:
+            cfg['source'] = source
+
+        logger.info("Starting import of {0}.".format(source))
+        #print("Starting import of {0}.".format(source))
+
+    ## This functionality will remain in import_all_data.py - GDB 6/9/16
+    #    # set the output Directory
+    #    outDir = cfg['output'].rstrip("/") + "/" + source
+    #    if not os.path.exists(outDir):
+    #        os.makedirs(outDir)
+    #
+    #    existing_files = glob.glob(outDir + "/*.json")
+    #
+    #    # If there are files in the output directory and "clear_output" is set, delete files in target directory
+    #    if not cfg['clear'] and existing_files:
+    #        logging.warning("Existing files in {0} directory and clear is False.  Skipping import.".format(source))
+    #        return None
+    #    else:
+    #        for json_file in existing_files:
+    #            if os.path.isfile(json_file):
+    #                os.remove(json_file)
+        
+
+        # Figure out the file type
+        ## If partner is 'vzir', use vzir.
+        if source == "vzir":
+            script = "vzir"
+        ## If partner is 'vcdb', use vcdb
+        elif source == "vcdb":
+            script = "vcdb"
+        ## Look at column names
+        with open(cfg['input'], 'rU') as filehandle:
+            line = filehandle.readline()  # read the column headers. SurveyGizmo has lots of ":" while stdexcel has "."
+        c_count = line.count(":")
+        p_count = line.count(".")
+        ### choose based on column names
+        if c_count > p_count:
+            script = "sg"
+        else:
+            script = "stdexcel"
+
+        # run the import script  
+        # TODO: Replace below block with call in scripts[script].main()
+    #    subprocess.call([
+    #        "python",
+    #        scripts[script],
+    #        "-i",
+    #        cfg['inFile'],
+    #        "-o",
+    #        outDir,
+    #        "--conf",
+    #        cfg['conf'],
+    #        "--source",
+    #        source
+    #    ])
+        for iid, incident_json in self.scripts[script].main(cfg):
+
+            # run correlated fields using script
+            incident_json = self.rules.makeValid(incident_json, cfg)
+            incident_json = self.rules.addRules(incident_json, cfg)
 
 
-    # get the partner name
-    source = cfg['input'].split("/")[-2].lower()
-    source = ''.join([e for e in source if e.isalnum()])
+            # Verify records
+            try:
+                #validate(incident, schema)
+                self.validator.validate(incident_json)
+                self.checkValidity.main(incident_json)
+            except ValidationError as e:
+                offendingPath = '.'.join(str(x) for x in e.path)
+                logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message))
 
-    if source not in cfg:
-        cfg['source'] = source
-
-    logger.info("Starting import of {0}.".format(source))
-    #print("Starting import of {0}.".format(source))
-
-## This functionality will remain in import_all_data.py - GDB 6/9/16
-#    # set the output Directory
-#    outDir = cfg['output'].rstrip("/") + "/" + source
-#    if not os.path.exists(outDir):
-#        os.makedirs(outDir)
-#
-#    existing_files = glob.glob(outDir + "/*.json")
-#
-#    # If there are files in the output directory and "clear_output" is set, delete files in target directory
-#    if not cfg['clear'] and existing_files:
-#        logging.warning("Existing files in {0} directory and clear is False.  Skipping import.".format(source))
-#        return None
-#    else:
-#        for json_file in existing_files:
-#            if os.path.isfile(json_file):
-#                os.remove(json_file)
-    
-
-    # Figure out the file type
-    ## If partner is 'vzir', use vzir.
-    if source == "vzir":
-        script = "vzir"
-    ## If partner is 'vcdb', use vcdb
-    elif source == "vcdb":
-        script = "vcdb"
-    ## Look at column names
-    with open(cfg['input'], 'rU') as filehandle:
-        line = filehandle.readline()  # read the column headers. SurveyGizmo has lots of ":" while stdexcel has "."
-    c_count = line.count(":")
-    p_count = line.count(".")
-    ### choose based on column names
-    if c_count > p_count:
-        script = "sg"
-    else:
-        script = "stdexcel"
-
-    # run the import script  
-    # TODO: Replace below block with call in scripts[script].main()
-#    subprocess.call([
-#        "python",
-#        scripts[script],
-#        "-i",
-#        cfg['inFile'],
-#        "-o",
-#        outDir,
-#        "--conf",
-#        cfg['conf'],
-#        "--source",
-#        source
-#    ])
-    for iid, incident_json in scripts[script].main(cfg):
-
-        # run correlated fields using script
-        incident_json = rules.makeValid(incident_json, cfg)
-        incident_json = rules.addRules(incident_json, cfg)
+            # return the updated, validated, incident
+            yield iid, incident_json
 
 
-        # Verify records
-        try:
-            #validate(incident, schema)
-            validator.validate(incident_json)
-            checkValidity.main(incident_json)
-        except ValidationError as e:
-            offendingPath = '.'.join(str(x) for x in e.path)
-            logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message))
-
-        # return the updated, validated, incident
-        yield iid, incident_json
-
-
-    logger.info('Ending main loop.')
+        logger.info('Ending main loop.')
 
 
 
@@ -240,28 +271,10 @@ if __name__ == '__main__':
     logger.debug(args)
     logger.debug(cfg)
 
+    # Instantiate the class
+    inV = importVeris(cfg)
 
-    # import the rules module
-    rules = imp.load_source("addrules", cfg.get("veris", "../").rstrip("/") + "/bin/rules.py")
-    # import the merge schemas module
-    mergeSchema = imp.load_source("mergeSchema", cfg.get("veris", "../").rstrip("/") + "/bin/mergeSchema.py")
-    # import validation module
-    checkValidity = imp.load_source("checkValidity", cfg.get("veris", "../").rstrip("/") + "/bin/checkValidity.py")
-
-
-    # create validator
-    try:
-        with open(cfg['mergedfile'], 'r') as filehandle:
-            merged = json.load(filehandle)
-    except:
-        with open(cfg['schemafile'], 'r') as filehandle:
-            schema = json.load(filehandle)
-        with open(cfg['labelfile'], 'r') as filehandle:
-            labels = json.load(filehandle)
-        merged = mergeSchema.merge(schema, labels)
-    validator = Draft4Validator(merged)
-
-    for iid, incident_json in main(cfg):
+    for iid, incident_json in inV.main(cfg):
 
         # write the json to a file
         if cfg["output"].endswith("/"):
