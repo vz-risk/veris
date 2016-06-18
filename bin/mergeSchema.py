@@ -58,10 +58,10 @@ def keynames(d, lbl, name, keys=set()):
     if d['type'] == "object":
         lbl = lbl + "properties."
         for k, v in d['properties'].iteritems():
-            keys = keys.union(recurse_schema(v, lbl, name + "." + k))
+            keys = keys.union(keynames(v, lbl, name + "." + k))
     elif d['type'] == "array":
         lbl = lbl + "items."
-        keys = keys.union(recurse_schema(d['items'], lbl, name))
+        keys = keys.union(keynames(d['items'], lbl, name))
     else:
         keys.add(name[1:])
     return keys
