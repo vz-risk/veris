@@ -1293,6 +1293,20 @@
         "Obscuration": "Conversion or obscuration",
         "Other": "Other",
         "Unknown": "Unknown"
+      },
+      "duration": {
+          "unit": {
+            "Days": "Days",
+            "Hours": "Hours",
+            "Minutes": "Minutes",
+            "Months": "Months",
+            "NA": "NA",
+            "Never": "Never",
+            "Seconds": "Seconds",
+            "Unknown": "Unknown",
+            "Weeks": "Weeks",
+            "Years": "Years"
+          }
       }
     },
     "confidentiality": {

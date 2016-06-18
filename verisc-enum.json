@@ -1282,6 +1282,20 @@
   }, 
   "attribute": {
     "availability": {
+      "duration": {
+        "unit": [
+          "Months", 
+          "Seconds", 
+          "NA", 
+          "Never", 
+          "Days", 
+          "Years", 
+          "Hours", 
+          "Unknown", 
+          "Weeks", 
+          "Minutes"
+        ]
+      }, 
       "variety": [
         "Acceleration", 
         "Interruption", 

@@ -1776,6 +1776,18 @@
               "additionalProperties": false, 
               "properties": {
                 "unit": {
+                  "enum": [
+                    "Months", 
+                    "Seconds", 
+                    "NA", 
+                    "Never", 
+                    "Days", 
+                    "Years", 
+                    "Hours", 
+                    "Unknown", 
+                    "Weeks", 
+                    "Minutes"
+                  ], 
                   "type": "string"
                 }, 
                 "value": {
