@@ -38,14 +38,19 @@ import argparse
 import ConfigParser
 import json
 import pprint
+import ipdb
 
 ## SETUP
 __author__ = "Gabriel Bassett"
 logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
                  50: logging.CRITICAL, 40: logging.ERROR, 30: logging.WARNING, 20: logging.INFO, 10: logging.DEBUG, 0: logging.CRITICAL}
 FORMAT = '%(asctime)19s - %(processName)s - %(levelname)s - {0}%(message)s'
-logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d/%Y %H:%M:%S')
+#logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d/%Y %H:%M:%S')
+formatter = logging.Formatter(FORMAT.format(""))
 logger = logging.getLogger()
+ch = logging.StreamHandler()
+ch.setLevel(logging_remap[cfg["log_level"]])
+ch.setFormatter(formatter)
 
 
 
@@ -57,13 +62,10 @@ pass
 ## CLASS AND FUNCTION DEFINITION
 class objdict(dict):
     def __getattr__(self, name):
-        if not name:
-            return dict(self)
-        else:
-            try:
-                return self.recursive_getattr(self, name)
-            except Exception as e:
-                raise AttributeError("No such attribute: " + name)
+        try:
+            return self.recursive_getattr(self, name)
+        except Exception as e:
+            raise AttributeError("No such attribute: " + name)
 
     def __setattr__(self, name, value):
         try:
@@ -99,9 +101,32 @@ class objdict(dict):
             del o[name[0]]
 
 
+def update_instance(inInstance, updateInstance):
+    # update each of the items in the Instance (other than 'properties' or 'items')
+    for item in updateInstance.keys():
+        if item == "":
+            pass # otherwise we get a recursive call
+        if item == "properties":
+            if "properties" not in inInstance:
+                inInstance['properties'] = {}
+        elif item == "items":
+            if "items" not in inInstance:
+                inInstance["items"] == {}
+        elif item not in inInstance:
+            inInstance[item] = updateInstance[item]
+        elif type(inInstance[item]) == list:
+            inInstance[item] = list(set(inInstance[item]).union(updateInstance[item]))
+        elif type(inInstance[item]) == dict :
+            inInstance[item].update(updateInstance[item])
+        else:
+            inInstance[item] == updateInstance[item]
+    return inInstance
+
 
 ## MAIN LOOP EXECUTION
 def main(cfg):
+    global logger
+
     logger.info('Beginning main loop.')
 
     # Open the files
@@ -110,45 +135,29 @@ def main(cfg):
     with open(cfg["update"], 'r') as filehandle:
         updateFile = json.load(filehandle)
 
-#    inKeys = recurse_keys(inFile, "")
-#    updateKeys = recurse_keys(updateFile, "")
+    logger.debug("Updating root of schema.")
+    oInFile = update_instance(inFile, updateFile)
 
+    queue = []
+    for instance in updateFile.get('properties', {}):
+        queue.append("properties." + instance)
+    for instance in updateFile.get('items', {}):
+        queue.append("items." + instance)
+
+    # create object representations of dicts
     oInFile = objdict(inFile)
     oUpdateFile = objdict(updateFile)
 
-    queue = [""]
-## Not sure this is needed as the original "" parse should add properties and items - gdb 061916
-#    for instance in updateFile.get('properties', {}):
-#        queue.append("properties." + instance)
-#    for instance in updateFile.get('items', {}):
-#        queue.append("items." + instance)
     # for each property in the update
+#    ipdb.set_trace()  # debugging hook
     for instance in queue:
+        logging.debug("Updating {0} in schema.".format(instance))
         updateInstance = getattr(oUpdateFile, instance)
 
         # if the object exists in the schema, update it with the properties in the update.
         try:
             inInstance = getattr(oInFile, instance)
-
-            # update each of the items in the Instance (other than 'properties' or 'items')
-            for item in updateInstance.keys():
-                if item == "":
-                    pass # otherwise we get a recursive call
-                if item == "properties":
-                    if "properties" not in inInstance:
-                        inInstance['properties'] = {}
-                elif item == "items":
-                    if "items" not in inInstance:
-                        inInstance["items"] == {}
-                elif item not in inInstance:
-                    inInstance[item] = updateInstance[item]
-                elif type(inInstance[item]) == list:
-                    inInstance[item] = list(set(inInstance[item]).union(updateInstance[item]))
-                elif type(inInstance[item]) == dict :
-                    inInstance[item].update(updateInstance[item])
-                else:
-                    inInstance[item] == updateInstance[item]
-
+            inInstance = update_instance(inInstance, updateInstance)
             # save the instance back to the schema
             setattr(oInFile, instance, inInstance)
 
@@ -169,8 +178,6 @@ def main(cfg):
 
         # if it is not, add it to the schema as a property to the correct object
         except AttributeError:
-            #split = instance.rfind(".")
-            #getattr(oInFile, instance[:split])[split+1:] = updateInstance
             setattr(oInFile, instance, updateInstance)
 
 
@@ -220,13 +227,14 @@ if __name__ == "__main__":
     #formatter = logging.Formatter(FORMAT.format("- " + "/".join(cfg["input"].split("/")[-2:])))
     formatter = logging.Formatter(FORMAT.format(""))
     logger = logging.getLogger()
+    logger.setLevel(logging_remap[cfg["log_level"]])
     ch = logging.StreamHandler()
-    ch.setLevel(logging_remap[cfg["log_level"]])
+    #ch.setLevel(logging_remap[cfg["log_level"]])
     ch.setFormatter(formatter)
     logger.addHandler(ch)
     if "log_file" in cfg and cfg["log_file"] is not None:
         fh = logging.FileHandler(cfg["log_file"])
-        fh.setLevel(logging_remap[cfg["log_level"]])
+        #fh.setLevel(logging_remap[cfg["log_level"]])
         fh.setFormatter(formatter)
         logger.addHandler(fh)
 
@@ -234,9 +242,6 @@ if __name__ == "__main__":
     logger.debug(cfg)
 
     outFile = main(cfg)
-
-    with open("/Users/v685573/tmp/test.txt", 'w') as filehandle:
-        pprint.pprint(outFile, filehandle)
 
     with open(cfg["output"], 'w') as filehandle:
         json.dump(outFile, filehandle, indent=2, sort_keys=True)
