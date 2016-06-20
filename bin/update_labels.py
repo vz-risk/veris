@@ -74,7 +74,7 @@ logger = logging.getLogger()
 pass
 
 
-## FUNCTION DEFINITION
+## CLASS AND FUNCTION DEFINITION
 class objdict(dict):
     def __getattr__(self, name):
         try:
@@ -181,7 +181,7 @@ if __name__ == "__main__":
     ## 4. Update the cfg dictionary with the arguements (args) from the command line
 
     # Parse Arguments (should correspond to user variables)
-    parser = argparse.ArgumentParser(description='This script processes a graph.')
+    parser = argparse.ArgumentParser(description='This script takes a schema labels file and a file of updates to it and adds the updates to the original file.')
     parser.add_argument("-l","--log_level",choices=["critical","warning","info","debug"], help="Minimum logging level to display")
     parser.add_argument('--log_file', help='Location of log file')
     parser.add_argument('--conf', help='The location of the config file')
@@ -197,7 +197,7 @@ if __name__ == "__main__":
         config.readfp(open(args["conf"]))
         cfg_key = {
             'GENERAL': ['input', 'update', 'output'], 
-            'LOGGING': ['loglevel', 'log_file']
+            'LOGGING': ['log_level', 'log_file']
         }
         for section in cfg_key.keys():
             if config.has_section(section):
