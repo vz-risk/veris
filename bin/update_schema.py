@@ -26,7 +26,10 @@ import logging
 
 # USER VARIABLES
 cfg = {
-    "log_level": "debug",
+    "input": None,
+    "update": None,
+    "output": None,
+    "log_level": "warning",
     "log_file": None
 }
 
@@ -48,10 +51,11 @@ FORMAT = '%(asctime)19s - %(processName)s - %(levelname)s - {0}%(message)s'
 #logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d/%Y %H:%M:%S')
 formatter = logging.Formatter(FORMAT.format(""))
 logger = logging.getLogger()
+logger.setLevel(logging_remap[cfg["log_level"]])
 ch = logging.StreamHandler()
-ch.setLevel(logging_remap[cfg["log_level"]])
+#ch.setLevel(logging_remap[cfg["log_level"]])
 ch.setFormatter(formatter)
-
+logger.addHandler(ch)
 
 
 ## GLOBAL EXECUTION
@@ -197,9 +201,9 @@ if __name__ == "__main__":
     parser.add_argument("-l","--log_level",choices=["critical","warning","info","debug"], help="Minimum logging level to display")
     parser.add_argument('--log_file', help='Location of log file')
     parser.add_argument('--conf', help='The location of the config file')
-    parser.add_argument('--input', required=True, help='The schema file to be updated.')
-    parser.add_argument('--update', required=True, help='The schema files to update the input file with (only additions/modifications to labels.)')
-    parser.add_argument('--output', required=True, help='The labels file to be outputted.')
+    parser.add_argument('-i', '--input', required=True, help='The schema file to be updated.')
+    parser.add_argument('-u', '--update', required=True, help='The schema files to update the input file with (only additions/modifications to labels.)')
+    parser.add_argument('-o', '--output', required=True, help='The labels file to be outputted.')
     args = parser.parse_args()
     args = {k:v for k,v in vars(args).iteritems() if v is not None}
 

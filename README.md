@@ -20,5 +20,19 @@ The XML version has been archived until we can sync the XML with the JSON schema
 
 # Index
 
-* verisc.json - the JSON schema definition, compliant with the propoosed JSON standard
+* verisc.json - the JSON schema definition, compliant with the propoosed JSON standard. Merged with versc-labels.json to produce verisc-enum.json, verisc-merged.json, and keynames-real.txt
+* verisc-labels.json - A list of enumerations with descriptions. Merged with versc.json to produce verisc-enum.json, verisc-merged.json, and keynames-real.txt
 * verisc-enum.json - definition of the allowable enumerations within VERIS
+* verisc-merged.json - The complete schema used for converting reviewed CSVs to json.
+* bin/all.json - a json file of country codes used for converting CSVs to json.
+* bin/build_standard_excel.py - script to read a merged schema file and produce the VERIS_Standard_Excel.xlsx file
+* checkValidity.py - script (usable as module) to validate a json record against a schema file as well as aditional rules.
+* convert-1.3.py - convert veris 1.2 json records to 1.3
+* convert_1.3_to_1.3.1.py - convert veris 1.3 json records to 1.3.1
+* import_stdexcel.py - script (usable as module) to convert VERIS_Standard_Excel.xlsx Reviewed data to a csv to json.
+* import_veris.py - script (usable as module) to import a csv to json.  Chooses the correct import module, uses the rules module, and uses the checkValidity module.
+* mergeSchema.py - Merges the schema file (e.g. verisc.json) and labels file (e.g. verisc-labels.json) to form the merged schema file (schema-merged.json)
+* rules.py - script (usable as a module) to make json files valid (by adding 'unknown's) and to add rules (e.g. add asset.assets.web app if hacking.vector.web app is present)
+* update_labels.py - script to update an existing labels file with a diff file.
+* update_schema.py - script to update an existing schema file with a diff file.
+* VERIS_Standard_Excel.xlsx - standard excel file used to produce importable data.

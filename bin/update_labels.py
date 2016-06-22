@@ -48,7 +48,7 @@ cfg = {
     "input": None,
     "update": None,
     "output": None,
-    "log_level": "debug",
+    "log_level": "warning",
     "log_file": None
 }
 
@@ -185,9 +185,9 @@ if __name__ == "__main__":
     parser.add_argument("-l","--log_level",choices=["critical","warning","info","debug"], help="Minimum logging level to display")
     parser.add_argument('--log_file', help='Location of log file')
     parser.add_argument('--conf', help='The location of the config file')
-    parser.add_argument('--input', required=True, help='The labels file to be updated.')
-    parser.add_argument('--update', required=True, help='The labels file to update the input file with (only additions/modifications to labels.)')
-    parser.add_argument('--output', required=True, help='The labels file to be outputted.')
+    parser.add_argument('-i', '--input', required=True, help='The labels file to be updated.')
+    parser.add_argument('-u', '--update', required=True, help='The labels file to update the input file with (only additions/modifications to labels.)')
+    parser.add_argument('-o', '--output', required=True, help='The labels file to be outputted.')
     args = parser.parse_args()
     args = {k:v for k,v in vars(args).iteritems() if v is not None}
 
@@ -215,8 +215,9 @@ if __name__ == "__main__":
     #formatter = logging.Formatter(FORMAT.format("- " + "/".join(cfg["input"].split("/")[-2:])))
     formatter = logging.Formatter(FORMAT.format(""))
     logger = logging.getLogger()
+    logger.setLevel(logging_remap[cfg["log_level"]])
     ch = logging.StreamHandler()
-    ch.setLevel(logging_remap[cfg["log_level"]])
+#    ch.setLevel(logging_remap[cfg["log_level"]])
     ch.setFormatter(formatter)
     logger.addHandler(ch)
     if "log_file" in cfg and cfg["log_file"] is not None:
