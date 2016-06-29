@@ -7,11 +7,16 @@ import argparse
 import logging
 import copy
 
-DEFAULTSCHEMA = "../verisc.json"
-DEFAULTLABELS = "../verisc-labels.json"
-MERGED = '../verisc-merged.json'
-KEYNAMES = '../keynames-real.txt'
-ENUM = "../verisc-enum.json"
+#DEFAULTSCHEMA = "../verisc.json"
+#DEFAULTLABELS = "../verisc-labels.json"
+#MERGED = '../verisc-merged.json'
+#KEYNAMES = '../keynames-real.txt'
+#ENUM = "../verisc-enum.json"
+DEFAULTSCHEMA = None
+DEFAULTLABELS = None
+MERGED = None
+KEYNAMES = None
+ENUM = None
 
 
 class objdict(dict):
@@ -127,12 +132,12 @@ if __name__ == '__main__':
     Optionally, it can also generate the enums file and the keynames file."""
     parser = argparse.ArgumentParser(description=descriptionText)
     parser.add_argument("-s", "--schema",
-                        help="schema file.", default=DEFAULTSCHEMA)
+                        help="schema file. (Normally '../verisc.json'.)", default=DEFAULTSCHEMA)
     parser.add_argument("-l", "--labels",
-                        help="the labels file.", default=DEFAULTLABELS)
+                        help="the labels file. (Normally '../verisc-labels.json'.", default=DEFAULTLABELS)
     parser.add_argument("-o", "--output",
-                        help="the location of the merged output file.", default=MERGED)
-    parser.add_argument("-e", "--enum", help="The name of the enums file if desired. (Normally '../<schame name>-enum.json'.)", default=None)
+                        help="the location of the merged output file. (Normally '../verisc-merged.json'.)", default=MERGED)
+    parser.add_argument("-e", "--enum", help="The name of the enums file if desired. (Normally '../verisc-enum.json'.)", default=None)
     parser.add_argument("-k", "--keynames", help="The name of the keynames file if desired. (normally '../keynames-real.txt'.)", default=None)
     parser.add_argument("--logging", choices=["critical", "warning", "info", "debug"],
                         help="Minimum logging level to display",
