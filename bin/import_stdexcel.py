@@ -541,8 +541,8 @@ if __name__ == '__main__':
             # dest = args.output + '/' + outjson['incident_id'] + '.json'
         logger.info("%s: writing file to %s", iid, dest)
         try:
-            fwrite = open(dest, 'w')
-            fwrite.write(json.dumps(incident_json, indent=2, sort_keys=True))
-            fwrite.close()
+            with open(dest, 'w') as fwrite:
+                json.dump(incident_json, fwrite, indent=2, sort_keys=True, separators=(',', ': '))
         except UnicodeDecodeError:
-            print incident_json
+            logging.critical("Some kind of unicode error in response %s. Movin on.", iid)
+            logging.critical(incident_json)
