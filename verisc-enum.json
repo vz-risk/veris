@@ -891,6 +891,7 @@
     ], 
     "assets": {
       "variety": [
+        "E - Telemetry", 
         "Unknown", 
         "M - Disk media", 
         "M - Payment card", 
@@ -945,6 +946,7 @@
         "U - Laptop", 
         "P - Auditor", 
         "U - VoIP phone", 
+        "E - Telematics", 
         "S - DNS", 
         "S - Log", 
         "P - Other", 

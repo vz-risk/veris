@@ -1024,6 +1024,8 @@
         "U - Tablet": "User Device - Tablet",
         "U - Telephone": "User Device - Telephone",
         "U - VoIP phone": "User Device - VoIP phone",
+        "E - Telemetry": "Embedded - A dedicated device that collects data about the physical world",
+        "E - Telematics": "Embedded - A dedicated device that affects the real world",
         "Unknown": "Unknown type of asset",
         "Other": "Asset type known but not User Device, Server, Public Terminal, Server, People, Network, or Media"
       }
