@@ -1439,7 +1439,8 @@
         "Competitive advantage": "Loss of competitive advantage",
         "Legal and regulatory": "Legal and regulatory costs",
         "Operating costs": "Increased operating costs",
-        "Response and recovery": "Response and recovery costs"
+        "Response and recovery": "Response and recovery costs",
+        "Other": "Impact variety known but not listed."
       }
     },
     "overall_rating": {
