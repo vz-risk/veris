@@ -37,7 +37,7 @@ Enumeration changes
   * asset.hosting: Removed all enumerations
   * asset.management: Removed all enumerations
   * asset.ownership: Removed all enumerations
-  * action.phyiscal.vector: Removed all enumerations
+  * action.physical.vector: Removed all enumerations
   * action.physical.location: Renamed to action.physical.vector
   * action.physical.vector: Added "Visitor privileges"
   * action.physical.vector: Added "Uncontrolled location"
