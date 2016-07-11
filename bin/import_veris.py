@@ -34,6 +34,7 @@ import ConfigParser
 import imp
 import os
 import json
+import datetime
 from jsonschema import ValidationError, Draft4Validator
 
 ## SETUP
@@ -43,8 +44,9 @@ __author__ = "Gabriel Bassett"
 cfg = {
     'log_level': 'warning',
     'log_file': None,
-    'schemafile': "../vcdb/veris.json",
-    'enumfile': "../vcdb/veris-enum.json",
+    'schemafile': "../vcdb/verisc.json",
+    'enumfile': "../veris/verisc-enum.json",
+    'mergedfile': "../veris/verisc-merged.json",
     'vcdb':False,
     'version':"1.3",
     'countryfile':'all.json',
@@ -78,9 +80,9 @@ class importVeris():
         self.cfg = cfg
 
         # import the 4 different veris conversion scripts
-        self.scripts = {"vzir": cfg.get("dbir-private", "").rstrip("/") + "/bin/sg-to-dbir1_3.py",
-                   "vcdb": cfg.get("dbir-private", "").rstrip("/") + "/bin/sg-to-vcdb1_3.py",
-                   "sg": cfg.get("dbir-private", "").rstrip("/") + "/bin/sgpartner_to_dbir.py",
+        self.scripts = {"vzir": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-dbir1_3.py",
+                   "vcdb": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-vcdb1_3.py",
+                   "sg": cfg.get("dbir_private", "").rstrip("/") + "/bin/sgpartner_to_dbir.py",
                    "stdexcel": cfg.get("veris", "").rstrip("/") + "/bin/import_stdexcel.py"
                    }
         for name, script in self.scripts.iteritems():
@@ -100,10 +102,10 @@ class importVeris():
 
 
         # create validator
-        try:
+        if os.path.isfile(cfg['mergedfile']):
             with open(cfg['mergedfile'], 'r') as filehandle:
                 merged = json.load(filehandle)
-        except:
+        else:
             with open(cfg['schemafile'], 'r') as filehandle:
                 schema = json.load(filehandle)
             with open(cfg['labelfile'], 'r') as filehandle:
@@ -147,12 +149,6 @@ class importVeris():
         
 
         # Figure out the file type
-        ## If partner is 'vzir', use vzir.
-        if source == "vzir":
-            script = "vzir"
-        ## If partner is 'vcdb', use vcdb
-        elif source == "vcdb":
-            script = "vcdb"
         ## Look at column names
         with open(cfg['input'], 'rU') as filehandle:
             line = filehandle.readline()  # read the column headers. SurveyGizmo has lots of ":" while stdexcel has "."
@@ -161,8 +157,15 @@ class importVeris():
         ### choose based on column names
         if c_count > p_count:
             script = "sg"
+            ## If partner is 'vzir', use vzir.
+            if source == "vzir":
+                script = "vzir"
+            ## If partner is 'vcdb', use vcdb
+            elif source == "vcdb":
+                script = "vcdb"
         else:
             script = "stdexcel"
+        logger.debug("File type is {0}.".format(script))
 
         # run the import script  
         # TODO: Replace below block with call in scripts[script].main()
@@ -192,7 +195,12 @@ class importVeris():
                 self.checkValidity.main(incident_json)
             except ValidationError as e:
                 offendingPath = '.'.join(str(x) for x in e.path)
-                logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message))
+                if "row_number" in incident_json.get("plus", {}):
+                    logger.warning("ERROR in {0} at line {0} from {0}:".format(
+                        incident["incident_id"], incident_json['plus']['row_number'], cfg['input'], e.message))
+                else:
+                    logger.warning("ERROR in {0} from {0}:".format(incident_json["incident_id"], cfg['input'], e.message))
+                #logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message)) # replaced with above. - gdb 06/11/16
 
             # return the updated, validated, incident
             yield iid, incident_json
@@ -219,11 +227,12 @@ if __name__ == '__main__':
     parser.add_argument("--veris", required=False, help="The location of the veris_scripts repository.")
     parser.add_argument("-l","--log_level",choices=["critical","warning","info","debug"], help="Minimum logging level to display")
     parser.add_argument('--log_file', help='Location of log file')
-    parser.add_argument("--dbir-private", required=False, help="The location of the dbirR repository.")
+    parser.add_argument("--dbir_private", required=False, help="The location of the dbirR repository.")
+    parser.add_argument("-m","--mergedfile", help="The fully merged json schema file.")
     parser.add_argument("-s","--schemafile", help="The JSON schema file")
     parser.add_argument("-e","--enumfile", help="The JSON file with VERIS enumerations")
     parser.add_argument("--labelfile", help="The JSON file with VERIS labels.  Required along with schemafile if mergedfile not provided.")
-    parser.add_argument("-m", "--mergedfile", help="The JSON file with a merged schema.")
+
     parser.add_argument("--vcdb",help="Convert the data for use in VCDB",action="store_true")
     parser.add_argument("--version", help="The version of veris in use")
     parser.add_argument('--conf', help='The location of the config file', default="./_checkValidity.cfg")
@@ -239,7 +248,7 @@ if __name__ == '__main__':
         config = ConfigParser.SafeConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
-            'GENERAL': ['input', 'output', 'dbir-private', 'veris'],
+            'GENERAL': ['input', 'output', 'dbir_private', 'veris'],
             'LOGGING': ['level', 'log_file'],
             'VERIS': ['version', 'schemafile', 'enumfile', 'mergedfile', 'labelfile', 'vcdb', 'year', 'countryfile']
         }

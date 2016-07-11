@@ -109,7 +109,7 @@ def compareCountryFromTo(label, fromArray, iid):
 
 def addRules(incident, cfg):
     iid = incident["incident_id"]
-    inRow = incident["plus"]["row_number"]
+    #inRow = incident["plus"]["row_number"]  # not used and conflicts with versions lower than 1.3. Could test for version > 1.3 and then include... - gdb 7/11/16
     # Takes in an incident and applies rules for internal consistency and consistency with previous incidents
 
     # The schema should have an import year
@@ -302,7 +302,7 @@ def addRules(incident, cfg):
 
 def makeValid(incident, cfg):
     iid = incident["incident_id"]
-    inRow = incident["plus"]["row_number"]
+    #inRow = incident["plus"]["row_number"]   # not used and conflicts with versions lower than 1.3. Could test for version > 1.3 and then include... - gdb 7/11/16
 
     with open(cfg['schemafile'], "r") as filehandle:
         schema = json.load(filehandle)
