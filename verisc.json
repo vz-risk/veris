@@ -737,7 +737,7 @@
     "plus": {
       "type":"object",
       "properties":{
-        "row_num": {
+        "row_number": {
           "type": "number"
         }
       }
