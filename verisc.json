@@ -736,7 +736,11 @@
     },
     "plus": {
       "type":"object",
-      "properties":{}
+      "properties":{
+        "row_num": {
+          "type": "number"
+        }
+      }
     },
     "subsets": {
       "type":"object",
