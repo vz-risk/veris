@@ -53,7 +53,8 @@ cfg = {
     'countryfile':'all.json',
     'output': None,
     'quiet': False,
-    'repositories': ""
+    'repositories': "",
+    'force_analyst': False
 }
 #logger = multiprocessing.get_logger()
 logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
@@ -99,16 +100,19 @@ def compareCountryFromTo(label, fromArray, iid):
         elif item.upper() == "UK":
             logger.warning("%s: %s was set to 'UK', converting to 'GB'", iid, label)
             fromArray[idx] = "GB"
-        else:
-            fromArray[idx] = "Unknown"
-            logger.warning("%s: %s has invalid enumeration[2]: \"%s\", converting to 'Unknown'", iid, label, item)
+#        else:
+#            fromArray[idx] = "Unknown"
+#            logger.warning("%s: %s has invalid enumeration[2]: \"%s\", converting to 'Unknown'", iid, label, item)
     if type(fromArray) == "str":
         fromArray = [ fromArray ]
     return(fromArray)
 
 
 def addRules(incident, cfg):
-    iid = incident["incident_id"]
+    if "master_id" in incident.get("plus", {}):
+        iid = incident['plus']['master_id']
+    else:
+        iid = incident["incident_id"]
     #inRow = incident["plus"]["row_number"]  # not used and conflicts with versions lower than 1.3. Could test for version > 1.3 and then include... - gdb 7/11/16
     # Takes in an incident and applies rules for internal consistency and consistency with previous incidents
 
@@ -174,7 +178,7 @@ def addRules(incident, cfg):
                     continue
             if 'P - '+each not in asset_list:
                 if 'P - '+each != 'P - Unknown':
-                    logger.info("%s: Adding P - %s to asset list since there was social engineering.",each,iid)
+                    logger.info("{1}: Adding P - {0} to asset list since there was social engineering.".format(each,iid))
                     incident['asset']['assets'].append({'variety':'P - '+each})
 
     # If SQLi was involved then there needs to be misappropriation too
@@ -304,8 +308,8 @@ def makeValid(incident, cfg):
     iid = incident["incident_id"]
     #inRow = incident["plus"]["row_number"]   # not used and conflicts with versions lower than 1.3. Could test for version > 1.3 and then include... - gdb 7/11/16
 
-    with open(cfg['schemafile'], "r") as filehandle:
-        schema = json.load(filehandle)
+    #with open(cfg['schemafile'], "r") as filehandle:
+    #    schema = json.load(filehandle)
 
     ### Rules from import std_excel
     # Removed comparisons to schema as those happen in checkValidity.py -gdb 061516
@@ -712,8 +716,8 @@ if __name__ == "__main__":
     parser.add_argument("-i", "--input", required=True, help="The json file or directory")
     parser.add_argument("-o", "--output", help="directory where json files will be written")
     #parser.add_argument("--veris", required=False, help="The location of the veris_scripts repository.")
-    #parser.add_argument("-l","--log_level",choices=["critical","warning","info","debug"], help="Minimum logging level to display")
-    #parser.add_argument('--log_file', help='Location of log file')
+    parser.add_argument("-l","--log_level",choices=["critical","warning","info","debug"], help="Minimum logging level to display")
+    parser.add_argument('--log_file', help='Location of log file')
     #parser.add_argument("--dbir-private", required=False, help="The location of the dbirR repository.")
     #parser.add_argument("-s","--schemafile", help="The JSON schema file")
     #parser.add_argument("-e","--enumfile", help="The JSON file with VERIS enumerations")
@@ -722,7 +726,7 @@ if __name__ == "__main__":
     parser.add_argument('--conf', help='The location of the config file', default="./_checkValidity.cfg")
     #parser.add_argument('--year', help='The DBIR year to assign tot he records.')
     #parser.add_argument('--countryfile', help='The json file holdering the country mapping.')
-    #parser.add_argument('--source', help="Source_id to use for the incidents. Partner pseudonym.")
+    parser.add_argument('--source', help="Source_id to use for the incidents. Partner pseudonym.")
     #parser.add_argument("-f", "--force_analyst", help="Override default analyst with --analyst.", action='store_true')
     args = parser.parse_args()
     args = {k:v for k,v in vars(args).iteritems() if v is not None}

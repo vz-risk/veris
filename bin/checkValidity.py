@@ -70,13 +70,13 @@ def main(incident):
 if __name__ == '__main__':
     # TODO: implement config file options for all of these
     parser = argparse.ArgumentParser(description="Checks a set of json files to see if they are valid VERIS incidents")
-    parser.add_argument("-m", "--merge", help="fully merged json file. Overrides --schema, --enum, and --plus")
+    parser.add_argument("-m", "--merge", help="fully merged json schema file.")
     #parser.add_argument("-s", "--schema", help="schema file to validate with")
     #parser.add_argument("-e", "--enum", help="enumeration file to validate with")
     parser.add_argument("-l", "--logging", choices=["critical", "warning", "info", "debug"],
                         help="Minimum logging level to display", default="warning")
     parser.add_argument("-p", "--path", nargs='+', help="list of paths to search for incidents")
-    parser.add_argument("-u", "--plus", help="optional schema for plus section")
+    #parser.add_argument("-u", "--plus", help="optional schema for plus section")
     args = parser.parse_args()
     logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL, 'info': logging.INFO, 'debug': logging.DEBUG}
     logging.basicConfig(level=logging_remap[args.logging])
