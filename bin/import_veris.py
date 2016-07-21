@@ -36,6 +36,7 @@ import os
 import json
 import datetime
 from jsonschema import ValidationError, Draft4Validator
+import ntpath
 
 ## SETUP
 __author__ = "Gabriel Bassett"
@@ -65,33 +66,55 @@ logger = logging.getLogger()
 
 
 ## FUNCTION DEFINITION
-pass
-
+# from http://chase-seibert.github.io/blog/2014/04/23/python-imp-examples.html
+def import_from_dotted_path(dotted_names, path=None):
+    """ import_from_dotted_path('foo.bar') -> from foo import bar; return bar """
+    next_module, remaining_names = dotted_names.split('.', 1)
+    fp, pathname, description = imp.find_module(next_module, path)
+    module = imp.load_module(next_module, fp, pathname, description)
+    if hasattr(module, remaining_names):
+        return getattr(module, remaining_names)
+    if '.' not in remaining_names:
+        return module
+    return import_from_dotted_path(remaining_names, path=module.__path__)
 
 class importVeris():
-    scripts = None
+    scripts = {"stdexcel": "../bin/import_stdexcel.py"}
     cfg = None
     rules = None
     mergeSchema = None
     checkValidity = None
     validator = None
 
-    def __init__(self, cfg=None):
+    def __init__(self, cfg=None, scripts=None):
         self.cfg = cfg
+        if scripts is None:
+            scripts = self.scripts
+        else:
+            scripts = json.loads(scripts)
 
         # import the 4 different veris conversion scripts
-        self.scripts = {"vzir": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-dbir1_3.py",
-                   "vcdb": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-vcdb1_3.py",
-                   "sg": cfg.get("dbir_private", "").rstrip("/") + "/bin/sgpartner_to_dbir.py",
-                   "stdexcel": cfg.get("veris", "").rstrip("/") + "/bin/import_stdexcel.py"
-                   }
+        # self.scripts = {"vzir": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-dbir1_3.py",
+        #            "vcdb": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-vcdb1_3.py",
+        #            "sg": cfg.get("dbir_private", "").rstrip("/") + "/bin/sgpartner_to_dbir.py",
+        #            "stdexcel": cfg.get("veris", "").rstrip("/") + "/bin/import_stdexcel.py"
+        #            }
         for name, script in self.scripts.iteritems():
             try:
                 logger.debug("Importing {0} from {1}.".format(name, self.scripts[name]))
-                self.scripts[name] = imp.load_source(name, script)
+                # split the filename out to file and name portions.
+                head, tail = ntpath.split(script)
+                # strip the '.py' off the file
+                tail = tail.rstrip(".py")
+                # Import
+                scripts[name] = import_from_dotted_path(".".join(tail, "CSVtoJSON", [head]))
+
+            # try:
+            #     logger.debug("Importing {0} from {1}.".format(name, self.scripts[name]))
+            #     scripts[name] = imp.load_source(name, script)
             except Exception as e:
                 logger.warning("{0} with file {1} didn't import due to {2}".format(name, self.scripts[name], e))
-                self.scripts[name] = None
+                scripts[name] = None
         # import
        # import the rules module
         self.rules = imp.load_source("addrules", cfg.get("veris", "../").rstrip("/") + "/bin/rules.py")
