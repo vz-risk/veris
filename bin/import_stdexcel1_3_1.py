@@ -44,14 +44,14 @@ class CSVtoJSON():
 
 
     def __init__(self, cfg):
-        self.arg = cfg
+        self.cfg = cfg
         try:
             self.jschema = self.openJSON(cfg["schemafile"])
         except IOError:
             logger.critical("ERROR: Schema file not found.")
             exit(1)
 
-        self.sfields = self.parseSchema(jschema)
+        self.sfields = self.parseSchema(self.jschema)
         
 
     def reqSchema(self, v, base="", mykeylist={}):
@@ -449,7 +449,7 @@ class CSVtoJSON():
                 if incident['security_incident'].lower()=="no":
                     logger.info("Skipping row %s", iid)
                     continue
-            outjson = self.convertCSV(incident, cfg)
+            outjson = self.convertCSV(incident)
             # self.country_region = self.getCountryCode(cfg["countryfile"])
 
             #addRules(outjson)  # moved to add_rules.py, imported and run by import_veris.py. -gdb 06/09/16
@@ -494,7 +494,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
     args = {k:v for k,v in vars(args).iteritems() if v is not None}
 
-    logger.setLevel(logging_remap[args['log_level']])
+    try:
+        logger.setLevel(logging_remap[args['log_level']])
+    except KeyError:
+        pass
 
     # Parse the config file
     try:
@@ -552,7 +555,7 @@ if __name__ == '__main__':
 
     # call the main loop which yields json incidents
     logger.info("Output files will be written to %s",cfg["output"])
-    for iid, incident_json in importStdExcel.main(cfg):
+    for iid, incident_json in importStdExcel.main():
         # write the json to a file
         if cfg["output"].endswith("/"):
             dest = cfg["output"] + incident_json['plus']['master_id'] + '.json'
