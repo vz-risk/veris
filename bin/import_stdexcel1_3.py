@@ -41,7 +41,7 @@ class CSVtoJSON():
         self.cfg = cfg
 
         try:
-            self.jschema = self.self.openJSON(cfg["schemafile"])
+            self.jschema = self.openJSON(cfg["schemafile"])
         except IOError:
             logging.critical("ERROR: Schema file not found.")
             exit(1)
@@ -386,7 +386,7 @@ class CSVtoJSON():
         for enum in plusfields:
             self.addValue(incident, 'plus.'+enum, out, "string")
         self.addValue(incident, 'plus.dbir_year', out, "numeric")
-        # self.addValue(incident, 'plus.external_region', out, "list")
+        self.addValue(incident, 'plus.external_region', out, "list") # TODO: Make this change region name to region code. - gdb 06/21/16
         if cfg["vcdb"]:
             self.addValue(incident, 'plus.timeline.notification.year', out, "numeric")
             self.addValue(incident, 'plus.timeline.notification.month', out, "numeric")
@@ -461,6 +461,8 @@ class CSVtoJSON():
             outjson = self.convertCSV(incident)
 
             while repeat > 0:
+                if 'plus' not in outjson:
+                    outjson['plus'] = {}
                 outjson['plus']['master_id'] = str(uuid.uuid4()).upper()
                 yield iid, outjson
                 # outjson['incident_id'] = str(uuid.uuid4()).upper()     ### HERE
