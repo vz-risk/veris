@@ -34,424 +34,443 @@ FORMAT = '%(asctime)19s - %(processName)s {0} - %(levelname)s - %(message)s'
 logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d/%Y %H:%M:%S')
 logger = logging.getLogger()
 
-def reqSchema(v, base="", mykeylist={}):
-    "given schema in v, returns a list of keys and it's type"
-    if 'required' in v:
-        if v['required']:
-            if base not in mykeylist:
-                mykeylist[base] = v['type']
-            # mykeylist.append(base)
-    if v['type']=="object":
-        for k,v2 in v['properties'].items():
-            if len(base):
-                callout = base + "." + k
-            else:
-                callout = k
-            reqSchema(v2, callout, mykeylist)
-    elif v['type']=="array":
-        reqSchema(v['items'], base, mykeylist)
-    return mykeylist
 
-def parseSchema(v, base="", mykeylist=[]):
-    "given schema in v, returns a list of concatenated keys in the schema"
-    if v['type']=="object":
-        for k,v2 in v['properties'].items():
-            if len(base):
-                callout = base + "." + k
-            else:
-                callout = k
-            parseSchema(v2, callout, mykeylist)
-    elif v['type']=="array":
-        parseSchema(v['items'], base, mykeylist)
-    else:
-        mykeylist.append(base)
-    return mykeylist
-
-def isnum(x):
-    x = re.sub('[$,]', '', x)
-    try:
-        x=int(float(x))
-    except:
-        return None
-    return x
-
-def isfloat(x):
-    x = re.sub('[$,]', '', x)
-    try:
-        x=float(x)
-    except:
-        return
-    return x
+class CSVtoJSON():
+    """Imports a CSV outputted by the standard excel survey gizmo form"""
+    cfg = None
+    jschema = None
+    sfields = None
+    # country_region = None
 
 
-def addValue(src, enum, dst, val="list"):
-    "adding value to dst at key if present in src"
-    if src.has_key(enum):
-        if len(src[enum]):
-            allenum = enum.split('.')
-            saved = dst
-            for i in range(len(allenum)-1):
-                if not saved.has_key(allenum[i]):
-                    saved[allenum[i]] = {}
-                saved = saved[allenum[i]]
-            if val=="list":
-                templist = [x.strip() for x in src[enum].split(',') if len(x)>0 ]
-                saved[allenum[-1]] = [x for x in templist if len(x)>0 ]
-            elif val=="string":
-                saved[allenum[-1]] = unicode(src[enum],errors='ignore')
-            elif val=="numeric":
-                if isnum(src[enum]):
-                    saved[allenum[-1]] = isnum(src[enum])
-            elif val=="integer":
-                if isnum(src[enum]):
-                    saved[allenum[-1]] = isnum(src[enum])
+    def __init__(self, cfg):
+        self.arg = cfg
+        try:
+            self.jschema = self.openJSON(cfg["schemafile"])
+        except IOError:
+            logger.critical("ERROR: Schema file not found.")
+            exit(1)
 
-def chkDefault(incident, enum, default):
-    allenum = enum.split('.')
-    saved = incident
-    for i in range(len(allenum)-1):
-        if not saved.has_key(allenum[i]):
-            saved[allenum[i]] = {}
-        saved = saved[allenum[i]]
-    if not saved[allenum[-1]]:
-        saved[allenum[-1]] = copy.deepcopy(default)
+        self.sfields = self.parseSchema(jschema)
+        
 
-def openJSON(filename):
-    parsed = {}
-    rawjson = open(filename).read()
-    try:
-        parsed = json.loads(rawjson)
-    except:
-        print "Unexpected error while loading", filename, "-", sys.exc_info()[1]
-        parsed = None
-    return parsed
+    def reqSchema(self, v, base="", mykeylist={}):
+        "given schema in v, returns a list of keys and it's type"
+        if 'required' in v:
+            if v['required']:
+                if base not in mykeylist:
+                    mykeylist[base] = v['type']
+                # mykeylist.append(base)
+        if v['type']=="object":
+            for k,v2 in v['properties'].items():
+                if len(base):
+                    callout = base + "." + k
+                else:
+                    callout = k
+                self.reqSchema(v2, callout, mykeylist)
+        elif v['type']=="array":
+            self.reqSchema(v['items'], base, mykeylist)
+        return mykeylist
 
 
+    def parseSchema(self, v, base="", mykeylist=[]):
+        "given schema in v, returns a list of concatenated keys in the schema"
+        if v['type']=="object":
+            for k,v2 in v['properties'].items():
+                if len(base):
+                    callout = base + "." + k
+                else:
+                    callout = k
+                self.parseSchema(v2, callout, mykeylist)
+        elif v['type']=="array":
+            self.parseSchema(v['items'], base, mykeylist)
+        else:
+            mykeylist.append(base)
+        return mykeylist
 
-def parseComplex(field, inline, labels):
-    regex = re.compile(r',+') # parse on one or more consequtive commas
-    units = [x.strip() for x in regex.split(inline)]
-    retval = []
-    for i in units:
-        entry = [x.strip() for x in i.split(':')]
+
+    def isnum(self, x):
+        x = re.sub('[$,]', '', x)
+        try:
+            x=int(float(x))
+        except:
+            return None
+        return x
+
+
+    def isfloat(self, x):
+        x = re.sub('[$,]', '', x)
+        try:
+            x=float(x)
+        except:
+            return
+        return x
+
+
+    def addValue(self, src, enum, dst, val="list"):
+        "adding value to dst at key if present in src"
+        if src.has_key(enum):
+            if len(src[enum]):
+                allenum = enum.split('.')
+                saved = dst
+                for i in range(len(allenum)-1):
+                    if not saved.has_key(allenum[i]):
+                        saved[allenum[i]] = {}
+                    saved = saved[allenum[i]]
+                if val=="list":
+                    templist = [x.strip() for x in src[enum].split(',') if len(x)>0 ]
+                    saved[allenum[-1]] = [x for x in templist if len(x)>0 ]
+                elif val=="string":
+                    saved[allenum[-1]] = unicode(src[enum],errors='ignore')
+                elif val=="numeric":
+                    if self.isnum(src[enum]):
+                        saved[allenum[-1]] = self.isnum(src[enum])
+                elif val=="integer":
+                    if self.isnum(src[enum]):
+                        saved[allenum[-1]] = self.isnum(src[enum])
+
+
+    # def self.chkDefault(self, incident, enum, default):
+    #     allenum = enum.split('.')
+    #     saved = incident
+    #     for i in range(len(allenum)-1):
+    #         if not saved.has_key(allenum[i]):
+    #             saved[allenum[i]] = {}
+    #         saved = saved[allenum[i]]
+    #     if not saved[allenum[-1]]:
+    #         saved[allenum[-1]] = copy.deepcopy(default)
+
+
+    def openJSON(self, filename):
+        parsed = {}
+        rawjson = open(filename).read()
+        try:
+            parsed = json.loads(rawjson)
+        except:
+            print "Unexpected error while loading", filename, "-", sys.exc_info()[1]
+            parsed = None
+        return parsed
+
+
+    def parseComplex(self, field, inline, labels):
+        regex = re.compile(r',+') # parse on one or more consequtive commas
+        units = [x.strip() for x in regex.split(inline)]
+        retval = []
+        for i in units:
+            entry = [x.strip() for x in i.split(':')]
+            out = {}
+            for index, s in enumerate(entry):
+                if index > len(labels):
+                    logger.warning("%s: failed to parse complex field %s, more entries seperated by colons than labels, skipping", iid, field)
+                    return
+                elif len(s):
+                    out[labels[index]] = s
+            if len(out) > 0:
+                retval.append(copy.deepcopy(out))
+        return retval
+
+
+    def cleanValue(self, incident, enum):
+        v = re.sub("^[,]+", "", incident[enum])
+        v = re.sub("[,]+$", "", v)
+        v = re.sub("[,]+", ",", v)
+        return(v)
+
+
+    def convertCSV(self, incident):
+        cfg = self.cfg
+
         out = {}
-        for index, s in enumerate(entry):
-            if index > len(labels):
-                logger.warning("%s: failed to parse complex field %s, more entries seperated by colons than labels, skipping", iid, field)
-                return
-            elif len(s):
-                out[labels[index]] = s
-        if len(out) > 0:
-            retval.append(copy.deepcopy(out))
-    return retval
-
-def cleanValue(incident, enum):
-    v = re.sub("^[,]+", "", incident[enum])
-    v = re.sub("[,]+$", "", v)
-    v = re.sub("[,]+", ",", v)
-    return(v)
-
-def convertCSV(incident, cfg=cfg):
-    out = {}
-    out['schema_version'] = cfg["version"]
-    if incident.has_key("incident_id"):
-        if len(incident['incident_id']):
-#            out['incident_id'] = incident['incident_id']
-            # Changing incident_id to UUID to prevent de-anonymiziation of incidents
-            m = hashlib.md5(incident["incident_id"])
-            out["incident_id"] = str(uuid.UUID(bytes=m.digest())).upper()
+        out['schema_version'] = cfg["version"]
+        if incident.has_key("incident_id"):
+            if len(incident['incident_id']):
+                # out['incident_id'] = incident['incident_id']
+                # Changing incident_id to UUID to prevent de-anonymiziation of incidents
+                m = hashlib.md5(incident["incident_id"])
+                out["incident_id"] = str(uuid.UUID(bytes=m.digest())).upper()
+            else:
+                out['incident_id'] = str(uuid.uuid4()).upper()
         else:
             out['incident_id'] = str(uuid.uuid4()).upper()
-    else:
-        out['incident_id'] = str(uuid.uuid4()).upper()
-    tmp = {}
-    for enum in incident: tmp[enum] = cleanValue(incident, enum)
-    incident = tmp
-    for enum in ['source_id', 'reference', 'security_incident', 'confidence', 'summary', 'related_incidents', 'notes']:
-        addValue(incident, enum, out, "string")
-    # victim
-    for enum in ['victim_id', 'industry', 'employee_count', 'state',
-            'revenue.iso_currency_code', 'secondary.notes', 'notes']:
-        addValue(incident, 'victim.'+enum, out, "string")
-    addValue(incident, 'victim.revenue.amount', out, "integer")
-    addValue(incident, 'victim.secondary.amount', out, "numeric")
-    addValue(incident, 'victim.secondary.victim_id', out, "list")
-    addValue(incident, 'victim.locations_affected', out, "numeric")
-    addValue(incident, 'victim.country', out, "list")
+        tmp = {}
+        for enum in incident: tmp[enum] = self.cleanValue(incident, enum)
+        incident = tmp
+        for enum in ['source_id', 'reference', 'security_incident', 'confidence', 'summary', 'related_incidents', 'notes']:
+            self.addValue(incident, enum, out, "string")
+        # victim
+        for enum in ['victim_id', 'industry', 'employee_count', 'state',
+                'revenue.iso_currency_code', 'secondary.notes', 'notes']:
+            self.addValue(incident, 'victim.'+enum, out, "string")
+        self.addValue(incident, 'victim.revenue.amount', out, "integer")
+        self.addValue(incident, 'victim.secondary.amount', out, "numeric")
+        self.addValue(incident, 'victim.secondary.victim_id', out, "list")
+        self.addValue(incident, 'victim.locations_affected', out, "numeric")
+        self.addValue(incident, 'victim.country', out, "list")
 
-    # actor
-    for enum in ['motive', 'variety', 'country']:
-        addValue(incident, 'actor.external.'+enum, out, 'list')
-    addValue(incident, 'actor.external.notes', out, 'string')
-    for enum in ['motive', 'variety']:
-        addValue(incident, 'actor.internal.'+enum, out, 'list')
-    addValue(incident, 'actor.internal.notes', out, 'string')
-    for enum in ['motive', 'country']:
-        addValue(incident, 'actor.partner.'+enum, out, 'list')
-    addValue(incident, 'actor.partner.industry', out, 'string')
-    addValue(incident, 'actor.partner.notes', out, 'string')
+        # actor
+        for enum in ['motive', 'variety', 'country']:
+            self.addValue(incident, 'actor.external.'+enum, out, 'list')
+        self.addValue(incident, 'actor.external.notes', out, 'string')
+        for enum in ['motive', 'variety']:
+            self.addValue(incident, 'actor.internal.'+enum, out, 'list')
+        self.addValue(incident, 'actor.internal.notes', out, 'string')
+        for enum in ['motive', 'country']:
+            self.addValue(incident, 'actor.partner.'+enum, out, 'list')
+        self.addValue(incident, 'actor.partner.industry', out, 'string')
+        self.addValue(incident, 'actor.partner.notes', out, 'string')
 
-    # action
-    action = "malware."
-    for enum in ['variety', 'vector']:
-        addValue(incident, 'action.' + action + enum, out, 'list')
-    for enum in ['cve', 'name', 'notes']:
-        addValue(incident, 'action.' + action + enum, out, 'string')
-    action = "hacking."
-    for enum in ['variety', 'vector']:
-        addValue(incident, 'action.' + action + enum, out, 'list')
-    for enum in ['cve', 'notes']:
-        addValue(incident, 'action.' + action + enum, out, 'string')
-    action = "social."
-    for enum in ['variety', 'vector', 'target']:
-        addValue(incident, 'action.' + action + enum, out, 'list')
-    for enum in ['notes']:
-        addValue(incident, 'action.' + action + enum, out, 'string')
-    action = "misuse."
-    for enum in ['variety', 'vector']:
-        addValue(incident, 'action.' + action + enum, out, 'list')
-    for enum in ['notes']:
-        addValue(incident, 'action.' + action + enum, out, 'string')
-    action = "physical."
-    for enum in ['variety', 'vector', 'vector']:
-        addValue(incident, 'action.' + action + enum, out, 'list')
-    for enum in ['notes']:
-        addValue(incident, 'action.' + action + enum, out, 'string')
-    action = "error."
-    for enum in ['variety', 'vector']:
-        addValue(incident, 'action.' + action + enum, out, 'list')
-    for enum in ['notes']:
-        addValue(incident, 'action.' + action + enum, out, 'string')
-    action = "environmental."
-    for enum in ['variety']:
-        addValue(incident, 'action.' + action + enum, out, 'list')
-    for enum in ['notes']:
-        addValue(incident, 'action.' + action + enum, out, 'string')
-    # asset
-    if 'asset.assets.variety' in incident:
-        if 'asset' not in out:
-            out['asset'] = {}
-        if 'assets' not in out['asset']:
-            out['asset']['assets'] = []
-        assets = parseComplex("asset.assets.variety", incident['asset.assets.variety'], ['variety', 'amount'])
-        if len(assets):
-            for i in assets:
-                if 'amount' in i:
-                    if isnum(i['amount']) is not None:
-                        i['amount'] = isnum(i['amount'])
-                    else:
-                        del i['amount']
-            out['asset']['assets'] = copy.deepcopy(assets)
+        # action
+        action = "malware."
+        for enum in ['variety', 'vector']:
+            self.addValue(incident, 'action.' + action + enum, out, 'list')
+        for enum in ['cve', 'name', 'notes']:
+            self.addValue(incident, 'action.' + action + enum, out, 'string')
+        action = "hacking."
+        for enum in ['variety', 'vector']:
+            self.addValue(incident, 'action.' + action + enum, out, 'list')
+        for enum in ['cve', 'notes']:
+            self.addValue(incident, 'action.' + action + enum, out, 'string')
+        action = "social."
+        for enum in ['variety', 'vector', 'target']:
+            self.addValue(incident, 'action.' + action + enum, out, 'list')
+        for enum in ['notes']:
+            self.addValue(incident, 'action.' + action + enum, out, 'string')
+        action = "misuse."
+        for enum in ['variety', 'vector']:
+            self.addValue(incident, 'action.' + action + enum, out, 'list')
+        for enum in ['notes']:
+            self.addValue(incident, 'action.' + action + enum, out, 'string')
+        action = "physical."
+        for enum in ['variety', 'vector', 'vector']:
+            self.addValue(incident, 'action.' + action + enum, out, 'list')
+        for enum in ['notes']:
+            self.addValue(incident, 'action.' + action + enum, out, 'string')
+        action = "error."
+        for enum in ['variety', 'vector']:
+            self.addValue(incident, 'action.' + action + enum, out, 'list')
+        for enum in ['notes']:
+            self.addValue(incident, 'action.' + action + enum, out, 'string')
+        action = "environmental."
+        for enum in ['variety']:
+            self.addValue(incident, 'action.' + action + enum, out, 'list')
+        for enum in ['notes']:
+            self.addValue(incident, 'action.' + action + enum, out, 'string')
+        # asset
+        if 'asset.assets.variety' in incident:
+            if 'asset' not in out:
+                out['asset'] = {}
+            if 'assets' not in out['asset']:
+                out['asset']['assets'] = []
+            assets = self.parseComplex("asset.assets.variety", incident['asset.assets.variety'], ['variety', 'amount'])
+            if len(assets):
+                for i in assets:
+                    if 'amount' in i:
+                        if self.isnum(i['amount']) is not None:
+                            i['amount'] = self.isnum(i['amount'])
+                        else:
+                            del i['amount']
+                out['asset']['assets'] = copy.deepcopy(assets)
 
-    for enum in ['accessibility', 'ownership', 'management', 'hosting', 'cloud', 'notes']:
-        addValue(incident, 'asset.' + enum, out, 'string')
-    addValue(incident, 'asset.country', out, 'list')
+        for enum in ['accessibility', 'ownership', 'management', 'hosting', 'cloud', 'notes']:
+            self.addValue(incident, 'asset.' + enum, out, 'string')
+        self.addValue(incident, 'asset.country', out, 'list')
 
-    # attributes
-    if 'attribute.confidentiality.data.variety' in incident:
-        data = parseComplex("attribute.confidentiality.data.variety", incident['attribute.confidentiality.data.variety'], ['variety', 'amount'])
-        if len(data):
-            if 'attribute' not in out:
-                out['attribute'] = {}
-            if 'confidentiality' not in out['attribute']:
-                out['attribute']['confidentiality'] = {}
-            if 'data' not in out['attribute']['confidentiality']:
-                out['attribute']['confidentiality']['data'] = []
-            for i in data:
-                if 'amount' in i:
-                    if isnum(i['amount']) is not None:
-                        i['amount'] = isnum(i['amount'])
-                    else:
-                        del i['amount']
-            out['attribute']['confidentiality']['data'] = copy.deepcopy(data)
-    addValue(incident, 'attribute.confidentiality.data_disclosure', out, 'string')
-    addValue(incident, 'attribute.confidentiality.data_total', out, 'numeric')
-    addValue(incident, 'attribute.confidentiality.state', out, 'list')
-    addValue(incident, 'attribute.confidentiality.notes', out, 'string')
+        # attributes
+        if 'attribute.confidentiality.data.variety' in incident:
+            data = self.parseComplex("attribute.confidentiality.data.variety", incident['attribute.confidentiality.data.variety'], ['variety', 'amount'])
+            if len(data):
+                if 'attribute' not in out:
+                    out['attribute'] = {}
+                if 'confidentiality' not in out['attribute']:
+                    out['attribute']['confidentiality'] = {}
+                if 'data' not in out['attribute']['confidentiality']:
+                    out['attribute']['confidentiality']['data'] = []
+                for i in data:
+                    if 'amount' in i:
+                        if self.isnum(i['amount']) is not None:
+                            i['amount'] = self.isnum(i['amount'])
+                        else:
+                            del i['amount']
+                out['attribute']['confidentiality']['data'] = copy.deepcopy(data)
+        self.addValue(incident, 'attribute.confidentiality.data_disclosure', out, 'string')
+        self.addValue(incident, 'attribute.confidentiality.data_total', out, 'numeric')
+        self.addValue(incident, 'attribute.confidentiality.state', out, 'list')
+        self.addValue(incident, 'attribute.confidentiality.notes', out, 'string')
 
-    addValue(incident, 'attribute.integrity.variety', out, 'list')
-    addValue(incident, 'attribute.integrity.notes', out, 'string')
+        self.addValue(incident, 'attribute.integrity.variety', out, 'list')
+        self.addValue(incident, 'attribute.integrity.notes', out, 'string')
 
-    addValue(incident, 'attribute.availability.variety', out, 'list')
-    addValue(incident, 'attribute.availability.duration.unit', out, 'string')
-    addValue(incident, 'attribute.availability.duration.value', out, 'numeric')
-    addValue(incident, 'attribute.availability.notes', out, 'string')
+        self.addValue(incident, 'attribute.availability.variety', out, 'list')
+        self.addValue(incident, 'attribute.availability.duration.unit', out, 'string')
+        self.addValue(incident, 'attribute.availability.duration.value', out, 'numeric')
+        self.addValue(incident, 'attribute.availability.notes', out, 'string')
 
-    # timeline
-    addValue(incident, 'timeline.incident.year', out, 'numeric')
-    addValue(incident, 'timeline.incident.month', out, 'numeric')
-    addValue(incident, 'timeline.incident.day', out, 'numeric')
-    addValue(incident, 'timeline.incident.time', out, 'string')
+        # timeline
+        self.addValue(incident, 'timeline.incident.year', out, 'numeric')
+        self.addValue(incident, 'timeline.incident.month', out, 'numeric')
+        self.addValue(incident, 'timeline.incident.day', out, 'numeric')
+        self.addValue(incident, 'timeline.incident.time', out, 'string')
 
-    addValue(incident, 'timeline.compromise.unit', out, 'string')
-    addValue(incident, 'timeline.compromise.value', out, 'numeric')
-    addValue(incident, 'timeline.exfiltration.unit', out, 'string')
-    addValue(incident, 'timeline.exfiltration.value', out, 'numeric')
-    addValue(incident, 'timeline.discovery.unit', out, 'string')
-    addValue(incident, 'timeline.discovery.value', out, 'numeric')
-    addValue(incident, 'timeline.containment.unit', out, 'string')
-    addValue(incident, 'timeline.containment.value', out, 'numeric')
+        self.addValue(incident, 'timeline.compromise.unit', out, 'string')
+        self.addValue(incident, 'timeline.compromise.value', out, 'numeric')
+        self.addValue(incident, 'timeline.exfiltration.unit', out, 'string')
+        self.addValue(incident, 'timeline.exfiltration.value', out, 'numeric')
+        self.addValue(incident, 'timeline.discovery.unit', out, 'string')
+        self.addValue(incident, 'timeline.discovery.value', out, 'numeric')
+        self.addValue(incident, 'timeline.containment.unit', out, 'string')
+        self.addValue(incident, 'timeline.containment.value', out, 'numeric')
 
-    # trailer values
-    for enum in ['discovery_method', 'targeted', 'control_failure', 'corrective_action']:
-        addValue(incident, enum, out, 'string')
-    if 'ioc.indicator' in incident:
-        ioc = parseComplex("ioc.indicator", incident['ioc.indicator'], ['indicator', 'comment'])
-        if len(ioc):
-            out['ioc'] = copy.deepcopy(ioc)
+        # trailer values
+        for enum in ['discovery_method', 'targeted', 'control_failure', 'corrective_action']:
+            self.addValue(incident, enum, out, 'string')
+        if 'ioc.indicator' in incident:
+            ioc = self.parseComplex("ioc.indicator", incident['ioc.indicator'], ['indicator', 'comment'])
+            if len(ioc):
+                out['ioc'] = copy.deepcopy(ioc)
 
-    # impact
-    for enum in ['overall_min_amount', 'overall_amount', 'overall_max_amount']:
-        addValue(incident, 'impact.'+enum, out, 'numeric')
-    # TODO handle impact.loss varieties
-    for enum in ['overall_rating', 'iso_currency_code', 'notes']:
-        addValue(incident, 'impact.'+enum, out, 'string')
-    # plus
-    out['plus'] = {}
-    plusfields = ['master_id', 'investigator', 'issue_id', 'casename', 'analyst',
-            'analyst_notes', 'public_disclosure', 'analysis_status',
-            'attack_difficulty_legacy', 'attack_difficulty_subsequent',
-            'attack_difficulty_initial', 'security_maturity' ]
-    if cfg["vcdb"]:
-        plusfields.append('github')
-    for enum in plusfields:
-        addValue(incident, 'plus.'+enum, out, "string")
-    addValue(incident, 'plus.dbir_year', out, "numeric")
-    # addValue(incident, 'plus.external_region', out, "list")
-    if cfg["vcdb"]:
-        addValue(incident, 'plus.timeline.notification.year', out, "numeric")
-        addValue(incident, 'plus.timeline.notification.month', out, "numeric")
-        addValue(incident, 'plus.timeline.notification.day', out, "numeric")
-    # Skipping: 'unknown_unknowns', useful_evidence', antiforensic_measures, unfollowed_policies,
-    # countrol_inadequacy_legacy, pci
-    # TODO dbir_year
+        # impact
+        for enum in ['overall_min_amount', 'overall_amount', 'overall_max_amount']:
+            self.addValue(incident, 'impact.'+enum, out, 'numeric')
+        # TODO handle impact.loss varieties
+        for enum in ['overall_rating', 'iso_currency_code', 'notes']:
+            self.addValue(incident, 'impact.'+enum, out, 'string')
+        # plus
+        out['plus'] = {}
+        plusfields = ['master_id', 'investigator', 'issue_id', 'casename', 'analyst',
+                'analyst_notes', 'public_disclosure', 'analysis_status',
+                'attack_difficulty_legacy', 'attack_difficulty_subsequent',
+                'attack_difficulty_initial', 'security_maturity' ]
+        if cfg["vcdb"]:
+            plusfields.append('github')
+        for enum in plusfields:
+            self.addValue(incident, 'plus.'+enum, out, "string")
+        self.addValue(incident, 'plus.dbir_year', out, "numeric")
+        # self.addValue(incident, 'plus.external_region', out, "list")
+        if cfg["vcdb"]:
+            self.addValue(incident, 'plus.timeline.notification.year', out, "numeric")
+            self.addValue(incident, 'plus.timeline.notification.month', out, "numeric")
+            self.addValue(incident, 'plus.timeline.notification.day', out, "numeric")
+        # Skipping: 'unknown_unknowns', useful_evidence', antiforensic_measures, unfollowed_policies,
+        # countrol_inadequacy_legacy, pci
+        # TODO dbir_year
 
-    return out
+        return out
 
 
-def getCountryCode(countryfile):  # Removed default of 'all.json' - GDB
-    # Fixed the hard-coded name - GDB
-    country_codes = json.loads(open(countryfile).read())
-    country_code_remap = {'Unknown':'000000'}
-    for eachCountry in country_codes:
-        try:
-            country_code_remap[eachCountry['alpha-2']] = eachCountry['region-code']
-        except:
-            country_code_remap[eachCountry['alpha-2']] = "000"
-        try:
-            country_code_remap[eachCountry['alpha-2']] += eachCountry['sub-region-code']
-        except:
-            country_code_remap[eachCountry['alpha-2']] += "000"
-    return country_code_remap
+    # def self.getCountryCode(self, countryfile):  # Removed default of 'all.json' - GDB
+    #     # Fixed the hard-coded name - GDB
+    #     country_codes = json.loads(open(countryfile).read())
+    #     country_code_remap = {'Unknown':'000000'}
+    #     for eachCountry in country_codes:
+    #         try:
+    #             country_code_remap[eachCountry['alpha-2']] = eachCountry['region-code']
+    #         except:
+    #             country_code_remap[eachCountry['alpha-2']] = "000"
+    #         try:
+    #             country_code_remap[eachCountry['alpha-2']] += eachCountry['sub-region-code']
+    #         except:
+    #             country_code_remap[eachCountry['alpha-2']] += "000"
+    #     return country_code_remap
 
 
-# jenums = openJSON("verisvz-enum.json")
-# jscehma = openJSON("verisvz.json")
-
-
-def main(cfg):
-    formatter = logging.Formatter(FORMAT.format("- " + "/".join(cfg["input"].split("/")[-2:])))
-    logger = logging.getLogger()
-    ch = logging.StreamHandler()
-    ch.setLevel(logging_remap[cfg["log_level"]])
-    ch.setFormatter(formatter)
-    logger.addHandler(ch)
-    if "log_file" in cfg and cfg["log_file"] is not None:
-        fh = logging.FileHandler(cfg["log_file"])
-        fh.setLevel(logging_remap[cfg["log_level"]])
-        fh.setFormatter(formatter)
-        logger.addHandler(fh)
-
-    try:
-        # Added to file read to catch multiple columns with same name which causes second column to overwrite first. - GDB
-        file_handle = open(cfg["input"], 'rU')
-        csv_reader = csv.reader(file_handle)
-        l = csv_reader.next()
-        if len(l) > len(set(l)):
-            logger.error(l)
-            raise KeyError("Input file has multiple columns of the same name.  Please create unique columns and rerun.")
-            file_handle.close()
-            exit(1)
+    def main(self, cfg=None):
+        if cfg == None:
+            cfg = self.cfg
         else:
-            file_handle.seek(0)
-            infile = csv.DictReader(file_handle)
-#        infile = csv.DictReader(open(args.filename,'rU'))  # Old File Read - gdb
-    except IOError:
-        logger.critical("ERROR: Input file not found.")
-        exit(1)
+            self.__init__(cfg)
 
-    try:
-        jschema = openJSON(cfg["schemafile"])
-    except IOError:
-        logger.critical("ERROR: Schema file not found.")
-        exit(1)
-    try:
-        jenums = openJSON(cfg["enumfile"])
-    except IOError:
-        logger.critical("ERROR: Enumeration file not found.")
-        exit(1)
 
-    reqfields = reqSchema(jschema)
-    sfields = parseSchema(jschema)
+        formatter = logging.Formatter(FORMAT.format("- " + "/".join(cfg["input"].split("/")[-2:])))
+        logger = logging.getLogger()
+        ch = logging.StreamHandler()
+        ch.setLevel(logging_remap[cfg["log_level"]])
+        ch.setFormatter(formatter)
+        logger.addHandler(ch)
+        if "log_file" in cfg and cfg["log_file"] is not None:
+            fh = logging.FileHandler(cfg["log_file"])
+            fh.setLevel(logging_remap[cfg["log_level"]])
+            fh.setFormatter(formatter)
+            logger.addHandler(fh)
 
-    for f in infile.fieldnames:
-        if f not in sfields:
-            if f != "repeat":
-                logger.warning("column will not be used: %s. May be inaccurate for 'plus' columns.", f)
-    if 'plus.analyst' not in infile.fieldnames:
-        logger.warning("the optional plus.analyst field is not found in the source document")
-    if 'source_id' not in infile.fieldnames:
-        logger.warning("the optional source_id field is not found in the source document")
-
-    row = 0
-    for incident in infile:
-        row += 1
-        # have to look for white-space only and remove it
         try:
-            incident = { x:incident[x].strip() for x in incident }
-        except AttributeError as e:
-            logger.error("Error removing white space from feature {0} on row {1}.".format(x, row))
-            raise e
+            # Added to file read to catch multiple columns with same name which causes second column to overwrite first. - GDB
+            file_handle = open(cfg["input"], 'rU')
+            csv_reader = csv.reader(file_handle)
+            l = csv_reader.next()
+            if len(l) > len(set(l)):
+                logger.error(l)
+                raise KeyError("Input file has multiple columns of the same name.  Please create unique columns and rerun.")
+                file_handle.close()
+                exit(1)
+            else:
+                file_handle.seek(0)
+                infile = csv.DictReader(file_handle)
+            # infile = csv.DictReader(open(args.filename,'rU'))  # Old File Read - gdb
+        except IOError:
+            logger.critical("ERROR: Input file not found.")
+            exit(1)
 
-        #if 'incident_id' in incident:
-        #    iid = incident['incident_id']
-        #else:
-        #    iid = "srcrow_" + str(row)
-        # logger.warning("This includes the row number")
-        iid = incident['incident_id']  # there should always be an incident ID so commented out above. - gdb 061316
+        for f in infile.fieldnames:
+            if f not in self.sfields:
+                if f != "repeat":
+                    logger.warning("column will not be used: %s. May be inaccurate for 'plus' columns.", f)
+        if 'plus.analyst' not in infile.fieldnames:
+            logger.warning("the optional plus.analyst field is not found in the source document")
+        if 'source_id' not in infile.fieldnames:
+            logger.warning("the optional source_id field is not found in the source document")
 
-        repeat = 1
-        logger.info("-----> parsing incident %s", iid)
-        if incident.has_key('repeat'):
-            if incident['repeat'].lower()=="ignore" or incident['repeat'] == "0":
-                logger.info("Skipping row %s", iid)
-                continue
-            repeat = isnum(incident['repeat'])
-            if not repeat:
-                repeat = 1
-        if incident.has_key('security_incident'):
-            if incident['security_incident'].lower()=="no":
-                logger.info("Skipping row %s", iid)
-                continue
-        outjson = convertCSV(incident, cfg)
-        country_region = getCountryCode(cfg["countryfile"])
+        row = 0
+        for incident in infile:
+            row += 1
+            # have to look for white-space only and remove it
+            try:
+                incident = { x:incident[x].strip() for x in incident }
+            except AttributeError as e:
+                logger.error("Error removing white space from feature {0} on row {1}.".format(x, row))
+                raise e
 
-        #addRules(outjson)  # moved to add_rules.py, imported and run by import_veris.py. -gdb 06/09/16
+            #if 'incident_id' in incident:
+            #    iid = incident['incident_id']
+            #else:
+            #    iid = "srcrow_" + str(row)
+            # logger.warning("This includes the row number")
+            iid = incident['incident_id']  # there should always be an incident ID so commented out above. - gdb 061316
+
+            repeat = 1
+            logger.info("-----> parsing incident %s", iid)
+            if incident.has_key('repeat'):
+                if incident['repeat'].lower()=="ignore" or incident['repeat'] == "0":
+                    logger.info("Skipping row %s", iid)
+                    continue
+                repeat = self.isnum(incident['repeat'])
+                if not repeat:
+                    repeat = 1
+            if incident.has_key('security_incident'):
+                if incident['security_incident'].lower()=="no":
+                    logger.info("Skipping row %s", iid)
+                    continue
+            outjson = self.convertCSV(incident, cfg)
+            # self.country_region = self.getCountryCode(cfg["countryfile"])
+
+            #addRules(outjson)  # moved to add_rules.py, imported and run by import_veris.py. -gdb 06/09/16
 
 
-        # adding row number to help with reverse tracability in v1.3.1 per issue 112. -gdb 06/09/16
-        outjson['plus']['row_number'] = row
+            # adding row number to help with reverse tracability in v1.3.1 per issue 112. -gdb 06/09/16
+            if 'plus' not in outjson:
+                outjson['plus'] = {}
+            outjson['plus']['row_number'] = row
 
-        while repeat > 0:
-            outjson['plus']['master_id'] = str(uuid.uuid4()).upper()
-            yield iid, outjson
-            # outjson['incident_id'] = str(uuid.uuid4()).upper()     ### HERE
-            # outjson['plus']['master_id'] = outjson['incident_id']  ###
-            repeat -= 1
-            if repeat > 0:
-                logger.info("Repeating %s more times on %s", repeat, iid)
+            while repeat > 0:
+                outjson['plus']['master_id'] = str(uuid.uuid4()).upper()
+                yield iid, outjson
+                # outjson['incident_id'] = str(uuid.uuid4()).upper()     ### HERE
+                # outjson['plus']['master_id'] = outjson['incident_id']  ###
+                repeat -= 1
+                if repeat > 0:
+                    logger.info("Repeating %s more times on %s", repeat, iid)
 
-    file_handle.close()
+        file_handle.close()
+
 
 iid = ""  # setting global
 if __name__ == '__main__':
@@ -529,9 +548,11 @@ if __name__ == '__main__':
     logger.debug(args)
     logger.debug(cfg)
 
+    importStdExcel = CSVtoJSON(cfg)
+
     # call the main loop which yields json incidents
     logger.info("Output files will be written to %s",cfg["output"])
-    for iid, incident_json in main(cfg):
+    for iid, incident_json in importStdExcel.main(cfg):
         # write the json to a file
         if cfg["output"].endswith("/"):
             dest = cfg["output"] + incident_json['plus']['master_id'] + '.json'

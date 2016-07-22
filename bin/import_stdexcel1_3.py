@@ -402,7 +402,7 @@ class CSVtoJSON():
         if cfg == None:
             cfg = self.cfg
         else:
-            self.cfg = cfg
+            self.__init__(cfg)
 
         try:
             # Added to file read to catch multiple columns with same name which causes second column to overwrite first. - GDB
