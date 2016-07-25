@@ -88,33 +88,40 @@ class importVeris():
 
     def __init__(self, cfg=None, scripts=None):
         self.cfg = cfg
-        if scripts is None:
-            scripts = self.scripts
+        if scripts is not None:
+            self.scripts = json.loads(scripts)
         else:
-            scripts = json.loads(scripts)
+            if cfg['version'] == "1.3":
+                self.scripts = {"vzir": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-vzir1_3.py",
+                           "vcdb": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-vcdb1_3.py",
+                           "sg": cfg.get("dbir_private", "").rstrip("/") + "/bin/sgpartner_to_dbir1_3.py",
+                           "stdexcel": cfg.get("veris", "").rstrip("/") + "/bin/import_stdexcel1_3.py"
+                           }
+            elif cfg['version'] == "1.3.1":
+                self.scripts = {"vzir": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-vzir1_3_1.py",
+                               "vcdb": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-vcdb1_3_1.py",
+                               "sg": cfg.get("dbir_private", "").rstrip("/") + "/bin/sgpartner_to_dbir1_3_1.py",
+                               "stdexcel": cfg.get("veris", "").rstrip("/") + "/bin/import_stdexcel1_3_1.py"
+                               }
+            else:
+                raise AttributeError("Cannot find scripts.  Please pass in a dictionary with a keys of 'vzir', 'vcdb', 'sg', and 'stdexcel' and values of a valid path to the import file.")
 
-        # import the 4 different veris conversion scripts
-        # self.scripts = {"vzir": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-dbir1_3.py",
-        #            "vcdb": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-vcdb1_3.py",
-        #            "sg": cfg.get("dbir_private", "").rstrip("/") + "/bin/sgpartner_to_dbir.py",
-        #            "stdexcel": cfg.get("veris", "").rstrip("/") + "/bin/import_stdexcel.py"
-        #            }
         for name, script in self.scripts.iteritems():
+            # try:
+                # logger.debug("Importing {0} from {1}.".format(name, self.scripts[name]))
+                # # split the filename out to file and name portions.
+                # head, tail = ntpath.split(script)
+                # # strip the '.py' off the file
+                # tail = tail.rstrip(".py")
+                # # Import
+                # self.scripts[name] = import_from_dotted_path(".".join([tail, "CSVtoJSON"]), [head])
+
             try:
                 logger.debug("Importing {0} from {1}.".format(name, self.scripts[name]))
-                # split the filename out to file and name portions.
-                head, tail = ntpath.split(script)
-                # strip the '.py' off the file
-                tail = tail.rstrip(".py")
-                # Import
-                scripts[name] = import_from_dotted_path(".".join(tail, "CSVtoJSON", [head]))
-
-            # try:
-            #     logger.debug("Importing {0} from {1}.".format(name, self.scripts[name]))
-            #     scripts[name] = imp.load_source(name, script)
+                self.scripts[name] = imp.load_source(name, script)
             except Exception as e:
                 logger.warning("{0} with file {1} didn't import due to {2}".format(name, self.scripts[name], e))
-                scripts[name] = None
+                self.scripts[name] = None
         # import
        # import the rules module
         self.rules = imp.load_source("addrules", cfg.get("veris", "../").rstrip("/") + "/bin/rules.py")
@@ -144,10 +151,11 @@ class importVeris():
         logger.info('Beginning main loop.')
 
         # get the partner name
-        source = cfg['input'].split("/")[-2].lower()
-        source = ''.join([e for e in source if e.isalnum()])
-
-        if source not in cfg:
+        if 'source' in cfg:
+            source = cfg['source']
+        else:
+            source = cfg['input'].split("/")[-2].lower()
+            source = ''.join([e for e in source if e.isalnum()])
             cfg['source'] = source
 
         logger.info("Starting import of {0}.".format(source))
@@ -204,7 +212,9 @@ class importVeris():
     #        "--source",
     #        source
     #    ])
-        for iid, incident_json in self.scripts[script].main(cfg):
+        impVERIS = self.scripts[script].CSVtoJSON(cfg)
+
+        for iid, incident_json in impVERIS.main():
 
             # run correlated fields using script
             incident_json = self.rules.makeValid(incident_json, cfg)
@@ -219,10 +229,10 @@ class importVeris():
             except ValidationError as e:
                 offendingPath = '.'.join(str(x) for x in e.path)
                 if "row_number" in incident_json.get("plus", {}):
-                    logger.warning("ERROR in {0} at line {0} from {0}:".format(
+                    logger.warning("ERROR in {0} at line {1} from {2}: {3}".format(
                         incident["incident_id"], incident_json['plus']['row_number'], cfg['input'], e.message))
                 else:
-                    logger.warning("ERROR in {0} from {0}:".format(incident_json["incident_id"], cfg['input'], e.message))
+                    logger.warning("ERROR in {0} from {1}: {2}".format(incident_json["incident_id"], cfg['input'], e.message))
                 #logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message)) # replaced with above. - gdb 06/11/16
 
             # return the updated, validated, incident
