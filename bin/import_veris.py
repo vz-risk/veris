@@ -132,7 +132,7 @@ class importVeris():
 
 
         # create validator
-        if os.path.isfile(cfg['mergedfile']):
+        if os.path.isfile(cfg.get('mergedfile', '')):
             with open(cfg['mergedfile'], 'r') as filehandle:
                 merged = json.load(filehandle)
         else:
@@ -230,7 +230,7 @@ class importVeris():
                 offendingPath = '.'.join(str(x) for x in e.path)
                 if "row_number" in incident_json.get("plus", {}):
                     logger.warning("ERROR in {0} at line {1} from {2}: {3}".format(
-                        incident["incident_id"], incident_json['plus']['row_number'], cfg['input'], e.message))
+                        incident_json["incident_id"], incident_json['plus']['row_number'], cfg['input'], e.message))
                 else:
                     logger.warning("ERROR in {0} from {1}: {2}".format(incident_json["incident_id"], cfg['input'], e.message))
                 #logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message)) # replaced with above. - gdb 06/11/16
