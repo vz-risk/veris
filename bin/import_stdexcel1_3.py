@@ -29,6 +29,7 @@ cfg = {
 
 class CSVtoJSON():
     """Imports a CSV outputted by the standard excel survey gizmo form"""
+    jmerged = None
     jschema = None
     jenums = None
     cfg = None
@@ -41,19 +42,28 @@ class CSVtoJSON():
         self.cfg = cfg
 
         try:
+            self.jmerged = self.openJSON(cfg["mergedfile"])
+        except IOError:
+            logging.warning("Merged file not found.")
+        try:
             self.jschema = self.openJSON(cfg["schemafile"])
         except IOError:
-            logging.critical("ERROR: Schema file not found.")
-            exit(1)
+            logging.warning("Schema file not found.")
         try:
             self.jenums = self.openJSON(cfg["enumfile"])
         except IOError:
-            logging.critical("ERROR: Enumeration file not found.")
+            logging.critical("Enumeration file not found.")
             exit(1)
 
         # self.reqfields = self.reqSchema(self.jschema)
-        self.sfields = self.parseSchema(self.jschema)
-
+        try:
+            self.sfields = self.parseSchema(self.jmerged)
+        except TypeError:
+            try:
+                self.sfields = self.parseSchema(self.jschema)
+            except TypeError:
+                logging.critical("No merged or schema file available to create field names from.")
+                exit(1)
 
     def reqSchema(self, v, base="", mykeylist={}):
         "given schema in v, returns a list of keys and it's type"
