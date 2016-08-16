@@ -134,8 +134,8 @@ class CSVtoJSON():
                 elif val=="string":
                     saved[allenum[-1]] = unicode(src[enum],errors='ignore')
                 elif val=="numeric":
-                    if self.isnum(src[enum]):
-                        saved[allenum[-1]] = self.isnum(src[enum])
+                    if self.isfloat(src[enum]):
+                        saved[allenum[-1]] = self.isfloat(src[enum])
                 elif val=="integer":
                     if self.isnum(src[enum]):
                         saved[allenum[-1]] = self.isnum(src[enum])
