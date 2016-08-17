@@ -133,7 +133,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=descriptionText)
     parser.add_argument("-s", "--schema",
                         help="schema file. (Normally '../verisc.json'.)", default=DEFAULTSCHEMA)
-    parser.add_argument("--labelsfile",
+    parser.add_argument("--labels",
                         help="the labels file. (Normally '../verisc-labels.json'.", default=DEFAULTLABELS)
     parser.add_argument("-o", "--output",
                         help="the location of the merged output file. (Normally '../verisc-merged.json'.)", default=MERGED)
