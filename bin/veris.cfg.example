@@ -1,0 +1,26 @@
+[GENERAL]
+report = verisc
+input = /tmp/verisc/reviewed/
+output = /tmp/verisc/data/
+analysis = /tmp/verisc/analysis/
+year = 2017
+analyst = importer
+force_analyst = False
+version = 1.3.1
+database = /tmp/user/verisc.db
+check = False
+
+[LOGGING]
+log_level = warning
+log_file = /tmp/user/verisc.log
+
+[REPO]
+veris = /path/to/veris
+
+[VERIS]
+mergedfile = /path/to/veris/verisc-merged.json
+enumfile = /path/to/veris/verisc-enum.json
+schemafile = /path/to/veris/verisc.json
+labelsfile = /path/to/veris/verisc-labels.json
+countryfile = /path/to/veris/bin/all.json
+
