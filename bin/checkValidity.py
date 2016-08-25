@@ -70,7 +70,7 @@ def main(incident):
 if __name__ == '__main__':
     # TODO: implement config file options for all of these
     parser = argparse.ArgumentParser(description="Checks a set of json files to see if they are valid VERIS incidents")
-    parser.add_argument("-m", "--merge", help="fully merged json schema file.")
+    parser.add_argument("-m","--mergedfile", help="The fully merged json schema file.")
     #parser.add_argument("-s", "--schema", help="schema file to validate with")
     #parser.add_argument("-e", "--enum", help="enumeration file to validate with")
     parser.add_argument("-l", "--logging", choices=["critical", "warning", "info", "debug"],
@@ -78,65 +78,130 @@ if __name__ == '__main__':
     parser.add_argument("-p", "--path", nargs='+', help="list of paths to search for incidents")
     #parser.add_argument("-u", "--plus", help="optional schema for plus section")
     args = parser.parse_args()
+    args = {k:v for k,v in vars(args).iteritems() if v is not None}
+
     logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL, 'info': logging.INFO, 'debug': logging.DEBUG}
     logging.basicConfig(level=logging_remap[args.logging])
     logging.info("Now starting checkValidity.")
 
-    config = ConfigParser.ConfigParser()
-    config.read('_checkValidity.cfg')
+    # Parse the config file
+    cfg = {}
+    try:
+        config = ConfigParser.SafeConfigParser()
+        config.readfp(open(args["conf"]))
+        cfg_key = {
+            'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'version', 'database', 'check'],
+            'LOGGING': ['level', 'log_file'],
+            'REPO': ['veris', 'dbir_private'],
+            'VERIS': ['mergedfile', 'enumfile', 'schemafile', 'labelsfile', 'countryfile']
+        }
+        for section in cfg_key.keys():
+            if config.has_section(section):
+                for value in cfg_key[section]:
+                    if value.lower() in config.options(section):
+                        cfg[value] = config.get(section, value)
+        cfg["year"] = int(cfg["year"])
+        logging.debug("config import succeeded.")
+    except Exception as e:
+        logging.warning("config import failed.")
+        #raise e
+        pass
 
-    if args.merge:
+    cfg.update(args)
+
+    if args.get("mergedfile", ""):
         try:
-            schema = simplejson.loads(open(args.merge).read())
+            schema = simplejson.loads(open(args["mergedfile"]).read())
         except IOError:
-            logging.critical("ERROR: merge file not found. Cannot continue.")
+            logging.critical("ERROR: mergedfile not found. Cannot continue.")
             exit(1)
         except simplejson.scanner.JSONDecodeError:
-            logging.critical("ERROR: merge file is not parsing properly. Cannot continue.")
+            logging.critical("ERROR: mergedfile is not parsing properly. Cannot continue.")
             exit(1)
     # removed schema joining.  If you need a merged schema, use mergeSchema.py to generate one. - gdb 061416
     else:
-      logging.critical("ERROR: merge file not found.  Cannot continue.")
+      logging.critical("ERROR: mergedfile not found.  Cannot continue.")
 
     # Create validator
     validator = Draft4Validator(schema)
 
-    data_paths = []
-    if args.path:
-        data_paths = args.path
-    else:  # only use config option if nothing is specified on the command line
-        try:
-            path_to_parse = config.get('VERIS', 'datapath')
-            data_paths = path_to_parse.strip().split('\n')
-        except ConfigParser.Error:
-            logging.warning("No path specified in config file. Using default")
-            data_paths = ['.']
-            pass
+    # data_paths = []
+    # if args.path:
+    #     data_paths = args.path
+    # else:  # only use config option if nothing is specified on the command line
+    #     try:
+    #         path_to_parse = cfg.get('input')
+    #         data_paths = path_to_parse.strip().split('\n')
+    #     except ConfigParser.Error:
+    #         logging.warning("No path specified in config file. Using default")
+    #         data_paths = ['.']
+    #         pass
+    if "input" in cfg:
+        cfg["input"] = [l.strip() for l in cfg["input"].split(" ,")]  # spit to list
+    else:
+        # raise ValueError("No input director or file provided to validate.")
+    # files_to_validate = set()
+    incident_counter = 0
+    for src in cfg["input"]:
+        if os.path.isfile(src):
+            logging.debug("Now validating {0}.".format(src))
+            # files_to_validate.add(src)
+            try:
+                incident = simplejson.load(open(src))
+                validator.validate(incident)
+                main(incident) 
+            except ValidationError as e:
+                offendingPath = '.'.join(str(x) for x in e.path)
+                logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message))    
+            except simplejson.scanner.JSONDecoderError:
+                logging.warning("ERROR: %s did not parse properly. Skipping" % src)
+            incident_counter += 1
+            if incident_counter % 100 == 0:
+                logging.info("%s incident validated" % incident_counter)
+        elif os.path.isdir(src):
+            logger.debug("Now validating files in {0}.".format(src))
+            src = src.rstrip("/")
+            for inFile in glob.iglob(src + "/*/*.csv"):
+                # files_to_validate.add(inFile)
+                try:
+                    incident = simplejson.load(open(inFile))
+                    validator.validate(incident)
+                    main(incident) 
+                except ValidationError as e:
+                    offendingPath = '.'.join(str(x) for x in e.path)
+                    logging.warning("ERROR in %s. %s %s" % (inFile, offendingPath, e.message))    
+                except simplejson.scanner.JSONDecoderError:
+                    logging.warning("ERROR: %s did not parse properly. Skipping" % inFile)
+                incident_counter += 1
+                if incident_counter % 100 == 0:
+                    logging.info("%s incident validated" % incident_counter)
+
+
     logging.info("schema assembled successfully.")
     logging.debug(simplejson.dumps(schema,indent=2,sort_keys=True))
 
-    data_paths = [x + '/*.json' for x in data_paths]
-    incident_counter = 0
-    for eachDir in data_paths:
-        for eachFile in glob(eachDir):
-          logging.debug("Now validating %s" % eachFile)
-          try:
-              incident = simplejson.loads(open(eachFile).read())
-          except simplejson.scanner.JSONDecodeError:
-              logging.warning("ERROR: %s did not parse properly. Skipping" % eachFile)
-              continue
+    # data_paths = [x + '/*.json' for x in data_paths]
+    # incident_counter = 0
+    # for eachDir in data_paths:
+    #     for eachFile in glob(eachDir):
+    #       logging.debug("Now validating %s" % eachFile)
+    #       try:
+    #           incident = simplejson.loads(open(eachFile).read())
+    #       except simplejson.scanner.JSONDecodeError:
+    #           logging.warning("ERROR: %s did not parse properly. Skipping" % eachFile)
+    #           continue
 
 
-          try:
-              #validate(incident, schema)
-              validator.validate(incident)
-              main(incident)
-          except ValidationError as e:
-              offendingPath = '.'.join(str(x) for x in e.path)
-              logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message))
+          # try:
+          #     #validate(incident, schema)
+          #     validator.validate(incident)
+          #     main(incident)
+          # except ValidationError as e:
+          #     offendingPath = '.'.join(str(x) for x in e.path)
+          #     logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message))
 
-          incident_counter += 1
-          if incident_counter % 100 == 0:
-              logging.info("%s incident validated" % incident_counter)
+          # incident_counter += 1
+          # if incident_counter % 100 == 0:
+          #     logging.info("%s incident validated" % incident_counter)
 
     logging.info("checkValidity complete")

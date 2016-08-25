@@ -17,13 +17,14 @@ import ConfigParser
 cfg = {
     'log_level': 'warning',
     'log_file': None,
-    'schemafile': "../vcdb/veris.json",
-    'enumfile': "../vcdb/veris-enum.json",
+    'schemafile': "../verisc.json",
+    'enumfile': "../verisc-enum.json",
+    'mergedfile': "../verisc-merged",
     'vcdb':False,
     'version':"1.3",
     'countryfile':'all.json',
     'output': os.getcwd(),
-    'quiet': False,
+    'check': False,
     'repositories': ""
 }
 
@@ -488,6 +489,7 @@ if __name__ == '__main__':
     parser.add_argument("-i", "--input", help="The csv file containing the data")
     parser.add_argument("-l","--log_level",choices=["critical","warning","info","debug"], help="Minimum logging level to display")
     parser.add_argument('--log_file', help='Location of log file')
+    parser.add_argument("-m","--mergedfile", help="The fully merged json schema file.")
     parser.add_argument("-s","--schemafile", help="The JSON schema file")
     parser.add_argument("-e","--enumfile", help="The JSON file with VERIS enumerations")
     parser.add_argument("--vcdb",help="Convert the data for use in VCDB",action="store_true")
@@ -499,7 +501,8 @@ if __name__ == '__main__':
     parser.add_argument("-f", "--force_analyst", help="Override default analyst with --analyst.", action='store_true')
     output_group = parser.add_mutually_exclusive_group()
     output_group.add_argument("-o", "--output", help="directory where json files will be written")
-    output_group.add_argument("-q", "--quiet", help="suppress the writing of json files.", action='store_true')
+    output_group.add_argument("--check", help="Generate VERIS json records from the input csv, but do not write them to disk. " + 
+                              "This is to allow finding errors in the input csv without creating any files.", action='store_true')
     args = parser.parse_args()
     args = {k:v for k,v in vars(args).iteritems() if v is not None}
 
@@ -510,9 +513,10 @@ if __name__ == '__main__':
         config = ConfigParser.SafeConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
-            'GENERAL': ['input', 'output'],
+            'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'version', 'database', 'check'],
             'LOGGING': ['level', 'log_file'],
-            'VERIS': ['version', 'schemafile', 'enumfile', 'vcdb', 'year', 'countryfile']
+            'REPO': ['veris', 'dbir_private'],
+            'VERIS': ['mergedfile', 'enumfile', 'schemafile', 'labelsfile', 'countryfile']
         }
         for section in cfg_key.keys():
             if config.has_section(section):
@@ -520,7 +524,6 @@ if __name__ == '__main__':
                     if value.lower() in config.options(section):
                         cfg[value] = config.get(section, value)
         cfg["year"] = int(cfg["year"])
-        cfg["vcdb"] = {True:True, False:False, "false":False, "true":True}[cfg["vcdb"].lower()]
         logging.debug("config import succeeded.")
     except Exception as e:
         logging.warning("config import failed.")
@@ -530,8 +533,14 @@ if __name__ == '__main__':
     #cfg.update({k:v for k,v in vars(args).iteritems() if k not in cfg.keys()})  # copy command line arguments to the 
     #cfg.update(vars(args))  # overwrite configuration file variables with 
     cfg.update(args)
-    if 'quiet' in args and args['quiet'] == True:
-        _ = cfg.pop('output')
+    
+    if cfg.get('check', False) == True:
+        # _ = cfg.pop('output')
+        logging.info("Output files will not be written")
+    else:
+        logging.info("Output files will be written to %s", cfg["output"])
+
+    cfg["vcdb"] = {True:True, False:False, "false":False, "true":True}[cfg["vcdb"].lower()]
 
     # if source missing, try and guess it from directory
     if 'source' not in cfg or not cfg['source']:
@@ -559,18 +568,19 @@ if __name__ == '__main__':
     # call the main loop which yields json incidents
     logging.info("Output files will be written to %s",cfg["output"])
     for iid, incident_json in importStdExcel.main():
-        # write the json to a file
-        if cfg["output"].endswith("/"):
-            dest = cfg["output"] + incident_json['plus']['master_id'] + '.json'
-            # dest = args.output + outjson['incident_id'] + '.json'
-        else:
-            dest = cfg["output"] + '/' + incident_json['plus']['master_id'] + '.json'
-            # dest = args.output + '/' + outjson['incident_id'] + '.json'
-        logging.info("%s: writing file to %s", iid, dest)
-        try:
-            fwrite = open(dest, 'w')
-            fwrite.write(json.dumps(incident_json, indent=2, sort_keys=True))
-            fwrite.close()
-        except UnicodeDecodeError:
-            print incident_json
+        if not cfg.get('check', False):
+            # write the json to a file
+            if cfg["output"].endswith("/"):
+                dest = cfg["output"] + incident_json['plus']['master_id'] + '.json'
+                # dest = args.output + outjson['incident_id'] + '.json'
+            else:
+                dest = cfg["output"] + '/' + incident_json['plus']['master_id'] + '.json'
+                # dest = args.output + '/' + outjson['incident_id'] + '.json'
+            logging.info("%s: writing file to %s", iid, dest)
+            try:
+                fwrite = open(dest, 'w')
+                fwrite.write(json.dumps(incident_json, indent=2, sort_keys=True))
+                fwrite.close()
+            except UnicodeDecodeError:
+                print incident_json
 

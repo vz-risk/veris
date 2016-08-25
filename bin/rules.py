@@ -736,9 +736,10 @@ if __name__ == "__main__":
         config = ConfigParser.SafeConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
-            'GENERAL': ['input', 'output'] #, 'dbirR', 'veris_scripts'],
-#            'LOGGING': ['level', 'log_file'],
- #           'VERIS': ['version', 'schemafile', 'enumfile', 'vcdb', 'year', 'countryfile']
+            'GENERAL': ['input', 'output'] #, 'report', 'analysis', 'year', 'force_analyst', 'version', 'database', 'check'],
+            # 'LOGGING': ['level', 'log_file'],
+            # 'REPO': ['veris', 'dbir_private'],
+            # 'VERIS': ['mergedfile', 'enumfile', 'schemafile', 'labelsfile', 'countryfile']
         }
         for section in cfg_key.keys():
             if config.has_section(section):

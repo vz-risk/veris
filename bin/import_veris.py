@@ -52,7 +52,7 @@ cfg = {
     'version':"1.3",
     'countryfile':'all.json',
     'output': os.getcwd(),
-    'quiet': False,
+    'check': False,
     'repositories': ""
 }
 
@@ -275,6 +275,8 @@ if __name__ == '__main__':
     parser.add_argument('--countryfile', help='The json file holdering the country mapping.')
     parser.add_argument('--source', help="Source_id to use for the incidents. Partner pseudonym.")
     parser.add_argument("-f", "--force_analyst", help="Override default analyst with --analyst.", action='store_true')
+    parser.add_argument("--check", help="Generate VERIS json records from the input csv, but do not write them to disk. " + 
+                              "This is to allow finding errors in the input csv without creating any files.", action='store_true')
     args = parser.parse_args()
     args = {k:v for k,v in vars(args).iteritems() if v is not None}
 
@@ -282,10 +284,10 @@ if __name__ == '__main__':
     try:
         config = ConfigParser.SafeConfigParser()
         config.readfp(open(args["conf"]))
-        cfg_key = {
-            'GENERAL': ['input', 'output', 'dbir_private', 'veris'],
+            'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'version', 'database', 'check'],
             'LOGGING': ['level', 'log_file'],
-            'VERIS': ['version', 'schemafile', 'enumfile', 'mergedfile', 'labelfile', 'vcdb', 'year', 'countryfile']
+            'REPO': ['veris', 'dbir_private'],
+            'VERIS': ['mergedfile', 'enumfile', 'schemafile', 'labelsfile', 'countryfile']
         }
         for section in cfg_key.keys():
             if config.has_section(section):
@@ -296,7 +298,6 @@ if __name__ == '__main__':
             cfg["year"] = int(cfg["year"])
         else:
             cfg["year"] = int(datetime.now().year)
-        cfg["vcdb"] = {"false":False, "true":True}[str(cfg["vcdb"]).lower()]
         logger.debug("config import succeeded.")
     except Exception as e:
         logger.warning("config import failed with error {0}.".format(e))
@@ -305,6 +306,13 @@ if __name__ == '__main__':
 
     cfg.update(args)
 
+    if cfg.get('check', False) == True:
+        # _ = cfg.pop('output')
+        logging.info("Output files will not be written")
+    else:
+        logging.info("Output files will be written to %s", cfg["output"])
+
+    cfg["vcdb"] = {"false":False, "true":True}[str(cfg["vcdb"]).lower()]
 
     logger.setLevel(logging_remap[cfg["log_level"]])
     #logger.basicConfig(level=logging_remap[cfg["log_level"]],
@@ -319,18 +327,18 @@ if __name__ == '__main__':
     inV = importVeris(cfg)
 
     for iid, incident_json in inV.main(cfg):
-
-        # write the json to a file
-        if cfg["output"].endswith("/"):
-            dest = cfg["output"] + incident_json['plus']['master_id'] + '.json'
-            # dest = args.output + outjson['incident_id'] + '.json'
-        else:
-            dest = cfg["output"] + '/' + incident_json['plus']['master_id'] + '.json'
-            # dest = args.output + '/' + outjson['incident_id'] + '.json'
-        logger.info("%s: writing file to %s", iid, dest)
-        try:
-            fwrite = open(dest, 'w')
-            fwrite.write(json.dumps(incident_json, indent=2, sort_keys=True))
-            fwrite.close()
-        except UnicodeDecodeError:
-            print incident_json
+        if not cfg.get('check', False):    
+            # write the json to a file
+            if cfg["output"].endswith("/"):
+                dest = cfg["output"] + incident_json['plus']['master_id'] + '.json'
+                # dest = args.output + outjson['incident_id'] + '.json'
+            else:
+                dest = cfg["output"] + '/' + incident_json['plus']['master_id'] + '.json'
+                # dest = args.output + '/' + outjson['incident_id'] + '.json'
+            logger.info("%s: writing file to %s", iid, dest)
+            try:
+                fwrite = open(dest, 'w')
+                fwrite.write(json.dumps(incident_json, indent=2, sort_keys=True))
+                fwrite.close()
+            except UnicodeDecodeError:
+                print incident_json
