@@ -284,8 +284,9 @@ if __name__ == '__main__':
     try:
         config = ConfigParser.SafeConfigParser()
         config.readfp(open(args["conf"]))
+        cfg_key = {
             'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'version', 'database', 'check'],
-            'LOGGING': ['level', 'log_file'],
+            'LOGGING': ['log_level', 'log_file'],
             'REPO': ['veris', 'dbir_private'],
             'VERIS': ['mergedfile', 'enumfile', 'schemafile', 'labelsfile', 'countryfile']
         }

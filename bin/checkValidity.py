@@ -7,7 +7,13 @@ from jsonschema import validate, ValidationError, Draft4Validator
 import argparse
 import ConfigParser
 import logging
-from glob import glob
+# import glob
+import fnmatch
+
+logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
+                 50: logging.CRITICAL, 40: logging.ERROR, 30: logging.WARNING, 20: logging.INFO, 10: logging.DEBUG, 0: logging.CRITICAL}
+FORMAT = '%(asctime)19s - %(processName)s {0} - %(levelname)s - %(message)s'
+logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d/%Y %H:%M:%S')
 
 #defaultSchema = "../verisc.json"
 #defaultEnum = "../verisc-enum.json"
@@ -73,16 +79,16 @@ if __name__ == '__main__':
     parser.add_argument("-m","--mergedfile", help="The fully merged json schema file.")
     #parser.add_argument("-s", "--schema", help="schema file to validate with")
     #parser.add_argument("-e", "--enum", help="enumeration file to validate with")
-    parser.add_argument("-l", "--logging", choices=["critical", "warning", "info", "debug"],
+    parser.add_argument("-l", "--log_level", choices=["error", "critical", "warning", "info", "debug"],
                         help="Minimum logging level to display", default="warning")
-    parser.add_argument("-p", "--path", nargs='+', help="list of paths to search for incidents")
+    parser.add_argument('--log_file', help='Location of log file')
+    parser.add_argument("-i", "--input", nargs='+', help="list of paths to search for incidents")
     #parser.add_argument("-u", "--plus", help="optional schema for plus section")
+    parser.add_argument('--conf', help='The location of the config file', default="../user/data_flow.cfg")
     args = parser.parse_args()
     args = {k:v for k,v in vars(args).iteritems() if v is not None}
 
-    logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL, 'info': logging.INFO, 'debug': logging.DEBUG}
-    logging.basicConfig(level=logging_remap[args.logging])
-    logging.info("Now starting checkValidity.")
+
 
     # Parse the config file
     cfg = {}
@@ -91,7 +97,7 @@ if __name__ == '__main__':
         config.readfp(open(args["conf"]))
         cfg_key = {
             'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'version', 'database', 'check'],
-            'LOGGING': ['level', 'log_file'],
+            'LOGGING': ['log_level', 'log_file'],
             'REPO': ['veris', 'dbir_private'],
             'VERIS': ['mergedfile', 'enumfile', 'schemafile', 'labelsfile', 'countryfile']
         }
@@ -109,9 +115,16 @@ if __name__ == '__main__':
 
     cfg.update(args)
 
-    if args.get("mergedfile", ""):
+
+    logging.getLogger().setLevel(logging_remap[cfg["log_level"]])
+    logging.info("Now starting checkValidity.")
+
+    logging.debug(args)
+    logging.debug(cfg)
+
+    if cfg.get("mergedfile", ""):
         try:
-            schema = simplejson.loads(open(args["mergedfile"]).read())
+            schema = simplejson.loads(open(cfg["mergedfile"]).read())
         except IOError:
             logging.critical("ERROR: mergedfile not found. Cannot continue.")
             exit(1)
@@ -121,6 +134,7 @@ if __name__ == '__main__':
     # removed schema joining.  If you need a merged schema, use mergeSchema.py to generate one. - gdb 061416
     else:
       logging.critical("ERROR: mergedfile not found.  Cannot continue.")
+      exit(1)
 
     # Create validator
     validator = Draft4Validator(schema)
@@ -136,10 +150,12 @@ if __name__ == '__main__':
     #         logging.warning("No path specified in config file. Using default")
     #         data_paths = ['.']
     #         pass
-    if "input" in cfg:
-        cfg["input"] = [l.strip() for l in cfg["input"].split(" ,")]  # spit to list
-    else:
-        # raise ValueError("No input director or file provided to validate.")
+
+    # if "input" in cfg:
+    #     cfg["input"] = [l.strip() for l in cfg["input"].split(" ,")]  # spit to list
+    # else:
+    #     raise ValueError("No input director or file provided to validate.")
+
     # files_to_validate = set()
     incident_counter = 0
     for src in cfg["input"]:
@@ -159,26 +175,29 @@ if __name__ == '__main__':
             if incident_counter % 100 == 0:
                 logging.info("%s incident validated" % incident_counter)
         elif os.path.isdir(src):
-            logger.debug("Now validating files in {0}.".format(src))
+            logging.debug("Now validating files in {0}.".format(src))
             src = src.rstrip("/")
-            for inFile in glob.iglob(src + "/*/*.csv"):
-                # files_to_validate.add(inFile)
-                try:
-                    incident = simplejson.load(open(inFile))
-                    validator.validate(incident)
-                    main(incident) 
-                except ValidationError as e:
-                    offendingPath = '.'.join(str(x) for x in e.path)
-                    logging.warning("ERROR in %s. %s %s" % (inFile, offendingPath, e.message))    
-                except simplejson.scanner.JSONDecoderError:
-                    logging.warning("ERROR: %s did not parse properly. Skipping" % inFile)
-                incident_counter += 1
-                if incident_counter % 100 == 0:
-                    logging.info("%s incident validated" % incident_counter)
+            # for inFile in glob.iglob(src + "/*/*.json"):
+            for root, dirnames, filenames in os.walk(src):
+                for filename in fnmatch.filter(filenames, '*.json'):
+                    inFile = os.path.join(root, filename)
+                    # files_to_validate.add(inFile)
+                    try:
+                        incident = simplejson.load(open(inFile))
+                        validator.validate(incident)
+                        main(incident) 
+                    except ValidationError as e:
+                        offendingPath = '.'.join(str(x) for x in e.path)
+                        logging.warning("ERROR in %s. %s %s" % (inFile, offendingPath, e.message))    
+                    except simplejson.scanner.JSONDecoderError:
+                        logging.warning("ERROR: %s did not parse properly. Skipping" % inFile)
+                    incident_counter += 1
+                    if incident_counter % 100 == 0:
+                        logging.info("%s incident validated" % incident_counter)
 
 
     logging.info("schema assembled successfully.")
-    logging.debug(simplejson.dumps(schema,indent=2,sort_keys=True))
+    # logging.debug(simplejson.dumps(schema,indent=2,sort_keys=True))
 
     # data_paths = [x + '/*.json' for x in data_paths]
     # incident_counter = 0
