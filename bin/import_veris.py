@@ -313,7 +313,8 @@ if __name__ == '__main__':
     else:
         logging.info("Output files will be written to %s", cfg["output"])
 
-    cfg["vcdb"] = {"false":False, "true":True}[str(cfg["vcdb"]).lower()]
+    cfg["vcdb"] = {True:True, False:False, "false":False, "true":True}[str(cfg.get("vcdb", 'false')).lower()]
+    cfg["check"] = {True:True, False:False, "false":False, "true":True}[str(cfg.get("check", 'false')).lower()]
 
     logger.setLevel(logging_remap[cfg["log_level"]])
     #logger.basicConfig(level=logging_remap[cfg["log_level"]],
@@ -327,6 +328,10 @@ if __name__ == '__main__':
     # Instantiate the class
     inV = importVeris(cfg)
 
+    if not cfg.get('check', False):
+        logger.info("Output files will be written to %s",cfg["output"])
+    else:
+        logger.info("'check' setting is {0} so files will not be written.".format(cfg.get('check', False)))
     for iid, incident_json in inV.main(cfg):
         if not cfg.get('check', False):    
             # write the json to a file

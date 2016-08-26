@@ -530,8 +530,8 @@ if __name__ == '__main__':
     #cfg.update({k:v for k,v in vars(args).iteritems() if k not in cfg.keys()})  # copy command line arguments to the 
     #cfg.update(vars(args))  # overwrite configuration file variables with 
     cfg.update(args)
-
-    cfg["vcdb"] = {True:True, False:False, "false":False, "true":True}[cfg["vcdb"].lower()]
+    cfg["vcdb"] = {True:True, False:False, "false":False, "true":True}[str(cfg.get("vcdb", 'false')).lower()]
+    cfg["check"] = {True:True, False:False, "false":False, "true":True}[str(cfg.get("check", 'false')).lower()]
     ### Removed below. removing 'output' does nothing. - gdb 082516
     if cfg.get('check', False) == True:
         # _ = cfg.pop('output')
@@ -563,7 +563,10 @@ if __name__ == '__main__':
     importStdExcel = CSVtoJSON(cfg)
 
     # call the main loop which yields json incidents
-    logger.info("Output files will be written to %s",cfg["output"])
+    if not cfg.get('check', False):
+        logger.info("Output files will be written to %s",cfg["output"])
+    else:
+        logger.info("'check' setting is {0} so files will not be written.".format(cfg.get('check', False)))
     for iid, incident_json in importStdExcel.main():
         if not cfg.get('check', False):    
             # write the json to a file
