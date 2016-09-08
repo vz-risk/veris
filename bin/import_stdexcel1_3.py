@@ -550,9 +550,9 @@ if __name__ == '__main__':
         logging.warning("Source not defined.  Using the directory of the input file {0} instead.".format(cfg['source']))
 
     # Quick test to replace any placeholders accidentally left in the config
-    for k, v in cfg.iteritems():
-        if k not in  ["repositories", "source"] and type(v) == str:
-            cfg[k] = v.format(repositories=cfg["repositories"], partner_name=cfg["source"])
+    # for k, v in cfg.iteritems():
+    #     if k not in  ["repositories", "source"] and type(v) == str:
+    #         cfg[k] = v.format(repositories=cfg["repositories"], partner_name=cfg["source"])
 
     logging.basicConfig(level=logging_remap[cfg["log_level"]],
           format='%(asctime)19s %(levelname)8s %(message)s', datefmt='%m/%d/%Y %H:%M:%S')

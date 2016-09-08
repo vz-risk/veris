@@ -213,7 +213,12 @@ class importVeris():
     #        "--source",
     #        source
     #    ])
-        impVERIS = self.scripts[script].CSVtoJSON(cfg)
+        try:
+            logger.warning("Script is {0}.".format(script))
+            impVERIS = self.scripts[script].CSVtoJSON(cfg)
+        except AttributeError:
+            logger.debug("Raising AttributeError configuring script {0}.".format(script))
+            raise
 
         for iid, incident_json in impVERIS.main():
 
