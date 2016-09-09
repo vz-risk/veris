@@ -5,6 +5,7 @@ from glob import glob
 import os
 from fnmatch import fnmatch
 import ConfigParser
+from tqdm import tqdm
 
 
 cfg = {
@@ -63,10 +64,13 @@ def grepText(incident, searchFor):
 
 
 def main(cfg):
-    for root, dirnames, filenames in os.walk(cfg['input']):
+    logging.warning("Converting files from {0} to {1}.".format(cfg["input"], cfg["output"]))
+    for root, dirnames, filenames in tqdm(os.walk(cfg['input'])):
+      logging.warning("starting parsing of directory {0}.".format(root))
       filenames = filter(lambda fname: fnmatch(fname, "*.json"), filenames)
       if filenames:
-        dir_ = os.path.join(cfg['output'], root.rstrip(cfg['input'])) # if we don't strip the input, we get duplicate directories 
+        dir_ = os.path.join(cfg['output'], root[len(cfg['input']):]) # if we don't strip the input, we get duplicate directories 
+        logging.warning("Output directory is {0}.".format(dir_))
         if not os.path.isdir(dir_):
             os.makedirs(dir_)
         for fname in filenames:
