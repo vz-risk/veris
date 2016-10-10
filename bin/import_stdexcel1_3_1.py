@@ -13,6 +13,9 @@ import logging
 import re
 from datetime import datetime
 import ConfigParser
+from collections import defaultdict
+import re
+import operator
 
 # Default Configuration Settings
 cfg = {
@@ -42,10 +45,19 @@ class CSVtoJSON():
     jschema = None
     sfields = None
     # country_region = None
+    script_version = "1.3.1"
 
 
-    def __init__(self, cfg):
+    def __init__(self, cfg, file_version=None):
         self.cfg = cfg
+
+        if file_version is None:
+            file_version = self.get_file_schema_version(cfg['input'])
+        if file_version is None:
+            logging.warning("Could not determine veris version of {0}.  Please specify it as an argument to the class initialization, 'CSVtoJSON(cfg, file_version=<file version>)'".format(cfg['input']))
+        elif file_version != self.script_version:
+            logging.warning("File veris version {0} does not match script veris version {1}.".format(file_version, self.script_version))
+
         if type(cfg["schemafile"]) == dict:
             self.jschema = cfg["schemafile"]
         else:
@@ -53,10 +65,32 @@ class CSVtoJSON():
                 self.jschema = self.openJSON(cfg["schemafile"])
             except IOError:
                 logger.critical("ERROR: Schema file not found.")
-                exit(1)
+                raise
+                # exit(1)
 
         self.sfields = self.parseSchema(self.jschema)
         
+    def get_file_schema_version(self, inFile):
+        logging.info("Reading {0} to determine version.".format(inFile))
+        with open(inFile, 'r') as filehandle:
+            m = re.compile(r'(\.0+)*$')
+            versions = defaultdict(int)
+            csv_reader = csv.DictReader(filehandle)
+            if "schema_version" in csv_reader.fieldnames:
+                for row in csv_reader:
+                    versions[m.sub('', row["schema_version"])] += 1 # the regex removes trailing '.0' to make counting easier
+                version = max(versions.iteritems(), key=operator.itemgetter(1))[0]  # return the most common version. (They shoudl all be the same, but, you know.)
+                if version not in ["1.2", "1.3", "1.3.1", "1.4"]:
+                    logging.warning("VERIS version {0} in file {1} does not appear to be a standard version.  \n".format(version, inFile) + 
+                                   "Please ensure it is correct as it is used for upgrading VERIS files to the report version.")
+                if not version:
+                    logging.warning("No VERIS version found in file {0}.".format(inFile))
+                    return None
+                else:
+                    return version
+            else:
+                logging.warning("No VERIS version found in file {0}.".format(inFile))
+                return None
 
     def reqSchema(self, v, base="", mykeylist={}):
         "given schema in v, returns a list of keys and it's type"
@@ -403,16 +437,17 @@ class CSVtoJSON():
             l = csv_reader.next()
             if len(l) > len(set(l)):
                 logger.error(l)
-                raise KeyError("Input file has multiple columns of the same name.  Please create unique columns and rerun.")
                 file_handle.close()
-                exit(1)
+                raise KeyError("Input file has multiple columns of the same name.  Please create unique columns and rerun.")
+                # exit(1)
             else:
                 file_handle.seek(0)
                 infile = csv.DictReader(file_handle)
             # infile = csv.DictReader(open(args.filename,'rU'))  # Old File Read - gdb
         except IOError:
             logger.critical("ERROR: Input file not found.")
-            exit(1)
+            raise
+            # exit(1)
 
         for f in infile.fieldnames:
             if f not in self.sfields:
