@@ -64,6 +64,23 @@ def checkPlusAttributeConsistency(inDict):
     if 'confidentiality' not in inDict.get('attribute', {}):
       raise ValidationError("plus.attribute.confidentiality present but confidentiality is not an affected attribute.")
 
+def checkYear(inDict):
+    if inDict.get('plus', {}).get('dbir_year', None):
+        dbir_year = inDict['plus']['dbir_year']
+        tyear = inDict.get('timeline', {}).get('incident', {}).get('year', None)
+        tmonth = inDict.get('timeline', {}).get('incident', {}).get('month', None)
+        if tyear == dbir_year - 1:
+            if tmonth is not None and tmonth > 10:
+                raise ValidationError("DBIR year of {0} from incident runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {2} is not in this range.".format(
+                    dbir_year, dbir_year - 2, dbir_year - 1, tyear, tmonth))
+        elif tyear == dbir_year - 2:
+            if tmonth is not None and tmonth < 11:
+                raise ValidationError("DBIR year of {0} from incident runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {2} is not in this range.".format(
+                    dbir_year, dbir_year - 2, dbir_year - 1, tyear, tmonth))
+        else:
+            raise ValidationError("DBIR year of {0} from incident runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} is not in this range.".format(
+                dbir_year, dbir_year - 2, dbir_year - 1, tyear))                
+
 def main(incident):
   checkMalwareIntegrity(incident)
   checkSocialIntegrity(incident)
@@ -71,6 +88,7 @@ def main(incident):
   checkSecurityIncident(incident)
   checkLossTheftAvailability(incident)
   checkPlusAttributeConsistency(incident)
+  checkYear(incident)
 
 
 if __name__ == '__main__':
