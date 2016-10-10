@@ -123,18 +123,23 @@ if __name__ == '__main__':
     logging.debug(cfg)
 
     if cfg.get("mergedfile", ""):
-        try:
-            schema = simplejson.loads(open(cfg["mergedfile"]).read())
-        except IOError:
-            logging.critical("ERROR: mergedfile not found. Cannot continue.")
-            exit(1)
-        except simplejson.scanner.JSONDecodeError:
-            logging.critical("ERROR: mergedfile is not parsing properly. Cannot continue.")
-            exit(1)
+        if type(cfg['mergedfile']) == dict:
+            schema = cfg['mergedfile']
+        else:
+            try:
+                schema = simplejson.loads(open(cfg["mergedfile"]).read())
+            except IOError:
+                logging.critical("ERROR: mergedfile not found. Cannot continue.")
+                raise
+                # exit(1)
+            except simplejson.scanner.JSONDecodeError:
+                logging.critical("ERROR: mergedfile is not parsing properly. Cannot continue.")
+                raise
+                # exit(1)
     # removed schema joining.  If you need a merged schema, use mergeSchema.py to generate one. - gdb 061416
     else:
-      logging.critical("ERROR: mergedfile not found.  Cannot continue.")
-      exit(1)
+      IOError("ERROR: mergedfile not found.  Cannot continue.")
+      # exit(1)
 
     # Create validator
     validator = Draft4Validator(schema)
@@ -169,7 +174,7 @@ if __name__ == '__main__':
             except ValidationError as e:
                 offendingPath = '.'.join(str(x) for x in e.path)
                 logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message))    
-            except simplejson.scanner.JSONDecoderError:
+            except simplejson.scanner.JSONDecodeError:
                 logging.warning("ERROR: %s did not parse properly. Skipping" % src)
             incident_counter += 1
             if incident_counter % 100 == 0:
@@ -189,7 +194,7 @@ if __name__ == '__main__':
                     except ValidationError as e:
                         offendingPath = '.'.join(str(x) for x in e.path)
                         logging.warning("ERROR in %s. %s %s" % (inFile, offendingPath, e.message))    
-                    except simplejson.scanner.JSONDecoderError:
+                    except simplejson.scanner.JSONDecodeError:
                         logging.warning("ERROR: %s did not parse properly. Skipping" % inFile)
                     incident_counter += 1
                     if incident_counter % 100 == 0:
