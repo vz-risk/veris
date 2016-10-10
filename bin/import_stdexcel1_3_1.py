@@ -46,11 +46,14 @@ class CSVtoJSON():
 
     def __init__(self, cfg):
         self.cfg = cfg
-        try:
-            self.jschema = self.openJSON(cfg["schemafile"])
-        except IOError:
-            logger.critical("ERROR: Schema file not found.")
-            exit(1)
+        if type(cfg["schemafile"]) == dict:
+            self.jschema = cfg["schemafile"]
+        else:
+            try:
+                self.jschema = self.openJSON(cfg["schemafile"])
+            except IOError:
+                logger.critical("ERROR: Schema file not found.")
+                exit(1)
 
         self.sfields = self.parseSchema(self.jschema)
         
@@ -489,6 +492,7 @@ if __name__ == '__main__':
     parser.add_argument('--year', help='The DBIR year to assign tot he records.')
     parser.add_argument('--countryfile', help='The json file holdering the country mapping.')
     parser.add_argument('--source', help="Source_id to use for the incidents. Partner pseudonym.")
+    parser.add_argument('-a', '--analyst', help="The analyst to use if no analyst exists in record or if --force_analyst is set.")
     parser.add_argument("-f", "--force_analyst", help="Override default analyst with --analyst.", action='store_true')
     output_group = parser.add_mutually_exclusive_group()
     output_group.add_argument("-o", "--output", help="directory where json files will be written")

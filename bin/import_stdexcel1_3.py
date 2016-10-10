@@ -41,20 +41,28 @@ class CSVtoJSON():
 
     def __init__(self, cfg):
         self.cfg = cfg
-
-        try:
-            self.jmerged = self.openJSON(cfg["mergedfile"])
-        except IOError:
-            logging.warning("Merged file not found.")
-        try:
-            self.jschema = self.openJSON(cfg["schemafile"])
-        except IOError:
-            logging.warning("Schema file not found.")
-        try:
-            self.jenums = self.openJSON(cfg["enumfile"])
-        except IOError:
-            logging.critical("Enumeration file not found.")
-            exit(1)
+        if type(cfg["mergedfile"]) == dict:
+            self.jmerged = cfg["mergedfile"]
+        else:
+            try:
+                self.jmerged = self.openJSON(cfg["mergedfile"])
+            except IOError:
+                logging.warning("Merged file not found.")
+        if type(cfg["schemafile"]) == dict:
+            self.jschema = cfg["schemafile"]
+        else:
+            try:
+                self.jschema = self.openJSON(cfg["schemafile"])
+            except IOError:
+                logging.warning("Schema file not found.")
+        if type(cfg["enumfile"]) == dict:
+            self.jenums = cfg["enumfile"]
+        else:
+            try:
+                self.jenums = self.openJSON(cfg["enumfile"])
+            except IOError:
+                logging.critical("Enumeration file not found.")
+                exit(1)
 
         # self.reqfields = self.reqSchema(self.jschema)
         try:
@@ -498,6 +506,7 @@ if __name__ == '__main__':
     parser.add_argument('--year', help='The DBIR year to assign tot he records.')
     parser.add_argument('--countryfile', help='The json file holdering the country mapping.')
     parser.add_argument('--source', help="Source_id to use for the incidents. Partner pseudonym.")
+    parser.add_argument('-a', '--analyst', help="The analyst to use if no analyst exists in record or if --force_analyst is set.")
     parser.add_argument("-f", "--force_analyst", help="Override default analyst with --analyst.", action='store_true')
     output_group = parser.add_mutually_exclusive_group()
     output_group.add_argument("-o", "--output", help="directory where json files will be written")
@@ -568,9 +577,9 @@ if __name__ == '__main__':
 
     # call the main loop which yields json incidents
     if not cfg.get('check', False):
-        logger.info("Output files will be written to %s",cfg["output"])
+        logging.info("Output files will be written to %s",cfg["output"])
     else:
-        logger.info("'check' setting is {0} so files will not be written.".format(cfg.get('check', False)))
+        logging.info("'check' setting is {0} so files will not be written.".format(cfg.get('check', False)))
     for iid, incident_json in importStdExcel.main():
         if not cfg.get('check', False):
             # write the json to a file
