@@ -72,7 +72,7 @@ class CSVtoJSON():
         
     def get_file_schema_version(self, inFile):
         logging.info("Reading {0} to determine version.".format(inFile))
-        with open(inFile, 'r') as filehandle:
+        with open(inFile, 'rU') as filehandle:
             m = re.compile(r'(\.0+)*$')
             versions = defaultdict(int)
             csv_reader = csv.DictReader(filehandle)
