@@ -620,7 +620,7 @@ def makeValid(incident, cfg):
                 incident['action'][action]['vector'].append("Unknown") 
 
     # if confidentiality then there should be something in the data array
-    if 'confidentiality' in incident['attribute']:
+    if 'confidentiality' in incident.get('attribute', {}):
         if 'data' not in incident['attribute']['confidentiality']:
             incident['attribute']['confidentiality']['data'] = []
         if len(incident['attribute']['confidentiality']['data']) == 0:
@@ -629,7 +629,7 @@ def makeValid(incident, cfg):
 
     # if confidentiality was not affected then it shouldn't be in the plus
     # section either. Usually just has credit_monitoring unknown anyway.
-    if 'confidentiality' not in incident['attribute'] and \
+    if 'confidentiality' not in incident.get('attribute', {}) and \
       incident['plus'].get('attribute', {}).keys() == ['confidentiality']:
         logger.info("attribute.confidentiality not in record so removing attribute from plus for record {0}.".format(iid))
         incident['plus'].pop('attribute')
