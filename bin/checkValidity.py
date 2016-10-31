@@ -133,9 +133,14 @@ if __name__ == '__main__':
 
     cfg.update(args)
 
-
+    formatter = logging.Formatter(FORMAT.format(""))
     logging.getLogger().setLevel(logging_remap[cfg["log_level"]])
     logging.info("Now starting checkValidity.")
+    if "log_file" in cfg and cfg["log_file"] is not None:
+        fh = logging.FileHandler(cfg["log_file"])
+        fh.setLevel(logging_remap[cfg["log_level"]])
+        fh.setFormatter(formatter)
+        logging.getLogger().addHandler(fh)
 
     logging.debug(args)
     logging.debug(cfg)
