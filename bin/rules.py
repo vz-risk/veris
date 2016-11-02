@@ -37,7 +37,8 @@ import argparse
 import ConfigParser
 import os
 import json
-from datetime import datetime
+from datetime import datetime, date
+from distutils.version import StrictVersion
 
 
 ## SETUP
@@ -54,7 +55,8 @@ cfg = {
     'output': None,
     'quiet': False,
     'repositories': "",
-    'force_analyst': False
+    'force_analyst': False,
+    'year': date.today().year
 }
 #logger = multiprocessing.get_logger()
 logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
@@ -171,15 +173,21 @@ def addRules(incident, cfg):
         for each in incident['asset']['assets']:
             asset_list.append(each['variety'])
         for each in incident['action']['social']['target']:
-            if each == "Unknown":
-                if 'P - Unknown' not in asset_list:
-                    logger.info("%s: Adding P - Unknown to asset list since there was social engineering.",iid)
-                    incident['asset']['assets'].append({'variety':'P - Unknown'})
-                    continue
-            if 'P - '+each not in asset_list:
-                if 'P - '+each != 'P - Unknown':
+            if StrictVersion(incident['schema_version']) > StrictVersion("1.3"):
+                logging.debug("Version {0} greater than 1.3.".format(incident['schema_version']))
+                if 'P - '+each not in asset_list:
                     logger.info("{1}: Adding P - {0} to asset list since there was social engineering.".format(each,iid))
                     incident['asset']['assets'].append({'variety':'P - '+each})
+            else:
+                if each == "Unknown":
+                    if 'P - Other' not in asset_list:
+                        logger.info("%s: Adding P - Other to asset list since there was social engineering.",iid)
+                        incident['asset']['assets'].append({'variety':'P - Other'})
+                        continue
+                if 'P - '+each not in asset_list:
+                    if 'P - '+each not in  ['P - Other', 'P - Unknown']:
+                        logger.info("{1}: Adding P - {0} to asset list since there was social engineering.".format(each,iid))
+                        incident['asset']['assets'].append({'variety':'P - '+each})
 
     # If SQLi was involved then there needs to be misappropriation too
     if 'hacking' in incident['action']:
@@ -724,7 +732,7 @@ if __name__ == "__main__":
     #parser.add_argument("--vcdb",help="Convert the data for use in VCDB",action="store_true")
     #parser.add_argument("--version", help="The version of veris in use")
     parser.add_argument('--conf', help='The location of the config file', default="./_checkValidity.cfg")
-    #parser.add_argument('--year', help='The DBIR year to assign tot he records.')
+    parser.add_argument('--year', help='The DBIR year to assign tot he records.')
     #parser.add_argument('--countryfile', help='The json file holdering the country mapping.')
     parser.add_argument('--source', help="Source_id to use for the incidents. Partner pseudonym.")
     #parser.add_argument("-f", "--force_analyst", help="Override default analyst with --analyst.", action='store_true')

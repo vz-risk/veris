@@ -9,6 +9,7 @@ import ConfigParser
 import logging
 # import glob
 import fnmatch
+from datetime import date
 
 logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
                  50: logging.CRITICAL, 40: logging.ERROR, 30: logging.WARNING, 20: logging.INFO, 10: logging.DEBUG, 0: logging.CRITICAL}
@@ -67,19 +68,47 @@ def checkPlusAttributeConsistency(inDict):
 def checkYear(inDict):
     if inDict.get('plus', {}).get('dbir_year', None):
         dbir_year = inDict['plus']['dbir_year']
-        tyear = inDict.get('timeline', {}).get('incident', {}).get('year', None)
-        tmonth = inDict.get('timeline', {}).get('incident', {}).get('month', None)
+        nyear = inDict.get('plus', {}).get('timeline', {}).get('notification', {}).get('year', None)
+        nmonth = inDict.get('plus', {}).get('timeline', {}).get('notification', {}).get('month', None)
+        nday = inDict.get('plus', {}).get('timeline', {}).get('notification', {}).get('day', None)
+        iyear = inDict.get('timeline', {}).get('incident', {}).get('year', None)
+        imonth = inDict.get('timeline', {}).get('incident', {}).get('month', None)
+        iday = inDict.get('timeline', {}).get('incident', {}).get('day', None)
+        if nyear is not None:
+            source = "notification"
+            tyear = nyear
+            tmonth = nmonth
+        else:
+            tyear = iyear
+            tmonth = imonth
+            source = "incident"
         if tyear == dbir_year - 1:
             if tmonth is not None and tmonth > 10:
-                raise ValidationError("DBIR year of {0} from incident runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {2} is not in this range.".format(
-                    dbir_year, dbir_year - 2, dbir_year - 1, tyear, tmonth))
+                raise ValidationError("DBIR year of {0} from {5} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {4} is not in this range.".format(
+                    dbir_year, dbir_year - 2, dbir_year - 1, tyear, tmonth, source))
         elif tyear == dbir_year - 2:
             if tmonth is not None and tmonth < 11:
-                raise ValidationError("DBIR year of {0} from incident runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {2} is not in this range.".format(
-                    dbir_year, dbir_year - 2, dbir_year - 1, tyear, tmonth))
+                raise ValidationError("DBIR year of {0} from {5} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {4} is not in this range.".format(
+                    dbir_year, dbir_year - 2, dbir_year - 1, tyear, tmonth, source))
         else:
-            raise ValidationError("DBIR year of {0} from incident runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} is not in this range.".format(
-                dbir_year, dbir_year - 2, dbir_year - 1, tyear))                
+            raise ValidationError("DBIR year of {0} from {4} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} is not in this range.".format(
+                dbir_year, dbir_year - 2, dbir_year - 1, tyear, source)) 
+        # check if incident or notification dates are in future
+        if nyear is not None:
+            try:
+                ndate = date(*[x if x else 1 for x in [nyear, nmonth, nday]]) 
+            except ValueError as e:
+                raise ValidationError("Problem with notification date: {0}".format(e)) 
+            if ndate > date.today():
+                raise ValidationError("Notification date {0} is greater than today's date {1}.".format(ndate, date.today()))
+        try:
+            idate = date(*[x if x else 1 for x in [iyear, imonth, iday]])
+        except ValueError as e:
+            raise ValidationError("Problem with incident date: {0}".format(e))
+        if idate > date.today():
+            raise ValidationError("Incident date {0} is greater than today's date {1}.".format(idate, date.today()))
+        if nyear is not None and idate > ndate:
+            raise ValidationError("Notification date {0} appears to be earlier than incident date {1}. This may be due to incomplete dates.".format(ndate, idate))
 
 def main(incident):
   checkMalwareIntegrity(incident)
