@@ -39,6 +39,8 @@ import os
 import json
 from datetime import datetime, date
 from distutils.version import StrictVersion
+from tqdm import tqdm
+from pprint import pprint, pformat
 
 
 ## SETUP
@@ -111,10 +113,12 @@ def compareCountryFromTo(label, fromArray, iid):
 
 
 def addRules(incident, cfg):
+    logger = logging.getLogger()
     if "master_id" in incident.get("plus", {}):
         iid = incident['plus']['master_id']
     else:
         iid = incident["incident_id"]
+    logger.info("Beginning addRules for incident {0}.".format(iid))
     #inRow = incident["plus"]["row_number"]  # not used and conflicts with versions lower than 1.3. Could test for version > 1.3 and then include... - gdb 7/11/16
     # Takes in an incident and applies rules for internal consistency and consistency with previous incidents
 
@@ -313,7 +317,9 @@ def addRules(incident, cfg):
 
 
 def makeValid(incident, cfg):
+    logger = logging.getLogger()
     iid = incident["incident_id"]
+    logger.info("Beginning makeValid for incident {0}.".format(iid))
     #inRow = incident["plus"]["row_number"]   # not used and conflicts with versions lower than 1.3. Could test for version > 1.3 and then include... - gdb 7/11/16
 
     #with open(cfg['schemafile'], "r") as filehandle:
@@ -403,6 +409,7 @@ def makeValid(incident, cfg):
         ## CC
         actor['country'] = compareCountryFromTo('actor.external.country', actor['country'], iid) #, schema['actor']['external']['country'])
 
+        incident['actor']['external'] = actor
 
     if 'internal' in incident['actor']:
         actor = incident['actor']['internal']
@@ -420,6 +427,10 @@ def makeValid(incident, cfg):
             logger.info("%s: auto-filled Unknown for empty array in actor.internal.variety", iid)
             actor['variety'] = [ "Unknown" ]
         #compareFromTo('actor.internal.variety', actor['variety'], schema['actor']['internal']['variety'])
+        if "job_change" in actor and type(actor['job_change']) in (str, unicode):
+            logger.info("{0}: changing job_change from a string to an array to fit the schema.".format(iid))
+            actor['job_change'] = actor['job_change'].split(",")
+        incident['actor']['internal'] = actor
     if 'partner' in incident['actor']:
         actor = incident['actor']['partner']
         if 'motive' not in actor:
@@ -446,6 +457,7 @@ def makeValid(incident, cfg):
             logger.info("%s: auto-filled Unknown for actor.partner.industry", iid)
             actor['industry'] = "000"
         #checkIndustry('actor.partner.industry', actor['industry'])
+        incident['actor']['partner'] = actor
 
     ## ACTION ##
     if 'action' not in incident:
@@ -689,23 +701,27 @@ def main(cfg):
         overwrite = False
     else:
         overwrite = True
-    for filename in filenames:
-        with open(filename, 'rw') as filehandle:
+    for filename in tqdm(filenames):
+        with open(filename, 'r+') as filehandle:
             try:
                 incident = json.load(filehandle)
             except:
                 logger.warning("Unable to load {0}.".format(filename))
                 continue
+            logger.debug("Before parsing:\n" + pformat(incident))
             # add 'unknowns' as appropriate
             incident = makeValid(incident, cfg)
             # add rules
             incident = addRules(incident, cfg)
+            logger.debug("After parsing:\n" + pformat(incident))
             # save it back out
             if overwrite:
-                json.dump(incident, filehandle)
+                filehandle.seek(0)
+                json.dump(incident, filehandle, sort_keys=True, indent=2, separators=(',', ': '))
+                filehandle.truncate()
             else:
                 with open(cfg['output'].rstrip("/") + "/" + filename.split("/")[-1], 'w') as outfilehandle:
-                    json.dump(incident, outfilehandle, indent=2, sort_keys=True)
+                    json.dump(incident, outfilehandle, sort_keys=True, indent=2, separators=(',', ': '))
 
 
     logging.info('Ending main loop.')
