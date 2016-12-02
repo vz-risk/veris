@@ -21,7 +21,7 @@
 """
 # PRE-USER SETUP
 import logging
-import veris_logger
+import dbir_logger
 
 ########### NOT USER EDITABLE ABOVE THIS POINT #################
 
@@ -96,16 +96,13 @@ def compareCountryFromTo(label, fromArray, iid):
     #        logger.warning("%s: %s has invalid enumeration[1]: \"%s\"", iid, label, fromArray)
     #else:
     if len(fromArray) == 0:
-        #logger.warning("%s: %s has no values in enumeration", iid, label)
         logging.warning("%s: %s has no values in enumeration", iid, label)
     for idx, item in enumerate(fromArray):
 #        if item not in toArray:
         if item.upper() == "USA":
-            #logger.warning("%s: %s was set to 'USA', converting to 'US'", iid, label)
             logging.warning("%s: %s was set to 'USA', converting to 'US'", iid, label)
             fromArray[idx] = "US"
         elif item.upper() == "UK":
-            #logger.warning("%s: %s was set to 'UK', converting to 'GB'", iid, label)
             logging.warning("%s: %s was set to 'UK', converting to 'GB'", iid, label)
             fromArray[idx] = "GB"
 #        else:
@@ -121,7 +118,6 @@ def addRules(incident, cfg):
         iid = incident['plus']['master_id']
     else:
         iid = incident["incident_id"]
-    #logger.info("Beginning addRules for incident {0}.".format(iid))
     logging.info("Beginning addRules for incident {0}.".format(iid))
     #inRow = incident["plus"]["row_number"]  # not used and conflicts with versions lower than 1.3. Could test for version > 1.3 and then include... - gdb 7/11/16
     # Takes in an incident and applies rules for internal consistency and consistency with previous incidents
@@ -129,7 +125,6 @@ def addRules(incident, cfg):
     # The schema should have an import year
     #checkEnum(outjson, jenums, country_region, cfg)
     if incident.get('plus', {}).get('dbir_year', None) is None and cfg['vcdb'] != True:
-        #logger.warning("{0}: missing plus.dbir_year, auto-filled {1}".format(iid, int(cfg["year"])))
         logging.warning("{0}: missing plus.dbir_year, auto-filled {1}".format(iid, int(cfg["year"])))
         incident['plus']['dbir_year'] = int(cfg["year"])
     if ('source_id' not in incident or cfg["force_analyst"]) and 'source' in cfg:
@@ -139,26 +134,21 @@ def addRules(incident, cfg):
     # Malware always has an integrity attribute
     if 'malware' in incident['action']:
         if 'attribute' not in incident:
-            #logger.info("%s: Added attribute.integrity since malware was involved.",iid)
             logging.info("%s: Added attribute.integrity since malware was involved.",iid)
             incident['attribute'] = {}
         if 'integrity' not in incident['attribute']:
-            #logger.info("%s: Added integrity since it has a malware action.",iid)
             logging.info("%s: Added integrity since it has a malware action.",iid)
             incident['attribute']['integrity'] = {}
         if 'variety' not in incident['attribute']['integrity']:
-            #logger.info("%s: Added integrity.variety array since it didn't have one.",iid)
             logging.info("%s: Added integrity.variety array since it didn't have one.",iid)
             incident['attribute']['integrity']['variety'] = []
         if 'Software installation' not in incident['attribute']['integrity']['variety']:
-            #logger.info("%s: Added software installation to attribute.integrity.variety since malware was involved.",iid)
             logging.info("%s: Added software installation to attribute.integrity.variety since malware was involved.",iid)
             incident['attribute']['integrity']['variety'].append('Software installation')
 
     # Social engineering alters human behavior
     if 'social' in incident['action']:
         if 'attribute' not in incident:
-            #logger.info("%s: Added attribute.integrity since social engineering was involved.",iid)
             logging.info("%s: Added attribute.integrity since social engineering was involved.",iid)
             incident['attribute'] = {}
             incident['attribute']['integrity'] = {}
@@ -683,19 +673,8 @@ def main(cfg):
 
     logging.info('Beginning main loop.')
     formatter = ("- " + "/".join(cfg["input"].split("/")[-2:]))
-	# Updating the format of the logging
-    veris_logger.updateLogger(cfg, formatter)
-    #logger = logging.getLogger()
-    #ch = logging.StreamHandler()
-    #ch.setLevel(logging_remap[cfg["log_level"]])
-    #ch.setFormatter(formatter)
-    #logger.addHandler(ch)
-    #if "log_file" in cfg and cfg["log_file"] is not None:
-    #    fh = logging.FileHandler(cfg["log_file"])
-    #    fh.setLevel(logging_remap[cfg["log_level"]])
-    #    fh.setFormatter(formatter)
-    #    logger.addHandler(fh)
-
+    # Updating the format of the logging
+    dbir_logger.updateLogger(cfg, formatter)
     # get all files in directory and sub-directories
     if os.path.isfile(cfg['input']):
         filenames = [cfg['input']]
@@ -719,13 +698,11 @@ def main(cfg):
             except:
                 logging.warning("Unable to load {0}.".format(filename))
                 continue
-            #logger.debug("Before parsing:\n" + pformat(incident))
             logging.debug("Before parsing:\n" + pformat(incident))
             # add 'unknowns' as appropriate
             incident = makeValid(incident, cfg)
             # add rules
             incident = addRules(incident, cfg)
-            #logger.debug("After parsing:\n" + pformat(incident))
             logging.debug("After parsing:\n" + pformat(incident))
             # save it back out
             if overwrite:
@@ -788,26 +765,17 @@ if __name__ == "__main__":
 #        else:
 #            cfg["year"] = int(datetime.now().year)
 #        cfg["vcdb"] = {True:True, False:False, "false":False, "true":True}[cfg["vcdb"].lower()]
-        #logger.debug("config import succeeded.")
         print("config import succeeded.")
     except Exception as e:
-        #logger.warning("config import failed with error {0}.".format(e))
         print("config import failed with error {0}.".format(e))
         #raise e
         pass
 
     cfg.update(args)
-    veris_logger.updateLogger(cfg)
+    dbir_logger.updateLogger(cfg)
 
-    #logger.setLevel(logging_remap[cfg["log_level"]])
-    #logger.basicConfig(level=logging_remap[cfg["log_level"]],
-    #      format='%(asctime)19s %(levelname)8s %(message)s', datefmt='%m/%d/%Y %H:%M:%S')
-    #if cfg["log_file"] is not None:
-        #logger.filename = cfg["log_file"]
-
-    #logger.debug(args)
     logging.debug(args)
-    #logger.debug(cfg)
+
     logging.debug(cfg)
 
     main(cfg)
