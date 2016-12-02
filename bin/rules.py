@@ -21,7 +21,7 @@
 """
 # PRE-USER SETUP
 import logging
-import dbir_logger
+import veris_logger
 
 ########### NOT USER EDITABLE ABOVE THIS POINT #################
 
@@ -674,7 +674,7 @@ def main(cfg):
     logging.info('Beginning main loop.')
     formatter = ("- " + "/".join(cfg["input"].split("/")[-2:]))
     # Updating the format of the logging
-    dbir_logger.updateLogger(cfg, formatter)
+    veris_logger.updateLogger(cfg, formatter)
     # get all files in directory and sub-directories
     if os.path.isfile(cfg['input']):
         filenames = [cfg['input']]
@@ -772,7 +772,7 @@ if __name__ == "__main__":
         pass
 
     cfg.update(args)
-    dbir_logger.updateLogger(cfg)
+    veris_logger.updateLogger(cfg)
 
     logging.debug(args)
 
