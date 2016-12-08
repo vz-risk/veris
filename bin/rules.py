@@ -21,7 +21,17 @@
 """
 # PRE-USER SETUP
 import logging
-import veris_logger
+import imp
+import os
+import sys
+script_dir = os.path.dirname(os.path.realpath(__file__))
+try:
+    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+except:
+    logging.debug("Script dir: {0}.".format(script_dir))
+    print("Script dir: {0}.".format(script_dir))
+    raise
+#import veris_logger
 
 ########### NOT USER EDITABLE ABOVE THIS POINT #################
 
