@@ -15,6 +15,13 @@ import ConfigParser
 from collections import defaultdict
 import re
 import operator
+import imp
+script_dir = os.path.dirname(os.path.realpath(__file__))
+try:
+    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+except:
+    print("Script dir: {0}.".format(script_dir))
+    raise
 
 # Default Configuration Settings
 cfg = {
@@ -45,6 +52,8 @@ class CSVtoJSON():
 
     def __init__(self, cfg, file_version=None):
         self.cfg = cfg
+
+        veris_logger.updateLogger(cfg)
 
         if file_version is None:
             file_version = self.get_file_schema_version(cfg['input'])
@@ -501,6 +510,7 @@ class CSVtoJSON():
                 iid = incident['incident_id']
             else:
                 iid = "srcrow_" + str(row)
+            logging.debug("Starting incident {0} on row {1}.".format(iid, row))
             # logging.warning("This includes the row number")
             repeat = 1
             logging.info("-----> parsing incident %s", iid)
@@ -601,11 +611,13 @@ if __name__ == '__main__':
     #     if k not in  ["repositories", "source"] and type(v) == str:
     #         cfg[k] = v.format(repositories=cfg["repositories"], partner_name=cfg["source"])
 
-    logging.basicConfig(level=logging_remap[cfg["log_level"]],
-          format='%(asctime)19s %(levelname)8s %(message)s', datefmt='%m/%d/%Y %H:%M:%S')
-    if cfg["log_file"] is not None:
-        logging.FileHandler(cfg["log_file"])
+
+    # logging.basicConfig(level=logging_remap[cfg["log_level"]],
+    #       format='%(asctime)19s %(levelname)8s %(message)s', datefmt='%m/%d/%Y %H:%M:%S')
+    # if cfg["log_file"] is not None:
+    #     logging.FileHandler(cfg["log_file"])
     # format='%(asctime)s %(levelname)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+    veris_logger.updateLogger(cfg)
 
     logging.debug(args)
     logging.debug(cfg)
