@@ -775,9 +775,9 @@ if __name__ == "__main__":
 #        else:
 #            cfg["year"] = int(datetime.now().year)
 #        cfg["vcdb"] = {True:True, False:False, "false":False, "true":True}[cfg["vcdb"].lower()]
-        print("config import succeeded.")
+        logging.debug("config import succeeded.")
     except Exception as e:
-        print("config import failed with error {0}.".format(e))
+        logging.warning("config import failed with error {0}.".format(e))
         #raise e
         pass
 
