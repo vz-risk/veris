@@ -16,6 +16,14 @@ import ConfigParser
 from collections import defaultdict
 import re
 import operator
+import imp
+script_dir = os.path.dirname(os.path.realpath(__file__))
+try:
+    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+except:
+    print("Script dir: {0}.".format(script_dir))
+    raise
+
 
 # Default Configuration Settings
 cfg = {
@@ -32,12 +40,6 @@ cfg = {
     'repositories': ""
 }
 #logger = multiprocessing.get_logger()
-logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
-                 50: logging.CRITICAL, 40: logging.ERROR, 30: logging.WARNING, 20: logging.INFO, 10: logging.DEBUG, 0: logging.CRITICAL}
-FORMAT = '%(asctime)19s - %(processName)s {0} - %(levelname)s - %(message)s'
-logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d/%Y %H:%M:%S')
-logger = logging.getLogger()
-
 
 class CSVtoJSON():
     """Imports a CSV outputted by the standard excel survey gizmo form"""
@@ -50,6 +52,7 @@ class CSVtoJSON():
 
     def __init__(self, cfg, file_version=None):
         self.cfg = cfg
+        veris_logger.updateLogger(cfg)
 
         if file_version is None:
             file_version = self.get_file_schema_version(cfg['input'])
@@ -64,7 +67,7 @@ class CSVtoJSON():
             try:
                 self.jschema = self.openJSON(cfg["schemafile"])
             except IOError:
-                logger.critical("ERROR: Schema file not found.")
+                logging.critical("ERROR: Schema file not found.")
                 raise
                 # exit(1)
 
@@ -199,7 +202,7 @@ class CSVtoJSON():
             out = {}
             for index, s in enumerate(entry):
                 if index > len(labels):
-                    logger.warning("%s: failed to parse complex field %s, more entries seperated by colons than labels, skipping", iid, field)
+                    logging.warning("%s: failed to parse complex field %s, more entries seperated by colons than labels, skipping", iid, field)
                     return
                 elif len(s):
                     out[labels[index]] = s
@@ -416,27 +419,18 @@ class CSVtoJSON():
             cfg = self.cfg
         else:
             self.__init__(cfg)
+        format_design = ("- " + "/".join(cfg["input"].split("/")[-2:]))
+        veris_logger.updateLogger(cfg, format_design)
 
 
-        formatter = logging.Formatter(FORMAT.format("- " + "/".join(cfg["input"].split("/")[-2:])))
-        logger = logging.getLogger()
-        ch = logging.StreamHandler()
-        ch.setLevel(logging_remap[cfg["log_level"]])
-        ch.setFormatter(formatter)
-        logger.addHandler(ch)
-        if "log_file" in cfg and cfg["log_file"] is not None:
-            fh = logging.FileHandler(cfg["log_file"])
-            fh.setLevel(logging_remap[cfg["log_level"]])
-            fh.setFormatter(formatter)
-            logger.addHandler(fh)
-
+        #formatter = logging.Formatter(FORMAT.format("- " + "/".join(cfg["input"].split("/")[-2:])))
         try:
             # Added to file read to catch multiple columns with same name which causes second column to overwrite first. - GDB
             file_handle = open(cfg["input"], 'rU')
             csv_reader = csv.reader(file_handle)
             l = csv_reader.next()
             if len(l) > len(set(l)):
-                logger.error(l)
+                logging.error(l)
                 file_handle.close()
                 raise KeyError("Input file has multiple columns of the same name.  Please create unique columns and rerun.")
                 # exit(1)
@@ -445,18 +439,18 @@ class CSVtoJSON():
                 infile = csv.DictReader(file_handle)
             # infile = csv.DictReader(open(args.filename,'rU'))  # Old File Read - gdb
         except IOError:
-            logger.critical("ERROR: Input file not found.")
+            logging.critical("ERROR: Input file not found.")
             raise
             # exit(1)
 
         for f in infile.fieldnames:
             if f not in self.sfields:
                 if f != "repeat":
-                    logger.warning("column will not be used: %s. May be inaccurate for 'plus' columns.", f)
+                    logging.warning("column will not be used: %s. May be inaccurate for 'plus' columns.", f)
         if 'plus.analyst' not in infile.fieldnames:
-            logger.warning("the optional plus.analyst field is not found in the source document")
+            logging.warning("the optional plus.analyst field is not found in the source document")
         if 'source_id' not in infile.fieldnames:
-            logger.warning("the optional source_id field is not found in the source document")
+            logging.warning("the optional source_id field is not found in the source document")
 
         row = 0
         for incident in infile:
@@ -465,7 +459,7 @@ class CSVtoJSON():
             try:
                 incident = { x:incident[x].strip() for x in incident }
             except AttributeError as e:
-                logger.error("Error removing white space from feature {0} on row {1}.".format(x, row))
+                logging.error("Error removing white space from feature {0} on row {1}.".format(x, row))
                 raise e
 
             #if 'incident_id' in incident:
@@ -476,17 +470,17 @@ class CSVtoJSON():
             iid = incident['incident_id']  # there should always be an incident ID so commented out above. - gdb 061316
 
             repeat = 1
-            logger.info("-----> parsing incident %s", iid)
+            logging.info("-----> parsing incident %s", iid)
             if incident.has_key('repeat'):
                 if incident['repeat'].lower()=="ignore" or incident['repeat'] == "0":
-                    logger.info("Skipping row %s", iid)
+                    logging.info("Skipping row %s", iid)
                     continue
                 repeat = self.isnum(incident['repeat'])
                 if not repeat:
                     repeat = 1
             if incident.has_key('security_incident'):
                 if incident['security_incident'].lower()=="no":
-                    logger.info("Skipping row %s", iid)
+                    logging.info("Skipping row %s", iid)
                     continue
             outjson = self.convertCSV(incident)
             # self.country_region = self.getCountryCode(cfg["countryfile"])
@@ -506,7 +500,7 @@ class CSVtoJSON():
                 # outjson['plus']['master_id'] = outjson['incident_id']  ###
                 repeat -= 1
                 if repeat > 0:
-                    logger.info("Repeating %s more times on %s", repeat, iid)
+                    logging.info("Repeating %s more times on %s", repeat, iid)
 
         file_handle.close()
 
@@ -537,7 +531,7 @@ if __name__ == '__main__':
     args = {k:v for k,v in vars(args).iteritems() if v is not None}
 
     try:
-        logger.setLevel(logging_remap[args['log_level']])
+        cfg["log_level"] = args['log_level']
     except KeyError:
         pass
 
@@ -560,9 +554,10 @@ if __name__ == '__main__':
             cfg["year"] = int(cfg["year"])
         else:
             cfg["year"] = int(datetime.now().year)
-        logger.debug("config import succeeded.")
+        veris_logger.updateLogger(cfg)
+        logging.debug("config import succeeded.")
     except Exception as e:
-        logger.warning("config import failed.")
+        logging.warning("config import failed.")
         #raise e
         pass
 
@@ -582,30 +577,25 @@ if __name__ == '__main__':
     if 'source' not in cfg or not cfg['source']:
         cfg['source'] = cfg['input'].split("/")[-2].lower()
         cfg['source'] = ''.join(e for e in cfg['source'] if e.isalnum())
-        logger.warning("Source not defined.  Using the directory of the input file {0} instead.".format(cfg['source']))
+        logging.warning("Source not defined.  Using the directory of the input file {0} instead.".format(cfg['source']))
 
     # Quick test to replace any placeholders accidentally left in the config
     # for k, v in cfg.iteritems():
     #     if k not in  ["repositories", "source"] and type(v) == str:
     #         cfg[k] = v.format(repositories=cfg["repositories"], partner_name=cfg["source"])
 
-    logger.setLevel(logging_remap[cfg["log_level"]])
-    if cfg["log_file"] is not None:
-        fh = FileHandler(cfg["log_file"])
-        fh.setLevel(logging_remap[cfg["log_level"]])
-        logger.addHandler(fh)
-    # format='%(asctime)s %(levelname)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+    veris_logger.updateLogger(cfg)
 
-    logger.debug(args)
-    logger.debug(cfg)
+    logging.debug(args)
+    logging.debug(cfg)
 
     importStdExcel = CSVtoJSON(cfg)
 
     # call the main loop which yields json incidents
     if not cfg.get('check', False):
-        logger.info("Output files will be written to %s",cfg["output"])
+        logging.info("Output files will be written to %s",cfg["output"])
     else:
-        logger.info("'check' setting is {0} so files will not be written.".format(cfg.get('check', False)))
+        logging.info("'check' setting is {0} so files will not be written.".format(cfg.get('check', False)))
     for iid, incident_json in importStdExcel.main():
         if not cfg.get('check', False):    
             # write the json to a file
@@ -615,7 +605,7 @@ if __name__ == '__main__':
             else:
                 dest = cfg["output"] + '/' + incident_json['plus']['master_id'] + '.json'
                 # dest = args.output + '/' + outjson['incident_id'] + '.json'
-            logger.info("%s: writing file to %s", iid, dest)
+            logging.info("%s: writing file to %s", iid, dest)
             try:
                 with open(dest, 'w') as fwrite:
                     json.dump(incident_json, fwrite, indent=2, sort_keys=True, separators=(',', ': '))

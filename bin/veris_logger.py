@@ -1,7 +1,7 @@
 import logging
 
 
-def updateLogger(cfg=None, formatDesign=None):
+def updateLogger(cfg=None, formatDesign=None, dateFmt=None):
   logger = logging.getLogger()
   FORMAT = '%(asctime)19s - %(processName)s - %(process)d {0}- %(levelname)s - %(message)s'
   logging_remap = {'error': logging.ERROR, 'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
@@ -15,9 +15,9 @@ def updateLogger(cfg=None, formatDesign=None):
   logger.setLevel(log_level)
   handlers = logger.handlers
   if formatDesign is None:
-    formatter = logging.Formatter(FORMAT.format(""))
+    formatter = logging.Formatter(FORMAT.format(""), datefmt=dateFmt)
   else:
-    formatter = logging.Formatter(FORMAT.format("- " + formatDesign + " "))
+    formatter = logging.Formatter(FORMAT.format("- " + formatDesign + " "), datefmt=dateFmt)
   streamHandlerPresent = False
   fileHandlerPresent = False
   for handler in handlers:
