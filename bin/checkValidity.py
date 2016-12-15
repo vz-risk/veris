@@ -10,11 +10,16 @@ import logging
 # import glob
 import fnmatch
 from datetime import date
+import imp
+script_dir = os.path.dirname(os.path.realpath(__file__))
+try:
+    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+except:
+    print("Script dir: {0}.".format(script_dir))
+    raise
 
-logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
-                 50: logging.CRITICAL, 40: logging.ERROR, 30: logging.WARNING, 20: logging.INFO, 10: logging.DEBUG, 0: logging.CRITICAL}
-FORMAT = '%(asctime)19s - %(processName)s {0} - %(levelname)s - %(message)s'
-logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d/%Y %H:%M:%S')
+
+#logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d/%Y %H:%M:%S')
 
 #defaultSchema = "../verisc.json"
 #defaultEnum = "../verisc-enum.json"
@@ -154,6 +159,7 @@ if __name__ == '__main__':
                     if value.lower() in config.options(section):
                         cfg[value] = config.get(section, value)
         cfg["year"] = int(cfg["year"])
+        veris_logger.updateLogger(cfg)
         logging.debug("config import succeeded.")
     except Exception as e:
         logging.warning("config import failed.")
@@ -161,15 +167,8 @@ if __name__ == '__main__':
         pass
 
     cfg.update(args)
-
-    formatter = logging.Formatter(FORMAT.format(""))
-    logging.getLogger().setLevel(logging_remap[cfg["log_level"]])
-    logging.info("Now starting checkValidity.")
-    if "log_file" in cfg and cfg["log_file"] is not None:
-        fh = logging.FileHandler(cfg["log_file"])
-        fh.setLevel(logging_remap[cfg["log_level"]])
-        fh.setFormatter(formatter)
-        logging.getLogger().addHandler(fh)
+    dateFmt = '%m/%d/%Y %H:%M:%S'
+    veris_logger.updateLogger(cfg, None, dateFmt)
 
     logging.debug(args)
     logging.debug(cfg)

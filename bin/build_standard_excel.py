@@ -19,6 +19,15 @@
 """
 # PRE-USER SETUP
 import logging
+import os
+import imp
+script_dir = os.path.dirname(os.path.realpath(__file__))
+try:
+    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+except:
+    print("Script dir: {0}.".format(script_dir))
+    raise
+
 
 ########### NOT USER EDITABLE ABOVE THIS POINT #################
 
@@ -152,12 +161,19 @@ parser.add_argument('-t', '--test_examples', help=  'A directory of veris json f
 parser.add_argument('-o', '--output', help='The excel file name to write (including xlsx extension).', default=OUTFILE)
 args = parser.parse_args()
 
+filename=None
+level=None
 ## Set up Logging
 if args.log is not None:
-    logging.basicConfig(filename=args.log, level=args.loglevel)
+    filename=args.log
+    level=args.loglevel
 else:
-    logging.basicConfig(level=args.loglevel)
-# <add other setup here>
+    level=args.loglevel
+
+cfg = {
+    'log_level': level,
+    'log_file': filename
+}
 
 
 ## GLOBAL EXECUTION
@@ -234,6 +250,7 @@ def recurse_veris(o, name):
 
 ## MAIN LOOP EXECUTION
 def main():
+    veris_logger.updateLogger(cfg)
     logging.info('Beginning main loop.')
 
     # Create spreadsheets

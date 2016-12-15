@@ -6,7 +6,13 @@ import os
 from fnmatch import fnmatch
 import ConfigParser
 from tqdm import tqdm
-
+import imp
+script_dir = os.path.dirname(os.path.realpath(__file__))
+try:
+    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+except:
+    print("Script dir: {0}.".format(script_dir))
+    raise
 
 cfg = {
     'log_level': 'warning',
@@ -64,6 +70,8 @@ def grepText(incident, searchFor):
 
 
 def main(cfg):
+    veris_logger.updateLogger(cfg)
+
     logging.warning("Converting files from {0} to {1}.".format(cfg["input"], cfg["output"]))
     for root, dirnames, filenames in tqdm(os.walk(cfg['input'])):
       logging.warning("starting parsing of directory {0}.".format(root))
@@ -153,6 +161,7 @@ if __name__ == '__main__':
                 for value in cfg_key[section]:
                     if value.lower() in config.options(section):
                         cfg[value] = config.get(section, value)
+        veris_logger.updateLogger(cfg)
         logging.debug("config import succeeded.")
     except Exception as e:
         logging.warning("config import failed with error {0}.".format(e))
@@ -164,12 +173,7 @@ if __name__ == '__main__':
 
     cfg.update(args)
 
-    logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
-                 50: logging.CRITICAL, 40: logging.ERROR, 30: logging.WARNING, 20: logging.INFO, 10: logging.DEBUG, 0: logging.CRITICAL}
-    if "log_file" in cfg:
-        logging.basicConfig(level=logging_remap[cfg["log_level"]], filename=cfg["log_file"])
-    else:
-        logging.basicConfig(level=logging_remap[cfg["log_level"]])
+    veris_logger.updateLogger(cfg)
 
     country_region = getCountryCode(cfg['countryfile'])
 
