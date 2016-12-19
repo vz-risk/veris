@@ -58,8 +58,22 @@ actor.partner.notes
 actor.partner.region
 actor.unknown.notes
 asset.accessibility
-asset.assets.amount
-asset.assets.variety
+asset.assets.embedded.amount
+asset.assets.embedded.variety
+asset.assets.media.amount
+asset.assets.media.variety
+asset.assets.network.amount
+asset.assets.network.variety
+asset.assets.other.amount
+asset.assets.people.amount
+asset.assets.people.variety
+asset.assets.public terminal.amount
+asset.assets.public terminal.variety
+asset.assets.server.amount
+asset.assets.server.variety
+asset.assets.unknown.amount
+asset.assets.user device.amount
+asset.assets.user device.variety
 asset.cloud
 asset.country
 asset.governance
@@ -86,7 +100,9 @@ confidence
 control_failure
 corrective_action
 cost_corrective_action
-discovery_method
+discovery_method.external.variety
+discovery_method.internal.variety
+discovery_method.partner.variety
 discovery_notes
 impact.iso_currency_code
 impact.loss.amount
@@ -103,6 +119,7 @@ incident_id
 ioc.comment
 ioc.indicator
 notes
+plus.row_number
 reference
 schema_version
 security_incident

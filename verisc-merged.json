@@ -1321,127 +1321,346 @@
           "type": "string"
         }, 
         "assets": {
-          "items": {
-            "additionalProperties": false, 
-            "properties": {
-              "amount": {
-                "type": "integer"
-              }, 
-              "variety": {
-                "enum": [
-                  "E - Telemetry", 
-                  "Unknown", 
-                  "M - Disk media", 
-                  "M - Payment card", 
-                  "U - Mobile phone", 
-                  "T - Kiosk", 
-                  "P - Former employee", 
-                  "U - POS terminal", 
-                  "N - Broadband", 
-                  "U - Unknown", 
-                  "N - Telephone", 
-                  "P - Finance", 
-                  "N - VoIP adapter", 
-                  "S - Payment switch", 
-                  "U - Auth token", 
-                  "U - Other", 
-                  "S - Remote access", 
-                  "M - Documents", 
-                  "T - Other", 
-                  "S - DCS", 
-                  "N - PBX", 
-                  "S - DHCP", 
-                  "N - LAN", 
-                  "T - ATM", 
-                  "N - Public WAN", 
-                  "P - End-user", 
-                  "N - IDS", 
-                  "U - Desktop", 
-                  "N - Other", 
-                  "U - Tablet", 
-                  "N - Firewall", 
-                  "M - Disk drive", 
-                  "S - ICS", 
-                  "P - Human resources", 
-                  "S - File", 
-                  "N - WLAN", 
-                  "S - Database", 
-                  "N - Camera", 
-                  "N - Unknown", 
-                  "U - Media", 
-                  "T - PED pad", 
-                  "N - RTU", 
-                  "S - Authentication", 
-                  "N - Router or switch", 
-                  "N - HSM", 
-                  "S - Mail", 
-                  "N - SAN", 
-                  "N - PLC", 
-                  "P - Cashier", 
-                  "T - Gas terminal", 
-                  "P - Unknown", 
-                  "S - Mainframe", 
-                  "U - Laptop", 
-                  "P - Auditor", 
-                  "U - VoIP phone", 
-                  "E - Telematics", 
-                  "S - DNS", 
-                  "S - Log", 
-                  "P - Other", 
-                  "S - Proxy", 
-                  "T - Unknown", 
-                  "N - Access reader", 
-                  "S - Web application", 
-                  "S - POS controller", 
-                  "P - Manager", 
-                  "M - Flash drive", 
-                  "S - Print", 
-                  "P - Guard", 
-                  "M - Other", 
-                  "P - System admin", 
-                  "S - Unknown", 
-                  "Other", 
-                  "S - Other", 
-                  "N - NAS", 
-                  "S - Code repository", 
-                  "P - Developer", 
-                  "M - Smart card", 
-                  "P - Executive", 
-                  "P - Customer", 
-                  "S - Directory", 
-                  "P - Call center", 
-                  "N - Private WAN", 
-                  "P - Helpdesk", 
-                  "U - Peripheral", 
-                  "P - Partner", 
-                  "P - Maintenance", 
-                  "S - VM host", 
-                  "M - Unknown", 
-                  "M - Tapes", 
-                  "U - Telephone", 
-                  "S - Backup"
-                ], 
-                "type": "string"
-              }
+          "additionalProperties": false, 
+          "minProperties": 1, 
+          "oneOf": [
+            {
+              "required": [
+                "server"
+              ]
             }, 
-            "required": [
-              "variety"
-            ], 
-            "type": "object"
+            {
+              "required": [
+                "network"
+              ]
+            }, 
+            {
+              "required": [
+                "user device"
+              ]
+            }, 
+            {
+              "required": [
+                "public terminal"
+              ]
+            }, 
+            {
+              "required": [
+                "media"
+              ]
+            }, 
+            {
+              "required": [
+                "people"
+              ]
+            }, 
+            {
+              "required": [
+                "embedded"
+              ]
+            }, 
+            {
+              "required": [
+                "unknown"
+              ]
+            }, 
+            {
+              "required": [
+                "other"
+              ]
+            }
+          ], 
+          "properties": {
+            "embedded": {
+              "items": {
+                "additionalProperties": false, 
+                "properties": {
+                  "amount": {
+                    "type": "integer"
+                  }, 
+                  "variety": {
+                    "enum": [
+                      "Telemetry", 
+                      "Telematics"
+                    ], 
+                    "type": "string"
+                  }
+                }, 
+                "required": [
+                  "variety"
+                ], 
+                "type": "object"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "media": {
+              "items": {
+                "additionalProperties": false, 
+                "properties": {
+                  "amount": {
+                    "type": "integer"
+                  }, 
+                  "variety": {
+                    "enum": [
+                      "Fax", 
+                      "Documents", 
+                      "Disk drive", 
+                      "Tapes", 
+                      "Unknown", 
+                      "Flash drive", 
+                      "Smart card", 
+                      "Other", 
+                      "Disk media", 
+                      "Payment card"
+                    ], 
+                    "type": "string"
+                  }
+                }, 
+                "required": [
+                  "variety"
+                ], 
+                "type": "object"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "network": {
+              "items": {
+                "additionalProperties": false, 
+                "properties": {
+                  "amount": {
+                    "type": "integer"
+                  }, 
+                  "variety": {
+                    "enum": [
+                      "LAN", 
+                      "Public WAN", 
+                      "PBX", 
+                      "SAN", 
+                      "Router or switch", 
+                      "NAS", 
+                      "Broadband", 
+                      "Unknown", 
+                      "IDS", 
+                      "HSM", 
+                      "RTU", 
+                      "Firewall", 
+                      "WLAN", 
+                      "Camera", 
+                      "PLC", 
+                      "Private WAN", 
+                      "VoIP adapter", 
+                      "Other", 
+                      "Access reader", 
+                      "Telephone"
+                    ], 
+                    "type": "string"
+                  }
+                }, 
+                "required": [
+                  "variety"
+                ], 
+                "type": "object"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "other": {
+              "items": {
+                "additionalProperties": false, 
+                "properties": {
+                  "amount": {
+                    "type": "integer"
+                  }
+                }, 
+                "required": [
+                  "variety"
+                ], 
+                "type": "object"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "people": {
+              "items": {
+                "additionalProperties": false, 
+                "properties": {
+                  "amount": {
+                    "type": "integer"
+                  }, 
+                  "variety": {
+                    "enum": [
+                      "Customer", 
+                      "End-user", 
+                      "Human resources", 
+                      "Finance", 
+                      "Unknown", 
+                      "Helpdesk", 
+                      "Executive", 
+                      "Cashier", 
+                      "Manager", 
+                      "Former employee", 
+                      "Guard", 
+                      "Other", 
+                      "Auditor", 
+                      "Maintenance", 
+                      "Call center", 
+                      "Partner", 
+                      "System admin", 
+                      "Developer"
+                    ], 
+                    "type": "string"
+                  }
+                }, 
+                "required": [
+                  "variety"
+                ], 
+                "type": "object"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "public terminal": {
+              "items": {
+                "additionalProperties": false, 
+                "properties": {
+                  "amount": {
+                    "type": "integer"
+                  }, 
+                  "variety": {
+                    "enum": [
+                      "Gas terminal", 
+                      "Unknown", 
+                      "ATM", 
+                      "Kiosk", 
+                      "Other", 
+                      "PED pad"
+                    ], 
+                    "type": "string"
+                  }
+                }, 
+                "required": [
+                  "variety"
+                ], 
+                "type": "object"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "server": {
+              "items": {
+                "additionalProperties": false, 
+                "properties": {
+                  "amount": {
+                    "type": "integer"
+                  }, 
+                  "variety": {
+                    "enum": [
+                      "Log", 
+                      "Unknown", 
+                      "Web application", 
+                      "Directory", 
+                      "Authentication", 
+                      "Other", 
+                      "Print", 
+                      "Mail", 
+                      "POS controller", 
+                      "Proxy", 
+                      "Payment switch", 
+                      "DCS", 
+                      "Remote access", 
+                      "Database", 
+                      "Mainframe", 
+                      "DNS", 
+                      "ICS", 
+                      "Backup", 
+                      "VM host", 
+                      "File", 
+                      "DHCP", 
+                      "Code repository"
+                    ], 
+                    "type": "string"
+                  }
+                }, 
+                "required": [
+                  "variety"
+                ], 
+                "type": "object"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "unknown": {
+              "items": {
+                "additionalProperties": false, 
+                "properties": {
+                  "amount": {
+                    "type": "integer"
+                  }
+                }, 
+                "required": [
+                  "variety"
+                ], 
+                "type": "object"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "user device": {
+              "items": {
+                "additionalProperties": false, 
+                "properties": {
+                  "amount": {
+                    "type": "integer"
+                  }, 
+                  "variety": {
+                    "enum": [
+                      "VoIP phone", 
+                      "Tablet", 
+                      "POS terminal", 
+                      "Media", 
+                      "Laptop", 
+                      "Telephone", 
+                      "Desktop", 
+                      "Other", 
+                      "Mobile phone", 
+                      "Unknown", 
+                      "Peripheral", 
+                      "Auth token"
+                    ], 
+                    "type": "string"
+                  }
+                }, 
+                "required": [
+                  "variety"
+                ], 
+                "type": "object"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }
           }, 
-          "minItems": 1, 
-          "type": "array", 
-          "uniqueItems": true
+          "type": "object"
         }, 
         "cloud": {
           "enum": [
-            "Hosting error", 
-            "User breakout", 
-            "Unknown", 
-            "Other", 
-            "Hosting governance", 
-            "Customer attack", 
             "Hypervisor", 
+            "Unknown", 
+            "User breakout", 
+            "Customer attack", 
+            "Hosting governance", 
+            "Hosting error", 
+            "Other", 
             "Partner application"
           ], 
           "type": "string"
@@ -1766,6 +1985,9 @@
           "type": "number"
         }
       }, 
+      "required": [
+        "assets"
+      ], 
       "type": "object"
     }, 
     "attribute": {
@@ -1994,43 +2216,100 @@
       "type": "string"
     }, 
     "discovery_method": {
-      "enum": [
-        "Int - financial audit", 
-        "Ext - found documents", 
-        "Unknown", 
-        "Ext - audit", 
-        "Ext - incident response", 
-        "Ext - unknown", 
-        "Other", 
-        "Int - NIDS", 
-        "Ext - emergency response team", 
-        "Ext - fraud detection", 
-        "Int - incident response", 
-        "Ext - customer", 
-        "Prt - audit", 
-        "Int - IT review", 
-        "Int - other", 
-        "Int - log review", 
-        "Int - unknown", 
-        "Ext - suspicious traffic", 
-        "Int - HIDS", 
-        "Ext - monitoring service", 
-        "Prt - antivirus", 
-        "Ext - other", 
-        "Int - security alarm", 
-        "Ext - law enforcement", 
-        "Int - antivirus", 
-        "Int - infrastructure monitoring", 
-        "Prt - incident response", 
-        "Int - data loss prevention", 
-        "Int - fraud detection", 
-        "Prt - monitoring service", 
-        "Int - reported by employee", 
-        "Prt - unknown", 
-        "Prt - other", 
-        "Ext - actor disclosure"
-      ], 
-      "type": "string"
+      "additionalProperties": false, 
+      "minProperties": 1, 
+      "properties": {
+        "external": {
+          "additionalProperties": false, 
+          "minProperties": 1, 
+          "properties": {
+            "variety": {
+              "enum": [
+                "Audit", 
+                "Customer", 
+                "Monitoring service", 
+                "Actor disclosure", 
+                "Found documents", 
+                "Unknown", 
+                "Law enforcement", 
+                "Incident response", 
+                "Other", 
+                "Fraud detection", 
+                "Emergency response team", 
+                "Suspicious traffic"
+              ], 
+              "type": "string"
+            }
+          }, 
+          "required": [
+            "variety"
+          ], 
+          "type": "object"
+        }, 
+        "internal": {
+          "additionalProperties": false, 
+          "minProperties": 1, 
+          "properties": {
+            "variety": {
+              "enum": [
+                "Log review", 
+                "Security alarm", 
+                "Financial audit", 
+                "Unknown", 
+                "Reported by employee", 
+                "IT review", 
+                "Antivirus", 
+                "NIDS", 
+                "HIDS", 
+                "Other", 
+                "Fraud detection", 
+                "Incident response", 
+                "Infrastructure monitoring", 
+                "Data loss prevention"
+              ], 
+              "type": "string"
+            }
+          }, 
+          "required": [
+            "variety"
+          ], 
+          "type": "object"
+        }, 
+        "other": {
+          "additionalProperties": false, 
+          "maxProperties": 0, 
+          "properties": {}, 
+          "type": "object"
+        }, 
+        "partner": {
+          "additionalProperties": false, 
+          "minProperties": 1, 
+          "properties": {
+            "variety": {
+              "enum": [
+                "Audit", 
+                "Monitoring service", 
+                "Incident response", 
+                "Other", 
+                "Antivirus", 
+                "Inknown"
+              ], 
+              "type": "string"
+            }
+          }, 
+          "required": [
+            "variety"
+          ], 
+          "type": "object"
+        }, 
+        "unknown": {
+          "additionalProperties": false, 
+          "maxProperties": 0, 
+          "properties": {}, 
+          "type": "object"
+        }
+      }, 
+      "type": "object"
     }, 
     "discovery_notes": {
       "minLength": 1, 
@@ -2310,7 +2589,11 @@
       "type": "string"
     }, 
     "plus": {
-      "properties": {}, 
+      "properties": {
+        "row_number": {
+          "type": "number"
+        }
+      }, 
       "type": "object"
     }, 
     "reference": {
