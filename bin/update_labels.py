@@ -59,14 +59,17 @@ cfg = {
 import argparse
 import ConfigParser
 import json
+import os
+import imp
+script_dir = os.path.dirname(os.path.realpath(__file__))
+try:
+    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+except:
+    print("Script dir: {0}.".format(script_dir))
+    raise
 
 ## SETUP
 __author__ = "Gabriel Bassett"
-logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
-                 50: logging.CRITICAL, 40: logging.ERROR, 30: logging.WARNING, 20: logging.INFO, 10: logging.DEBUG, 0: logging.CRITICAL}
-FORMAT = '%(asctime)19s - %(processName)s - %(levelname)s - {0}%(message)s'
-logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d/%Y %H:%M:%S')
-logger = logging.getLogger()
 
 
 
@@ -130,7 +133,8 @@ def recurse_keys(d, lbl, keys=dict()):
 
 ## MAIN LOOP EXECUTION
 def main(cfg):
-    logger.info('Beginning main loop.')
+    veris_logger.updateLogger(cfg)
+    logging.info('Beginning main loop.')
     # Open the files
     with open(cfg["input"], 'r') as filehandle:
         inFile = json.load(filehandle)
@@ -145,11 +149,11 @@ def main(cfg):
 
     for key in updateKeys.keys():
         # if the key is in the infile, just merge the value
-        logger.debug("")
+        logging.debug("")
         try:
             value = getattr(oInFile, key)
             value.update(getattr(oUpdateFile, key))
-            logger.debug("Updating existing key {0}.".format(key))
+            logging.debug("Updating existing key {0}.".format(key))
             setattr(oInFile, key, value)
         except AttributeError:
             #logger.debug(e.message)
@@ -157,18 +161,18 @@ def main(cfg):
             keyList = key.split(".")
             if keyList[0] not in oInFile.keys():
                 setattr(oInFile, keyList[0], {})
-                logger.debug("Adding root key {0}.".format(keyList[0]))
+                logging.debug("Adding root key {0}.".format(keyList[0]))
             for i in range(1, len(keyList)-1):
                 if keyList[i] not in getattr(oInFile, ".".join(keyList[:i])):
                     if keyList[0] == "attribute":
                         print "i+1 {0} not in {1}".format(keyList[i]), getattr(oInFile, ".".join(keyList[:i]))
                         print "wiping " + ".".join(keyList[:i]) + " on step " + str(i)
                     setattr(oInFile, ".".join(keyList[:i+1]), {})
-            logger.debug("adding key {0}.".format(key))
+            logging.debug("adding key {0}.".format(key))
             setattr(oInFile, key, getattr(oUpdateFile, key))
 
 
-    logger.info('Ending main loop.')
+    logging.info('Ending main loop.')
 
     return dict(oInFile)
 
@@ -204,30 +208,20 @@ if __name__ == "__main__":
                 for value in cfg_key[section]:
                     if value.lower() in config.options(section):
                         cfg[value] = config.get(section, value)
-        logger.debug("config import succeeded.")
+        veris_logger.updateLogger(cfg)
+        logging.debug("config import succeeded.")
     except Exception as e:
-        logger.warning("config import failed with error {0}.".format(e))
+        logging.warning("config import failed with error {0}.".format(e))
         #raise e
         pass
 
     cfg.update(args)
+    veris_logger.updateLogger(cfg)
 
     #formatter = logging.Formatter(FORMAT.format("- " + "/".join(cfg["input"].split("/")[-2:])))
-    formatter = logging.Formatter(FORMAT.format(""))
-    logger = logging.getLogger()
-    logger.setLevel(logging_remap[cfg["log_level"]])
-    ch = logging.StreamHandler()
-#    ch.setLevel(logging_remap[cfg["log_level"]])
-    ch.setFormatter(formatter)
-    logger.addHandler(ch)
-    if "log_file" in cfg and cfg["log_file"] is not None:
-        fh = logging.FileHandler(cfg["log_file"])
-        fh.setLevel(logging_remap[cfg["log_level"]])
-        fh.setFormatter(formatter)
-        logger.addHandler(fh)
 
-    logger.debug(args)
-    logger.debug(cfg)
+    logging.debug(args)
+    logging.debug(cfg)
 
     outFile = main(cfg)
 

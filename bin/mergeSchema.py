@@ -6,6 +6,14 @@ import jsonschema
 import argparse
 import logging
 import copy
+import os
+import imp
+script_dir = os.path.dirname(os.path.realpath(__file__))
+try:
+    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+except:
+    print("Script dir: {0}.".format(script_dir))
+    raise
 
 #DEFAULTSCHEMA = "../verisc.json"
 #DEFAULTLABELS = "../verisc-labels.json"
@@ -89,6 +97,7 @@ def rchop(thestring, ending):
 
 def merge(schema, labels):
     # get the keys to join
+    veris_logger.updateLogger()
     logging.debug(labels.keys())
     keys = recurse_keys(labels, ())
     logging.debug(keys)
@@ -116,6 +125,7 @@ def merge(schema, labels):
 
 def enums(schema, labels):
     # convert to objects to help with parsing
+    veris_logger.updateLogger()
     schema = objdict(schema)
     labels = objdict(labels)
     keys = recurse_keys(labels, ())
@@ -129,7 +139,8 @@ def enums(schema, labels):
 
 if __name__ == '__main__':
     descriptionText = """This script merges the schema file and labels file.
-    Optionally, it can also generate the enums file and the keynames file."""
+    Optionally, it can also generate the 
+gnums file and the keynames file."""
     parser = argparse.ArgumentParser(description=descriptionText)
     parser.add_argument("-s", "--schema",
                         help="schema file. (Normally '../verisc.json'.)", default=DEFAULTSCHEMA)
@@ -143,9 +154,12 @@ if __name__ == '__main__':
                         help="Minimum logging level to display",
                         default="warning")
     args = parser.parse_args()
-    logging_remap = {'warning': logging.WARNING, 'critical': logging.CRITICAL,
-                     'info': logging.INFO, 'debug': logging.DEBUG}
-    logging.basicConfig(level=logging_remap[args.logging])
+    level = args.logging
+    cfg = {
+    'log_level': level
+    }
+    veris_logger.updateLogger(cfg)
+ 
     with open(args.schema, 'r') as filehandle:
         schema = json.load(filehandle)
     with open(args.labels, 'r') as filehandle:

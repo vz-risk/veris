@@ -19,20 +19,26 @@
 """
 # PRE-USER SETUP
 import logging
+import imp
+import os
+script_dir = os.path.dirname(os.path.realpath(__file__))
+try:
+    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+except:
+    print("Script dir: {0}.".format(script_dir))
+    raise
 
 ########### NOT USER EDITABLE ABOVE THIS POINT #################
 
 
 # USER VARIABLES
-
+dateFmt = '%m/%d/%Y %H:%M:%S'
 ########### NOT USER EDITABLE BELOW THIS POINT #################
 
 
 ## IMPORTS
 import argparse
 import ConfigParser
-import imp
-import os
 import json
 from datetime import datetime
 from jsonschema import ValidationError, Draft4Validator
@@ -55,14 +61,6 @@ cfg = {
     'check': False,
     'repositories': ""
 }
-
-#logger = multiprocessing.get_logger()
-logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
-                 50: logging.CRITICAL, 40: logging.ERROR, 30: logging.WARNING, 20: logging.INFO, 10: logging.DEBUG, 0: logging.CRITICAL}
-FORMAT = '%(asctime)19s - %(processName)s {0} - %(levelname)s - %(message)s'
-logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d/%Y %H:%M:%S')
-logger = logging.getLogger()
-
 
 
 ## FUNCTION DEFINITION
@@ -88,6 +86,7 @@ class importVeris():
 
     def __init__(self, cfg=None, scripts=None):
         self.cfg = cfg
+        veris_logger.updateLogger(cfg, None, dateFmt) 
         if scripts is not None:
             self.scripts = json.loads(scripts)
         else:
@@ -118,10 +117,10 @@ class importVeris():
                 # self.scripts[name] = import_from_dotted_path(".".join([tail, "CSVtoJSON"]), [head])
 
             try:
-                logger.debug("Importing {0} from {1}.".format(name, self.scripts[name]))
+                logging.debug("Importing {0} from {1}.".format(name, self.scripts[name]))
                 self.scripts[name] = imp.load_source(name, script)
             except Exception as e:
-                logger.warning("{0} with file {1} didn't import due to {2}".format(name, self.scripts[name], e))
+                logging.warning("{0} with file {1} didn't import due to {2}".format(name, self.scripts[name], e))
                 self.scripts[name] = None
         # import
        # import the rules module
@@ -131,7 +130,6 @@ class importVeris():
         # import validation module
         self.checkValidity = imp.load_source("checkValidity", cfg.get("veris", "../").rstrip("/") + "/bin/checkValidity.py")
 
-
         # create validator
         if os.path.isfile(cfg.get('mergedfile', '')):
             with open(cfg['mergedfile'], 'r') as filehandle:
@@ -139,7 +137,7 @@ class importVeris():
         else:
             with open(cfg['schemafile'], 'r') as filehandle:
                 schema = json.load(filehandle)
-            with open(cfg['labelfile'], 'r') as filehandle:
+            with open(cfg['labelsfile'], 'r') as filehandle:
                 labels = json.load(filehandle)
             merged = self.mergeSchema.merge(schema, labels)
         self.validator = Draft4Validator(merged)
@@ -148,8 +146,8 @@ class importVeris():
     def main(self, cfg=None):
         if cfg is None:
             cfg = self.cfg
-
-        logger.info('Beginning main loop.')
+        veris_logger.updateLogger(cfg, None, dateFmt)
+        logging.info('Beginning main loop.')
 
         # get the partner name
         if 'source' in cfg:
@@ -159,7 +157,7 @@ class importVeris():
             source = ''.join([e for e in source if e.isalnum()])
             cfg['source'] = source
 
-        logger.info("Starting import of {0}.".format(source))
+        logging.info("Starting import of {0}.".format(source))
         #print("Starting import of {0}.".format(source))
 
     ## This functionality will remain in import_all_data.py - GDB 6/9/16
@@ -197,7 +195,7 @@ class importVeris():
                 script = "vcdb"
         else:
             script = "stdexcel"
-        logger.debug("File type is {0}.".format(script))
+        logging.debug("File type is {0}.".format(script))
 
         # run the import script  
         # TODO: Replace below block with call in scripts[script].main()
@@ -214,10 +212,10 @@ class importVeris():
     #        source
     #    ])
         try:
-            logger.warning("Script is {0}.".format(script))
+            logging.warning("Script is {0}.".format(script))
             impVERIS = self.scripts[script].CSVtoJSON(cfg)
         except AttributeError:
-            logger.debug("Raising AttributeError configuring script {0}.".format(script))
+            logging.debug("Raising AttributeError configuring script {0}.".format(script))
             raise
 
         for iid, incident_json in impVERIS.main():
@@ -235,17 +233,17 @@ class importVeris():
             except ValidationError as e:
                 offendingPath = '.'.join(str(x) for x in e.path)
                 if "row_number" in incident_json.get("plus", {}):
-                    logger.warning("ERROR in {0} at line {1} from {2}: {3}".format(
+                    logging.warning("ERROR in {0} at line {1} from {2}: {3}".format(
                         incident_json["incident_id"], incident_json['plus']['row_number'], cfg['input'], e.message))
                 else:
-                    logger.warning("ERROR in {0} from {1}: {2}".format(incident_json["incident_id"], cfg['input'], e.message))
+                    logging.warning("ERROR in {0} from {1}: {2}".format(incident_json["incident_id"], cfg['input'], e.message))
                 #logging.warning("ERROR in %s. %s %s" % (eachFile, offendingPath, e.message)) # replaced with above. - gdb 06/11/16
 
             # return the updated, validated, incident
             yield iid, incident_json
 
 
-        logger.info('Ending main loop.')
+        logging.info('Ending main loop.')
 
 
 
@@ -304,9 +302,10 @@ if __name__ == '__main__':
             cfg["year"] = int(cfg["year"])
         else:
             cfg["year"] = int(datetime.now().year)
-        logger.debug("config import succeeded.")
+        veris_logger.updateLogger(cfg, None, dateFmt) 
+        logging.debug("config import succeeded.")
     except Exception as e:
-        logger.warning("config import failed with error {0}.".format(e))
+        logging.warning("config import failed with error {0}.".format(e))
         #raise e
         pass
 
@@ -321,22 +320,17 @@ if __name__ == '__main__':
     cfg["vcdb"] = {True:True, False:False, "false":False, "true":True}[str(cfg.get("vcdb", 'false')).lower()]
     cfg["check"] = {True:True, False:False, "false":False, "true":True}[str(cfg.get("check", 'false')).lower()]
 
-    logger.setLevel(logging_remap[cfg["log_level"]])
-    #logger.basicConfig(level=logging_remap[cfg["log_level"]],
-    #      format='%(asctime)19s %(levelname)8s %(message)s', datefmt='%m/%d/%Y %H:%M:%S')
-    if cfg["log_file"] is not None:
-        logger.filename = cfg["log_file"]
-
-    logger.debug(args)
-    logger.debug(cfg)
+    veris_logger.updateLogger(cfg, None, dateFmt) 
+    logging.debug(args)
+    logging.debug(cfg)
 
     # Instantiate the class
     inV = importVeris(cfg)
 
     if not cfg.get('check', False):
-        logger.info("Output files will be written to %s",cfg["output"])
+        logging.info("Output files will be written to %s",cfg["output"])
     else:
-        logger.info("'check' setting is {0} so files will not be written.".format(cfg.get('check', False)))
+        logging.info("'check' setting is {0} so files will not be written.".format(cfg.get('check', False)))
     for iid, incident_json in inV.main(cfg):
         if not cfg.get('check', False):    
             # write the json to a file
@@ -346,7 +340,7 @@ if __name__ == '__main__':
             else:
                 dest = cfg["output"] + '/' + incident_json['plus']['master_id'] + '.json'
                 # dest = args.output + '/' + outjson['incident_id'] + '.json'
-            logger.info("%s: writing file to %s", iid, dest)
+            logging.info("%s: writing file to %s", iid, dest)
             try:
                 fwrite = open(dest, 'w')
                 fwrite.write(json.dumps(incident_json, indent=2, sort_keys=True))

@@ -42,21 +42,17 @@ import ConfigParser
 import json
 import pprint
 import ipdb
+import os
+import imp
+script_dir = os.path.dirname(os.path.realpath(__file__))
+try:
+    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+except:
+    print("Script dir: {0}.".format(script_dir))
+    raise
 
 ## SETUP
 __author__ = "Gabriel Bassett"
-logging_remap = {'warning':logging.WARNING, 'critical':logging.CRITICAL, 'info':logging.INFO, 'debug':logging.DEBUG,
-                 50: logging.CRITICAL, 40: logging.ERROR, 30: logging.WARNING, 20: logging.INFO, 10: logging.DEBUG, 0: logging.CRITICAL}
-FORMAT = '%(asctime)19s - %(processName)s - %(levelname)s - {0}%(message)s'
-#logging.basicConfig(level=logging.INFO, format=FORMAT.format(""), datefmt='%m/%d/%Y %H:%M:%S')
-formatter = logging.Formatter(FORMAT.format(""))
-logger = logging.getLogger()
-logger.setLevel(logging_remap[cfg["log_level"]])
-ch = logging.StreamHandler()
-#ch.setLevel(logging_remap[cfg["log_level"]])
-ch.setFormatter(formatter)
-logger.addHandler(ch)
-
 
 ## GLOBAL EXECUTION
 pass
@@ -129,9 +125,8 @@ def update_instance(inInstance, updateInstance):
 
 ## MAIN LOOP EXECUTION
 def main(cfg):
-    global logger
-
-    logger.info('Beginning main loop.')
+    veris_logger.updateLogger(cfg)
+    logging.info('Beginning main loop.')
 
     # Open the files
     with open(cfg["input"], 'r') as filehandle:
@@ -139,7 +134,7 @@ def main(cfg):
     with open(cfg["update"], 'r') as filehandle:
         updateFile = json.load(filehandle)
 
-    logger.debug("Updating root of schema.")
+    logging.debug("Updating root of schema.")
     oInFile = update_instance(inFile, updateFile)
 
     queue = []
@@ -185,7 +180,7 @@ def main(cfg):
             setattr(oInFile, instance, updateInstance)
 
 
-    logger.info('Ending main loop.')
+    logging.info('Ending main loop.')
     return dict(oInFile)
 
 if __name__ == "__main__":
@@ -220,30 +215,18 @@ if __name__ == "__main__":
                 for value in cfg_key[section]:
                     if value.lower() in config.options(section):
                         cfg[value] = config.get(section, value)
-        logger.debug("config import succeeded.")
+        veris_logger.updateLogger(cfg)
+        logging.debug("config import succeeded.")
     except Exception as e:
-        logger.warning("config import failed with error {0}.".format(e))
+        logging.warning("config import failed with error {0}.".format(e))
         #raise e
         pass
 
     cfg.update(args)
+    veris_logger.updateLogger(cfg)
 
-    #formatter = logging.Formatter(FORMAT.format("- " + "/".join(cfg["input"].split("/")[-2:])))
-    formatter = logging.Formatter(FORMAT.format(""))
-    logger = logging.getLogger()
-    logger.setLevel(logging_remap[cfg["log_level"]])
-    ch = logging.StreamHandler()
-    #ch.setLevel(logging_remap[cfg["log_level"]])
-    ch.setFormatter(formatter)
-    logger.addHandler(ch)
-    if "log_file" in cfg and cfg["log_file"] is not None:
-        fh = logging.FileHandler(cfg["log_file"])
-        #fh.setLevel(logging_remap[cfg["log_level"]])
-        fh.setFormatter(formatter)
-        logger.addHandler(fh)
-
-    logger.debug(args)
-    logger.debug(cfg)
+    logging.debug(args)
+    logging.debug(cfg)
 
     outFile = main(cfg)
 
