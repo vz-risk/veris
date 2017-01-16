@@ -413,9 +413,9 @@ class CSVtoJSON():
         self.addValue(incident, 'attribute.availability.notes', out, 'string')
 
         # timeline
-        self.addValue(incident, 'timeline.incident.year', out, 'numeric')
-        self.addValue(incident, 'timeline.incident.month', out, 'numeric')
-        self.addValue(incident, 'timeline.incident.day', out, 'numeric')
+        self.addValue(incident, 'timeline.incident.year', out, 'integer')
+        self.addValue(incident, 'timeline.incident.month', out, 'integer')
+        self.addValue(incident, 'timeline.incident.day', out, 'integer')
         self.addValue(incident, 'timeline.incident.time', out, 'string')
 
         self.addValue(incident, 'timeline.compromise.unit', out, 'string')
