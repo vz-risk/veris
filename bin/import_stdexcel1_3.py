@@ -56,11 +56,14 @@ class CSVtoJSON():
         veris_logger.updateLogger(cfg)
 
         if file_version is None:
+            file_version = cfg.get("file_version", None)
+        if file_version is None:
             file_version = self.get_file_schema_version(cfg['input'])
         if file_version is None:
             logging.warning("Could not determine veris version of {0}.  Please specify it as an argument to the class initialization, 'CSVtoJSON(cfg, file_version=<file version>)'".format(cfg['input']))
         elif file_version != self.script_version:
             logging.warning("File veris version {0} does not match script veris version {1}.".format(file_version, self.script_version))
+        cfg['file_version'] == file_version
 
         if type(cfg["mergedfile"]) == dict:
             self.jmerged = cfg["mergedfile"]
@@ -96,6 +99,8 @@ class CSVtoJSON():
                 logging.critical("No merged or schema file available to create field names from.")
                 raise
                 # exit(1)
+
+        self.cfg = cfg
 
     def get_file_schema_version(self, inFile):
         logging.info("Reading {0} to determine version.".format(inFile))
@@ -288,7 +293,7 @@ class CSVtoJSON():
         cfg = self.cfg
 
         out = {}
-        out['schema_version'] = cfg["version"]
+        out['schema_version'] = cfg["file_version"]
         if incident.has_key("incident_id"):
             if len(incident['incident_id']):
                 # out['incident_id'] = incident['incident_id']
