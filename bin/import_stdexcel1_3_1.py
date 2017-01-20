@@ -389,7 +389,7 @@ class CSVtoJSON():
             plusfields.append('github')
         for enum in plusfields:
             self.addValue(incident, 'plus.'+enum, out, "string")
-        self.addValue(incident, 'plus.dbir_year', out, "numeric")
+        self.addValue(incident, 'plus.dbir_year', out, "integer")
         # self.addValue(incident, 'plus.external_region', out, "list")
         if cfg["vcdb"]:
             self.addValue(incident, 'plus.timeline.notification.year', out, "numeric")
