@@ -405,7 +405,7 @@ class CSVtoJSON():
                             del i['amount']
                 out['attribute']['confidentiality']['data'] = copy.deepcopy(data)
         self.addValue(incident, 'attribute.confidentiality.data_disclosure', out, 'string')
-        self.addValue(incident, 'attribute.confidentiality.data_total', out, 'numeric')
+        self.addValue(incident, 'attribute.confidentiality.data_total', out, 'integer')
         self.addValue(incident, 'attribute.confidentiality.state', out, 'list')
         self.addValue(incident, 'attribute.confidentiality.notes', out, 'string')
 
