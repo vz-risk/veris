@@ -206,7 +206,7 @@
     "Near miss", 
     "False positive"
   ], 
-  "stage": {
+  "sequence": {
     "action": {
       "environmental": {
         "variety": [

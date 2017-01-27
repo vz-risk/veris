@@ -314,10 +314,7 @@
       ], 
       "type": "string"
     }, 
-    "source_id": {
-      "type": "string"
-    }, 
-    "stage": {
+    "sequence": {
       "items": {
         "oneOf": [
           {
@@ -3267,6 +3264,9 @@
       }, 
       "type": "array", 
       "uniqueItems": false
+    }, 
+    "source_id": {
+      "type": "string"
     }, 
     "subsets": {
       "properties": {}, 

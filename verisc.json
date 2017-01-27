@@ -3,7 +3,7 @@
   "additionalProperties": false,
   "description": "VERIS Community Schema 2",
   "properties": {
-    "stage": {
+    "sequence": {
       "type": "array",
       "uniqueItems": false,
       "items": {
