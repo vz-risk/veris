@@ -521,14 +521,14 @@ class CSVtoJSON():
             logging.info("-----> parsing incident %s", iid)
             if incident.has_key('repeat'):
                 if incident['repeat'].lower()=="ignore" or incident['repeat'] == "0":
-                    logging.info("Skipping row %s", iid)
+                    logging.info("Skipping row %s because 'repeat' is either 'ignore' or '0'.", iid)
                     continue
                 repeat = self.isnum(incident['repeat'])
                 if not repeat:
                     repeat = 1
             if incident.has_key('security_incident'):
                 if incident['security_incident'].lower()=="no":
-                    logging.info("Skipping row %s", iid)
+                    logging.info("Skipping row %s because security_incident is 'no'.", iid)
                     continue
             outjson = self.convertCSV(incident)
 
