@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Change Sequence of VERIS 2.0 Enumerations</title>
+<link type="text/css" rel="stylesheet" href="./stylesheet.css"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="./javascript.js"></script>
+</head>
+<body>
+
+<h1>Change Sequence of VERIS 2.0 Enumerations</h1><br />
+VERIS version 2 adds the ability to sequence many of the enumerations in the veris schema.  Old records may not have this sequencing, requiring they be manually updated.  To use:
+<ol>
+	<li> Choose the input and output directories, (which currently must be different), and click 'load'.  This will populate the file list with only those files not in both directories.
+	<li> Select a file in the files list.  This will build a sequence table.
+	<li> Use the radio buttons to choose each enumeration should be.  (Each sequence step must have either an action or an attribute.)
+	<li> Click 'save' to write the file to the output and remove it from the list of files.
+</ol>
+
+<div id='foldersDiv'>
+	<br/><input type="file" id="inDir" webkitdirectory directory multiple/>
+	<br/><input type="file" id="outDir" webkitdirectory directory multiple/>
+	<!-- <br/><input class='button2' type="button" value="Load Files" id="loadButton"> //-->
+</div>
+
+<div id='filesDiv'>
+	<select id='filesDivSelect' size=5>
+	</select>
+</div>
+
+<div id="sequenceDiv">
+	<input class='button1' type='button' value='Delete Last Sequence Step' id='delButton'>
+	<input class='button2' type='button' value='Add Sequence Step' id='addButton'>
+	<table id="seqTable" class='CSSTableGenerator'>
+		<!--
+  	<p><input type="text" class="textbox1" name="sign_symptom_name_1" size="22" id="sign_symptom_name_1" value="" placeholder="Sign or Symptom Name" /> <input class="textbox2" type="text" id="sign_symptom_value_1" size="20" name="sign_symptom_value_1" value="" placeholder="Sign or Symptom Value" /> <a href="#" id="rmRow">Remove</a></p>
+  	//-->
+	</table>
+	<input class='button2' type='button' value='Save' id='saveButton'>
+</div>
+
+</body>
+</html>
