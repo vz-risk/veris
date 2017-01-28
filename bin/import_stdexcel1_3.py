@@ -63,7 +63,7 @@ class CSVtoJSON():
             logging.warning("Could not determine veris version of {0}.  Please specify it as an argument to the class initialization, 'CSVtoJSON(cfg, file_version=<file version>)'".format(cfg['input']))
         elif file_version != self.script_version:
             logging.warning("File veris version {0} does not match script veris version {1}.".format(file_version, self.script_version))
-        cfg['file_version'] == file_version
+        cfg['file_version'] = file_version
 
         if type(cfg["mergedfile"]) == dict:
             self.jmerged = cfg["mergedfile"]
