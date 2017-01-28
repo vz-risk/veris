@@ -311,7 +311,7 @@ class CSVtoJSON():
         self.addValue(incident, 'victim.revenue.amount', out, "integer")
         self.addValue(incident, 'victim.secondary.amount', out, "numeric")
         self.addValue(incident, 'victim.secondary.victim_id', out, "list")
-        self.addValue(incident, 'victim.locations_affected', out, "numeric")
+        self.addValue(incident, 'victim.locations_affected', out, "integer")
         self.addValue(incident, 'victim.country', out, "list")
 
         # actor
