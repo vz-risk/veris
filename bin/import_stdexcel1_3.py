@@ -51,9 +51,8 @@ class CSVtoJSON():
 
 
     def __init__(self, cfg, file_version=None):
-        self.cfg = cfg
-
         veris_logger.updateLogger(cfg)
+        logging.debug("Initializing CSVtoJSON object.")
 
         if file_version is None:
             file_version = cfg.get("file_version", None)
