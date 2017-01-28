@@ -249,7 +249,7 @@ class CSVtoJSON():
         self.addValue(incident, 'victim.revenue.amount', out, "integer")
         self.addValue(incident, 'victim.secondary.amount', out, "numeric")
         self.addValue(incident, 'victim.secondary.victim_id', out, "list")
-        self.addValue(incident, 'victim.locations_affected', out, "numeric")
+        self.addValue(incident, 'victim.locations_affected', out, "integer")
         self.addValue(incident, 'victim.country', out, "list")
 
         # actor
@@ -523,7 +523,7 @@ if __name__ == '__main__':
     parser.add_argument("--version", help="The version of veris in use")
     parser.add_argument('--conf', help='The location of the config file', default="./_checkValidity.cfg")
     parser.add_argument('--year', help='The DBIR year to assign tot he records.')
-    parser.add_argument('--countryfile', help='The json file holdering the country mapping.')
+    parser.add_argument('-c', '--countryfile', help='The json file holdering the country mapping.')
     parser.add_argument('--source', help="Source_id to use for the incidents. Partner pseudonym.")
     parser.add_argument('-a', '--analyst', help="The analyst to use if no analyst exists in record or if --force_analyst is set.")
     parser.add_argument("-f", "--force_analyst", help="Override default analyst with --analyst.", action='store_true')
