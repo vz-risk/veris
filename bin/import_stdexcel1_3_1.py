@@ -471,7 +471,11 @@ class CSVtoJSON():
             #else:
             #    iid = "srcrow_" + str(row)
             # logger.warning("This includes the row number")
-            iid = incident['incident_id']  # there should always be an incident ID so commented out above. - gdb 061316
+            try:
+                iid = incident['incident_id']  # there should always be an incident ID so commented out above. - gdb 061316
+            except:
+                logging.error("keys: {0}.".format(incident.keys()))
+                raise
 
             repeat = 1
             logging.info("-----> parsing incident %s", iid)
