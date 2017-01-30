@@ -447,6 +447,8 @@ class CSVtoJSON():
             raise
             # exit(1)
 
+        infile.fieldnames = [f.decode('unicode_escape').encode('ascii', 'ignore') for f in infile.fieldnames] # remove unicode - gdb 170130
+
         for f in infile.fieldnames:
             if f not in self.sfields:
                 if f != "repeat":
@@ -458,7 +460,6 @@ class CSVtoJSON():
 
         row = 0
         for incident in infile:
-            incident = {k.decode('unicode_escape').encode('ascii', 'ignore'):v for k,v in incident.iteritems()} # remove unicode keys - 170130
             row += 1
             # have to look for white-space only and remove it
             try:
