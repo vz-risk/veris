@@ -555,7 +555,7 @@ if __name__ == '__main__':
     parser.add_argument("-s","--schemafile", help="The JSON schema file")
     parser.add_argument("-e","--enumfile", help="The JSON file with VERIS enumerations")
     parser.add_argument("--vcdb",help="Convert the data for use in VCDB",action="store_true")
-    parser.add_argument("--version", help="The version of veris in use")
+    parser.add_argument("--file_version", help="The version of veris in use")
     parser.add_argument('--conf', help='The location of the config file', default="./_checkValidity.cfg")
     parser.add_argument('--year', help='The DBIR year to assign tot he records.')
     parser.add_argument('-c', '--countryfile', help='The json file holdering the country mapping.')
@@ -576,7 +576,7 @@ if __name__ == '__main__':
         config = ConfigParser.SafeConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
-            'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'version', 'database', 'check'],
+            'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'file_version', 'database', 'check'],
             'LOGGING': ['log_level', 'log_file'],
             'REPO': ['veris', 'dbir_private'],
             'VERIS': ['mergedfile', 'enumfile', 'schemafile', 'labelsfile', 'countryfile']

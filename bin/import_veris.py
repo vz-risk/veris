@@ -55,7 +55,7 @@ cfg = {
     'enumfile': "../veris/verisc-enum.json",
     'mergedfile': "../veris/verisc-merged.json",
     'vcdb':False,
-    'version':"1.3",
+    'file_version':"1.3",
     'countryfile':'all.json',
     'output': os.getcwd(),
     'check': False,
@@ -91,17 +91,17 @@ class importVeris():
             self.scripts = json.loads(scripts)
         else:
             ## I feel bad about this hard coding.  Sorry. - gdb 081516
-            if cfg['version'] == "1.3":
-                self.scripts = {"vzir": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-vzir1_3.py",
-                           "vcdb": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-vcdb1_3.py",
-                           "sg": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-partner1_3.py",
-                           "stdexcel": cfg.get("veris", "").rstrip("/") + "/bin/import_stdexcel1_3.py"
+            if cfg['file_version'] == "1.3":
+                self.scripts = {"vzir": cfg.get("dbir_private", "").rstrip("/") + "/1.3/bin/sg-to-vzir1_3.py",
+                           "vcdb": cfg.get("dbir_private", "").rstrip("/") + "/1.3/bin/sg-to-vcdb1_3.py",
+                           "sg": cfg.get("dbir_private", "").rstrip("/") + "/1.3/bin/sg-to-partner1_3.py",
+                           "stdexcel": cfg.get("veris", "").rstrip("/") + "/1.3/bin/import_stdexcel1_3.py"
                            }
-            elif cfg['version'] == "1.3.1":
-                self.scripts = {"vzir": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-vzir1_3_1.py",
-                               "vcdb": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-vcdb1_3_1.py",
-                               "sg": cfg.get("dbir_private", "").rstrip("/") + "/bin/sg-to-partner1_3_1.py",
-                               "stdexcel": cfg.get("veris", "").rstrip("/") + "/bin/import_stdexcel1_3_1.py"
+            elif cfg['file_version'] == "1.3.1":
+                self.scripts = {"vzir": cfg.get("dbir_private", "").rstrip("/") + "/1.3.1/bin/sg-to-vzir1_3_1.py",
+                               "vcdb": cfg.get("dbir_private", "").rstrip("/") + "/1.3.1/bin/sg-to-vcdb1_3_1.py",
+                               "sg": cfg.get("dbir_private", "").rstrip("/") + "/1.3.1/bin/sg-to-partner1_3_1.py",
+                               "stdexcel": cfg.get("veris", "").rstrip("/") + "/1.3.1/bin/import_stdexcel1_3_1.py"
                                }
             else:
                 raise AttributeError("Cannot find scripts.  Please pass in a dictionary with a keys of 'vzir', 'vcdb', 'sg', and 'stdexcel' and values of a valid path to the import file.")
@@ -272,7 +272,7 @@ if __name__ == '__main__':
     parser.add_argument("--labelfile", help="The JSON file with VERIS labels.  Required along with schemafile if mergedfile not provided.")
 
     parser.add_argument("--vcdb",help="Convert the data for use in VCDB",action="store_true")
-    parser.add_argument("--version", help="The version of veris in use")
+    parser.add_argument("--file_version", help="The version of veris in use")
     parser.add_argument('--conf', help='The location of the config file', default="./_checkValidity.cfg")
     parser.add_argument('--year', help='The DBIR year to assign tot he records.')
     parser.add_argument('--countryfile', help='The json file holdering the country mapping.')
@@ -288,7 +288,7 @@ if __name__ == '__main__':
         config = ConfigParser.SafeConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
-            'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'version', 'database', 'check'],
+            'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'file_version', 'database', 'check'],
             'LOGGING': ['log_level', 'log_file'],
             'REPO': ['veris', 'dbir_private'],
             'VERIS': ['mergedfile', 'enumfile', 'schemafile', 'labelsfile', 'countryfile']
