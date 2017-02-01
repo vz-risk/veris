@@ -509,7 +509,7 @@ class CSVtoJSON():
             try:
                 incident = { x:incident[x].strip() for x in incident }
             except AttributeError as e:
-                logging.error("Error removing white space from feature {0} on row {1}.".format(x, row))
+                logging.error("Error removing white space on row {1}.".format(row))
                 raise e
 
             if 'incident_id' in incident:
