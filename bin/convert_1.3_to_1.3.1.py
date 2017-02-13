@@ -93,6 +93,9 @@ def main(cfg):
                     "ERROR: %s did not parse properly. Skipping" % in_fname)
                 continue
 
+            if 'assets' not in incident.get('asset', {}):
+                raise KeyError("Asset missing from assets in incident {0}.".format(fname))
+
             # Update the schema version
             incident['schema_version'] = "1.3.1"
 
