@@ -2602,10 +2602,10 @@
                     "enum": [
                       "Audit", 
                       "Monitoring service", 
+                      "Unknown", 
                       "Incident response", 
                       "Other", 
-                      "Antivirus", 
-                      "Inknown"
+                      "Antivirus"
                     ], 
                     "type": "string"
                   }

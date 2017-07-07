@@ -1445,7 +1445,7 @@
       "partner": {
         "variety": {
           "Other": "Discovery method was partner and known but not listed",
-          "Inknown": "Partner - Unknown",
+          "Unknown": "Partner - Unknown",
           "Antivirus": "Partner - Notified by antivirus company but not through AV product",
           "Audit": "Partner - Audit performed by a partner organization",
           "Incident response": "Partner - notified while investigating another incident",

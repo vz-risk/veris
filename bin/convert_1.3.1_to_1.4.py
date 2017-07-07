@@ -62,9 +62,13 @@ def main(cfg):
             new_assets = dict() # list() # asset.assets is a dictionary of lists.  for some f'ing reason.
             for old_asset in old_assets:
                 variety = old_asset['variety']
-                new_asset = {
-                    "variety": variety[4:].capitalize(),
-                }
+                if variety == "unknown":
+                    new_asset = {}
+                else:
+                    new_asset = {
+                        # "variety": variety[4:].capitalize(), # removing capitalization as it lower cases remaining letters, sometimes incorrectly.
+                        "variety": variety[4:],
+                    }
                 if "amount" in old_asset.keys():
                     new_asset['amount'] = old_asset['amount']
 
@@ -86,7 +90,8 @@ def main(cfg):
             elif discovery_method == 'Other':
                 incident['discovery_method'] = {'other': {}}
             else:
-                incident['discovery_method'] = {disc_map[discovery_method[:3]]: {"variety": discovery_method[6:].capitalize()}}
+                incident['discovery_method'] = {disc_map[discovery_method[:3]]: {"variety": discovery_method[6:].capitalize()}} # removing capitalization as it lower cases remaining letters, sometimes incorrectly.
+                incident['discovery_method'] = {disc_map[discovery_method[:3]]: {"variety": discovery_method[6:]}}
 
             # Now to save the incidenta
             logging.info("Writing new file to %s" % out_fname)

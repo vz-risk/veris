@@ -1653,10 +1653,10 @@
         "variety": [
           "Audit", 
           "Monitoring service", 
+          "Unknown", 
           "Incident response", 
           "Other", 
-          "Antivirus", 
-          "Inknown"
+          "Antivirus"
         ]
       }
     }, 
