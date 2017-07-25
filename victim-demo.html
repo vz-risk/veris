@@ -193,11 +193,11 @@ Organizations using VERIS to track incidents internally may (depending on circum
                                 </h3>
 
                                 <p><b>Question Text: </b>Primary industry (NAICS code):</p>
-                                <p><b>User notes: </b>VERIS uses standard NAICS codes to identify industries. Record the appropriate code here, using at least 3 digits of the full 6 digit code (the more specific, the better). If multiple industries apply, enter the code of the business group that experienced the incident. NAICS provides descriptions at http://www.census.gov/cgi-bin/sssd/naics/naicsrch?chart=2012.</p>
+                                <p><b>User notes: </b>VERIS uses standard NAICS codes to identify industries. Record the appropriate code here, using at least 2 digits of the full 6 digit code (the more specific, the better). If multiple industries apply, enter the code of the business group that experienced the incident. NAICS provides descriptions at https://www.census.gov/cgi-bin/sssd/naics/naicsrch?chart=2017.</p>
                                 <p><b>Question type: </b>text field or enumerated list (single-select)</p>
                                 <p><b>Variable name: </b><i>victim.industry</i> (string)</p>
                                 <p><b>Purpose: </b>Allows industry-specific analysis, trending, and comparisons.</p>
-                                <p><b>Developer notes: </b>We recommend making it as easy as possible for the user to locate and select the appropriate industry code (e.g., a picklist). If appropriate, auto-populate this field rather than prompting the user for it. The application should be configured to require at least 3 digits of the full 6 digit code in order to provide sufficient specificity.</p>
+                                <p><b>Developer notes: </b>We recommend making it as easy as possible for the user to locate and select the appropriate industry code (e.g., a picklist). If appropriate, auto-populate this field rather than prompting the user for it. The application should be configured to require at least 2 digits of the full 6 digit code in order to provide sufficient specificity.</p>
                                 <p><b>Miscellaneous: </b></p>
                                 <ul>
                                   <li>
@@ -226,7 +226,7 @@ Organizations using VERIS to track incidents internally may (depending on circum
                                 <p><b>Question type: </b><a href="enums.html#section-repeated">enumerated list</a> (single-select)</p>
                                 <p><b>Variable name: </b><i>victim.country</i> (string)</p>
                                 <p><b>Purpose: </b>Allows geographic analysis, trending, and comparisons.</p>
-                                <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found here: http://www.iso.org/iso/country_codes.htm. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
+                                <p><b>Developer notes: </b>VERIS uses the ISO 3166 codes for the country variable, which can be found<a href="http://www.iso.org/iso/country_codes.htm"> HERE</a>. We recommend creating a list in the interface rather than requiring users to enter the correct code.</p>
                                 <p><b>Miscellaneous: </b>VERIS specifies two datapoints pertaining to the geographic location of the victim: country and region. We include both because each has a slightly different use case. Collecting the country allows more specificity for trending, while the less-specific region provides another level of de-identification. We leave it up to the user to decide which most meets their needs.</p>
 
                             </section>
@@ -267,7 +267,7 @@ Organizations using VERIS to track incidents internally may (depending on circum
                                 <p><b>Variable name: </b><i>victim.employee_count</i> (string)</p>
                                 <p><b>Purpose: </b>Allows analysis, trending, and comparisons based on organizational size.</p>
                                 <p><b>Developer notes: </b>N/A</p>
-                                <p><b>Miscellaneous: </b>While the exact number could be used, ranges allow for interesting comparisons and provide some measure of de-identification for data sharing purposes. We have, however, considered moving toward an exact number to enable better correlation and analysis. If you have a preference either way, let us know.</p>
+                                <p><b>Miscellaneous: </b>Ranges allow for interesting comparisons and provide some measure of de-identification for data sharing purposes. If limited information on employee count is avaiable selctions of Small (up to 1000 employees) and Large (over 1000) may be used.</p>
 
                             </section>
 
@@ -346,6 +346,7 @@ Organizations using VERIS to track incidents internally may (depending on circum
     It is sometimes difficult to determine the difference between multiple separate incidents and a single incident with multiple sequential events. For instance, the August 2013 attack against the New York Times could be seen as one multi-staged incident involving three victims (the Indian ISP, Melbourne IT, and NYT), but could also be considered three distinct, but related, incidents. In such cases, there is no “right or wrong” method, but data quality requires a consistent approach. Standard procedure with VERIS is to treat these as separate incidents that can be associated using the related_incidents field. As a rule, incidents in VERIS have only one primary victim.
   </a></li>
   <li>
+    
     Mass defacements and DDoS/DoS attacks can make this single vs multiple incident determination particularly difficult. Such reports often state that “547 sites defaced/DoS'd by #Actor” with few other details. It's not possible (at least not without a lot of effort) to determine if that involves a single compromised hosting provider that affected 547 hosted sites, whether those sites represent 547 unique victims, etc. In such cases, record “Mass Event” for the victim_id. Leave country, employee_count, and industry blank unless they are shared by the entire set of victims/sites/etc (e.g., they are all Indonesian). Record the total number of sites (or whatever) defaced/DoS'd in the secondary_amount field. If specific sites or names are given, copy/paste those in the secondary_id feld. Then record whatever other details are given as normal.
   </a></li>
 </ul>
