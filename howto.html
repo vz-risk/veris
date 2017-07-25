@@ -179,7 +179,7 @@
                               <tr><td>timeline.incident.month</td><td>08</td></tr>
                               <tr><td>timeline.incident.day</td><td>04</td></tr>
                             </table>
-
+                          <br>
                             <p>And you probably have an executive summary of
                               what happened in the incident too.</p>
 
@@ -187,6 +187,7 @@
                               <tr><th>Variable</th><th>Value</th></tr>
                               <tr><td>summary</td><td>Something bad happened.</td></tr>
                             </table>
+                          <br>
 
                             <p>You might have some notes about how you
                               discovered the incident. Or notes about any hacking,
@@ -200,6 +201,7 @@
                               <tr><td>hacking.notes</td><td>accessed server using stolen credentials.</td></tr>
                               <tr><td>social.notes</td><td>Frank received a phishing message and he responded with his password.</td></tr>
                             </table>
+                          <br>
 
                             <p>For all of these you just need to figure out how
                               you're going to gather the information from your
@@ -272,6 +274,7 @@
                               <tr><td>actor.partner</td><td>Was there a partner threat actor?</td></tr>
                               <tr><td>actor.unknown</td><td>Was there a threat actor but you don't know what kind?</td></tr>
                             </table>
+                          <br>
 
                             <h3>Actions</h3>
                             <table border=1>
@@ -285,6 +288,7 @@
                               <tr><td>action.environmental</td><td>Was there an act of God that lead to the incident?</td></tr>
                               <tr><td>action.unknown</td><td>Are we unsure what happened?</td></tr>
                             </table>
+                          <br>
 
                             <h3>Attributes</h3>
                             <table border=1>
@@ -294,6 +298,7 @@
                               <tr><td>attribute.availability</td><td>Was there an availability loss?</td></tr>
                               <tr><td>attribute.unknown</td><td>Are we unsure what was affected?</td></tr>
                             </table>
+                          <br>
                           <h3>Asset</h3>
                           <p>The <a href="enums.html#section-asset">list of assets</a> that might be affected can be
                             rather long so you might want to use a multi-select or
@@ -312,6 +317,7 @@
                               <tr><td>asset.assets.people</td><td>Were any people compromised (e.g. Social Engineering)?</td></tr>
                               <tr><td>asset.assets.unknown</td><td>Are we unsure what was affected?</td></tr>
                             </table>
+                          <br>
 
                           <p>Let's now imagine a fairly complex espionage incident. Last month an external
                             actor used a phishing message to one of your users convincing him to run an
@@ -320,7 +326,7 @@
                             log into a server and create a backdoor. The backdoor was used
                             to exfiltrate sensitive documents. Later a reporter contacted
                             you and told you that your documents were showing up on an
-                            underground forum which lead you to investigate.</p>
+                            underground forum.</p>
                           <p>Using just what we've done so far, what kind of information
                             can we record about the incident?</p>
                           <table border=1>
@@ -344,6 +350,7 @@
                             <tr><td>asset.server</td><td>True</td></tr>
                             <tr><td>asset.people</td><td>True</td></tr>
                           </table>
+                          <br>
                           <p>That is a really good VERIS record. Anyone on the
                             VERIS Community Database project would be happy to
                             get a record with that level of detail in it. And
