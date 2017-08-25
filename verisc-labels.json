@@ -901,7 +901,7 @@
       "User breakout": "Elevation of privilege by another customer in shared environment",
       "NA": "It is known no cloud assets were involved",
       "No": "It is known that a cloud asset was involved and it being a cloud asset did not affect the outcome",
-      "Other": "Cloud hosting known but not listed.",
+      "Other": "Cloud hosting known but not listed",
       "Unknown": "The involvement of cloud assets was not measured"
     },
     "governance" : {
@@ -1409,7 +1409,7 @@
     "Ext - suspicious traffic": "External - Report of suspicious traffic",
     "Ext - unknown": "External - unknown",
     "Ext - other": "Discovery method was external and known but not listed",
-    "Ext - Unrelated 3rd party": "Discovered by person unaffiliated with victim or threat actor",
+    "Ext - unrelated 3rd party": "Discovered by person unaffiliated with victim or threat actor",
     "Int - HIDS": "Internal - host IDS or file integrity monitoring",
     "Int - IT review": "Any routine maintenance, testing or review of it assets. (Includes inspect of assets, vulnerability scans, etc.)",
     "Int - NIDS": "Internal - All network-based security tool detection (including IPS, IDS, firewalls and other network-based security tools)",
@@ -1422,7 +1422,7 @@
     "Int - log review": "Internal - log review process or SIEM",
     "Int - reported by employee": "Internal - reported by employee who saw something odd",
     "Int - security alarm": "Internal - physical security system alarm",
-    "Int - Break in discovered": "Internal - employee discovered evidence of a break in",
+    "Int - break in discovered": "Internal - employee discovered evidence of a break in",
     "Int - unknown": "Internal - unknown",
     "Int - other": "Discovery method was internal and known but not listed",
     "Other": "Other",

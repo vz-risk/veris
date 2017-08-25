@@ -2004,7 +2004,6 @@
     "discovery_method": {
       "enum": [
         "Int - financial audit", 
-        "Ext - Unrelated 3rd party", 
         "Ext - found documents", 
         "Unknown", 
         "Ext - audit", 
@@ -2016,8 +2015,10 @@
         "Ext - fraud detection", 
         "Int - incident response", 
         "Ext - customer", 
+        "Ext - unrelated 3rd party", 
         "Prt - audit", 
         "Int - IT review", 
+        "Int - break in discovered", 
         "Int - other", 
         "Int - log review", 
         "Int - unknown", 
@@ -2032,7 +2033,6 @@
         "Int - infrastructure monitoring", 
         "Prt - incident response", 
         "Int - data loss prevention", 
-        "Int - Break in discovered", 
         "Int - fraud detection", 
         "Prt - monitoring service", 
         "Int - reported by employee", 
