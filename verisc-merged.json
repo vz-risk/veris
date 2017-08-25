@@ -194,6 +194,7 @@
                   "Physical access", 
                   "Command shell", 
                   "Unknown", 
+                  "Desktop sharing software", 
                   "Backdoor or C2", 
                   "Web application", 
                   "Desktop sharing", 
@@ -240,6 +241,7 @@
             "variety": {
               "items": {
                 "enum": [
+                  "Modify data", 
                   "Spam", 
                   "Unknown", 
                   "Packet sniffer", 
@@ -960,6 +962,7 @@
                   "Executive", 
                   "Cashier", 
                   "Manager", 
+                  "Doctor or nurse", 
                   "Guard", 
                   "Other", 
                   "Auditor", 
@@ -1331,6 +1334,7 @@
                 "enum": [
                   "E - Telemetry", 
                   "Unknown", 
+                  "M - Fax", 
                   "M - Disk media", 
                   "M - Payment card", 
                   "U - Mobile phone", 
@@ -1361,6 +1365,7 @@
                   "U - Tablet", 
                   "N - Firewall", 
                   "M - Disk drive", 
+                  "S - Configuration or patch management", 
                   "S - ICS", 
                   "P - Human resources", 
                   "S - File", 
@@ -1435,13 +1440,15 @@
         }, 
         "cloud": {
           "enum": [
+            "NA", 
+            "No", 
             "Hosting error", 
             "User breakout", 
             "Unknown", 
-            "Other", 
-            "Hosting governance", 
             "Customer attack", 
+            "Hosting governance", 
             "Hypervisor", 
+            "Other", 
             "Partner application"
           ], 
           "type": "string"
@@ -1715,6 +1722,7 @@
               "3rd party managed", 
               "3rd party owned", 
               "Other", 
+              "Victim governed", 
               "Personally owned", 
               "Internally isolated"
             ], 
@@ -1996,6 +2004,7 @@
     "discovery_method": {
       "enum": [
         "Int - financial audit", 
+        "Ext - Unrelated 3rd party", 
         "Ext - found documents", 
         "Unknown", 
         "Ext - audit", 
@@ -2023,6 +2032,7 @@
         "Int - infrastructure monitoring", 
         "Prt - incident response", 
         "Int - data loss prevention", 
+        "Int - Break in discovered", 
         "Int - fraud detection", 
         "Prt - monitoring service", 
         "Int - reported by employee", 
@@ -2310,7 +2320,11 @@
       "type": "string"
     }, 
     "plus": {
-      "properties": {}, 
+      "properties": {
+        "row_number": {
+          "type": "number"
+        }
+      }, 
       "type": "object"
     }, 
     "reference": {

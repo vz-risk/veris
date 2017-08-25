@@ -103,6 +103,7 @@ incident_id
 ioc.comment
 ioc.indicator
 notes
+plus.row_number
 reference
 schema_version
 security_incident
