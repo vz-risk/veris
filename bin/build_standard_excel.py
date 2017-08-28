@@ -326,46 +326,48 @@ def main():
     # Build examples from Test VERIS records.
     if args.test_examples is not None:
         try:
+            if not os.path.isdir(args.test_examples): raise ValueError("Directory does not exist.")
             testfiles = glob.glob(args.test_examples.rstrip("/") + "/*.json")
+            if len(testfiles) <= 0: raise ValueError("No test files found in directory.")
+            if len(testfiles) > MAX_EXAMPLES:
+                testfiles = random.sample(testfiles, MAX_EXAMPLES)
+            #logging.debug(testfiles)
+            # read in and flatten files
+            records = []
+            for filename in testfiles:
+                with open(filename, 'r') as filehandle:
+                    j = json.load(filehandle)
+                    #logging.debug(j)
+                    record = recurse_veris(j, "")
+                    #logging.debug(record)
+                records.append(record)
+            # get columns
+            columns = set(DEFAULT_COLUMNS)
+            for record in records:
+                #logging.debug(record.keys())
+                columns = columns.union(record.keys())
+            #logging.debug(columns)
+            # order columns
+            sorted_columns = []
+            for i in range(len(ORDER)):
+                sorted_columns = sorted_columns + sorted([k for k in columns if k.startswith(ORDER[i])])
+            sorted_columns = sorted_columns + sorted(list(set(columns).difference(sorted_columns)))
+            #logging.debug(sorted_columns)
+            # write header
+            row = 0
+            for i in range(len(sorted_columns)):
+                example.write(row, i, sorted_columns[i])
+            row += 1
+            #logging.debug(records)
+            for record in records:
+                for k, v in record.iteritems():
+                    example.write(row, sorted_columns.index(k), v)
+                row += 1
+            # add a 'repeat' for the last 2
+            example.write(row-2, 0, 25) # 25 is just hardcoded number for example
+            example.write(row-1, 0, 5) # 5 is just hardcoded number for example
         except:
             logging.info("No test files found.")
-        if len(testfiles) > MAX_EXAMPLES:
-            testfiles = random.sample(testfiles, MAX_EXAMPLES)
-        #logging.debug(testfiles)
-        # read in and flatten files
-        records = []
-        for filename in testfiles:
-            with open(filename, 'r') as filehandle:
-                j = json.load(filehandle)
-                #logging.debug(j)
-                record = recurse_veris(j, "")
-                #logging.debug(record)
-            records.append(record)
-        # get columns
-        columns = set(DEFAULT_COLUMNS)
-        for record in records:
-            #logging.debug(record.keys())
-            columns = columns.union(record.keys())
-        #logging.debug(columns)
-        # order columns
-        sorted_columns = []
-        for i in range(len(ORDER)):
-            sorted_columns = sorted_columns + sorted([k for k in columns if k.startswith(ORDER[i])])
-        sorted_columns = sorted_columns + sorted(list(set(columns).difference(sorted_columns)))
-        #logging.debug(sorted_columns)
-        # write header
-        row = 0
-        for i in range(len(sorted_columns)):
-            example.write(row, i, sorted_columns[i])
-        row += 1
-        #logging.debug(records)
-        for record in records:
-            for k, v in record.iteritems():
-                example.write(row, sorted_columns.index(k), v)
-            row += 1
-        # add a 'repeat' for the last 2
-        example.write(row-2, 0, 25) # 25 is just hardcoded number for example
-        example.write(row-1, 0, 5) # 5 is just hardcoded number for example
 
     workbook.close()
     logging.info('Ending main loop.')
