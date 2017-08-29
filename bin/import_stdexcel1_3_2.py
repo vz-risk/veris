@@ -31,9 +31,9 @@ cfg = {
     'log_file': None,
     'schemafile': "../verisc.json",
     'enumfile': "../verisc-enum.json",
-    'mergedfile': "../verisc-merged",
+    'mergedfile': "../verisc-merged.json",
     'vcdb':False,
-    'version':"1.3.1",
+    'version':"1.3.2",
     'countryfile':'all.json',
     'output': os.getcwd(),
     'check': False,
@@ -576,6 +576,11 @@ if __name__ == '__main__':
     cfg.update(args)
     cfg["vcdb"] = {True:True, False:False, "false":False, "true":True}[str(cfg.get("vcdb", 'false')).lower()]
     cfg["check"] = {True:True, False:False, "false":False, "true":True}[str(cfg.get("check", 'false')).lower()]
+    if cfg["mergedfile"] != "../verisc-merged.json" and cfg["schemafile"] == "../verisc.json": 
+        logging.warning("It appears a mergedfile was defined but not as schemafile.  This script " +
+            "_only_ uses the schemafile and enumfile, not the mergedfile.  You make get results due" +
+            "to default values, but the wrong schema is probably being used.")
+
     ### Removed below. removing 'output' does nothing. - gdb 082516
     if cfg.get('check', False) == True:
         # _ = cfg.pop('output')
