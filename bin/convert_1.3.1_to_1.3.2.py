@@ -119,7 +119,7 @@ def main(cfg):
 
 
 if __name__ == '__main__':
-    descriptionText = "Converts VERIS 1.3 incidents to v1.3.1"
+    descriptionText = "Converts VERIS 1.3.1 incidents to v1.3.2"
     helpText = "output file to write new files. Default is to overwrite."
     parser = argparse.ArgumentParser(description=descriptionText)
     parser.add_argument("-l","--log_level",choices=["critical","warning","info","debug"], help="Minimum logging level to display")
@@ -128,7 +128,7 @@ if __name__ == '__main__':
                         help="top level folder to search for incidents")
     parser.add_argument("-o", "--output", required=True,
                         help=helpText)
-    parser.add_argument('--countryfile', help='The json file holdering the country mapping.')
+    # parser.add_argument('--countryfile', help='The json file holdering the country mapping.')
     parser.add_argument('--conf', help='The location of the config file', default="../user/data_flow.cfg")
     args = parser.parse_args()
     args = {k:v for k,v in vars(args).iteritems() if v is not None}
@@ -164,7 +164,7 @@ if __name__ == '__main__':
 
     veris_logger.updateLogger(cfg)
 
-    country_region = getCountryCode(cfg['countryfile'])
+    # country_region = getCountryCode(cfg['countryfile'])
 
     # assert args.path != args.output, "Source and destination must differ"
 
