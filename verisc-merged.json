@@ -2310,7 +2310,11 @@
       "type": "string"
     }, 
     "plus": {
-      "properties": {}, 
+      "properties": {
+        "row_number": {
+          "type": "number"
+        }
+      }, 
       "type": "object"
     }, 
     "reference": {
