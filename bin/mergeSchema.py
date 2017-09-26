@@ -187,7 +187,7 @@ gnums file and the keynames file."""
      # write the merged schema
     merged = merge(schema, labels)
     with open(args.output, 'w') as outfile_handle:
-        json.dump(merged, outfile_handle, sort_keys=True, indent=2)
+        json.dump(merged, outfile_handle, sort_keys=False, indent=2)
 
     # write the keys out
     if args.keynames is not None:
@@ -202,4 +202,4 @@ gnums file and the keynames file."""
     if args.enum is not None:
         veris_enum = enums(schema, labels)
         with open(args.enum, 'w') as enum_handle:
-            json.dump(veris_enum, enum_handle, sort_keys=True, indent=2)
+            json.dump(veris_enum, enum_handle, sort_keys=False, indent=2)

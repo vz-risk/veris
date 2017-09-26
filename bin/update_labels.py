@@ -39,6 +39,7 @@ any labels in the update file but not the labels file
 """
 # PRE-USER SETUP
 import logging
+from collections import OrderedDict
 
 ########### NOT USER EDITABLE ABOVE THIS POINT #################
 
@@ -78,56 +79,65 @@ pass
 
 
 ## CLASS AND FUNCTION DEFINITION
-class objdict(dict):
-    def __getattr__(self, name):
-        try:
-            return self.recursive_getattr(self, name)
-        except Exception as e:
-            raise AttributeError("No such attribute: " + name)
-
-    def __setattr__(self, name, value):
-        try:
-            self.recursive_setattr(self, name, value)
-        except:
-            raise AttributeError("No such attribute: " + name)
+def deepGetAttr(od, name):
+    if len(name) > 1:
+        return deepGetAttr(od[name[0]], name[1:])
+    else:
+        return od[name[0]]
     
-    def __delattr__(self, name):
-        try:
-            self.recursive_delattr(self, name)
-        except:
-            raise AttributeError("No such attribute: " + name)
+def deepSetAttr(od, name, value):
+    if len(name) > 1:
+        deepSetAttr(od[name[0]], name[1:], value)
+    else:
+        od[name[0]] = value
 
-    def recursive_setattr(self, o, name, value):
-        name = name.split(".", 1)
-        if len(name) > 1:
-            self.recursive_setattr(o[name[0]], name[1], value)
-        else:
-            o[name[0]] = value
+# class objdict(dict):
+#     def __getattr__(self, name):
+#         try:
+#             return self.recursive_getattr(self, name)
+#         except Exception as e:
+#             raise AttributeError("No such attribute: " + name)
 
-    def recursive_getattr(self, o, name):
-        name = name.split(".", 1)
-        if len(name) > 1:
-            return self.recursive_getattr(o[name[0]], name[1])
-        else:
-            return o[name[0]]
+#     def __setattr__(self, name, value):
+#         try:
+#             self.recursive_setattr(self, name, value)
+#         except:
+#             raise AttributeError("No such attribute: " + name)
+    
+#     def __delattr__(self, name):
+#         try:
+#             self.recursive_delattr(self, name)
+#         except:
+#             raise AttributeError("No such attribute: " + name)
 
-    def recursive_delattr(self, o, name):
-        name = name.split(".", 1)
-        if len(name) > 1:
-            self.recursive_delattr(o[name[0]], name[1])
-        else:
-            del o[name[0]]
+#     def recursive_setattr(self, o, name, value):
+#         name = name.split(".", 1)
+#         if len(name) > 1:
+#             self.recursive_setattr(o[name[0]], name[1], value)
+#         else:
+#             o[name[0]] = value
+
+#     def recursive_getattr(self, o, name):
+#         name = name.split(".", 1)
+#         if len(name) > 1:
+#             return self.recursive_getattr(o[name[0]], name[1])
+#         else:
+#             return o[name[0]]
+
+#     def recursive_delattr(self, o, name):
+#         name = name.split(".", 1)
+#         if len(name) > 1:
+#             self.recursive_delattr(o[name[0]], name[1])
+#         else:
+#             del o[name[0]]
 
 
-def recurse_keys(d, lbl, keys=dict()):
+def recurse_keys(d, lbl, keys=set()):
     for k, v in d.iteritems():
-        if type(v) == dict:
-            keys.update(recurse_keys(v, lbl + "." + k, keys))
+        if type(v) in [OrderedDict, dict]:
+            keys = keys.union(recurse_keys(v, (lbl + (k,)), keys))
         else:
-            if lbl[1:] in keys:
-                keys[lbl[1:]].add(k)
-            else:
-                keys[lbl[1:]] = set([k])
+            keys.add(lbl)
     return keys
 
 
@@ -137,44 +147,45 @@ def main(cfg):
     logging.info('Beginning main loop.')
     # Open the files
     with open(cfg["input"], 'r') as filehandle:
-        inFile = json.load(filehandle)
+        inFile = json.load(filehandle, object_pairs_hook=OrderedDict)
     with open(cfg["update"], 'r') as filehandle:
-        updateFile = json.load(filehandle)
+        updateFile = json.load(filehandle, object_pairs_hook=OrderedDict)
 
 #    inKeys = recurse_keys(inFile, "")
-    updateKeys = recurse_keys(updateFile, "")
+    updateKeys = recurse_keys(updateFile, ())
+    logging.debug(updateKeys)
 
-    oInFile = objdict(inFile)
-    oUpdateFile = objdict(updateFile)
+    # oInFile = objdict(inFile)
+    # oUpdateFile = objdict(updateFile)
 
-    for key in updateKeys.keys():
+    for key in updateKeys:
         # if the key is in the infile, just merge the value
         logging.debug("")
         try:
-            value = getattr(oInFile, key)
-            value.update(getattr(oUpdateFile, key))
-            logging.debug("Updating existing key {0}.".format(key))
-            setattr(oInFile, key, value)
-        except AttributeError:
+            value = deepGetAttr(inFile, key)
+            value.update(deepGetAttr(updateFile, key))
+            logging.debug("Updating existing key {0}.".format(".".join(key)))
+            deepSetAttr(inFile, key, value)
+        except KeyError:
             #logger.debug(e.message)
             # dd the key to the schema
-            keyList = key.split(".")
-            if keyList[0] not in oInFile.keys():
-                setattr(oInFile, keyList[0], {})
-                logging.debug("Adding root key {0}.".format(keyList[0]))
-            for i in range(1, len(keyList)-1):
-                if keyList[i] not in getattr(oInFile, ".".join(keyList[:i])):
-                    if keyList[0] == "attribute":
-                        print "i+1 {0} not in {1}".format(keyList[i]), getattr(oInFile, ".".join(keyList[:i]))
-                        print "wiping " + ".".join(keyList[:i]) + " on step " + str(i)
-                    setattr(oInFile, ".".join(keyList[:i+1]), {})
+            # keyList = key.split(".")
+            if key not in inFile.keys():
+                deepSetAttr(inFile, (key[0], ), {})
+                logging.debug("Adding root key {0}.".format(key[0]))
+            for i in range(1, len(key)-1):
+                if key[i] not in deepGetAttr(inFile, key[:i]):
+                    if key[0] == "attribute":
+                        print "i+1 {0} not in {1}".format(key[i]), deepGetAttr(inFile, key[:i])
+                        print "wiping " + ".".join(key[:i]) + " on step " + str(i)
+                    deepSetAttr(inFile, key[:i+1], {})
             logging.debug("adding key {0}.".format(key))
-            setattr(oInFile, key, getattr(oUpdateFile, key))
+            deepSetAttr(inFile, key, deepGetAttr(updateFile, key))
 
 
     logging.info('Ending main loop.')
 
-    return dict(oInFile)
+    return inFile
 
 if __name__ == "__main__":
 
@@ -226,4 +237,4 @@ if __name__ == "__main__":
     outFile = main(cfg)
 
     with open(cfg["output"], 'w') as filehandle:
-        json.dump(outFile, filehandle, indent=2, sort_keys=True)
+        json.dump(outFile, filehandle, indent=2, sort_keys=False)
