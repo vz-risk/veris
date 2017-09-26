@@ -27,22 +27,17 @@ MERGED = None
 KEYNAMES = None
 ENUM = None
 
-def deepDictGet(o, name):
-    if len(name) > 0:
-        s = "o['" + "']['".join(name) + "']"
-        return eval(s)
+def deepGetAttr(od, name):
+    if len(name) > 1:
+        return deepGetAttr(od[name[0]], name[1:])
     else:
-        return o
-
-def deepDictSet(o, name, value):
-    if len(name) == 0:
-        raise ValueError("Key '{0}' does not exist.".format(name))
-    elif len(name) == 1:
-        s = "o.update({name[-1]:value})"
-        return eval(s)
+        return od[name[0]]
+    
+def deepSetAttr(od, name, value):
+    if len(name) > 1:
+        deepSetAttr(od[name[0]], name[1:], value)
     else:
-        s = "o['" + "']['".join(name[:-1]) + "'].update({name[-1]:value})"
-        return eval(s)
+        od[name[0]] = value
 
 # class objdict(dict):
 #     def __getattr__(self, name):
@@ -129,15 +124,15 @@ def merge(schema, labels):
         for i in range(len(key)):
             # tacking 'properties.' on to the end of 'items.' rather than having separate logic for arrays and objects
             #   is kind of a hack, but I think it'll work for all intended uses for the script. - gdb 06/03/16
-            name = name + key[i] + "." + {"array": "items.properties.", "object": "properties."}.get(deepDictGet(schema, "{0}{1}.type".format(name, key[i]).split(".")), "") # append properties or nothing
+            name = name + key[i] + "." + {"array": "items.properties.", "object": "properties."}.get(deepGetAttr(schema, "{0}{1}.type".format(name, key[i]).split(".")), "") # append properties or nothing
         logging.info("Updating key " + name)
         try:
-            logging.debug("Adding keys {0}".format(deepDictGet(labels, key).keys()))
+            logging.debug("Adding keys {0}".format(deepGetAttr(labels, key).keys()))
         except:
             logging.debug(key)
             raise
         try:
-            deepDictSet(schema, "{0}{1}".format(rchop(name, "properties."), "enum").split("."), deepDictGet(labels, key).keys())
+            deepSetAttr(schema, "{0}{1}".format(rchop(name, "properties."), "enum").split("."), deepGetAttr(labels, key).keys())
         except:
             logging.debug("{0}{1}".format(rchop(name, "properties."), "enum"))
             raise
@@ -154,7 +149,7 @@ def enums(schema, labels):
     if args.enum is not None:
         veris_enum = copy.deepcopy(labels)
         for key in keys:
-            deepDictSet(veris_enum, key, deepDictGet(labels, key).keys())
+            deepSetAttr(veris_enum, key, deepGetAttr(labels, key).keys())
     return veris_enum
 
 
