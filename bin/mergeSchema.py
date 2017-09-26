@@ -8,6 +8,7 @@ import logging
 import copy
 import os
 import imp
+from collections import OrderedDict
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
     veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
@@ -26,46 +27,62 @@ MERGED = None
 KEYNAMES = None
 ENUM = None
 
+def deepDictGet(o, name):
+    if len(name) > 0:
+        s = "o['" + "']['".join(name) + "']"
+        return eval(s)
+    else:
+        return o
 
-class objdict(dict):
-    def __getattr__(self, name):
-        try:
-            return self.recursive_getattr(self, name)
-        except:
-            raise AttributeError("No such attribute: " + name)
+def deepDictSet(o, name, value):
+    if len(name) == 0:
+        raise ValueError("Key '{0}' does not exist.".format(name))
+    elif len(name) == 1:
+        s = "o.update({name[-1]:value})"
+        return eval(s)
+    else:
+        s = "o['" + "']['".join(name[:-1]) + "'].update({name[-1]:value})"
+        return eval(s)
 
-    def __setattr__(self, name, value):
-        try:
-            self.recursive_setattr(self, name, value)
-        except:
-            raise AttributeError("No such attribute: " + name)
+# class objdict(dict):
+#     def __getattr__(self, name):
+#         try:
+#             return self.recursive_getattr(self, name)
+#         except:
+#             raise AttributeError("No such attribute: " + name)
+
+#     def __setattr__(self, name, value):
+#         try:
+#             self.recursive_setattr(self, name, value)
+#         except:
+#             raise AttributeError("No such attribute: " + name)
     
-    def __delattr__(self, name):
-        try:
-            self.recursive_delattr(self, name)
-        except:
-            raise AttributeError("No such attribute: " + name)
+#     def __delattr__(self, name):
+#         try:
+#             self.recursive_delattr(self, name)
+#         except:
+#             raise AttributeError("No such attribute: " + name)
 
-    def recursive_setattr(self, o, name, value):
-        name = name.split(".", 1)
-        if len(name) > 1:
-            self.recursive_setattr(o[name[0]], name[1], value)
-        else:
-            o[name[0]] = value
+#     def recursive_setattr(self, o, name, value):
+#         name = name.split(".", 1)
+#         if len(name) > 1:
+#             self.recursive_setattr(o[name[0]], name[1], value)
+#         else:
+#             o[name[0]] = value
 
-    def recursive_getattr(self, o, name):
-        name = name.split(".", 1)
-        if len(name) > 1:
-            return self.recursive_getattr(o[name[0]], name[1])
-        else:
-            return o[name[0]]
+#     def recursive_getattr(self, o, name):
+#         name = name.split(".", 1)
+#         if len(name) > 1:
+#             return self.recursive_getattr(o[name[0]], name[1])
+#         else:
+#             return o[name[0]]
 
-    def recursive_delattr(self, o, name):
-        name = name.split(".", 1)
-        if len(name) > 1:
-            self.recursive_delattr(o[name[0]], name[1])
-        else:
-            del o[name[0]]
+#     def recursive_delattr(self, o, name):
+#         name = name.split(".", 1)
+#         if len(name) > 1:
+#             self.recursive_delattr(o[name[0]], name[1])
+#         else:
+#             del o[name[0]]
 
 def keynames(d, lbl, name, keys=set()):
     if d['type'] == "object":
@@ -82,7 +99,7 @@ def keynames(d, lbl, name, keys=set()):
 
 def recurse_keys(d, lbl, keys=set()):
     for k, v in d.iteritems():
-        if type(v) == dict:
+        if type(v) in [OrderedDict, dict]:
             keys = keys.union(recurse_keys(v, (lbl + (k,)), keys))
         else:
             keys.add(lbl)
@@ -103,8 +120,8 @@ def merge(schema, labels):
     logging.debug(keys)
 
     # convert to objects to help with parsing
-    schema = objdict(schema)
-    labels = objdict(labels)
+    # schema = objdict(schema)
+    # labels = objdict(labels)
 
     # Add the enumerations to the schema file
     for key in keys:
@@ -112,27 +129,32 @@ def merge(schema, labels):
         for i in range(len(key)):
             # tacking 'properties.' on to the end of 'items.' rather than having separate logic for arrays and objects
             #   is kind of a hack, but I think it'll work for all intended uses for the script. - gdb 06/03/16
-            name = name + key[i] + "." + {"array": "items.properties.", "object": "properties."}.get(getattr(schema, name + key[i] + ".type"), "") # append properties or nothing
+            name = name + key[i] + "." + {"array": "items.properties.", "object": "properties."}.get(deepDictGet(schema, "{0}{1}.type".format(name, key[i]).split(".")), "") # append properties or nothing
         logging.info("Updating key " + name)
         try:
-            logging.debug("Adding keys {0}".format(getattr(labels, ".".join(key)).keys()))
+            logging.debug("Adding keys {0}".format(deepDictGet(labels, key).keys()))
         except:
             logging.debug(key)
             raise
-        setattr(schema, rchop(name, "properties.") + "enum", getattr(labels, ".".join(key)).keys())
+        try:
+            deepDictSet(schema, "{0}{1}".format(rchop(name, "properties."), "enum").split("."), deepDictGet(labels, key).keys())
+        except:
+            logging.debug("{0}{1}".format(rchop(name, "properties."), "enum"))
+            raise
 
     return schema
 
 def enums(schema, labels):
     # convert to objects to help with parsing
     veris_logger.updateLogger()
-    schema = objdict(schema)
-    labels = objdict(labels)
+    # schema = objdict(schema)
+    # labels = objdict(labels)
     keys = recurse_keys(labels, ())
+    logging.debug(keys)
     if args.enum is not None:
         veris_enum = copy.deepcopy(labels)
         for key in keys:
-            setattr(veris_enum, ".".join(key), getattr(labels, ".".join(key)).keys())
+            deepDictSet(veris_enum, key, deepDictGet(labels, key).keys())
     return veris_enum
 
 
@@ -161,9 +183,9 @@ gnums file and the keynames file."""
     veris_logger.updateLogger(cfg)
  
     with open(args.schema, 'r') as filehandle:
-        schema = json.load(filehandle)
+        schema = json.load(filehandle, object_pairs_hook=OrderedDict)
     with open(args.labels, 'r') as filehandle:
-        labels = json.load(filehandle)
+        labels = json.load(filehandle, object_pairs_hook=OrderedDict)
     #schema = json.loads(open(args.schema).read())
     #labels = json.loads(open(args.labels).read())
 
