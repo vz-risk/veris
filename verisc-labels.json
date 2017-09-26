@@ -3,9 +3,9 @@
     "environmental": {
       "variety": {
         "Deterioration": "Deterioration and degradation",
+        "Earthquake": "Earthquake",
         "EMI": "Electromagnetic interference (EMI)",
         "ESD": "Electrostatic discharge (ESD)",
-        "Earthquake": "Earthquake",
         "Fire": "Fire",
         "Flood": "Flood",
         "Hazmat": "Hazardous material",
@@ -16,17 +16,17 @@
         "Leak": "Water leak",
         "Lightning": "Lightning",
         "Meteorite": "Meteorite",
-        "Other": "Other",
         "Particulates": "Particulate matter (e.g., dust, smoke)",
         "Pathogen": "Pathogen",
         "Power failure": "Power failure or fluctuation",
         "Temperature": "Extreme temperature",
         "Tornado": "Tornado",
         "Tsunami": "Tsunami",
-        "Unknown": "Unknown",
         "Vermin": "Vermin",
         "Volcano": "Volcanic eruption",
-        "Wind": "Wind"
+        "Wind": "Wind",
+        "Other": "Other",
+        "Unknown": "Unknown"
       }
     },
     "error": {
@@ -43,10 +43,10 @@
         "Misdelivery": "Misdelivery (send wrong info or to wrong recipient)",
         "Misinformation": "Misinformation (unintentionally giving false info)",
         "Omission": "Omission (something intended, but not done)",
-        "Other": "Other",
         "Physical accidents": "Physical accidents (e.g., drops, bumps, spills)",
         "Programming error": "Programming error (flaws or bugs in custom code)",
         "Publishing error": "Publishing error (private info to public doc or site)",
+        "Other": "Other",
         "Unknown": "Unknown"
       },
       "vector": {
@@ -64,40 +64,38 @@
         "Abuse of functionality": "Abuse of functionality",
         "Brute force": "Brute force or password guessing attacks",
         "Buffer overflow": "Buffer overflow",
-        "CSRF": "Cross-site request forgery",
         "Cache poisoning": "Cache poisoning",
         "Cryptanalysis": "Cryptanalysis",
+        "CSRF": "Cross-site request forgery",
         "DoS": "Denial of service",
         "Footprinting": "Footprinting and fingerprinting",
         "Forced browsing": "Forced browsing or predictable resource location",
         "Format string attack": "Format string attack",
         "Fuzz testing": "Fuzz testing",
-        "HTTP Response Splitting": "HTTP Response Splitting",
         "HTTP request smuggling": "HTTP request smuggling",
         "HTTP request splitting": "HTTP request splitting",
         "HTTP response smuggling": "HTTP response smuggling",
+        "HTTP Response Splitting": "HTTP Response Splitting",
         "Integer overflows": "Integer overflows",
         "LDAP injection": "LDAP injection",
         "Mail command injection": "Mail command injection",
         "MitM": "Man-in-the-middle attack",
         "Null byte injection": "Null byte injection",
-        "OS commanding": "OS commanding",
         "Offline cracking": "Offline password or key cracking (e.g., rainbow tables, Hashcat, JtR)",
-        "Other": "Other",
-        "Path traversal": "Path traversal",
+        "OS commanding": "OS commanding",
         "Pass-the-hash": "Pass-the-hash",
-        "RFI": "Remote file inclusion",
+        "Path traversal": "Path traversal",
         "Reverse engineering": "Reverse engineering",
+        "RFI": "Remote file inclusion",
         "Routing detour": "Routing detour",
-        "SQLi": "SQL injection",
-        "SSI injection": "SSI injection",
         "Session fixation": "Session fixation",
         "Session prediction": "Credential or session prediction",
         "Session replay": "Session replay",
         "Soap array abuse": "Soap array abuse",
         "Special element injection": "Special element injection",
+        "SQLi": "SQL injection",
+        "SSI injection": "SSI injection",
         "URL redirector abuse": "URL redirector abuse",
-        "Unknown": "Unknown",
         "Use of backdoor or C2": "Use of Backdoor or C2 channel",
         "Use of stolen creds": "Use of stolen authentication credentials",
         "Virtual machine escape": "Virtual machine escape",
@@ -107,19 +105,21 @@
         "XML injection": "XML injection",
         "XPath injection": "XPath injection",
         "XQuery injection": "XQuery injection",
-        "XSS": "Cross-site scripting"
+        "XSS": "Cross-site scripting",
+        "Other": "Other",
+        "Unknown": "Unknown"
       },
       "vector": {
         "3rd party desktop": "3rd party online desktop sharing (LogMeIn, Go2Assist)",
         "Backdoor or C2": "Backdoor or command and control channel",
         "Command shell": "Remote shell",
         "Desktop sharing": "Graphical desktop sharing (RDP, VNC, PCAnywhere, Citrix)",
-        "Other": "Other",
         "Partner": "Partner connection or credential",
         "Physical access": "Physical access or connection (i.e., at keyboard or via cable) ",
-        "Unknown": "Unknown",
         "VPN": "VPN",
-        "Web application": "Web application"
+        "Web application": "Web application",
+        "Other": "Other",
+        "Unknown": "Unknown"
       }
     },
     "malware": {
@@ -139,18 +139,18 @@
         "Downloader": "Downloader (pull updates or other malware) ",
         "Exploit vuln": "Exploit vulnerability in code (vs misconfig or weakness)",
         "Export data": "Export data to another site or system",
-        "Other": "Other",
         "Packet sniffer": "Packet sniffer (capture data from network)",
         "Password dumper": "Password dumper (extract credential hashes)",
         "Ram scraper": "Ram scraper or memory parser (capture data from volatile memory)",
         "Ransomware": "Ransomware (encrypt or seize stored data)",
         "Rootkit": "Rootkit (maintain local privileges and stealth)",
-        "SQL injection": "SQL injection attack",
         "Scan network": "Scan or footprint network",
         "Spam": "Send spam",
         "Spyware/Keylogger": "Spyware, keylogger or form-grabber (capture user input or activity)",
-        "Unknown": "Unknown",
-        "Worm": "Worm (propagate to other systems or devices)"
+        "SQL injection": "SQL injection attack",
+        "Worm": "Worm (propagate to other systems or devices)",
+        "Other": "Other",
+        "Unknown": "Unknown"
       },
       "vector": {
         "Direct install": "Directly installed or inserted by threat agent (after system access)",
@@ -161,13 +161,13 @@
         "Email unknown": "Email but sub-variety (attachment, autoexecute, link, etc) not known",
         "Instant messaging": "Instant Messaging",
         "Network propagation": "Network propagation",
-        "Other": "Other",
         "Remote injection": "Remotely injected by agent (i.e. via SQLi)",
         "Removable media": "Removable storage media or devices",
         "Software update": "Included in automated software update",
-        "Unknown": "Unknown",
         "Web download": "Web via user-executed or downloaded content",
-        "Web drive-by": "Web via auto-executed or \"drive-by\" infection"
+        "Web drive-by": "Web via auto-executed or \"drive-by\" infection",
+        "Other": "Other",
+        "Unknown": "Unknown"
       }
     },
     "misuse": {
@@ -177,20 +177,20 @@
         "Illicit content": "Storage or distribution of illicit content",
         "Knowledge abuse": "Abuse of private or entrusted knowledge",
         "Net misuse": "Inappropriate use of network or Web access",
-        "Other": " Other",
         "Possession abuse": "Abuse of physical access to asset",
         "Privilege abuse": "Abuse of system access privileges",
         "Unapproved hardware": "Use of unapproved hardware or devices",
         "Unapproved software": "Use of unapproved software or services",
         "Unapproved workaround": "Unapproved workaround or shortcut",
+        "Other": " Other",
         "Unknown": "Unknown"
       },
       "vector": {
         "LAN access": "Local network access within corporate facility",
         "Non-corporate": "Non-corporate facilities or networks",
-        "Other": "Other",
         "Physical access": "Physical access within corporate facility",
         "Remote access": "Remote access connection to corporate network (i.e. VPN)",
+        "Other": "Other",
         "Unknown": "Unknown"
       }
     },
@@ -198,34 +198,34 @@
       "variety": {
         "Assault": "Assault (threats or acts of physical violence)",
         "Bypassed controls": "Bypassed physical barriers or controls",
-        "Disabled controls": "Disabled physical barriers or controls",
         "Connection": "Connection",
-        "Other": "Other",
         "Destruction": "Destruction (deliberate damaging or disabling)",
+        "Disabled controls": "Disabled physical barriers or controls",
         "Skimmer": "Installing card skimming device",
         "Snooping": "Snooping (sneak about to gain info or access)",
         "Surveillance": "Surveillance (monitoring and observation)",
         "Tampering": "Tampering (alter physical form or function)",
         "Theft": "Theft (taking assets without permission)",
-        "Unknown": "Unknown",
-        "Wiretapping": "Wiretapping (Physical tap to comms line)"
+        "Wiretapping": "Wiretapping (Physical tap to comms line)",
+        "Other": "Other",
+        "Unknown": "Unknown"
       },
       "vector": {
-        "Other": "Other",
         "Partner facility": "Partner facility or area",
         "Partner vehicle": "Partner vehicle (e.g., delivery truck)",
         "Personal residence": "Personal residence",
         "Personal vehicle": "Personal vehicle",
+        "Privileged access": "Held privileged access to location",
         "Public facility": "Public facility or area",
         "Public vehicle": "Public vehicle (e.g., plane, taxi)",
-        "Privileged access": "Held privileged access to location",
         "Uncontrolled location": "The location was uncontrolled (public)",
-        "Unknown": "Unknown",
         "Victim grounds": "Victim outdoor grounds",
         "Victim public area": "Victim public or customer area (e.g., lobby, storefront)",
         "Victim secure area": "Victim high security area (e.g., server room, R&D labs)",
         "Victim work area": "Victim private or work area (e.g., office space)",
-        "Visitor privileges": "Given temporary visitor access"
+        "Visitor privileges": "Given temporary visitor access",
+        "Unknown": "Unknown",
+        "Other": "Other"
       }
     },
     "social": {
@@ -244,9 +244,9 @@
         "Human resources": "Human resources staff",
         "Maintenance": "Maintenance or janitorial staff",
         "Manager": "Manager or supervisor",
-        "Other": "Other",
         "Partner": "Partner (B2B)",
         "System admin": "System or network administrator",
+        "Other": "Other",
         "Unknown": "Unknown"
       },
       "variety": {
@@ -256,12 +256,12 @@
         "Extortion": "Extortion or blackmail",
         "Forgery": "Forgery or counterfeiting (fake hardware, software, documents, etc)",
         "Influence": "Influence tactics (Leveraging authority or obligation, framing, etc)",
-        "Other": "Other",
         "Phishing": "Phishing (or any type of *ishing)",
         "Pretexting": "Pretexting (dialogue leveraging invented scenario)",
         "Propaganda": "Propaganda or disinformation",
         "Scam": "Online scam or hoax (e.g., scareware, 419 scam, auction fraud)",
         "Spam": "Spam (unsolicited or undesired email and advertisements)",
+        "Other": "Other",
         "Unknown": "Unknown"
       },
       "vector": {
@@ -269,14 +269,14 @@
         "Email": "Email",
         "IM": "Instant messaging",
         "In-person": "In-person",
-        "Other": "Other",
         "Phone": "Phone",
         "Removable media": "Removable storage media",
         "SMS": "SMS or texting",
         "Social media": "Social media or networking",
         "Software": "Software",
-        "Unknown": "Unknown",
-        "Website": "Website"
+        "Website": "Website",
+        "Other": "Other",
+        "Unknown": "Unknown"
       }
     }
   },
@@ -292,10 +292,10 @@
         "Former employee": "Former employee (no longer had access)",
         "Nation-state": "Nation-state",
         "Organized crime": "Organized or professional criminal group",
-        "Other": "Other",
         "State-affiliated": "State-sponsored or affiliated group",
         "Terrorist": "Terrorist group",
         "Unaffiliated": "Unaffiliated person(s)",
+        "Other": "Other",
         "Unknown": "Unknown"
       },
       "motive": {
@@ -307,8 +307,8 @@
         "Grudge": "Grudge or personal offense",
         "Ideology": "Ideology or protest",
         "NA": "Not Applicable (unintentional action)",
-        "Other": "Other",
         "Secondary": "Aid in a different attack",
+        "Other": "Other",
         "Unknown": "Unknown"
       },
       "country": {
@@ -484,7 +484,6 @@
         "NU": "Niue",
         "NZ": "New Zealand",
         "OM": "Oman",
-        "Other": "Other",
         "PA": "Panama",
         "PE": "Peru",
         "PF": "French Polynesia",
@@ -548,7 +547,6 @@
         "US": "United States of America",
         "UY": "Uruguay",
         "UZ": "Uzbekistan",
-        "Unknown": "Unknown",
         "VA": "Holy See",
         "VC": "Saint Vincent and the Grenadines",
         "VE": "Venezuela (Bolivarian Republic of)",
@@ -562,7 +560,9 @@
         "YT": "Mayotte",
         "ZA": "South Africa",
         "ZM": "Zambia",
-        "ZW": "Zimbabwe"
+        "ZW": "Zimbabwe",
+        "Other": "Other",
+        "Unknown": "Unknown"
       }
     },
     "internal": {
@@ -579,8 +579,8 @@
         "Human resources": "Human resources staff",
         "Maintenance": "Maintenance or janitorial staff",
         "Manager": "Manager or supervisor",
-        "Other": "Other",
         "System admin": "System or network administrator",
+        "Other": "Other",
         "Unknown": "Unknown"
       },
       "motive": {
@@ -591,24 +591,24 @@
         "Fun": "Fun, curiosity, or pride",
         "Grudge": "Grudge or personal offense",
         "Ideology": "Ideology or protest",
+        "Secondary": "Aid in a different attack",
         "NA": "Not Applicable (unintentional action)",
         "Other": "Other",
-        "Secondary": "Aid in a different attack",
         "Unknown": "Unknown"
       },
       "job_change": {
-        "Hired": "Recently hired",
-        "Promoted": "Recently promoted",
-        "Lateral move": "Lateral move",
-        "Resigned": "Preparing to resign or recently resigned",
-        "Let go": "Fired, laid off, or let go",
         "Demoted": "Recently demoted or hours reduced",
-        "Passed over": "Recently passed over for promotion",
-        "Unknown": "Unknown",
-        "Other": "Other",
-        "Reprimanded": "Recently reprimanded",
+        "Hired": "Recently hired",
         "Job eval": "Recent poor job evaluation",
-        "Personal issues": "Personal issues"
+        "Lateral move": "Lateral move",
+        "Let go": "Fired, laid off, or let go",
+        "Passed over": "Recently passed over for promotion",
+        "Personal issues": "Personal issues",
+        "Promoted": "Recently promoted",
+        "Reprimanded": "Recently reprimanded",
+        "Resigned": "Preparing to resign or recently resigned",
+        "Other": "Other",
+        "Unknown": "Unknown"
       }
     },
     "partner": {
@@ -620,9 +620,9 @@
         "Fun": "Fun, curiosity, or pride",
         "Grudge": "Grudge or personal offense",
         "Ideology": "Ideology or protest",
+        "Secondary": "Aid in a different attack",
         "NA": "Not Applicable (unintentional action)",
         "Other": "Other",
-        "Secondary": "Aid in a different attack",
         "Unknown": "Unknown"
       },
       "country": {
@@ -798,7 +798,6 @@
         "NU": "Niue",
         "NZ": "New Zealand",
         "OM": "Oman",
-        "Other": "Other",
         "PA": "Panama",
         "PE": "Peru",
         "PF": "French Polynesia",
@@ -862,7 +861,6 @@
         "US": "United States of America",
         "UY": "Uruguay",
         "UZ": "Uzbekistan",
-        "Unknown": "Unknown",
         "VA": "Holy See",
         "VC": "Saint Vincent and the Grenadines",
         "VE": "Venezuela (Bolivarian Republic of)",
@@ -876,7 +874,9 @@
         "YT": "Mayotte",
         "ZA": "South Africa",
         "ZM": "Zambia",
-        "ZW": "Zimbabwe"
+        "ZW": "Zimbabwe",
+        "Other": "Other",
+        "Unknown": "Unknown"
       }
     }
   },
@@ -886,19 +886,18 @@
       "Internal": "Internally accessible",
       "Isolated": "Internally isolated or restricted environment",
       "NA": "Not applicable",
-      "Unknown": "Unknown",
-      "Other": "Accessibility known but not listed"
+      "Other": "Accessibility known but not listed",
+      "Unknown": "Unknown"
     },
     "cloud": {
       "Customer attack": "Penetration of another web site on shared device",
       "Hosting error": "Misconfiguration or error by hosting provider",
       "Hosting governance": "Lack of security process or procedure by hosting provider",
       "Hypervisor": "Hypervisor break-out attack",
-      "Other": "Other",
       "Partner application": "Application vulnerability in partner-developed application",
-      "Unknown": "Unknown",
       "User breakout": "Elevation of privilege by another customer in shared environment",
-      "Other": "Cloud hosting known but not listed."
+      "Other": "Cloud hosting known but not listed.",
+      "Unknown": "Unknown"
     },
     "governance" : {
       "Personally owned": "Personally owned asset",
@@ -906,8 +905,8 @@
       "3rd party managed": "Managed by 3rd party",
       "3rd party hosted": "Hosted by 3rd party",
       "Internally isolated": "Isolated internal asset",
-      "Unknown": "Unknown",
-      "Other": "Governance known but not listed"
+      "Other": "Governance known but not listed",
+      "Unknown": "Unknown"
     },
     "hosting": {
       "External": "Externally hosted (unsure if dedicated or shared)",
@@ -915,8 +914,8 @@
       "External shared": "Externally hosted in a shared environment",
       "Internal": "Internally hosted",
       "NA": "Not applicable",
-      "Unknown": "Unknown",
-      "Other": "Hosting known but not listed"
+      "Other": "Hosting known but not listed",
+      "Unknown": "Unknown"
     },
     "management": {
       "External": "Externally managed",
@@ -936,15 +935,17 @@
     },
     "assets": {
       "variety": {
+        "E - Telematics": "Embedded - A dedicated device that affects the real world",
+        "E - Telemetry": "Embedded - A dedicated device that collects data about the physical world",
         "M - Disk drive": "Media - Hard disk drive",
         "M - Disk media": "Media - Disk media (e.g., CDs, DVDs)",
         "M - Documents": "Media - Documents",
         "M - Flash drive": "Media - Flash drive or card",
-        "M - Other": "Media - Variety known but not listed",
-        "M - Unknown": "Media - Variety not known",
         "M - Payment card": "Media - Payment card (e.g., magstripe, EMV)",
         "M - Smart card": "Media - Identity smart card",
         "M - Tapes": "Media - Backup tapes",
+        "M - Other": "Media - Variety known but not listed",
+        "M - Unknown": "Media - Variety not known",
         "N - Access reader": "Network - Access control reader (e.g., badge, biometric)",
         "N - Broadband": "Network - Mobile broadband network",
         "N - Camera": "Network - Camera or surveillance system",
@@ -952,19 +953,19 @@
         "N - HSM": "Network - Hardware security module (HSM)",
         "N - IDS": "Network - IDS or IPs",
         "N - LAN": "Network - Wired LAN",
-        "N - Other": "Network - Variety known but not listed",
-        "N - Unknown": "Network - Variety not known",
+        "N - NAS": "Network - Network area storage (NAS)",
         "N - PBX": "Network - Private branch exchange (PBX)",
         "N - PLC": "Network - Programmable logic controller (PLC)",
         "N - Private WAN": "Network - Private WAN",
         "N - Public WAN": "Network - Public WAN",
-        "N - RTU": "Network - Remote terminal unit (RTU)",
         "N - Router or switch": "Network - Router or switch",
+        "N - RTU": "Network - Remote terminal unit (RTU)",
         "N - SAN": "Network - Storage area network (SAN)",
-        "N - NAS": "Network - Network area storage (NAS)",
         "N - Telephone": "Network - Telephone",
         "N - VoIP adapter": "Network - VoIP adapter",
         "N - WLAN": "Network - Wireless LAN",
+        "N - Other": "Network - Variety known but not listed",
+        "N - Unknown": "Network - Variety not known",
         "P - Auditor": "People - Auditor",
         "P - Call center": "People - Call center",
         "P - Cashier": "People - Cashier",
@@ -979,53 +980,50 @@
         "P - Human resources": "People - Human resources",
         "P - Maintenance": "People - Maintenance",
         "P - Manager": "People - Manager",
-        "P - Other": "People - Variety known but not listed",
-        "P - Unknown": "People - Variety not known",
         "P - Partner": "People - Partner",
         "P - System admin": "People - Administrator",
+        "P - Other": "People - Variety known but not listed",
+        "P - Unknown": "People - Variety not known",
         "S - Authentication": "Server - Authentication",
         "S - Backup": "Server - Backup",
         "S - Code repository": "Server - Code repository",
+        "S - Database": "Server - Database",
         "S - DCS": "Server - Distributed control system (DCS)",
         "S - DHCP": "Server - DHCP",
-        "S - DNS": "Server - DNS",
-        "S - Database": "Server - Database",
         "S - Directory": "Server - Directory (LDAP, AD)",
+        "S - DNS": "Server - DNS",
         "S - File": "Server - File",
+        "S - ICS": "Server - Industrial Control System (ICS).  Includes Supervisory Control And Data Acquisition (SCADA) systems.",
         "S - Log": "Server - Log or event management",
         "S - Mail": "Server - Mail",
         "S - Mainframe": "Server - Mainframe",
-        "S - Other": "Server - Variety known but not listed",
-        "S - Unknown": "Server - Variety not known",
-        "S - POS controller": "Server - POS controller",
         "S - Payment switch": "Server - Payment switch or gateway",
+        "S - POS controller": "Server - POS controller",
         "S - Print": "Server - Print",
         "S - Proxy": "Server - Proxy",
         "S - Remote access": "Server - Remote access",
-        "S - ICS": "Server - Industrial Control System (ICS).  Includes Supervisory Control And Data Acquisition (SCADA) systems.",
         "S - VM host": "Server - Virtual Host",
         "S - Web application": "Server - Web application",
-        "S - Unknown": "Server - Unknown",
+        "S - Other": "Server - Variety known but not listed",
+        "S - Unknown": "Server - Variety not known",
         "T - ATM": "Public Terminal - Automated Teller Machine (ATM)",
         "T - Gas terminal": "Public Terminal - Gas \"pay-at-the-pump\" terminal",
         "T - Kiosk": "Public Terminal - Self-service kiosk",
+        "T - PED pad": "Public Terminal - Detached PIN pad or card reader",
         "T - Other": "Public Terminal - Variety known but not listed",
         "T - Unknown": "Public Terminal - Variety not known",
-        "T - PED pad": "Public Terminal - Detached PIN pad or card reader",
         "U - Auth token": "User Device - Authentication token or device",
         "U - Desktop": "User Device - Desktop or workstation",
         "U - Laptop": "User Device - Laptop",
         "U - Media": "User Device - Media player or recorder",
         "U - Mobile phone": "User Device - Mobile phone or smartphone",
-        "U - Other": "User Device - Variety known but not listed",
-        "U - Unknown": "User Device - Variety not known",
-        "U - POS terminal": "User Device - POS terminal",
         "U - Peripheral": "User Device - Peripheral (e.g., printer, copier, fax)",
+        "U - POS terminal": "User Device - POS terminal",
         "U - Tablet": "User Device - Tablet",
         "U - Telephone": "User Device - Telephone",
         "U - VoIP phone": "User Device - VoIP phone",
-        "E - Telemetry": "Embedded - A dedicated device that collects data about the physical world",
-        "E - Telematics": "Embedded - A dedicated device that affects the real world",
+        "U - Other": "User Device - Variety known but not listed",
+        "U - Unknown": "User Device - Variety not known",
         "Unknown": "Unknown type of asset",
         "Other": "Asset type known but not User Device, Server, Public Terminal, Server, People, Network, or Media"
       }
@@ -1203,7 +1201,6 @@
       "NU": "Niue",
       "NZ": "New Zealand",
       "OM": "Oman",
-      "Other": "Other",
       "PA": "Panama",
       "PE": "Peru",
       "PF": "French Polynesia",
@@ -1267,7 +1264,6 @@
       "US": "United States of America",
       "UY": "Uruguay",
       "UZ": "Uzbekistan",
-      "Unknown": "Unknown",
       "VA": "Holy See",
       "VC": "Saint Vincent and the Grenadines",
       "VE": "Venezuela (Bolivarian Republic of)",
@@ -1281,7 +1277,9 @@
       "YT": "Mayotte",
       "ZA": "South Africa",
       "ZM": "Zambia",
-      "ZW": "Zimbabwe"
+      "ZW": "Zimbabwe",
+      "Other": "Other",
+      "Unknown": "Unknown"
     }
   },
   "attribute": {
@@ -1298,16 +1296,16 @@
       },
       "duration": {
           "unit": {
-            "Days": "Days",
-            "Hours": "Hours",
-            "Minutes": "Minutes",
-            "Months": "Months",
-            "NA": "NA",
-            "Never": "Never",
             "Seconds": "Seconds",
-            "Unknown": "Unknown",
+            "Minutes": "Minutes",
+            "Hours": "Hours",
+            "Days": "Days",
             "Weeks": "Weeks",
-            "Years": "Years"
+            "Months": "Months",
+            "Years": "Years",
+            "Never": "Never",
+            "NA": "NA",
+            "Unknown": "Unknown"
           }
       }
     },
@@ -1321,29 +1319,29 @@
           "Digital certificate": "Digital certificate",
           "Internal": "Sensitive internal data (e.g., plans, reports, emails)",
           "Medical": "Medical records",
-          "Other": "Other",
           "Payment": "Payment card data (e.g., PAN, PIN, CVV2, Expiration)",
           "Personal": "Personal or identifying information (e.g., addr, ID#, credit score)",
           "Secrets": "Trade secrets",
           "Source code": "Source code",
           "System": "System information (e.g., config info, open services)",
           "Virtual currency": "Virtual currency",
+          "Other": "Other",
           "Unknown": "Unknown"
         }
       },
       "data_disclosure": {
         "No": "No",
         "Potentially": "Potentially (at risk)",
-        "Unknown": "Unknown",
-        "Yes": "Yes (confirmed)"
+        "Yes": "Yes (confirmed)",
+        "Unknown": "Unknown"
       },
       "data_victim": {
         "Customer": "Customer",
         "Employee": "Employee",
-        "Other": "Other",
         "Partner": "Partner",
         "Patient": "Patient",
         "Student": "Student",
+        "Other": "Other",
         "Unknown": "Unknown"
       },
       "state": {
@@ -1354,8 +1352,8 @@
         "Transmitted": "Transmitted",
         "Transmitted encrypted": "Transmitted encrypted",
         "Transmitted unencrypted": "Transmitted unencrypted",
-        "Unknown": "Unknown",
-        "Printed": "Data printed in human-readable format"
+        "Printed": "Data printed in human-readable format",
+        "Unknown": "Unknown"
       }
     },
     "integrity": {
@@ -1366,27 +1364,27 @@
         "Fraudulent transaction": "Initiate fraudulent transaction",
         "Hardware tampering": "Hardware tampering or physical alteration",
         "Log tampering": "Log tampering or modification",
-        "Repurpose": "Repurposed asset for unauthorized function",
         "Misrepresentation": "Misrepresentation",
         "Modify configuration": "Modified configuration or services",
         "Modify data": "Modified stored data or content",
         "Modify privileges": "Modified privileges or permissions",
-        "Other": "Other",
+        "Repurpose": "Repurposed asset for unauthorized function",
         "Software installation": "Software installation or code modification",
+        "Other": "Other",
         "Unknown": "Unknown"
       }
     }
   },
   "confidence": {
     "High": "High confidence",
-    "Low": "Low confidence",
     "Medium": "Medium confidence",
+    "Low": "Low confidence",
     "None": "No confidence"
   },
   "cost_corrective_action": {
     "Difficult and expensive": "Difficult and expensive",
-    "Simple and cheap": "Simple and cheap",
     "Something in-between": "Something in-between",
+    "Simple and cheap": "Simple and cheap",
     "Unknown": "Unknown"
   },
   "discovery_method": {
@@ -1400,37 +1398,37 @@
     "Ext - law enforcement": "Internal - notified by law enforcement or government agency",
     "Ext - monitoring service": "External - managed security event monitoring service",
     "Ext - suspicious traffic": "External - Report of suspicious traffic",
-    "Ext - unknown": "External - unknown",
     "Ext - other": "Discovery method was external and known but not listed",
-    "Int - HIDS": "Internal - host IDS or file integrity monitoring",
-    "Int - IT review": "Internal - Informal IT review",
-    "Int - NIDS": "Internal - network IDS or IPS alert",
+    "Ext - unknown": "External - unknown",
     "Int - antivirus": "Internal - antivirus alert",
     "Int - data loss prevention": "Internal - Data loss prevention software",
     "Int - financial audit": "Internal - financial audit and reconciliation process",
     "Int - fraud detection": "Internal - fraud detection mechanism",
+    "Int - HIDS": "Internal - host IDS or file integrity monitoring",
     "Int - incident response": "Internal - discovered while responding to another (separate) incident",
     "Int - infrastructure monitoring": "Internal - Infrastructure monitoring",
+    "Int - IT review": "Internal - Informal IT review",
     "Int - log review": "Internal - log review process or SIEM",
+    "Int - NIDS": "Internal - network IDS or IPS alert",
     "Int - reported by employee": "Internal - reported by employee who saw something odd",
     "Int - security alarm": "Internal - physical security system alarm",
-    "Int - unknown": "Internal - unknown",
     "Int - other": "Discovery method was internal and known but not listed",
-    "Other": "Other",
-    "Prt - other": "Discovery method was partner and known but not listed",
-    "Prt - unknown": "Partner - Unknown",
+    "Int - unknown": "Internal - unknown",
     "Prt - antivirus": "Partner - Notified by antivirus company but not through AV product",
     "Prt - audit": "Partner - Audit performed by a partner organization",
     "Prt - incident response": "Partner - notified while investigating another incident",
     "Prt - monitoring service": "Partner - Reported by a monitoring service",
+    "Prt - other": "Discovery method was partner and known but not listed",
+    "Prt - unknown": "Partner - Unknown",
+    "Other": "Other",
     "Unknown": "Unknown"
   },
   "impact": {
     "loss": {
       "rating": {
         "Major": "Major",
-        "Minor": "Minor",
         "Moderate": "Moderate",
+        "Minor": "Minor",
         "None": "None",
         "Unknown": "Unknown"
       },
@@ -1448,9 +1446,9 @@
     "overall_rating": {
       "Catastrophic": "Catastrophic: A business-ending event (don't choose this if the victim will continue operations)",
       "Damaging": "Damaging: Real and serious effect on the \"bottom line\" and/or long-term ability to generate revenue",
+      "Painful": "Painful: Moderate \"hard costs\", and impact felt through having to deal with the incident rather than conducting normal duties has quantifiable indirect costs",
       "Distracting": "Distracting: Limited \"hard costs\", but impact felt through having to deal with the incident rather than conducting normal duties",
       "Insignificant": "Insignificant: Impact absorbed by normal activities",
-      "Painful": "Painful: Moderate \"hard costs\", and impact felt through having to deal with the incident rather than conducting normal duties has quantifiable indirect costs",
       "Unknown": "Unknown"
     },
     "iso_currency_code": {
@@ -1622,86 +1620,86 @@
   },
   "security_incident": {
     "Confirmed": "Yes - Confirmed",
-    "False positive": "False positive (response triggered, but no incident)",
+    "Suspected": "Suspected",
     "Near miss": "Near miss (actions did not compromise asset)",
-    "Suspected": "Suspected"
+    "False positive": "False positive (response triggered, but no incident)"
   },
   "targeted": {
-    "NA": "Not applicable",
     "Opportunistic": "Opportunistic: victim attacked because they exhibited a weakness the actor knew how to exploit",
     "Targeted": "Targeted: victim chosen as target then actor determined what weaknesses could be exploited",
+    "NA": "Not applicable",
     "Unknown": "Unknown"
   },
   "timeline": {
     "compromise": {
       "unit": {
-        "Days": "Days",
-        "Hours": "Hours",
-        "Minutes": "Minutes",
-        "Months": "Months",
-        "NA": "NA",
-        "Never": "Never",
         "Seconds": "Seconds",
-        "Unknown": "Unknown",
+        "Minutes": "Minutes",
+        "Hours": "Hours",
+        "Days": "Days",
         "Weeks": "Weeks",
-        "Years": "Years"
+        "Months": "Months",
+        "Years": "Years",
+        "Never": "Never",
+        "NA": "Compromise does not apply in the context of the security event.",
+        "Unknown": "Unknown"
       }
     },
     "containment": {
       "unit": {
-        "Days": "Days",
-        "Hours": "Hours",
-        "Minutes": "Minutes",
-        "Months": "Months",
-        "NA": "NA",
-        "Never": "Never",
         "Seconds": "Seconds",
-        "Unknown": "Unknown",
+        "Minutes": "Minutes",
+        "Hours": "Hours",
+        "Days": "Days",
         "Weeks": "Weeks",
-        "Years": "Years"
+        "Months": "Months",
+        "Years": "Years",
+        "Never": "Never",
+        "NA": "Containment does not apply in the context of the security event.",
+        "Unknown": "Unknown"
       }
     },
     "discovery": {
       "unit": {
-        "Days": "Days",
-        "Hours": "Hours",
-        "Minutes": "Minutes",
-        "Months": "Months",
-        "NA": "NA",
-        "Never": "Never",
         "Seconds": "Seconds",
-        "Unknown": "Unknown",
+        "Minutes": "Minutes",
+        "Hours": "Hours",
+        "Days": "Days",
         "Weeks": "Weeks",
-        "Years": "Years"
+        "Months": "Months",
+        "Years": "Years",
+        "Never": "Never",
+        "NA": "Discovry does not apply in the context of the security event.",
+        "Unknown": "Unknown"
       }
     },
     "exfiltration": {
       "unit": {
-        "Days": "Days",
-        "Hours": "Hours",
-        "Minutes": "Minutes",
-        "Months": "Months",
-        "NA": "NA",
-        "Never": "Never",
         "Seconds": "Seconds",
-        "Unknown": "Unknown",
+        "Minutes": "Minutes",
+        "Hours": "Hours",
+        "Days": "Days",
         "Weeks": "Weeks",
-        "Years": "Years"
+        "Months": "Months",
+        "Years": "Years",
+        "Never": "Never",
+        "NA": "Exfiltration does not apply in the context of the security event.",
+        "Unknown": "Unknown"
       }
     }
   },
   "victim": {
     "employee_count": {
+      "Small": "Small organizations (1,000 employees or less)",
       "1 to 10": "1 to 10 employees",
-      "10001 to 25000": "10,001 to 25,000 employees",
-      "1001 to 10000": "1,001 to 10,000 employees",
-      "101 to 1000": "101 to 1,000 employees",
       "11 to 100": "11 to 100 employees",
+      "101 to 1000": "101 to 1,000 employees",
+      "Large": "Large organizations (over 1,000 employees)",
+      "1001 to 10000": "1,001 to 10,000 employees",
+      "10001 to 25000": "10,001 to 25,000 employees",
       "25001 to 50000": "25,001 to 50,000 employees",
       "50001 to 100000": "50,001 to 100,000 employees",
-      "Large": "Large organizations (over 1,000 employees)",
       "Over 100000": "Over 100,0001 employees",
-      "Small": "Small organizations (1,000 employees or less)",
       "Unknown": "Unknown number of employees"
     },
     "revenue": {
@@ -2045,7 +2043,6 @@
       "NU": "Niue",
       "NZ": "New Zealand",
       "OM": "Oman",
-      "Other": "Other",
       "PA": "Panama",
       "PE": "Peru",
       "PF": "French Polynesia",
@@ -2109,7 +2106,6 @@
       "US": "United States of America",
       "UY": "Uruguay",
       "UZ": "Uzbekistan",
-      "Unknown": "Unknown",
       "VA": "Holy See",
       "VC": "Saint Vincent and the Grenadines",
       "VE": "Venezuela (Bolivarian Republic of)",
@@ -2123,7 +2119,9 @@
       "YT": "Mayotte",
       "ZA": "South Africa",
       "ZM": "Zambia",
-      "ZW": "Zimbabwe"
+      "ZW": "Zimbabwe",
+      "Other": "Other",
+      "Unknown": "Unknown"
     }
   }
 }
