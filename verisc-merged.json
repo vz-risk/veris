@@ -15,6 +15,7 @@
             }, 
             "variety": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Deterioration", 
                   "Earthquake", 
@@ -41,8 +42,7 @@
                   "Wind", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -63,6 +63,7 @@
             }, 
             "variety": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Capacity shortage", 
                   "Classification error", 
@@ -81,8 +82,7 @@
                   "Publishing error", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -90,6 +90,7 @@
             }, 
             "vector": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Carelessness", 
                   "Inadequate personnel", 
@@ -98,8 +99,7 @@
                   "Other", 
                   "Random error", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -122,21 +122,9 @@
               "minLength": 1, 
               "type": "string"
             }, 
-            "result": {
-              "items": {
-                "enum": [
-                  "Elevate", 
-                  "Exfiltrate", 
-                  "Infiltrate"
-                ], 
-                "type": "string"
-              }, 
-              "minItems": 1, 
-              "type": "array", 
-              "uniqueItems": true
-            }, 
             "variety": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Abuse of functionality", 
                   "Brute force", 
@@ -185,8 +173,7 @@
                   "XSS", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -194,26 +181,33 @@
             }, 
             "vector": {
               "items": {
+                "type": "string", 
                 "enum": [
-<<<<<<< HEAD
                   "3rd party desktop", 
-=======
-                  "Physical access", 
-                  "Command shell", 
-                  "Unknown", 
-                  "Desktop sharing software", 
->>>>>>> v1_3_2
                   "Backdoor or C2", 
                   "Command shell", 
                   "Desktop sharing", 
+                  "Desktop sharing software", 
+                  "Other", 
                   "Partner", 
                   "Physical access", 
                   "VPN", 
                   "Web application", 
-                  "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "result": {
+              "items": {
+                "type": "string", 
+                "enum": [
+                  "Infiltrate", 
+                  "Exfiltrate", 
+                  "Elevate"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -239,35 +233,10 @@
               "minLength": 1, 
               "type": "string"
             }, 
-            "result": {
-              "items": {
-                "enum": [
-                  "Elevate", 
-                  "Exfiltrate", 
-                  "Infiltrate"
-                ], 
-                "type": "string"
-              }, 
-              "minItems": 1, 
-              "type": "array", 
-              "uniqueItems": true
-            }, 
             "variety": {
               "items": {
+                "type": "string", 
                 "enum": [
-<<<<<<< HEAD
-=======
-                  "Modify data", 
-                  "Spam", 
-                  "Unknown", 
-                  "Packet sniffer", 
-                  "Backdoor", 
-                  "Exploit vuln", 
-                  "Other", 
-                  "Password dumper", 
-                  "Scan network", 
-                  "Downloader", 
->>>>>>> v1_3_2
                   "Adminware", 
                   "Adware", 
                   "Backdoor", 
@@ -278,6 +247,7 @@
                   "Click fraud", 
                   "Client-side attack", 
                   "Destroy data", 
+                  "Modify data", 
                   "Disable controls", 
                   "DoS", 
                   "Downloader", 
@@ -295,8 +265,7 @@
                   "Worm", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -304,6 +273,7 @@
             }, 
             "vector": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Direct install", 
                   "Download by malware", 
@@ -320,8 +290,20 @@
                   "Web drive-by", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "result": {
+              "items": {
+                "type": "string", 
+                "enum": [
+                  "Infiltrate", 
+                  "Exfiltrate", 
+                  "Elevate"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -341,21 +323,9 @@
               "minLength": 1, 
               "type": "string"
             }, 
-            "result": {
-              "items": {
-                "enum": [
-                  "Elevate", 
-                  "Exfiltrate", 
-                  "Infiltrate"
-                ], 
-                "type": "string"
-              }, 
-              "minItems": 1, 
-              "type": "array", 
-              "uniqueItems": true
-            }, 
             "variety": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Data mishandling", 
                   "Email misuse", 
@@ -369,8 +339,7 @@
                   "Unapproved workaround", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -378,6 +347,7 @@
             }, 
             "vector": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "LAN access", 
                   "Non-corporate", 
@@ -385,8 +355,20 @@
                   "Remote access", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "result": {
+              "items": {
+                "type": "string", 
+                "enum": [
+                  "Infiltrate", 
+                  "Exfiltrate", 
+                  "Elevate"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -406,21 +388,9 @@
               "minLength": 1, 
               "type": "string"
             }, 
-            "result": {
-              "items": {
-                "enum": [
-                  "Elevate", 
-                  "Exfiltrate", 
-                  "Infiltrate"
-                ], 
-                "type": "string"
-              }, 
-              "minItems": 1, 
-              "type": "array", 
-              "uniqueItems": true
-            }, 
             "variety": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Assault", 
                   "Bypassed controls", 
@@ -435,8 +405,7 @@
                   "Wiretapping", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -444,6 +413,7 @@
             }, 
             "vector": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Partner facility", 
                   "Partner vehicle", 
@@ -460,8 +430,20 @@
                   "Visitor privileges", 
                   "Unknown", 
                   "Other"
-                ], 
-                "type": "string"
+                ]
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "result": {
+              "items": {
+                "type": "string", 
+                "enum": [
+                  "Infiltrate", 
+                  "Exfiltrate", 
+                  "Elevate"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -481,21 +463,9 @@
               "minLength": 1, 
               "type": "string"
             }, 
-            "result": {
-              "items": {
-                "enum": [
-                  "Elevate", 
-                  "Exfiltrate", 
-                  "Infiltrate"
-                ], 
-                "type": "string"
-              }, 
-              "minItems": 1, 
-              "type": "array", 
-              "uniqueItems": true
-            }, 
             "target": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Auditor", 
                   "Call center", 
@@ -515,8 +485,7 @@
                   "System admin", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -524,6 +493,7 @@
             }, 
             "variety": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Baiting", 
                   "Bribery", 
@@ -538,8 +508,7 @@
                   "Spam", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -547,6 +516,7 @@
             }, 
             "vector": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Documents", 
                   "Email", 
@@ -560,8 +530,20 @@
                   "Website", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "result": {
+              "items": {
+                "type": "string", 
+                "enum": [
+                  "Infiltrate", 
+                  "Exfiltrate", 
+                  "Elevate"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -583,12 +565,12 @@
             }, 
             "result": {
               "items": {
+                "type": "string", 
                 "enum": [
-                  "Elevate", 
+                  "Infiltrate", 
                   "Exfiltrate", 
-                  "Infiltrate"
-                ], 
-                "type": "string"
+                  "Elevate"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -609,6 +591,7 @@
           "properties": {
             "country": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "AD", 
                   "AE", 
@@ -861,8 +844,7 @@
                   "ZW", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -870,6 +852,7 @@
             }, 
             "motive": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Convenience", 
                   "Espionage", 
@@ -882,8 +865,7 @@
                   "Secondary", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -895,9 +877,9 @@
             }, 
             "region": {
               "items": {
+                "type": "string", 
                 "maxLength": 6, 
-                "minLength": 6, 
-                "type": "string"
+                "minLength": 6
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -905,6 +887,7 @@
             }, 
             "variety": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Acquaintance", 
                   "Activist", 
@@ -920,8 +903,7 @@
                   "Unaffiliated", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -938,8 +920,60 @@
         "internal": {
           "additionalProperties": false, 
           "properties": {
+            "motive": {
+              "items": {
+                "type": "string", 
+                "enum": [
+                  "Convenience", 
+                  "Espionage", 
+                  "Fear", 
+                  "Financial", 
+                  "Fun", 
+                  "Grudge", 
+                  "Ideology", 
+                  "Secondary", 
+                  "NA", 
+                  "Other", 
+                  "Unknown"
+                ]
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
+            "notes": {
+              "minLength": 1, 
+              "type": "string"
+            }, 
+            "variety": {
+              "items": {
+                "type": "string", 
+                "enum": [
+                  "Auditor", 
+                  "Call center", 
+                  "Cashier", 
+                  "Developer", 
+                  "End-user", 
+                  "Executive", 
+                  "Finance", 
+                  "Guard", 
+                  "Helpdesk", 
+                  "Human resources", 
+                  "Maintenance", 
+                  "Manager", 
+                  "System admin", 
+                  "Doctor or nurse", 
+                  "Other", 
+                  "Unknown"
+                ]
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
             "job_change": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Demoted", 
                   "Hired", 
@@ -953,64 +987,7 @@
                   "Resigned", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
-              }, 
-              "minItems": 1, 
-              "type": "array", 
-              "uniqueItems": true
-            }, 
-            "motive": {
-              "items": {
-                "enum": [
-                  "Convenience", 
-                  "Espionage", 
-                  "Fear", 
-                  "Financial", 
-                  "Fun", 
-                  "Grudge", 
-                  "Ideology", 
-                  "Secondary", 
-                  "NA", 
-                  "Other", 
-                  "Unknown"
-                ], 
-                "type": "string"
-              }, 
-              "minItems": 1, 
-              "type": "array", 
-              "uniqueItems": true
-            }, 
-            "notes": {
-              "minLength": 1, 
-              "type": "string"
-            }, 
-            "variety": {
-              "items": {
-                "enum": [
-                  "Auditor", 
-                  "Call center", 
-                  "Cashier", 
-                  "Developer", 
-                  "End-user", 
-                  "Executive", 
-<<<<<<< HEAD
-                  "Finance", 
-=======
-                  "Cashier", 
-                  "Manager", 
-                  "Doctor or nurse", 
->>>>>>> v1_3_2
-                  "Guard", 
-                  "Helpdesk", 
-                  "Human resources", 
-                  "Maintenance", 
-                  "Manager", 
-                  "System admin", 
-                  "Other", 
-                  "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -1028,6 +1005,7 @@
           "properties": {
             "country": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "AD", 
                   "AE", 
@@ -1280,8 +1258,7 @@
                   "ZW", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -1295,6 +1272,7 @@
             }, 
             "motive": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Convenience", 
                   "Espionage", 
@@ -1307,8 +1285,7 @@
                   "NA", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -1327,9 +1304,9 @@
             }, 
             "region": {
               "items": {
+                "type": "string", 
                 "maxLength": 6, 
-                "minLength": 6, 
-                "type": "string"
+                "minLength": 6
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -1358,17 +1335,6 @@
       "additionalProperties": false, 
       "minProperties": 1, 
       "properties": {
-        "accessibility": {
-          "enum": [
-            "External", 
-            "Internal", 
-            "Isolated", 
-            "NA", 
-            "Other", 
-            "Unknown"
-          ], 
-          "type": "string"
-        }, 
         "assets": {
           "items": {
             "additionalProperties": false, 
@@ -1377,15 +1343,9 @@
                 "type": "integer"
               }, 
               "variety": {
+                "type": "string", 
                 "enum": [
-                  "E - Telematics", 
-                  "E - Telemetry", 
-<<<<<<< HEAD
                   "M - Disk drive", 
-=======
-                  "Unknown", 
-                  "M - Fax", 
->>>>>>> v1_3_2
                   "M - Disk media", 
                   "M - Documents", 
                   "M - Flash drive", 
@@ -1394,6 +1354,7 @@
                   "M - Tapes", 
                   "M - Other", 
                   "M - Unknown", 
+                  "M - Fax", 
                   "N - Access reader", 
                   "N - Broadband", 
                   "N - Camera", 
@@ -1406,29 +1367,6 @@
                   "N - PLC", 
                   "N - Private WAN", 
                   "N - Public WAN", 
-<<<<<<< HEAD
-=======
-                  "E - Unknown", 
-                  "P - End-user", 
-                  "N - IDS", 
-                  "U - Desktop", 
-                  "N - Other", 
-                  "U - Tablet", 
-                  "N - Firewall", 
-                  "M - Disk drive", 
-                  "S - Configuration or patch management", 
-                  "S - ICS", 
-                  "P - Human resources", 
-                  "S - File", 
-                  "N - WLAN", 
-                  "S - Database", 
-                  "N - Camera", 
-                  "N - Unknown", 
-                  "U - Media", 
-                  "T - PED pad", 
-                  "N - RTU", 
-                  "S - Authentication", 
->>>>>>> v1_3_2
                   "N - Router or switch", 
                   "N - RTU", 
                   "N - SAN", 
@@ -1438,34 +1376,9 @@
                   "N - Other", 
                   "N - Unknown", 
                   "P - Auditor", 
-<<<<<<< HEAD
                   "P - Call center", 
                   "P - Cashier", 
                   "P - Customer", 
-=======
-                  "U - VoIP phone", 
-                  "E - Telematics", 
-                  "S - DNS", 
-                  "S - Log", 
-                  "P - Other", 
-                  "S - Proxy", 
-                  "T - Unknown", 
-                  "N - Access reader", 
-                  "S - Web application", 
-                  "S - POS controller", 
-                  "P - Manager", 
-                  "M - Flash drive", 
-                  "S - Print", 
-                  "P - Guard", 
-                  "M - Other", 
-                  "P - System admin", 
-                  "S - Unknown", 
-                  "Other", 
-                  "S - Other", 
-                  "N - NAS", 
-                  "E - Other", 
-                  "S - Code repository", 
->>>>>>> v1_3_2
                   "P - Developer", 
                   "P - End-user", 
                   "P - Executive", 
@@ -1482,6 +1395,7 @@
                   "P - Unknown", 
                   "S - Authentication", 
                   "S - Backup", 
+                  "S - Configuration or patch management", 
                   "S - Code repository", 
                   "S - Database", 
                   "S - DCS", 
@@ -1520,10 +1434,13 @@
                   "U - VoIP phone", 
                   "U - Other", 
                   "U - Unknown", 
+                  "E - Telemetry", 
+                  "E - Telematics", 
+                  "E - Other", 
+                  "E - Unknown", 
                   "Unknown", 
                   "Other"
-                ], 
-                "type": "string"
+                ]
               }
             }, 
             "required": [
@@ -1535,34 +1452,69 @@
           "type": "array", 
           "uniqueItems": true
         }, 
-        "cloud": {
+        "accessibility": {
+          "type": "string", 
           "enum": [
-<<<<<<< HEAD
+            "External", 
+            "Internal", 
+            "Isolated", 
+            "NA", 
+            "Other", 
+            "Unknown"
+          ]
+        }, 
+        "hosting": {
+          "type": "string", 
+          "enum": [
+            "External", 
+            "External dedicated", 
+            "External shared", 
+            "Internal", 
+            "NA", 
+            "Other", 
+            "Unknown"
+          ]
+        }, 
+        "cloud": {
+          "type": "string", 
+          "enum": [
             "Customer attack", 
             "Hosting error", 
             "Hosting governance", 
             "Hypervisor", 
             "Partner application", 
             "User breakout", 
-            "Other", 
-            "Unknown"
-=======
             "NA", 
             "No", 
-            "Hosting error", 
-            "User breakout", 
-            "Unknown", 
-            "Customer attack", 
-            "Hosting governance", 
-            "Hypervisor", 
             "Other", 
-            "Partner application"
->>>>>>> v1_3_2
-          ], 
-          "type": "string"
+            "Unknown"
+          ]
+        }, 
+        "management": {
+          "type": "string", 
+          "enum": [
+            "External", 
+            "Internal", 
+            "NA", 
+            "Unknown", 
+            "Other"
+          ]
+        }, 
+        "ownership": {
+          "type": "string", 
+          "enum": [
+            "Customer", 
+            "Employee", 
+            "NA", 
+            "Partner", 
+            "Unknown", 
+            "Victim", 
+            "Other"
+          ]
         }, 
         "country": {
           "items": {
+            "type": "string", 
             "enum": [
               "AD", 
               "AE", 
@@ -1815,8 +1767,7 @@
               "ZW", 
               "Other", 
               "Unknown"
-            ], 
-            "type": "string"
+            ]
           }, 
           "minItems": 1, 
           "type": "array", 
@@ -1824,63 +1775,24 @@
         }, 
         "governance": {
           "items": {
+            "type": "string", 
             "enum": [
               "Personally owned", 
               "3rd party owned", 
               "3rd party managed", 
               "3rd party hosted", 
               "Internally isolated", 
-              "Other", 
-<<<<<<< HEAD
-              "Unknown"
-=======
               "Victim governed", 
-              "Personally owned", 
-              "Internally isolated"
->>>>>>> v1_3_2
-            ], 
-            "type": "string"
+              "Unknown", 
+              "Other"
+            ]
           }, 
           "minItems": 1, 
           "type": "array", 
           "uniqueItems": true
         }, 
-        "hosting": {
-          "enum": [
-            "External", 
-            "External dedicated", 
-            "External shared", 
-            "Internal", 
-            "NA", 
-            "Other", 
-            "Unknown"
-          ], 
-          "type": "string"
-        }, 
-        "management": {
-          "enum": [
-            "External", 
-            "Internal", 
-            "NA", 
-            "Unknown", 
-            "Other"
-          ], 
-          "type": "string"
-        }, 
         "notes": {
           "minLength": 1, 
-          "type": "string"
-        }, 
-        "ownership": {
-          "enum": [
-            "Customer", 
-            "Employee", 
-            "NA", 
-            "Partner", 
-            "Unknown", 
-            "Victim", 
-            "Other"
-          ], 
           "type": "string"
         }, 
         "total_amount": {
@@ -1899,6 +1811,7 @@
               "additionalProperties": false, 
               "properties": {
                 "unit": {
+                  "type": "string", 
                   "enum": [
                     "Seconds", 
                     "Minutes", 
@@ -1910,8 +1823,7 @@
                     "Never", 
                     "NA", 
                     "Unknown"
-                  ], 
-                  "type": "string"
+                  ]
                 }, 
                 "value": {
                   "type": "number"
@@ -1928,6 +1840,7 @@
             }, 
             "variety": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Acceleration", 
                   "Degradation", 
@@ -1937,8 +1850,7 @@
                   "Obscuration", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -1961,6 +1873,7 @@
                     "type": "integer"
                   }, 
                   "variety": {
+                    "type": "string", 
                     "enum": [
                       "Bank", 
                       "Classified", 
@@ -1977,8 +1890,7 @@
                       "Virtual currency", 
                       "Other", 
                       "Unknown"
-                    ], 
-                    "type": "string"
+                    ]
                   }
                 }, 
                 "required": [
@@ -1990,19 +1902,20 @@
               "type": "array"
             }, 
             "data_disclosure": {
+              "type": "string", 
               "enum": [
                 "No", 
                 "Potentially", 
                 "Yes", 
                 "Unknown"
-              ], 
-              "type": "string"
+              ]
             }, 
             "data_total": {
               "type": "integer"
             }, 
             "data_victim": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Customer", 
                   "Employee", 
@@ -2011,8 +1924,7 @@
                   "Student", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -2024,19 +1936,19 @@
             }, 
             "state": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Processed", 
                   "Stored", 
                   "Stored encrypted", 
-                  "Other", 
                   "Stored unencrypted", 
                   "Transmitted", 
                   "Transmitted encrypted", 
                   "Transmitted unencrypted", 
-                  "Printed", 
-                  "Unknown"
-                ], 
-                "type": "string"
+                  "Other", 
+                  "Unknown", 
+                  "Printed"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -2057,6 +1969,7 @@
             }, 
             "variety": {
               "items": {
+                "type": "string", 
                 "enum": [
                   "Alter behavior", 
                   "Created account", 
@@ -2072,8 +1985,7 @@
                   "Software installation", 
                   "Other", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "minItems": 1, 
               "type": "array", 
@@ -2092,13 +2004,13 @@
       "type": "string"
     }, 
     "confidence": {
+      "type": "string", 
       "enum": [
         "High", 
         "Medium", 
         "Low", 
         "None"
-      ], 
-      "type": "string"
+      ]
     }, 
     "control_failure": {
       "type": "string"
@@ -2107,15 +2019,16 @@
       "type": "string"
     }, 
     "cost_corrective_action": {
+      "type": "string", 
       "enum": [
         "Difficult and expensive", 
         "Something in-between", 
         "Simple and cheap", 
         "Unknown"
-      ], 
-      "type": "string"
+      ]
     }, 
     "discovery_method": {
+      "type": "string", 
       "enum": [
         "Ext - actor disclosure", 
         "Ext - audit", 
@@ -2129,27 +2042,20 @@
         "Ext - suspicious traffic", 
         "Ext - other", 
         "Ext - unknown", 
+        "Ext - unrelated 3rd party", 
         "Int - antivirus", 
         "Int - data loss prevention", 
         "Int - financial audit", 
         "Int - fraud detection", 
         "Int - HIDS", 
         "Int - incident response", 
-<<<<<<< HEAD
+        "Int - IT review", 
         "Int - infrastructure monitoring", 
-        "Int - IT review", 
-=======
-        "Ext - customer", 
-        "Ext - unrelated 3rd party", 
-        "Prt - audit", 
-        "Int - IT review", 
-        "Int - break in discovered", 
-        "Int - other", 
->>>>>>> v1_3_2
         "Int - log review", 
         "Int - NIDS", 
         "Int - reported by employee", 
         "Int - security alarm", 
+        "Int - break in discovered", 
         "Int - other", 
         "Int - unknown", 
         "Prt - antivirus", 
@@ -2160,8 +2066,7 @@
         "Prt - unknown", 
         "Other", 
         "Unknown"
-      ], 
-      "type": "string"
+      ]
     }, 
     "discovery_notes": {
       "minLength": 1, 
@@ -2171,6 +2076,7 @@
       "additionalProperties": false, 
       "properties": {
         "iso_currency_code": {
+          "type": "string", 
           "enum": [
             "AED", 
             "AFN", 
@@ -2336,8 +2242,7 @@
             "ZAR", 
             "ZMK", 
             "ZWD"
-          ], 
-          "type": "string"
+          ]
         }, 
         "loss": {
           "items": {
@@ -2353,16 +2258,17 @@
                 "type": "number"
               }, 
               "rating": {
+                "type": "string", 
                 "enum": [
                   "Major", 
                   "Moderate", 
                   "Minor", 
                   "None", 
                   "Unknown"
-                ], 
-                "type": "string"
+                ]
               }, 
               "variety": {
+                "type": "string", 
                 "enum": [
                   "Asset and fraud", 
                   "Brand damage", 
@@ -2372,8 +2278,7 @@
                   "Operating costs", 
                   "Response and recovery", 
                   "Other"
-                ], 
-                "type": "string"
+                ]
               }
             }, 
             "required": [
@@ -2398,6 +2303,7 @@
           "type": "number"
         }, 
         "overall_rating": {
+          "type": "string", 
           "enum": [
             "Catastrophic", 
             "Damaging", 
@@ -2405,8 +2311,7 @@
             "Distracting", 
             "Insignificant", 
             "Unknown"
-          ], 
-          "type": "string"
+          ]
         }
       }, 
       "required": [
@@ -2441,46 +2346,49 @@
       "type": "string"
     }, 
     "plus": {
+      "type": "object", 
       "properties": {
         "row_number": {
           "type": "number"
         }
-      }, 
-      "type": "object"
+      }
+    }, 
+    "subsets": {
+      "type": "object", 
+      "properties": {}
     }, 
     "reference": {
       "type": "string"
     }, 
     "schema_version": {
-      "type": "string"
+      "type": "string", 
+      "enum": [
+        "1.3.2"
+      ]
     }, 
     "security_incident": {
+      "type": "string", 
       "enum": [
         "Confirmed", 
         "Suspected", 
         "Near miss", 
         "False positive"
-      ], 
-      "type": "string"
+      ]
     }, 
     "source_id": {
       "type": "string"
-    }, 
-    "subsets": {
-      "properties": {}, 
-      "type": "object"
     }, 
     "summary": {
       "type": "string"
     }, 
     "targeted": {
+      "type": "string", 
       "enum": [
         "Opportunistic", 
         "Targeted", 
         "NA", 
         "Unknown"
-      ], 
-      "type": "string"
+      ]
     }, 
     "timeline": {
       "additionalProperties": false, 
@@ -2489,6 +2397,7 @@
           "additionalProperties": false, 
           "properties": {
             "unit": {
+              "type": "string", 
               "enum": [
                 "Seconds", 
                 "Minutes", 
@@ -2500,8 +2409,7 @@
                 "Never", 
                 "NA", 
                 "Unknown"
-              ], 
-              "type": "string"
+              ]
             }, 
             "value": {
               "type": "number"
@@ -2516,6 +2424,7 @@
           "additionalProperties": false, 
           "properties": {
             "unit": {
+              "type": "string", 
               "enum": [
                 "Seconds", 
                 "Minutes", 
@@ -2527,8 +2436,7 @@
                 "Never", 
                 "NA", 
                 "Unknown"
-              ], 
-              "type": "string"
+              ]
             }, 
             "value": {
               "type": "number"
@@ -2543,6 +2451,7 @@
           "additionalProperties": false, 
           "properties": {
             "unit": {
+              "type": "string", 
               "enum": [
                 "Seconds", 
                 "Minutes", 
@@ -2554,8 +2463,7 @@
                 "Never", 
                 "NA", 
                 "Unknown"
-              ], 
-              "type": "string"
+              ]
             }, 
             "value": {
               "type": "number"
@@ -2570,6 +2478,7 @@
           "additionalProperties": false, 
           "properties": {
             "unit": {
+              "type": "string", 
               "enum": [
                 "Seconds", 
                 "Minutes", 
@@ -2581,8 +2490,7 @@
                 "Never", 
                 "NA", 
                 "Unknown"
-              ], 
-              "type": "string"
+              ]
             }, 
             "value": {
               "type": "number"
@@ -2597,22 +2505,22 @@
           "additionalProperties": false, 
           "properties": {
             "day": {
+              "type": "integer", 
               "maximum": 31, 
-              "minimum": 1, 
-              "type": "integer"
+              "minimum": 1
             }, 
             "month": {
+              "type": "integer", 
               "maximum": 12, 
-              "minimum": 1, 
-              "type": "integer"
+              "minimum": 1
             }, 
             "time": {
               "type": "string"
             }, 
             "year": {
+              "type": "integer", 
               "maximum": 2020, 
-              "minimum": 1950, 
-              "type": "integer"
+              "minimum": 1950
             }
           }, 
           "required": [
@@ -2631,6 +2539,7 @@
       "properties": {
         "country": {
           "items": {
+            "type": "string", 
             "enum": [
               "AD", 
               "AE", 
@@ -2883,14 +2792,14 @@
               "ZW", 
               "Other", 
               "Unknown"
-            ], 
-            "type": "string"
+            ]
           }, 
           "minItems": 1, 
           "type": "array", 
           "uniqueItems": true
         }, 
         "employee_count": {
+          "type": "string", 
           "enum": [
             "Small", 
             "1 to 10", 
@@ -2903,8 +2812,7 @@
             "50001 to 100000", 
             "Over 100000", 
             "Unknown"
-          ], 
-          "type": "string"
+          ]
         }, 
         "industry": {
           "maxLength": 6, 
@@ -2921,9 +2829,9 @@
         }, 
         "region": {
           "items": {
+            "type": "string", 
             "maxLength": 6, 
-            "minLength": 6, 
-            "type": "string"
+            "minLength": 6
           }, 
           "minItems": 1, 
           "type": "array", 
@@ -2937,6 +2845,7 @@
               "type": "integer"
             }, 
             "iso_currency_code": {
+              "type": "string", 
               "enum": [
                 "AED", 
                 "AFN", 
@@ -3102,8 +3011,7 @@
                 "ZAR", 
                 "ZMK", 
                 "ZWD"
-              ], 
-              "type": "string"
+              ]
             }
           }, 
           "type": "object"

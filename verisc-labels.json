@@ -614,10 +614,7 @@
         "Maintenance": "Maintenance or janitorial staff",
         "Manager": "Manager or supervisor",
         "System admin": "System or network administrator",
-<<<<<<< HEAD
-=======
         "Doctor or nurse": "A doctor or a nurse",
->>>>>>> v1_3_2
         "Other": "Other",
         "Unknown": "Unknown"
       },
@@ -934,15 +931,10 @@
       "Hypervisor": "Hypervisor break-out attack",
       "Partner application": "Application vulnerability in partner-developed application",
       "User breakout": "Elevation of privilege by another customer in shared environment",
-<<<<<<< HEAD
-      "Other": "Cloud hosting known but not listed.",
-      "Unknown": "Unknown"
-=======
       "NA": "It is known no cloud assets were involved",
       "No": "It is known that a cloud asset was involved and it being a cloud asset did not affect the outcome",
       "Other": "Cloud hosting known but not listed",
       "Unknown": "The involvement of cloud assets was not measured"
->>>>>>> v1_3_2
     },
     "governance" : {
       "Personally owned": "Personally owned asset",
@@ -950,14 +942,9 @@
       "3rd party managed": "Managed by 3rd party",
       "3rd party hosted": "Hosted by 3rd party",
       "Internally isolated": "Isolated internal asset",
-<<<<<<< HEAD
-      "Other": "Governance known but not listed",
-      "Unknown": "Unknown"
-=======
       "Victim governed": "The victim owns and controls the asset",
       "Unknown": "Unknown",
       "Other": "Governance known but not listed"
->>>>>>> v1_3_2
     },
     "hosting": {
       "External": "Externally hosted (unsure if dedicated or shared)",
@@ -986,8 +973,6 @@
     },
     "assets": {
       "variety": {
-        "E - Telematics": "Embedded - A dedicated device that affects the real world",
-        "E - Telemetry": "Embedded - A dedicated device that collects data about the physical world",
         "M - Disk drive": "Media - Hard disk drive",
         "M - Disk media": "Media - Disk media (e.g., CDs, DVDs)",
         "M - Documents": "Media - Documents",
@@ -995,12 +980,9 @@
         "M - Payment card": "Media - Payment card (e.g., magstripe, EMV)",
         "M - Smart card": "Media - Identity smart card",
         "M - Tapes": "Media - Backup tapes",
-<<<<<<< HEAD
         "M - Other": "Media - Variety known but not listed",
         "M - Unknown": "Media - Variety not known",
-=======
         "M - Fax": "Media - The output of a fax machine",
->>>>>>> v1_3_2
         "N - Access reader": "Network - Access control reader (e.g., badge, biometric)",
         "N - Broadband": "Network - Mobile broadband network",
         "N - Camera": "Network - Camera or surveillance system",
@@ -1053,11 +1035,6 @@
         "S - Log": "Server - Log or event management",
         "S - Mail": "Server - Mail",
         "S - Mainframe": "Server - Mainframe",
-<<<<<<< HEAD
-=======
-        "S - Other": "Server - Variety known but not listed",
-        "S - POS controller": "Server - POS controller",
->>>>>>> v1_3_2
         "S - Payment switch": "Server - Payment switch or gateway",
         "S - POS controller": "Server - POS controller",
         "S - Print": "Server - Print",
@@ -1083,15 +1060,12 @@
         "U - Tablet": "User Device - Tablet",
         "U - Telephone": "User Device - Telephone",
         "U - VoIP phone": "User Device - VoIP phone",
-<<<<<<< HEAD
         "U - Other": "User Device - Variety known but not listed",
         "U - Unknown": "User Device - Variety not known",
-=======
         "E - Telemetry": "Embedded - A dedicated device that collects data about the physical world",
         "E - Telematics": "Embedded - A dedicated device that affects the real world",
         "E - Other": "Embedded -  Variety known but not listed",
         "E - Unknown": "Embedded -  Variety not known",
->>>>>>> v1_3_2
         "Unknown": "Unknown type of asset",
         "Other": "Asset type known but not User Device, Server, Public Terminal, Server, People, Network, or Media"
       }
@@ -1420,14 +1394,9 @@
         "Transmitted": "Transmitted",
         "Transmitted encrypted": "Transmitted encrypted",
         "Transmitted unencrypted": "Transmitted unencrypted",
-<<<<<<< HEAD
-        "Printed": "Data printed in human-readable format",
-        "Unknown": "Unknown"
-=======
         "Other": "Data state known but not listed.",
         "Unknown": "Data stat not known",
         "Printed": "Data printed in human-readable format"
->>>>>>> v1_3_2
       }
     },
     "integrity": {
@@ -1473,35 +1442,21 @@
     "Ext - monitoring service": "External - managed security event monitoring service",
     "Ext - suspicious traffic": "External - Report of suspicious traffic",
     "Ext - other": "Discovery method was external and known but not listed",
-<<<<<<< HEAD
     "Ext - unknown": "External - unknown",
-=======
     "Ext - unrelated 3rd party": "Discovered by person unaffiliated with victim or threat actor",
-    "Int - HIDS": "Internal - host IDS or file integrity monitoring",
-    "Int - IT review": "Any routine maintenance, testing or review of it assets. (Includes inspect of assets, vulnerability scans, etc.)",
-    "Int - NIDS": "Internal - All network-based security tool detection (including IPS, IDS, firewalls and other network-based security tools)",
->>>>>>> v1_3_2
     "Int - antivirus": "Internal - antivirus alert",
     "Int - data loss prevention": "Internal - Data loss prevention software",
     "Int - financial audit": "Internal - financial audit and reconciliation process",
     "Int - fraud detection": "Internal - fraud detection mechanism",
     "Int - HIDS": "Internal - host IDS or file integrity monitoring",
     "Int - incident response": "Internal - discovered while responding to another (separate) incident",
-<<<<<<< HEAD
-    "Int - infrastructure monitoring": "Internal - Infrastructure monitoring",
-    "Int - IT review": "Internal - Informal IT review",
-=======
+    "Int - IT review": "Any routine maintenance, testing or review of it assets. (Includes inspect of assets, vulnerability scans, etc.)",
     "Int - infrastructure monitoring": "Internal - Health and welfare monitoring of assets such as utilization, uptime, and SNMP alerts",
->>>>>>> v1_3_2
     "Int - log review": "Internal - log review process or SIEM",
-    "Int - NIDS": "Internal - network IDS or IPS alert",
+    "Int - NIDS": "Internal - All network-based security tool detection (including IPS, IDS, firewalls and other network-based security tools)",
     "Int - reported by employee": "Internal - reported by employee who saw something odd",
     "Int - security alarm": "Internal - physical security system alarm",
-<<<<<<< HEAD
-=======
     "Int - break in discovered": "Internal - employee discovered evidence of a break in",
-    "Int - unknown": "Internal - unknown",
->>>>>>> v1_3_2
     "Int - other": "Discovery method was internal and known but not listed",
     "Int - unknown": "Internal - unknown",
     "Prt - antivirus": "Partner - Notified by antivirus company but not through AV product",
@@ -1707,6 +1662,9 @@
       "ZMK": "ZMK - Zambian Kwacha",
       "ZWD": "ZWD - Zimbabwean Dollar A/06"
     }
+  },
+  "schema_version": {
+    "1.3.2": "The current schema version"
   },
   "security_incident": {
     "Confirmed": "Yes - Confirmed",
