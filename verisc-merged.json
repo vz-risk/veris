@@ -847,14 +847,6 @@
               "type": "array", 
               "uniqueItems": true
             }, 
-            "name": {
-              "items": {
-                "type": "string"
-              }, 
-              "minItems": 1, 
-              "type": "array", 
-              "uniqueItems": true
-            }, 
             "notes": {
               "minLength": 1, 
               "type": "string"
@@ -1275,6 +1267,13 @@
               "type": "array", 
               "uniqueItems": true
             }, 
+            "name": {
+              "items": {
+                "type": "string"
+              }, 
+              "type": "array", 
+              "uniqueItems": true
+            }, 
             "notes": {
               "minLength": 1, 
               "type": "string"
@@ -1358,6 +1357,7 @@
                   "N - LAN", 
                   "T - ATM", 
                   "N - Public WAN", 
+                  "E - Unknown", 
                   "P - End-user", 
                   "N - IDS", 
                   "U - Desktop", 
@@ -1408,6 +1408,7 @@
                   "Other", 
                   "S - Other", 
                   "N - NAS", 
+                  "E - Other", 
                   "S - Code repository", 
                   "P - Developer", 
                   "M - Smart card", 
@@ -1919,6 +1920,7 @@
                   "Transmitted", 
                   "Processed", 
                   "Stored encrypted", 
+                  "Other", 
                   "Stored unencrypted", 
                   "Printed"
                 ], 

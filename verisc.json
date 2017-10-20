@@ -314,14 +314,6 @@
               "type": "array",
               "uniqueItems": true
             },
-            "name": {
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
             "notes": {
               "minLength": 1,
               "type": "string"
@@ -412,6 +404,13 @@
                 "type": "string"
               },
               "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "name": {
+              "items": {
+                "type": "string"
+              },
               "type": "array",
               "uniqueItems": true
             },

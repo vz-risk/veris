@@ -1003,7 +1003,6 @@
         "S - Mail": "Server - Mail",
         "S - Mainframe": "Server - Mainframe",
         "S - Other": "Server - Variety known but not listed",
-        "S - Unknown": "Server - Variety not known",
         "S - POS controller": "Server - POS controller",
         "S - Payment switch": "Server - Payment switch or gateway",
         "S - Print": "Server - Print",
@@ -1033,6 +1032,8 @@
         "U - VoIP phone": "User Device - VoIP phone",
         "E - Telemetry": "Embedded - A dedicated device that collects data about the physical world",
         "E - Telematics": "Embedded - A dedicated device that affects the real world",
+        "E - Other": "Embedded -  Variety known but not listed",
+        "E - Unknown": "Embedded -  Variety not known",
         "Unknown": "Unknown type of asset",
         "Other": "Asset type known but not User Device, Server, Public Terminal, Server, People, Network, or Media"
       }
@@ -1361,7 +1362,8 @@
         "Transmitted": "Transmitted",
         "Transmitted encrypted": "Transmitted encrypted",
         "Transmitted unencrypted": "Transmitted unencrypted",
-        "Unknown": "Unknown",
+        "Other": "Data state known but not listed.",
+        "Unknown": "Data stat not known",
         "Printed": "Data printed in human-readable format"
       }
     },

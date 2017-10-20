@@ -43,7 +43,6 @@ action.unknown.Infiltrate
 action.unknown.notes
 actor.external.country
 actor.external.motive
-actor.external.name
 actor.external.notes
 actor.external.region
 actor.external.variety
@@ -54,6 +53,7 @@ actor.internal.variety
 actor.partner.country
 actor.partner.industry
 actor.partner.motive
+actor.partner.name
 actor.partner.notes
 actor.partner.region
 actor.unknown.notes
