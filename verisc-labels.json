@@ -1,5 +1,12 @@
 {
   "action": {
+    "unknown": {
+      "result": {
+        "Infiltrate": "The hacking action infiltrated the victim",
+        "Exfiltrate": "The hacking action exfiltrated data from the victim",
+        "Elevate": "The hacking action resulted in additional permissions"
+      }
+    },
     "environmental": {
       "variety": {
         "Deterioration": "Deterioration and degradation",
@@ -60,6 +67,11 @@
       }
     },
     "hacking": {
+      "result": {
+        "Infiltrate": "The hacking action infiltrated the victim",
+        "Exfiltrate": "The hacking action exfiltrated data from the victim",
+        "Elevate": "The hacking action resulted in additional permissions"
+      },
       "variety": {
         "Abuse of functionality": "Abuse of functionality",
         "Brute force": "Brute force or password guessing attacks",
@@ -124,6 +136,11 @@
       }
     },
     "malware": {
+      "result": {
+        "Infiltrate": "The malware action infiltrated the victim",
+        "Exfiltrate": "The malware action exfiltrated data from the victim",
+        "Elevate": "The malware action resulted in additional permissions"
+      },
       "variety": {
         "Adminware": "System or network utilities (e.g., PsTools, Netcat)",
         "Adware": "Adware",
@@ -173,6 +190,11 @@
       }
     },
     "misuse": {
+      "result": {
+        "Infiltrate": "The misuse action infiltrated the victim",
+        "Exfiltrate": "The misuse action exfiltrated data from the victim",
+        "Elevate": "The misuse action resulted in additional permissions"
+      },
       "variety": {
         "Data mishandling": "Handling of data in an unapproved manner",
         "Email misuse": "Inappropriate use of email or IM",
@@ -197,6 +219,11 @@
       }
     },
     "physical": {
+      "result": {
+        "Infiltrate": "The physical action infiltrated the victim",
+        "Exfiltrate": "The physical action exfiltrated data from the victim",
+        "Elevate": "The physical action resulted in additional permissions"
+      },
       "variety": {
         "Assault": "Assault (threats or acts of physical violence)",
         "Bypassed controls": "Bypassed physical barriers or controls",
@@ -231,6 +258,11 @@
       }
     },
     "social": {
+      "result": {
+        "Infiltrate": "The social action infiltrated the victim",
+        "Exfiltrate": "The social action exfiltrated data from the victim",
+        "Elevate": "The social action resulted in additional permissions"
+      },
       "target": {
         "Auditor": "Auditor",
         "Call center": "Call center staff",

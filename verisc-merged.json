@@ -115,21 +115,25 @@
         "hacking": {
           "additionalProperties": false, 
           "properties": {
-            "Elevate": {
-              "type": "boolean"
-            }, 
-            "Exfiltrate": {
-              "type": "boolean"
-            }, 
-            "Infiltrate": {
-              "type": "boolean"
-            }, 
             "cve": {
               "type": "string"
             }, 
             "notes": {
               "minLength": 1, 
               "type": "string"
+            }, 
+            "result": {
+              "items": {
+                "enum": [
+                  "Elevate", 
+                  "Exfiltrate", 
+                  "Infiltrate"
+                ], 
+                "type": "string"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
             }, 
             "variety": {
               "items": {
@@ -219,15 +223,6 @@
         "malware": {
           "additionalProperties": false, 
           "properties": {
-            "Elevate": {
-              "type": "boolean"
-            }, 
-            "Exfiltrate": {
-              "type": "boolean"
-            }, 
-            "Infiltrate": {
-              "type": "boolean"
-            }, 
             "cve": {
               "type": "string"
             }, 
@@ -237,6 +232,19 @@
             "notes": {
               "minLength": 1, 
               "type": "string"
+            }, 
+            "result": {
+              "items": {
+                "enum": [
+                  "Elevate", 
+                  "Exfiltrate", 
+                  "Infiltrate"
+                ], 
+                "type": "string"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
             }, 
             "variety": {
               "items": {
@@ -311,18 +319,22 @@
         "misuse": {
           "additionalProperties": false, 
           "properties": {
-            "Elevate": {
-              "type": "boolean"
-            }, 
-            "Exfiltrate": {
-              "type": "boolean"
-            }, 
-            "Infiltrate": {
-              "type": "boolean"
-            }, 
             "notes": {
               "minLength": 1, 
               "type": "string"
+            }, 
+            "result": {
+              "items": {
+                "enum": [
+                  "Elevate", 
+                  "Exfiltrate", 
+                  "Infiltrate"
+                ], 
+                "type": "string"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
             }, 
             "variety": {
               "items": {
@@ -372,18 +384,22 @@
         "physical": {
           "additionalProperties": false, 
           "properties": {
-            "Elevate": {
-              "type": "boolean"
-            }, 
-            "Exfiltrate": {
-              "type": "boolean"
-            }, 
-            "Infiltrate": {
-              "type": "boolean"
-            }, 
             "notes": {
               "minLength": 1, 
               "type": "string"
+            }, 
+            "result": {
+              "items": {
+                "enum": [
+                  "Elevate", 
+                  "Exfiltrate", 
+                  "Infiltrate"
+                ], 
+                "type": "string"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
             }, 
             "variety": {
               "items": {
@@ -443,18 +459,22 @@
         "social": {
           "additionalProperties": false, 
           "properties": {
-            "Elevate": {
-              "type": "boolean"
-            }, 
-            "Exfiltrate": {
-              "type": "boolean"
-            }, 
-            "Infiltrate": {
-              "type": "boolean"
-            }, 
             "notes": {
               "minLength": 1, 
               "type": "string"
+            }, 
+            "result": {
+              "items": {
+                "enum": [
+                  "Elevate", 
+                  "Exfiltrate", 
+                  "Infiltrate"
+                ], 
+                "type": "string"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
             }, 
             "target": {
               "items": {
@@ -539,18 +559,22 @@
         }, 
         "unknown": {
           "properties": {
-            "Elevate": {
-              "type": "boolean"
-            }, 
-            "Exfiltrate": {
-              "type": "boolean"
-            }, 
-            "Infiltrate": {
-              "type": "boolean"
-            }, 
             "notes": {
               "minLength": 1, 
               "type": "string"
+            }, 
+            "result": {
+              "items": {
+                "enum": [
+                  "Elevate", 
+                  "Exfiltrate", 
+                  "Infiltrate"
+                ], 
+                "type": "string"
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
             }
           }, 
           "type": "object"

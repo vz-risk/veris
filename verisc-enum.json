@@ -60,6 +60,11 @@
       ]
     }, 
     "hacking": {
+      "result": [
+        "Elevate", 
+        "Exfiltrate", 
+        "Infiltrate"
+      ], 
       "variety": [
         "XSS", 
         "HTTP Response Splitting", 
@@ -124,6 +129,11 @@
       ]
     }, 
     "malware": {
+      "result": [
+        "Elevate", 
+        "Exfiltrate", 
+        "Infiltrate"
+      ], 
       "variety": [
         "Modify data", 
         "Spam", 
@@ -173,6 +183,11 @@
       ]
     }, 
     "misuse": {
+      "result": [
+        "Elevate", 
+        "Exfiltrate", 
+        "Infiltrate"
+      ], 
       "variety": [
         "Unapproved software", 
         "Illicit content", 
@@ -197,6 +212,11 @@
       ]
     }, 
     "physical": {
+      "result": [
+        "Elevate", 
+        "Exfiltrate", 
+        "Infiltrate"
+      ], 
       "variety": [
         "Skimmer", 
         "Snooping", 
@@ -231,6 +251,11 @@
       ]
     }, 
     "social": {
+      "result": [
+        "Elevate", 
+        "Exfiltrate", 
+        "Infiltrate"
+      ], 
       "target": [
         "Customer", 
         "End-user", 
@@ -279,6 +304,13 @@
         "Removable media", 
         "Email", 
         "Software"
+      ]
+    }, 
+    "unknown": {
+      "result": [
+        "Elevate", 
+        "Exfiltrate", 
+        "Infiltrate"
       ]
     }
   }, 

@@ -111,6 +111,18 @@ def main(cfg):
                "Desktop sharing" in incident.get("action", {}).get("hacking", {}).get("vector", {}):
                incident['action']['hacking']['vector'].append("Desktop sharing software")
 
+            # Compress infiltrate/exfiltrate/elevate to a single
+            # Issue VERIS 157
+            for action in ["hacking", "malware", "social", "physical", "misuse", "unknown"]:
+                if action in incident['action']:
+                    results = []
+                    for result in ['Exfiltrate', 'Infiltrate', 'Elevate']:
+                        if result in incident['action'][action]:
+                            r = incident['action'][action].pop(result)
+                            if r:
+                                results.append(result)
+                    if len(results) > 0:
+                        incident['action'][action]['result'] = results
 
             # Now to save the incident
             logging.info("Writing new file to %s" % out_fname)

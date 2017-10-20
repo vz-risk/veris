@@ -83,14 +83,13 @@
               "type": "array",
               "uniqueItems": true
             },
-            "Infiltrate": {
-              "type": "boolean"
-            },
-            "Exfiltrate": {
-              "type": "boolean"
-            },
-            "Elevate": {
-              "type": "boolean"
+            "result": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
             }
           },
           "required": [
@@ -128,14 +127,13 @@
               "type": "array",
               "uniqueItems": true
             },
-            "Infiltrate": {
-              "type": "boolean"
-            },
-            "Exfiltrate": {
-              "type": "boolean"
-            },
-            "Elevate": {
-              "type": "boolean"
+            "result": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
             }
           },
           "required": [
@@ -167,14 +165,13 @@
               "type": "array",
               "uniqueItems": true
             },
-            "Infiltrate": {
-              "type": "boolean"
-            },
-            "Exfiltrate": {
-              "type": "boolean"
-            },
-            "Elevate": {
-              "type": "boolean"
+            "result": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
             }
           },
           "required": [
@@ -206,14 +203,13 @@
               "type": "array",
               "uniqueItems": true
             },
-            "Infiltrate": {
-              "type": "boolean"
-            },
-            "Exfiltrate": {
-              "type": "boolean"
-            },
-            "Elevate": {
-              "type": "boolean"
+            "result": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
             }
           },
           "required": [
@@ -253,14 +249,13 @@
               "type": "array",
               "uniqueItems": true
             },
-            "Infiltrate": {
-              "type": "boolean"
-            },
-            "Exfiltrate": {
-              "type": "boolean"
-            },
-            "Elevate": {
-              "type": "boolean"
+            "result": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
             }
           },
           "required": [
@@ -276,14 +271,13 @@
               "minLength": 1,
               "type": "string"
             },
-            "Infiltrate": {
-              "type": "boolean"
-            },
-            "Exfiltrate": {
-              "type": "boolean"
-            },
-            "Elevate": {
-              "type": "boolean"
+            "result": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
             }
           },
           "type": "object"
