@@ -60,6 +60,11 @@
       ]
     }, 
     "hacking": {
+      "result": [
+        "Elevate", 
+        "Exfiltrate", 
+        "Infiltrate"
+      ], 
       "variety": [
         "Abuse of functionality", 
         "Brute force", 
@@ -110,7 +115,14 @@
         "Unknown"
       ], 
       "vector": [
+<<<<<<< HEAD
         "3rd party desktop", 
+=======
+        "Physical access", 
+        "Command shell", 
+        "Unknown", 
+        "Desktop sharing software", 
+>>>>>>> v1_3_2
         "Backdoor or C2", 
         "Command shell", 
         "Desktop sharing", 
@@ -123,7 +135,25 @@
       ]
     }, 
     "malware": {
+      "result": [
+        "Elevate", 
+        "Exfiltrate", 
+        "Infiltrate"
+      ], 
       "variety": [
+<<<<<<< HEAD
+=======
+        "Modify data", 
+        "Spam", 
+        "Unknown", 
+        "Packet sniffer", 
+        "Backdoor", 
+        "Exploit vuln", 
+        "Other", 
+        "Password dumper", 
+        "Scan network", 
+        "Downloader", 
+>>>>>>> v1_3_2
         "Adminware", 
         "Adware", 
         "Backdoor", 
@@ -171,6 +201,11 @@
       ]
     }, 
     "misuse": {
+      "result": [
+        "Elevate", 
+        "Exfiltrate", 
+        "Infiltrate"
+      ], 
       "variety": [
         "Data mishandling", 
         "Email misuse", 
@@ -195,6 +230,11 @@
       ]
     }, 
     "physical": {
+      "result": [
+        "Elevate", 
+        "Exfiltrate", 
+        "Infiltrate"
+      ], 
       "variety": [
         "Assault", 
         "Bypassed controls", 
@@ -229,6 +269,11 @@
       ]
     }, 
     "social": {
+      "result": [
+        "Elevate", 
+        "Exfiltrate", 
+        "Infiltrate"
+      ], 
       "target": [
         "Auditor", 
         "Call center", 
@@ -277,6 +322,13 @@
         "Website", 
         "Other", 
         "Unknown"
+      ]
+    }, 
+    "unknown": {
+      "result": [
+        "Elevate", 
+        "Exfiltrate", 
+        "Infiltrate"
       ]
     }
   }, 
@@ -600,7 +652,13 @@
         "Developer", 
         "End-user", 
         "Executive", 
+<<<<<<< HEAD
         "Finance", 
+=======
+        "Cashier", 
+        "Manager", 
+        "Doctor or nurse", 
+>>>>>>> v1_3_2
         "Guard", 
         "Helpdesk", 
         "Human resources", 
@@ -893,7 +951,12 @@
       "variety": [
         "E - Telematics", 
         "E - Telemetry", 
+<<<<<<< HEAD
         "M - Disk drive", 
+=======
+        "Unknown", 
+        "M - Fax", 
+>>>>>>> v1_3_2
         "M - Disk media", 
         "M - Documents", 
         "M - Flash drive", 
@@ -914,6 +977,29 @@
         "N - PLC", 
         "N - Private WAN", 
         "N - Public WAN", 
+<<<<<<< HEAD
+=======
+        "E - Unknown", 
+        "P - End-user", 
+        "N - IDS", 
+        "U - Desktop", 
+        "N - Other", 
+        "U - Tablet", 
+        "N - Firewall", 
+        "M - Disk drive", 
+        "S - Configuration or patch management", 
+        "S - ICS", 
+        "P - Human resources", 
+        "S - File", 
+        "N - WLAN", 
+        "S - Database", 
+        "N - Camera", 
+        "N - Unknown", 
+        "U - Media", 
+        "T - PED pad", 
+        "N - RTU", 
+        "S - Authentication", 
+>>>>>>> v1_3_2
         "N - Router or switch", 
         "N - RTU", 
         "N - SAN", 
@@ -923,9 +1009,34 @@
         "N - Other", 
         "N - Unknown", 
         "P - Auditor", 
+<<<<<<< HEAD
         "P - Call center", 
         "P - Cashier", 
         "P - Customer", 
+=======
+        "U - VoIP phone", 
+        "E - Telematics", 
+        "S - DNS", 
+        "S - Log", 
+        "P - Other", 
+        "S - Proxy", 
+        "T - Unknown", 
+        "N - Access reader", 
+        "S - Web application", 
+        "S - POS controller", 
+        "P - Manager", 
+        "M - Flash drive", 
+        "S - Print", 
+        "P - Guard", 
+        "M - Other", 
+        "P - System admin", 
+        "S - Unknown", 
+        "Other", 
+        "S - Other", 
+        "N - NAS", 
+        "E - Other", 
+        "S - Code repository", 
+>>>>>>> v1_3_2
         "P - Developer", 
         "P - End-user", 
         "P - Executive", 
@@ -985,6 +1096,7 @@
       ]
     }, 
     "cloud": [
+<<<<<<< HEAD
       "Customer attack", 
       "Hosting error", 
       "Hosting governance", 
@@ -993,6 +1105,18 @@
       "User breakout", 
       "Other", 
       "Unknown"
+=======
+      "NA", 
+      "No", 
+      "Hosting error", 
+      "User breakout", 
+      "Unknown", 
+      "Customer attack", 
+      "Hosting governance", 
+      "Hypervisor", 
+      "Other", 
+      "Partner application"
+>>>>>>> v1_3_2
     ], 
     "country": [
       "AD", 
@@ -1254,7 +1378,13 @@
       "3rd party hosted", 
       "Internally isolated", 
       "Other", 
+<<<<<<< HEAD
       "Unknown"
+=======
+      "Victim governed", 
+      "Personally owned", 
+      "Internally isolated"
+>>>>>>> v1_3_2
     ], 
     "hosting": [
       "External", 
@@ -1348,6 +1478,7 @@
         "Processed", 
         "Stored", 
         "Stored encrypted", 
+        "Other", 
         "Stored unencrypted", 
         "Transmitted", 
         "Transmitted encrypted", 
@@ -1406,8 +1537,17 @@
     "Int - fraud detection", 
     "Int - HIDS", 
     "Int - incident response", 
+<<<<<<< HEAD
     "Int - infrastructure monitoring", 
     "Int - IT review", 
+=======
+    "Ext - customer", 
+    "Ext - unrelated 3rd party", 
+    "Prt - audit", 
+    "Int - IT review", 
+    "Int - break in discovered", 
+    "Int - other", 
+>>>>>>> v1_3_2
     "Int - log review", 
     "Int - NIDS", 
     "Int - reported by employee", 
