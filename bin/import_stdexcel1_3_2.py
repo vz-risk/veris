@@ -47,7 +47,7 @@ class CSVtoJSON():
     jschema = None
     sfields = None
     # country_region = None
-    script_version = "1.3.1"
+    script_version = "1.3.2"
 
 
     def __init__(self, cfg, file_version=None):
