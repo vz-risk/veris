@@ -97,7 +97,7 @@ def main(cfg):
                 raise KeyError("Asset missing from assets in incident {0}.".format(fname))
 
             # Update the schema version
-            incident['schema_version'] = "1.3.2"
+            incident['schema_version'] = "1_3_2"
 
             # EXAMPLE UPDATE
 #             # Replace asset S - SCADA with S - ICS
@@ -114,7 +114,7 @@ def main(cfg):
             # Compress infiltrate/exfiltrate/elevate to a single
             # Issue VERIS 157
             for action in ["hacking", "malware", "social", "physical", "misuse", "unknown"]:
-                if action in incident['action']:
+                if action in incident.get('action', {}):
                     results = []
                     for result in ['Exfiltrate', 'Infiltrate', 'Elevate']:
                         if result in incident['action'][action]:
