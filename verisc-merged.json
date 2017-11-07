@@ -592,7 +592,9 @@
             "country": {
               "items": {
                 "type": "string", 
+                "default": "Unknown", 
                 "enum": [
+                  "Unknown", 
                   "AD", 
                   "AE", 
                   "AF", 
@@ -842,8 +844,7 @@
                   "ZA", 
                   "ZM", 
                   "ZW", 
-                  "Other", 
-                  "Unknown"
+                  "Other"
                 ]
               }, 
               "minItems": 1, 
@@ -1013,7 +1014,9 @@
             "country": {
               "items": {
                 "type": "string", 
+                "default": "Unknown", 
                 "enum": [
+                  "Unknown", 
                   "AD", 
                   "AE", 
                   "AF", 
@@ -1263,8 +1266,7 @@
                   "ZA", 
                   "ZM", 
                   "ZW", 
-                  "Other", 
-                  "Unknown"
+                  "Other"
                 ]
               }, 
               "minItems": 1, 
@@ -1523,6 +1525,7 @@
           "items": {
             "type": "string", 
             "enum": [
+              "Unknown", 
               "AD", 
               "AE", 
               "AF", 
@@ -1772,8 +1775,7 @@
               "ZA", 
               "ZM", 
               "ZW", 
-              "Other", 
-              "Unknown"
+              "Other"
             ]
           }, 
           "minItems": 1, 
@@ -2369,7 +2371,10 @@
     }, 
     "schema_version": {
       "type": "string", 
-      "default": "1.3.2"
+      "default": "1.3.2", 
+      "enum": [
+        "1_3_2"
+      ]
     }, 
     "security_incident": {
       "type": "string", 
@@ -2509,23 +2514,24 @@
         "incident": {
           "additionalProperties": false, 
           "properties": {
-            "day": {
+            "year": {
               "type": "integer", 
-              "maximum": 31, 
-              "minimum": 1
+              "maximum": 2020, 
+              "minimum": 1950
             }, 
             "month": {
               "type": "integer", 
               "maximum": 12, 
               "minimum": 1
             }, 
-            "time": {
-              "type": "string"
-            }, 
-            "year": {
+            "day": {
               "type": "integer", 
-              "maximum": 2020, 
-              "minimum": 1950
+              "maximum": 31, 
+              "minimum": 1
+            }, 
+            "time": {
+              "type": "string", 
+              "pattern": "^0[1-9]|1[0-2]:[0-5][0-9]:[0-5][0-9] [AP]M$"
             }
           }, 
           "required": [
@@ -2545,7 +2551,9 @@
         "country": {
           "items": {
             "type": "string", 
+            "default": "Unknown", 
             "enum": [
+              "Unknown", 
               "AD", 
               "AE", 
               "AF", 
@@ -2795,8 +2803,7 @@
               "ZA", 
               "ZM", 
               "ZW", 
-              "Other", 
-              "Unknown"
+              "Other"
             ]
           }, 
           "minItems": 1, 

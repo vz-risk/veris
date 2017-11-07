@@ -157,7 +157,9 @@ def enums(schema, labels):
 if __name__ == '__main__':
     descriptionText = """This script merges the schema file and labels file.
     Optionally, it can also generate the 
-gnums file and the keynames file."""
+enums file and the keynames file.  
+Keys will be ordered by the schema file, but
+enums will be ordered by the labels file."""
     parser = argparse.ArgumentParser(description=descriptionText)
     parser.add_argument("-s", "--schema",
                         help="schema file. (Normally '../verisc.json'.)", default=DEFAULTSCHEMA)

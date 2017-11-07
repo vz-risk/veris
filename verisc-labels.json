@@ -346,6 +346,7 @@
         "Unknown": "Unknown"
       },
       "country": {
+        "Unknown": "Unknown",
         "AD": "Andorra",
         "AE": "United Arab Emirates",
         "AF": "Afghanistan",
@@ -595,8 +596,7 @@
         "ZA": "South Africa",
         "ZM": "Zambia",
         "ZW": "Zimbabwe",
-        "Other": "Other",
-        "Unknown": "Unknown"
+        "Other": "Other"
       }
     },
     "internal": {
@@ -661,6 +661,7 @@
         "Unknown": "Unknown"
       },
       "country": {
+        "Unknown": "Unknown",
         "AD": "Andorra",
         "AE": "United Arab Emirates",
         "AF": "Afghanistan",
@@ -910,8 +911,7 @@
         "ZA": "South Africa",
         "ZM": "Zambia",
         "ZW": "Zimbabwe",
-        "Other": "Other",
-        "Unknown": "Unknown"
+        "Other": "Other"
       }
     }
   },
@@ -1071,6 +1071,7 @@
       }
     },
     "country": {
+      "Unknown": "Unknown",
       "AD": "Andorra",
       "AE": "United Arab Emirates",
       "AF": "Afghanistan",
@@ -1320,8 +1321,7 @@
       "ZA": "South Africa",
       "ZM": "Zambia",
       "ZW": "Zimbabwe",
-      "Other": "Other",
-      "Unknown": "Unknown"
+      "Other": "Other"
     }
   },
   "attribute": {
@@ -1919,6 +1919,7 @@
       }
     },
     "country": {
+      "Unknown": "Unknown",
       "AD": "Andorra",
       "AE": "United Arab Emirates",
       "AF": "Afghanistan",
@@ -2168,8 +2169,7 @@
       "ZA": "South Africa",
       "ZM": "Zambia",
       "ZW": "Zimbabwe",
-      "Other": "Other",
-      "Unknown": "Unknown"
+      "Other": "Other"
     }
   }
 }

@@ -346,6 +346,7 @@
         "Unknown"
       ], 
       "country": [
+        "Unknown", 
         "AD", 
         "AE", 
         "AF", 
@@ -595,8 +596,7 @@
         "ZA", 
         "ZM", 
         "ZW", 
-        "Other", 
-        "Unknown"
+        "Other"
       ]
     }, 
     "internal": {
@@ -661,6 +661,7 @@
         "Unknown"
       ], 
       "country": [
+        "Unknown", 
         "AD", 
         "AE", 
         "AF", 
@@ -910,8 +911,7 @@
         "ZA", 
         "ZM", 
         "ZW", 
-        "Other", 
-        "Unknown"
+        "Other"
       ]
     }
   }, 
@@ -1071,6 +1071,7 @@
       ]
     }, 
     "country": [
+      "Unknown", 
       "AD", 
       "AE", 
       "AF", 
@@ -1320,8 +1321,7 @@
       "ZA", 
       "ZM", 
       "ZW", 
-      "Other", 
-      "Unknown"
+      "Other"
     ]
   }, 
   "attribute": {
@@ -1663,6 +1663,9 @@
       "ZWD"
     ]
   }, 
+  "schema_version": [
+    "1_3_2"
+  ], 
   "security_incident": [
     "Confirmed", 
     "Suspected", 
@@ -1916,6 +1919,7 @@
       ]
     }, 
     "country": [
+      "Unknown", 
       "AD", 
       "AE", 
       "AF", 
@@ -2165,8 +2169,7 @@
       "ZA", 
       "ZM", 
       "ZW", 
-      "Other", 
-      "Unknown"
+      "Other"
     ]
   }
 }
