@@ -1663,9 +1663,6 @@
       "ZWD": "ZWD - Zimbabwean Dollar A/06"
     }
   },
-  "schema_version": {
-    "1_3_2": "The current schema version"
-  },
   "security_incident": {
     "Confirmed": "Yes - Confirmed",
     "Suspected": "Suspected",
