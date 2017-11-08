@@ -35,9 +35,10 @@ def deepGetAttr(od, name):
     
 def deepSetAttr(od, name, value):
     if len(name) > 1:
-        deepSetAttr(od[name[0]], name[1:], value)
+        od[name[0]] = deepSetAttr(od.get(name[0], {}), name[1:], value)
     else:
         od[name[0]] = value
+    return od
 
 # class objdict(dict):
 #     def __getattr__(self, name):
@@ -132,7 +133,7 @@ def merge(schema, labels):
             logging.debug(key)
             raise
         try:
-            deepSetAttr(schema, "{0}{1}".format(rchop(name, "properties."), "enum").split("."), deepGetAttr(labels, key).keys())
+            schema = deepSetAttr(schema, "{0}{1}".format(rchop(name, "properties."), "enum").split("."), deepGetAttr(labels, key).keys())
         except:
             logging.debug("{0}{1}".format(rchop(name, "properties."), "enum"))
             raise
@@ -149,7 +150,7 @@ def enums(schema, labels):
     if args.enum is not None:
         veris_enum = copy.deepcopy(labels)
         for key in keys:
-            deepSetAttr(veris_enum, key, deepGetAttr(labels, key).keys())
+            veris_enum = deepSetAttr(veris_enum, key, deepGetAttr(labels, key).keys())
     return veris_enum
 
 

@@ -87,9 +87,10 @@ def deepGetAttr(od, name):
     
 def deepSetAttr(od, name, value):
     if len(name) > 1:
-        deepSetAttr(od[name[0]], name[1:], value)
+        od[name[0]] = deepSetAttr(od.get(name[0], {}), name[1:], value)
     else:
         od[name[0]] = value
+    return od
 
 # class objdict(dict):
 #     def __getattr__(self, name):
@@ -165,22 +166,22 @@ def main(cfg):
             value = deepGetAttr(inFile, key)
             value.update(deepGetAttr(updateFile, key))
             logging.debug("Updating existing key {0}.".format(".".join(key)))
-            deepSetAttr(inFile, key, value)
-        except KeyError:
-            #logger.debug(e.message)
+            inFile = deepSetAttr(inFile, key, value)
+        except KeyError as e:
+            logging.debug(e)
             # dd the key to the schema
             # keyList = key.split(".")
-            if key not in inFile.keys():
-                deepSetAttr(inFile, (key[0], ), {})
+            if key[0] not in inFile.keys():
+                inFile = deepSetAttr(inFile, (key[0], ), {})
                 logging.debug("Adding root key {0}.".format(key[0]))
             for i in range(1, len(key)-1):
                 if key[i] not in deepGetAttr(inFile, key[:i]):
                     if key[0] == "attribute":
                         print "i+1 {0} not in {1}".format(key[i]), deepGetAttr(inFile, key[:i])
                         print "wiping " + ".".join(key[:i]) + " on step " + str(i)
-                    deepSetAttr(inFile, key[:i+1], {})
+                    inFile = deepSetAttr(inFile, key[:i+1], {})
             logging.debug("adding key {0}.".format(key))
-            deepSetAttr(inFile, key, deepGetAttr(updateFile, key))
+            inFile = deepSetAttr(inFile, key, deepGetAttr(updateFile, key))
 
 
     logging.info('Ending main loop.')
