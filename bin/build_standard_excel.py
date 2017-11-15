@@ -88,8 +88,8 @@ NOTES = {
     "victim.revenue.amount": "will not understand abbreviations e.g. \"10 million\ is an error, should be \"10000000\"",
     "asset.assets.variety": "optionally, amount seperated by \":\", e.g. \"S - File:2, U - Desktop:10\"",
     "attribute.confidentiality.data.variety": "optionally, amount seperated by \":\", e.g. \"Payment:2000, Credentials\", (blank amounts are treated as unknown)",
-    "attribute.availability.duration.value": "decimals allowed"
-
+    "attribute.availability.duration.value": "decimals allowed",
+    "impact.loss.variety": "optionally, amount separated by \":\", e.g. \"Asset and fraud, Legal and regulatory:5000, Response and recovery: 1000000\", (blank amounts are treated as unknown).  Place total amounts where you don't know the variety in \"impact.total_amount\"."
 }
 ORDER = [
     "repeat",

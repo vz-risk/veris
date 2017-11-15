@@ -376,7 +376,26 @@ class CSVtoJSON():
         # impact
         for enum in ['overall_min_amount', 'overall_amount', 'overall_max_amount']:
             self.addValue(incident, 'impact.'+enum, out, 'numeric')
-        # TODO handle impact.loss varieties
+        # handle impact.loss varieties  - GDB 171114
+        if 'impact.loss.variety' in incident:
+            if 'impact' not in out:
+                out['impact'] = {}
+            if 'loss' not in out['impact']:
+                out['impact']['loss'] = []
+            losses = self.parseComplex("impact.loss.variety", incident['impact.loss.variety'], ['variety', 'amount'])
+            if len(losses):
+                for i in losses:
+                    if 'amount' in i:
+                        if self.isnum(i['amount']) is not None:
+                            i['amount'] = self.isnum(i['amount'])
+                        else:
+                            del i['amount']
+                out['impact']['losses'] = copy.deepcopy(losses)
+        # Ok, so I lied in the error.  If you have impact.loss.amount and its a number & impact.overall_amount doesn't exist, I'll take impact.loss.amount as impact.overall_amount. - gdb 171114
+        if "impact.loss.amount" in incident and self.isnum(incident["impact.loss.amount"]) is not None and "overall_amount" not in out.get('impact', {}):
+            if 'impact' not in out:
+                out['impact'] = {}
+            out['impact']['overall_amount'] = self.isnum(i['amount'])
         for enum in ['overall_rating', 'iso_currency_code', 'notes']:
             self.addValue(incident, 'impact.'+enum, out, 'string')
         # plus
@@ -457,6 +476,8 @@ class CSVtoJSON():
             logging.warning("the optional plus.analyst field is not found in the source document")
         if 'source_id' not in infile.fieldnames:
             logging.warning("the optional source_id field is not found in the source document")
+        if 'impact.loss.amount' in infile.fieldnames:
+            logging.error("impact.loss.amount found.  Values in impact.loss.amount WILL NOT be in included in the incident json.  For overall loss amounts, use impact.overall_amount.  For loss variety amounts, in 'impact.loss', populatie it with 'variety1:amount1,variety2:amount2,etc'." ) #  added 17114 to deal with lost impact.loss.amount data.
 
         row = 0
         for incident in infile:
