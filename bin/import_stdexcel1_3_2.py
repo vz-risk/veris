@@ -87,7 +87,7 @@ class CSVtoJSON():
                 for row in csv_reader:
                     versions[m.sub('', row["schema_version"])] += 1 # the regex removes trailing '.0' to make counting easier
                 version = max(versions.iteritems(), key=operator.itemgetter(1))[0]  # return the most common version. (They shoudl all be the same, but, you know.)
-                if version not in ["1.2", "1.3", "1.3.1", "1.4"]:
+                if version not in ["1.2", "1.3", "1.3.1", "1.3.2",]:
                     logging.warning("VERIS version {0} in file {1} does not appear to be a standard version.  \n".format(version, inFile) + 
                                    "Please ensure it is correct as it is used for upgrading VERIS files to the report version.")
                 if not version:
@@ -135,7 +135,8 @@ class CSVtoJSON():
 
 
     def isnum(self, x):
-        x = re.sub('[$,]', '', x)
+        if type(x) not in [int, float, long]:
+            x = re.sub('[$,]', '', x)
         try:
             x=int(float(x))
         except:
@@ -390,12 +391,12 @@ class CSVtoJSON():
                             i['amount'] = self.isnum(i['amount'])
                         else:
                             del i['amount']
-                out['impact']['losses'] = copy.deepcopy(losses)
+                out['impact']['loss'] = copy.deepcopy(losses)
         # Ok, so I lied in the error.  If you have impact.loss.amount and its a number & impact.overall_amount doesn't exist, I'll take impact.loss.amount as impact.overall_amount. - gdb 171114
         if "impact.loss.amount" in incident and self.isnum(incident["impact.loss.amount"]) is not None and "overall_amount" not in out.get('impact', {}):
             if 'impact' not in out:
                 out['impact'] = {}
-            out['impact']['overall_amount'] = self.isnum(i['amount'])
+            out['impact']['overall_amount'] = self.isnum(incident["impact.loss.amount"])
         for enum in ['overall_rating', 'iso_currency_code', 'notes']:
             self.addValue(incident, 'impact.'+enum, out, 'string')
         # plus
