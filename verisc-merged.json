@@ -1378,7 +1378,6 @@
             "country": {
               "items": {
                 "type": "string", 
-                "default": "Unknown", 
                 "enum": [
                   "Unknown", 
                   "AD", 
@@ -1789,7 +1788,6 @@
             "country": {
               "items": {
                 "type": "string", 
-                "default": "Unknown", 
                 "enum": [
                   "Unknown", 
                   "AD", 
@@ -3010,12 +3008,15 @@
           ]
         }, 
         "overall_amount": {
+          "description": "The total amount lost in the given ISO currency code.", 
           "type": "number"
         }, 
         "overall_min_amount": {
+          "description": "When 'overall_amount' would be a range, use this field for the minimum of that range. Note: Values here will not appear in searches for 'overall_amount'.", 
           "type": "number"
         }, 
         "overall_max_amount": {
+          "description": "When 'overall_amount' would be a range, use this field for the maximum of that range. Note: Values here will not appear in searches for 'overall_amount'.", 
           "type": "number"
         }, 
         "loss": {

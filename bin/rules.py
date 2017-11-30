@@ -144,10 +144,10 @@ def addRules(incident, cfg):
     # Malware always has an integrity attribute
     if 'malware' in incident['action']:
         if 'attribute' not in incident:
-            logging.info("%s: Added attribute.integrity since malware was involved.",iid)
+            logging.info("%s: Added attribute since malware was involved implying 'attribute.integrity' should exist.",iid)
             incident['attribute'] = {}
         if 'integrity' not in incident['attribute']:
-            logging.info("%s: Added integrity since it has a malware action.",iid)
+            logging.info("%s: Added attribute.integrity since it has a malware action.",iid)
             incident['attribute']['integrity'] = {}
         if 'variety' not in incident['attribute']['integrity']:
             logging.info("%s: Added integrity.variety array since it didn't have one.",iid)
@@ -322,6 +322,7 @@ def addRules(incident, cfg):
             incident['asset']['assets'] = []
         if "S - Web application" not in [d.get("variety", "") for d in incident['asset']['assets']]:
             logging.info("Added asset.assets.variety.S - Web application to action.hacking.vector.Web application incident for response {0}".format(iid))
+
 
     return incident
 

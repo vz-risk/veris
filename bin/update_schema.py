@@ -44,6 +44,7 @@ import pprint
 import ipdb
 import os
 import imp
+from collections import OrderedDict
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
     veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
@@ -60,45 +61,63 @@ pass
 
 
 ## CLASS AND FUNCTION DEFINITION
-class objdict(dict):
-    def __getattr__(self, name):
+def deepGetAttr(od, name):
+    if len(name) > 1:
         try:
-            return self.recursive_getattr(self, name)
-        except Exception as e:
-            raise AttributeError("No such attribute: " + name)
-
-    def __setattr__(self, name, value):
-        try:
-            self.recursive_setattr(self, name, value)
+            return deepGetAttr(od[name[0]], name[1:])
         except:
-            raise AttributeError("No such attribute: " + name)
+            logging.error(name)
+            raise
+    else:
+        return od[name[0]]
     
-    def __delattr__(self, name):
-        try:
-            self.recursive_delattr(self, name)
-        except:
-            raise AttributeError("No such attribute: " + name)
+def deepSetAttr(od, name, value):
+    if len(name) > 1:
+        od[name[0]] = deepSetAttr(od.get(name[0], {}), name[1:], value)
+    else:
+        od[name[0]] = value
+    return od
 
-    def recursive_setattr(self, o, name, value):
-        name = name.split(".", 1)
-        if len(name) > 1:
-            self.recursive_setattr(o[name[0]], name[1], value)
-        else:
-            o[name[0]] = value
+# class objdict(dict):
+#     def __getattr__(self, name):
+#         try:
+#             return self.recursive_getattr(self, name)
+#         except Exception as e:
+#             raise AttributeError("No such attribute: " + name)
 
-    def recursive_getattr(self, o, name):
-        name = name.split(".", 1)
-        if len(name) > 1:
-            return self.recursive_getattr(o[name[0]], name[1])
-        else:
-            return o[name[0]]
+#     def __setattr__(self, name, value):
+#         try:
+#             self.recursive_setattr(self, name, value)
+#         except:
+#             raise AttributeError("No such attribute: " + name)
+    
+#     def __delattr__(self, name):
+#         try:
+#             self.recursive_delattr(self, name)
+#         except:
+#             raise AttributeError("No such attribute: " + name)
 
-    def recursive_delattr(self, o, name):
-        name = name.split(".", 1)
-        if len(name) > 1:
-            self.recursive_delattr(o[name[0]], name[1])
-        else:
-            del o[name[0]]
+#     def recursive_setattr(self, o, name, value):
+#         name = name.split(".", 1)
+#         if len(name) > 1:
+#             self.recursive_setattr(o[name[0]], name[1], value)
+#         else:
+#             o[name[0]] = value
+
+#     def recursive_getattr(self, o, name):
+#         name = name.split(".", 1)
+#         if len(name) > 1:
+#             return self.recursive_getattr(o[name[0]], name[1])
+#         else:
+#             return o[name[0]]
+
+#     def recursive_delattr(self, o, name):
+#         name = name.split(".", 1)
+#         if len(name) > 1:
+#             self.recursive_delattr(o[name[0]], name[1])
+#         else:
+#             del o[name[0]]
+
 
 
 def update_instance(inInstance, updateInstance):
@@ -115,7 +134,7 @@ def update_instance(inInstance, updateInstance):
         elif item not in inInstance:
             inInstance[item] = updateInstance[item]
         elif type(inInstance[item]) == list:
-            inInstance[item] = list(set(inInstance[item]).union(updateInstance[item]))
+            inInstance[item] = inInstance['item'] + [i for i in updateInstance[item] if i not in inInnstance['item']] # replace set-based join to maintain order
         elif type(inInstance[item]) == dict :
             inInstance[item].update(updateInstance[item])
         else:
@@ -130,58 +149,60 @@ def main(cfg):
 
     # Open the files
     with open(cfg["input"], 'r') as filehandle:
-        inFile = json.load(filehandle)
+        inFile = json.load(filehandle, object_pairs_hook=OrderedDict)
     with open(cfg["update"], 'r') as filehandle:
-        updateFile = json.load(filehandle)
+        updateFile = json.load(filehandle, object_pairs_hook=OrderedDict)
 
     logging.debug("Updating root of schema.")
-    oInFile = update_instance(inFile, updateFile)
+    inFile = update_instance(inFile, updateFile)
+    if 'description' in updateFile.keys():
+        inFile['description'] = updateFile['description']
 
     queue = []
     for instance in updateFile.get('properties', {}):
-        queue.append("properties." + instance)
+        queue.append(["properties", instance])
     for instance in updateFile.get('items', {}):
-        queue.append("items." + instance)
+        queue.append(["items" , instance])
 
     # create object representations of dicts
-    oInFile = objdict(inFile)
-    oUpdateFile = objdict(updateFile)
+    # oInFile = objdict(inFile)
+    # oUpdateFile = objdict(updateFile)
 
     # for each property in the update
 #    ipdb.set_trace()  # debugging hook
     for instance in queue:
         logging.debug("Updating {0} in schema.".format(instance))
-        updateInstance = getattr(oUpdateFile, instance)
+        updateInstance = deepGetAttr(updateFile, instance)
 
         # if the object exists in the schema, update it with the properties in the update.
         try:
-            inInstance = getattr(oInFile, instance)
+            inInstance = deepGetAttr(inFile, instance)
             inInstance = update_instance(inInstance, updateInstance)
             # save the instance back to the schema
-            setattr(oInFile, instance, inInstance)
+            inFile = deepSetAttr(inFile, instance, inInstance)
 
             # queue properties
             try:
-                for inst in getattr(oUpdateFile, instance)['properties'].keys():
-                    queue.append(str(instance + ".properties." + inst).lstrip("."))
+                for inst in deepGetAttr(updateFile, instance)['properties'].keys():
+                    queue.append(instance + ["properties", inst])
             except KeyError:
                 pass # clearly not an object with attributes to add
 
             # queue items
             try:
-                for inst in getattr(oUpdateFile, instance)['items'].keys():
-                    queue.append(str(instance + ".items." + inst).lstrip("."))
+                for inst in deepGetAttr(updateFile, instance)['items'].keys():
+                    queue.append(instance + ["items", inst])
             except KeyError:
                 pass # clearly not an object with attributes to add
 
 
         # if it is not, add it to the schema as a property to the correct object
-        except AttributeError:
-            setattr(oInFile, instance, updateInstance)
+        except (AttributeError, KeyError):
+            inFile = deepSetAttr(inFile, instance, updateInstance)
 
 
     logging.info('Ending main loop.')
-    return dict(oInFile)
+    return inFile
 
 if __name__ == "__main__":
 
@@ -231,4 +252,4 @@ if __name__ == "__main__":
     outFile = main(cfg)
 
     with open(cfg["output"], 'w') as filehandle:
-        json.dump(outFile, filehandle, indent=2, sort_keys=True)
+        json.dump(outFile, filehandle, indent=2, sort_keys=False)
