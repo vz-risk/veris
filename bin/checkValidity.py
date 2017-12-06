@@ -217,16 +217,22 @@ if __name__ == '__main__':
     for src in cfg["input"]:
         if os.path.isfile(src):
             logging.debug("Now validating {0}.".format(src))
-            # files_to_validate.add(src)
+            # errors in json
             try:
                 incident = simplejson.load(open(src))
-                validator.validate(incident)
+            except simplejson.scanner.JSONDecodeError:
+                logging.warning("ERROR: %s did not parse properly. Skipping" % src)
+            # replacing vakudate() with iterating errors - 171206 - GDB
+            for e in validator.iter_errors(incident):
+                offendingPath = '.'.join(str(x) for x in e.path)
+                logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message))  
+            # capture errors from main
+            try:
+                # validator.validate(incident) # replacing with iterating errors - 171206 GDB  
                 main(incident) 
             except ValidationError as e:
                 offendingPath = '.'.join(str(x) for x in e.path)
-                logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message))    
-            except simplejson.scanner.JSONDecodeError:
-                logging.warning("ERROR: %s did not parse properly. Skipping" % src)
+                logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message))  
             incident_counter += 1
             if incident_counter % 100 == 0:
                 logging.info("%s incident validated" % incident_counter)
