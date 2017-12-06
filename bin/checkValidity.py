@@ -29,29 +29,25 @@ defaultMerged = "../verisc-merged.json"
 def checkMalwareIntegrity(inDict):
     if 'malware' in inDict['action']:
         if 'Software installation' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
-          raise ValidationError("Malware present, but no Software installation in attribute.integrity.variety")
-    return True
+          yield ValidationError("Malware present, but no Software installation in attribute.integrity.variety")
 
 
 def checkSocialIntegrity(inDict):
   if 'social' in inDict['action']:
     if 'Alter behavior' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
-      raise ValidationError("acton.social present, but Alter behavior not in attribute.integrity.variety")
-  return True
+      yield ValidationError("acton.social present, but Alter behavior not in attribute.integrity.variety")
 
 
 def checkSQLiRepurpose(inDict):
   if 'SQLi' in inDict.get('action',{}).get('hacking',{}).get('variety',[]):
     if 'Repurpose' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
-      raise ValidationError("action.hacking.SQLi present but Repurpose not in attribute.integrity.variety")
-  return True
+      yield ValidationError("action.hacking.SQLi present but Repurpose not in attribute.integrity.variety")
 
 
 def checkSecurityIncident(inDict):
   if inDict['security_incident'] == "Confirmed":
     if 'attribute' not in inDict:
-      raise ValidationError("security_incident Confirmed but attribute section not present")
-  return True
+      yield ValidationError("security_incident Confirmed but attribute section not present")
 
 
 def checkLossTheftAvailability(inDict):
@@ -62,13 +58,12 @@ def checkLossTheftAvailability(inDict):
     expectLoss = True
   if expectLoss:
     if 'Loss' not in inDict.get('attribute',{}).get('availability',{}).get('variety',[]):
-      raise ValidationError("action.physical.theft or action.error.loss present but attribute.availability.loss not present")
-  return True
+      yield ValidationError("action.physical.theft or action.error.loss present but attribute.availability.loss not present")
 
 def checkPlusAttributeConsistency(inDict):
   if 'confidentiality' in inDict.get('plus', {}).get('attribute', {}):
     if 'confidentiality' not in inDict.get('attribute', {}):
-      raise ValidationError("plus.attribute.confidentiality present but confidentiality is not an affected attribute.")
+      yield ValidationError("plus.attribute.confidentiality present but confidentiality is not an affected attribute.")
 
 def checkYear(inDict):
     if inDict.get('plus', {}).get('dbir_year', None):
@@ -89,40 +84,47 @@ def checkYear(inDict):
             source = "incident"
         if tyear == dbir_year - 1:
             if tmonth is not None and tmonth > 10:
-                raise ValidationError("DBIR year of {0} from {5} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {4} is not in this range.".format(
+                yield ValidationError("DBIR year of {0} from {5} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {4} is not in this range.".format(
                     dbir_year, dbir_year - 2, dbir_year - 1, tyear, tmonth, source))
         elif tyear == dbir_year - 2:
             if tmonth is not None and tmonth < 11:
-                raise ValidationError("DBIR year of {0} from {5} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {4} is not in this range.".format(
+                yield ValidationError("DBIR year of {0} from {5} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {4} is not in this range.".format(
                     dbir_year, dbir_year - 2, dbir_year - 1, tyear, tmonth, source))
         else:
-            raise ValidationError("DBIR year of {0} from {4} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} is not in this range.".format(
+            yield ValidationError("DBIR year of {0} from {4} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} is not in this range.".format(
                 dbir_year, dbir_year - 2, dbir_year - 1, tyear, source)) 
         # check if incident or notification dates are in future
         if nyear is not None:
             try:
                 ndate = date(*[x if x else 1 for x in [nyear, nmonth, nday]]) 
             except ValueError as e:
-                raise ValidationError("Problem with notification date: {0}".format(e)) 
+                yield ValidationError("Problem with notification date: {0}".format(e)) 
             if ndate > date.today():
-                raise ValidationError("Notification date {0} is greater than today's date {1}.".format(ndate, date.today()))
+                yield ValidationError("Notification date {0} is greater than today's date {1}.".format(ndate, date.today()))
         try:
             idate = date(*[x if x else 1 for x in [iyear, imonth, iday]])
         except ValueError as e:
-            raise ValidationError("Problem with incident date: {0}".format(e))
+            yield ValidationError("Problem with incident date: {0}".format(e))
         if idate > date.today():
-            raise ValidationError("Incident date {0} is greater than today's date {1}.".format(idate, date.today()))
+            yield ValidationError("Incident date {0} is greater than today's date {1}.".format(idate, date.today()))
         if nyear is not None and idate > ndate:
-            raise ValidationError("Notification date {0} appears to be earlier than incident date {1}. This may be due to incomplete dates.".format(ndate, idate))
+            yield ValidationError("Notification date {0} appears to be earlier than incident date {1}. This may be due to incomplete dates.".format(ndate, idate))
 
 def main(incident):
-  checkMalwareIntegrity(incident)
-  checkSocialIntegrity(incident)
-  checkSQLiRepurpose(incident)
-  checkSecurityIncident(incident)
-  checkLossTheftAvailability(incident)
-  checkPlusAttributeConsistency(incident)
-  checkYear(incident)
+  for e in checkMalwareIntegrity(incident):
+    yield e
+  for e in checkSocialIntegrity(incident):
+    yield e
+  for e in checkSQLiRepurpose(incident):
+    yield e
+  for e in checkSecurityIncident(incident):
+    yield e
+  for e in checkLossTheftAvailability(incident):
+    yield e
+  for e in checkPlusAttributeConsistency(incident):
+    yield e
+  for e in checkYear(incident):
+    yield e
 
 
 if __name__ == '__main__':
@@ -227,12 +229,16 @@ if __name__ == '__main__':
                 offendingPath = '.'.join(str(x) for x in e.path)
                 logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message))  
             # capture errors from main
-            try:
-                # validator.validate(incident) # replacing with iterating errors - 171206 GDB  
-                main(incident) 
-            except ValidationError as e:
+            # try:
+            #     # validator.validate(incident) # replacing with iterating errors - 171206 GDB  
+            #     main(incident) 
+            # except ValidationError as e:
+            #     offendingPath = '.'.join(str(x) for x in e.path)
+            #     logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message))  
+            for e in main(incident):
                 offendingPath = '.'.join(str(x) for x in e.path)
                 logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message))  
+
             incident_counter += 1
             if incident_counter % 100 == 0:
                 logging.info("%s incident validated" % incident_counter)
