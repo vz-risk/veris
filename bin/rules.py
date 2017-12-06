@@ -49,7 +49,7 @@ import ConfigParser
 import os
 import json
 from datetime import datetime, date
-from distutils.version import StrictVersion
+from distutils.version import LooseVersion
 from tqdm import tqdm
 from pprint import pprint, pformat
 
@@ -187,7 +187,7 @@ def addRules(incident, cfg):
         for each in incident['asset']['assets']:
             asset_list.append(each['variety'])
         for each in incident['action']['social']['target']:
-            if StrictVersion(incident['schema_version']) > StrictVersion("1.3"):
+            if LooseVersion(incident['schema_version']) > LooseVersion("1.3"):
                 logging.debug("Version {0} greater than 1.3.".format(incident['schema_version']))
                 if 'P - '+each not in asset_list:
                     logging.info("{1}: Adding P - {0} to asset list since there was social engineering.".format(each,iid))
