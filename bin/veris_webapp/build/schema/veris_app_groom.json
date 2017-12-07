@@ -1,0 +1,388 @@
+{
+  "version": 1.2,
+  "rules": [
+    {
+      "field": ["campaign_id"],
+      "hide": true,
+      "schemas": {"vcdb": ["all"]}
+    },
+    {
+      "field": ["schema_version"],
+      "hide": true,
+      "schemas": {"all": ["all"]}
+    },
+    {
+      "field": ["plus", "row_number"],
+      "hide": true,
+      "schemas": {"all": ["all"]}
+    },
+    {
+      "field": ["subsets"],
+      "hide": true,
+      "schemas": {"all": ["all"]}
+    },
+    {
+      "field": ["timeline", "incident"],
+      "move": "incident_timeline",
+      "schemas": {
+        "verisc": ["2.0"]
+      }
+    },
+    {
+      "field": ["timeline"],
+      "hide": true,
+      "schemas": {
+        "verisc": ["2.0"]
+      }
+    },
+    {
+      "field": ["plus", "timeline", "notification"],
+      "move": ["timeline", "notification"],
+      "schemas": {
+        "dbir": ["1.3.1", "1.3.2"],
+        "vcdb": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "timeline", "notification"],
+      "hide": true,
+      "schemas": {
+        "partner": ["all"],
+        "vzir": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "master_id"],
+      "move": "master_id",
+      "schemas": {
+        "vzir": ["all"],
+        "vcdb": ["all"],
+        "dbir": ["all"],
+        "other": ["all"],
+        "partner": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "analysis_status"],
+      "move": "analysis_status",
+      "schemas": {
+        "dbir": ["1.3.1", "1.3.2"],
+        "vzir": ["1.3.1", "1.3.2"],
+        "vcdb": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "analysis_status"],
+      "hide": true,
+      "schemas": {"partner": ["all"]}
+    },
+    {
+      "field": ["plus", "analyst"],
+      "move": "analyst",
+      "schemas": {
+        "dbir": ["1.3.1", "1.3.2"],
+        "vzir": ["1.3.1", "1.3.2"],
+        "vcdb": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "analyst"],
+      "hide": true,
+      "schemas": {"partner": ["all"]}
+    },
+    {
+      "field": ["plus", "analyst_notes"],
+      "move": "analyst_notes",
+      "schemas": {
+        "dbir": ["1.3.1", "1.3.2"],
+        "vzir": ["1.3.1", "1.3.2"],
+        "vcdb": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "analyst_notes"],
+      "hide": true,
+      "schemas": {"partner": ["all"]}
+    },
+    {
+      "field": ["plus", "dbir_year"],
+      "move": "dbir_year",
+      "schemas": {
+        "dbir": ["1.3.1", "1.3.2"],
+        "vzir": ["1.3.1", "1.3.2"],
+        "vcdb": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "attribute", "confidentiality", "data_misuse"],
+      "move": ["attribute", "confidentiality", "data_misuse"],
+      "schemas": {
+        "dbir": ["1.3.1", "1.3.2"],
+        "vzir": ["1.3.1", "1.3.2"],
+        "vcdb": ["1.3.1", "1.3.2"],
+        "partner": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "attribute", "confidentiality", "data_abuse"],
+      "hide": true,
+      "schemas": {
+        "vcdb": ["all"],
+        "vzir": ["all"],
+        "dbir": ["all"],
+        "other": ["all"],
+        "partner": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "attribute", "confidentiality", "partner_data"],
+      "move": ["attribute", "confidentiality", "partner_data"],
+      "schemas": {
+        "dbir": ["1.3.1", "1.3.2"],
+        "vzir": ["1.3.1", "1.3.2"],
+        "vcdb": ["1.3.1", "1.3.2"],
+        "partner": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "attribute", "confidentiality", "partner_number"],
+      "move": ["attribute", "confidentiality", "partner_number"],
+      "schemas": {
+        "dbir": ["1.3.1", "1.3.2"],
+        "vzir": ["1.3.1", "1.3.2"],
+        "vcdb": ["1.3.1", "1.3.2"],
+        "partner": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "attribute", "confidentiality", "credit_monitoring"],
+      "hide": true,
+      "schemas": {
+        "vzir": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "attribute", "confidentiality", "credit_monitoring"],
+      "move": ["attribute", "confidentiality", "credit_monitoring"],
+      "schemas": {
+        "dbir": ["1.3.1", "1.3.2"],
+        "vcdb": ["1.3.1", "1.3.2"],
+        "partner": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "attribute", "confidentiality", "credit_monitoring_years"],
+      "hide": true,
+      "schemas": {
+        "vzir": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "attribute", "confidentiality", "credit_monitoring_years"],
+      "move": ["attribute", "confidentiality", "credit_monitoring_years"],
+      "schemas": {
+        "dbir": ["1.3.1", "1.3.2"],
+        "vcdb": ["1.3.1", "1.3.2"],
+        "partner": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "f500"],
+      "move": ["victim", "f500"],
+      "schemas": {
+        "dbir": ["1.3.1", "1.3.2"],
+        "vzir": ["1.3.1", "1.3.2"],
+        "vcdb": ["1.3.1", "1.3.2"],
+        "partner": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "asset_os"],
+      "move": ["asset", "asset_os"],
+      "schemas": {
+        "dbir": ["1.3.1", "1.3.2"],
+        "vzir": ["1.3.1", "1.3.2"],
+        "vcdb": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "asset", "total"],
+      "hide": true,
+      "schemas": {
+        "dbir": ["all"],
+        "vzir": ["all"],
+        "vcdb": ["all"],
+        "partner": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "investigator"],
+      "move": "investigator",
+      "schemas": {
+        "vzir": ["1.3.1", "1.3.2"],
+        "dbir": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "investigator"],
+      "hide": true,
+      "schemas": {
+        "vcdb": ["all"],
+        "partner": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "github"],
+      "move": "github",
+      "schemas": {
+        "vcdb": ["1.3.1", "1.3.2"]
+      }
+    },
+    {
+      "field": ["plus", "github"],
+      "hide": true,
+      "schemas": {
+        "dbir": ["all"],
+        "vzir": ["all"],
+        "other": ["all"],
+        "partner": ["all"]
+      }
+    },
+    {
+      "field": ["asset", "ownership"],
+      "hide": true,
+      "schemas": {"vcdb": ["all"]}
+    },
+    {
+      "field": ["asset", "hosting"],
+      "hide": true,
+      "schemas": {"vcdb": ["all"]}
+    },
+    {
+      "field": ["asset", "management"],
+      "hide": true,
+      "schemas": {"vcdb": ["all"]}
+    },
+    {
+      "field": ["victim", "revenue", "amount"],
+      "hide": true,
+      "schemas": {
+        "vcdb": ["all"]
+      }
+    },
+    {
+      "field": ["victim", "revenue", "iso_currency_code"],
+      "hide": true,
+      "schemas": {
+        "vcdb": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "pci"],
+      "hide": true,
+      "schemas": {
+        "vcdb": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "unfollowed_policies"],
+      "hide": true,
+      "schemas": {
+        "vcdb": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "f500"],
+      "hide": true,
+      "schemas": {
+        "all": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "attack_difficulty_legacy"],
+      "hide": true,
+      "schemas": {
+        "vcdb": ["all"],
+        "vzir": ["all"],
+        "dbir": ["all"],
+        "partner": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "control_inadequacies_legacy"],
+      "hide": true,
+      "schemas": {
+        "vcdb": ["all"],
+        "vzir": ["all"],
+        "dbir": ["all"],
+        "partner": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "public_disclosure"],
+      "hide": true,
+      "schemas": {
+        "vcdb": ["all"],
+        "vzir": ["all"],
+        "dbir": ["all"],
+        "partner": ["all"]
+      }
+    },
+    {
+      "field": ["corrective_action"],
+      "hide": true,
+      "schemas": {
+        "vcdb": ["all"]
+      }
+    },
+    {
+      "field": ["ioc"],
+      "hide": true,
+      "schemas": {
+        "vcdb": ["all"]
+      }
+    },
+    {
+      "field": ["victim", "victim_id"],
+      "hide": true,
+      "schemas": {
+        "vzir": ["all"]
+      }
+    },
+    {
+      "field": ["victim", "secondary", "victim_id"],
+      "hide": true,
+      "schemas": {
+        "vzir": ["all"]
+      }
+    },
+    {
+      "field": ["source_id"],
+      "hide": true,
+      "schemas": {
+        "partner": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "timeline"],
+      "hide": true,
+      "schemas": {
+        "all": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "attribute"],
+      "hide": true,
+      "schemas": {
+        "all": ["all"]
+      }
+    },
+    {
+      "field": ["plus", "confidentiality"],
+      "hide": true,
+      "schemas": {
+        "all": ["all"]
+      }
+    }
+  ]
+}

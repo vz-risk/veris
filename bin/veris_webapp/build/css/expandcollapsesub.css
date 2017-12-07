@@ -1,0 +1,96 @@
+.expandcollapsesub {
+    border: 1px solid #d2d6de;
+    padding: 10px;
+}
+.expandcollapsesub .expandcollapsesub-topic {
+    font-size: 18px;
+    padding: 0px;
+    cursor: pointer;
+}
+.expandcollapsesub .expandcollapsesub-topic h2 {
+    font-family: "NHaasGroteskDSW01-65Md", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+.expandcollapsesub .expandcollapsesub-topic h2, 
+.expandcollapsesub h2 {
+    margin: 0;
+    padding: 0;
+}
+.expandcollapsesub .expandcollapsesub-topic h2 {
+    float: left;
+}
+.expandcollapsesub .expandcollapsesub-topic .plus-minus-symbol {
+    color: #d2d3d4;
+    font-size: 14px;
+    padding: 0 0 0 20px;
+}
+.expandcollapsesub .expandcollapsesub-topic .compare-text, 
+.expandcollapsesub .expandcollapsesub-topic .plus-minus-symbol {
+    float: right;
+}
+.expandcollapsesub .expandcollapsesub-topic .plus-minus-symbol a {
+    color: #d2d3d4;
+	padding-top:4px;
+	display:inline-block;
+}
+.expandcollapsesub .expandcollapsesub-topic .compare-text {
+    font-size: 14px;
+}
+.expandcollapsesub .box {
+    border: 1px solid #d2d6de;
+}
+
+.box-header h2 span {
+    font-family: "NeueHaasGroteskDisp-W01", Arial, Helvetica, sans-serif;;
+    font-size: 16px !important;
+}
+.box-header h2 [class^="icon-"], .box-header h2 .fa{
+   color: #cd040b;
+    font-size: 22px !important;
+	margin-right:10px;
+}
+.box-header {
+    color: #444444;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+.expandcollapsesub .box .box-header .icons-part {
+    float: right;
+}
+.expandcollapsesub .box .box-header h2 {
+    float: left;
+    width: auto;
+}
+.expandcollapsesub .box .box-body {
+    min-height: 252px;
+}
+.expandcollapsesub .col-lg-9 {
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+.expandcollapsesub .expandcollapsesub-topic .compare-text .icon-share {
+    color: #cccccc;
+    font-size: 14px;
+}
+.imagefullwidth
+{
+	width:100%;
+}
+.expandcollapsesub_content
+{
+}
+.expandcollapsesub h2
+{
+font-size:18px;
+}
+.expandcollapsesub .col-lg-9 .box
+{
+margin-bottom:10px;
+}
+.expandcollapsesub .box .box-header .icons-part i {
+    color: #d2d3d4;
+    font-size: 22px;
+    margin-left: 10px;
+}
