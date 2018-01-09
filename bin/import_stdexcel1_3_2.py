@@ -23,7 +23,7 @@ try:
 except:
     print("Script dir: {0}.".format(script_dir))
     raise
-
+import platform # to get created time
 
 # Default Configuration Settings
 cfg = {
@@ -40,6 +40,24 @@ cfg = {
     'repositories': ""
 }
 #logger = multiprocessing.get_logger()
+
+# from https://stackoverflow.com/questions/237079/how-to-get-file-creation-modification-date-times-in-python
+def creation_date(path_to_file):
+    """
+    Try to get the date that a file was created, falling back to when it was
+    last modified if that isn't possible.
+    See http://stackoverflow.com/a/39501288/1709587 for explanation.
+    """
+    if platform.system() == 'Windows':
+        return os.path.getctime(path_to_file)
+    else:
+        stat = os.stat(path_to_file)
+        try:
+            return stat.st_birthtime
+        except AttributeError:
+            # We're probably on Linux. No easy way to get creation dates here,
+            # so we'll settle for when its content was last modified.
+            return stat.st_mtime
 
 class CSVtoJSON():
     """Imports a CSV outputted by the standard excel survey gizmo form"""
@@ -410,6 +428,9 @@ class CSVtoJSON():
         for enum in plusfields:
             self.addValue(incident, 'plus.'+enum, out, "string")
         self.addValue(incident, 'plus.dbir_year', out, "integer")
+        # add plus create/modified
+        out['plus']['modified'] = self.cfg['plus.modified'] 
+        out['plus']['created'] = self.cfg['plus.created'] 
         # self.addValue(incident, 'plus.external_region', out, "list")
         if cfg["vcdb"]:
             self.addValue(incident, 'plus.timeline.notification.year', out, "numeric")
@@ -449,6 +470,9 @@ class CSVtoJSON():
 
         #formatter = logging.Formatter(FORMAT.format("- " + "/".join(cfg["input"].split("/")[-2:])))
         try:
+            # adding created/modified times - GDB 180109
+            self.cfg['plus.created'] =  datetime.fromtimestamp(creation_date(cfg['input'])).strftime('%Y-%m-%dT%H:%M:%SZ')
+            self.cfg['plus.modified'] = datetime.fromtimestamp(os.path.getmtime(cfg['input'])).strftime('%Y-%m-%dT%H:%M:%SZ')
             # Added to file read to catch multiple columns with same name which causes second column to overwrite first. - GDB
             file_handle = open(cfg["input"], 'rU')
             csv_reader = csv.reader(file_handle)
