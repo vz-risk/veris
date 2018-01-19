@@ -126,7 +126,7 @@ INFILE = "../verisc-merged.json"
 OUTFILE = "../VERIS_Standard_Excel.xlsx"
 LABELS = "../verisc-labels.json"
 MAX_EXAMPLES = 20
-
+# MAX_EXAMPLES = 30000
 
 ########### NOT USER EDITABLE BELOW THIS POINT #################
 

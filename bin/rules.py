@@ -329,7 +329,7 @@ def addRules(incident, cfg):
 
 def makeValid(incident, cfg):
     iid = incident["incident_id"]
-    logging.info("Beginning makeValid for incident {0}.".format(iid))
+    logging.info("Beginning makeValid for incident_id {0}, master_id {1}.".format(iid, incident.get('plus', {}).get('master_id', "NO MASTER ID")))
     #inRow = incident["plus"]["row_number"]   # not used and conflicts with versions lower than 1.3. Could test for version > 1.3 and then include... - gdb 7/11/16
 
     #with open(cfg['schemafile'], "r") as filehandle:
