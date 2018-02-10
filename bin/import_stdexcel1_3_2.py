@@ -259,7 +259,7 @@ class CSVtoJSON():
         tmp = {}
         for enum in incident: tmp[enum] = self.cleanValue(incident, enum)
         incident = tmp
-        for enum in ['source_id', 'reference', 'security_incident', 'confidence', 'summary', 'related_incidents', 'notes']:
+        for enum in ['campaign_id', 'source_id', 'reference', 'security_incident', 'confidence', 'summary', 'related_incidents', 'notes']:
             self.addValue(incident, enum, out, "string")
         # victim
         for enum in ['victim_id', 'industry', 'employee_count', 'state',
@@ -385,7 +385,7 @@ class CSVtoJSON():
         self.addValue(incident, 'timeline.containment.value', out, 'numeric')
 
         # trailer values
-        for enum in ['discovery_method', 'targeted', 'control_failure', 'corrective_action']:
+        for enum in ['discovery_method', 'discovery_notes', 'targeted', 'control_failure', 'corrective_action', 'cost_corrective_action']:
             self.addValue(incident, enum, out, 'string')
         if 'ioc.indicator' in incident:
             ioc = self.parseComplex("ioc.indicator", incident['ioc.indicator'], ['indicator', 'comment'])
