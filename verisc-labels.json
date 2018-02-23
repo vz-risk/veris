@@ -50,7 +50,7 @@
         "Months": "Months",
         "Years": "Years",
         "Never": "Never",
-        "NA": "Discovry does not apply in the context of the security event.",
+        "NA": "Discovery does not apply in the context of the security event.",
         "Unknown": "Unknown"
       }
     },
