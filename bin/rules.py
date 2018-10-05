@@ -200,6 +200,25 @@ class Rules():
                 logging.info("%s: Added software installation to attribute.integrity.variety since malware was involved.",iid)
                 incident['attribute']['integrity']['variety'].append('Software installation')
 
+
+        # 'state' has 'stored', 'stored encrypted', and 'stored unencrypted'. That is an internal hierarchy. that should be documented and handled. 
+        # Per vz-risk/veris #195
+        if 'confidentiality' in incident['attribute']:
+            if ('Stored encrypted' in incident['attribute']['confidentiality'].get('variety', []) or \
+                'Stored unencrypted' in incident['attribute']['confidentiality'].get('variety', [])) and \
+               'Stored' not in incident['attribute']['confidentiality'].get('variety', []):
+                incident['attribute']['confidentiality']['variety'].append('Stored')
+
+
+        # action.malware.variety.Click fraud and cryptocurrency mining is a parent of action.malware.variety.Click fraud and action.malware.variety.Cryptocurrency mining
+        # per vz-risk/VERIS issue #203
+        if 'malware' in incident['action']:
+            if ('Click fraud' in incident['action']['malware'].get('variety', []) or \
+                'Cryptocurrency mining' in incident['action']['malware'].get('variety', [])) and \
+               'Click fraud and cryptocurrency mining' not in incident['action']['malware'].get('variety', []):
+                incident['action']['malware']['variety'].append('Click fraud and cryptocurrency mining')
+
+
         # Social engineering alters human behavior
         if 'social' in incident['action']:
             if 'attribute' not in incident:

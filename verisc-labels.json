@@ -584,8 +584,10 @@
         "C2": "Command and control (C2)",
         "Capture app data": "Capture data from application or system process",
         "Capture stored data": "Capture data stored on system disk",
-        "Click fraud": "Click fraud or Bitcoin mining",
+        "Click fraud": "Click fraud, whether or not cryptocurrency mining.  Also mark 'Click fraud or cryptocurrency mining'.",
+        "Click fraud and cryptocurrency mining": "Click fraud or cryptocurrency mining",
         "Client-side attack": "Client-side or browser attack (e.g., redirection, XSS, MitB)",
+        "Cryptocurrency mining": "Cryptocurrency mining, whether or not click fraud.  Also mark 'Click fraud or cryptocurrency mining'.",
         "Destroy data": "Destroy or corrupt stored data",
         "Modify data": "Malware which compromises a legitimate file rather than creating new filess",
         "Disable controls": "Disable or interfere with security controls",
@@ -1863,14 +1865,15 @@
         "Partner": "Partner",
         "Patient": "Patient",
         "Student": "Student",
+        "Victim organization": "The data was that of the victim organization rather than a customer, employee, etc.",
         "Other": "Other",
         "Unknown": "Unknown"
       },
       "state": {
         "Processed": "Processed",
-        "Stored": "Stored",
-        "Stored encrypted": "Stored encrypted",
-        "Stored unencrypted": "Stored unencrypted",
+        "Stored": "Stored (either encrypted, unencrypted, or where encryption is unknown.",
+        "Stored encrypted": "Stored encrypted. (Also mark 'Stored'.)",
+        "Stored unencrypted": "Stored unencrypted. (Also mark 'Stored'.)",
         "Transmitted": "Transmitted",
         "Transmitted encrypted": "Transmitted encrypted",
         "Transmitted unencrypted": "Transmitted unencrypted",
@@ -1904,7 +1907,7 @@
         "Destruction": "Destruction",
         "Interruption": "Interruption",
         "Loss": "Loss",
-        "Obscuration": "Conversion or obscuration",
+        "Obscuration": "Conversion or obscuration (ransomware)",
         "Other": "Other",
         "Unknown": "Unknown"
       },
@@ -1927,7 +1930,7 @@
   "targeted": {
     "Opportunistic": "Opportunistic: victim attacked because they exhibited a weakness the actor knew how to exploit",
     "Targeted": "Targeted: victim chosen as target then actor determined what weaknesses could be exploited",
-    "NA": "Not applicable",
+    "NA": "Not applicable.  Use when actor does not have a practical choice of targets or no intent (i.e. Error).",
     "Unknown": "Unknown"
   },
   "discovery_method": {
@@ -1940,6 +1943,7 @@
     "Ext - incident response": "External - Notified while investigating another incident",
     "Ext - law enforcement": "Internal - notified by law enforcement or government agency",
     "Ext - monitoring service": "External - managed security event monitoring service",
+    "Ext - security researcher": "External - security researcher attempting to identify insecure data",
     "Ext - suspicious traffic": "External - Report of suspicious traffic",
     "Ext - other": "Discovery method was external and known but not listed",
     "Ext - unknown": "External - unknown",

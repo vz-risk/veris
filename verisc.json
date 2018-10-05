@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "additionalProperties": false,
-  "description": "VERIS Community Schema 1.3.2",
+  "description": "VERIS Community Schema 1.3.3",
   "properties": {
     "incident_id": {
       "type": "string",
@@ -17,7 +17,7 @@
     },
     "summary": {
       "type": "string",
-      "description": "Give a good descriptive summary of the incident in one sentence. Use natural language instead of VERIS notation, but we should be able to 'VERISize' the incident pretty well from just this description.<br />**REMINDER: IF THIS IS FOR THE DBIR AND NOT VCDB  - DON'T RECORD VICTIM-INDENTIFYING INFO**"
+      "description": "Give a good descriptive summary of the incident in several sentences. Use natural language instead of VERIS notation, but we should be able to 'VERISize' the incident pretty well from just this description.<br />**REMINDER: IF THIS IS FOR THE DBIR AND NOT VCDB  - DON'T RECORD VICTIM-INDENTIFYING INFO**"
     },
     "source_id": {
       "type": "string"
@@ -38,7 +38,7 @@
           "properties": {
             "year": {
               "type": "integer",
-              "maximum": 2020,
+              "maximum": 2021,
               "minimum": 1950
             },
             "month": {
@@ -140,7 +140,7 @@
           "type": "string"
         },
         "employee_count": {
-          "description": "Number of employees",
+          "description": "Number of employees.  Only use the count of the individual instance of a business (e.g. franchise location vs entire company) if the action vector was explicitly something unique to this individual instance. (i.e. This franchisee used a non-standard POS system that was then compromised.)",
           "type": "string"
         },
         "industry": {
@@ -165,18 +165,20 @@
           "uniqueItems": true
         },
         "region": {
-          "description": "The <a href='https://en.wikipedia.org/wiki/UN_M.49' target='_blank'>UN M.49</a> super-region and sub-region joined together. (e.g. North America: 019021. Asia: 142000, East Asia (includes China): 142030, Eastern Europe: 150151, Western Europe: 150155.)  Use 000000 if you do not know.  If you only know the super-region, use zero's for the region.  (e.g. 019000 for Americas.)",
+          "description": "The <a href='https://en.wikipedia.org/wiki/UN_M.49' target='_blank'>UN M.49</a> super-region and sub-region joined together. (e.g. North America: 019021. South America (Brazil): 019005, Asia: 142000, East Asia (includes China): 142030, West Asia (Middle East): 142145, Southeast Asia: 142034, Eastern Europe: 150151, Western Europe: 150155.)  Use 000000 if you do not know.  If you only know the super-region, use zero's for the region.  (e.g. 019000 for Americas.)",
           "items": {
             "type": "string",
             "maxLength":6,
-            "minLength":6
+            "minLength":6,
+            "pattern": "\\d{6}"
           },
           "minItems": 1,
           "type": "array",
-          "uniqueItems": true
+          "uniqueItems": true,
+          "pattern": "\\d{6}"
         },
         "state": {
-          "description": "ALl CAPS.  For US states, you can use the <a href='https://en.wikipedia.org/wiki/ISO_3166-2:US'>ISO_3166-2 2-character state code</a>, otherwise use the full <a href='https://en.wikipedia.org/wiki/ISO_3166-2' target='_blank'>ISO_3166-2 Country subdivision code</a>",
+          "description": "ALL CAPS.  For US states, you can use the <a href='https://en.wikipedia.org/wiki/ISO_3166-2:US'>ISO_3166-2 2-character state code</a>, otherwise use the full <a href='https://en.wikipedia.org/wiki/ISO_3166-2' target='_blank'>ISO_3166-2 Country subdivision code</a>",
           "type": "string"
         },
         "notes": {
@@ -231,6 +233,7 @@
     "action": {
       "description": "What threat actions were involved? <a href='http://veriscommunity.net/actions.html' target='_blank'>More Info</a>",
       "minProperties": 1,
+      "additionalProperties": false,
       "properties": {
         "hacking": {
           "description": "<a href='http://veriscommunity.net/actions.html#section-hacking' target='_blank'>More Info</a>",
@@ -567,11 +570,12 @@
               "uniqueItems": true
             },
             "region": {
-              "description": "The <a href='https://en.wikipedia.org/wiki/UN_M.49' target='_blank'>UN M.49</a> super-region and sub-region joined together. (e.g. North America: 019021. Asia: 142000, East Asia (includes China): 142030, Eastern Europe: 150151, Western Europe: 150155.)  Use 000000 if you do not know.  If you only know the super-region, use zero's for the region.  (e.g. 019000 for Americas.)",
+              "description": "The <a href='https://en.wikipedia.org/wiki/UN_M.49' target='_blank'>UN M.49</a> super-region and sub-region joined together. (e.g. North America: 019021. South America (Brazil): 019005, Asia: 142000, East Asia (includes China): 142030, West Asia (Middle East): 142145, Southeast Asia: 142034, Eastern Europe: 150151, Western Europe: 150155.)  Use 000000 if you do not know.  If you only know the super-region, use zero's for the region.  (e.g. 019000 for Americas.)",
               "items": {
                 "type": "string",
                 "maxLength":6,
-                "minLength":6
+                "minLength":6,
+                "pattern": "\\d{6}"
               },
               "minItems": 1,
               "type": "array",
@@ -666,11 +670,12 @@
               "uniqueItems": true
             },
             "region": {
-              "description": "The <a href='https://en.wikipedia.org/wiki/UN_M.49' target='_blank'>UN M.49</a> super-region and sub-region joined together. (e.g. North America: 019021. Asia: 142000, East Asia (includes China): 142030, Eastern Europe: 150151, Western Europe: 150155.)  Use 000000 if you do not know.  If you only know the super-region, use zero's for the region.  (e.g. 019000 for Americas.)",
+              "description": "The <a href='https://en.wikipedia.org/wiki/UN_M.49' target='_blank'>UN M.49</a> super-region and sub-region joined together. (e.g. North America: 019021. South America (Brazil): 019005, Asia: 142000, East Asia (includes China): 142030, West Asia (Middle East): 142145, Southeast Asia: 142034, Eastern Europe: 150151, Western Europe: 150155.)  Use 000000 if you do not know.  If you only know the super-region, use zero's for the region.  (e.g. 019000 for Americas.)",
               "items": {
                 "type": "string",
                 "maxLength":6,
-                "minLength":6
+                "minLength":6,
+                "pattern": "\\d{6}"
               },
               "minItems": 1,
               "type": "array",
@@ -704,7 +709,7 @@
       "type": "object"
     },
     "asset": {
-      "description": "<a href='http://veriscommunity.net/assets.html' target='_blank'>More Info</a>",
+      "description": "What assets were affected by the incident.  Data types and record count will be covered in the attributes section.  <a href='http://veriscommunity.net/assets.html' target='_blank'>More Info</a>",
       "additionalProperties": false,
       "minProperties": 1,
       "properties": {
@@ -979,11 +984,18 @@
     },
     "plus": {
       "type":"object",
+      "description": "Plus is the appropriate place to extend the VERIS schema for your own needs.  Add organization-specific enumerations here.",
       "properties":{
         "row_number": {
           "type": "number"
         }
       }
+    },
+    "extra": {
+      "type":"object",
+      "additionalProperties": false,
+      "description": "Extra is a reserved name and should not appear in any objects. It should only be used for temporary derived columns during analysis.",
+      "properties":{}
     },
     "corrective_action": {
       "description": "What corrective action(s) are planned (or recommended) to prevent and/or detect similar incidents in the future?<br />This can include general recommendations, specific changes to policy, procedures, personnel, and technology, short-term and long-term strategies, etc. Don't simply copy what the investigator said. Tie to the root causes listed above, and focus on practical, effective corrective actions.",
