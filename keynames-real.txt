@@ -75,7 +75,11 @@ confidence
 control_failure
 corrective_action
 cost_corrective_action
-discovery_method
+discovery_method.external.variety
+discovery_method.internal.variety
+discovery_method.other
+discovery_method.partner.variety
+discovery_method.unknown
 discovery_notes
 impact.iso_currency_code
 impact.loss.amount

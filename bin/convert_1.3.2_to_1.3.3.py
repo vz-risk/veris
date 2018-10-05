@@ -7,6 +7,7 @@ from fnmatch import fnmatch
 import ConfigParser
 from tqdm import tqdm
 import imp
+import pprint
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
     veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
@@ -71,6 +72,8 @@ def grepText(incident, searchFor):
 
 def main(cfg):
     veris_logger.updateLogger(cfg)
+ 
+    pprint.pprint(cfg) # DEBUG
 
     logging.info("Converting files from {0} to {1}.".format(cfg["input"], cfg["output"]))
     for root, dirnames, filenames in tqdm(os.walk(cfg['input'])):
@@ -97,7 +100,7 @@ def main(cfg):
                 raise KeyError("Asset missing from assets in incident {0}.".format(fname))
 
             # Update the schema version
-            incident['schema_version'] = "1.3.2"
+            incident['schema_version'] = "1.3.3"
 
             # EXAMPLE UPDATE
 #             # Replace asset S - SCADA with S - ICS
@@ -124,23 +127,39 @@ def main(cfg):
             #         if len(results) > 0:
             #             incident['action'][action]['result'] = results
 
-            # # Now to save the incident
-            # logging.info("Writing new file to %s" % out_fname)
-            # with open(out_fname, 'w') as outfile:
-            #     sj.dump(incident, outfile, indent=2, sort_keys=True, separators=(',', ': '))
-
             ### Add 'bitcoin miner' to click fraud
             ## Issue VERIS 203
             if 'Click fraud' in incident.get("action", {}).get("malware", {}).get("variety", []):
-                incident['action']['malware']['variety'] = ["Click fraud and cryptocurrency mining" if x = "Click fraud" for x in incident['action']['malware']['variety']]
+                incident['action']['malware']['variety'] = ["Click fraud and cryptocurrency mining" if x == "Click fraud" else x for x in incident['action']['malware']['variety']]
+
+
+            ### Make discovery_method hierarchical
+            ## Issue VERIS 168
+            if 'discovery_method' in incident:
+                # if incident['discovery_method'] == "Other":
+                #     incident['discovery_method'] = {"other": {"note": "Other"}}
+                # if incident['discovery_method'] == "Unknown":
+                #     incident['discovery_method'] = {"unknown": {"note": "Unknown"}}
+                if incident['discovery_method'] == "Other":
+                    incident['discovery_method'] = {"other": True}
+                if incident['discovery_method'] == "Unknown":
+                    incident['discovery_method'] = {"unknown": True}
+                else:
+                    parent = {"Ext":"external", "Int": "internal", "Prt": "partner"}[incident['discovery_method'][0:3]]
+                    leaf = incident['discovery_method'][6:].capitalize()
+                    incident['discovery_method'] = {parent: {'variety': [leaf]}}
 
 
 
+            # Now to save the incident
+            logging.info("Writing new file to %s" % out_fname)
+            with open(out_fname, 'w') as outfile:
+                sj.dump(incident, outfile, indent=2, sort_keys=True, separators=(',', ': '))
 
 
 if __name__ == '__main__':
     descriptionText = "Converts VERIS 1.3.2 incidents to v1.3.3"
-    helpText = "output file to write new files. Default is to overwrite."
+    helpText = "output directory to write new files. Default is to overwrite."
     parser = argparse.ArgumentParser(description=descriptionText)
     parser.add_argument("-l","--log_level",choices=["critical","warning","info","debug"], help="Minimum logging level to display")
     parser.add_argument('--log_file', help='Location of log file')

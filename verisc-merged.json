@@ -2787,46 +2787,113 @@
       ]
     }, 
     "discovery_method": {
-      "type": "string", 
-      "enum": [
-        "Ext - actor disclosure", 
-        "Ext - audit", 
-        "Ext - customer", 
-        "Ext - emergency response team", 
-        "Ext - found documents", 
-        "Ext - fraud detection", 
-        "Ext - incident response", 
-        "Ext - law enforcement", 
-        "Ext - monitoring service", 
-        "Ext - security researcher", 
-        "Ext - suspicious traffic", 
-        "Ext - other", 
-        "Ext - unknown", 
-        "Ext - unrelated 3rd party", 
-        "Int - antivirus", 
-        "Int - data loss prevention", 
-        "Int - financial audit", 
-        "Int - fraud detection", 
-        "Int - HIDS", 
-        "Int - incident response", 
-        "Int - IT review", 
-        "Int - infrastructure monitoring", 
-        "Int - log review", 
-        "Int - NIDS", 
-        "Int - reported by employee", 
-        "Int - security alarm", 
-        "Int - break in discovered", 
-        "Int - other", 
-        "Int - unknown", 
-        "Prt - antivirus", 
-        "Prt - audit", 
-        "Prt - incident response", 
-        "Prt - monitoring service", 
-        "Prt - other", 
-        "Prt - unknown", 
-        "Other", 
-        "Unknown"
-      ]
+      "description": "What discovery method was involved? <a href='http://veriscommunity.net/discovery.html#section-discovery-method' target='_blank'>More Info</a>", 
+      "minProperties": 1, 
+      "additionalProperties": false, 
+      "properties": {
+        "external": {
+          "description": "Discovered by an external entity.", 
+          "additionalProperties": false, 
+          "properties": {
+            "variety": {
+              "items": {
+                "type": "string", 
+                "enum": [
+                  "Actor disclosure", 
+                  "Audit", 
+                  "Customer", 
+                  "Emergency response team", 
+                  "Found documents", 
+                  "Fraud detection", 
+                  "Incident response", 
+                  "Law enforcement", 
+                  "Monitoring service", 
+                  "Other", 
+                  "Security researcher", 
+                  "Suspicious traffic", 
+                  "Unknown", 
+                  "Unrelated 3rd party"
+                ]
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }
+          }, 
+          "required": [
+            "variety"
+          ], 
+          "type": "object"
+        }, 
+        "internal": {
+          "description": "Discovered by an external partner.", 
+          "additionalProperties": false, 
+          "properties": {
+            "variety": {
+              "items": {
+                "type": "string", 
+                "enum": [
+                  "Antivirus", 
+                  "Break in discovered", 
+                  "Data loss prevention", 
+                  "Financial audit", 
+                  "Fraud detection", 
+                  "Hids", 
+                  "Incident response", 
+                  "Infrastructure monitoring", 
+                  "It review", 
+                  "Log review", 
+                  "Nids", 
+                  "Other", 
+                  "Reported by employee", 
+                  "Security alarm", 
+                  "Unknown"
+                ]
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }
+          }, 
+          "required": [
+            "variety"
+          ], 
+          "type": "object"
+        }, 
+        "partner": {
+          "description": "Discovered by a partner of the victim.", 
+          "additionalProperties": false, 
+          "properties": {
+            "variety": {
+              "items": {
+                "type": "string", 
+                "enum": [
+                  "Antivirus", 
+                  "Audit", 
+                  "Incident response", 
+                  "Monitoring service", 
+                  "Other", 
+                  "Unknown"
+                ]
+              }, 
+              "minItems": 1, 
+              "type": "array", 
+              "uniqueItems": true
+            }
+          }, 
+          "required": [
+            "variety"
+          ], 
+          "type": "object"
+        }, 
+        "other": {
+          "type": "boolean"
+        }, 
+        "unknown": {
+          "type": "boolean"
+        }
+      }, 
+      "type": "object"
     }, 
     "discovery_notes": {
       "description": "How was the incident discovered? <a href='http://veriscommunity.net/discovery.html#section-discovery-method' target='_blank'>More Info</a>", 

@@ -909,7 +909,72 @@
       "type": "string"
     },
     "discovery_method": {
-      "type": "string"
+      "description": "What discovery method was involved? <a href='http://veriscommunity.net/discovery.html#section-discovery-method' target='_blank'>More Info</a>",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "external": {
+          "description": "Discovered by an external entity.",
+          "additionalProperties": false,
+          "properties": {
+            "variety": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "variety"
+          ],
+          "type": "object"
+        },
+        "internal": {
+          "description": "Discovered by an external partner.",
+          "additionalProperties": false,
+          "properties": {
+            "variety": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "variety"
+          ],
+          "type": "object"
+        },
+        "partner": {
+          "description": "Discovered by a partner of the victim.",
+          "additionalProperties": false,
+          "properties": {
+            "variety": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "variety"
+          ],
+          "type": "object"
+        },
+        "other": {
+          "type": "boolean"
+        },
+        "unknown": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
     },
     "discovery_notes": {
       "description": "How was the incident discovered? <a href='http://veriscommunity.net/discovery.html#section-discovery-method' target='_blank'>More Info</a>",

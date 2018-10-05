@@ -1934,43 +1934,53 @@
     "Unknown": "Unknown"
   },
   "discovery_method": {
-    "Ext - actor disclosure": "External - disclosed by threat agent (e.g., public brag, private blackmail)",
-    "Ext - audit": "External - security audit or scan",
-    "Ext - customer": "External - reported by customer or partner affected by the incident",
-    "Ext - emergency response team": "External - Emergency response team",
-    "Ext - found documents": "External - Found documents",
-    "Ext - fraud detection": "External - fraud detection (e.g., CPP)",
-    "Ext - incident response": "External - Notified while investigating another incident",
-    "Ext - law enforcement": "Internal - notified by law enforcement or government agency",
-    "Ext - monitoring service": "External - managed security event monitoring service",
-    "Ext - security researcher": "External - security researcher attempting to identify insecure data",
-    "Ext - suspicious traffic": "External - Report of suspicious traffic",
-    "Ext - other": "Discovery method was external and known but not listed",
-    "Ext - unknown": "External - unknown",
-    "Ext - unrelated 3rd party": "Discovered by person unaffiliated with victim or threat actor",
-    "Int - antivirus": "Internal - antivirus alert",
-    "Int - data loss prevention": "Internal - Data loss prevention software",
-    "Int - financial audit": "Internal - financial audit and reconciliation process",
-    "Int - fraud detection": "Internal - fraud detection mechanism",
-    "Int - HIDS": "Internal - host IDS or file integrity monitoring",
-    "Int - incident response": "Internal - discovered while responding to another (separate) incident",
-    "Int - IT review": "Any routine maintenance, testing or review of it assets. (Includes inspect of assets, vulnerability scans, etc.)",
-    "Int - infrastructure monitoring": "Internal - Health and welfare monitoring of assets such as utilization, uptime, and SNMP alerts",
-    "Int - log review": "Internal - log review process or SIEM",
-    "Int - NIDS": "Internal - All network-based security tool detection (including IPS, IDS, firewalls and other network-based security tools)",
-    "Int - reported by employee": "Internal - reported by employee who saw something odd",
-    "Int - security alarm": "Internal - physical security system alarm",
-    "Int - break in discovered": "Internal - employee discovered evidence of a break in",
-    "Int - other": "Discovery method was internal and known but not listed",
-    "Int - unknown": "Internal - unknown",
-    "Prt - antivirus": "Partner - Notified by antivirus company but not through AV product",
-    "Prt - audit": "Partner - Audit performed by a partner organization",
-    "Prt - incident response": "Partner - notified while investigating another incident",
-    "Prt - monitoring service": "Partner - Reported by a monitoring service",
-    "Prt - other": "Discovery method was partner and known but not listed",
-    "Prt - unknown": "Partner - Unknown",
-    "Other": "Other",
-    "Unknown": "Unknown"
+    "external": {
+      "variety": {
+        "Actor disclosure": "disclosed by threat agent (e.g., public brag, private blackmail)",
+        "Audit": "security audit or scan",
+        "Customer": "reported by customer or partner affected by the incident",
+        "Emergency response team": "Emergency response team",
+        "Found documents": "Found documents",
+        "Fraud detection": "fraud detection (e.g., CPP)",
+        "Incident response": "Notified while investigating another incident",
+        "Law enforcement": "notified by law enforcement or government agency",
+        "Monitoring service": "managed security event monitoring service",
+        "Other": "Discovery method was external and known but not listed",
+        "Security researcher": "security researcher attempting to identify insecure data",
+        "Suspicious traffic": "Report of suspicious traffic",
+        "Unknown": "unknown",
+        "Unrelated 3rd party": "Discovered by person unaffiliated with victim or threat actor"
+      }
+    },
+    "internal": {
+      "variety": {
+        "Antivirus": "antivirus alert",
+        "Break in discovered": "employee discovered evidence of a break in",
+        "Data loss prevention": "Data loss prevention software",
+        "Financial audit": "financial audit and reconciliation process",
+        "Fraud detection": "fraud detection mechanism",
+        "Hids": "host IDS or file integrity monitoring",
+        "Incident response": "discovered while responding to another (separate) incident",
+        "Infrastructure monitoring": "Health and welfare monitoring of assets such as utilization, uptime, and SNMP alerts",
+        "It review": "Any routine maintenance, testing or review of it assets. (Includes inspect of assets, vulnerability scans, etc.)",
+        "Log review": "log review process or SIEM",
+        "Nids": "All network",
+        "Other": "Discovery method was internal and known but not listed",
+        "Reported by employee": "reported by employee who saw something odd",
+        "Security alarm": "physical security system alarm",
+        "Unknown": "unknown"
+      }
+    },
+    "partner": {
+      "variety": {
+        "Antivirus": "Notified by antivirus company but not through AV product",
+        "Audit": "Audit performed by a partner organization",
+        "Incident response": "notified while investigating another incident",
+        "Monitoring service": "Reported by a monitoring service",
+        "Other": "Discovery method was partner and known but not listed",
+        "Unknown": "Unknown"
+      }
+    }
   },
   "impact": {
     "loss": {
