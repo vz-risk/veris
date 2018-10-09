@@ -133,6 +133,39 @@ def main(cfg):
                 incident['action']['malware']['variety'] = ["Click fraud and cryptocurrency mining" if x == "Click fraud" else x for x in incident['action']['malware']['variety']]
 
 
+            ### Remove 'plus.public_disclosure' as everything in VCDB is treated as public and everything else as private.  And it's never used.
+            ## Issue VCDB 10412
+            if 'public_disclosure' in incident.get('plus', {}):
+                _ = incident['plus'].pop('public_disclosure')
+
+
+            ### Remove 'plus.f500'.  We don't really ever fill it in and there are no questions we'd answer with it.  Plus it only applies when we know the victim.
+            ## Issue VCDB 10403
+            if 'f500' in incident.get('plus', {}):
+                _ = incident['plus'].pop('f500')
+
+
+            ### Combine plus.attribute.confidentiality.data_misuse into plus.attribute.confidentiality.data_abuse.  We rarely use data_misuse and they do not have distinct definitions.
+            ## Issue VCDB 10102
+            abuse_misuse_lookup = {'y': 'Yes', 'n': 'No', 'u': 'Unknown'}
+            if 'data_misuse' in incident.get('plus', {}):
+                misuse = incident['plus'].pop('data_misuse'):
+                misuse = misuse.lower()[0]
+                misuse = abuse_misuse_lookup.get(misuse, 'Other')
+                if 'data_abuse' in incident.get('plus', {}):
+                    abuse = incident['plus']['data_abuse']
+                    abuse = abuse.lower()[0]
+                    abuse = abuse_misuse_lookup.get(abuse, 'Other')
+                    if abuse != misuse:
+                        warning("Abuse value of {0} does not match misuse value of {1}.  Defaulting to the abuse value ({0}).".format(abuse, misuse)) # TODO: handle all the values data_abuse and data_misuse are in data.  Also handle combining them when they are both set
+                incident['plus']['data_abuse'] = misuse
+            if 'data_abuse' in incident.get('plus', {}):
+                abuse = incident['plus']['data_abuse']
+                abuse = abuse.lower()[0]
+                abuse = abuse_misuse_lookup.get(abuse, 'Other')
+                incident['plus']['data_abuse'] = abuse
+
+
             ### Make discovery_method hierarchical
             ## Issue VERIS 168
             if 'discovery_method' in incident:
