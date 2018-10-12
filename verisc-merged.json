@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#", 
   "additionalProperties": false, 
-  "description": "VERIS Community Schema 1.3.2", 
+  "description": "VERIS Community Schema 1.3.2.1", 
   "properties": {
     "incident_id": {
       "type": "string", 
@@ -3085,7 +3085,13 @@
       "type": "object", 
       "properties": {
         "row_number": {
+          "description": "When importing incidents/breaches from a file, this represents the row this incident/breach was on. This is important for backwards tracability.", 
           "type": "number"
+        }, 
+        "master_id": {
+          "minLength": 1, 
+          "description": "In rare cases, the same incident may result in multiple records.  Each of these incidents would then have the same incident_id.  The master_id is a globally unique, random UUID assigned to each file.  By tradition, the name of the file is the master_id.", 
+          "type": "string"
         }
       }
     }, 

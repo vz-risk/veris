@@ -92,6 +92,7 @@ incident_id
 ioc.comment
 ioc.indicator
 notes
+plus.master_id
 plus.row_number
 reference
 schema_version
