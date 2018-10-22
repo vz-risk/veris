@@ -182,6 +182,38 @@ def main(cfg):
                     leaf = incident['discovery_method'][6:].capitalize()
                     incident['discovery_method'] = {parent: {'variety': [leaf]}}
 
+            ### Add hacking.exploit vuln
+            ## Issue VERIS # 192
+            exploit_varieties = ["Abuse of functionality", 
+                       "Buffer overflow", "Cache poisoning", 
+                       "Cryptanalysis", "CSRF", 
+                       "Forced browsing", "Format string attack", 
+                       "Fuzz testing", "HTTP request smuggling", 
+                       "HTTP request splitting", "HTTP response smuggling", 
+                       "HTTP Response Splitting", "Integer overflows", 
+                       "LDAP injection", "Mail command injection", 
+                       "MitM", "Null byte injection", 
+                       "OS commanding", 
+                       "Other", 
+                       "Path traversal", "Reverse engineering", 
+                       "RFI", "Routing detour", 
+                       "Session fixation", "Session prediction", 
+                       "Session replay", "Soap array abuse", 
+                       "Special element injection", "SQLi", 
+                       "SSI injection",
+                       "URL redirector abuse",  
+                       "Virtual machine escape", 
+                       "XML attribute blowup", "XML entity expansion", 
+                       "XML external entities", "XML injection", 
+                       "XPath injection", "XQuery injection", 
+                       "XSS"]
+            if 'variety' in incident.get('action', {}).get('hacking', {}):
+                if "Exploit vuln" not in incident['hacking']['variety'] and len(set(incident['hacking']['variety']).intersect(hak_exploit_varieties)) > 0:
+                    incident['hacking']['variety'].append('Exploit vuln') 
+            mal_exploit_varieties = ["Remote injection", "Web drive-by"]
+            if 'variety' in incident.get('action', {}).get('malware', {}):
+                if "Exploit vuln" not in incident['malware']['variety'] and len(set(incident['malware']['variety']).intersect(mal_exploit_varieties)) > 0:
+                    incident['malware']['variety'].append('Exploit vuln') 
 
 
             # Now to save the incident

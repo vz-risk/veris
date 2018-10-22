@@ -13,7 +13,7 @@
     },
     "reference": {
       "type": "string",
-      "description": "Refernce should ba a url, incident number, case ID, or other reference to the document the VERIS incident was based on."
+      "description": "Reference should be a url, incident number, case ID, or other reference to the document the VERIS incident was based on."
     },
     "summary": {
       "type": "string",
@@ -24,7 +24,7 @@
     },
     "campaign_id": {
       "type": "string",
-      "description": "(Way to associate multiple incident w/in one campaign)"
+      "description": "(Way to associate multiple incident w/in one campaign)."
     },
     "confidence": {
       "type": "string"

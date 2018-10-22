@@ -210,6 +210,7 @@ class Rules():
                 incident['attribute']['confidentiality']['variety'].append('Stored')
 
 
+        ### Hierarchical Field
         # action.malware.variety.Click fraud and cryptocurrency mining is a parent of action.malware.variety.Click fraud and action.malware.variety.Cryptocurrency mining
         # per vz-risk/VERIS issue #203
         if 'malware' in incident['action']:
@@ -217,6 +218,41 @@ class Rules():
                 'Cryptocurrency mining' in incident['action']['malware'].get('variety', [])) and \
                'Click fraud and cryptocurrency mining' not in incident['action']['malware'].get('variety', []):
                 incident['action']['malware']['variety'].append('Click fraud and cryptocurrency mining')
+
+
+        ### Hierarchical Field
+        ### Add hacking.exploit vuln and malware.exploit vuln hierarchy
+        ## Issue VERIS # 192
+        exploit_varieties = ["Abuse of functionality", 
+                   "Buffer overflow", "Cache poisoning", 
+                   "Cryptanalysis", "CSRF", 
+                   "Forced browsing", "Format string attack", 
+                   "Fuzz testing", "HTTP request smuggling", 
+                   "HTTP request splitting", "HTTP response smuggling", 
+                   "HTTP Response Splitting", "Integer overflows", 
+                   "LDAP injection", "Mail command injection", 
+                   "MitM", "Null byte injection", 
+                   "OS commanding", 
+                   "Other", 
+                   "Path traversal", "Reverse engineering", 
+                   "RFI", "Routing detour", 
+                   "Session fixation", "Session prediction", 
+                   "Session replay", "Soap array abuse", 
+                   "Special element injection", "SQLi", 
+                   "SSI injection",
+                   "URL redirector abuse",  
+                   "Virtual machine escape", 
+                   "XML attribute blowup", "XML entity expansion", 
+                   "XML external entities", "XML injection", 
+                   "XPath injection", "XQuery injection", 
+                   "XSS"]
+        if 'variety' in incident['action'].get('hacking', {}):
+            if "Exploit vuln" not in incident['hacking']['variety'] and len(set(incident['hacking']['variety']).intersect(hak_exploit_varieties)) > 0:
+                incident['hacking']['variety'].append('Exploit vuln') 
+        mal_exploit_varieties = ["Remote injection", "Web drive-by"]
+        if 'variety' in incident['action'].get('malware', {}):
+            if "Exploit vuln" not in incident['malware']['variety'] and len(set(incident['malware']['variety']).intersect(mal_exploit_varieties)) > 0:
+                incident['malware']['variety'].append('Exploit vuln') 
 
 
         # Social engineering alters human behavior
@@ -234,6 +270,8 @@ class Rules():
             if 'Alter behavior' not in incident['attribute']['integrity']['variety']:
                 logging.info("%s: Added alter behavior to attribute.integrity.variety since social engineering was involved.",iid)
                 incident['attribute']['integrity']['variety'].append('Alter behavior')
+
+
 
         # The target of social engineering is one of the affected assets
         if 'social' in incident['action']:
@@ -266,6 +304,7 @@ class Rules():
                             logging.info("{1}: Adding P - {0} to asset list since there was social engineering.".format(each,iid))
                             incident['asset']['assets'].append({'variety':'P - '+each})
 
+
         # If SQLi was involved then there needs to be misappropriation too
         if 'hacking' in incident['action']:
             if 'SQLi' in incident['action']['hacking']['variety']:
@@ -278,6 +317,7 @@ class Rules():
                 if 'Repurpose' not in incident['attribute']['integrity']['variety']:
                     logging.info("%s: Adding repurpose since SQLi was there.",iid)
                     incident['attribute']['integrity']['variety'].append('Repurpose')
+
 
         # If there is a theft or loss then there is an availability loss
         if 'physical' in incident['action']:
