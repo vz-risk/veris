@@ -38,7 +38,7 @@ cfg = {
 
 ## IMPORTS
 import argparse
-import ConfigParser
+import configparser
 import json
 import pprint
 import ipdb
@@ -225,7 +225,7 @@ if __name__ == "__main__":
 
     # Parse the config file
     try:
-        config = ConfigParser.SafeConfigParser()
+        config = configparser.ConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
             'GENERAL': ['input', 'update', 'output'], 

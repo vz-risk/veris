@@ -11,14 +11,18 @@ import copy
 import logging
 import re
 from datetime import datetime
-import ConfigParser
+import configparser
 from collections import defaultdict
 import re
 import operator
-import imp
+#import imp
+import importlib
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
-    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+    spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
+    veris_logger = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(veris_logger)
+    # veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
 except:
     print("Script dir: {0}.".format(script_dir))
     raise
@@ -573,7 +577,7 @@ if __name__ == '__main__':
 
     # Parse the config file
     try:
-        config = ConfigParser.SafeConfigParser()
+        config = configparser.ConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
             'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'file_version', 'database', 'check'],

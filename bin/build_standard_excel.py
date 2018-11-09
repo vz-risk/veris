@@ -20,10 +20,14 @@
 # PRE-USER SETUP
 import logging
 import os
-import imp
+#import imp
+import importlib
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
-    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+    spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
+    veris_logger = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(veris_logger)
+    # veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
 except:
     print("Script dir: {0}.".format(script_dir))
     raise
@@ -194,7 +198,7 @@ def recurse_schema(d, lbl, name):
     enums=dict()
     if d['type'] == "object":
         lbl = lbl + "properties."
-        for k, v in d['properties'].iteritems():
+        for k, v in d['properties'].items():
             r_k, r_e = recurse_schema(v, lbl, name + "." + k)
             keys = keys.union(r_k)
             enums.update(r_e)
@@ -212,7 +216,7 @@ def recurse_schema(d, lbl, name):
 
 def recurse_labels(d, name):
     labels_list=dict()
-    for k, v in d.iteritems():
+    for k, v in d.items():
         if type(v) == dict:
             labels_list.update(recurse_labels(v, name + "." + k))
         else:
@@ -226,26 +230,26 @@ def recurse_labels(d, name):
 def recurse_veris(o, name):
     flat_dict=dict()
     if type(o) == dict:
-        for k, v in o.iteritems():
+        for k, v in o.items():
             flat_dict.update(recurse_veris(v, name + "." + k))
     elif type(o) == list:
         for item in o:
             if type(item) == dict:
                     if "amount" in item:
-                        enum = u"{0}:{1}".format(item["variety"], item['amount'])
+                        enum = "{0}:{1}".format(item["variety"], item['amount'])
                     else:
-                        enum = u'{0}'.format(item["variety"])
+                        enum = '{0}'.format(item["variety"])
                     if name[1:] + ".variety" in flat_dict:
                         flat_dict[name[1:] + ".variety"] = flat_dict[name[1:] + ".variety"] + ",{0}".format(enum)
                     else:
-                        flat_dict[name[1:] + ".variety"] = u"{0}".format(enum)
+                        flat_dict[name[1:] + ".variety"] = "{0}".format(enum)
             else:
                 if name[1:] in flat_dict:
-                    flat_dict[name[1:]] = flat_dict[name[1:]] + u",{0}".format(item)
+                    flat_dict[name[1:]] = flat_dict[name[1:]] + ",{0}".format(item)
                 else:
-                    flat_dict[name[1:]] = u"{0}".format(item)
+                    flat_dict[name[1:]] = "{0}".format(item)
     else:
-        flat_dict[name[1:]] = unicode(o)
+        flat_dict[name[1:]] = str(o)
     return flat_dict
 
 ## MAIN LOOP EXECUTION
@@ -282,8 +286,8 @@ def main():
         labels_dict = recurse_labels(labels, "")
         sorted_labels_list = []
         for i in range(len(ORDER)):
-            sorted_labels_list = sorted_labels_list + sorted([{k: labels_dict[k]} for k in labels_dict.keys()  if k.startswith(ORDER[i])])
-        missing_keys = set(labels_dict.keys()).difference([k.keys()[0] for k in sorted_labels_list])
+            sorted_labels_list = sorted_labels_list + sorted([{k: labels_dict[k]} for k in list(labels_dict.keys())  if k.startswith(ORDER[i])])
+        missing_keys = set(labels_dict.keys()).difference([list(k.keys())[0] for k in sorted_labels_list])
         for k in missing_keys:
             sorted_labels_list.append({k: labels_dict[k]})
         # parse enums from schema
@@ -295,7 +299,7 @@ def main():
         enumerations.write(row, 2, "label")
         row += 1
         for keyname in  sorted_labels_list:
-            k = keyname.keys()[0]
+            k = list(keyname.keys())[0]
             enumerations.write(row, 0, k)
             for enum_label in keyname[k]:
                 enumerations.write(row, 1, enum_label[0])
@@ -305,8 +309,8 @@ def main():
         # parse enums from schema
         sorted_schema_list = []
         for i in range(len(ORDER)):
-            sorted_schema_list = sorted_schema_list + sorted([{k: keyenums[k]} for k in keyenums.keys()  if k.startswith(ORDER[i])])
-        missing_keys = set(keyenums.keys()).difference([k.keys()[0] for k in sorted_schema_list])
+            sorted_schema_list = sorted_schema_list + sorted([{k: keyenums[k]} for k in list(keyenums.keys())  if k.startswith(ORDER[i])])
+        missing_keys = set(keyenums.keys()).difference([list(k.keys())[0] for k in sorted_schema_list])
         for k in missing_keys:
             sorted_schema_list.append({k: keyenums[k]})
         row = 0
@@ -316,7 +320,7 @@ def main():
         enumerations.write(row, 1, "enumeration")
         row += 1
         for keyname in  sorted_schema_list:
-            k = keyname.keys()[0]
+            k = list(keyname.keys())[0]
             enumerations.write(row, 0, k)
             for enum in keyname[k]:
                 enumerations.write(row, 1, enum)
@@ -345,7 +349,7 @@ def main():
             columns = set(DEFAULT_COLUMNS)
             for record in records:
                 #logging.debug(record.keys())
-                columns = columns.union(record.keys())
+                columns = columns.union(list(record.keys()))
             #logging.debug(columns)
             # order columns
             sorted_columns = []
@@ -360,7 +364,7 @@ def main():
             row += 1
             #logging.debug(records)
             for record in records:
-                for k, v in record.iteritems():
+                for k, v in record.items():
                     example.write(row, sorted_columns.index(k), v)
                 row += 1
             # add a 'repeat' for the last 2

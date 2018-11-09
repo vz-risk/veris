@@ -21,12 +21,16 @@
 """
 # PRE-USER SETUP
 import logging
-import imp
+#import imp
+import importlib
 import os
 import sys
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
-    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+    spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
+    veris_logger = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(veris_logger)
+    # veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
 except:
     logging.debug("Script dir: {0}.".format(script_dir))
     print("Script dir: {0}.".format(script_dir))
@@ -45,7 +49,7 @@ except:
 
 ## IMPORTS
 import argparse
-import ConfigParser
+import configparser
 import os
 import json
 from datetime import datetime, date
@@ -223,7 +227,7 @@ class Rules():
         ### Hierarchical Field
         ### Add hacking.exploit vuln and malware.exploit vuln hierarchy
         ## Issue VERIS # 192
-        exploit_varieties = ["Abuse of functionality", 
+        hak_exploit_varieties = ["Abuse of functionality", 
                    "Buffer overflow", "Cache poisoning", 
                    "Cryptanalysis", "CSRF", 
                    "Forced browsing", "Format string attack", 
@@ -247,12 +251,30 @@ class Rules():
                    "XPath injection", "XQuery injection", 
                    "XSS"]
         if 'variety' in incident['action'].get('hacking', {}):
-            if "Exploit vuln" not in incident['hacking']['variety'] and len(set(incident['hacking']['variety']).intersect(hak_exploit_varieties)) > 0:
-                incident['hacking']['variety'].append('Exploit vuln') 
+            if "Exploit vuln" not in incident['action']['hacking']['variety'] and len(set(incident['action']['hacking']['variety']).intersection(hak_exploit_varieties)) > 0:
+                incident['action']['hacking']['variety'].append('Exploit vuln') 
         mal_exploit_varieties = ["Remote injection", "Web drive-by"]
         if 'variety' in incident['action'].get('malware', {}):
-            if "Exploit vuln" not in incident['malware']['variety'] and len(set(incident['malware']['variety']).intersect(mal_exploit_varieties)) > 0:
-                incident['malware']['variety'].append('Exploit vuln') 
+            if "Exploit vuln" not in incident['action']['malware']['variety'] and len(set(incident['action']['malware']['variety']).intersection(mal_exploit_varieties)) > 0:
+                incident['action']['malware']['variety'].append('Exploit vuln') 
+
+
+        ### impact.overall_amount should be at least the sum of the impact.loss.amounts
+        ## VERIS issue 142
+        if 'loss' in incident.get('impact', {}):
+            sum_of_amounts = sum([k.get('amount', 0) for k in incident['impact']['loss']])
+            if sum_of_amounts > 0 and 'overall_amount' not in incident['impact']: # if overall_amount does exist but is less than sum_of_amounts, it'll raise a validationError in checkValidity.py
+                incident['impact']['overall_amount'] = sum_of_amounts
+
+
+
+        ### attribute.confidentiality.total_amount should be at least the max of the attribute.confidentiality.data.amount's
+        ## VERIS issue 143
+        if 'data' in incident['attribute'].get('confidentiality', {}):
+            max_of_amounts = max([k.get('amount', 0) for k in incident['attribute']['confidentiality']['data']])
+            if max_of_amounts > 0 and 'total_amount' not in incident['attribute']['confidentiality']: # if total_amount does exist but is less than max_of_amounts, it'll raise a validationError in checkValidity.py
+                incident['attribute']['confidentiality']['total_amount'] = max_of_amounts
+
 
 
         # Social engineering alters human behavior
@@ -453,8 +475,8 @@ class Rules():
         # for actor.partner
         if 'partner' in incident['actor']:
             for eachCountry in incident['actor']['partner'].get('country', []):
-                incident['actor']['partner']['region'] = incident['actor']['external'].get('partner', []) + [self.country_region[eachCountry]]
-            if 'region' in ['actor']['partner'].keys():
+                incident['actor']['partner']['region'] = incident['actor']['partner'].get('region', []) + [self.country_region[eachCountry]]
+            if 'region' in incident['actor']['partner'].keys():
                 incident['actor']['partner']['region'] = list(set(incident['actor']['partner']['region'])) # remove duplicates
                 # if a region exists but no country, country will be filled in 'unknown'
                 # the 'unknown' country value will cause '000000' to be filled into the region
@@ -578,7 +600,7 @@ class Rules():
                 logging.info("%s: auto-filled Unknown for empty array in actor.internal.variety", iid)
                 actor['variety'] = [ "Unknown" ]
             #compareFromTo('actor.internal.variety', actor['variety'], schema['actor']['internal']['variety'])
-            if "job_change" in actor and type(actor['job_change']) in (str, unicode):
+            if "job_change" in actor and type(actor['job_change']) is str:
                 logging.info("{0}: changing job_change from a string to an array to fit the schema.".format(iid))
                 actor['job_change'] = actor['job_change'].split(",")
             incident['actor']['internal'] = actor
@@ -801,7 +823,7 @@ class Rules():
         # if confidentiality was not affected then it shouldn't be in the plus
         # section either. Usually just has credit_monitoring unknown anyway.
         if 'confidentiality' not in incident.get('attribute', {}) and \
-          incident['plus'].get('attribute', {}).keys() == ['confidentiality']:
+          list(incident['plus'].get('attribute', {}).keys()) == ['confidentiality']:
             logging.info("attribute.confidentiality not in record so removing attribute from plus for record {0}.".format(iid))
             incident['plus'].pop('attribute')
 
@@ -846,11 +868,11 @@ if __name__ == "__main__":
     parser.add_argument('--source', help="Source_id to use for the incidents. Partner pseudonym.")
     #parser.add_argument("-f", "--force_analyst", help="Override default analyst with --analyst.", action='store_true')
     args = parser.parse_args()
-    args = {k:v for k,v in vars(args).iteritems() if v is not None}
+    args = {k:v for k,v in vars(args).items() if v is not None}
 
     # Parse the config file
     try:
-        config = ConfigParser.SafeConfigParser()
+        config = configparser.ConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
             'GENERAL': ['input', 'output'], #'report', 'analysis', 'year', 'force_analyst', 'version', 'database', 'check'],

@@ -12,16 +12,20 @@ import logging
 #import multiprocessing # used for multiprocessing logger
 import re
 from datetime import datetime
-import ConfigParser
+import configparser
 from collections import defaultdict
 import re
 import operator
-import imp
+#import imp
+import importlib
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
-    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+    spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
+    veris_logger = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(veris_logger)
+    # veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
 except:
-    print("Script dir: {0}.".format(script_dir))
+    print(("Script dir: {0}.".format(script_dir)))
     raise
 import platform # to get created time
 
@@ -104,7 +108,7 @@ class CSVtoJSON():
             if "schema_version" in csv_reader.fieldnames:
                 for row in csv_reader:
                     versions[m.sub('', row["schema_version"])] += 1 # the regex removes trailing '.0' to make counting easier
-                version = max(versions.iteritems(), key=operator.itemgetter(1))[0]  # return the most common version. (They shoudl all be the same, but, you know.)
+                version = max(versions.items(), key=operator.itemgetter(1))[0]  # return the most common version. (They shoudl all be the same, but, you know.)
                 if version not in ["1.2", "1.3", "1.3.1", "1.3.2",]:
                     logging.warning("VERIS version {0} in file {1} does not appear to be a standard version.  \n".format(version, inFile) + 
                                    "Please ensure it is correct as it is used for upgrading VERIS files to the report version.")
@@ -173,19 +177,19 @@ class CSVtoJSON():
 
     def addValue(self, src, enum, dst, val="list"):
         "adding value to dst at key if present in src"
-        if src.has_key(enum):
+        if enum in src:
             if len(src[enum]):
                 allenum = enum.split('.')
                 saved = dst
                 for i in range(len(allenum)-1):
-                    if not saved.has_key(allenum[i]):
+                    if allenum[i] not in saved:
                         saved[allenum[i]] = {}
                     saved = saved[allenum[i]]
                 if val=="list":
                     templist = [x.strip() for x in src[enum].split(',') if len(x)>0 ]
                     saved[allenum[-1]] = [x for x in templist if len(x)>0 ]
                 elif val=="string":
-                    saved[allenum[-1]] = unicode(src[enum],errors='ignore')
+                    saved[allenum[-1]] = str(src[enum],errors='ignore')
                 elif val=="numeric":
                     if self.isfloat(src[enum]):
                         saved[allenum[-1]] = self.isfloat(src[enum])
@@ -211,7 +215,7 @@ class CSVtoJSON():
         try:
             parsed = json.loads(rawjson)
         except:
-            print "Unexpected error while loading", filename, "-", sys.exc_info()[1]
+            print("Unexpected error while loading", filename, "-", sys.exc_info()[1])
             parsed = None
         return parsed
 
@@ -246,7 +250,7 @@ class CSVtoJSON():
 
         out = {}
         out['schema_version'] = cfg["file_version"]
-        if incident.has_key("incident_id"):
+        if "incident_id" in incident:
             if len(incident['incident_id']):
                 # out['incident_id'] = incident['incident_id']
                 # Changing incident_id to UUID to prevent de-anonymiziation of incidents
@@ -476,7 +480,7 @@ class CSVtoJSON():
             # Added to file read to catch multiple columns with same name which causes second column to overwrite first. - GDB
             file_handle = open(cfg["input"], 'rU')
             csv_reader = csv.reader(file_handle)
-            l = csv_reader.next()
+            l = next(csv_reader)
             if len(l) > len(set(l)):
                 logging.error(l)
                 file_handle.close()
@@ -522,19 +526,19 @@ class CSVtoJSON():
             try:
                 iid = incident['incident_id']  # there should always be an incident ID so commented out above. - gdb 061316
             except:
-                logging.error("keys: {0}.".format(incident.keys()))
+                logging.error("keys: {0}.".format(list(incident.keys())))
                 raise
 
             repeat = 1
             logging.info("-----> parsing incident %s", iid)
-            if incident.has_key('repeat'):
+            if 'repeat' in incident:
                 if incident['repeat'].lower()=="ignore" or incident['repeat'] == "0":
                     logging.info("Skipping row %s because 'repeat' is either 'ignore' or '0'.", iid)
                     continue
                 repeat = self.isnum(incident['repeat'])
                 if not repeat:
                     repeat = 1
-            if incident.has_key('security_incident'):
+            if 'security_incident' in incident:
                 if incident['security_incident'].lower()=="no":
                     logging.info("Skipping row %s because 'security_incident' is 'no'.", iid)
                     continue
@@ -584,7 +588,7 @@ if __name__ == '__main__':
     output_group.add_argument("--check", help="Generate VERIS json records from the input csv, but do not write them to disk. " + 
                               "This is to allow finding errors in the input csv without creating any files.", action='store_true')
     args = parser.parse_args()
-    args = {k:v for k,v in vars(args).iteritems() if v is not None}
+    args = {k:v for k,v in vars(args).items() if v is not None}
 
     try:
         cfg["log_level"] = args['log_level']
@@ -593,7 +597,7 @@ if __name__ == '__main__':
 
     # Parse the config file
     try:
-        config = ConfigParser.SafeConfigParser()
+        config = configparser.ConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
             'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'file_version', 'database', 'check'],

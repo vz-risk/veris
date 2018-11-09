@@ -93,7 +93,7 @@ else:
 
 ## GLOBAL EXECUTION
 # Convert args to a dictionary
-args = {k:v for k,v in vars(args).iteritems() if v is not None}
+args = {k:v for k,v in vars(args).items() if v is not None}
 
 
 ## FUNCTION DEFINITION
@@ -104,14 +104,14 @@ pass
 ## MAIN LOOP EXECUTION
 def main(args):
     logging.info('Beginning main loop.')
-    if 'output' not in args.keys():
+    if 'output' not in list(args.keys()):
         args['output'] = os.path.dirname(args['input'])
         logging.info('No output path supplied so setting it to {0}'.format(args['output']))
 
     logging.info("About to repeat incident {0} {1} times resulting in {2} total incidents (repeats + 1 original) stored to {3}".format(args['input'], args['repeats'], args['repeats'] + 1, args['output']))
     with open(args['input'], 'r') as filehandle:
         incident = simplejson.load(filehandle)
-        if 'plus' not in incident.keys():
+        if 'plus' not in list(incident.keys()):
             raise KeyError("A plus section must exist in the incident to duplicate.  Please ensure this is a complete VERIS incident JSON file.")
     for i in range(args['repeats']):
         incident_copy = copy.deepcopy(incident)
