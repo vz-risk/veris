@@ -1535,14 +1535,6 @@
       "Victim": "The affected asset is property of the victim organization",
       "Other": "Owner known but not listed"
     },
-    "accessibility": {
-      "External": "Publicly accessible",
-      "Internal": "Internally accessible",
-      "Isolated": "Internally isolated or restricted environment",
-      "NA": "Not applicable",
-      "Other": "Accessibility known but not listed",
-      "Unknown": "Unknown"
-    },
     "cloud": {
       "Customer attack": "Penetration of another web site on shared device",
       "Hosting error": "Misconfiguration or error by hosting provider",

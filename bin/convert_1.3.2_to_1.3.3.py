@@ -221,6 +221,35 @@ def main(cfg):
                     incident['malware']['variety'].append('Exploit vuln') 
 
 
+            ### update ownership, hosting, management, and accessability
+            ## Issue VERIS #173
+            gov_hosting_lookup = {
+                "External shared": "External - shared environment",
+                "External dedicated": "External - dedicated environment",
+                "External": "External - unknown environment",
+            }
+
+            if 'asset' in incident:
+                if 'hosting' in incident['asset']:
+                    incident['asset']['hosting'] = [gov_hosting_lookup[incident['asset']['hosting']]]
+                if 'ownership' in incident['asset']:
+                    incident['asset']['ownership'] = [incident['asset']['ownership']]
+                if 'management' in incident['asset']:
+                    incident['asset']['management'] = [incident['asset']['management']]
+                if 'governance' in incident['asset']:
+                    if '3rd party owned' in incident['asset']['governance']:
+                        incident['asset']['ownership'] = list(set(incident['asset'].get('ownership', [])).add("Partner"))
+                    if '3rd party hosted' in incident['asset']['governance']:
+                        incident['asset']['hosting'] = list(set(incident['asset'].get('hosting', [])).add("External - unknown environment"))
+                    if 'Victim governed' in incident['asset']['governance']:
+                        incident['asset']['management'] = list(set(incident['asset'].get('management', [])).add("Internal"))
+                    if '3rd party managed' in incident['asset']['governance']:
+                        incident['asset']['management'] = list(set(incident['asset'].get('management', [])).add("External"))
+                    _ = incident['asset'].pop('governance')
+                    # asset.governence.Internally isolated, asset.governence.Unknown, asset.governence.Other are not captured and lost.
+                if 'accessability' in incident['asset']:
+                    _ = incident['asset'].pop('accessability')
+
             # Now to save the incident
             logging.info("Writing new file to %s" % out_fname)
             with open(out_fname, 'w') as outfile:

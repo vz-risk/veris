@@ -760,10 +760,6 @@
           "type": "array",
           "uniqueItems": true
         },
-        "accessibility": {
-          "description": "Please do not use.  This feature will likely be removed in the near future.  Recommend using ownership or hosting instead.",
-          "type": "array"
-        },
         "notes": {
           "minLength": 1,
           "type": "string"
