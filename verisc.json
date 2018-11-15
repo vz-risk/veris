@@ -987,7 +987,7 @@
       "minLength": 1,
       "type": "string"
     },
-    "investment": {
+    "value chain": {
       "description": "Capabilities and investments an attacker must aquire prior to the actions on target.  May be internal to the actors organization (vertically integrated org), or external (purchased in a criminal market).",
       "minProperties": 1,
       "additionalProperties": false,
