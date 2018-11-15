@@ -739,29 +739,30 @@
           "uniqueItems": true
         },
         "ownership": {
-          "type": "string"
+          "description": "Who owns the affected asset? This can allow us to identify employee-owned (BYOD) assets.",
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
         },
         "cloud": {
           "description": "Only answer if you know for sure if the asset was hosted in a cloud service.",
           "type": "string"
         },
-        "governance": {
-          "items": {
-            "type": "string"
-          },
+        "hosting": {
+          "description": "Where is the affected asset hosted/located?",
           "minItems": 1,
           "type": "array",
           "uniqueItems": true
         },
-        "hosting": {
-          "type": "string"
-        },
         "management": {
-          "type": "string"
+          "description": "Independent of physical location, who administers and maintains the affected asset?",
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
         },
         "accessibility": {
           "description": "Please do not use.  This feature will likely be removed in the near future.  Recommend using ownership or hosting instead.",
-          "type": "string"
+          "type": "array"
         },
         "notes": {
           "minLength": 1,

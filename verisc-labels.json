@@ -1527,12 +1527,12 @@
       }
     },
     "ownership": {
-      "Customer": "Customer owned",
-      "Employee": "Employee owned",
-      "NA": "Not applicable",
-      "Partner": "Partner owned",
-      "Unknown": "Unknown",
-      "Victim": "Victim owned",
+      "Customer": "The affected assets is consumer owned – an example would be credentials stolen from a banking customer then reused to access a banking application",
+      "Employee": "The asset was owned by an employee of the victim organization. BYOD assets would be categorized under this label. Currently",
+      "NA": "Ownership label is not applicable, a Human asset that clicks a malicious attachment is a common example.",
+      "Partner": "The asset (regardless of physical location) was the property of a business partner, including a cloud provider.",
+      "Unknown": "Ownership of the asset was not known to the incident responder or not recorded.",
+      "Victim": "The affected asset is property of the victim organization",
       "Other": "Owner known but not listed"
     },
     "accessibility": {
@@ -1555,30 +1555,21 @@
       "Other": "Cloud hosting known but not listed",
       "Unknown": "The involvement of cloud assets was not measured"
     },
-    "governance" : {
-      "Personally owned": "Personally owned asset",
-      "3rd party owned": "Owned by 3rd party",
-      "3rd party managed": "Managed by 3rd party",
-      "3rd party hosted": "Hosted by 3rd party",
-      "Internally isolated": "Isolated internal asset",
-      "Victim governed": "The victim owns and controls the asset",
-      "Unknown": "Unknown",
-      "Other": "Governance known but not listed"
-    },
     "hosting": {
-      "External": "Externally hosted (unsure if dedicated or shared)",
-      "External dedicated": "Externally hosted in a dedicated environment",
-      "External shared": "Externally hosted in a shared environment",
-      "Internal": "Internally hosted",
-      "NA": "Not applicable",
-      "Other": "Hosting known but not listed",
-      "Unknown": "Unknown"
+      "External - unknown environment": "A third party provided hosted the affected asset, but it is unknown whether the victim organization’s environment was shared or dedicated.",
+      "External - dedicated environment": "A third party provider hosted the affected asset on servers dedicated to the victim organization.",
+      "External - shared environment": "A third party provider hosted the affected asset on a shared physical device. This is common in web hosting services where multiple organizations’ web applications are resident on the same physical server.",
+      "Internal": "The affected asset was hosted within the victim organization’s location.",
+      "NA": "Hosting label is not applicable, a Human asset that clicks a malicious attachment is a common example as is portable assets like laptops or paper documents.",
+      "Other": "Hosting arrangement known but not listed",
+      "Unknown": "The hosting arrangement of the asset was not known to the incident responder or not recorded."
     },
     "management": {
-      "External": "Externally managed",
-      "Internal": "Internally managed",
-      "NA": "Not applicable",
-      "Unknown": "Unknown",
+      "External": "The affected asset was managed and maintained by a third party service provider or business partner.",
+      "Internal": "The affected asset was managed and maintained by employees of the victim organization.",
+      "Co-managed": "The affected asset was managed and maintained by both internal administrators as well as a third party provider or partner. There is a level of shared responsibility.",
+      "NA": "Management label is not applicable, a Human asset that clicks a malicious attachment is a common example.",
+      "Unknown": "The responsibility for management and maintenance of the affected asset was not known to the incident responder or not recorded.",
       "Other": "Ownership known but not listed"
     },
     "country": {
