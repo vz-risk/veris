@@ -180,7 +180,7 @@ def main(cfg):
                 #     incident['discovery_method'] = {"unknown": {"note": "Unknown"}}
                 if incident['discovery_method'] == "Other":
                     incident['discovery_method'] = {"other": True}
-                if incident['discovery_method'] == "Unknown":
+                elif incident['discovery_method'] == "Unknown":
                     incident['discovery_method'] = {"unknown": True}
                 else:
                     parent = {"Ext":"external", "Int": "internal", "Prt": "partner"}[incident['discovery_method'][0:3]]
@@ -189,7 +189,7 @@ def main(cfg):
 
             ### Add hacking.exploit vuln
             ## Issue VERIS # 192
-            exploit_varieties = ["Abuse of functionality", 
+            hak_exploit_varieties = ["Abuse of functionality", 
                        "Buffer overflow", "Cache poisoning", 
                        "Cryptanalysis", "CSRF", 
                        "Forced browsing", "Format string attack", 
@@ -213,12 +213,12 @@ def main(cfg):
                        "XPath injection", "XQuery injection", 
                        "XSS"]
             if 'variety' in incident.get('action', {}).get('hacking', {}):
-                if "Exploit vuln" not in incident['hacking']['variety'] and len(set(incident['hacking']['variety']).intersect(hak_exploit_varieties)) > 0:
-                    incident['hacking']['variety'].append('Exploit vuln') 
+                if "Exploit vuln" not in incident['action']['hacking']['variety'] and len(set(incident['action']['hacking']['variety']).intersection(hak_exploit_varieties)) > 0:
+                    incident['action']['hacking']['variety'].append('Exploit vuln') 
             mal_exploit_varieties = ["Remote injection", "Web drive-by"]
             if 'variety' in incident.get('action', {}).get('malware', {}):
-                if "Exploit vuln" not in incident['malware']['variety'] and len(set(incident['malware']['variety']).intersect(mal_exploit_varieties)) > 0:
-                    incident['malware']['variety'].append('Exploit vuln') 
+                if "Exploit vuln" not in incident['action']['malware']['variety'] and len(set(incident['action']['malware']['variety']).intersection(mal_exploit_varieties)) > 0:
+                    incident['action']['malware']['variety'].append('Exploit vuln') 
 
 
             ### update ownership, hosting, management, and accessability
@@ -238,15 +238,33 @@ def main(cfg):
                     incident['asset']['management'] = [incident['asset']['management']]
                 if 'governance' in incident['asset']:
                     if '3rd party owned' in incident['asset']['governance']:
-                        incident['asset']['ownership'] = list(set(incident['asset'].get('ownership', [])).add("Partner"))
+                        ownership = set(incident['asset'].get('ownership', []))
+                        ownership.add("Partner")
+                        incident['asset']['ownership'] = list(ownership)
+                    # if 'Personally owned' in incident['asset']['governance']:
+                    #    ownership = set(incident['asset'].get('ownership', []))
+                    #    ownership.add(????)
+                    #    incident['asset']['ownership'] = list(ownership)
                     if '3rd party hosted' in incident['asset']['governance']:
-                        incident['asset']['hosting'] = list(set(incident['asset'].get('hosting', [])).add("External - unknown environment"))
+                        hosting = set(incident['asset'].get('hosting', []))
+                        hosting.add("External - unknown environment")
+                        incident['asset']['hosting'] = list(hosting)
                     if 'Victim governed' in incident['asset']['governance']:
-                        incident['asset']['management'] = list(set(incident['asset'].get('management', [])).add("Internal"))
+                        management = set(incident['asset'].get('management', []))
+                        management.add("Internal")
+                        incident['asset']['management'] = list(management)
                     if '3rd party managed' in incident['asset']['governance']:
-                        incident['asset']['management'] = list(set(incident['asset'].get('management', [])).add("External"))
+                        management = set(incident['asset'].get('management', []))
+                        management.add("External")
+                        incident['asset']['management'] = list(management)
+                    governance_leftover = list(set(incident['asset']['governance']).intersection(['Personally owned', 'Internally isolated', 'Other', "Unknown"]))
+                    if len(governance_leftover) > 0:
+                        # asset.governance.Personally owned, asset.governence.Internally isolated, asset.governence.Unknown, asset.governence.Other are captured in asset.notes.
+                        governance_leftover = ["asset.governance." + s for s in governance_leftover]
+                        incident['asset']['notes'] = incident['asset'].get('notes', '') + \
+                            "  Following enumerations present before veris 1.3.3 removed: {0}.".format(", ".join(governance_leftover)).strip()
+
                     _ = incident['asset'].pop('governance')
-                    # asset.governence.Internally isolated, asset.governence.Unknown, asset.governence.Other are not captured and lost.
                 if 'accessability' in incident['asset']:
                     _ = incident['asset'].pop('accessability')
 

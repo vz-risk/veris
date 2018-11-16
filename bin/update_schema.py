@@ -41,13 +41,16 @@ import argparse
 import configparser
 import json
 import pprint
-import ipdb
+# import ipdb
 import os
-import imp
+import importlib
 from collections import OrderedDict
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
-    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+    spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
+    veris_logger = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(veris_logger)
+    # veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
 except:
     print("Script dir: {0}.".format(script_dir))
     raise
@@ -221,7 +224,7 @@ if __name__ == "__main__":
     parser.add_argument('-u', '--update', required=True, help='The schema files to update the input file with (only additions/modifications to labels.)')
     parser.add_argument('-o', '--output', required=True, help='The labels file to be outputted.')
     args = parser.parse_args()
-    args = {k:v for k,v in vars(args).iteritems() if v is not None}
+    args = {k:v for k,v in vars(args).items() if v is not None}
 
     # Parse the config file
     try:

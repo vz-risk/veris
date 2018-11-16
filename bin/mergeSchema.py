@@ -1,16 +1,20 @@
 # Produces a schema file which is the combination of
 # of a schema, an enumeration, and a plus section
 
-import json
 import jsonschema
+import json
 import argparse
 import logging
 import copy
 import os
+#import importlib
 import imp
 from collections import OrderedDict
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
+    #spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
+    #veris_logger = importlib.util.module_from_spec(spec)
+    #spec.loader.exec_module(veris_logger)
     veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
 except:
     print("Script dir: {0}.".format(script_dir))
@@ -83,7 +87,7 @@ def deepSetAttr(od, name, value):
 def keynames(d, lbl, name, keys=set()):
     if d['type'] == "object":
         lbl = lbl + "properties."
-        for k, v in d['properties'].iteritems():
+        for k, v in d['properties'].items():
             keys = keys.union(keynames(v, lbl, name + "." + k))
     elif d['type'] == "array":
         lbl = lbl + "items."
@@ -94,7 +98,7 @@ def keynames(d, lbl, name, keys=set()):
 
 
 def recurse_keys(d, lbl, keys=set()):
-    for k, v in d.iteritems():
+    for k, v in d.items():
         if type(v) in [OrderedDict, dict]:
             keys = keys.union(recurse_keys(v, (lbl + (k,)), keys))
         else:

@@ -18,14 +18,14 @@ import configparser
 from collections import defaultdict
 import re
 import operator
-import imp
+#import imp
+import importlib
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
     spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
     veris_logger = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(veris_logger)
     # veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
-except:
 except:
     print("Script dir: {0}.".format(script_dir))
     raise
@@ -345,7 +345,7 @@ class CSVtoJSON():
                             del i['amount']
                 out['asset']['assets'] = copy.deepcopy(assets)
 
-        for enum in ['accessibility', 'ownership', 'management', 'hosting', 'cloud', 'notes']:
+        for enum in ['ownership', 'management', 'hosting', 'cloud', 'notes']: # accessability & governance - obscelete as of 1.3.3 - GDB 181116
             self.addValue(incident, 'asset.' + enum, out, 'string')
         self.addValue(incident, 'asset.country', out, 'list')
 
@@ -394,8 +394,16 @@ class CSVtoJSON():
         self.addValue(incident, 'timeline.containment.unit', out, 'string')
         self.addValue(incident, 'timeline.containment.value', out, 'numeric')
 
+        # discovery method  - GDB 181116
+        for enum in ["external", "internal", "partner"]:
+            self.addValue(incident, 'discovery_method.'+enum, out, 'string')
+
+        # value chain - veris 1.3.3 GDB 181116
+        for enum in ["development", "non-distribution services", "targeting", "distribution", "cash-out", "money laundering"]:
+            self.addValue(incident, 'value_chain.'+enum, out, 'string')
+
         # trailer values
-        for enum in ['discovery_method', 'discovery_notes', 'targeted', 'control_failure', 'corrective_action', 'cost_corrective_action']:
+        for enum in ['discovery_notes', 'targeted', 'control_failure', 'corrective_action', 'cost_corrective_action']:
             self.addValue(incident, enum, out, 'string')
         if 'ioc.indicator' in incident:
             ioc = self.parseComplex("ioc.indicator", incident['ioc.indicator'], ['indicator', 'comment'])
@@ -430,9 +438,10 @@ class CSVtoJSON():
         # plus
         out['plus'] = {}
         plusfields = ['master_id', 'investigator', 'issue_id', 'casename', 'analyst',
-                'analyst_notes', 'public_disclosure', 'analysis_status',
+                'analyst_notes', 'analysis_status', # 'public_disclosure', - obscelete as of 1.3.3 - GDB 181116
                 'attack_difficulty_legacy', 'attack_difficulty_subsequent',
-                'attack_difficulty_initial', 'security_maturity' ]
+                'attack_difficulty_initial', 'security_maturity',
+                'attribute.confidentiality.data_abuse'] #  - GDB 181116
         if cfg["vcdb"]:
             plusfields.append('github')
         for enum in plusfields:
@@ -448,7 +457,6 @@ class CSVtoJSON():
             self.addValue(incident, 'plus.timeline.notification.day', out, "numeric")
         # Skipping: 'unknown_unknowns', useful_evidence', antiforensic_measures, unfollowed_policies,
         # countrol_inadequacy_legacy, pci
-        # TODO dbir_year
 
         return out
 

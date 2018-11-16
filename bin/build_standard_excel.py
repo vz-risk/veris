@@ -22,12 +22,13 @@ import logging
 import os
 #import imp
 import importlib
+import pprint
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
     spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
     veris_logger = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(veris_logger)
-    # veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+    #veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
 except:
     print("Script dir: {0}.".format(script_dir))
     raise
@@ -45,7 +46,8 @@ FORMAT = {
     "number": "integer",
     "integer": "integer",
     "list": "enum",
-    "boolean": "true/false"
+    "boolean": "true/false",
+    "enum": "enum"
 }
 FORMAT_OVERRIDE = {
     "victim.secondary.victim_id": "free text",
@@ -203,10 +205,14 @@ def recurse_schema(d, lbl, name):
             keys = keys.union(r_k)
             enums.update(r_e)
     elif d['type'] == "array":
-        lbl = lbl + "items."
-        r_k, r_e = recurse_schema(d['items'], lbl, name)
-        keys = keys.union(r_k)
-        enums.update(r_e)
+        if 'enum' in d['items']:
+            keys.add((name[1:], "enum"))
+            enums[name[1:]] = 'enum'
+        else:
+            lbl = lbl + "items."
+            r_k, r_e = recurse_schema(d['items'], lbl, name)
+            keys = keys.union(r_k)
+            enums.update(r_e)
     else:
         keys.add((name[1:], d['type']))
         if 'enum' in d:
@@ -286,7 +292,8 @@ def main():
         labels_dict = recurse_labels(labels, "")
         sorted_labels_list = []
         for i in range(len(ORDER)):
-            sorted_labels_list = sorted_labels_list + sorted([{k: labels_dict[k]} for k in list(labels_dict.keys())  if k.startswith(ORDER[i])])
+            # sorted_labels_list = sorted_labels_list + sorted([{k: labels_dict[k]} for k in list(labels_dict.keys())  if k.startswith(ORDER[i])])
+            sorted_labels_list = sorted_labels_list + sorted([{k: labels_dict[k]} for k in list(labels_dict.keys())  if k.startswith(ORDER[i])], key=lambda d: sorted(d.items()))
         missing_keys = set(labels_dict.keys()).difference([list(k.keys())[0] for k in sorted_labels_list])
         for k in missing_keys:
             sorted_labels_list.append({k: labels_dict[k]})

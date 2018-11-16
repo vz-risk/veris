@@ -1968,7 +1968,7 @@
       }
     }
   },
-  "value chain": {
+  "value_chain": {
     "development": {
       "variety": {
         "Bot": "A small program that can be distributed, installed, and controlled en mass.",
@@ -2028,7 +2028,7 @@
     "cash-out": {
       "variety": {
         "Cryptocurrency": "exchange (sale or otherwise) for cryptocurrency",
-        "Hijacked rewards": "Recieve value meant for someone else",
+        "Hijacked rewards": "Recieve value meant for someone else, (such as redirected affiliate proceeds or click fraud",
         "Sell stolen goods": "likely the data.variety for breaches or asset for stolen assets",
         "Fraud": "Financial, Medical, Tax, etc",
         "Direct": "i.e. stole money",
