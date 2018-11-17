@@ -397,7 +397,7 @@ class CSVtoJSON():
 
         # discovery method  - GDB 181116
         for enum in ["external", "internal", "partner"]:
-            self.addValue(incident, 'discovery_method.'+enum, out, 'string')
+            self.addValue(incident, 'discovery_method.'+enum+".variety", out, 'string')
 
         # value chain - veris 1.3.3 GDB 181116
         for enum in ["development", "non-distribution services", "targeting", "distribution", "cash-out", "money laundering"]:
