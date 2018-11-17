@@ -71,7 +71,7 @@ class CSVtoJSON():
     jschema = None
     sfields = None
     # country_region = None
-    script_version = "1.3.2"
+    script_version = "1.3.3"
 
 
     def __init__(self, cfg, file_version=None):
@@ -103,7 +103,7 @@ class CSVtoJSON():
         
     def get_file_schema_version(self, inFile):
         logging.info("Reading {0} to determine version.".format(inFile))
-        with open(inFile, 'rU') as filehandle:
+        with open(inFile, 'r') as filehandle:
             m = re.compile(r'(\.0+)*$')
             versions = defaultdict(int)
             csv_reader = csv.DictReader(filehandle)
@@ -159,7 +159,7 @@ class CSVtoJSON():
 
 
     def isnum(self, x):
-        if type(x) not in [int, float, long]:
+        if type(x) not in [int, float]: # 'long' removed for python3 - GDB 181116
             x = re.sub('[$,]', '', x)
         try:
             x=int(float(x))
@@ -193,8 +193,9 @@ class CSVtoJSON():
                     templist = [x.strip() for x in src[enum].split(',') if len(x)>0 ]
                     saved[allenum[-1]] = [x for x in templist if len(x)>0 ]
                 elif val=="string":
-                    # saved[allenum[-1]] = unicode(src[enum],errors='ignore')
-                    saved[allenum[-1]] = str(src[enum],errors='ignore')
+                    #saved[allenum[-1]] = unicode(src[enum],errors='ignore')
+                    # saved[allenum[-1]] = str(src[enum],errors='ignore') # python2
+                    saved[allenum[-1]] = src[enum] # python3 - gdb 181116
                 elif val=="numeric":
                     if self.isfloat(src[enum]):
                         saved[allenum[-1]] = self.isfloat(src[enum])
@@ -260,7 +261,7 @@ class CSVtoJSON():
             if len(incident['incident_id']):
                 # out['incident_id'] = incident['incident_id']
                 # Changing incident_id to UUID to prevent de-anonymiziation of incidents
-                m = hashlib.md5(incident["incident_id"])
+                m = hashlib.md5(incident["incident_id"].encode('utf-8'))
                 out["incident_id"] = str(uuid.UUID(bytes=m.digest())).upper()
             else:
                 out['incident_id'] = str(uuid.uuid4()).upper()
@@ -492,7 +493,7 @@ class CSVtoJSON():
             self.cfg['plus.created'] =  datetime.fromtimestamp(creation_date(cfg['input'])).strftime('%Y-%m-%dT%H:%M:%SZ')
             self.cfg['plus.modified'] = datetime.fromtimestamp(os.path.getmtime(cfg['input'])).strftime('%Y-%m-%dT%H:%M:%SZ')
             # Added to file read to catch multiple columns with same name which causes second column to overwrite first. - GDB
-            file_handle = open(cfg["input"], 'rU')
+            file_handle = open(cfg["input"], 'r')
             csv_reader = csv.reader(file_handle)
             # l = csv_reader.next()
             l = next(csv_reader)
@@ -510,12 +511,13 @@ class CSVtoJSON():
             raise
             # exit(1)
 
-        infile.fieldnames = [f.decode('unicode_escape').encode('ascii', 'ignore') for f in infile.fieldnames] # remove unicode - gdb 170130
+        ## Below unnecessary in python3. - GDB 181116
+        # infile.fieldnames = [f.decode('unicode_escape').encode('ascii', 'ignore') for f in infile.fieldnames] # remove unicode - gdb 170130
 
         for f in infile.fieldnames:
             if f not in self.sfields:
                 if f != "repeat":
-                    logging.warning("column will not be used: %s. May be inaccurate for 'plus' columns.", f)
+                    logging.warning("Unless it's 'repeat', column will not be used: \"%s\" and may be inaccurate for 'plus' columns.", f)
         if 'plus.analyst' not in infile.fieldnames:
             logging.warning("the optional plus.analyst field is not found in the source document")
         if 'source_id' not in infile.fieldnames:
