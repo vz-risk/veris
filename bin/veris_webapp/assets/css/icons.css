@@ -1,0 +1,412 @@
+
+.iconsdiv .fa{font-size:18px; padding:15px; display:inline-block;  margin:0 0 15px 0; width:210px;}
+.iconsdiv  [class^="icon-"], [class*=" icon-"] {
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; font-size:18px; padding:10px; display:inline-block; float:left; margin:0 0 15px 0; width:210px;}
+/*[class^="icon-"]:hover, [class*=" icon-"]:hover, .fa:hover
+{
+	font-size:30px;
+	background:#ccc;
+	border-radius:5px;
+}*/
+
+.icon-contact-support:before { 
+  content: "\e906"; }
+
+.icon-user:before {
+  content: "\e919"; }
+
+.icon-headquarters:before {
+  content: "\e90c"; }
+
+.icon-xalert:before {
+  content: "\e900"; }
+
+.icon-xalerts:before {
+  content: "\e900"; }
+
+/*nav icon*/
+.icon-dashboard:before {
+  content: "\e921"; }
+
+.icon-Asset-Information:before {
+  content: "\e920"; }
+
+.icon-Device-Management:before {
+  content: "\e91e"; }
+
+.icon-RequestsandTickets:before {
+  content: "\e961"; }
+
+.icon-Incident-Handling .path1:before {
+  content: "\e923";
+ }
+
+.icon-Incident-Handling .path2:before {
+  content: "\e924";
+ 
+ }
+
+.icon-Incident-Handling .path3:before {
+  content: "\e925";
+ 
+}
+
+.icon-Reports:before {
+  content: "\e926"; }
+
+.icon-Security-Intelligence:before {
+  content: "\e927"; }
+
+.icon-Service-Context:before {
+  content: "\e928"; }
+
+.icon-Tools:before {
+  content: "\e929"; }
+
+.icon-notifications:before {
+  content: "\e939"; }
+
+.icon-shield:before {
+  content: "\e91d"; }
+
+.icon-alert:before {
+  content: "\e91c"; }
+
+.icon-mail:before {
+  content: "\e91f";
+ }
+
+.icon-call:before {
+  content: "\e922";
+ }
+
+.icon-ChangeRequest:before {
+  content: "\e94a";
+ }
+
+.icon-Context:before {
+  content: "\e94b";
+ }
+
+/*home page icons*/
+.icon-disable:before {
+  content: "\e907";
+ }
+
+.icon-next:before {
+  content: "\e910"; }
+
+.icon-prev:before {
+  content: "\e913"; }
+
+.icon-goto:before {
+  content: "\e90b";
+ }
+
+.icon-security-alert:before {
+  content: "\e900";
+}
+
+.icon-arrow-down:before {
+  content: "\e901";
+  }
+
+.icon-arrow-up:before {
+  content: "\e902";
+}
+
+.icon-refresh:before {
+  content: "\e915";
+  }
+
+.icon-table-refresh:before {
+  content: "\e915";
+   }
+
+ 
+ 
+
+.icon-location:before {
+  content: "\e90d";
+ 
+ }
+
+.icon-xtickets:before {
+  content: "\e917";
+ 
+  }
+
+.icon-feeds:before {
+  content: "\e90a";
+ 
+   }
+
+.icon-info-circle:before {
+  content: "\e960";
+  }
+
+ 
+  .icon-xnews:before {
+    content: "\e90f"; }
+ 
+
+.icon-download:before {
+  content: "\e931";
+ }
+
+.icon-gear:before {
+  content: "\e932";
+ }
+
+.icon-filter:before {
+  content: "\e938"; }
+
+.icon-network:before {
+  content: "\e92c";
+ 
+   }
+
+.icon-xmenu:before {
+  content: "\e90e";
+  
+  }
+
+.icon-x16_expand:before {
+  content: "\e909"; }
+
+.icon-question-v1:before {
+  content: "\e92b"; }
+
+.icon-black:before {
+  content: "\e930";
+  }
+
+.icon-add:before {
+  content: "\e92a";
+  }
+
+.icon-earth:before {
+  content: "\e92d";
+ }
+
+.icon-speaker:before {
+  content: "\e937";
+ }
+
+.icon-pdf:before {
+  content: "\e92f";
+    }
+
+.icon-flame:before {
+  content: "\e92e";
+ }
+
+.icon-flame-hot:before {
+  content: "\e92e";
+ }
+
+.icon-Exclamation:before {
+  content: "\e935";
+ }
+
+.icon-normal_mode:before {
+  content: "\e912";
+  }
+
+.icon-hype:before {
+  content: "\e91b";
+ }
+ 
+
+.icon-SeviceProblem:before {
+  content: "\e94f";
+  }
+
+.icon-tag-plus:before {
+  content: "\e950";
+ }
+
+.icon-cross:before {
+  content: "\e936";
+ }
+
+.icon-attach:before {
+  content: "\e951";
+   }
+
+.icon-warning-org:before {
+  content: "\e959";
+   }
+
+.icon-multinetwork:before {
+  content: "\e95a";
+    }
+
+.icon-filterback:before {
+  content: "\e958";
+   }
+
+  .icon-shuffle:before {
+    content: "\e95b";
+ }
+
+.icon-cancel:before {
+  content: "\e943";
+ }
+ 
+  .icon-modify:before {
+    content: "\e95e";
+  }
+
+
+  .icon-noaction:before {
+    content: "\e95f";
+ }
+
+
+
+.icon-xnormal:before {
+  content: "\e912";
+  }
+
+ 
+  .icon-x16_disable:before {
+    content: "\e907";
+     }
+ 
+
+.icon-x16_collapse:before {
+  content: "\e905";
+   }
+.icon-folder-edit:before {
+  content: "\e924"; }
+
+.icon-folder-delete:before {
+  content: "\e925"; }
+
+.icon-folder-add:before {
+  content: "\e93c"; }
+
+.icon-folder:before {
+  content: "\e93d"; }
+
+.icon-arrow-right:before {
+  content: "\e93e"; }
+
+.icon-arrow-left:before {
+  content: "\e93f"; }
+
+.icon-share:before {
+  content: "\e923"; }
+
+.icon-mail:before {
+  content: "\e91f"; }
+
+.icon-add186:before {
+  content: "\e92a"; }
+
+.icon-minus:before {
+  content: "\e940"; }
+
+.icon-home:before {
+  content: "\e941"; }
+
+.icon-up:before {
+  content: "\e942"; }
+
+.icon-close:before {
+  content: "\e943"; }
+
+.icon-network-1:before {
+  content: "\e944";
+  }
+
+.icon-network-2:before {
+  content: "\e944";
+   }
+
+.icon-files-plus:before {
+  content: "\e946";
+   }
+
+.icon-files-minus:before {
+  content: "\e945"; }
+
+.icon-icon_right:before {
+  content: "\e947";
+   }
+
+.icon-icon_left:before {
+  content: "\e948";
+  }
+
+.icon-files-add:before {
+  content: "\e949"; }
+
+.icon-Reopen:before {
+  content: "\e94c"; }
+
+.icon-Hold:before {
+  content: "\e94d"; }
+
+.icon-Closed:before {
+  content: "\e94e"; }
+
+.icon-gear39:before,
+.icon-Inprogress:before {
+  content: "\e932"; }
+
+.icon-16_Exclamation:before {
+  content: "\e935"; }
+
+.icon-cross-24:before {
+  content: "\e936"; }
+ 
+ 
+
+.icon-multinetwork:before {
+  content: "\e95a";
+  }
+
+.icon-Informationticket:before {
+  content: "\e960"; }
+  
+  .icon-Icon_Ascending:before {
+  content: "\e962"; }
+
+.icon-Icon_Descending :before {
+  content: "\e963"; }
+
+.icon-icon-Help:before {
+   content: "\e92b";}
+ 
+  
+ /* .icon-icon-Help:before {
+  content: "\e964"; }*/
+
+  span span{font-size:12px; font-family:"NeueHaasGroteskText-W01"; font-weight:normal;}
+.icon-expandall:before {
+  content: "\e96d";
+  font-size: 20px;
+  color: #CCC; 
+  float:left;}
+
+.icon-Collapseall:before {
+  content: "\e96c";
+  font-size: 20px;
+  color: #CCC; 
+  float:left;}
+.icon-Collapseall span , .icon-expandall span {
+	float:left;
+	margin-left: 9px;
+    margin-top: 3px;
+}
