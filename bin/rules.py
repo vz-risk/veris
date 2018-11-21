@@ -180,6 +180,10 @@ class Rules():
         #inRow = incident["plus"]["row_number"]  # not used and conflicts with versions lower than 1.3. Could test for version > 1.3 and then include... - gdb 7/11/16
         # Takes in an incident and applies rules for internal consistency and consistency with previous incidents
 
+        ## Handle a rare case where the version number uses "_" instead of "."
+        if "_" in incident.get("schema_version", ""):
+            incident["schema_version"] = incident["schema_version"].replace("_", ".")
+
         # The schema should have an import year
         #checkEnum(outjson, jenums, country_region, cfg)
         if incident.get('plus', {}).get('dbir_year', None) is None and cfg['vcdb'] != True:
