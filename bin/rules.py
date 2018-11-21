@@ -703,6 +703,7 @@ class Rules():
         ## ATTRIBUTE ##
         if 'attribute' not in incident:
             logging.info("%s: no attribute section is found (not required)", iid)
+            incident['attribute'] = {}
         else:
             if 'confidentiality' in incident['attribute']:
                 if 'data' not in incident['attribute']['confidentiality']:
