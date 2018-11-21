@@ -703,7 +703,7 @@ class Rules():
         ## ATTRIBUTE ##
         if 'attribute' not in incident:
             logging.info("%s: no attribute section is found (not required)", iid)
-            incident['attribute'] = {}
+            incident['attribute'] = {"unknown": {"notes": "Added by rules.py due to no attribute section."}}
         else:
             if 'confidentiality' in incident['attribute']:
                 if 'data' not in incident['attribute']['confidentiality']:
