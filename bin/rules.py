@@ -223,8 +223,9 @@ class Rules():
         # per vz-risk/VERIS issue #203
         if 'malware' in incident['action']:
             if ('Click fraud' in incident['action']['malware'].get('variety', []) or \
-                'Cryptocurrency mining' in incident['action']['malware'].get('variety', [])) and \
-               'Click fraud and cryptocurrency mining' not in incident['action']['malware'].get('variety', []):
+            'Cryptocurrency mining' in incident['action']['malware'].get('variety', [])) and \
+            'Click fraud and cryptocurrency mining' not in incident['action']['malware'].get('variety', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.3"):
                 incident['action']['malware']['variety'].append('Click fraud and cryptocurrency mining')
 
 
@@ -255,11 +256,15 @@ class Rules():
                    "XPath injection", "XQuery injection", 
                    "XSS"]
         if 'variety' in incident['action'].get('hacking', {}):
-            if "Exploit vuln" not in incident['action']['hacking']['variety'] and len(set(incident['action']['hacking']['variety']).intersection(hak_exploit_varieties)) > 0:
+            if "Exploit vuln" not in incident['action']['hacking']['variety'] and \
+            len(set(incident['action']['hacking']['variety']).intersection(hak_exploit_varieties)) > 0 and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.3"):
                 incident['action']['hacking']['variety'].append('Exploit vuln') 
         mal_exploit_varieties = ["Remote injection", "Web drive-by"]
         if 'variety' in incident['action'].get('malware', {}):
-            if "Exploit vuln" not in incident['action']['malware']['variety'] and len(set(incident['action']['malware']['variety']).intersection(mal_exploit_varieties)) > 0:
+            if "Exploit vuln" not in incident['action']['malware']['variety'] and \
+            len(set(incident['action']['malware']['variety']).intersection(mal_exploit_varieties)) > 0 and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.3"):
                 incident['action']['malware']['variety'].append('Exploit vuln') 
 
 
@@ -276,8 +281,8 @@ class Rules():
         ## VERIS issue 143
         if 'data' in incident['attribute'].get('confidentiality', {}):
             max_of_amounts = max([k.get('amount', 0) for k in incident['attribute']['confidentiality']['data']])
-            if max_of_amounts > 0 and 'total_amount' not in incident['attribute']['confidentiality']: # if total_amount does exist but is less than max_of_amounts, it'll raise a validationError in checkValidity.py
-                incident['attribute']['confidentiality']['total_amount'] = max_of_amounts
+            if max_of_amounts > 0 and 'data_amount' not in incident['attribute']['confidentiality']: # if total_amount does exist but is less than max_of_amounts, it'll raise a validationError in checkValidity.py
+                incident['attribute']['confidentiality']['data_amount'] = max_of_amounts
 
 
 
