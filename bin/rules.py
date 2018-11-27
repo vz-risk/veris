@@ -263,8 +263,8 @@ class Rules():
         mal_exploit_varieties = ["Remote injection", "Web drive-by"]
         if 'variety' in incident['action'].get('malware', {}):
             if "Exploit vuln" not in incident['action']['malware']['variety'] and \
-            len(set(incident['action']['malware']['variety']).intersection(mal_exploit_varieties)) > 0 and \
-            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.3"):
+            len(set(incident['action']['malware']['variety']).intersection(mal_exploit_varieties)) > 0: # and \
+            #LooseVersion(incident['schema_version']) >= LooseVersion("1.3.3"): ## Since 'Exploit vuln is a legitimate enum in 1.3.2 action.malware, removing version check' - GDB 181127
                 incident['action']['malware']['variety'].append('Exploit vuln') 
 
 
@@ -281,8 +281,8 @@ class Rules():
         ## VERIS issue 143
         if 'data' in incident['attribute'].get('confidentiality', {}):
             max_of_amounts = max([k.get('amount', 0) for k in incident['attribute']['confidentiality']['data']])
-            if max_of_amounts > 0 and 'data_amount' not in incident['attribute']['confidentiality']: # if total_amount does exist but is less than max_of_amounts, it'll raise a validationError in checkValidity.py
-                incident['attribute']['confidentiality']['data_amount'] = max_of_amounts
+            if max_of_amounts > 0 and 'data_total' not in incident['attribute']['confidentiality']: # if total_amount does exist but is less than max_of_amounts, it'll raise a validationError in checkValidity.py
+                incident['attribute']['confidentiality']['data_total'] = max_of_amounts
 
 
 
