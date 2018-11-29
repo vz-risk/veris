@@ -2958,6 +2958,10 @@
     "plus": {
       "type": "object",
       "properties": {
+        "master_id": {
+          "minLength": 1, 
+          "type": "string"
+        }, 
         "row_number": {
           "type": "number"
         }

@@ -390,6 +390,33 @@ const uiSchemas = {
       }
     },
     "1.3.3": {
+      "ui:order": [
+        "incident_id",
+        "security_incident",
+        "reference",
+        "summary",
+        "source_id",
+        "campaign_id",
+        "confidence",
+        "timeline",
+        "victim",
+        "action",
+        "actor",
+        "asset",
+        "attribute",
+        "targeted",
+        "discovery_method",
+        "discovery_notes",
+        "value_chain",
+        "impact",
+        "notes",
+        "plus",
+        "corrective_action",
+        "cost_corrective_action",
+        "ioc",
+        "control_failure",
+        "*"
+      ],
       "timeline": {
         "ui:field": "collapsable",
         "incident": {
@@ -467,6 +494,56 @@ const uiSchemas = {
       },
       "victim": {
         "ui:field": "collapsable"
+      },
+      "discovery_method": {
+        "ui:order": [
+          "external",
+          "internal",
+          "partner",
+          "other",
+          "unknown",
+          "*"
+        ],
+        "ui:field": "collapsable",
+        "external": {
+          "ui:field": "collapsable2"
+        },
+        "internal": {
+          "ui:field": "collapsable2"
+        },
+        "partner": {
+          "ui:field": "collapsable2"
+        }
+      },
+      "value_chain": {
+        "ui:order": [
+          "development",
+          "non-distribution services",
+          "targeting",
+          "distribution",
+          "cash-out",
+          "money laundering",
+          "*"
+        ],
+        "ui:field": "collapsable",
+        "development": {
+          "ui:field": "collapsable2"
+        },
+        "non-distribution services": {
+          "ui:field": "collapsable2"
+        },
+        "targeting": {
+          "ui:field": "collapsable2"
+        },
+        "distribution": {
+          "ui:field": "collapsable2"
+        },
+        "cash-out": {
+          "ui:field": "collapsable2"
+        },
+        "money laundering": {
+          "ui:field": "collapsable2"
+        }
       },
       "impact": {
         "ui:field": "collapsable"
@@ -1192,6 +1269,7 @@ const uiSchemas = {
         "targeted",
         "discovery_method",
         "discovery_notes",
+        "value_chain",
         "impact",
         "plus",
         "corrective_action",
@@ -1456,6 +1534,55 @@ const uiSchemas = {
           "revenue",
           "*"
         ]
+      },
+      "discovery_method": {
+        "ui:order": [
+          "external",
+          "internal",
+          "partner",
+          "other",
+          "unknown"
+        ],
+        "ui:field": "collapsable",
+        "external": {
+          "ui:field": "collapsable2"
+        },
+        "internal": {
+          "ui:field": "collapsable2"
+        },
+        "partner": {
+          "ui:field": "collapsable2"
+        }
+      },
+      "value_chain": {
+        "ui:order": [
+          "development",
+          "non-distribution services",
+          "targeting",
+          "distribution",
+          "cash-out",
+          "money laundering",
+          "*"
+        ],
+        "ui:field": "collapsable",
+        "development": {
+          "ui:field": "collapsable2"
+        },
+        "non-distribution services": {
+          "ui:field": "collapsable2"
+        },
+        "targeting": {
+          "ui:field": "collapsable2"
+        },
+        "distribution": {
+          "ui:field": "collapsable2"
+        },
+        "cash-out": {
+          "ui:field": "collapsable2"
+        },
+        "money laundering": {
+          "ui:field": "collapsable2"
+        }
       },
       "impact": {
         "ui:field": "collapsable",
@@ -2147,6 +2274,7 @@ const uiSchemas = {
         "targeted",
         "discovery_method",
         "discovery_notes",
+        "value_chain",
         "impact",
         "plus",
         "corrective_action",
@@ -2405,6 +2533,55 @@ const uiSchemas = {
           "revenue",
           "*"
         ]
+      },
+      "discovery_method": {
+        "ui:order": [
+          "external",
+          "internal",
+          "partner",
+          "other",
+          "unknown"
+        ],
+        "ui:field": "collapsable",
+        "external": {
+          "ui:field": "collapsable2"
+        },
+        "internal": {
+          "ui:field": "collapsable2"
+        },
+        "partner": {
+          "ui:field": "collapsable2"
+        }
+      },
+      "value_chain": {
+        "ui:order": [
+          "development",
+          "non-distribution services",
+          "targeting",
+          "distribution",
+          "cash-out",
+          "money laundering",
+          "*"
+        ],
+        "ui:field": "collapsable",
+        "development": {
+          "ui:field": "collapsable2"
+        },
+        "non-distribution services": {
+          "ui:field": "collapsable2"
+        },
+        "targeting": {
+          "ui:field": "collapsable2"
+        },
+        "distribution": {
+          "ui:field": "collapsable2"
+        },
+        "cash-out": {
+          "ui:field": "collapsable2"
+        },
+        "money laundering": {
+          "ui:field": "collapsable2"
+        }
       },
       "impact": {
         "ui:field": "collapsable",
@@ -3085,6 +3262,7 @@ const uiSchemas = {
         "targeted",
         "discovery_method",
         "discovery_notes",
+        "value_chain",
         "impact",
         "plus",
         "cost_corrective_action",
@@ -3343,6 +3521,55 @@ const uiSchemas = {
           "revenue",
           "*"
         ]
+      },
+      "discovery_method": {
+        "ui:order": [
+          "external",
+          "internal",
+          "partner",
+          "other",
+          "unknown"
+        ],
+        "ui:field": "collapsable",
+        "external": {
+          "ui:field": "collapsable2"
+        },
+        "internal": {
+          "ui:field": "collapsable2"
+        },
+        "partner": {
+          "ui:field": "collapsable2"
+        }
+      },
+      "value_chain": {
+        "ui:order": [
+          "development",
+          "non-distribution services",
+          "targeting",
+          "distribution",
+          "cash-out",
+          "money laundering",
+          "*"
+        ],
+        "ui:field": "collapsable",
+        "development": {
+          "ui:field": "collapsable2"
+        },
+        "non-distribution services": {
+          "ui:field": "collapsable2"
+        },
+        "targeting": {
+          "ui:field": "collapsable2"
+        },
+        "distribution": {
+          "ui:field": "collapsable2"
+        },
+        "cash-out": {
+          "ui:field": "collapsable2"
+        },
+        "money laundering": {
+          "ui:field": "collapsable2"
+        }
       },
       "impact": {
         "ui:field": "collapsable",
@@ -3985,6 +4212,7 @@ const uiSchemas = {
         "targeted",
         "discovery_method",
         "discovery_notes",
+        "value_chain",
         "impact",
         "notes",
         "plus",
@@ -4250,6 +4478,55 @@ const uiSchemas = {
           "revenue",
           "*"
         ]
+      },
+      "discovery_method": {
+        "ui:order": [
+          "external",
+          "internal",
+          "partner",
+          "other",
+          "unknown"
+        ],
+        "ui:field": "collapsable",
+        "external": {
+          "ui:field": "collapsable2"
+        },
+        "internal": {
+          "ui:field": "collapsable2"
+        },
+        "partner": {
+          "ui:field": "collapsable2"
+        }
+      },
+      "value_chain": {
+        "ui:order": [
+          "development",
+          "non-distribution services",
+          "targeting",
+          "distribution",
+          "cash-out",
+          "money laundering",
+          "*"
+        ],
+        "ui:field": "collapsable",
+        "development": {
+          "ui:field": "collapsable2"
+        },
+        "non-distribution services": {
+          "ui:field": "collapsable2"
+        },
+        "targeting": {
+          "ui:field": "collapsable2"
+        },
+        "distribution": {
+          "ui:field": "collapsable2"
+        },
+        "cash-out": {
+          "ui:field": "collapsable2"
+        },
+        "money laundering": {
+          "ui:field": "collapsable2"
+        }
       },
       "impact": {
         "ui:field": "collapsable",

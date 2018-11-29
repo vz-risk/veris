@@ -384,6 +384,13 @@
       "schemas": {
         "all": ["all"]
       }
+    },
+    {
+      "field": ["extra"],
+      "hide": true,
+      "schemas": {
+        "all": ["all"]
+      }
     }
   ]
 }
