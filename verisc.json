@@ -980,6 +980,10 @@
     "plus": {
       "type":"object",
       "properties":{
+        "master_id": {
+          "minLength": 1, 
+          "type": "string"
+        }, 
         "row_number": {
           "description": "When importing incidents/breaches from a file, this represents the row this incident/breach was on. This is important for backwards tracability.",
           "type": "number"
