@@ -120,6 +120,11 @@ const schemas = {
           rawschema: undefined,
           uischema: uiSchemas['vzir']['1.3.2']
         },
+        '1.3.3': {
+          schema: undefined,
+          rawschema: undefined,
+          uischema: uiSchemas['vzir']['1.3.3']
+        },
         // '1.4': {
         //   schema: undefined,
         //   rawschema: undefined,
