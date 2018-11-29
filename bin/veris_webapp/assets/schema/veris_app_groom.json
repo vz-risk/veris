@@ -59,7 +59,8 @@
         "vcdb": ["all"],
         "dbir": ["all"],
         "other": ["all"],
-        "partner": ["all"]
+        "partner": ["all"],
+        "verisc": ["all"]
       }
     },
     {
