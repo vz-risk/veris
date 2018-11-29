@@ -8,14 +8,15 @@ import verisHelp from './help.js' //  '../../assets/schema/help.json'
 
 import verisc1_3_1 from '../../assets/schema/verisc-merged1_3_1.json'
 import verisc1_3_2 from '../../assets/schema/verisc-merged1_3_2.json'
-import verisc1_4 from '../../assets/schema/verisc-merged1_4.json'
+import verisc1_3_3 from '../../assets/schema/verisc-merged1_3_3.json'
 import verisc2 from '../../assets/schema/verisc-merged2.json'
 import vcdb1_3_1 from '../../assets/schema/vcdb-merged1_3_1.json'
 import vcdb1_3_2 from '../../assets/schema/vcdb-merged1_3_2.json'
+import vcdb1_3_3 from '../../assets/schema/vcdb-merged1_3_3.json'
 import uiSchemas from './veris_app.uiSchemas'
 
 export const defaultSchemaName = 'verisc';
-export const defaultSchemaVersion = '1.3.2';
+export const defaultSchemaVersion = '1.3.3';
 
 const schemas = {
     verisc: {
@@ -30,6 +31,11 @@ const schemas = {
           schema: processSchema(verisc1_3_2, 'verisc', '1.3.2', veriscLabels),
           rawschema: verisc1_3_2,
           uischema: uiSchemas['verisc']['1.3.2']
+        },
+        '1.3.3': {
+          schema: processSchema(verisc1_3_3, 'verisc', '1.3.3', veriscLabels),
+          rawschema: verisc1_3_3,
+          uischema: uiSchemas['verisc']['1.3.3']
         },
         // '1.4': {
         //   schema: processSchema(verisc1_4, 'verisc', '1.4', veriscLabels),
@@ -83,6 +89,11 @@ const schemas = {
           rawschema: undefined,
           uischema: uiSchemas['dbir']['1.3.2']
         },
+        '1.3.3': {
+          schema: undefined,
+          rawschema: undefined,
+          uischema: uiSchemas['dbir']['1.3.3']
+        },
         // '1.4': {
         //   schema: undefined,
         //   rawschema: undefined,
@@ -134,6 +145,11 @@ const schemas = {
           schema: processSchema(vcdb1_3_2, 'vcdb', '1.3.2', vcdbLabels),
           rawschema: vcdb1_3_2,
           uischema: uiSchemas['vcdb']['1.3.2']
+        },
+        '1.3.3': {
+          schema: processSchema(vcdb1_3_3, 'vcdb', '1.3.3', vcdbLabels),
+          rawschema: vcdb1_3_3,
+          uischema: uiSchemas['vcdb']['1.3.3']
         }
       },
       allowOther: false
@@ -150,6 +166,11 @@ const schemas = {
           schema: undefined,
           rawschema: undefined,
           uischema: uiSchemas['other']['1.3.2']
+        },
+        '1.3.3': {
+          schema: undefined,
+          rawschema: undefined,
+          uischema: uiSchemas['other']['1.3.3']
         },
         // '1.4': {
         //   schema: undefined,

@@ -4,10 +4,9 @@
   "description": "Verizon portable DBIR compilation and submission app",
   "main": "index.js",
   "scripts": {
-    "builddist": "webpack --config ./webpack.dist.js",
     "build": "webpack --config ./webpack.build.js",
-    "buildrepo": "npm run build && npm run builddist && mkdir -p dist/repo && cp -r build dist/repo/veris_webapp && cp dist/dbir-web/index.html dist/repo/veris_webapp_min.html && cp README.md dist/repo",
-    "fullbuild": "node incver.js && npm run build && npm run builddist",
+    "build:dist": "webpack --config ./webpack.dist.js && cp dist/dbir-web/index.html ../veris_webapp_min.html && cp README.md ..",
+    "build:full": "node incver.js && npm run build:dist",
     "start": "webpack-dev-server --host 0.0.0.0 --hot --inline --config ./webpack.dev.js"
   },
   "devDependencies": {
