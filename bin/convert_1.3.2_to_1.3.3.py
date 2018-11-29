@@ -231,7 +231,7 @@ def main(cfg):
 
             if 'asset' in incident:
                 if 'hosting' in incident['asset']:
-                    incident['asset']['hosting'] = [gov_hosting_lookup[incident['asset']['hosting']]]
+                    incident['asset']['hosting'] = [gov_hosting_lookup.get(incident['asset']['hosting'], incident['asset']['hosting'])]
                 if 'ownership' in incident['asset']:
                     incident['asset']['ownership'] = [incident['asset']['ownership']]
                 if 'management' in incident['asset']:
