@@ -96,7 +96,7 @@ def main(cfg):
             logging.info("Now processing %s" % in_fname)
             try:
                 incident = sj.loads(open(in_fname).read())
-            except sj.scanner.JSONDecodeError:
+            except sj.JSONDecodeError:
                 logging.warning(
                     "ERROR: %s did not parse properly. Skipping" % in_fname)
                 continue
