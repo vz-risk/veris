@@ -1,19 +1,22 @@
 # TODO should check if the config file exists before trying to use it.
 
 import simplejson
-import nose
+# import nose # removing as I don't think it's used. - GDB 18-11-05
 import os
 from jsonschema import validate, ValidationError, Draft4Validator
 import argparse
-import ConfigParser
+import configparser
 import logging
 # import glob
 import fnmatch
 from datetime import date
-import imp
+import importlib
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
-    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+    spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
+    veris_logger = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(veris_logger)
+    # veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
 except:
     print("Script dir: {0}.".format(script_dir))
     raise
@@ -110,6 +113,27 @@ def checkYear(inDict):
         if nyear is not None and idate > ndate:
             yield ValidationError("Notification date {0} appears to be earlier than incident date {1}. This may be due to incomplete dates.".format(ndate, idate))
 
+
+### sanity check impact.overall_amount to ensure it's at least the sum of losses
+## VERIS issue #142
+def checkImpactTotal(inDict):
+    if 'loss' in inDict.get('impact', {}):
+        sum_of_amounts = sum([k.get('amount', 0) for k in inDict['impact']['loss']])
+        if sum_of_amounts > inDict['impact'].get('overall_amount', 0):
+            yield ValidationError("The amounts in impact.loss sum to {0}, but impact.overall_amount is {1}.  " +
+                                  "impact.overall_amount should at least be as much as the sum of individual losses.".format(sum_of_amounts, inDict['impact'].get('overall_amount', "Not Present")))
+
+
+### sanity check attribute.confidentiality.total_amount to ensure it's at least the max of data lost
+## VERIS issue #143
+def checkImpactTotal(inDict):
+    if 'data' in inDict['attribute'].get('confidentiality', {}):
+        max_of_amounts = max([k.get('amount', 0) for k in inDict['attribute']['confidentiality']['data']])
+        if max_of_amounts > inDict['attribute']['confidentiality'].get('total_amount', 0):
+            yield ValidationError("The maximum amount of attribute.confidentiality.data.amount is {0}, but attribute.confidentiality.total_amount is {1}.  " +
+                                  "attribute.confidentiality.total_amount should at least be as much as the max of individual data amounts.".format(max_of_amounts, inDict['attribute']['confidentiality'].get('total_amount', "Not Present")))
+
+
 def main(incident):
   for e in checkMalwareIntegrity(incident):
     yield e
@@ -124,6 +148,8 @@ def main(incident):
   for e in checkPlusAttributeConsistency(incident):
     yield e
   for e in checkYear(incident):
+    yield e
+  for e in checkImpactTotal(incident):
     yield e
 
 
@@ -140,14 +166,14 @@ if __name__ == '__main__':
     #parser.add_argument("-u", "--plus", help="optional schema for plus section")
     parser.add_argument('--conf', help='The location of the config file', default="../user/data_flow.cfg")
     args = parser.parse_args()
-    args = {k:v for k,v in vars(args).iteritems() if v is not None}
+    args = {k:v for k,v in vars(args).items() if v is not None}
 
 
 
     # Parse the config file
     cfg = {}
     try:
-        config = ConfigParser.SafeConfigParser()
+        config = configparser.ConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
             'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'version', 'database', 'check'],

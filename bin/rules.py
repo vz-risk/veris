@@ -21,12 +21,16 @@
 """
 # PRE-USER SETUP
 import logging
-import imp
+#import imp
+import importlib
 import os
 import sys
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
-    veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
+    spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
+    veris_logger = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(veris_logger)
+    # veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
 except:
     logging.debug("Script dir: {0}.".format(script_dir))
     print("Script dir: {0}.".format(script_dir))
@@ -45,7 +49,7 @@ except:
 
 ## IMPORTS
 import argparse
-import ConfigParser
+import configparser
 import os
 import json
 from datetime import datetime, date
@@ -176,6 +180,10 @@ class Rules():
         #inRow = incident["plus"]["row_number"]  # not used and conflicts with versions lower than 1.3. Could test for version > 1.3 and then include... - gdb 7/11/16
         # Takes in an incident and applies rules for internal consistency and consistency with previous incidents
 
+        ## Handle a rare case where the version number uses "_" instead of "."
+        if "_" in incident.get("schema_version", ""):
+            incident["schema_version"] = incident["schema_version"].replace("_", ".")
+
         # The schema should have an import year
         #checkEnum(outjson, jenums, country_region, cfg)
         if incident.get('plus', {}).get('dbir_year', None) is None and cfg['vcdb'] != True:
@@ -200,6 +208,84 @@ class Rules():
                 logging.info("%s: Added software installation to attribute.integrity.variety since malware was involved.",iid)
                 incident['attribute']['integrity']['variety'].append('Software installation')
 
+
+        # 'state' has 'stored', 'stored encrypted', and 'stored unencrypted'. That is an internal hierarchy. that should be documented and handled. 
+        # Per vz-risk/veris #195
+        if 'confidentiality' in incident['attribute']:
+            if ('Stored encrypted' in incident['attribute']['confidentiality'].get('variety', []) or \
+                'Stored unencrypted' in incident['attribute']['confidentiality'].get('variety', [])) and \
+               'Stored' not in incident['attribute']['confidentiality'].get('variety', []):
+                incident['attribute']['confidentiality']['variety'].append('Stored')
+
+
+        ### Hierarchical Field
+        # action.malware.variety.Click fraud and cryptocurrency mining is a parent of action.malware.variety.Click fraud and action.malware.variety.Cryptocurrency mining
+        # per vz-risk/VERIS issue #203
+        if 'malware' in incident['action']:
+            if ('Click fraud' in incident['action']['malware'].get('variety', []) or \
+            'Cryptocurrency mining' in incident['action']['malware'].get('variety', [])) and \
+            'Click fraud and cryptocurrency mining' not in incident['action']['malware'].get('variety', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.3"):
+                incident['action']['malware']['variety'].append('Click fraud and cryptocurrency mining')
+
+
+        ### Hierarchical Field
+        ### Add hacking.exploit vuln and malware.exploit vuln hierarchy
+        ## Issue VERIS # 192
+        hak_exploit_varieties = ["Abuse of functionality", 
+                   "Buffer overflow", "Cache poisoning", 
+                   "Cryptanalysis", "CSRF", 
+                   "Forced browsing", "Format string attack", 
+                   "Fuzz testing", "HTTP request smuggling", 
+                   "HTTP request splitting", "HTTP response smuggling", 
+                   "HTTP Response Splitting", "Integer overflows", 
+                   "LDAP injection", "Mail command injection", 
+                   "MitM", "Null byte injection", 
+                   "OS commanding", 
+                   "Other", 
+                   "Path traversal", "Reverse engineering", 
+                   "RFI", "Routing detour", 
+                   "Session fixation", "Session prediction", 
+                   "Session replay", "Soap array abuse", 
+                   "Special element injection", "SQLi", 
+                   "SSI injection",
+                   "URL redirector abuse",  
+                   "Virtual machine escape", 
+                   "XML attribute blowup", "XML entity expansion", 
+                   "XML external entities", "XML injection", 
+                   "XPath injection", "XQuery injection", 
+                   "XSS"]
+        if 'variety' in incident['action'].get('hacking', {}):
+            if "Exploit vuln" not in incident['action']['hacking']['variety'] and \
+            len(set(incident['action']['hacking']['variety']).intersection(hak_exploit_varieties)) > 0 and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.3"):
+                incident['action']['hacking']['variety'].append('Exploit vuln') 
+        mal_exploit_varieties = ["Remote injection", "Web drive-by"]
+        if 'variety' in incident['action'].get('malware', {}):
+            if "Exploit vuln" not in incident['action']['malware']['variety'] and \
+            len(set(incident['action']['malware']['variety']).intersection(mal_exploit_varieties)) > 0: # and \
+            #LooseVersion(incident['schema_version']) >= LooseVersion("1.3.3"): ## Since 'Exploit vuln is a legitimate enum in 1.3.2 action.malware, removing version check' - GDB 181127
+                incident['action']['malware']['variety'].append('Exploit vuln') 
+
+
+        ### impact.overall_amount should be at least the sum of the impact.loss.amounts
+        ## VERIS issue 142
+        if 'loss' in incident.get('impact', {}):
+            sum_of_amounts = sum([k.get('amount', 0) for k in incident['impact']['loss']])
+            if sum_of_amounts > 0 and 'overall_amount' not in incident['impact']: # if overall_amount does exist but is less than sum_of_amounts, it'll raise a validationError in checkValidity.py
+                incident['impact']['overall_amount'] = sum_of_amounts
+
+
+
+        ### attribute.confidentiality.total_amount should be at least the max of the attribute.confidentiality.data.amount's
+        ## VERIS issue 143
+        if 'data' in incident['attribute'].get('confidentiality', {}):
+            max_of_amounts = max([k.get('amount', 0) for k in incident['attribute']['confidentiality']['data']])
+            if max_of_amounts > 0 and 'data_total' not in incident['attribute']['confidentiality']: # if total_amount does exist but is less than max_of_amounts, it'll raise a validationError in checkValidity.py
+                incident['attribute']['confidentiality']['data_total'] = max_of_amounts
+
+
+
         # Social engineering alters human behavior
         if 'social' in incident['action']:
             if 'attribute' not in incident:
@@ -215,6 +301,8 @@ class Rules():
             if 'Alter behavior' not in incident['attribute']['integrity']['variety']:
                 logging.info("%s: Added alter behavior to attribute.integrity.variety since social engineering was involved.",iid)
                 incident['attribute']['integrity']['variety'].append('Alter behavior')
+
+
 
         # The target of social engineering is one of the affected assets
         if 'social' in incident['action']:
@@ -247,6 +335,7 @@ class Rules():
                             logging.info("{1}: Adding P - {0} to asset list since there was social engineering.".format(each,iid))
                             incident['asset']['assets'].append({'variety':'P - '+each})
 
+
         # If SQLi was involved then there needs to be misappropriation too
         if 'hacking' in incident['action']:
             if 'SQLi' in incident['action']['hacking']['variety']:
@@ -259,6 +348,7 @@ class Rules():
                 if 'Repurpose' not in incident['attribute']['integrity']['variety']:
                     logging.info("%s: Adding repurpose since SQLi was there.",iid)
                     incident['attribute']['integrity']['variety'].append('Repurpose')
+
 
         # If there is a theft or loss then there is an availability loss
         if 'physical' in incident['action']:
@@ -394,8 +484,8 @@ class Rules():
         # for actor.partner
         if 'partner' in incident['actor']:
             for eachCountry in incident['actor']['partner'].get('country', []):
-                incident['actor']['partner']['region'] = incident['actor']['external'].get('partner', []) + [self.country_region[eachCountry]]
-            if 'region' in ['actor']['partner'].keys():
+                incident['actor']['partner']['region'] = incident['actor']['partner'].get('region', []) + [self.country_region[eachCountry]]
+            if 'region' in incident['actor']['partner'].keys():
                 incident['actor']['partner']['region'] = list(set(incident['actor']['partner']['region'])) # remove duplicates
                 # if a region exists but no country, country will be filled in 'unknown'
                 # the 'unknown' country value will cause '000000' to be filled into the region
@@ -519,7 +609,7 @@ class Rules():
                 logging.info("%s: auto-filled Unknown for empty array in actor.internal.variety", iid)
                 actor['variety'] = [ "Unknown" ]
             #compareFromTo('actor.internal.variety', actor['variety'], schema['actor']['internal']['variety'])
-            if "job_change" in actor and type(actor['job_change']) in (str, unicode):
+            if "job_change" in actor and type(actor['job_change']) is str:
                 logging.info("{0}: changing job_change from a string to an array to fit the schema.".format(iid))
                 actor['job_change'] = actor['job_change'].split(",")
             incident['actor']['internal'] = actor
@@ -618,6 +708,7 @@ class Rules():
         ## ATTRIBUTE ##
         if 'attribute' not in incident:
             logging.info("%s: no attribute section is found (not required)", iid)
+            incident['attribute'] = {"unknown": {"notes": "Added by rules.py due to no attribute section."}}
         else:
             if 'confidentiality' in incident['attribute']:
                 if 'data' not in incident['attribute']['confidentiality']:
@@ -742,7 +833,7 @@ class Rules():
         # if confidentiality was not affected then it shouldn't be in the plus
         # section either. Usually just has credit_monitoring unknown anyway.
         if 'confidentiality' not in incident.get('attribute', {}) and \
-          incident['plus'].get('attribute', {}).keys() == ['confidentiality']:
+          list(incident['plus'].get('attribute', {}).keys()) == ['confidentiality']:
             logging.info("attribute.confidentiality not in record so removing attribute from plus for record {0}.".format(iid))
             incident['plus'].pop('attribute')
 
@@ -787,11 +878,11 @@ if __name__ == "__main__":
     parser.add_argument('--source', help="Source_id to use for the incidents. Partner pseudonym.")
     #parser.add_argument("-f", "--force_analyst", help="Override default analyst with --analyst.", action='store_true')
     args = parser.parse_args()
-    args = {k:v for k,v in vars(args).iteritems() if v is not None}
+    args = {k:v for k,v in vars(args).items() if v is not None}
 
     # Parse the config file
     try:
-        config = ConfigParser.SafeConfigParser()
+        config = configparser.ConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
             'GENERAL': ['input', 'output'], #'report', 'analysis', 'year', 'force_analyst', 'version', 'database', 'check'],

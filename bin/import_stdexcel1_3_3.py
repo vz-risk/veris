@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+### As of 18-11-05 I have not updated this or tested it with 1.3.3 veris. - GDB
+
 import json
 import csv
 import sys
@@ -27,7 +29,7 @@ try:
 except:
     print("Script dir: {0}.".format(script_dir))
     raise
-
+import platform # to get created time
 
 # Default Configuration Settings
 cfg = {
@@ -35,9 +37,9 @@ cfg = {
     'log_file': None,
     'schemafile': "../verisc.json",
     'enumfile': "../verisc-enum.json",
-    'mergedfile': "../verisc-merged",
+    'mergedfile': "../verisc-merged.json",
     'vcdb':False,
-    'version':"1.3.1",
+    'version':"1.3.3",
     'countryfile':'all.json',
     'output': os.getcwd(),
     'check': False,
@@ -45,13 +47,31 @@ cfg = {
 }
 #logger = multiprocessing.get_logger()
 
+# from https://stackoverflow.com/questions/237079/how-to-get-file-creation-modification-date-times-in-python
+def creation_date(path_to_file):
+    """
+    Try to get the date that a file was created, falling back to when it was
+    last modified if that isn't possible.
+    See http://stackoverflow.com/a/39501288/1709587 for explanation.
+    """
+    if platform.system() == 'Windows':
+        return os.path.getctime(path_to_file)
+    else:
+        stat = os.stat(path_to_file)
+        try:
+            return stat.st_birthtime
+        except AttributeError:
+            # We're probably on Linux. No easy way to get creation dates here,
+            # so we'll settle for when its content was last modified.
+            return stat.st_mtime
+
 class CSVtoJSON():
     """Imports a CSV outputted by the standard excel survey gizmo form"""
     cfg = None
     jschema = None
     sfields = None
     # country_region = None
-    script_version = "1.3.1"
+    script_version = "1.3.3"
 
 
     def __init__(self, cfg, file_version=None):
@@ -83,15 +103,15 @@ class CSVtoJSON():
         
     def get_file_schema_version(self, inFile):
         logging.info("Reading {0} to determine version.".format(inFile))
-        with open(inFile, 'rU') as filehandle:
+        with open(inFile, 'r') as filehandle:
             m = re.compile(r'(\.0+)*$')
             versions = defaultdict(int)
             csv_reader = csv.DictReader(filehandle)
             if "schema_version" in csv_reader.fieldnames:
                 for row in csv_reader:
                     versions[m.sub('', row["schema_version"])] += 1 # the regex removes trailing '.0' to make counting easier
-                version = max(versions.iteritems(), key=operator.itemgetter(1))[0]  # return the most common version. (They shoudl all be the same, but, you know.)
-                if version not in ["1.2", "1.3", "1.3.1", "1.4"]:
+                version = max(versions.items(), key=operator.itemgetter(1))[0]  # return the most common version. (They shoudl all be the same, but, you know.)
+                if version not in ["1.2", "1.3", "1.3.1", "1.3.2",]:
                     logging.warning("VERIS version {0} in file {1} does not appear to be a standard version.  \n".format(version, inFile) + 
                                    "Please ensure it is correct as it is used for upgrading VERIS files to the report version.")
                 if not version:
@@ -139,7 +159,8 @@ class CSVtoJSON():
 
 
     def isnum(self, x):
-        x = re.sub('[$,]', '', x)
+        if type(x) not in [int, float]: # 'long' removed for python3 - GDB 181116
+            x = re.sub('[$,]', '', x)
         try:
             x=int(float(x))
         except:
@@ -158,19 +179,23 @@ class CSVtoJSON():
 
     def addValue(self, src, enum, dst, val="list"):
         "adding value to dst at key if present in src"
-        if src.has_key(enum):
+        # if src.has_key(enum):
+        if enum in src:
             if len(src[enum]):
                 allenum = enum.split('.')
                 saved = dst
                 for i in range(len(allenum)-1):
-                    if not saved.has_key(allenum[i]):
+                    # if not saved.has_key(allenum[i]):
+                    if allenum[i] not in saved:
                         saved[allenum[i]] = {}
                     saved = saved[allenum[i]]
                 if val=="list":
                     templist = [x.strip() for x in src[enum].split(',') if len(x)>0 ]
                     saved[allenum[-1]] = [x for x in templist if len(x)>0 ]
                 elif val=="string":
-                    saved[allenum[-1]] = unicode(src[enum],errors='ignore')
+                    #saved[allenum[-1]] = unicode(src[enum],errors='ignore')
+                    # saved[allenum[-1]] = str(src[enum],errors='ignore') # python2
+                    saved[allenum[-1]] = src[enum] # python3 - gdb 181116
                 elif val=="numeric":
                     if self.isfloat(src[enum]):
                         saved[allenum[-1]] = self.isfloat(src[enum])
@@ -196,7 +221,7 @@ class CSVtoJSON():
         try:
             parsed = json.loads(rawjson)
         except:
-            print "Unexpected error while loading", filename, "-", sys.exc_info()[1]
+            print("Unexpected error while loading", filename, "-", sys.exc_info()[1])
             parsed = None
         return parsed
 
@@ -231,11 +256,12 @@ class CSVtoJSON():
 
         out = {}
         out['schema_version'] = cfg["file_version"]
-        if incident.has_key("incident_id"):
+        # if incident.has_key("incident_id"):
+        if "incident_id" in incident:
             if len(incident['incident_id']):
                 # out['incident_id'] = incident['incident_id']
                 # Changing incident_id to UUID to prevent de-anonymiziation of incidents
-                m = hashlib.md5(incident["incident_id"])
+                m = hashlib.md5(incident["incident_id"].encode('utf-8'))
                 out["incident_id"] = str(uuid.UUID(bytes=m.digest())).upper()
             else:
                 out['incident_id'] = str(uuid.uuid4()).upper()
@@ -244,7 +270,7 @@ class CSVtoJSON():
         tmp = {}
         for enum in incident: tmp[enum] = self.cleanValue(incident, enum)
         incident = tmp
-        for enum in ['source_id', 'reference', 'security_incident', 'confidence', 'summary', 'related_incidents', 'notes']:
+        for enum in ['campaign_id', 'source_id', 'reference', 'security_incident', 'confidence', 'summary', 'related_incidents', 'notes']:
             self.addValue(incident, enum, out, "string")
         # victim
         for enum in ['victim_id', 'industry', 'employee_count', 'state',
@@ -320,7 +346,7 @@ class CSVtoJSON():
                             del i['amount']
                 out['asset']['assets'] = copy.deepcopy(assets)
 
-        for enum in ['accessibility', 'ownership', 'management', 'hosting', 'cloud', 'notes']:
+        for enum in ['ownership', 'management', 'hosting', 'cloud', 'notes']: # accessability & governance - obscelete as of 1.3.3 - GDB 181116
             self.addValue(incident, 'asset.' + enum, out, 'string')
         self.addValue(incident, 'asset.country', out, 'list')
 
@@ -369,8 +395,16 @@ class CSVtoJSON():
         self.addValue(incident, 'timeline.containment.unit', out, 'string')
         self.addValue(incident, 'timeline.containment.value', out, 'numeric')
 
+        # discovery method  - GDB 181116
+        for enum in ["external", "internal", "partner"]:
+            self.addValue(incident, 'discovery_method.'+enum+".variety", out, 'string')
+
+        # value chain - veris 1.3.3 GDB 181116
+        for enum in ["development", "non-distribution services", "targeting", "distribution", "cash-out", "money laundering"]:
+            self.addValue(incident, 'value_chain.'+enum, out, 'string')
+
         # trailer values
-        for enum in ['discovery_method', 'targeted', 'control_failure', 'corrective_action']:
+        for enum in ['discovery_notes', 'targeted', 'control_failure', 'corrective_action', 'cost_corrective_action']:
             self.addValue(incident, enum, out, 'string')
         if 'ioc.indicator' in incident:
             ioc = self.parseComplex("ioc.indicator", incident['ioc.indicator'], ['indicator', 'comment'])
@@ -380,20 +414,43 @@ class CSVtoJSON():
         # impact
         for enum in ['overall_min_amount', 'overall_amount', 'overall_max_amount']:
             self.addValue(incident, 'impact.'+enum, out, 'numeric')
-        # TODO handle impact.loss varieties
+        # handle impact.loss varieties  - GDB 171114
+        if 'impact.loss.variety' in incident:
+            if 'impact' not in out:
+                out['impact'] = {}
+            if 'loss' not in out['impact']:
+                out['impact']['loss'] = []
+            losses = self.parseComplex("impact.loss.variety", incident['impact.loss.variety'], ['variety', 'amount'])
+            if len(losses):
+                for i in losses:
+                    if 'amount' in i:
+                        if self.isnum(i['amount']) is not None:
+                            i['amount'] = self.isnum(i['amount'])
+                        else:
+                            del i['amount']
+                out['impact']['loss'] = copy.deepcopy(losses)
+        # Ok, so I lied in the error.  If you have impact.loss.amount and its a number & impact.overall_amount doesn't exist, I'll take impact.loss.amount as impact.overall_amount. - gdb 171114
+        if "impact.loss.amount" in incident and self.isnum(incident["impact.loss.amount"]) is not None and "overall_amount" not in out.get('impact', {}):
+            if 'impact' not in out:
+                out['impact'] = {}
+            out['impact']['overall_amount'] = self.isnum(incident["impact.loss.amount"])
         for enum in ['overall_rating', 'iso_currency_code', 'notes']:
             self.addValue(incident, 'impact.'+enum, out, 'string')
         # plus
         out['plus'] = {}
         plusfields = ['master_id', 'investigator', 'issue_id', 'casename', 'analyst',
-                'analyst_notes', 'public_disclosure', 'analysis_status',
+                'analyst_notes', 'analysis_status', # 'public_disclosure', - obscelete as of 1.3.3 - GDB 181116
                 'attack_difficulty_legacy', 'attack_difficulty_subsequent',
-                'attack_difficulty_initial', 'security_maturity' ]
+                'attack_difficulty_initial', 'security_maturity',
+                'attribute.confidentiality.data_abuse'] #  - GDB 181116
         if cfg["vcdb"]:
             plusfields.append('github')
         for enum in plusfields:
             self.addValue(incident, 'plus.'+enum, out, "string")
         self.addValue(incident, 'plus.dbir_year', out, "integer")
+        # add plus create/modified
+        out['plus']['modified'] = self.cfg['plus.modified'] 
+        out['plus']['created'] = self.cfg['plus.created'] 
         # self.addValue(incident, 'plus.external_region', out, "list")
         if cfg["vcdb"]:
             self.addValue(incident, 'plus.timeline.notification.year', out, "numeric")
@@ -401,7 +458,6 @@ class CSVtoJSON():
             self.addValue(incident, 'plus.timeline.notification.day', out, "numeric")
         # Skipping: 'unknown_unknowns', useful_evidence', antiforensic_measures, unfollowed_policies,
         # countrol_inadequacy_legacy, pci
-        # TODO dbir_year
 
         return out
 
@@ -433,10 +489,14 @@ class CSVtoJSON():
 
         #formatter = logging.Formatter(FORMAT.format("- " + "/".join(cfg["input"].split("/")[-2:])))
         try:
+            # adding created/modified times - GDB 180109
+            self.cfg['plus.created'] =  datetime.fromtimestamp(creation_date(cfg['input'])).strftime('%Y-%m-%dT%H:%M:%SZ')
+            self.cfg['plus.modified'] = datetime.fromtimestamp(os.path.getmtime(cfg['input'])).strftime('%Y-%m-%dT%H:%M:%SZ')
             # Added to file read to catch multiple columns with same name which causes second column to overwrite first. - GDB
-            file_handle = open(cfg["input"], 'rU')
+            file_handle = open(cfg["input"], 'r')
             csv_reader = csv.reader(file_handle)
-            l = csv_reader.next()
+            # l = csv_reader.next()
+            l = next(csv_reader)
             if len(l) > len(set(l)):
                 logging.error(l)
                 file_handle.close()
@@ -451,16 +511,19 @@ class CSVtoJSON():
             raise
             # exit(1)
 
-        infile.fieldnames = [f.decode('unicode_escape').encode('ascii', 'ignore') for f in infile.fieldnames] # remove unicode - gdb 170130
+        ## Below unnecessary in python3. - GDB 181116
+        # infile.fieldnames = [f.decode('unicode_escape').encode('ascii', 'ignore') for f in infile.fieldnames] # remove unicode - gdb 170130
 
         for f in infile.fieldnames:
             if f not in self.sfields:
                 if f != "repeat":
-                    logging.warning("column will not be used: %s. May be inaccurate for 'plus' columns.", f)
+                    logging.warning("Unless it's 'repeat', column will not be used: \"%s\" and may be inaccurate for 'plus' columns.", f)
         if 'plus.analyst' not in infile.fieldnames:
             logging.warning("the optional plus.analyst field is not found in the source document")
         if 'source_id' not in infile.fieldnames:
             logging.warning("the optional source_id field is not found in the source document")
+        if 'impact.loss.amount' in infile.fieldnames:
+            logging.error("impact.loss.amount found.  Values in impact.loss.amount WILL NOT be in included in the incident json.  For overall loss amounts, use impact.overall_amount.  For loss variety amounts, in 'impact.loss', populatie it with 'variety1:amount1,variety2:amount2,etc'." ) #  added 17114 to deal with lost impact.loss.amount data.
 
         row = 0
         for incident in infile:
@@ -481,18 +544,21 @@ class CSVtoJSON():
                 iid = incident['incident_id']  # there should always be an incident ID so commented out above. - gdb 061316
             except:
                 logging.error("keys: {0}.".format(incident.keys()))
+                logging.error("keys: {0}.".format(list(incident.keys())))
                 raise
 
             repeat = 1
             logging.info("-----> parsing incident %s", iid)
-            if incident.has_key('repeat'):
+            #if incident.has_key('repeat'):
+            if 'repeat' in incident:
                 if incident['repeat'].lower()=="ignore" or incident['repeat'] == "0":
                     logging.info("Skipping row %s because 'repeat' is either 'ignore' or '0'.", iid)
                     continue
                 repeat = self.isnum(incident['repeat'])
                 if not repeat:
                     repeat = 1
-            if incident.has_key('security_incident'):
+            # if incident.has_key('security_incident'):
+            if 'security_incident' in incident:
                 if incident['security_incident'].lower()=="no":
                     logging.info("Skipping row %s because 'security_incident' is 'no'.", iid)
                     continue
@@ -542,7 +608,7 @@ if __name__ == '__main__':
     output_group.add_argument("--check", help="Generate VERIS json records from the input csv, but do not write them to disk. " + 
                               "This is to allow finding errors in the input csv without creating any files.", action='store_true')
     args = parser.parse_args()
-    args = {k:v for k,v in vars(args).iteritems() if v is not None}
+    args = {k:v for k,v in vars(args).items() if v is not None}
 
     try:
         cfg["log_level"] = args['log_level']
@@ -551,7 +617,7 @@ if __name__ == '__main__':
 
     # Parse the config file
     try:
-        config = configPparser.ConfigParser()
+        config = ConfigParser.SafeConfigParser()
         config.readfp(open(args["conf"]))
         cfg_key = {
             'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'file_version', 'database', 'check'],
@@ -580,6 +646,11 @@ if __name__ == '__main__':
     cfg.update(args)
     cfg["vcdb"] = {True:True, False:False, "false":False, "true":True}[str(cfg.get("vcdb", 'false')).lower()]
     cfg["check"] = {True:True, False:False, "false":False, "true":True}[str(cfg.get("check", 'false')).lower()]
+    if cfg["mergedfile"] != "../verisc-merged.json" and cfg["schemafile"] == "../verisc.json": 
+        logging.warning("It appears a mergedfile was defined but not as schemafile.  This script " +
+            "_only_ uses the schemafile and enumfile, not the mergedfile.  You make get results due" +
+            "to default values, but the wrong schema is probably being used.")
+
     ### Removed below. removing 'output' does nothing. - gdb 082516
     if cfg.get('check', False) == True:
         # _ = cfg.pop('output')
