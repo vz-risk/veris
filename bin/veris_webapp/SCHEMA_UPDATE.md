@@ -10,4 +10,4 @@
 
 4. Add section for new version in src/js/veris_app.uiSchemas.js 
 
-5. Run `npm run build:dist` to minify the webapp and place it in the right spot.
+5. Run `npm run build:dist` to minify the webapp and place it in the right spot. (you may have to run `npm install webpack`)
