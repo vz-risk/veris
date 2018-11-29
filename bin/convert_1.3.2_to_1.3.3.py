@@ -282,7 +282,7 @@ if __name__ == '__main__':
     parser.add_argument('--log_file', help='Location of log file')
     parser.add_argument("-i", "--input", required=True,
                         help="top level folder to search for incidents")
-    parser.add_argument("-o", "--output", required=True,
+    parser.add_argument("-o", "--output",
                         help=helpText)
     # parser.add_argument('--countryfile', help='The json file holdering the country mapping.')
     parser.add_argument('--conf', help='The location of the config file', default="../user/data_flow.cfg")
@@ -317,6 +317,9 @@ if __name__ == '__main__':
         cfg["input"] = [l.strip() for l in cfg["input"].split(" ,")]  # spit to list
 
     cfg.update(args)
+
+    if "output" not in cfg:
+        cfg["output"] = cfg["input"]
 
     veris_logger.updateLogger(cfg)
 
