@@ -672,6 +672,12 @@ const uiSchemas = {
         },
         "notification": {
           "ui:field": "collapsable2",
+          "ui:order": [
+            "year",
+            "month",
+            "day",
+            "*"
+          ]
         }
       },
       "action": {
@@ -997,6 +1003,12 @@ const uiSchemas = {
         },
         "notification": {
           "ui:field": "collapsable2",
+          "ui:order": [
+            "year",
+            "month",
+            "day",
+            "*"
+          ]
         }
       },
       "action": {
@@ -1314,6 +1326,12 @@ const uiSchemas = {
         },
         "notification": {
           "ui:field": "collapsable2",
+          "ui:order": [
+            "year",
+            "month",
+            "day",
+            "*"
+          ]
         }
       },
       "action": {
@@ -1456,10 +1474,8 @@ const uiSchemas = {
           "asset_os",
           "ownership",
           "cloud",
-          "governance",
           "hosting",
           "management",
-          "accessibility",
           "notes",
           "country",
           "*"
@@ -1491,7 +1507,7 @@ const uiSchemas = {
             "data_victim",
             "state",
             "notes",
-            "data_misuse",
+            "data_abuse",
             "partner_data",
             "partner_number",
             "credit_monitoring",
@@ -1523,7 +1539,6 @@ const uiSchemas = {
         "ui:order": [
           "victim_id",
           "employee_count",
-          "f500",
           "industry",
           "locations_affected",
           "country",
@@ -1678,9 +1693,6 @@ const uiSchemas = {
         },
         "containment": {
           "ui:field": "collapsable2",
-        },
-        "notification": {
-          "ui:field": "collapsable2",
         }
       },
       action: {
@@ -2002,9 +2014,6 @@ const uiSchemas = {
         },
         "containment": {
           "ui:field": "collapsable2",
-        },
-        "notification": {
-          "ui:field": "collapsable2",
         }
       },
       "action": {
@@ -2315,9 +2324,6 @@ const uiSchemas = {
         },
         "containment": {
           "ui:field": "collapsable2",
-        },
-        "notification": {
-          "ui:field": "collapsable2",
         }
       },
       "action": {
@@ -2459,10 +2465,8 @@ const uiSchemas = {
           "asset_os",
           "ownership",
           "cloud",
-          "governance",
           "hosting",
           "management",
-          "accessibility",
           "notes",
           "country",
           "*"
@@ -2494,7 +2498,7 @@ const uiSchemas = {
             "data_victim",
             "state",
             "notes",
-            "data_misuse",
+            "data_abuse",
             "partner_data",
             "partner_number",
             "*"
@@ -2522,7 +2526,6 @@ const uiSchemas = {
         "ui:field": "collapsable",
         "ui:order": [
           "employee_count",
-          "f500",
           "industry",
           "locations_affected",
           "country",
@@ -2673,6 +2676,12 @@ const uiSchemas = {
         },
         "notification": {
           "ui:field": "collapsable2",
+          "ui:order": [
+            "year",
+            "month",
+            "day",
+            "*"
+          ]
         }
       },
       action: {
@@ -2993,6 +3002,12 @@ const uiSchemas = {
         },
         "notification": {
           "ui:field": "collapsable2",
+          "ui:order": [
+            "year",
+            "month",
+            "day",
+            "*"
+          ]
         }
       },
       "action": {
@@ -3305,6 +3320,12 @@ const uiSchemas = {
         },
         "notification": {
           "ui:field": "collapsable2",
+          "ui:order": [
+            "year",
+            "month",
+            "day",
+            "*"
+          ]
         }
       },
       "action": {
@@ -3446,8 +3467,6 @@ const uiSchemas = {
           "assets",
           "asset_os",
           "cloud",
-          "governance",
-          "accessibility",
           "notes",
           "country",
           "*"
@@ -3479,7 +3498,7 @@ const uiSchemas = {
             "data_victim",
             "state",
             "notes",
-            "data_misuse",
+            "data_abuse",
             "partner_data",
             "partner_number",
             "credit_monitoring",
@@ -3510,7 +3529,6 @@ const uiSchemas = {
         "ui:order": [
           "victim_id",
           "employee_count",
-          "f500",
           "industry",
           "locations_affected",
           "country",
@@ -3941,6 +3959,12 @@ const uiSchemas = {
         },
         "notification": {
           "ui:field": "collapsable2",
+          "ui:order": [
+            "year",
+            "month",
+            "day",
+            "*"
+          ]
         }
       },
       "action": {
@@ -4256,6 +4280,12 @@ const uiSchemas = {
         },
         "notification": {
           "ui:field": "collapsable2",
+          "ui:order": [
+            "year",
+            "month",
+            "day",
+            "*"
+          ]
         }
       },
       "action": {
@@ -4400,10 +4430,8 @@ const uiSchemas = {
           "asset_os",
           "ownership",
           "cloud",
-          "governance",
           "hosting",
           "management",
-          "accessibility",
           "notes",
           "country",
           "*"
@@ -4435,7 +4463,6 @@ const uiSchemas = {
             "data_victim",
             "state",
             "notes",
-            "data_misuse",
             "data_abuse",
             "partner_data",
             "partner_number",
@@ -4467,7 +4494,6 @@ const uiSchemas = {
         "ui:order": [
           "victim_id",
           "employee_count",
-          "f500",
           "industry",
           "locations_affected",
           "country",
