@@ -5,7 +5,8 @@ from glob import glob
 import os
 import configparser
 from fnmatch import fnmatch
-import ConfigParser
+#import ConfigParser
+import configparser
 from tqdm import tqdm
 #import imp
 import importlib
