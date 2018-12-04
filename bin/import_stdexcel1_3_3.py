@@ -202,7 +202,16 @@ class CSVtoJSON():
                 elif val=="integer":
                     if self.isnum(src[enum]):
                         saved[allenum[-1]] = self.isnum(src[enum])
-
+                elif val=="logical":
+                    if src[enum].lower() in ["", "no", "n", 'f', 'false']:
+                        saved[allenum[-1]] = False
+                    elif src[enum].lower() in ["yes", 'y', 't', 'true']:
+                        saved[allenum[-1]] = True
+                    elif src[enum] == allenum[-1]: # if the field and value are the same such as discover_method.unknown == unknown
+                        saved[allenum[-1]] = True
+                    else:
+                        logging.warning("logical column {0} with value {1} did not match any rules. Marking False.")
+                        saved[allenum[-1]] = False
 
     # def self.chkDefault(self, incident, enum, default):
     #     allenum = enum.split('.')
@@ -277,7 +286,7 @@ class CSVtoJSON():
                 'revenue.iso_currency_code', 'secondary.notes', 'notes']:
             self.addValue(incident, 'victim.'+enum, out, "string")
         self.addValue(incident, 'victim.revenue.amount', out, "integer")
-        self.addValue(incident, 'victim.secondary.amount', out, "numeric")
+        self.addValue(incident, 'victim.secondary.amount', out, "integer") # changed to integer from numeric to match schema. - GDB 181204
         self.addValue(incident, 'victim.secondary.victim_id', out, "list")
         self.addValue(incident, 'victim.locations_affected', out, "integer")
         self.addValue(incident, 'victim.country', out, "list")
@@ -346,8 +355,10 @@ class CSVtoJSON():
                             del i['amount']
                 out['asset']['assets'] = copy.deepcopy(assets)
 
-        for enum in ['ownership', 'management', 'hosting', 'cloud', 'notes']: # accessability & governance - obscelete as of 1.3.3 - GDB 181116
+        for enum in ['cloud', 'notes']: # accessability & governance - obscelete as of 1.3.3 - GDB 181116
             self.addValue(incident, 'asset.' + enum, out, 'string')
+        for enum in ['ownership', 'hosting', 'management']: # accessability & governance - obscelete as of 1.3.3 - GDB 181116
+            self.addValue(incident, 'asset.' + enum, out, 'list')
         self.addValue(incident, 'asset.country', out, 'list')
 
         # attributes
@@ -397,7 +408,9 @@ class CSVtoJSON():
 
         # discovery method  - GDB 181116
         for enum in ["external", "internal", "partner"]:
-            self.addValue(incident, 'discovery_method.'+enum+".variety", out, 'string')
+            self.addValue(incident, 'discovery_method.'+enum+".variety", out, 'list')
+        self.addValue(incident, 'discovery_method.unknown', out, 'logical')
+        self.addValue(incident, 'discovery_method.other', out, 'logical')
 
         # value chain - veris 1.3.3 GDB 181116
         for enum in ["development", "non-distribution services", "targeting", "distribution", "cash-out", "money laundering"]:
@@ -415,7 +428,7 @@ class CSVtoJSON():
         for enum in ['overall_min_amount', 'overall_amount', 'overall_max_amount']:
             self.addValue(incident, 'impact.'+enum, out, 'numeric')
         # handle impact.loss varieties  - GDB 171114
-        if 'impact.loss.variety' in incident:
+        if incident.get('impact.loss.variety', ''):
             if 'impact' not in out:
                 out['impact'] = {}
             if 'loss' not in out['impact']:
