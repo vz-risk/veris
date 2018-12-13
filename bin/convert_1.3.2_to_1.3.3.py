@@ -152,6 +152,7 @@ def main(cfg):
 
             ### Combine plus.attribute.confidentiality.data_misuse into plus.attribute.confidentiality.data_abuse.  We rarely use data_misuse and they do not have distinct definitions.
             ## Issue VCDB 10102
+            ## TODO: Need to double check this.  VCDB had a lot of data_abuse.Y/N/U rather than data_abuse.Yes/No/Unknown in it.  - GDB
             abuse_misuse_lookup = {'y': 'Yes', 'n': 'No', 'u': 'Unknown'}
             if 'data_misuse' in incident.get('plus', {}):
                 misuse = incident['plus'].pop('data_misuse')
@@ -163,6 +164,7 @@ def main(cfg):
                     abuse = abuse_misuse_lookup.get(abuse, 'Other')
                     if abuse != misuse:
                         warning("Abuse value of {0} does not match misuse value of {1}.  Defaulting to the abuse value ({0}).".format(abuse, misuse)) # TODO: handle all the values data_abuse and data_misuse are in data.  Also handle combining them when they are both set
+                        misuse = abuse
                 incident['plus']['data_abuse'] = misuse
             if 'data_abuse' in incident.get('plus', {}):
                 abuse = incident['plus']['data_abuse']
