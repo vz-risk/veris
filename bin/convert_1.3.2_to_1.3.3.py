@@ -9,6 +9,7 @@ from tqdm import tqdm
 #import imp
 import importlib
 import pprint
+# from distutils.version import LooseVersion
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
     spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
@@ -76,6 +77,9 @@ def grepText(incident, searchFor):
 
 def main(cfg):
     veris_logger.updateLogger(cfg)
+
+    last_version = "1.3.2"
+    version = "1.3.3"
  
     pprint.pprint(cfg) # DEBUG
 
@@ -104,8 +108,15 @@ def main(cfg):
             if 'assets' not in incident.get('asset', {}):
                 raise KeyError("Asset missing from assets in incident {0}.".format(fname))
 
+
+            # if the record is already version 1.3.3, skip it. This can happen if there are mixed records
+            if incident.get('schema_version', last_version) != last_version:
+                if incident.get('schema_version', '') != version:
+                    logging.warning("Incident {0} is version {1} instead of {2} and can therefore not be updated.".format(fname, incident.get('schema_version', 'NONE'), last_version))
+                next
+
             # Update the schema version
-            incident['schema_version'] = "1.3.3"
+            incident['schema_version'] = version
 
             # EXAMPLE UPDATE
 #             # Replace asset S - SCADA with S - ICS
@@ -154,23 +165,22 @@ def main(cfg):
             ## Issue VCDB 10102
             ## TODO: Need to double check this.  VCDB had a lot of data_abuse.Y/N/U rather than data_abuse.Yes/No/Unknown in it.  - GDB
             abuse_misuse_lookup = {'y': 'Yes', 'n': 'No', 'u': 'Unknown'}
-            if 'data_misuse' in incident.get('plus', {}):
-                misuse = incident['plus'].pop('data_misuse')
+            if 'data_misuse' in incident.get('plus', {}).get('attribute', {}).get('confidentiality', {}):
+                misuse = incident['plus']['attribute']['confidentiality'].pop('data_misuse')
                 misuse = misuse.lower()[0]
                 misuse = abuse_misuse_lookup.get(misuse, 'Other')
                 if 'data_abuse' in incident.get('plus', {}):
-                    abuse = incident['plus']['data_abuse']
+                    abuse = incident['plus']['attribute']['confidentiality']['data_abuse']
                     abuse = abuse.lower()[0]
                     abuse = abuse_misuse_lookup.get(abuse, 'Other')
                     if abuse != misuse:
                         warning("Abuse value of {0} does not match misuse value of {1}.  Defaulting to the abuse value ({0}).".format(abuse, misuse)) # TODO: handle all the values data_abuse and data_misuse are in data.  Also handle combining them when they are both set
-                        misuse = abuse
-                incident['plus']['data_abuse'] = misuse
-            if 'data_abuse' in incident.get('plus', {}):
-                abuse = incident['plus']['data_abuse']
+                incident['plus']['attribute']['confidentiality']['data_abuse'] = misuse
+            if 'data_abuse' in incident.get('plus', {}).get('attribute', {}).get('confidentiality', {}):
+                abuse = incident['plus']['attribute']['confidentiality']['data_abuse']
                 abuse = abuse.lower()[0]
                 abuse = abuse_misuse_lookup.get(abuse, 'Other')
-                incident['plus']['data_abuse'] = abuse
+                incident['plus']['attribute']['confidentiality']['data_abuse'] = abuse
 
 
             ### Make discovery_method hierarchical

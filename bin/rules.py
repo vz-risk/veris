@@ -493,6 +493,11 @@ class Rules():
                 if len(incident['actor']['partner']['region']) > 1 and '000000' in incident['actor']['partner']['region']:
                     incident['actor']['partner']['region'].remove('000000') 
 
+
+        # Try to fix capitalization inconsistencies in source_id
+        if 'source_id' in incident:
+            incident['source_id'] = incident['source_id'].lower()
+
         return incident
 
 
