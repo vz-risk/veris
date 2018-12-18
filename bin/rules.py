@@ -357,7 +357,7 @@ class Rules():
                     logging.info("%s: Added attribute.availability since there was theft.",iid)
                     incident['attribute']['availability'] = {'variety': ['Loss']}
                 if 'Loss' not in incident['attribute']['availability']['variety']:
-                    logging.info("%s: Added Loss to attribute.availability.variety in respone %s since there was theft.",iid)
+                    logging.info("%s: Added Loss to attribute.availability.variety since there was theft.",iid)
                     incident['attribute']['availability']['variety'].append('Loss')
         if 'error' in incident['action']:
             if 'Loss' in incident['action']['error']['variety']:
@@ -365,7 +365,7 @@ class Rules():
                     logging.info("%s: Added attribute.availability since there was theft.",iid)
                     incident['attribute']['availability'] = {'variety': ['Loss']}
                 if 'Loss' not in incident['attribute']['availability']['variety']:
-                    logging.info("%s: Added Loss to attribute.availability.variety in respone %s since there was theft.",iid)
+                    logging.info("%s: Added Loss to attribute.availability.variety since there was theft.",iid)
                     incident['attribute']['availability']['variety'].append('Loss')
 
         # Commented out as discussion is these should only be applied to SG short form-entered incidents
