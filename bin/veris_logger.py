@@ -28,7 +28,7 @@ def updateLogger(cfg=None, formatDesign=None, dateFmt=None):
     elif type(handler) == logging.FileHandler and fileHandlerPresent is not True:
       if log_file is not None:
         if handler.baseFilename != log_file:
-          logger.removeHandler()
+          logger.removeHandler(handler)
         else:
           handler.setLevel(log_level)
           handler.setFormatter(formatter)
