@@ -113,7 +113,7 @@ def main(cfg):
             if incident.get('schema_version', last_version) != last_version:
                 if incident.get('schema_version', '') != version:
                     logging.warning("Incident {0} is version {1} instead of {2} and can therefore not be updated.".format(fname, incident.get('schema_version', 'NONE'), last_version))
-                next
+                continue
 
             # Update the schema version
             incident['schema_version'] = version
