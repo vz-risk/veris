@@ -41,7 +41,7 @@ const fields = {
   DescriptionField: CustomDescriptionField
 };
 
-let ajv = Ajv({allErrors: true});
+let ajv = Ajv({allErrors: true, schemaId: 'id'});
 ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'));
 
 function clean(obj) {

@@ -3,7 +3,7 @@ import React from 'react'
 import { VzBoxComponent, VzLinkButton } from './vzcomponents'
 import queryString from 'query-string'
 
-function ThankYouForm(props) {
+export default function ThankYouForm(props) {
   const params = queryString.parse(props.location.search);
 
   let nextUrl;
@@ -24,5 +24,3 @@ function ThankYouForm(props) {
     </VzBoxComponent>
       
 } 
-
-module.exports = ThankYouForm;
