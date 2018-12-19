@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-function VzBoxComponent(props) {
+export function VzBoxComponent(props) {
   return <div className="box">
       <div className="box-header">
         <h2>{props.title}</h2>
@@ -16,7 +16,7 @@ function VzBoxComponent(props) {
     </div>;
 }
 
-class VzCollapsible extends Component {
+export class VzCollapsible extends Component {
   constructor(props) {
     super(props)
 
@@ -266,13 +266,13 @@ VzCollapsible.defaultProps = {
   onClosing: () => {},
 };
 
-function VzLinkButton(props) {
+export function VzLinkButton(props) {
   return (
     <Link to={props.to} className="btn btn-primary"><span>{props.children}</span></Link>
   )
 }
 
-class VzModal extends React.Component {
+export class VzModal extends React.Component {
   render() {
     if (!this.props.isOpen) {
       return null
@@ -331,5 +331,3 @@ VzModal.propTypes = {
   isOpen: PropTypes.bool,
   children: PropTypes.node
 };
-
-module.exports = { VzBoxComponent, VzCollapsible, VzLinkButton, VzModal };

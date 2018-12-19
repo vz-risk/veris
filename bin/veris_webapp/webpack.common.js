@@ -1,54 +1,52 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: [
-    './src/js/main.js',
-    './assets/css/dbir.css'
-  ],
-  output: {
-    path: path.join(__dirname, 'dist', 'dbir-web'),
-    filename: 'js/main.min.js',
-    publicPath: ''
+  entry: {
+    app: './src/js/main.js',
+    css: './assets/css/dbir.css'
   },
   plugins: [
-    new ExtractTextPlugin("styles.css"),
+    new CleanWebpackPlugin(['dist']),
+    new MiniCssExtractPlugin({
+      filename: 'assets/css/[name].css',
+      chunkFilename: '[id].css'
+    }),
     new HtmlWebpackPlugin({
       title: 'VERIS Webapp',
-      template: path.join(__dirname, 'assets', 'index.html'),
-      inlineSource: '.(js|css)$'
+      template: path.join(__dirname, 'assets', 'index.html')
     })
   ],
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: 'assets'
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['env', 'react', 'stage-2'],
-          plugins: ['transform-decorators-legacy', 'inline-json-import']
-        }
-      },
+    rules: [
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.m?js?$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: [
+              '@babel/plugin-transform-react-jsx',
+              ['@babel/plugin-proposal-decorators', { "legacy": true }],
+              ['@babel/plugin-proposal-class-properties', { "loose": true }],
+            ]
+          }
+        }
       }
     ]
-  },
-  resolve: {
-    extensions: ['*', '.js', '.jsx', '.css'],
-    modules: [
-      'node_modules'
-    ]        
   }
-}
+};
