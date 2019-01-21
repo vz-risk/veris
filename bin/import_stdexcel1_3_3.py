@@ -525,7 +525,11 @@ class CSVtoJSON():
             # exit(1)
 
         ## Below unnecessary in python3. - GDB 181116
-        # infile.fieldnames = [f.decode('unicode_escape').encode('ascii', 'ignore') for f in infile.fieldnames] # remove unicode - gdb 170130
+        ## I think it might still be necessary.  Going to catch the error rather tahn ignore the line completely. - GDB 190122
+        try:
+            infile.fieldnames = [f.decode('unicode_escape').encode('ascii', 'ignore').decode() for f in infile.fieldnames] # remove unicode - gdb 170130
+        except AttributeError: # if we get an attribute error, f is already a string and doesn't need decoding. - GDG 190122
+            infile.fieldnames = [f.encode('ascii', 'ignore').decode() for f in infile.fieldnames] # remove unicode - gdb 170130
 
         for f in infile.fieldnames:
             if f not in self.sfields:

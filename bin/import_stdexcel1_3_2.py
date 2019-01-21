@@ -157,7 +157,7 @@ class CSVtoJSON():
 
 
     def isnum(self, x):
-        if type(x) not in [int, float, long]:
+        if type(x) not in [int, float]: # 'long' removed for python3 - GDB 181116
             x = re.sub('[$,]', '', x)
         try:
             x=int(float(x))
@@ -189,7 +189,9 @@ class CSVtoJSON():
                     templist = [x.strip() for x in src[enum].split(',') if len(x)>0 ]
                     saved[allenum[-1]] = [x for x in templist if len(x)>0 ]
                 elif val=="string":
-                    saved[allenum[-1]] = str(src[enum],errors='ignore')
+                    #saved[allenum[-1]] = unicode(src[enum],errors='ignore')
+                    # saved[allenum[-1]] = str(src[enum],errors='ignore') # python2
+                    saved[allenum[-1]] = src[enum] # python3 - gdb 181116
                 elif val=="numeric":
                     if self.isfloat(src[enum]):
                         saved[allenum[-1]] = self.isfloat(src[enum])
@@ -254,7 +256,7 @@ class CSVtoJSON():
             if len(incident['incident_id']):
                 # out['incident_id'] = incident['incident_id']
                 # Changing incident_id to UUID to prevent de-anonymiziation of incidents
-                m = hashlib.md5(incident["incident_id"])
+                m = hashlib.md5(incident["incident_id"].encode('utf-8'))
                 out["incident_id"] = str(uuid.UUID(bytes=m.digest())).upper()
             else:
                 out['incident_id'] = str(uuid.uuid4()).upper()
@@ -495,7 +497,11 @@ class CSVtoJSON():
             raise
             # exit(1)
 
-        infile.fieldnames = [f.decode('unicode_escape').encode('ascii', 'ignore') for f in infile.fieldnames] # remove unicode - gdb 170130
+        try:
+            infile.fieldnames = [f.decode('unicode_escape').encode('ascii', 'ignore').decode() for f in infile.fieldnames] # remove unicode - gdb 170130
+        except AttributeError: # if we get an attribute error, f is already a string and doesn't need decoding. - GDG 190122
+            infile.fieldnames = [f.encode('ascii', 'ignore').decode() for f in infile.fieldnames] # remove unicode - gdb 170130
+
 
         for f in infile.fieldnames:
             if f not in self.sfields:
