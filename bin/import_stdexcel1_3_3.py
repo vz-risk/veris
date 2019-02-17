@@ -111,7 +111,7 @@ class CSVtoJSON():
                 for row in csv_reader:
                     versions[m.sub('', row["schema_version"])] += 1 # the regex removes trailing '.0' to make counting easier
                 version = max(versions.items(), key=operator.itemgetter(1))[0]  # return the most common version. (They shoudl all be the same, but, you know.)
-                if version not in ["1.2", "1.3", "1.3.1", "1.3.2",]:
+                if version not in ["1.2", "1.3", "1.3.1", "1.3.2", "1.3.3"]:
                     logging.warning("VERIS version {0} in file {1} does not appear to be a standard version.  \n".format(version, inFile) + 
                                    "Please ensure it is correct as it is used for upgrading VERIS files to the report version.")
                 if not version:
@@ -549,6 +549,7 @@ class CSVtoJSON():
             try:
                 incident = { x:incident[x].strip() for x in incident }
             except AttributeError as e:
+                logging.error(incident)
                 logging.error("Error removing white space on row {0}.".format(row))
                 raise e
 
