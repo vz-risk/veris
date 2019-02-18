@@ -462,7 +462,7 @@ class Rules():
         # from issue https://github.com/vz-risk/veris/issues/194
         # for victim
         for eachCountry in incident['victim'].get('country', []):
-            incident['victim']['region'] = incident['victim'].get('region', []) + [self.country_region[eachCountry]]
+            incident['victim']['region'] = incident['victim'].get('region', []) + [self.country_region.get(eachCountry, "000000")]
         if 'region' in incident['victim'].keys():
             incident['victim']['region'] = list(set(incident['victim']['region'])) # remove duplicates
             # if a region exists but no country, country will be filled in 'unknown'
