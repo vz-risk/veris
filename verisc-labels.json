@@ -1861,8 +1861,8 @@
         "Stored encrypted": "Stored encrypted. (Also mark 'Stored'.)",
         "Stored unencrypted": "Stored unencrypted. (Also mark 'Stored'.)",
         "Transmitted": "Transmitted",
-        "Transmitted encrypted": "Transmitted encrypted",
-        "Transmitted unencrypted": "Transmitted unencrypted",
+        "Transmitted encrypted": "Transmitted encrypted. (Also mark 'Trasnmitted.')",
+        "Transmitted unencrypted": "Transmitted unencrypted. (Also mark 'Trasnmitted.')",
         "Other": "Data state known but not listed.",
         "Unknown": "Data stat not known",
         "Printed": "Data printed in human-readable format"

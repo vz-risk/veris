@@ -216,6 +216,10 @@ class Rules():
                 'Stored unencrypted' in incident['attribute']['confidentiality'].get('variety', [])) and \
                'Stored' not in incident['attribute']['confidentiality'].get('variety', []):
                 incident['attribute']['confidentiality']['variety'].append('Stored')
+            if ('Transmitted encrypted' in incident['attribute']['confidentiality'].get('variety', []) or \
+                'Transmitted unencrypted' in incident['attribute']['confidentiality'].get('variety', [])) and \
+               'Transmitted' not in incident['attribute']['confidentiality'].get('variety', []):
+                incident['attribute']['confidentiality']['variety'].append('Transmitted')
 
 
         ### Hierarchical Field
