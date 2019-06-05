@@ -462,6 +462,14 @@ class Rules():
                 logging.info("Added asset.assets.variety.S - Web application to action.hacking.vector.Web application incident for response {0}".format(iid))
 
 
+        # Set US country code to US from QM or QZ     
+        # https://en.wikipedia.org/wiki/International_Standard_Recording_Code
+        for i in range(len(incident['victim'].get('country', []))):
+            if incident['victim']['country'][i] in ["QM", "QZ"]:
+                incident['victim']['country'][i] = "US"
+                logging.info("Changed 'QM' or 'QZ' to 'US1 in victim country for response {0}".format(iid))
+
+
         # If a country exists, make sure the region exists in the regions list - GDB 180724
         # from issue https://github.com/vz-risk/veris/issues/194
         # for victim
