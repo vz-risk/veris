@@ -161,6 +161,7 @@ class VERISmm():
 
         # level_2
         mat[2] = bool(
+            mat[1] and 
             agg_ratings['timeline_2'] >= all_pct and
             agg_ratings['discovery_1'] >= all_pct and
             agg_ratings['actor_1'] >= all_pct and
@@ -172,6 +173,7 @@ class VERISmm():
 
         # level_3
         mat[3] = bool(
+            mat[2] and 
             agg_ratings['asset_2'] >= all_pct and
             agg_ratings['pattern'] >= all_pct and
             agg_ratings['victim_2'] >= all_pct and
@@ -187,6 +189,7 @@ class VERISmm():
 
         # level_4
         mat[4] = bool(
+            mat[3] and 
             agg_ratings['asset_3'] >= all_pct and
             #agg_ratings['quality_1'] >= all_pct and
             agg_ratings['timeline_3'] >= all_pct and
@@ -200,6 +203,7 @@ class VERISmm():
 
         # level_5
         mat[5] = bool(
+            mat[4] and 
             agg_ratings['actor_4'] >= all_pct and
             agg_ratings['action_4'] >= all_pct and
             agg_ratings['victim_3'] >= all_pct and
@@ -209,6 +213,7 @@ class VERISmm():
 
         # level_6
         mat[6] = bool(
+            mat[5] and 
             agg_ratings['incident_2'] >= all_pct and
             agg_ratings['a4_2'] >= all_pct and
             agg_ratings['impact_2'] >= all_pct 
@@ -217,6 +222,7 @@ class VERISmm():
 
         # level_7
         mat[7] = bool(
+            mat[6] and 
             agg_ratings['actor_5'] >= all_pct and
             agg_ratings['incident_3'] >= all_pct and
             agg_ratings['action_5'] >= all_pct and
@@ -568,7 +574,7 @@ class VERISmm():
         #incident_3
         rating['incident_3'] = bool(
             incident.get('victim', {}).get('notes', '') and # victim.notes: all
-            incident.get('victim', {}).get('secondary', '').get('notes', '') and # victim.secondary.notes: all
+            incident.get('victim', {}).get('secondary', {}).get('notes', '') and # victim.secondary.notes: all
             incident.get('impact', {}).get('notes', '') # impact.notes: all
         )
         #action_5
