@@ -395,7 +395,7 @@ class VERISmm():
             (
                 'Web application' in incident.get('action', {}).get('hacking', {}).get('vector', []) or # action.hacking.vector: Web application
                 'Direct install' in incident.get('action', {}).get('malware', {}).get('vector', []) or # action.malware.vector: Direct install
-                'Payment' in [k['variety'] for k in incident.get('attribute', {}).get('confidentiality', {}).get('data', [])] or # attribute.confidentiality.data.variety: Payment
+                'Payment' in [k.get('variety', 'Unknown') for k in incident.get('attribute', {}).get('confidentiality', {}).get('data', [])] or # attribute.confidentiality.data.variety: Payment
                 'Espionage' in incident.get('actor', {}).get('external', {}).get('motive', []) or # actor.external.motive: Espionage
                 len(incident.get("action", {}).get("malware", {}).get("variety", [])) > 0 or # action.malware.variety: all
                 len(incident.get("action", {}).get("physical", {}).get("variety", [])) > 0 or # action.physical.variety: some
@@ -448,7 +448,7 @@ class VERISmm():
         #attribute_2
         rating['attribute_2'] = bool(
             'data_total' in incident.get('attribute', {}).get('confidentiality', {'data_total': 0}) and # attribute.confidentiality.data_total: all
-            any([k['variety'] != "Unknown" for k in incident.get('attribute', {}).get('confidentiality', {}).get('data', [])]) and # attribute.confidentiality.data.variety: all
+            any([k.get('variety', 'Unknown') != "Unknown" for k in incident.get('attribute', {}).get('confidentiality', {}).get('data', [])]) and # attribute.confidentiality.data.variety: all
             len(incident.get("attribute", {}).get("integrity", {}).get("variety", [])) > 0 and # attribute.integrity.variety: all
             len(incident.get("attribute", {}).get("availability", {}).get("variety", [])) > 0 # attribute.availability.variety: all
         )
@@ -540,8 +540,8 @@ class VERISmm():
         #impact_1
         rating['impact_1'] = bool(
             incident.get('impact', {}).get('overall_rating', 'Unknown') != "Unknown" and # impact.overall_rating: all
-            any([k['rating'] != "Unknown" for k in incident.get('impact', {}).get('loss', [])]) and # impact.loss.rating: all
-            any([k['variety'] != "Unknown" for k in incident.get('impact', {}).get('loss', [])]) # impact.loss.variety: all
+            any([k.get('rating', 'Unknown') != "Unknown" for k in incident.get('impact', {}).get('loss', [])]) and # impact.loss.rating: all
+            any([k.get('variety', 'Unknown') != "Unknown" for k in incident.get('impact', {}).get('loss', [])]) # impact.loss.variety: all
         )
         #incident_2
         rating['impact_2'] = bool(
