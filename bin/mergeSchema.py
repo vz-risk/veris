@@ -167,11 +167,11 @@ Keys will be ordered by the schema file, but
 enums will be ordered by the labels file."""
     parser = argparse.ArgumentParser(description=descriptionText)
     parser.add_argument("-s", "--schema",
-                        help="schema file. (Normally '../verisc.json'.)", default=DEFAULTSCHEMA)
+                        help="schema file. (Normally '../verisc.json'.)", required=True) #, default=DEFAULTSCHEMA)
     parser.add_argument("--labels",
-                        help="the labels file. (Normally '../verisc-labels.json'.", default=DEFAULTLABELS)
+                        help="the labels file. (Normally '../verisc-labels.json'.", required=True) #, default=DEFAULTLABELS)
     parser.add_argument("-o", "--output",
-                        help="the location of the merged output file. (Normally '../verisc-merged.json'.)", default=MERGED)
+                        help="the location of the merged output file. (Normally '../verisc-merged.json'.)", required=True) #, default=MERGED)
     parser.add_argument("-e", "--enum", help="The name of the enums file if desired. (Normally '../verisc-enum.json'.)", default=None)
     parser.add_argument("-k", "--keynames", help="The name of the keynames file if desired. (normally '../keynames-real.txt'.)", default=None)
     parser.add_argument("-l", "--logging", choices=["critical", "warning", "info", "debug"],
