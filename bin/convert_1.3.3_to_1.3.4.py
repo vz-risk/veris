@@ -126,6 +126,14 @@ def main(cfg):
 #             incident["asset"]["assets"] = [dict(e, **{u"variety": u"S - ICS"}) if e.get(u"variety", "") ==  u"S - SCADA" else e for e in incident["asset"]["assets"]] 
 
 
+            ### Hierarchical Field
+            # `asset.assets.variety.U - Desktop or laptop` is a parent of `asset.assets.variety.U - Desktop` and `asset.assets.variety.U - Laptop`
+            # per vz-risk/VERIS issue #263
+            if 'variety' in incident.get('asset', {}).get('assets', {}):
+                if ('U - Desktop' in incident['asset']['assets'].get('variety', []) or \
+                'U - Laptop' in incident['asset']['assets'].get('variety', [])):
+                    incident['asset']['assets']['variety'].append('U - Desktop or laptop')
+
 
             # Now to save the incident
             logging.info("Writing new file to %s" % out_fname)

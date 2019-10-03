@@ -272,6 +272,17 @@ class Rules():
                 incident['action']['malware']['variety'].append('Exploit vuln') 
 
 
+        ### Hierarchical Field
+        # `asset.assets.variety.U - Desktop or laptop` is a parent of `asset.assets.variety.U - Desktop` and `asset.assets.variety.U - Laptop`
+        # per vz-risk/VERIS issue #263
+        if 'variety' in incident.get('asset', {}).get('assets', {}):
+            if ('U - Desktop' in incident['asset']['assets'].get('variety', []) or \
+            'U - Laptop' in incident['asset']['assets'].get('variety', [])) and \
+            'U - Desktop or laptop' not in incident['asset']['assets'].get('variety', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
+                incident['asset']['assets']['variety'].append('U - Desktop or laptop')
+
+
         ### impact.overall_amount should be at least the sum of the impact.loss.amounts
         ## VERIS issue 142
         if 'loss' in incident.get('impact', {}):
