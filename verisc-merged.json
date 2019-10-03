@@ -2293,6 +2293,22 @@
           "type": "array", 
           "uniqueItems": true
         }, 
+        "role": {
+          "description": "Is the asset Information Technology (IT) such as email or the domain controller or Operational Technology (OT) such as rail-switching computers for a railroad or manufacturing robots for a manufacturing company.", 
+          "items": {
+            "type": "string", 
+            "enum": [
+              "IT", 
+              "OT", 
+              "Unknown", 
+              "Other", 
+              "NA"
+            ]
+          }, 
+          "minItems": 1, 
+          "type": "array", 
+          "uniqueItems": true
+        }, 
         "notes": {
           "minLength": 1, 
           "type": "string"

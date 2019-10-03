@@ -54,6 +54,7 @@ asset.hosting
 asset.management
 asset.notes
 asset.ownership
+asset.role
 asset.total_amount
 attribute.availability.duration.unit
 attribute.availability.duration.value

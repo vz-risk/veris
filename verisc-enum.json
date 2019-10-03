@@ -1567,6 +1567,13 @@
       "Unknown", 
       "Other"
     ], 
+    "role": [
+      "IT", 
+      "OT", 
+      "Unknown", 
+      "Other", 
+      "NA"
+    ], 
     "country": [
       "Unknown", 
       "AD", 

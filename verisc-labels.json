@@ -1567,6 +1567,13 @@
       "Unknown": "The responsibility for management and maintenance of the affected asset was not known to the incident responder or not recorded.",
       "Other": "Ownership known but not listed"
     },
+    "role": {
+      "IT": "Information Technology",
+      "OT": "Operational Technology",
+      "Unknown": "Unknown",
+      "Other": "Known but not IT or OT",
+      "NA": "The concept of a role is not applicable to the asset."
+    },
     "country": {
       "Unknown": "Unknown",
       "AD": "Andorra",
