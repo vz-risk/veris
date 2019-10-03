@@ -283,6 +283,20 @@ class Rules():
                 incident['asset']['assets']['variety'].append('U - Desktop or laptop')
 
 
+        ### Hierarchical Field
+        # `action.malware.variety.Email` is a parent of `action.malware.variety.Email attachment`, `action.malware.variety.Email autoexecute`, `action.malware.variety.Email link`, `action.malware.variety.Email other`, and `action.malware.variety.Email unknown`
+        # per vz-risk/VERIS issue #232
+        if 'variety' in incident.get('action', {}).get('malware', {}):
+            if ('Email attachment' in incident['action']['malware'].get('variety', []) or \
+            'Email autoexecute' in incident['action']['malware'].get('variety', []) or \
+            'Email link' in incident['action']['malware'].get('variety', []) or \
+            'Email other' in incident['action']['malware'].get('variety', []) or \
+            'Email unknown' in incident['action']['malware'].get('variety', [])) and \
+            'Email' not in incident['asset']['assets'].get('variety', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
+                incident['asset']['assets']['variety'].append('Email')
+
+
         ### impact.overall_amount should be at least the sum of the impact.loss.amounts
         ## VERIS issue 142
         if 'loss' in incident.get('impact', {}):

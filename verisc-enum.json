@@ -615,10 +615,12 @@
       "vector": [
         "Direct install", 
         "Download by malware", 
+        "Email", 
         "Email attachment", 
         "Email autoexecute", 
         "Email link", 
         "Email unknown", 
+        "Email other", 
         "Instant messaging", 
         "Network propagation", 
         "Remote injection", 
