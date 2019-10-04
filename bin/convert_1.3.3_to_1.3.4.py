@@ -154,7 +154,7 @@ def main(cfg):
 
 
 if __name__ == '__main__':
-    descriptionText = "Converts VERIS 1.3.2 incidents to v1.3.3"
+    descriptionText = "Converts VERIS 1.3.3 incidents to v1.3.4"
     helpText = "output directory to write new files. Default is to overwrite."
     parser = argparse.ArgumentParser(description=descriptionText)
     parser.add_argument("-l","--log_level",choices=["critical","warning","info","debug"], help="Minimum logging level to display")
