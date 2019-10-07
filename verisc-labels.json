@@ -582,7 +582,7 @@
       "variety": {
         "Adminware": "System or network utilities (e.g., PsTools, Netcat)",
         "Adware": "Adware",
-        "Backdoor": "Backdoor (enable remote access)",
+        "Backdoor": "Backdoor (enable remote access). Child of 'RAT' when combined with 'Trojan'",
         "Brute force": "Brute force attack",
         "C2": "Command and control (C2)",
         "Capture app data": "Capture data from application or system process",
@@ -603,11 +603,13 @@
         "Password dumper": "Password dumper (extract credential hashes)",
         "Ram scraper": "Ram scraper or memory parser (capture data from volatile memory)",
         "Ransomware": "Ransomware (encrypt or seize stored data)",
+        "RAT": "Remote Access Trojan.  Parent of 'Backdoor' and 'Trojan'",
         "Rootkit": "Rootkit (maintain local privileges and stealth)",
         "Scan network": "Scan or footprint network",
         "Spam": "Send spam",
         "Spyware/Keylogger": "Spyware, keylogger or form-grabber (capture user input or activity)",
         "SQL injection": "SQL injection attack",
+        "Trojan": "An application which appears legitimate but hides malicious functionality. Child of 'RAT' when combined with 'Backdoor'",
         "Worm": "Worm (propagate to other systems or devices)",
         "Other": "Other",
         "Unknown": "Unknown"

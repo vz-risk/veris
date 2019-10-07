@@ -297,6 +297,23 @@ class Rules():
                 incident['asset']['assets']['variety'].append('Email')
 
 
+        ### Hierarchical Field
+        # `action.malware.variety.RAT` is a parent of `action.malware.variety.Trojan` combined with `action.malware.variety.Backdoor`
+        # per vz-risk/VERIS issue #215
+        if 'variety' in incident.get('action', {}).get('malware', {}):
+            if ('Backdoor' in incident['action']['malware'].get('variety', []) and \
+            'Trojan' in incident['action']['malware'].get('variety', [])) and \
+            'RAT' not in incident['action']['malware'].get('variety', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
+                incident['action']['malware']['variety'].append('RAT')
+            if 'RAT' in incident['action']['malware'].get('variety', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
+                if 'Backdoor' not in incident['action']['malware'].get('variety', []):
+                    incident['action']['malware']['variety'].append('Backdoor')
+                if 'Trojan' not in incident['action']['malware'].get('variety', []):
+                    incident['action']['malware']['variety'].append('Trojan')
+
+
         ### impact.overall_amount should be at least the sum of the impact.loss.amounts
         ## VERIS issue 142
         if 'loss' in incident.get('impact', {}):

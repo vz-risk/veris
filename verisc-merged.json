@@ -871,11 +871,13 @@
                   "Password dumper", 
                   "Ram scraper", 
                   "Ransomware", 
+                  "RAT", 
                   "Rootkit", 
                   "Scan network", 
                   "Spam", 
                   "Spyware/Keylogger", 
                   "SQL injection", 
+                  "Trojan", 
                   "Worm", 
                   "Other", 
                   "Unknown"
