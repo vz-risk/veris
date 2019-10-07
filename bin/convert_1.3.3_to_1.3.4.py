@@ -166,6 +166,25 @@ def main(cfg):
                     _ = incident['plus']['attribute']['confidentiality'].pop('credit_monitoring_years')
 
 
+            # Convert plus.attribute.confidentiality.partner_data to a categorical field
+            # per vz-risk/VERIS issue #259
+            if 'partner_data' in incident.get('plus', {}).get('attribute', {}).get('confidentiality'):
+                if incident['plus']['attribute']['confidentiality']['partner_data'][0].upper() == 'N':
+                    incident['plus']['attribute']['confidentiality']['partner_data'] = 'No'
+                elif incident['plus']['attribute']['confidentiality']['partner_data'][0].upper() == 'U':
+                    incident['plus']['attribute']['confidentiality']['partner_data'] = 'Unknown'
+                elif incident['plus']['attribute']['confidentiality']['partner_data'][0].upper() == 'Y':
+                    incident['plus']['attribute']['confidentiality']['partner_data'] = 'Y'
+                elif incident['plus']['attribute']['confidentiality']['partner_data'][0].upper() == 'O':
+                    incident['plus']['attribute']['confidentiality']['partner_data'] = 'Other'
+                else:
+                    _ = incident['plus']['attribute']['confidentiality'].pop('partner_data')
+            # Ensure plus.attribute.confidentiality.partner_number > 0 per new validation
+            if 'partner_number' in incident.get('plus', {}).get('attribute', {}).get('confidentiality'):
+                if incident['plus']['attribute']['confidentiality']['credit_monitoring_years'] <= 0:
+                    _ = incident['plus']['attribute']['confidentiality'].pop('partner_number')
+
+
             # Now to save the incident
             logging.info("Writing new file to %s" % out_fname)
             with open(out_fname, 'w') as outfile:
