@@ -2953,7 +2953,8 @@
                   "Exploit Kits", 
                   "NA", 
                   "Other", 
-                  "Unknown"
+                  "Unknown", 
+                  "Known"
                 ]
               }, 
               "minItems": 1, 
@@ -2985,9 +2986,11 @@
                   "Proxy", 
                   "Marketplace", 
                   "DNS", 
+                  "Escrow", 
                   "NA", 
                   "Other", 
-                  "Unknown"
+                  "Unknown", 
+                  "Known"
                 ]
               }, 
               "minItems": 1, 
@@ -3023,7 +3026,8 @@
                   "Organizational Information", 
                   "NA", 
                   "Other", 
-                  "Unknown"
+                  "Unknown", 
+                  "Known"
                 ]
               }, 
               "minItems": 1, 
@@ -3057,7 +3061,8 @@
                   "Loader", 
                   "NA", 
                   "Other", 
-                  "Unknown"
+                  "Unknown", 
+                  "Known"
                 ]
               }, 
               "minItems": 1, 
@@ -3091,7 +3096,8 @@
                   "Provide service", 
                   "NA", 
                   "Other", 
-                  "Unknown"
+                  "Unknown", 
+                  "Known"
                 ]
               }, 
               "minItems": 1, 
@@ -3124,7 +3130,12 @@
                   "Re-shipping", 
                   "Gambling", 
                   "Bank", 
-                  "Company"
+                  "Provide service", 
+                  "Company", 
+                  "NA", 
+                  "Other", 
+                  "Unknown", 
+                  "Known"
                 ]
               }, 
               "minItems": 1, 

@@ -1993,7 +1993,8 @@
         "Exploit Kits": "Code sets capable of selecting and trying multiple exploits against a target.",
         "NA": "No type of development was necessary",
         "Other": "The variety of development required is known, but is not listed.",
-        "Unknown": "Nothing is known about the need for or type of development investment"
+        "Unknown": "Nothing is known about the need for or type of development investment",
+        "Known": "Development was necessary, but nothing else is known."
       }
     },
     "non-distribution services": {
@@ -2004,9 +2005,11 @@
         "Proxy": "A proxy service (either formally or informally hosted) is used by the actor to obscure their source",
         "Marketplace": "Use of a marketplace was required as part of this incident.",
         "DNS": "DNS services including fast flux",
+        "Escrow": "Something kept in the custody of a third party until a condition has been fulfilled.",
         "NA": "No type of non-distribution service was necessary",
         "Other": "The variety of non-distribution service required is known, but is not listed",
-        "Unknown": "Nothing is known about the need for or type of non-distribution service investment"
+        "Unknown": "Nothing is known about the need for or type of non-distribution service investment",
+        "Known": "Non-distribution services were necessary, but nothing else is known."
       }
     },
     "targeting": {
@@ -2021,7 +2024,8 @@
         "Organizational Information": "Information on an organization such as org chart, technologies in use, financial assets, etc, used to pick them as a target",
         "NA": "No type of targeting was necessary",
         "Other": "The variety of targeting was known, but is not listed",
-        "Unknown": "Nothing is known about the need for or type of targeting investment"
+        "Unknown": "Nothing is known about the need for or type of targeting investment",
+        "Known": "Targeting was necessary, but nothing else is known."
       }
     },
     "distribution": {
@@ -2034,7 +2038,8 @@
         "Loader": "malware that loads other malware",
         "NA": "No type of distribution was necessary",
         "Other": "The variety of distribution was known, but is not listed",
-        "Unknown": "Nothing is known about the need for or type of distribution investment"
+        "Unknown": "Nothing is known about the need for or type of distribution investment",
+        "Known": "Distribution was necessary, but nothing else is known."
       }
     },
     "cash-out": {
@@ -2047,7 +2052,8 @@
         "Provide service": "See distribution and non-distribution services for potential examples",
         "NA": "No type of cash-out was necessary",
         "Other": "The variety of cash-out was known, but is not listed",
-        "Unknown": "Nothing is known about the need for or type of cash-out investment"
+        "Unknown": "Nothing is known about the need for or type of cash-out investment",
+        "Known": "Cash-out was necessary, but nothing else is known."
       }
     },
     "money laundering": {
@@ -2059,7 +2065,12 @@
         "Re-shipping": "Individuals receive packages purchased through fraudulent means and subsequently repackage the merchandise for shipment, usually abroad.",
         "Gambling": "Gambling related money laundering. (e.g. Converting to chips and back or big wins and losses.",
         "Bank": "Financial institution based money laundering.",
-        "Company": "Trade-based, shell companies, under/over paying, cash-intensive businesses, etc, used for money laundering"
+        "Provide service": "See distribution and non-distribution services for potential examples",
+        "Company": "Trade-based, shell companies, under/over paying, cash-intensive businesses, etc, used for money laundering",
+        "NA": "No type of cmoney laundering was necessary",
+        "Other": "The variety of money laundering was known, but is not listed",
+        "Unknown": "Nothing is known about the need for or type of money laundering",
+        "Known": "Money laundering was necessary, but nothing else is known."
       }
     }
   },
