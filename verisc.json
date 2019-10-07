@@ -748,7 +748,12 @@
         },
         "cloud": {
           "description": "Only answer if you know for sure if the asset was hosted in a cloud service.",
-          "type": "string"
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
         },
         "hosting": {
           "description": "Where is the affected asset hosted/located?",
@@ -791,7 +796,11 @@
           "uniqueItems": true
         }
       },
-      "type": "object"
+      "type": "object",
+      "required": [
+        "assets",
+        "cloud"
+      ]
     },
     "attribute": {
       "description": "<a href='http://veriscommunity.net/attributes.html' target='_blank'>More Info</a>",

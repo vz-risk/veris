@@ -548,6 +548,7 @@
         "URL redirector abuse": "URL redirector abuse. Child of 'Exploit vuln'.",
         "Use of backdoor or C2": "Use of Backdoor or C2 channel",
         "Use of stolen creds": "Use of stolen authentication credentials",
+        "User breakout": "Elevation of privilege by another customer in shared environment. Child of 'Exploit vuln'.",
         "Virtual machine escape": "Virtual machine escape. Child of 'Exploit vuln'.",
         "XML attribute blowup": "XML attribute blowup. Child of 'Exploit vuln'.",
         "XML entity expansion": "XML entity expansion. Child of 'Exploit vuln'.",
@@ -565,6 +566,8 @@
         "Command shell": "Remote shell",
         "Desktop sharing": "Graphical desktop sharing (RDP, VNC, PCAnywhere, Citrix)",
         "Desktop sharing software": "Superset of 'Desktop sharing' and '3rd party desktop'.  Please use in place of the other two",
+        "Hypervisor": "Hypervisor break-out attack",
+        "Inter-tenant": "Penetration of another VM or web site on shared device or infrastructure",
         "Other": "Other",
         "Partner": "Partner connection or credential",
         "Physical access": "Physical access or connection (i.e., at keyboard or via cable) ",
@@ -1543,16 +1546,11 @@
       "Other": "Owner known but not listed"
     },
     "cloud": {
-      "Customer attack": "Penetration of another web site on shared device",
-      "Hosting error": "Misconfiguration or error by hosting provider",
-      "Hosting governance": "Lack of security process or procedure by hosting provider",
-      "Hypervisor": "Hypervisor break-out attack",
-      "Partner application": "Application vulnerability in partner-developed application",
-      "User breakout": "Elevation of privilege by another customer in shared environment",
-      "NA": "It is known no cloud assets were involved",
-      "No": "It is known that a cloud asset was involved and it being a cloud asset did not affect the outcome",
+      "On-Premise Asset(s)": "On premise assets were involved in the incident.",
+      "External Cloud Asset(s)": "(cloud.Yes) Cloud assets were involved in the incident", 
       "Other": "Cloud hosting known but not listed",
-      "Unknown": "The involvement of cloud assets was not measured"
+      "Unknown": "The involvement of cloud assets was not measured",
+      "NA": " (cloud.No) Cloud is not applicable to this incident"
     },
     "hosting": {
       "External - unknown environment": "A third party provided hosted the affected asset, but it is unknown whether the victim organization’s environment was shared or dedicated.",

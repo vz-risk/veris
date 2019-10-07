@@ -548,6 +548,7 @@
         "URL redirector abuse", 
         "Use of backdoor or C2", 
         "Use of stolen creds", 
+        "User breakout", 
         "Virtual machine escape", 
         "XML attribute blowup", 
         "XML entity expansion", 
@@ -565,6 +566,8 @@
         "Command shell", 
         "Desktop sharing", 
         "Desktop sharing software", 
+        "Hypervisor", 
+        "Inter-tenant", 
         "Other", 
         "Partner", 
         "Physical access", 
@@ -1543,16 +1546,11 @@
       "Other"
     ], 
     "cloud": [
-      "Customer attack", 
-      "Hosting error", 
-      "Hosting governance", 
-      "Hypervisor", 
-      "Partner application", 
-      "User breakout", 
-      "NA", 
-      "No", 
+      "On-Premise Asset(s)", 
+      "External Cloud Asset(s)", 
       "Other", 
-      "Unknown"
+      "Unknown", 
+      "NA"
     ], 
     "hosting": [
       "External - unknown environment", 

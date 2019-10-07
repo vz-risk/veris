@@ -775,6 +775,7 @@
                   "URL redirector abuse", 
                   "Use of backdoor or C2", 
                   "Use of stolen creds", 
+                  "User breakout", 
                   "Virtual machine escape", 
                   "XML attribute blowup", 
                   "XML entity expansion", 
@@ -800,6 +801,8 @@
                   "Command shell", 
                   "Desktop sharing", 
                   "Desktop sharing software", 
+                  "Hypervisor", 
+                  "Inter-tenant", 
                   "Other", 
                   "Partner", 
                   "Physical access", 
@@ -2248,19 +2251,19 @@
         }, 
         "cloud": {
           "description": "Only answer if you know for sure if the asset was hosted in a cloud service.", 
-          "type": "string", 
-          "enum": [
-            "Customer attack", 
-            "Hosting error", 
-            "Hosting governance", 
-            "Hypervisor", 
-            "Partner application", 
-            "User breakout", 
-            "NA", 
-            "No", 
-            "Other", 
-            "Unknown"
-          ]
+          "items": {
+            "type": "string", 
+            "enum": [
+              "On-Premise Asset(s)", 
+              "External Cloud Asset(s)", 
+              "Other", 
+              "Unknown", 
+              "NA"
+            ]
+          }, 
+          "minItems": 1, 
+          "type": "array", 
+          "uniqueItems": true
         }, 
         "hosting": {
           "description": "Where is the affected asset hosted/located?", 
@@ -2580,7 +2583,11 @@
           "uniqueItems": true
         }
       }, 
-      "type": "object"
+      "type": "object", 
+      "required": [
+        "assets", 
+        "cloud"
+      ]
     }, 
     "attribute": {
       "description": "<a href='http://veriscommunity.net/attributes.html' target='_blank'>More Info</a>", 

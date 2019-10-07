@@ -147,7 +147,7 @@ def main(cfg):
                     incident['asset']['assets']['variety'].append('Email')
 
 
-            # Convert plus.attribute.confidentiality.credit_monitoring to a categorical field
+            ### Convert plus.attribute.confidentiality.credit_monitoring to a categorical field
             # per vz-risk/VERIS issue #260 
             if 'credit_monitoring' in incident.get('plus', {}).get('attribute', {}).get('confidentiality'):
                 if incident['plus']['attribute']['confidentiality']['credit_monitoring'].upper() == 'N':
@@ -166,7 +166,7 @@ def main(cfg):
                     _ = incident['plus']['attribute']['confidentiality'].pop('credit_monitoring_years')
 
 
-            # Convert plus.attribute.confidentiality.partner_data to a categorical field
+            ### Convert plus.attribute.confidentiality.partner_data to a categorical field
             # per vz-risk/VERIS issue #259
             if 'partner_data' in incident.get('plus', {}).get('attribute', {}).get('confidentiality'):
                 if incident['plus']['attribute']['confidentiality']['partner_data'][0].upper() == 'N':
@@ -183,6 +183,66 @@ def main(cfg):
             if 'partner_number' in incident.get('plus', {}).get('attribute', {}).get('confidentiality'):
                 if incident['plus']['attribute']['confidentiality']['credit_monitoring_years'] <= 0:
                     _ = incident['plus']['attribute']['confidentiality'].pop('partner_number')
+
+
+            ### Convert most cloud enumerations into hacking action varieties
+            # per vz-risk/VERIS issue #225 and #236
+            if 'cloud' in incident.get('asset', {}):
+                cloud = incident['asset'].pop('cloud')
+                if cloud == 'Customer attack':
+                    if 'hacking' not in incident['action']:
+                        incident['action']['hacking'] = {'variety':['Unknown'], 'vector':['Inter-tenant']}
+                    else:
+                        incident['action']['hacking']['vector'].append("Inter-tenant")
+                elif cloud == 'Hosting error':
+                    if 'error' not in incident['action']:
+                        incident['action']['error'] = {'variety':['Misconfiguration'], 'vector':['Unknown']}
+                    elif 'Misconfiguration' not in incident['action']['error']['variety']:
+                        incident['action']['error']['variety'].append("Misconfiguration")
+                    else:
+                        pass # Misconfiguration is already in action.error.variety
+                    incident['asset']['cloud'] = ['External Cloud Asset(s)']
+                elif cloud == 'Hosting governance':
+                    if 'error' not in incident['action']:
+                        incident['action']['error'] = {'variety':['Process'], 'vector':['Unknown']}
+                    elif 'Process' not in incident['action']['error']['variety']:
+                        incident['action']['error']['variety'].append("Process")
+                    else:
+                        pass # Process is already in action.error.variety
+                    incident['asset']['cloud'] = ['External Cloud Asset(s)']
+                    for actor in incident['actor']:
+                        if 'Secondary' not in incident['actor'][actor]['motive']
+                            incident['actor'][actor]['motive'].append('Secondary')
+                elif cloud == "Hypervisor": 
+                    if 'hacking' not in incident['action']:
+                        incident['action']['hacking'] = {'variety':['Unknown'], 'vector':['Hypervisor']}
+                    else:
+                        incident['action']['hacking']['vector'].append("Hypervisor")
+                elif cloud == "Parnter application":
+                    if 'hacking' not in incident['action']:
+                        incident['action']['hacking'] = {'variety':['Exploit vuln'], 'vector':['Unknown']}
+                    elif 'Process' not in incident['action']['error']['variety']:
+                        incident['action']['hacking']['variety'].append("Exploit vuln")
+                    else:
+                        pass # Exploit vuln is already in action.hacking.variety
+                    for actor in incident['actor']:
+                        if 'Secondary' not in incident['actor'][actor]['motive']
+                            incident['actor'][actor]['motive'].append('Secondary')
+                elif cloud == "User breakout":
+                    if 'hacking' not in incident['action']:
+                        incident['action']['hacking'] = {'variety':['User breakout'], 'vector':['Unknown']}
+                    else:
+                        incident['action']['hacking']['variety'].append("User breakout")
+                elif cloud == 'NA':
+                    incident['asset']['cloud'] = ['Unknown']
+                elif cloud == 'No':
+                    incident['asset']['cloud'] = ['NA']
+                elif cloud == 'Other':
+                    incident['asset']['cloud'] = ['Other']
+                elif cloud == 'Unknown':
+                    incident['asset']['cloud'] = ['Unknown']
+
+
 
 
             # Now to save the incident

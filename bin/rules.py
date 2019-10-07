@@ -254,7 +254,7 @@ class Rules():
                    "Session replay", "Soap array abuse", 
                    "Special element injection", "SQLi", 
                    "SSI injection",
-                   "URL redirector abuse",  
+                   "URL redirector abuse", 'User breakout',  
                    "Virtual machine escape", 
                    "XML attribute blowup", "XML entity expansion", 
                    "XML external entities", "XML injection", 
