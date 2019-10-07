@@ -147,6 +147,25 @@ def main(cfg):
                     incident['asset']['assets']['variety'].append('Email')
 
 
+            # Convert plus.attribute.confidentiality.credit_monitoring to a categorical field
+            # per vz-risk/VERIS issue #260 
+            if 'credit_monitoring' in incident.get('plus', {}).get('attribute', {}).get('confidentiality'):
+                if incident['plus']['attribute']['confidentiality']['credit_monitoring'].upper() == 'N':
+                    incident['plus']['attribute']['confidentiality']['credit_monitoring'] = 'No'
+                elif incident['plus']['attribute']['confidentiality']['credit_monitoring'].upper() == 'U':
+                    incident['plus']['attribute']['confidentiality']['credit_monitoring'] = 'Unknown'
+                elif incident['plus']['attribute']['confidentiality']['credit_monitoring'].upper() == 'UNKNOWN':
+                    incident['plus']['attribute']['confidentiality']['credit_monitoring'] = 'Unknown'
+                elif incident['plus']['attribute']['confidentiality']['credit_monitoring'].upper() != '':
+                    incident['plus']['attribute']['confidentiality']['credit_monitoring'] = 'Yes'
+                else:
+                    _ = incident['plus']['attribute']['confidentiality'].pop('credit_monitoring')
+            # Ensure plus.attribute.confidentiality.credit_monitoring > 0 per new validation
+            if 'credit_monitoring_years' in incident.get('plus', {}).get('attribute', {}).get('confidentiality'):
+                if incident['plus']['attribute']['confidentiality']['credit_monitoring_years'] <= 0:
+                    _ = incident['plus']['attribute']['confidentiality'].pop('credit_monitoring_years')
+
+
             # Now to save the incident
             logging.info("Writing new file to %s" % out_fname)
             with open(out_fname, 'w') as outfile:

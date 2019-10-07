@@ -1995,8 +1995,7 @@
         "Exploit Kits", 
         "NA", 
         "Other", 
-        "Unknown", 
-        "Known"
+        "Unknown"
       ]
     }, 
     "non-distribution services": {
@@ -2010,8 +2009,7 @@
         "Escrow", 
         "NA", 
         "Other", 
-        "Unknown", 
-        "Known"
+        "Unknown"
       ]
     }, 
     "targeting": {
@@ -2026,8 +2024,7 @@
         "Organizational Information", 
         "NA", 
         "Other", 
-        "Unknown", 
-        "Known"
+        "Unknown"
       ]
     }, 
     "distribution": {
@@ -2040,8 +2037,7 @@
         "Loader", 
         "NA", 
         "Other", 
-        "Unknown", 
-        "Known"
+        "Unknown"
       ]
     }, 
     "cash-out": {
@@ -2054,8 +2050,7 @@
         "Provide service", 
         "NA", 
         "Other", 
-        "Unknown", 
-        "Known"
+        "Unknown"
       ]
     }, 
     "money laundering": {
@@ -2071,8 +2066,7 @@
         "Company", 
         "NA", 
         "Other", 
-        "Unknown", 
-        "Known"
+        "Unknown"
       ]
     }
   }, 

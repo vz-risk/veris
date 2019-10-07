@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#", 
   "additionalProperties": false, 
-  "description": "VERIS Community Schema 1.3.3", 
+  "description": "VERIS Community Schema 1.3.4.", 
   "properties": {
     "incident_id": {
       "type": "string", 
@@ -2955,8 +2955,7 @@
                   "Exploit Kits", 
                   "NA", 
                   "Other", 
-                  "Unknown", 
-                  "Known"
+                  "Unknown"
                 ]
               }, 
               "minItems": 1, 
@@ -2991,8 +2990,7 @@
                   "Escrow", 
                   "NA", 
                   "Other", 
-                  "Unknown", 
-                  "Known"
+                  "Unknown"
                 ]
               }, 
               "minItems": 1, 
@@ -3028,8 +3026,7 @@
                   "Organizational Information", 
                   "NA", 
                   "Other", 
-                  "Unknown", 
-                  "Known"
+                  "Unknown"
                 ]
               }, 
               "minItems": 1, 
@@ -3063,8 +3060,7 @@
                   "Loader", 
                   "NA", 
                   "Other", 
-                  "Unknown", 
-                  "Known"
+                  "Unknown"
                 ]
               }, 
               "minItems": 1, 
@@ -3098,8 +3094,7 @@
                   "Provide service", 
                   "NA", 
                   "Other", 
-                  "Unknown", 
-                  "Known"
+                  "Unknown"
                 ]
               }, 
               "minItems": 1, 
@@ -3136,8 +3131,7 @@
                   "Company", 
                   "NA", 
                   "Other", 
-                  "Unknown", 
-                  "Known"
+                  "Unknown"
                 ]
               }, 
               "minItems": 1, 
@@ -3474,9 +3468,9 @@
       "properties": {}
     }, 
     "schema_version": {
-      "description": "Schema version in use. This should be 1.3.3 for this schema.", 
+      "description": "Schema version in use. This should be 1.3.4 for this schema.", 
       "type": "string", 
-      "default": "1.3.3"
+      "default": "1.3.4"
     }
   }, 
   "required": [

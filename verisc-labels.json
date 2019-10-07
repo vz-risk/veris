@@ -1995,8 +1995,7 @@
         "Exploit Kits": "Code sets capable of selecting and trying multiple exploits against a target.",
         "NA": "No type of development was necessary",
         "Other": "The variety of development required is known, but is not listed.",
-        "Unknown": "Nothing is known about the need for or type of development investment",
-        "Known": "Development was necessary, but nothing else is known."
+        "Unknown": "Nothing is known about the need for or type of development investment other than it was present."
       }
     },
     "non-distribution services": {
@@ -2010,8 +2009,7 @@
         "Escrow": "Something kept in the custody of a third party until a condition has been fulfilled.",
         "NA": "No type of non-distribution service was necessary",
         "Other": "The variety of non-distribution service required is known, but is not listed",
-        "Unknown": "Nothing is known about the need for or type of non-distribution service investment",
-        "Known": "Non-distribution services were necessary, but nothing else is known."
+        "Unknown": "Nothing is known about the need for or type of non-distribution service investment other than it was present."
       }
     },
     "targeting": {
@@ -2026,8 +2024,7 @@
         "Organizational Information": "Information on an organization such as org chart, technologies in use, financial assets, etc, used to pick them as a target",
         "NA": "No type of targeting was necessary",
         "Other": "The variety of targeting was known, but is not listed",
-        "Unknown": "Nothing is known about the need for or type of targeting investment",
-        "Known": "Targeting was necessary, but nothing else is known."
+        "Unknown": "Nothing is known about the need for or type of targeting investment other than it was present."
       }
     },
     "distribution": {
@@ -2040,8 +2037,7 @@
         "Loader": "malware that loads other malware",
         "NA": "No type of distribution was necessary",
         "Other": "The variety of distribution was known, but is not listed",
-        "Unknown": "Nothing is known about the need for or type of distribution investment",
-        "Known": "Distribution was necessary, but nothing else is known."
+        "Unknown": "Nothing is known about the need for or type of distribution investment other than it was present."
       }
     },
     "cash-out": {
@@ -2054,8 +2050,7 @@
         "Provide service": "See distribution and non-distribution services for potential examples",
         "NA": "No type of cash-out was necessary",
         "Other": "The variety of cash-out was known, but is not listed",
-        "Unknown": "Nothing is known about the need for or type of cash-out investment",
-        "Known": "Cash-out was necessary, but nothing else is known."
+        "Unknown": "Nothing is known about the need for or type of cash-out investment other than it was present."
       }
     },
     "money laundering": {
@@ -2071,8 +2066,7 @@
         "Company": "Trade-based, shell companies, under/over paying, cash-intensive businesses, etc, used for money laundering",
         "NA": "No type of cmoney laundering was necessary",
         "Other": "The variety of money laundering was known, but is not listed",
-        "Unknown": "Nothing is known about the need for or type of money laundering",
-        "Known": "Money laundering was necessary, but nothing else is known."
+        "Unknown": "Nothing is known about the need for or type of money laundering other than it was present."
       }
     }
   },
