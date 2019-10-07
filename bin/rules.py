@@ -315,6 +315,18 @@ class Rules():
                     incident['action']['malware']['variety'].append('Trojan')
 
 
+        ### Hierarchical Field
+        # `action.social.target.End-user or employee` is a parent of `action.social.target.End-user` and `action.social.target.Other employee`
+        # per vz-risk/VERIS issue # 150
+        if 'target' in incident.get('action', {}).get('social', {}):
+            if ('End-user' in incident['action']['social'].get('target', []) or \
+            'Other employee' in incident['action']['social'].get('target', [])) and \
+            'End-user or employee' not in incident['asset']['assets'].get('variety', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
+                incident['action']['social']['target'].append('End-user or employee')
+
+
+
         ### impact.overall_amount should be at least the sum of the impact.loss.amounts
         ## VERIS issue 142
         if 'loss' in incident.get('impact', {}):

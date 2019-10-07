@@ -243,6 +243,10 @@ def main(cfg):
                     incident['asset']['cloud'] = ['Unknown']
 
 
+            ### action.social.target.End-user defined as 'End-user or regular employee' is being split into action.social.target.End-user and action.social.target.Other employee
+            # per vz-risk/VERIS issue #150
+            if 'End-user' in incident.get('action', {}).get('social', {}).get('target', []):
+                incident['action']['social']['target'] = [enum if enum != "End-user" else "End-user or employee" for enum in incident['action']['social']['target']]
 
 
             # Now to save the incident
