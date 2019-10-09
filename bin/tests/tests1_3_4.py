@@ -1,10 +1,15 @@
 #!/usr/bin/python
 
+# https://www.mattcrampton.com/blog/a_list_of_all_python_assert_methods/
+
 import unittest
 import importlib
 import json
 import shutil
 import os
+from jsonschema import ValidationError, Draft4Validator
+import re
+import logging
 
 veris = "/Users/v685573/Documents/Development/vzrisk/veris/"
 cfg = {
@@ -36,16 +41,33 @@ spec = importlib.util.spec_from_file_location("convert", veris.rstrip("/") + "/b
 convert = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(convert)
 
+# import checkValidity
+spec = importlib.util.spec_from_file_location("checkValidity", cfg.get("veris", "../").rstrip("/") + "/bin/checkValidity.py")
+checkValidity = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(checkValidity)
+
+# create validator
+with open(veris.rstrip("/") + "/verisc-merged.json") as filehandle:
+    validator = Draft4Validator(json.load(filehandle))
+
+
+# apply rules
 with open(veris.rstrip("/") + "/bin/tests/veris-1_3_4-test1.json", 'r') as filehandle:
     incident0 = json.load(filehandle)
 
-#convert_filename = cfg['input'][1] + ".out"
-#shutil.copyfile(cfg['input'][1], convert_filename)
+# Should convert from 1.3.3 to 1.3.4
 convert.main(dict(cfg, **{'input': veris.rstrip("/") + "/bin/tests/test_json_2/", 'output':veris.rstrip("/") + "/bin/tests/"}))
 with open(veris.rstrip("/") + "/bin/tests/veris-1_3_4-test2.json", 'r') as filehandle:
     incident1 = json.load(filehandle)
 os.remove(veris.rstrip("/") + "/bin/tests/veris-1_3_4-test2.json")
 
+# should fail validation
+with open(veris.rstrip("/") + "/bin/tests/veris-1_3_4-test3.json", 'r') as filehandle:
+    incident2 = json.load(filehandle)
+
+# should not fail validation
+with open(veris.rstrip("/") + "/bin/tests/veris-1_3_4-test4.json", 'r') as filehandle:
+    incident3 = json.load(filehandle)
 
 class TestRules(unittest.TestCase):
 
@@ -123,7 +145,7 @@ class TestRules(unittest.TestCase):
         self.assertIn('End-user or employee', incident_out['action']['social']['target'])
 
 
-class Testconvert(unittest.TestCase):
+class TestConvert(unittest.TestCase):
     # vz-risk/veris issue #263
     def test263_1(self):
         self.assertIn('U - Desktop or laptop', [item.get("variety", "") for item in incident1['asset']['assets']])
@@ -152,5 +174,16 @@ class Testconvert(unittest.TestCase):
     def test259_2(self):
         self.assertIn("End-user or employee", incident1['action']['social']['target'])
 
+
 if __name__ == '__main__':
+    logging.warning("Review the following errors to ensure there are none unexpected. (In the future maybe we can catch all these with unit tests.")
+    for error in validator.iter_errors(incident2):
+        logging.warning(error.message)
+    for error in checkValidity.main(incident2):
+        logging.warning(error.message)
+    for error in validator.iter_errors(incident3):
+        logging.warning(error.message)
+    for error in checkValidity.main(incident3):
+        logging.warning(error.message)
+    logging.warning("Beginning test cases")
     unittest.main()
