@@ -38,7 +38,7 @@
           "properties": {
             "year": {
               "type": "integer",
-              "maximum": 2021,
+              "maximum": 2022,
               "minimum": 1950
             },
             "month": {
@@ -198,7 +198,7 @@
               "type": "string"
             },
             "victim_id": {
-              "description": "List any secondary victims here.",
+              "description": "List any secondary victims here.  IF a NAICS is known, list the NAICS code after a semi-colon.  For example: `verizon;517911`.  If only the NAICS code is known, list it first.  `;517911`",
               "items": {
                 "type": "string"
               },

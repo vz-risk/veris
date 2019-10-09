@@ -243,7 +243,8 @@ class Rules():
                    "Fuzz testing", "HTTP request smuggling", 
                    "HTTP request splitting", "HTTP response smuggling", 
                    "HTTP Response Splitting", 
-                   "Insecure deserialization", "Integer overflows", 
+                   "Insecure deserialization",    # added with veris 1.3.4, issue 213
+                   "Integer overflows", 
                    "LDAP injection", "Mail command injection", 
                    "MitM", "Null byte injection", 
                    "OS commanding", 
@@ -253,8 +254,8 @@ class Rules():
                    "Session fixation", "Session prediction", 
                    "Session replay", "Soap array abuse", 
                    "Special element injection", "SQLi", 
-                   "SSI injection",
-                   "URL redirector abuse", 'User breakout',  
+                   "SSI injection", "URL redirector abuse", 
+                   'User breakout',  # added with veris 1.3.4, issue 225
                    "Virtual machine escape", 
                    "XML attribute blowup", "XML entity expansion", 
                    "XML external entities", "XML injection", 
@@ -274,17 +275,19 @@ class Rules():
 
 
         ### Hierarchical Field
+        # Added v1.3.4
         # `asset.assets.variety.U - Desktop or laptop` is a parent of `asset.assets.variety.U - Desktop` and `asset.assets.variety.U - Laptop`
         # per vz-risk/VERIS issue #263
-        if 'variety' in incident.get('asset', {}).get('assets', {}):
-            if ('U - Desktop' in incident['asset']['assets'].get('variety', []) or \
-            'U - Laptop' in incident['asset']['assets'].get('variety', [])) and \
-            'U - Desktop or laptop' not in incident['asset']['assets'].get('variety', []) and \
+        if 'assets' in incident.get('asset', {}):
+            if ('U - Desktop' in [item.get('variety', '') for item in incident['asset']['assets']] or \
+            'U - Laptop' in [item.get("variety", "") for item in incident['asset']['assets']]) and \
+            'U - Desktop or laptop' not in [item.get("variety", "") for item in incident['asset']['assets']] and \
             LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
-                incident['asset']['assets']['variety'].append('U - Desktop or laptop')
+                incident['asset']['assets'].append({'variety': 'U - Desktop or laptop'})
 
 
         ### Hierarchical Field
+        # Added v1.3.4
         # `action.malware.variety.Email` is a parent of `action.malware.variety.Email attachment`, `action.malware.variety.Email autoexecute`, `action.malware.variety.Email link`, `action.malware.variety.Email other`, and `action.malware.variety.Email unknown`
         # per vz-risk/VERIS issue #232
         if 'variety' in incident.get('action', {}).get('malware', {}):
@@ -293,12 +296,13 @@ class Rules():
             'Email link' in incident['action']['malware'].get('variety', []) or \
             'Email other' in incident['action']['malware'].get('variety', []) or \
             'Email unknown' in incident['action']['malware'].get('variety', [])) and \
-            'Email' not in incident['asset']['assets'].get('variety', []) and \
+            'Email' not in incident['action']['malware'].get('variety', []) and \
             LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
-                incident['asset']['assets']['variety'].append('Email')
+                incident['action']['malware']['variety'].append('Email')
 
 
         ### Hierarchical Field
+        # Added v1.3.4
         # `action.malware.variety.RAT` is a parent of `action.malware.variety.Trojan` combined with `action.malware.variety.Backdoor`
         # per vz-risk/VERIS issue #215
         if 'variety' in incident.get('action', {}).get('malware', {}):
@@ -316,12 +320,13 @@ class Rules():
 
 
         ### Hierarchical Field
+        # Added v1.3.4
         # `action.social.target.End-user or employee` is a parent of `action.social.target.End-user` and `action.social.target.Other employee`
         # per vz-risk/VERIS issue # 150
         if 'target' in incident.get('action', {}).get('social', {}):
             if ('End-user' in incident['action']['social'].get('target', []) or \
             'Other employee' in incident['action']['social'].get('target', [])) and \
-            'End-user or employee' not in incident['asset']['assets'].get('variety', []) and \
+            'End-user or employee' not in incident['action']['social'].get('target', []) and \
             LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
                 incident['action']['social']['target'].append('End-user or employee')
 

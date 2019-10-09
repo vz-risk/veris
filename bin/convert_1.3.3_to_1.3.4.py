@@ -78,10 +78,11 @@ def grepText(incident, searchFor):
 def main(cfg):
     veris_logger.updateLogger(cfg)
 
-    last_version = "1.3.2"
-    version = "1.3.3"
+    last_version = "1.3.3"
+    version = "1.3.4"
  
-    pprint.pprint(cfg) # DEBUG
+    if cfg.get('log_level', '').lower() == "debug":
+        pprint.pprint(cfg) # DEBUG
 
     logging.info("Converting files from {0} to {1}.".format(cfg["input"], cfg["output"]))
     for root, dirnames, filenames in tqdm(os.walk(cfg['input'])):
@@ -129,10 +130,10 @@ def main(cfg):
             ### Hierarchical Field
             # `asset.assets.variety.U - Desktop or laptop` is a parent of `asset.assets.variety.U - Desktop` and `asset.assets.variety.U - Laptop`
             # per vz-risk/VERIS issue #263
-            if 'variety' in incident.get('asset', {}).get('assets', {}):
-                if ('U - Desktop' in incident['asset']['assets'].get('variety', []) or \
-                'U - Laptop' in incident['asset']['assets'].get('variety', [])):
-                    incident['asset']['assets']['variety'].append('U - Desktop or laptop')
+            if 'assets' in incident.get('asset', {}):
+                if ('U - Desktop' in [item.get("variety", "") for item in incident['asset']['assets']] or \
+                'U - Laptop' in [item.get("variety", "") for item in incident['asset']['assets']]):
+                    incident['asset']['assets'].append({'variety': 'U - Desktop or laptop'})
 
 
             ### Hierarchical Field
@@ -144,7 +145,7 @@ def main(cfg):
                 'Email link' in incident['action']['malware'].get('variety', []) or \
                 'Email other' in incident['action']['malware'].get('variety', []) or \
                 'Email unknown' in incident['action']['malware'].get('variety', [])):
-                    incident['asset']['assets']['variety'].append('Email')
+                    incident['action']['malware']['variety'].append('Email')
 
 
             ### Convert plus.attribute.confidentiality.credit_monitoring to a categorical field
@@ -181,7 +182,7 @@ def main(cfg):
                     _ = incident['plus']['attribute']['confidentiality'].pop('partner_data')
             # Ensure plus.attribute.confidentiality.partner_number > 0 per new validation
             if 'partner_number' in incident.get('plus', {}).get('attribute', {}).get('confidentiality'):
-                if incident['plus']['attribute']['confidentiality']['credit_monitoring_years'] <= 0:
+                if incident['plus']['attribute']['confidentiality']['partner_number'] <= 0:
                     _ = incident['plus']['attribute']['confidentiality'].pop('partner_number')
 
 
@@ -211,7 +212,7 @@ def main(cfg):
                         pass # Process is already in action.error.variety
                     incident['asset']['cloud'] = ['External Cloud Asset(s)']
                     for actor in incident['actor']:
-                        if 'Secondary' not in incident['actor'][actor]['motive']
+                        if 'Secondary' not in incident['actor'][actor]['motive']:
                             incident['actor'][actor]['motive'].append('Secondary')
                 elif cloud == "Hypervisor": 
                     if 'hacking' not in incident['action']:
@@ -226,7 +227,7 @@ def main(cfg):
                     else:
                         pass # Exploit vuln is already in action.hacking.variety
                     for actor in incident['actor']:
-                        if 'Secondary' not in incident['actor'][actor]['motive']
+                        if 'Secondary' not in incident['actor'][actor]['motive']:
                             incident['actor'][actor]['motive'].append('Secondary')
                 elif cloud == "User breakout":
                     if 'hacking' not in incident['action']:
