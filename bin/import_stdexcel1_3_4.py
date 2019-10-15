@@ -355,11 +355,15 @@ class CSVtoJSON():
                             del i['amount']
                 out['asset']['assets'] = copy.deepcopy(assets)
 
-        for enum in ['cloud', 'notes']: # accessability & governance - obscelete as of 1.3.3 - GDB 181116
+        for enum in ['notes']: # accessability & governance - obscelete as of 1.3.3 - GDB 181116
             self.addValue(incident, 'asset.' + enum, out, 'string')
-        for enum in ['ownership', 'hosting', 'management']: # accessability & governance - obscelete as of 1.3.3 - GDB 181116
+        for enum in ['ownership', 'hosting', 'management', 'cloud']: # accessability & governance - obscelete as of 1.3.3 - GDB 181116
             self.addValue(incident, 'asset.' + enum, out, 'list')
         self.addValue(incident, 'asset.country', out, 'list')
+        ### cloud now required
+        # per vz-risk/VERIS issue #225 and #236
+        if 'cloud' not in out.get('asset', {}):
+            incident['asset']['cloud'] = ['Unknown']
 
         # attributes
         if 'attribute.confidentiality.data.variety' in incident:

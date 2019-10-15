@@ -242,6 +242,8 @@ def main(cfg):
                     incident['asset']['cloud'] = ['Other']
                 elif cloud == 'Unknown':
                     incident['asset']['cloud'] = ['Unknown']
+            else:
+                incident['asset']['cloud'] = ['Unknown']
 
 
             ### action.social.target.End-user defined as 'End-user or regular employee' is being split into action.social.target.End-user and action.social.target.Other employee
