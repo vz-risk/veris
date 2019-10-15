@@ -14,4 +14,4 @@
 
 (Note: Steps 4 and 5 may take several iterations to get correct.  Try all combinations of schema/version in the webapp. Make sure to expand collapsed sections.)
 
-6. Run `npm run build:dist` to minify the webapp and place it in the right spot. (you may have to run `npm install webpack`)
+6. Run `npm run build:full` to minify the webapp and place it in the right spot. (you may have to run `npm install webpack`)
