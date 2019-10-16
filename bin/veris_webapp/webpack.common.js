@@ -9,7 +9,8 @@ module.exports = {
     css: './assets/css/dbir.css'
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    //new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(), // Updated for clean-webpack-plugin v2 and v3
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].css',
       chunkFilename: '[id].css'
