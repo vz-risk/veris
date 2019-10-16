@@ -2,6 +2,7 @@ import React from 'react'
 
 import veriscLabels from '../../assets/schema/verisc-labels.json'
 import vcdbLabels from '../../assets/schema/vcdb-labels.json'
+import dbirLabels from '../../assets/schema/dbir-labels.json'
 import groomSchemaDef from '../../assets/schema/veris_app_groom.json'
 
 import verisHelp from './help.js' //  '../../assets/schema/help.json'
@@ -15,6 +16,11 @@ import vcdb1_3_1 from '../../assets/schema/vcdb-merged1_3_1.json'
 import vcdb1_3_2 from '../../assets/schema/vcdb-merged1_3_2.json'
 import vcdb1_3_3 from '../../assets/schema/vcdb-merged1_3_3.json'
 import vcdb1_3_4 from '../../assets/schema/vcdb-merged1_3_4.json'
+import dbir1_3_1 from '../../assets/schema/dbir-merged1_3_1.json'
+import dbir1_3_2 from '../../assets/schema/dbir-merged1_3_2.json'
+import dbir1_3_3 from '../../assets/schema/dbir-merged1_3_3.json'
+import dbir1_3_4 from '../../assets/schema/dbir-merged1_3_4.json'
+
 import uiSchemas from './veris_app.uiSchemas'
 
 export const defaultSchemaName = 'verisc';

@@ -2008,6 +2008,7 @@ const uiSchemas = {
           "cloud",
           "hosting",
           "management",
+          "role",
           "notes",
           "country",
           "*"
@@ -3353,6 +3354,7 @@ const uiSchemas = {
           "asset_os",
           "ownership",
           "cloud",
+          "role",
           "hosting",
           "management",
           "notes",
@@ -4719,6 +4721,7 @@ const uiSchemas = {
           "assets",
           "asset_os",
           "cloud",
+          "role",
           "notes",
           "country",
           "*"
@@ -6049,6 +6052,7 @@ const uiSchemas = {
           "asset_os",
           "ownership",
           "cloud",
+          "role",
           "hosting",
           "management",
           "notes",
