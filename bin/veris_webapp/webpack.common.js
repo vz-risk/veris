@@ -1,5 +1,6 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+//const CleanWebpackPlugin = require('clean-webpack-plugin'); // removed to update clean-web-plugin to v3
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -9,7 +10,8 @@ module.exports = {
     css: './assets/css/dbir.css'
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    //new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(), // Updated for clean-webpack-plugin v2 and v3
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].css',
       chunkFilename: '[id].css'

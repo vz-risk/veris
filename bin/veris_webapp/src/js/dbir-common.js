@@ -2,6 +2,7 @@ import React from 'react'
 
 import veriscLabels from '../../assets/schema/verisc-labels.json'
 import vcdbLabels from '../../assets/schema/vcdb-labels.json'
+import dbirLabels from '../../assets/schema/dbir-labels.json'
 import groomSchemaDef from '../../assets/schema/veris_app_groom.json'
 
 import verisHelp from './help.js' //  '../../assets/schema/help.json'
@@ -9,14 +10,21 @@ import verisHelp from './help.js' //  '../../assets/schema/help.json'
 import verisc1_3_1 from '../../assets/schema/verisc-merged1_3_1.json'
 import verisc1_3_2 from '../../assets/schema/verisc-merged1_3_2.json'
 import verisc1_3_3 from '../../assets/schema/verisc-merged1_3_3.json'
+import verisc1_3_4 from '../../assets/schema/verisc-merged1_3_4.json'
 import verisc2 from '../../assets/schema/verisc-merged2.json'
 import vcdb1_3_1 from '../../assets/schema/vcdb-merged1_3_1.json'
 import vcdb1_3_2 from '../../assets/schema/vcdb-merged1_3_2.json'
 import vcdb1_3_3 from '../../assets/schema/vcdb-merged1_3_3.json'
+import vcdb1_3_4 from '../../assets/schema/vcdb-merged1_3_4.json'
+import dbir1_3_1 from '../../assets/schema/dbir-merged1_3_1.json'
+import dbir1_3_2 from '../../assets/schema/dbir-merged1_3_2.json'
+import dbir1_3_3 from '../../assets/schema/dbir-merged1_3_3.json'
+import dbir1_3_4 from '../../assets/schema/dbir-merged1_3_4.json'
+
 import uiSchemas from './veris_app.uiSchemas'
 
 export const defaultSchemaName = 'verisc';
-export const defaultSchemaVersion = '1.3.3';
+export const defaultSchemaVersion = '1.3.4';
 
 const schemas = {
     verisc: {
@@ -37,6 +45,11 @@ const schemas = {
           rawschema: verisc1_3_3,
           uischema: uiSchemas['verisc']['1.3.3']
         },
+        '1.3.4': {
+          schema: processSchema(verisc1_3_4, 'verisc', '1.3.4', veriscLabels),
+          rawschema: verisc1_3_4,
+          uischema: uiSchemas['verisc']['1.3.4']
+        },
         // '1.4': {
         //   schema: processSchema(verisc1_4, 'verisc', '1.4', veriscLabels),
         //   rawschema: verisc1_4,
@@ -50,49 +63,64 @@ const schemas = {
       },
       allowOther: false
     }, 
-    // partner: {
-    //   name: 'Partner (Other)',
-    //   versions: {
-    //     '1.3.1': {
-    //       schema: undefined,
-    //       rawschema: undefined,
-    //       uischema: uiSchemas['partner']['1.3.1']
-    //     },
-    //     '1.3.2': {
-    //       schema: undefined,
-    //       rawschema: undefined,
-    //       uischema: uiSchemas['partner']['1.3.2']
-    //     },
-    //     // '1.4': {
-    //     //   schema: undefined,
-    //     //   rawschema: undefined,
-    //     //   uischema: add_help(uiSchemas['partner']['1.4'])
-    //     // },
-    //     '2.0': {
-    //       schema: undefined,
-    //       rawschema: undefined,
-    //       uischema: uiSchemas['partner']['2.0']
-    //     }
-    //   },
-    //   allowOther: true
-    // },
-    dbir: {
-      name: 'DBIR (Other)',
+    partner: {
+      name: 'Partner',
       versions: {
         '1.3.1': {
+          schema: processSchema(dbir1_3_1, 'dbir', '1.3.1', dbirLabels),
+          rawschema: dbir1_3_1,
+          uischema: uiSchemas['partner']['1.3.1']
+        },
+        '1.3.2': {
+          schema: processSchema(dbir1_3_2, 'dbir', '1.3.2', dbirLabels),
+          rawschema: dbir1_3_2,
+          uischema: uiSchemas['partner']['1.3.2']
+        },
+        '1.3.3': {
+          schema: processSchema(dbir1_3_3, 'dbir', '1.3.3', dbirLabels),
+          rawschema: dbir1_3_3,
+          uischema: uiSchemas['partner']['1.3.3']
+        },
+        '1.3.4': {
+          schema: processSchema(dbir1_3_4, 'dbir', '1.3.4', dbirLabels),
+          rawschema: dbir1_3_4,
+          uischema: uiSchemas['partner']['1.3.4']
+        },
+        // '1.4': {
+        //   schema: undefined,
+        //   rawschema: undefined,
+        //   uischema: add_help(uiSchemas['partner']['1.4'])
+        // },
+        '2.0': {
           schema: undefined,
           rawschema: undefined,
+          uischema: uiSchemas['partner']['2.0']
+        }
+      },
+      allowOther: false
+    },
+    dbir: {
+      name: 'DBIR',
+      versions: {
+        '1.3.1': {
+          schema: processSchema(dbir1_3_1, 'dbir', '1.3.1', dbirLabels),
+          rawschema: dbir1_3_1,
           uischema: uiSchemas['dbir']['1.3.1']
         },
         '1.3.2': {
-          schema: undefined,
-          rawschema: undefined,
+          schema: processSchema(dbir1_3_2, 'dbir', '1.3.2', dbirLabels),
+          rawschema: dbir1_3_2,
           uischema: uiSchemas['dbir']['1.3.2']
         },
         '1.3.3': {
-          schema: undefined,
-          rawschema: undefined,
+          schema: processSchema(dbir1_3_3, 'dbir', '1.3.3', dbirLabels),
+          rawschema: dbir1_3_3,
           uischema: uiSchemas['dbir']['1.3.3']
+        },
+        '1.3.4': {
+          schema: processSchema(dbir1_3_4, 'dbir', '1.3.4', dbirLabels),
+          rawschema: dbir1_3_4,
+          uischema: uiSchemas['dbir']['1.3.4']
         },
         // '1.4': {
         //   schema: undefined,
@@ -105,7 +133,7 @@ const schemas = {
           uischema: uiSchemas['dbir']['2.0']
         }
       },
-      allowOther: true
+      allowOther: false
     },
     vzir: {
       name: 'VZIR (Other)',
@@ -124,6 +152,11 @@ const schemas = {
           schema: undefined,
           rawschema: undefined,
           uischema: uiSchemas['vzir']['1.3.3']
+        },
+        '1.3.4': {
+          schema: undefined,
+          rawschema: undefined,
+          uischema: uiSchemas['vzir']['1.3.4']
         },
         // '1.4': {
         //   schema: undefined,
@@ -155,6 +188,11 @@ const schemas = {
           schema: processSchema(vcdb1_3_3, 'vcdb', '1.3.3', vcdbLabels),
           rawschema: vcdb1_3_3,
           uischema: uiSchemas['vcdb']['1.3.3']
+        },
+        '1.3.4': {
+          schema: processSchema(vcdb1_3_4, 'vcdb', '1.3.4', vcdbLabels),
+          rawschema: vcdb1_3_4,
+          uischema: uiSchemas['vcdb']['1.3.4']
         }
       },
       allowOther: false
@@ -176,6 +214,11 @@ const schemas = {
           schema: undefined,
           rawschema: undefined,
           uischema: uiSchemas['other']['1.3.3']
+        },
+        '1.3.4': {
+          schema: undefined,
+          rawschema: undefined,
+          uischema: uiSchemas['other']['1.3.4']
         },
         // '1.4': {
         //   schema: undefined,

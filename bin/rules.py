@@ -242,7 +242,9 @@ class Rules():
                    "Forced browsing", "Format string attack", 
                    "Fuzz testing", "HTTP request smuggling", 
                    "HTTP request splitting", "HTTP response smuggling", 
-                   "HTTP Response Splitting", "Integer overflows", 
+                   "HTTP Response Splitting", 
+                   "Insecure deserialization",    # added with veris 1.3.4, issue 213
+                   "Integer overflows", 
                    "LDAP injection", "Mail command injection", 
                    "MitM", "Null byte injection", 
                    "OS commanding", 
@@ -252,8 +254,8 @@ class Rules():
                    "Session fixation", "Session prediction", 
                    "Session replay", "Soap array abuse", 
                    "Special element injection", "SQLi", 
-                   "SSI injection",
-                   "URL redirector abuse",  
+                   "SSI injection", "URL redirector abuse", 
+                   'User breakout',  # added with veris 1.3.4, issue 225
                    "Virtual machine escape", 
                    "XML attribute blowup", "XML entity expansion", 
                    "XML external entities", "XML injection", 
@@ -270,6 +272,64 @@ class Rules():
             len(set(incident['action']['malware']['variety']).intersection(mal_exploit_varieties)) > 0: # and \
             #LooseVersion(incident['schema_version']) >= LooseVersion("1.3.3"): ## Since 'Exploit vuln is a legitimate enum in 1.3.2 action.malware, removing version check' - GDB 181127
                 incident['action']['malware']['variety'].append('Exploit vuln') 
+
+
+        ### Hierarchical Field
+        # Added v1.3.4
+        # `asset.assets.variety.U - Desktop or laptop` is a parent of `asset.assets.variety.U - Desktop` and `asset.assets.variety.U - Laptop`
+        # per vz-risk/VERIS issue #263
+        if 'assets' in incident.get('asset', {}):
+            if ('U - Desktop' in [item.get('variety', '') for item in incident['asset']['assets']] or \
+            'U - Laptop' in [item.get("variety", "") for item in incident['asset']['assets']]) and \
+            'U - Desktop or laptop' not in [item.get("variety", "") for item in incident['asset']['assets']] and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
+                incident['asset']['assets'].append({'variety': 'U - Desktop or laptop'})
+
+
+        ### Hierarchical Field
+        # Added v1.3.4
+        # `action.malware.variety.Email` is a parent of `action.malware.variety.Email attachment`, `action.malware.variety.Email autoexecute`, `action.malware.variety.Email link`, `action.malware.variety.Email other`, and `action.malware.variety.Email unknown`
+        # per vz-risk/VERIS issue #232
+        if 'variety' in incident.get('action', {}).get('malware', {}):
+            if ('Email attachment' in incident['action']['malware'].get('variety', []) or \
+            'Email autoexecute' in incident['action']['malware'].get('variety', []) or \
+            'Email link' in incident['action']['malware'].get('variety', []) or \
+            'Email other' in incident['action']['malware'].get('variety', []) or \
+            'Email unknown' in incident['action']['malware'].get('variety', [])) and \
+            'Email' not in incident['action']['malware'].get('variety', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
+                incident['action']['malware']['variety'].append('Email')
+
+
+        ### Hierarchical Field
+        # Added v1.3.4
+        # `action.malware.variety.RAT` is a parent of `action.malware.variety.Trojan` combined with `action.malware.variety.Backdoor`
+        # per vz-risk/VERIS issue #215
+        if 'variety' in incident.get('action', {}).get('malware', {}):
+            if ('Backdoor' in incident['action']['malware'].get('variety', []) and \
+            'Trojan' in incident['action']['malware'].get('variety', [])) and \
+            'RAT' not in incident['action']['malware'].get('variety', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
+                incident['action']['malware']['variety'].append('RAT')
+            if 'RAT' in incident['action']['malware'].get('variety', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
+                if 'Backdoor' not in incident['action']['malware'].get('variety', []):
+                    incident['action']['malware']['variety'].append('Backdoor')
+                if 'Trojan' not in incident['action']['malware'].get('variety', []):
+                    incident['action']['malware']['variety'].append('Trojan')
+
+
+        ### Hierarchical Field
+        # Added v1.3.4
+        # `action.social.target.End-user or employee` is a parent of `action.social.target.End-user` and `action.social.target.Other employee`
+        # per vz-risk/VERIS issue # 150
+        if 'target' in incident.get('action', {}).get('social', {}):
+            if ('End-user' in incident['action']['social'].get('target', []) or \
+            'Other employee' in incident['action']['social'].get('target', [])) and \
+            'End-user or employee' not in incident['action']['social'].get('target', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
+                incident['action']['social']['target'].append('End-user or employee')
+
 
 
         ### impact.overall_amount should be at least the sum of the impact.loss.amounts

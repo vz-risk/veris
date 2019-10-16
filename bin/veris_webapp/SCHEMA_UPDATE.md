@@ -14,4 +14,13 @@
 
 (Note: Steps 4 and 5 may take several iterations to get correct.  Try all combinations of schema/version in the webapp. Make sure to expand collapsed sections.)
 
-6. Run `npm run build:dist` to minify the webapp and place it in the right spot. (you may have to run `npm install webpack`)
+OPTIONAL: Update packages:
+A. `npm install -g npm`
+# per https://medium.com/@manjuladube/updating-each-dependency-in-package-json-to-the-latest-version-879836256939
+B. `npm i -g npm-check-updates`
+C. `npm-check-updates -u`
+D. `npm install`
+E. `npm audit fix`
+This likely breaks things.  You'll then need to troubleshoot the JS.
+
+6. Run `npm run build:full` to minify the webapp and place it in the right spot. (you may have to run `npm install webpack`)

@@ -525,6 +525,7 @@
         "HTTP request splitting", 
         "HTTP response smuggling", 
         "HTTP Response Splitting", 
+        "Insecure deserialization", 
         "Integer overflows", 
         "LDAP injection", 
         "Mail command injection", 
@@ -547,6 +548,7 @@
         "URL redirector abuse", 
         "Use of backdoor or C2", 
         "Use of stolen creds", 
+        "User breakout", 
         "Virtual machine escape", 
         "XML attribute blowup", 
         "XML entity expansion", 
@@ -564,6 +566,8 @@
         "Command shell", 
         "Desktop sharing", 
         "Desktop sharing software", 
+        "Hypervisor", 
+        "Inter-tenant", 
         "Other", 
         "Partner", 
         "Physical access", 
@@ -602,11 +606,13 @@
         "Password dumper", 
         "Ram scraper", 
         "Ransomware", 
+        "RAT", 
         "Rootkit", 
         "Scan network", 
         "Spam", 
         "Spyware/Keylogger", 
         "SQL injection", 
+        "Trojan", 
         "Worm", 
         "Other", 
         "Unknown"
@@ -614,10 +620,12 @@
       "vector": [
         "Direct install", 
         "Download by malware", 
+        "Email", 
         "Email attachment", 
         "Email autoexecute", 
         "Email link", 
         "Email unknown", 
+        "Email other", 
         "Instant messaging", 
         "Network propagation", 
         "Remote injection", 
@@ -671,6 +679,7 @@
         "Customer", 
         "Developer", 
         "End-user", 
+        "End-user or employee", 
         "Executive", 
         "Finance", 
         "Former employee", 
@@ -679,6 +688,7 @@
         "Human resources", 
         "Maintenance", 
         "Manager", 
+        "Other employee", 
         "Partner", 
         "System admin", 
         "Other", 
@@ -729,6 +739,7 @@
         "Net misuse", 
         "Possession abuse", 
         "Privilege abuse", 
+        "Snap picture", 
         "Unapproved hardware", 
         "Unapproved software", 
         "Unapproved workaround", 
@@ -1508,6 +1519,7 @@
         "T - Unknown", 
         "U - Auth token", 
         "U - Desktop", 
+        "U - Desktop or laptop", 
         "U - Laptop", 
         "U - Media", 
         "U - Mobile phone", 
@@ -1536,16 +1548,11 @@
       "Other"
     ], 
     "cloud": [
-      "Customer attack", 
-      "Hosting error", 
-      "Hosting governance", 
-      "Hypervisor", 
-      "Partner application", 
-      "User breakout", 
-      "NA", 
-      "No", 
+      "On-Premise Asset(s)", 
+      "External Cloud Asset(s)", 
       "Other", 
-      "Unknown"
+      "Unknown", 
+      "NA"
     ], 
     "hosting": [
       "External - unknown environment", 
@@ -1563,6 +1570,13 @@
       "NA", 
       "Unknown", 
       "Other"
+    ], 
+    "role": [
+      "IT", 
+      "OT", 
+      "Unknown", 
+      "Other", 
+      "NA"
     ], 
     "country": [
       "Unknown", 
@@ -1992,6 +2006,7 @@
         "Proxy", 
         "Marketplace", 
         "DNS", 
+        "Escrow", 
         "NA", 
         "Other", 
         "Unknown"
@@ -2047,7 +2062,11 @@
         "Re-shipping", 
         "Gambling", 
         "Bank", 
-        "Company"
+        "Provide service", 
+        "Company", 
+        "NA", 
+        "Other", 
+        "Unknown"
       ]
     }
   }, 

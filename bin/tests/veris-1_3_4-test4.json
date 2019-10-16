@@ -1,0 +1,221 @@
+{
+    "incident_id": "8490a90d-7c87-4d4e-be19-bb1d7889851c",
+    "security_incident": "Confirmed",
+    "reference": "https://www.cbc.ca/news/canada/british-columbia/best-western-hack-1.4286671",
+    "summary": "phishing used to compromise front desk computers and steal credit cards.",
+    "source_id": "vcdb",
+    "confidence": "High",
+    "timeline": {
+        "incident": {
+            "year": 2016,
+            "month": 9,
+            "day": 17
+        },
+        "compromise": {
+            "unit": "Minutes"
+        },
+        "exfiltration": {
+            "unit": "Seconds"
+        },
+        "discovery": {
+            "unit": "Months",
+            "value": 10
+        },
+        "containment": {
+            "unit": "Weeks"
+        }
+    },
+    "victim": {
+        "victim_id": "Best Western",
+        "employee_count": "Large",
+        "industry": "22",
+        "locations_affected": 1,
+        "country": [
+            "CA"
+        ],
+        "region": [
+            "000001"
+        ],
+        "state": "CA-BC"
+    },
+    "action": {
+        "hacking": {
+            "variety": [
+                "User breakout",
+                "Insecure deserialization"
+            ],
+            "vector": [
+                "Hypervisor",
+                "Inter-tenant"
+            ]
+        },
+        "malware": {
+            "variety": [
+                "RAT",
+                "Trojan"
+            ],
+            "vector": [
+                "Email"
+            ],
+            "result": [
+                "Exfiltrate"
+            ]
+        },
+        "social": {
+            "variety": [
+                "Unknown"
+            ],
+            "vector": [
+                "Unknown"
+            ],
+            "target": [
+                "End-user",
+                "Other employee",
+                "End-user or employee"
+            ],
+            "result": [
+                "Infiltrate"
+            ]
+        },
+        "misuse": {
+            "variety": [
+                "Snap picture"
+            ],
+            "vector": [
+                "Unknown"
+            ]
+        }
+    },
+    "actor": {
+        "external": {
+            "variety": [
+                "Organized crime"
+            ],
+            "motive": [
+                "Financial"
+            ]
+        }
+    },
+    "asset": {
+        "total_amount": 1,
+        "assets": [
+            {
+                "variety": "U - Desktop"
+            },
+            {
+                "variety": "U - Desktop or laptop"
+            }
+        ],
+        "cloud": [
+          "On-Premise Asset(s)", 
+          "External Cloud Asset(s)", 
+          "Other", 
+          "Unknown", 
+          "NA"
+        ],
+        "country": [
+            "CA"
+        ],
+        "role": [
+          "IT", 
+          "OT", 
+          "Unknown", 
+          "Other", 
+          "NA"
+        ]
+    },
+    "attribute": {
+        "confidentiality": {
+            "data_disclosure": "Yes",
+            "data": [
+                {
+                    "variety": "Payment"
+                }
+            ],
+            "data_victim": [
+                "Customer"
+            ],
+            "state": [
+                "Processed"
+            ]
+        },
+        "integrity": {
+            "variety": [
+                "Alter behavior"
+            ]
+        }
+    },
+    "targeted": "Opportunistic",
+    "discovery_method": {
+        "unknown": true
+    },
+    "value_chain": {
+        "non-distribution services": {
+            "variety": [
+                "Escrow"
+            ]
+        },
+        "development": {
+            "variety": [
+                "Payload"
+            ],
+            "notes": "payment card scraping malware"
+        },
+        "targeting": {
+            "variety": [
+                "Email addresses"
+            ]
+        },
+        "distribution": {
+            "variety": [
+                "Email"
+            ]
+        },
+        "cash-out": {
+            "variety": [
+                "Sell stolen goods"
+            ]
+        }
+    },
+    "impact": {
+        "overall_rating": "Insignificant"
+    },
+    "plus": {
+        "sub_source": "random",
+        "created": "2019-10-03T19:47:42.909Z",
+        "event_chain": [
+            {
+                "action": "soc",
+                "actor": "ext",
+                "asset": "ppl",
+                "attribute": "ia"
+            },
+            {
+                "action": "mal",
+                "actor": "ext",
+                "asset": "usr",
+                "attribute": "cp"
+            }
+        ],
+        "modified": "2019-10-03T19:47:42.909Z",
+        "master_id": "8b57fb92-16e4-4748-89c7-ab7fa9ea183a",
+        "analysis_status": "Validated",
+        "analyst": "gbassett",
+        "dbir_year": 2018,
+        "attribute": {
+            "confidentiality": {
+                "data_abuse": "Yes"
+            }
+        },
+        "github": "10139",
+        "attribute": {
+            "confidentiality": {
+                "credit_monitoring": "experion",
+                "credit_monitoring_years": 0,
+                "partner_data": "N",
+                "partner_number": 0
+            }
+        }
+    },
+    "schema_version": "1.3.3"
+}

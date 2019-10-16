@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#", 
   "additionalProperties": false, 
-  "description": "VERIS Community Schema 1.3.4.", 
+  "description": "VERIS VCDB Schema 1.3.4.", 
   "properties": {
     "incident_id": {
       "type": "string", 
@@ -26,7 +26,8 @@
       "description": "Give a good descriptive summary of the incident in several sentences. Use natural language instead of VERIS notation, but we should be able to 'VERISize' the incident pretty well from just this description.<br />**REMINDER: IF THIS IS FOR THE DBIR AND NOT VCDB  - DON'T RECORD VICTIM-INDENTIFYING INFO**"
     }, 
     "source_id": {
-      "type": "string"
+      "type": "string", 
+      "default": "vcdb"
     }, 
     "campaign_id": {
       "type": "string", 
@@ -3427,8 +3428,469 @@
         }, 
         "row_number": {
           "type": "number"
+        }, 
+        "sub_source": {
+          "description": "This field defines how the data was selected below the source level.  For example, It is a PHIDBR, record in VCDB, it should be 'phidbr'.  If it is a priority incident, it should be 'priority'.  If the incident is randomly assigned through vcdb assignment, it should be  'random' or blank.  It can be used by others to differentiate between different sources within their data.", 
+          "type": "string"
+        }, 
+        "analysis_status": {
+          "minLength": 1, 
+          "type": "string", 
+          "enum": [
+            "In-progress", 
+            "Needs review", 
+            "First pass", 
+            "Validated", 
+            "Finalized", 
+            "Ineligible"
+          ]
+        }, 
+        "analyst": {
+          "minLength": 1, 
+          "type": "string"
+        }, 
+        "analyst_notes": {
+          "minLength": 1, 
+          "type": "string", 
+          "description": "Record notes about the analysis of the incident. (This is in contrast to notes about the incident itself which should go in 'notes'.)"
+        }, 
+        "asset": {
+          "additionalProperties": false, 
+          "properties": {
+            "total": {
+              "minLength": 1, 
+              "type": "string"
+            }
+          }, 
+          "type": "object"
+        }, 
+        "asset_os": {
+          "items": {
+            "type": "string", 
+            "enum": [
+              "Android", 
+              "Apple iOS", 
+              "BlackBerry OS", 
+              "Linux", 
+              "Mac OSX", 
+              "Mainframe", 
+              "Symbian", 
+              "Unix", 
+              "webOS", 
+              "Windows", 
+              "Windows Phone", 
+              "Not applicable", 
+              "Unknown", 
+              "Other"
+            ]
+          }, 
+          "minItems": 1, 
+          "type": "array", 
+          "uniqueItems": true
+        }, 
+        "attack_difficulty_initial": {
+          "minLength": 1, 
+          "type": "string", 
+          "enum": [
+            "High", 
+            "Moderate", 
+            "Low", 
+            "Very Low", 
+            "Not Applicable", 
+            "Unknown", 
+            "Other"
+          ]
+        }, 
+        "attack_difficulty_legacy": {
+          "minLength": 1, 
+          "type": "string", 
+          "enum": [
+            "High", 
+            "Moderate", 
+            "Low", 
+            "Very Low", 
+            "Not Applicable", 
+            "Unknown", 
+            "Other"
+          ]
+        }, 
+        "attack_difficulty_subsequent": {
+          "minLength": 1, 
+          "type": "string", 
+          "enum": [
+            "High", 
+            "Moderate", 
+            "Low", 
+            "Very Low", 
+            "Not Applicable", 
+            "Unknown", 
+            "Other"
+          ]
+        }, 
+        "attribute": {
+          "additionalProperties": false, 
+          "properties": {
+            "confidentiality": {
+              "additionalProperties": false, 
+              "properties": {
+                "credit_monitoring": {
+                  "minLength": 1, 
+                  "type": "string", 
+                  "enum": [
+                    "Yes", 
+                    "No", 
+                    "Other", 
+                    "Unknown"
+                  ]
+                }, 
+                "credit_monitoring_years": {
+                  "minLength": 1, 
+                  "type": "number", 
+                  "minimum": 0.01
+                }, 
+                "data_abuse": {
+                  "minLength": 1, 
+                  "type": "string", 
+                  "enum": [
+                    "Yes", 
+                    "No", 
+                    "Other", 
+                    "Unknown"
+                  ]
+                }, 
+                "partner_data": {
+                  "minLength": 1, 
+                  "type": "string", 
+                  "enum": [
+                    "Yes", 
+                    "No", 
+                    "Other", 
+                    "Unknown"
+                  ]
+                }, 
+                "partner_number": {
+                  "minLength": 1, 
+                  "type": "integer", 
+                  "minimum": 1
+                }
+              }, 
+              "type": "object"
+            }
+          }, 
+          "type": "object"
+        }, 
+        "control_inadequacies_legacy": {
+          "items": {
+            "type": "string"
+          }, 
+          "minItems": 1, 
+          "type": "array", 
+          "uniqueItems": true
+        }, 
+        "created": {
+          "minLength": 1, 
+          "type": "string"
+        }, 
+        "dbir_year": {
+          "minLength": 1, 
+          "type": "integer", 
+          "default": 2020
+        }, 
+        "event_chain": {
+          "items": {
+            "additionalProperties": false, 
+            "properties": {
+              "action": {
+                "minLength": 1, 
+                "type": "string", 
+                "enum": [
+                  "env", 
+                  "err", 
+                  "hak", 
+                  "mal", 
+                  "mis", 
+                  "phy", 
+                  "soc", 
+                  "unk"
+                ]
+              }, 
+              "actor": {
+                "minLength": 1, 
+                "type": "string", 
+                "enum": [
+                  "ext", 
+                  "int", 
+                  "prt", 
+                  "unk"
+                ]
+              }, 
+              "asset": {
+                "minLength": 1, 
+                "type": "string", 
+                "enum": [
+                  "emb", 
+                  "med", 
+                  "net", 
+                  "ppl", 
+                  "srv", 
+                  "ter", 
+                  "usr", 
+                  "unk"
+                ]
+              }, 
+              "attribute": {
+                "minLength": 1, 
+                "type": "string", 
+                "enum": [
+                  "au", 
+                  "cp", 
+                  "ia", 
+                  "unk"
+                ]
+              }, 
+              "summary": {
+                "minLength": 1, 
+                "type": "string"
+              }
+            }, 
+            "type": "object"
+          }, 
+          "minItems": 1, 
+          "type": "array", 
+          "uniqueItems": false
+        }, 
+        "github": {
+          "minLength": 1, 
+          "type": "string", 
+          "description": "Github issue #.  Only used in VCDB."
+        }, 
+        "investigator": {
+          "minLength": 1, 
+          "type": "string"
+        }, 
+        "modified": {
+          "minLength": 1, 
+          "type": "string"
+        }, 
+        "pci": {
+          "additionalProperties": false, 
+          "properties": {
+            "compliance_status": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "Not Compliant", 
+                "Found Compliant", 
+                "Unknown"
+              ]
+            }, 
+            "merchant_level": {
+              "enum": [
+                "Level 1", 
+                "Level 2", 
+                "Level 3", 
+                "Level 4", 
+                "Unknown"
+              ], 
+              "minLength": 1, 
+              "type": "string"
+            }, 
+            "notes": {
+              "minLength": 1, 
+              "type": "string"
+            }, 
+            "req_1": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "In Place", 
+                "Not In Place", 
+                "Not Applicable", 
+                "Unknown"
+              ]
+            }, 
+            "req_2": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "In Place", 
+                "Not In Place", 
+                "Not Applicable", 
+                "Unknown"
+              ]
+            }, 
+            "req_3": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "In Place", 
+                "Not In Place", 
+                "Not Applicable", 
+                "Unknown"
+              ]
+            }, 
+            "req_4": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "In Place", 
+                "Not In Place", 
+                "Not Applicable", 
+                "Unknown"
+              ]
+            }, 
+            "req_5": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "In Place", 
+                "Not In Place", 
+                "Not Applicable", 
+                "Unknown"
+              ]
+            }, 
+            "req_6": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "In Place", 
+                "Not In Place", 
+                "Not Applicable", 
+                "Unknown"
+              ]
+            }, 
+            "req_7": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "In Place", 
+                "Not In Place", 
+                "Not Applicable", 
+                "Unknown"
+              ]
+            }, 
+            "req_8": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "In Place", 
+                "Not In Place", 
+                "Not Applicable", 
+                "Unknown"
+              ]
+            }, 
+            "req_9": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "In Place", 
+                "Not In Place", 
+                "Not Applicable", 
+                "Unknown"
+              ]
+            }, 
+            "req_10": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "In Place", 
+                "Not In Place", 
+                "Not Applicable", 
+                "Unknown"
+              ]
+            }, 
+            "req_11": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "In Place", 
+                "Not In Place", 
+                "Not Applicable", 
+                "Unknown"
+              ]
+            }, 
+            "req_12": {
+              "minLength": 1, 
+              "type": "string", 
+              "enum": [
+                "In Place", 
+                "Not In Place", 
+                "Not Applicable", 
+                "Unknown"
+              ]
+            }, 
+            "status_determined": {
+              "minLength": 1, 
+              "type": "string"
+            }
+          }, 
+          "type": "object"
+        }, 
+        "security_maturity": {
+          "description": "How would you rate the maturity of the victim's overall security program?", 
+          "minLength": 1, 
+          "type": "string", 
+          "enum": [
+            "Initial", 
+            "Defined", 
+            "Managed", 
+            "Measured", 
+            "Optimizing", 
+            "Unknown"
+          ]
+        }, 
+        "timeline": {
+          "additionalProperties": false, 
+          "properties": {
+            "notification": {
+              "additionalProperties": false, 
+              "properties": {
+                "day": {
+                  "minLength": 1, 
+                  "type": "integer"
+                }, 
+                "month": {
+                  "minLength": 1, 
+                  "type": "integer"
+                }, 
+                "year": {
+                  "minLength": 1, 
+                  "type": "integer"
+                }
+              }, 
+              "type": "object"
+            }
+          }, 
+          "type": "object"
+        }, 
+        "unfollowed_policies": {
+          "minLength": 1, 
+          "type": "string", 
+          "enum": [
+            "Yes", 
+            "No", 
+            "Unknown"
+          ]
+        }, 
+        "unknown_unknowns": {
+          "items": {
+            "type": "string", 
+            "enum": [
+              "Assets that had unknown network connections or accessibility", 
+              "Assets that had unknown user accounts or privileges", 
+              "Assets unknown or unclaimed by the organization (or business group affected)", 
+              "Data the organization did not know existed on a particular asset", 
+              "Unknown"
+            ]
+          }, 
+          "minItems": 1, 
+          "type": "array", 
+          "uniqueItems": true
         }
-      }
+      }, 
+      "required": [
+        "master_id"
+      ]
     }, 
     "extra": {
       "type": "object", 
