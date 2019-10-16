@@ -23,46 +23,10 @@ import dbir1_3_4 from '../../assets/schema/dbir-merged1_3_4.json'
 
 import uiSchemas from './veris_app.uiSchemas'
 
-export const defaultSchemaName = 'verisc';
+export const defaultSchemaName = 'partner';
 export const defaultSchemaVersion = '1.3.4';
 
 const schemas = {
-    verisc: {
-      name: 'VERISC',
-      versions: {
-        '1.3.1': {
-          schema: processSchema(verisc1_3_1, 'verisc', '1.3.1', veriscLabels),
-          rawschema: verisc1_3_1,
-          uischema: uiSchemas['verisc']['1.3.1']
-        },
-        '1.3.2': {
-          schema: processSchema(verisc1_3_2, 'verisc', '1.3.2', veriscLabels),
-          rawschema: verisc1_3_2,
-          uischema: uiSchemas['verisc']['1.3.2']
-        },
-        '1.3.3': {
-          schema: processSchema(verisc1_3_3, 'verisc', '1.3.3', veriscLabels),
-          rawschema: verisc1_3_3,
-          uischema: uiSchemas['verisc']['1.3.3']
-        },
-        '1.3.4': {
-          schema: processSchema(verisc1_3_4, 'verisc', '1.3.4', veriscLabels),
-          rawschema: verisc1_3_4,
-          uischema: uiSchemas['verisc']['1.3.4']
-        },
-        // '1.4': {
-        //   schema: processSchema(verisc1_4, 'verisc', '1.4', veriscLabels),
-        //   rawschema: verisc1_4,
-        //   uischema: add_help(uiSchemas['verisc']['1.4'])
-        // },
-        '2.0': {
-          rawschema: verisc2,
-          schema: processSchema(verisc2, 'verisc', '2.0', veriscLabels),
-          uischema: uiSchemas['verisc']['2.0']
-        }
-      },
-      allowOther: false
-    }, 
     partner: {
       name: 'Partner',
       versions: {
@@ -99,6 +63,42 @@ const schemas = {
       },
       allowOther: false
     },
+    verisc: {
+      name: 'VERISC',
+      versions: {
+        '1.3.1': {
+          schema: processSchema(verisc1_3_1, 'verisc', '1.3.1', veriscLabels),
+          rawschema: verisc1_3_1,
+          uischema: uiSchemas['verisc']['1.3.1']
+        },
+        '1.3.2': {
+          schema: processSchema(verisc1_3_2, 'verisc', '1.3.2', veriscLabels),
+          rawschema: verisc1_3_2,
+          uischema: uiSchemas['verisc']['1.3.2']
+        },
+        '1.3.3': {
+          schema: processSchema(verisc1_3_3, 'verisc', '1.3.3', veriscLabels),
+          rawschema: verisc1_3_3,
+          uischema: uiSchemas['verisc']['1.3.3']
+        },
+        '1.3.4': {
+          schema: processSchema(verisc1_3_4, 'verisc', '1.3.4', veriscLabels),
+          rawschema: verisc1_3_4,
+          uischema: uiSchemas['verisc']['1.3.4']
+        },
+        // '1.4': {
+        //   schema: processSchema(verisc1_4, 'verisc', '1.4', veriscLabels),
+        //   rawschema: verisc1_4,
+        //   uischema: add_help(uiSchemas['verisc']['1.4'])
+        // },
+        '2.0': {
+          rawschema: verisc2,
+          schema: processSchema(verisc2, 'verisc', '2.0', veriscLabels),
+          uischema: uiSchemas['verisc']['2.0']
+        }
+      },
+      allowOther: false
+    }, 
     dbir: {
       name: 'DBIR',
       versions: {
