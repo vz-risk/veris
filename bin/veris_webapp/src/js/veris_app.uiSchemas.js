@@ -989,9 +989,9 @@ const uiSchemas = {
         "ui:order": [
           "total_amount",
           "assets",
+          "cloud",
           "asset_os",
           "ownership",
-          "cloud",
           "governance",
           "hosting",
           "management",
@@ -2003,9 +2003,9 @@ const uiSchemas = {
         "ui:order": [
           "total_amount",
           "assets",
+          "cloud",
           "asset_os",
           "ownership",
-          "cloud",
           "hosting",
           "management",
           "role",
@@ -3351,9 +3351,9 @@ const uiSchemas = {
         "ui:order": [
           "total_amount",
           "assets",
+          "cloud",
           "asset_os",
           "ownership",
-          "cloud",
           "role",
           "hosting",
           "management",
@@ -4719,8 +4719,8 @@ const uiSchemas = {
         "ui:order": [
           "total_amount",
           "assets",
-          "asset_os",
           "cloud",
+          "asset_os",
           "role",
           "notes",
           "country",
@@ -5242,9 +5242,7 @@ const uiSchemas = {
             "variety",
             "vector",
             "notes",
-            "Infiltrate",
-            "Elevate",
-            "Exfiltrate",
+            "result",
             "cve",
             "*"
           ]
@@ -5306,7 +5304,7 @@ const uiSchemas = {
           "ui:order": [
             "variety",
             "notes",
-            ""
+            "*"
           ]
         },
         "unknown": {
@@ -5563,9 +5561,7 @@ const uiSchemas = {
             "variety",
             "vector",
             "notes",
-            "Infiltrate",
-            "Elevate",
-            "Exfiltrate",
+            "result",
             "cve",
             "*"
           ]
@@ -5627,7 +5623,7 @@ const uiSchemas = {
           "ui:order": [
             "variety",
             "notes",
-            ""
+            "*"
           ]
         },
         "unknown": {
@@ -5929,9 +5925,7 @@ const uiSchemas = {
             "variety",
             "vector",
             "notes",
-            "Infiltrate",
-            "Elevate",
-            "Exfiltrate",
+            "result",
             "cve",
             "*"
           ]
@@ -5993,7 +5987,7 @@ const uiSchemas = {
           "ui:order": [
             "variety",
             "notes",
-            ""
+            "*"
           ]
         },
         "unknown": {
@@ -6049,9 +6043,9 @@ const uiSchemas = {
         "ui:order": [
           "total_amount",
           "assets",
+          "cloud",
           "asset_os",
           "ownership",
-          "cloud",
           "role",
           "hosting",
           "management",

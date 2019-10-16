@@ -63,32 +63,42 @@ const schemas = {
       },
       allowOther: false
     }, 
-    // partner: {
-    //   name: 'Partner (Other)',
-    //   versions: {
-    //     '1.3.1': {
-    //       schema: undefined,
-    //       rawschema: undefined,
-    //       uischema: uiSchemas['partner']['1.3.1']
-    //     },
-    //     '1.3.2': {
-    //       schema: undefined,
-    //       rawschema: undefined,
-    //       uischema: uiSchemas['partner']['1.3.2']
-    //     },
-    //     // '1.4': {
-    //     //   schema: undefined,
-    //     //   rawschema: undefined,
-    //     //   uischema: add_help(uiSchemas['partner']['1.4'])
-    //     // },
-    //     '2.0': {
-    //       schema: undefined,
-    //       rawschema: undefined,
-    //       uischema: uiSchemas['partner']['2.0']
-    //     }
-    //   },
-    //   allowOther: true
-    // },
+    partner: {
+      name: 'Partner',
+      versions: {
+        '1.3.1': {
+          schema: processSchema(dbir1_3_1, 'dbir', '1.3.1', dbirLabels),
+          rawschema: dbir1_3_1,
+          uischema: uiSchemas['partner']['1.3.1']
+        },
+        '1.3.2': {
+          schema: processSchema(dbir1_3_2, 'dbir', '1.3.2', dbirLabels),
+          rawschema: dbir1_3_2,
+          uischema: uiSchemas['partner']['1.3.2']
+        },
+        '1.3.3': {
+          schema: processSchema(dbir1_3_3, 'dbir', '1.3.3', dbirLabels),
+          rawschema: dbir1_3_3,
+          uischema: uiSchemas['partner']['1.3.3']
+        },
+        '1.3.4': {
+          schema: processSchema(dbir1_3_4, 'dbir', '1.3.4', dbirLabels),
+          rawschema: dbir1_3_4,
+          uischema: uiSchemas['partner']['1.3.4']
+        },
+        // '1.4': {
+        //   schema: undefined,
+        //   rawschema: undefined,
+        //   uischema: add_help(uiSchemas['partner']['1.4'])
+        // },
+        '2.0': {
+          schema: undefined,
+          rawschema: undefined,
+          uischema: uiSchemas['partner']['2.0']
+        }
+      },
+      allowOther: false
+    },
     dbir: {
       name: 'DBIR',
       versions: {
@@ -123,7 +133,7 @@ const schemas = {
           uischema: uiSchemas['dbir']['2.0']
         }
       },
-      allowOther: true
+      allowOther: false
     },
     vzir: {
       name: 'VZIR (Other)',
