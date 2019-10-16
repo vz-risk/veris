@@ -150,7 +150,7 @@ def main(cfg):
 
             ### Convert plus.attribute.confidentiality.credit_monitoring to a categorical field
             # per vz-risk/VERIS issue #260 
-            if 'credit_monitoring' in incident.get('plus', {}).get('attribute', {}).get('confidentiality'):
+            if 'credit_monitoring' in incident.get('plus', {}).get('attribute', {}).get('confidentiality', {}):
                 if incident['plus']['attribute']['confidentiality']['credit_monitoring'].upper() == 'N':
                     incident['plus']['attribute']['confidentiality']['credit_monitoring'] = 'No'
                 elif incident['plus']['attribute']['confidentiality']['credit_monitoring'].upper() == 'U':
@@ -162,26 +162,26 @@ def main(cfg):
                 else:
                     _ = incident['plus']['attribute']['confidentiality'].pop('credit_monitoring')
             # Ensure plus.attribute.confidentiality.credit_monitoring > 0 per new validation
-            if 'credit_monitoring_years' in incident.get('plus', {}).get('attribute', {}).get('confidentiality'):
+            if 'credit_monitoring_years' in incident.get('plus', {}).get('attribute', {}).get('confidentiality', {}):
                 if incident['plus']['attribute']['confidentiality']['credit_monitoring_years'] <= 0:
                     _ = incident['plus']['attribute']['confidentiality'].pop('credit_monitoring_years')
 
 
             ### Convert plus.attribute.confidentiality.partner_data to a categorical field
             # per vz-risk/VERIS issue #259
-            if 'partner_data' in incident.get('plus', {}).get('attribute', {}).get('confidentiality'):
+            if 'partner_data' in incident.get('plus', {}).get('attribute', {}).get('confidentiality', {}):
                 if incident['plus']['attribute']['confidentiality']['partner_data'][0].upper() == 'N':
                     incident['plus']['attribute']['confidentiality']['partner_data'] = 'No'
                 elif incident['plus']['attribute']['confidentiality']['partner_data'][0].upper() == 'U':
                     incident['plus']['attribute']['confidentiality']['partner_data'] = 'Unknown'
                 elif incident['plus']['attribute']['confidentiality']['partner_data'][0].upper() == 'Y':
-                    incident['plus']['attribute']['confidentiality']['partner_data'] = 'Y'
+                    incident['plus']['attribute']['confidentiality']['partner_data'] = 'Yes'
                 elif incident['plus']['attribute']['confidentiality']['partner_data'][0].upper() == 'O':
                     incident['plus']['attribute']['confidentiality']['partner_data'] = 'Other'
                 else:
                     _ = incident['plus']['attribute']['confidentiality'].pop('partner_data')
             # Ensure plus.attribute.confidentiality.partner_number > 0 per new validation
-            if 'partner_number' in incident.get('plus', {}).get('attribute', {}).get('confidentiality'):
+            if 'partner_number' in incident.get('plus', {}).get('attribute', {}).get('confidentiality', {}):
                 if incident['plus']['attribute']['confidentiality']['partner_number'] <= 0:
                     _ = incident['plus']['attribute']['confidentiality'].pop('partner_number')
 
@@ -195,6 +195,7 @@ def main(cfg):
                         incident['action']['hacking'] = {'variety':['Unknown'], 'vector':['Inter-tenant']}
                     else:
                         incident['action']['hacking']['vector'].append("Inter-tenant")
+                    incident['asset']['cloud'] = ['Unknown']
                 elif cloud == 'Hosting error':
                     if 'error' not in incident['action']:
                         incident['action']['error'] = {'variety':['Misconfiguration'], 'vector':['Unknown']}
@@ -205,9 +206,9 @@ def main(cfg):
                     incident['asset']['cloud'] = ['External Cloud Asset(s)']
                 elif cloud == 'Hosting governance':
                     if 'error' not in incident['action']:
-                        incident['action']['error'] = {'variety':['Process'], 'vector':['Unknown']}
-                    elif 'Process' not in incident['action']['error']['variety']:
-                        incident['action']['error']['variety'].append("Process")
+                        incident['action']['error'] = {'variety':['Unknown'], 'vector':['Inadequate processes']}
+                    elif 'Inadequate processes' not in incident['action']['error']['vector']:
+                        incident['action']['error']['vector'].append("Inadequate processes")
                     else:
                         pass # Process is already in action.error.variety
                     incident['asset']['cloud'] = ['External Cloud Asset(s)']
@@ -219,21 +220,24 @@ def main(cfg):
                         incident['action']['hacking'] = {'variety':['Unknown'], 'vector':['Hypervisor']}
                     else:
                         incident['action']['hacking']['vector'].append("Hypervisor")
-                elif cloud == "Parnter application":
+                    incident['asset']['cloud'] = ['Unknown']
+                elif cloud == "Partner application":
                     if 'hacking' not in incident['action']:
                         incident['action']['hacking'] = {'variety':['Exploit vuln'], 'vector':['Unknown']}
-                    elif 'Process' not in incident['action']['error']['variety']:
+                    elif 'Exploit vuln' not in incident['action']['hacking']['variety']:
                         incident['action']['hacking']['variety'].append("Exploit vuln")
                     else:
                         pass # Exploit vuln is already in action.hacking.variety
                     for actor in incident['actor']:
                         if 'Secondary' not in incident['actor'][actor]['motive']:
                             incident['actor'][actor]['motive'].append('Secondary')
+                    incident['asset']['cloud'] = ['Unknown']
                 elif cloud == "User breakout":
                     if 'hacking' not in incident['action']:
                         incident['action']['hacking'] = {'variety':['User breakout'], 'vector':['Unknown']}
                     else:
                         incident['action']['hacking']['variety'].append("User breakout")
+                    incident['asset']['cloud'] = ['Unknown']
                 elif cloud == 'NA':
                     incident['asset']['cloud'] = ['Unknown']
                 elif cloud == 'No':
@@ -250,6 +254,12 @@ def main(cfg):
             # per vz-risk/VERIS issue #150
             if 'End-user' in incident.get('action', {}).get('social', {}).get('target', []):
                 incident['action']['social']['target'] = [enum if enum != "End-user" else "End-user or employee" for enum in incident['action']['social']['target']]
+
+            ### recreating this 1.3.2 to 1.3.3 update.  'accessibility' was misspelled in convert_1.3.2_to_1.3.3.py. 
+            # per https://github.com/vz-risk/veris/issues/173
+            if 'asset' in incident:
+                if 'accessibility' in incident['asset']:
+                    _ = incident['asset'].pop('accessibility')
 
 
             # Now to save the incident
