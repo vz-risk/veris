@@ -47,7 +47,7 @@ const schemas = {
         },
         '1.3.4': {
           schema: processSchema(verisc1_3_4, 'verisc', '1.3.4', veriscLabels),
-          rawschema: verisc1_3_3,
+          rawschema: verisc1_3_4,
           uischema: uiSchemas['verisc']['1.3.4']
         },
         // '1.4': {
@@ -90,26 +90,26 @@ const schemas = {
     //   allowOther: true
     // },
     dbir: {
-      name: 'DBIR (Other)',
+      name: 'DBIR',
       versions: {
         '1.3.1': {
-          schema: undefined,
-          rawschema: undefined,
+          schema: processSchema(dbir1_3_1, 'dbir', '1.3.1', dbirLabels),
+          rawschema: dbir1_3_1,
           uischema: uiSchemas['dbir']['1.3.1']
         },
         '1.3.2': {
-          schema: undefined,
-          rawschema: undefined,
+          schema: processSchema(dbir1_3_2, 'dbir', '1.3.2', dbirLabels),
+          rawschema: dbir1_3_2,
           uischema: uiSchemas['dbir']['1.3.2']
         },
         '1.3.3': {
-          schema: undefined,
-          rawschema: undefined,
+          schema: processSchema(dbir1_3_3, 'dbir', '1.3.3', dbirLabels),
+          rawschema: dbir1_3_3,
           uischema: uiSchemas['dbir']['1.3.3']
         },
         '1.3.4': {
-          schema: undefined,
-          rawschema: undefined,
+          schema: processSchema(dbir1_3_4, 'dbir', '1.3.4', dbirLabels),
+          rawschema: dbir1_3_4,
           uischema: uiSchemas['dbir']['1.3.4']
         },
         // '1.4': {
