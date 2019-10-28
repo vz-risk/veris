@@ -365,14 +365,16 @@
       "field": ["victim", "victim_id"],
       "hide": true,
       "schemas": {
-        "vzir": ["all"]
+        "vzir": ["all"],
+        "partner": ["all"]
       }
     },
     {
       "field": ["victim", "secondary", "victim_id"],
       "hide": true,
       "schemas": {
-        "vzir": ["all"]
+        "vzir": ["all"],
+        "partner": ["all"]
       }
     },
     {

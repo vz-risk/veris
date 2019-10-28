@@ -31,22 +31,22 @@ const schemas = {
       name: 'Partner',
       versions: {
         '1.3.1': {
-          schema: processSchema(dbir1_3_1, 'dbir', '1.3.1', dbirLabels),
+          schema: processSchema(dbir1_3_1, 'partner', '1.3.1', dbirLabels),
           rawschema: dbir1_3_1,
           uischema: uiSchemas['partner']['1.3.1']
         },
         '1.3.2': {
-          schema: processSchema(dbir1_3_2, 'dbir', '1.3.2', dbirLabels),
+          schema: processSchema(dbir1_3_2, 'partner', '1.3.2', dbirLabels),
           rawschema: dbir1_3_2,
           uischema: uiSchemas['partner']['1.3.2']
         },
         '1.3.3': {
-          schema: processSchema(dbir1_3_3, 'dbir', '1.3.3', dbirLabels),
+          schema: processSchema(dbir1_3_3, 'partner', '1.3.3', dbirLabels),
           rawschema: dbir1_3_3,
           uischema: uiSchemas['partner']['1.3.3']
         },
         '1.3.4': {
-          schema: processSchema(dbir1_3_4, 'dbir', '1.3.4', dbirLabels),
+          schema: processSchema(dbir1_3_4, 'partner', '1.3.4', dbirLabels),
           rawschema: dbir1_3_4,
           uischema: uiSchemas['partner']['1.3.4']
         },
@@ -398,10 +398,17 @@ export function ungroomSchema(obj, schemaName, version) {
 }
 
 function groomObject(obj, schemaName, version, isData) {
+  console.log(schemaName);
+  console.log(version);
+  console.log("");
   version = version.replace(/_/g, '.');
   let acc = deepCopy(obj);
   for (let i=0; i<groomSchemaDef.rules.length; i++) {
     let rule = groomSchemaDef.rules[i];
+
+    if((version == "1.3.4") && (schemaName == "partner")) { // && (rule['field'].includes("source_id"))) {
+      console.log("debug")
+    }
 
     if (!schemaMatchesRule(schemaName, version, rule)) {
       continue
