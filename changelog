@@ -1,3 +1,29 @@
+Version 1.3.4
+=============
+129-10-31
+
+* Added assets desktop/laptop hierarchy per issues #263
+* Removed country requirement per issues #262
+* structured credit monitoring fields per issues #260
+* structured partner data fields per issues #259
+* Added validation for 'other' value 000001 in victim/actor country per issues #252
+* Updated 'customer' definition in data_victim to include member per issues #248
+* Better defined misrepresentation per issues #244
+* Updated description of secondary.victim_id to include naics per issues #238
+* made asset.cloud manditory per issues #236 and issues #225
+* added email and associated hierarchy to malware.vector per issues #232
+* updated 'executive' definition per issues #224
+* improved naics validation per issues #223
+* added RAT and malware.variety.trojan per issues #215
+* added 'escrow' to value_chain per issues #214
+* added 'insecure deserialization' per issues #213
+* updated 'asset and fraud' definition per issues #212
+* added parent-child relationships to descriptions per issues #205
+* added 'role' (it/ot) to asset per issues #201
+* split 'end-user' and 'employee' in action.social.target but not actor.internal.variety per issues #150
+* added physical.variety.snap a picture per issues #93
+
+
 Version 1.3.3
 =============
 18-11-29
