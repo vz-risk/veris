@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--
+                            |   _)             |            _)  |
+   _ \  _ \  _ \   _` |   _| _|  |   _|  |  |  |   _` |   _| |   _|  |  |
+  .__/ .__/ .__/ \__,_| _| \__| _| \__| \_,_| _| \__,_| _|  _| \__| \_, |
+ _|   _|   _|                                                       ___/
+                                                tailored web design
+-->
+<!--[if lt IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>The VERIS WebApp</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="elemind.com" name="author">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/libs/modernizr.min.js"></script>
+    <link href="ico/favicon.ico" rel="shortcut icon">
+    <link href="ico/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="ico/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="ico/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+</head>
+<body class="features" data-spy="scroll" data-target=".documentation-nav">
+    <div class="container">
+        <div class="row">
+
+            <!-- .................................... $header .................................... -->
+            <header class="span3">
+                <div class="affix">
+                    <div class="navbar span3">
+                        <div class="navbar-inner">
+                            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+                                <i class="icon-reorder"></i>
+                            </a>
+                            <a class="brand span2" href="index.html">
+                                <img alt="" src="img/logo.png">
+                            </a>
+<nav class="nav-collapse collapse">
+    <ul class="nav">
+        <li class="nav-home"><a href="index.html">Home</a></li>
+        <li class="nav-home"><a href="howto.html">Quick Start</a></li>
+        <li class="nav-home"><a href="veris-overview.html">VERIS Overview</a></li>
+        <li class="nav-enums"><a href="schema-docs.html">Schema Documentation</a></li>
+        <li class="nav-enums"><a href="incident-track.html">Incident Tracking</a></li>
+        <li class="nav-enums"><a href="victim-demo.html">Victim Demographics</a></li>
+        <li class="nav-enums"><a href="incident-desc.html">Incident Description</a></li>
+
+        <li class="dropdown nav-schema">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Incident Details
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="nav-actors"><a href="actors.html">Actors</a></li>
+                <li class="nav-actions"><a href="actions.html">Actions</a></li>
+                <li class="nav-assets"><a href="assets.html">Assets</a></li>
+                <li class="nav-attributes"><a href="attributes.html">Attributes</a></li>
+            </ul>
+        </li>
+        <li class="nav-discovery"><a href="discovery.html">Discovery & Response</a></li>
+        <li class="nav-impact"><a href="impact.html">Impact Assessment</a></li>
+        <li class="nav-indicators active"><a href="indicators.html">Indicators</a></li>
+        <li class="dropdown nav-examples">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Samples & Examples
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="nav-classification-examples"><a href="webapp.html">The VERIS WebApp</a></li>
+                <li class="nav-classification-examples"><a href="class-examples.html">Classification Examples</a></li>
+                <li class="nav-map-to-schemas"><a href="veris-mapping.html">Map VERIS to other Schemas</a></li>
+            </ul>
+        </li>
+        <li class="nav-enums"><a href="enums.html">Schema Enumerations</a></li>
+        <li class="nav-vcdb"><a href="vcdb.html">VERIS Community Database</a></li>
+        <li class="nav-a4grid"><a href="a4grid.html">The A4 Grid</a></li>
+
+    </ul>
+</nav>
+</div><!-- /navbar-inner -->
+</div><!-- /navbar -->
+<aside class="span3 text-center hidden-phone">
+<ul class="social inline">
+<li><a class="btn btn-small" href="#"><i class="icon-facebook"></i></a></li>
+<li><a class="btn btn-small" href="#"><i class="icon-twitter"></i></a></li>
+<li><a class="btn btn-small" href="#"><i class="icon-linkedin"></i></a></li>
+</ul>
+<p>Designed by <a href="http://ppparticularity.com">ppparticularity</a></p>
+</aside>
+</div><!-- /affix -->
+</header>
+
+            <div class="main span9">
+
+                <!-- .................................... $Content .................................... -->
+                <section class="section-content">
+
+                        <div class="span9">
+                            <h2 class="section-title">
+                               The VERIS WebApp 
+                            </h2>
+
+                            <p>So how do you get started using VERIS to record your actual data?  We have a WebApp for that!  This is a web browser app (Chrome or Firefox are recommended) which lets you walk through a series of form fields to record as much or as little as your know about the incident.  Once you finish, you hit Submit and the incident details are converted into a JSON record and stored in the app.  To get the data out of the app, you just export it, and the JSON file is saved to your local system.  This is a good way to get started coding cases up in VERIS format, and leaves you with data that is suitable for pulling into a nosql database, or into R as we do for the DBIR.</p>
+<p>
+If you aren't already familiar with VERIS and how to code incidents, we have a number of resources available to you.  First, we list some training videos by both Rapid7 and by our own team.  The Rapid7 videos are good for getting you more familiar with how VERIS works, and the DBIR team videos are all about how to use the webapp on real case examples.  We recommend you take a look at the VERIS videos to get familiar with how to apply the framework to actual cases, and then take a look at team videos that match the kind of case you're working on to begin with.  We have several common examples in our library.
+</p>
+
+<p>Before you can use the WebApp, you will need to download the appropriate VERIS schema file. The file you choose should match the VERIS schema you are using.  At the time of this webpage's writing, we are on VERIS 1.3.4. 
+</p>  
+
+<h2 class="section-title">
+                              Get the WebApp and Schema File 
+                            </h2>
+
+                                <p><a href="http://veriscommunity.net/veris_webapp_min.html">VERIS WebApp</a></p>
+                                <p><a href="https://github.com/vz-risk/veris/tree/master/bin/veris_webapp/assets/schema">Schema Files Directory on GitHub</a></p>
+
+<p>Which schema to choose?  That largely depends on what you’re using the data for. Each of the schema files corresponds to the use of the data and ends with the VERIS version it represents.  As you may know, we update VERIS periodically, usually before we start work on the new year's report.  This means that organizations who implemented an older version of VERIS and have not migrated their schema will need to pay attention to the version they choose of the schema file.</p>
+<p>The DBIR schema is used by the team coding partner cases for inclusion into the DBIR.  This year, we will be using the <b>dbir-merged1_3_4.json</b> schema file.</p>
+<p>The VCDB schema is for people who are coding cases for the VERIS Community Database project. The 1.3.4 schema file would be <b>vcdb-merged1_3_4.json</b></p>
+<p>The VERISC schema (VERISC stands for VERIS Community) is for people who want to code their own data--not to be shared with anyone necessarily, although you could later chose to share the JSON files if you wanted to. The current schema file for VERISC is <b>verisc-merged1_3_4.json</b></p>
+<p>The schema file will change the fields displayed in the WebApp.  For example, a case coded in the VCDB schema will include a field for the name of the organization that was the victim of the breach.  For a case in the DBIR, that field would not exist because we do not collect victim-identifying information from our partners.  Since the schema files are JSON, you can inspect them for yourself in an editor.
+
+
+</p>
+
+                            <!-- .................................... $Training Resources .................................... -->
+                            <section class="section-content section-external" id="section-external"> 
+                                <h3 class="section-title">
+                                    Training Resources
+                                </h3>
+
+                                <h4>Videos from Rapid7 about VERIS</h4>
+				<p>Trey Ford made several short videos about VERIS that you may find useful.  They are a quick introduction to the VERIS framework, and the 4A's--the Actors, Actions, Assets and Attributes that make up the building blocks of the framework.</p>
+     				<p><a href="https://www.youtube.com/watch?v=STJ87WszpLY&t=3s">Actors</a></p>
+     				<p><a href="https://www.youtube.com/watch?v=k9OFoSdyLsg">Actions</a></p>
+     				<p><a href="https://www.youtube.com/watch?v=tNjDm2gHZ_g&t=7s">Assets</a></p>
+     				<p><a href="https://www.youtube.com/watch?v=ypdZb6xnCfk&t=49">Attributes</a></p>
+<p></p>
+                                <h4>Training videos for Coding Cases using the VERIS Webapp</h4>
+				<p>First, we have a pair of videos illustrating how to use the WebApp to code cases.  In these and all other example videos we use, we are coding cases in the VCDB schema.  The main reason is that we can use cases from the publicly disclosed breaches to show you how to use the WebApp without disclosing any private information.  Every breach included in VCDB is from publicly access sources, and we include the URLs that we consulted when coding the case.  If you code your own data, you will be using the VERISC schema, which has small variations from what you will see in our videos. </p>
+     				<p><a href="https://www.youtube.com/watch?v=YdwnfDfT1FU&t=1s">Coding VCDB Cases in the VERIS WebApp</a></p>
+     				<p><a href="https://www.youtube.com/watch?v=APNNCILB4aI">VERIS Webapp Tutorial</a></p>
+<p></p>
+                                <h4>Case example training videos (so far)</h4>
+				<p>These videos are also using the VCDB schedma and the VERIS WebApp, but are more focused on teaching the special considerations for common kinds of incidents we see.  For example, when coding up a laptop theft case, there is not only a potential for a confidentiality loss, but also an availability loss, given that the asset is no longer available.  When coding up a Point of Sale Skimmer case, there is an integrity loss to account for the physical tampering with the hardware.  These are the kinds of things that may not be intuitively obvious that need to be accounted for when coding some of the most common cases.  As we have time, we will be adding to this library of case videos.</p>
+                                <p><a href="https://www.youtube.com/watch?v=xphDFtTLzWk">Laptop Theft</a></p>
+                                <p><a href="https://www.youtube.com/watch?v=Aj-prZOheA0">POS Skimmer</a></p>
+                                <p><a href="https://www.youtube.com/watch?v=g0FN2Zqe9FE">Error Misdelivery</a></p>
+                                <p><a href="https://www.youtube.com/watch?v=SI8eRitqRJE"></a>Misuse</p>
+                                <p><a href="https://www.youtube.com/watch?v=qrt6a-uVD9I"></a>Hacking</p>
+                                <p><a href="https://www.youtube.com/watch?v=j8E7ir6rGQc">Malware</a></p>
+                                <h4>Live streamed case coding by Gabriel Bassett via Twitch</h4>
+				<p>Beginning in the summer of 2019, Gabriel Bassett, Chief Data Scientst for the DBIR, began using Twitch to stream live coding of VCDB cases.  It has been very successful in fostering a discussion of both the ins and outs of coding cases in VERIS, and other topics as they arise during the session.  If you are not familiar with it, the Twitch platform for live streaming video allows anyone to put up a live stream, share their screen and interact with the people watching at the same time.</p>
+                                <p><a href="https://www.youtube.com/channel/UCTGViRfVZwozbJtLxR05SKQ/videos">Gabe's Twitch Cases</a></p>
+                            </section>
+
+
+                        </div>
+                    </div>
+                </section>
+
+
+            </div><!-- /main span9 -->
+
+        </div><!-- /row -->
+    </div><!-- /container -->
+
+    <!-- .................................... $scripts .................................... -->
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="js/libs/jquery.ui.map.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/libs/jquery.fancybox.min.js"></script>
+    <script src="js/libs/jquery.hoverdir.min.js"></script>
+    <script src="js/libs/jquery.isotope.min.js"></script>
+    <script src="js/libs/jquery.masonry.min.js"></script>
+    <script src="js/libs/jquery.fitvids.min.js"></script>
+    <script src="js/libs/jquery.flexslider.min.js"></script>
+    <script src="js/libs/jquery.imagesloaded.min.js"></script>
+    <script src="js/libs/cbpBGSlideshow.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
