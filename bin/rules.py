@@ -383,6 +383,8 @@ class Rules():
             for each in incident['asset']['assets']:
                 asset_list.append(each['variety'])
             for each in incident['action']['social']['target']:
+                if each == "End-user or employee": # in 1.3.4 we accidentally broke the link betwen action.social.target and asset.assets.P -.  target has "End-user or employee" and assets has "P - End-user"
+                    each = "End-user"
                 if LooseVersion(incident['schema_version']) > LooseVersion("1.3"):
                     logging.debug("Version {0} greater than 1.3.".format(incident['schema_version']))
                     if 'P - '+each not in asset_list:
