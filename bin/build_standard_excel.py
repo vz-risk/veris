@@ -163,7 +163,8 @@ parser.add_argument('-s', '--schema', help='The merged schema file to generate t
 parser.add_argument('-l', '--labels', help='If desired, include a labels file and they will be included in the standard excel.', default=LABELS)
 parser.add_argument('-t', '--test_examples', help=  'A directory of veris json files to convert to examples. ' +
                                                     '(VCDB is a good option for this, but note the VCDB schema is not the same as verisc.) ' +
-                                                    'If more than {0}, {0} will be randomly chosen.'.format(MAX_EXAMPLES), type=str, default=None)
+                                                    'If more than num_examples (currently {0}), {0} will be randomly chosen.'.format(MAX_EXAMPLES), type=str, default=None)
+parser.add_argument('-n', '--num_examples', help='The number of examples to include.  Defaults to {0}. 0 indicates all.'.format(MAX_EXAMPLES), type=int, default=MAX_EXAMPLES)
 parser.add_argument('-o', '--output', help='The excel file name to write (including xlsx extension).', default=OUTFILE)
 args = parser.parse_args()
 
@@ -340,8 +341,8 @@ def main():
             if not os.path.isdir(args.test_examples): raise ValueError("Directory does not exist.")
             testfiles = glob.glob(args.test_examples.rstrip("/") + "/*.json")
             if len(testfiles) <= 0: raise ValueError("No test files found in directory.")
-            if len(testfiles) > MAX_EXAMPLES:
-                testfiles = random.sample(testfiles, MAX_EXAMPLES)
+            if args.num_examples > 0 and len(testfiles) > args.num_examples:
+                testfiles = random.sample(testfiles, args.num_examples)
             #logging.debug(testfiles)
             # read in and flatten files
             records = []
