@@ -628,6 +628,10 @@ class Rules():
         # CC
         victim['country'] = self.compareCountryFromTo('victim.country', victim['country'], iid) #, schema['victim']['country'])
 
+        # return victim to the incident. - GDB 200211
+        incident['victim'] = victim
+
+
         ## ACTOR ##
         if 'actor' not in incident:
             logging.info("%s: auto-filled Unknown for entire actor section", iid)
