@@ -363,7 +363,7 @@ class CSVtoJSON():
         ### cloud now required
         # per vz-risk/VERIS issue #225 and #236
         if 'cloud' not in out.get('asset', {}):
-            incident['asset']['cloud'] = ['Unknown']
+            out['asset']['cloud'] = ['Unknown']
 
         # attributes
         if 'attribute.confidentiality.data.variety' in incident:
