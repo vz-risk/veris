@@ -1,0 +1,538 @@
+﻿Start,End,MITRE_NAME
+Action.Error,Action.Error.Variety,
+Action.Error.Variety.Misdelivery,Action.Error.Variety,
+Action.Error.Variety.Misdelivery,T1041,Exfiltration Over Command and Control Channel
+Action.Hacking,Action.Hacking.Variety,
+Action.Hacking,Action.Hacking.Vector,
+Action.Hacking.Variety.Abuse of functionality,Action.Hacking.Variety,
+Action.Hacking.Variety.Abuse of functionality,T1004,Winlogon Helper DLL
+Action.Hacking.Variety.Abuse of functionality,T1012,Query Registry
+Action.Hacking.Variety.Abuse of functionality,T1013,Port Monitors
+Action.Hacking.Variety.Abuse of functionality,T1015,Accessibility Features
+Action.Hacking.Variety.Abuse of functionality,T1017,Application Deployment Software
+Action.Hacking.Variety.Abuse of functionality,T1023,Shortcut Modification
+Action.Hacking.Variety.Abuse of functionality,T1031,Modify Existing Service
+Action.Hacking.Variety.Abuse of functionality,T1034,Path Interception
+Action.Hacking.Variety.Abuse of functionality,T1035,Service Execution
+Action.Hacking.Variety.Abuse of functionality,T1036,Masquerading
+Action.Hacking.Variety.Abuse of functionality,T1037,Logon Scripts
+Action.Hacking.Variety.Abuse of functionality,T1042,Change Default File Association
+Action.Hacking.Variety.Abuse of functionality,T1045,Software Packing
+Action.Hacking.Variety.Abuse of functionality,T1050,New Service
+Action.Hacking.Variety.Abuse of functionality,T1051,Shared Webroot
+Action.Hacking.Variety.Abuse of functionality,T1053,Scheduled Task
+Action.Hacking.Variety.Abuse of functionality,T1057,Process Discovery
+Action.Hacking.Variety.Abuse of functionality,T1064,Scripting
+Action.Hacking.Variety.Abuse of functionality,T1072,Third-party Software
+Action.Hacking.Variety.Abuse of functionality,T1085,Rundll32
+Action.Hacking.Variety.Abuse of functionality,T1086,PowerShell
+Action.Hacking.Variety.Abuse of functionality,T1088,Bypass User Account Control
+Action.Hacking.Variety.Abuse of functionality,T1098,Account Manipulation
+Action.Hacking.Variety.Abuse of functionality,T1103,AppInit DLLs
+Action.Hacking.Variety.Abuse of functionality,T1106,Execution through API
+Action.Hacking.Variety.Abuse of functionality,T1112,Modify Registry
+Action.Hacking.Variety.Abuse of functionality,T1117,Regsvr32
+Action.Hacking.Variety.Abuse of functionality,T1118,InstallUtil
+Action.Hacking.Variety.Abuse of functionality,T1121,Regsvcs/Regasm
+Action.Hacking.Variety.Abuse of functionality,T1122,Component Object Model Hijacking
+Action.Hacking.Variety.Abuse of functionality,T1127,Trusted Developer Utilities
+Action.Hacking.Variety.Abuse of functionality,T1128,Netsh Helper DLL
+Action.Hacking.Variety.Abuse of functionality,T1129,Execution through Module Load
+Action.Hacking.Variety.Abuse of functionality,T1137,Office Application Startup
+Action.Hacking.Variety.Abuse of functionality,T1139,Bash History
+Action.Hacking.Variety.Abuse of functionality,T1143,Hidden Window
+Action.Hacking.Variety.Abuse of functionality,T1147,Hidden Users
+Action.Hacking.Variety.Abuse of functionality,T1148,HISTCONTROL
+Action.Hacking.Variety.Abuse of functionality,T1151,Space after Filename
+Action.Hacking.Variety.Abuse of functionality,T1152,Launchctl
+Action.Hacking.Variety.Abuse of functionality,T1153,Source
+Action.Hacking.Variety.Abuse of functionality,T1154,Trap
+Action.Hacking.Variety.Abuse of functionality,T1155,AppleScript
+Action.Hacking.Variety.Abuse of functionality,T1159,Launch Agent
+Action.Hacking.Variety.Abuse of functionality,T1160,Launch Daemon
+Action.Hacking.Variety.Abuse of functionality,T1161,LC_LOAD_DYLIB Addition
+Action.Hacking.Variety.Abuse of functionality,T1162,Login Item
+Action.Hacking.Variety.Abuse of functionality,T1165,Startup Items
+Action.Hacking.Variety.Abuse of functionality,T1166,Setuid and Setgid
+Action.Hacking.Variety.Abuse of functionality,T1168,Local Job Scheduling
+Action.Hacking.Variety.Abuse of functionality,T1170,Mshta
+Action.Hacking.Variety.Abuse of functionality,T1171,LLMNR/NBT-NS Poisoning and Relay
+Action.Hacking.Variety.Abuse of functionality,T1174,Password Filter DLL
+Action.Hacking.Variety.Abuse of functionality,T1175,Distributed Component Object Model
+Action.Hacking.Variety.Abuse of functionality,T1177,LSASS Driver
+Action.Hacking.Variety.Abuse of functionality,T1179,Hooking
+Action.Hacking.Variety.Abuse of functionality,T1181,Extra Window Memory Injection
+Action.Hacking.Variety.Abuse of functionality,T1182,AppCert DLLs
+Action.Hacking.Variety.Abuse of functionality,T1183,Image File Execution Options Injection
+Action.Hacking.Variety.Abuse of functionality,T1187,Forced Authentication
+Action.Hacking.Variety.Abuse of functionality,T1191,CMSTP
+Action.Hacking.Variety.Abuse of functionality,T1196,Control Panel Items
+Action.Hacking.Variety.Abuse of functionality,T1198,SIP and Trust Provider Hijacking
+Action.Hacking.Variety.Abuse of functionality,T1201,Password Policy Discovery
+Action.Hacking.Variety.Abuse of functionality,T1202,Indirect Command Execution
+Action.Hacking.Variety.Abuse of functionality,T1207,DCShadow
+Action.Hacking.Variety.Abuse of functionality,T1208,Kerberoasting
+Action.Hacking.Variety.Abuse of functionality,T1215,Kernel Modules and Extensions
+Action.Hacking.Variety.Abuse of functionality,T1216,Signed Script Proxy Execution
+Action.Hacking.Variety.Abuse of functionality,T1218,Signed Binary Proxy Execution
+Action.Hacking.Variety.Abuse of functionality,T1220,XSL Script Processing
+Action.Hacking.Variety.Abuse of functionality,T1480,Execution Guardrails
+Action.Hacking.Variety.Abuse of functionality,T1494,Runtime Data Manipulation
+Action.Hacking.Variety.Abuse of functionality,T1501,Systemd Service
+Action.Hacking.Variety.Brute force,Action.Hacking.Variety,
+Action.Hacking.Variety.Brute force,T1021,Remote Services
+Action.Hacking.Variety.Brute force,T1110,Brute Force
+Action.Hacking.Variety.Buffer overflow,Action.Hacking.Variety,
+Action.Hacking.Variety.Buffer overflow,T1068,Exploitation for Privilege Escalation
+Action.Hacking.Variety.Buffer overflow,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Buffer overflow,T1203,Exploitation for Client Execution
+Action.Hacking.Variety.Buffer overflow,T1210,Exploitation of Remote Services
+Action.Hacking.Variety.Buffer overflow,T1211,Exploitation for Defense Evasion
+Action.Hacking.Variety.Buffer overflow,T1212,Exploitation for Credential Access
+Action.Hacking.Variety.Cache poisoning,Action.Hacking.Variety,
+Action.Hacking.Variety.Cache poisoning,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Cryptanalysis,Action.Hacking.Variety,
+Action.Hacking.Variety.Cryptanalysis,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Cryptanalysis,T1210,Exploitation of Remote Services
+Action.Hacking.Variety.CSRF,Action.Hacking.Variety,
+Action.Hacking.Variety.CSRF,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.DoS,Action.Hacking.Variety,
+Action.Hacking.Variety.DoS,T1498,Network Denial of Service
+Action.Hacking.Variety.Exploit misconfig,Action.Hacking.Variety,
+Action.Hacking.Variety.Exploit misconfig,T1015,Accessibility Features
+Action.Hacking.Variety.Exploit misconfig,T1044,File System Permissions Weakness
+Action.Hacking.Variety.Exploit misconfig,T1058,Service Registry Permissions Weakness
+Action.Hacking.Variety.Exploit misconfig,T1088,Bypass User Account Control
+Action.Hacking.Variety.Exploit misconfig,T1129,Execution through Module Load
+Action.Hacking.Variety.Exploit misconfig,T1139,Bash History
+Action.Hacking.Variety.Exploit misconfig,T1212,Exploitation for Credential Access
+Action.Hacking.Variety.Exploit misconfig,T1222,File Permissions Modification
+Action.Hacking.Variety.Footprinting,Action.Hacking.Variety,
+Action.Hacking.Variety.Footprinting,T1007,System Service Discovery
+Action.Hacking.Variety.Footprinting,T1018,Remote System Discovery
+Action.Hacking.Variety.Footprinting,T1046,Network Service Scanning
+Action.Hacking.Variety.Forced browsing,Action.Hacking.Variety,
+Action.Hacking.Variety.Forced browsing,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Format string attack,Action.Hacking.Variety,
+Action.Hacking.Variety.Format string attack,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Fuzz testing,Action.Hacking.Variety,
+Action.Hacking.Variety.Fuzz testing,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.HTTP request smuggling,Action.Hacking.Variety,
+Action.Hacking.Variety.HTTP request smuggling,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.HTTP request splitting,Action.Hacking.Variety,
+Action.Hacking.Variety.HTTP request splitting,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Integer overflows,Action.Hacking.Variety,
+Action.Hacking.Variety.Integer overflows,T1068,Exploitation for Privilege Escalation
+Action.Hacking.Variety.Integer overflows,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Integer overflows,T1203,Exploitation for Client Execution
+Action.Hacking.Variety.Integer overflows,T1210,Exploitation of Remote Services
+Action.Hacking.Variety.Integer overflows,T1211,Exploitation for Defense Evasion
+Action.Hacking.Variety.Integer overflows,T1212,Exploitation for Credential Access
+Action.Hacking.Variety.LDAP injection,Action.Hacking.Variety,
+Action.Hacking.Variety.LDAP injection,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.LDAP injection,T1210,Exploitation of Remote Services
+Action.Hacking.Variety.Mail command injection,Action.Hacking.Variety,
+Action.Hacking.Variety.Mail command injection,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Mail command injection,T1210,Exploitation of Remote Services
+Action.Hacking.Variety.MitM,Action.Hacking.Variety,
+Action.Hacking.Variety.MitM,T1040,Network Sniffing
+Action.Hacking.Variety.Null byte injection,Action.Hacking.Variety,
+Action.Hacking.Variety.Null byte injection,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Offline cracking,Action.Hacking.Variety,
+Action.Hacking.Variety.Offline cracking,T1003,Credential Dumping
+Action.Hacking.Variety.OS commanding,Action.Hacking.Variety,
+Action.Hacking.Variety.OS commanding,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Other,Action.Hacking.Variety,
+Action.Hacking.Variety.Other,T1062,Hypervisor
+Action.Hacking.Variety.Other,T1088,Bypass User Account Control
+Action.Hacking.Variety.Other,T1096,NTFS File Attributes
+Action.Hacking.Variety.Other,T1111,Two-Factor Authentication Interception
+Action.Hacking.Variety.Other,T1134,Access Token Manipulation
+Action.Hacking.Variety.Other,T1144,Gatekeeper Bypass
+Action.Hacking.Variety.Other,T1145,Private Keys
+Action.Hacking.Variety.Other,T1149,LC_MAIN Hijacking
+Action.Hacking.Variety.Other,T1169,Sudo
+Action.Hacking.Variety.Other,T1209,Time Providers
+Action.Hacking.Variety.Path traversal ,Action.Hacking.Variety,
+Action.Hacking.Variety.Path traversal ,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.RFI,Action.Hacking.Variety,
+Action.Hacking.Variety.RFI,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Routing detour,Action.Hacking.Variety,
+Action.Hacking.Variety.Routing detour,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Session fixation,Action.Hacking.Variety,
+Action.Hacking.Variety.Session fixation,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Session prediction,Action.Hacking.Variety,
+Action.Hacking.Variety.Session prediction,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Session replay,Action.Hacking.Variety,
+Action.Hacking.Variety.Session replay,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Soap array abuse,Action.Hacking.Variety,
+Action.Hacking.Variety.Soap array abuse,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Special element injection,Action.Hacking.Variety,
+Action.Hacking.Variety.Special element injection,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.SQLi,Action.Hacking.Variety,
+Action.Hacking.Variety.SQLi,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.SSI injection,Action.Hacking.Variety,
+Action.Hacking.Variety.SSI injection,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.URL redirector abuse,Action.Hacking.Variety,
+Action.Hacking.Variety.URL redirector abuse,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.Use of backdoor or C2,Action.Hacking.Variety,
+Action.Hacking.Variety.Use of backdoor or C2,T1100,Web Shell
+Action.Hacking.Variety.Use of backdoor or C2,T1219,Remote Access Tools
+Action.Hacking.Variety.Use of backdoor or C3,Action.Hacking.Variety,
+Action.Hacking.Variety.Use of backdoor or C4,Action.Hacking.Variety,
+Action.Hacking.Variety.Use of stolen creds,Action.Hacking.Variety,
+Action.Hacking.Variety.Use of stolen creds,T1021,Remote Services
+Action.Hacking.Variety.Use of stolen creds,T1078,Valid Accounts
+Action.Hacking.Variety.Virtual machine escape,Action.Hacking.Variety,
+Action.Hacking.Variety.Virtual machine escape,T1497,Virtualization/Sandbox Evasion
+Action.Hacking.Variety.XML attribute blowup,Action.Hacking.Variety,
+Action.Hacking.Variety.XML attribute blowup,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.XML entity expansion,Action.Hacking.Variety,
+Action.Hacking.Variety.XML entity expansion,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.XML external entities,Action.Hacking.Variety,
+Action.Hacking.Variety.XML external entities,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.XML injection,Action.Hacking.Variety,
+Action.Hacking.Variety.XML injection,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.XPath injection,Action.Hacking.Variety,
+Action.Hacking.Variety.XPath injection,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.XQuery injection,Action.Hacking.Variety,
+Action.Hacking.Variety.XQuery injection,T1190,Exploit Public-Facing Application
+Action.Hacking.Variety.XSS,Action.Hacking.Variety,
+Action.Hacking.Variety.XSS,T1190,Exploit Public-Facing Application
+Action.Hacking.Vector.3rd party desktop,Action.Hacking.Vector,
+Action.Hacking.Vector.3rd party desktop,T1199,Trusted Relationship
+Action.Hacking.Vector.Backdoor or C2,Action.Hacking.Vector,
+Action.Hacking.Vector.Backdoor or C2,T1219,Remote Access Tools
+Action.Hacking.Vector.Command shell,Action.Hacking.Vector,
+Action.Hacking.Vector.Command shell,T1027,Obfuscated Files or Information
+Action.Hacking.Vector.Command shell,T1028,Windows Remote Management
+Action.Hacking.Vector.Command shell,T1047,Windows Management Instrumentation
+Action.Hacking.Vector.Command shell,T1059,Command-Line Interface
+Action.Hacking.Vector.Command shell,T1064,Scripting
+Action.Hacking.Vector.Command shell,T1086,PowerShell
+Action.Hacking.Vector.Desktop sharing,Action.Hacking.Vector,
+Action.Hacking.Vector.Desktop sharing,T1061,Graphical User Interface
+Action.Hacking.Vector.Desktop sharing,T1076,Remote Desktop Protocol
+Action.Hacking.Vector.Desktop sharing,T1133,External Remote Services
+Action.Hacking.Vector.Partner,Action.Hacking.Vector,
+Action.Hacking.Vector.Partner,T1195,Supply Chain Compromise
+Action.Hacking.Vector.Partner,T1199,Trusted Relationship
+Action.Hacking.Vector.Physical access,Action.Hacking.Vector,
+Action.Hacking.Vector.Physical access,T1195,Supply Chain Compromise
+Action.Hacking.Vector.Physical access,T1199,Trusted Relationship
+Action.Hacking.Vector.Physical access,T1200,Hardware Additions
+Action.Hacking.Vector.VPN,Action.Hacking.Vector,
+Action.Hacking.Vector.VPN,T1133,External Remote Services
+Action.Hacking.Vector.Web application,Action.Hacking.Vector,
+Action.Hacking.Vector.Web application,T1190,Exploit Public-Facing Application
+Action.Malware,Action.Malware.Variety,
+Action.Malware,Action.Malware.Vector,
+Action.Malware.Variety.Adminware,Action.Malware.Variety,
+Action.Malware.Variety.Adminware,T1219,Remote Access Tools
+Action.Malware.Variety.Backdoor,Action.Malware.Variety,
+Action.Malware.Variety.Backdoor,T1100,Web Shell
+Action.Malware.Variety.Backdoor,T1108,Redundant Access
+Action.Malware.Variety.Backdoor,T1219,Remote Access Tools
+Action.Malware.Variety.Brute force,Action.Malware.Variety,
+Action.Malware.Variety.Brute force,T1110,Brute Force
+Action.Malware.Variety.C2,Action.Malware.Variety,
+Action.Malware.Variety.C2,T1008,Fallback Channels
+Action.Malware.Variety.C2,T1022,Data Encrypted
+Action.Malware.Variety.C2,T1024,Custom Cryptographic Protocol
+Action.Malware.Variety.C2,T1026,Multiband Communication
+Action.Malware.Variety.C2,T1043,Commonly Used Port
+Action.Malware.Variety.C2,T1065,Uncommonly Used Port
+Action.Malware.Variety.C2,T1079,Multilayer Encryption
+Action.Malware.Variety.C2,T1090,Connection Proxy
+Action.Malware.Variety.C2,T1094,Custom Command and Control Protocol
+Action.Malware.Variety.C2,T1102,Web Service
+Action.Malware.Variety.C2,T1104,Multi-Stage Channels
+Action.Malware.Variety.C2,T1132,Data Encoding
+Action.Malware.Variety.C2,T1172,Domain Fronting
+Action.Malware.Variety.C2,T1184,SSH Hijacking
+Action.Malware.Variety.C2,T1188,Multi-hop Proxy
+Action.Malware.Variety.C2,T1205,Port Knocking
+Action.Malware.Variety.C2,T1483,Domain Generation Algorithms
+Action.Malware.Variety.Capture app data,Action.Malware.Variety,
+Action.Malware.Variety.Capture app data,T1056,Input Capture
+Action.Malware.Variety.Capture app data,T1113,Screen Capture
+Action.Malware.Variety.Capture app data,T1115,Clipboard Data
+Action.Malware.Variety.Capture app data,T1123,Audio Capture
+Action.Malware.Variety.Capture app data,T1125,Video Capture
+Action.Malware.Variety.Capture app data,T1141,Input Prompt
+Action.Malware.Variety.Capture app data,T1176,Browser Extensions
+Action.Malware.Variety.Capture app data,T1185,Man in the Browser
+Action.Malware.Variety.Capture app data,T1213,Data from Information Repositories
+Action.Malware.Variety.Capture app data,T1217,Browser Bookmark Discovery
+Action.Malware.Variety.Capture stored data,Action.Malware.Variety,
+Action.Malware.Variety.Capture stored data,T1005,Data from Local System
+Action.Malware.Variety.Capture stored data,T1007,System Service Discovery
+Action.Malware.Variety.Capture stored data,T1010,Application Window Discovery
+Action.Malware.Variety.Capture stored data,T1025,Data from Removable Media
+Action.Malware.Variety.Capture stored data,T1033,System Owner/User Discovery
+Action.Malware.Variety.Capture stored data,T1039,Data from Network Shared Drive
+Action.Malware.Variety.Capture stored data,T1063,Security Software Discovery
+Action.Malware.Variety.Capture stored data,T1077,Windows Admin Shares
+Action.Malware.Variety.Capture stored data,T1082,System Information Discovery
+Action.Malware.Variety.Capture stored data,T1083,File and Directory Discovery
+Action.Malware.Variety.Capture stored data,T1087,Account Discovery
+Action.Malware.Variety.Capture stored data,T1114,Email Collection
+Action.Malware.Variety.Capture stored data,T1119,Automated Collection
+Action.Malware.Variety.Capture stored data,T1124,System Time Discovery
+Action.Malware.Variety.Capture stored data,T1213,Data from Information Repositories
+Action.Malware.Variety.Client-side attack,Action.Malware.Variety,
+Action.Malware.Variety.Client-side attack,T1150,Plist Modification
+Action.Malware.Variety.Client-side attack,T1178,SID-History Injection
+Action.Malware.Variety.Client-side attack,T1189,Drive-by Compromise
+Action.Malware.Variety.Client-side attack,T1203,Exploitation for Client Execution
+Action.Malware.Variety.Client-side attack,T1206,Sudo Caching
+Action.Malware.Variety.Client-side attack,T1221,Template Injection
+Action.Malware.Variety.Client-side attack,T1489,Service Stop
+Action.Malware.Variety.Cryptocurrency mining,Action.Malware.Variety,
+Action.Malware.Variety.Cryptocurrency mining,T1496,Resource Hijacking
+Action.Malware.Variety.Destroy data,Action.Malware.Variety,
+Action.Malware.Variety.Destroy data,T1107,File Deletion
+Action.Malware.Variety.Destroy data,T1146,Clear Command History
+Action.Malware.Variety.Destroy data,T1485,Data Destruction
+Action.Malware.Variety.Destroy data,T1487,Disk Structure Wipe
+Action.Malware.Variety.Destroy data,T1488,Disk Content Wipe
+Action.Malware.Variety.Destroy data,T1495,Firmware Corruption
+Action.Malware.Variety.Disable controls,Action.Malware.Variety,
+Action.Malware.Variety.Disable controls,T1054,Indicator Blocking
+Action.Malware.Variety.Disable controls,T1066,Indicator Removal from Tools
+Action.Malware.Variety.Disable controls,T1070,Indicator Removal on Host
+Action.Malware.Variety.Disable controls,T1089,Disabling Security Tools
+Action.Malware.Variety.Disable controls,T1211,Exploitation for Defense Evasion
+Action.Malware.Variety.Disable controls,T1484,Group Policy Modification
+Action.Malware.Variety.Disable controls,T1490,Inhibit System Recovery
+Action.Malware.Variety.DoS,Action.Malware.Variety,
+Action.Malware.Variety.DoS,T1498,Network Denial of Service
+Action.Malware.Variety.DoS,T1499,Endpoint Denial of Service
+Action.Malware.Variety.Exploit misconfig,Action.Malware.Variety,
+Action.Malware.Variety.Exploit misconfig,T1015,Accessibility Features
+Action.Malware.Variety.Exploit misconfig,T1044,File System Permissions Weakness
+Action.Malware.Variety.Exploit vuln,Action.Malware.Variety,
+Action.Malware.Variety.Exploit vuln,T1038,DLL Search Order Hijacking
+Action.Malware.Variety.Exploit vuln,T1068,Exploitation for Privilege Escalation
+Action.Malware.Variety.Exploit vuln,T1073,DLL Side-Loading
+Action.Malware.Variety.Exploit vuln,T1133,External Remote Services
+Action.Malware.Variety.Exploit vuln,T1157,Dylib Hijacking
+Action.Malware.Variety.Exploit vuln,T1190,Exploit Public-Facing Application
+Action.Malware.Variety.Exploit vuln,T1203,Exploitation for Client Execution
+Action.Malware.Variety.Exploit vuln,T1210,Exploitation of Remote Services
+Action.Malware.Variety.Exploit vuln,T1211,Exploitation for Defense Evasion
+Action.Malware.Variety.Exploit vuln,T1212,Exploitation for Credential Access
+Action.Malware.Variety.Export data,Action.Malware.Variety,
+Action.Malware.Variety.Export data,T1001,Data Obfuscation
+Action.Malware.Variety.Export data,T1002,Data Compressed
+Action.Malware.Variety.Export data,T1011,Exfiltration Over Other Network Medium
+Action.Malware.Variety.Export data,T1020,Automated Exfiltration
+Action.Malware.Variety.Export data,T1022,Data Encrypted
+Action.Malware.Variety.Export data,T1029,Scheduled Transfer
+Action.Malware.Variety.Export data,T1030,Data Transfer Size Limits
+Action.Malware.Variety.Export data,T1032,Standard Cryptographic Protocol
+Action.Malware.Variety.Export data,T1041,Exfiltration Over Command and Control Channel
+Action.Malware.Variety.Export data,T1048,Exfiltration Over Alternative Protocol
+Action.Malware.Variety.Export data,T1052,Exfiltration Over Physical Medium
+Action.Malware.Variety.Export data,T1071,Standard Application Layer Protocol
+Action.Malware.Variety.Export data,T1074,Data Staged
+Action.Malware.Variety.Export data,T1095,Standard Non-Application Layer Protocol
+Action.Malware.Variety.Export data,T1130,Install Root Certificate
+Action.Malware.Variety.Export data,T1173,Dynamic Data Exchange
+Action.Malware.Variety.Export data,T1197,BITS Jobs
+Action.Malware.Variety.Other,Action.Malware.Variety,
+Action.Malware.Variety.Other,T1006,File System Logical Offsets
+Action.Malware.Variety.Other,T1009,Binary Padding
+Action.Malware.Variety.Other,T1055,Process Injection
+Action.Malware.Variety.Other,T1060,Registry Run Keys / Startup Folder
+Action.Malware.Variety.Other,T1080,Taint Shared Content
+Action.Malware.Variety.Other,T1084,Windows Management Instrumentation Event Subscription
+Action.Malware.Variety.Other,T1093,Process Hollowing
+Action.Malware.Variety.Other,T1099,Timestomp
+Action.Malware.Variety.Other,T1111,Two-Factor Authentication Interception
+Action.Malware.Variety.Other,T1116,Code Signing
+Action.Malware.Variety.Other,T1126,Network Share Connection Removal
+Action.Malware.Variety.Other,T1131,Authentication Package
+Action.Malware.Variety.Other,T1138,Application Shimming
+Action.Malware.Variety.Other,T1140,Deobfuscate/Decode Files or Information
+Action.Malware.Variety.Other,T1145,Private Keys
+Action.Malware.Variety.Other,T1156,.bash_profile and .bashrc
+Action.Malware.Variety.Other,T1163,Rc.common
+Action.Malware.Variety.Other,T1164,Re-opened Applications
+Action.Malware.Variety.Other,T1169,Sudo
+Action.Malware.Variety.Other,T1180,Screensaver
+Action.Malware.Variety.Other,T1186,Process Doppelg‰nging
+Action.Malware.Variety.Other,T1204,User Execution
+Action.Malware.Variety.Other,T1209,Time Providers
+Action.Malware.Variety.Other,T1223,Compiled HTML File
+Action.Malware.Variety.Other,T1491,Defacement
+Action.Malware.Variety.Other,T1492,Stored Data Manipulation
+Action.Malware.Variety.Other,T1493,Transmitted Data Manipulation
+Action.Malware.Variety.Other,T1497,Virtualization/Sandbox Evasion
+Action.Malware.Variety.Other,T1500,Compile After Delivery
+Action.Malware.Variety.Packet sniffer,Action.Malware.Variety,
+Action.Malware.Variety.Packet sniffer,T1040,Network Sniffing
+Action.Malware.Variety.Password dumper,Action.Malware.Variety,
+Action.Malware.Variety.Password dumper,T1003,Credential Dumping
+Action.Malware.Variety.Password dumper,T1075,Pass the Hash
+Action.Malware.Variety.Password dumper,T1081,Credentials in Files
+Action.Malware.Variety.Password dumper,T1097,Pass the Ticket
+Action.Malware.Variety.Password dumper,T1101,Security Support Provider
+Action.Malware.Variety.Password dumper,T1142,Keychain
+Action.Malware.Variety.Password dumper,T1167,Securityd Memory
+Action.Malware.Variety.Password dumper,T1177,LSASS Driver
+Action.Malware.Variety.Password dumper,T1212,Exploitation for Credential Access
+Action.Malware.Variety.Password dumper,T1214,Credentials in Registry
+Action.Malware.Variety.Ram scraper,Action.Malware.Variety,
+Action.Malware.Variety.Ram scraper,T1115,Clipboard Data
+Action.Malware.Variety.Ransomware,Action.Malware.Variety,
+Action.Malware.Variety.Ransomware,T1486,Data Encrypted for Impact
+Action.Malware.Variety.Rootkit,Action.Malware.Variety,
+Action.Malware.Variety.Rootkit,T1014,Rootkit
+Action.Malware.Variety.Rootkit,T1019,System Firmware
+Action.Malware.Variety.Rootkit,T1067,Bootkit
+Action.Malware.Variety.Rootkit,T1109,Component Firmware
+Action.Malware.Variety.Scan network,Action.Malware.Variety,
+Action.Malware.Variety.Scan network,T1016,System Network Configuration Discovery
+Action.Malware.Variety.Scan network,T1018,Remote System Discovery
+Action.Malware.Variety.Scan network,T1040,Network Sniffing
+Action.Malware.Variety.Scan network,T1046,Network Service Scanning
+Action.Malware.Variety.Scan network,T1049,System Network Connections Discovery
+Action.Malware.Variety.Scan network,T1069,Permission Groups Discovery
+Action.Malware.Variety.Scan network,T1120,Peripheral Device Discovery
+Action.Malware.Variety.Scan network,T1135,Network Share Discovery
+Action.Malware.Variety.Scan network,T1482,Domain Trust Discovery
+Action.Malware.Variety.Spyware/Keylogger,Action.Malware.Variety,
+Action.Malware.Variety.Spyware/Keylogger,T1056,Input Capture
+Action.Malware.Variety.Spyware/Keylogger,T1113,Screen Capture
+Action.Malware.Variety.Spyware/Keylogger,T1123,Audio Capture
+Action.Malware.Variety.Spyware/Keylogger,T1125,Video Capture
+Action.Malware.Variety.SQL injection,Action.Malware.Variety,
+Action.Malware.Variety.SQL injection,T1190,Exploit Public-Facing Application
+Action.Malware.Variety.Unknown,Action.Malware.Variety,
+Action.Malware.Variety.Unknown,T1158,Hidden Files and Directories
+Action.Malware.Variety.Worm,Action.Malware.Variety,
+Action.Malware.Variety.Worm,T1190,Exploit Public-Facing Application
+Action.Malware.Vector.Direct install,Action.Malware.Vector,
+Action.Malware.Vector.Direct install,T1078,Valid Accounts
+Action.Malware.Vector.Direct install,T1200,Hardware Additions
+Action.Malware.Vector.Email attachment ,Action.Malware.Vector,
+Action.Malware.Vector.Email attachment ,T1193,Spearphishing Attachment
+Action.Malware.Vector.Email autoexecute,Action.Malware.Vector,
+Action.Malware.Vector.Email autoexecute,T1193,Spearphishing Attachment
+Action.Malware.Vector.Email autoexecute,T1194,Spearphishing via Service
+Action.Malware.Vector.Email link,Action.Malware.Vector,
+Action.Malware.Vector.Email link,T1192,Spearphishing Link
+Action.Malware.Vector.Email link,T1194,Spearphishing via Service
+Action.Malware.Vector.Network propagation,Action.Malware.Vector,
+Action.Malware.Vector.Network propagation,T1017,Application Deployment Software
+Action.Malware.Vector.Network propagation,T1133,External Remote Services
+Action.Malware.Vector.Network propagation,T1190,Exploit Public-Facing Application
+Action.Malware.Vector.Remote injection,Action.Malware.Vector,
+Action.Malware.Vector.Remote injection,T1105,Remote File Copy
+Action.Malware.Vector.Remote injection,T1133,External Remote Services
+Action.Malware.Vector.Remote injection,T1190,Exploit Public-Facing Application
+Action.Malware.Vector.Removable media,Action.Malware.Vector,
+Action.Malware.Vector.Removable media,T1091,Replication Through Removable Media
+Action.Malware.Vector.Removable media,T1092,Communication Through Removable Media
+Action.Malware.Vector.Web download,Action.Malware.Vector,
+Action.Malware.Vector.Web download,T1192,Spearphishing Link
+Action.Malware.Vector.Web drive-by,Action.Malware.Vector,
+Action.Malware.Vector.Web drive-by,T1189,Drive-by Compromise
+Action.Misuse,Action.Misuse.Variety,
+Action.Misuse,Action.Misuse.Vector,
+Action.Misuse.Variety.Unapproved hardware,Action.Misuse.Variety,
+Action.Misuse.Variety.Unapproved hardware,T1200,Hardware Additions
+Action.Misuse.Vector.LAN access,Action.Misuse.Vector,
+Action.Misuse.Vector.LAN access,T1011,Exfiltration Over Other Network Medium
+Action.Misuse.Vector.Physical access,Action.Misuse.Vector,
+Action.Misuse.Vector.Physical access,T1052,Exfiltration Over Physical Medium
+Action.Misuse.Vector.Remote access,Action.Misuse.Vector,
+Action.Misuse.Vector.Remote access,T1076,Remote Desktop Protocol
+Action.Physical,Action.Physical.Variety,
+Action.Physical.Variety.Tampering,Action.Physical.Variety,
+Action.Physical.Variety.Tampering,T1200,Hardware Additions
+Action.Physical.Variety.Wiretapping,Action.Physical.Variety,
+Action.Physical.Variety.Wiretapping,T1200,Hardware Additions
+Action.Social,Action.Social.Variety,
+Action.Social,Action.Social.Vector,
+Action.Social.Variety.Phishing,Action.Social.Variety,
+Action.Social.Variety.Phishing,T1192,Spearphishing Link
+Action.Social.Variety.Phishing,T1192,Spearphishing Link
+Action.Social.Variety.Phishing,T1193,Spearphishing Attachment
+Action.Social.Variety.Phishing,T1194,Spearphishing via Service
+Action.Social.Vector.Documents,Action.Social.Vector,
+Action.Social.Vector.Documents,T1193,Spearphishing Attachment
+Action.Social.Vector.Email,Action.Social.Vector,
+Action.Social.Vector.Email,T1192,Spearphishing Link
+Action.Social.Vector.Email,T1193,Spearphishing Attachment
+Action.Social.Vector.Email,T1194,Spearphishing via Service
+Action.Social.Vector.IM,Action.Social.Vector,
+Action.Social.Vector.IM,T1192,Spearphishing Link
+Action.Social.Vector.IM,T1193,Spearphishing Attachment
+Action.Social.Vector.In-person,Action.Social.Vector,
+Action.Social.Vector.In-person,T1091,Replication Through Removable Media
+Action.Social.Vector.In-person,T1200,Hardware Additions
+Action.Social.Vector.Removable media,Action.Social.Vector,
+Action.Social.Vector.Removable media,T1091,Replication Through Removable Media
+Action.Social.Vector.SMS,Action.Social.Vector,
+Action.Social.Vector.SMS,T1192,Spearphishing Link
+Action.Social.Vector.SMS,T1193,Spearphishing Attachment
+Action.Social.Vector.Website,Action.Social.Vector,
+Action.Social.Vector.Website,T1192,Spearphishing Link
+Action,Error,
+Action,Action.Hacking,
+Action,Action.Malware,
+Action,Action.Misuse,
+Action,Action.Physical,
+Action,Action.Social,
+Veris,Action,
+Veris,Attribute,
+Attribute,Attribute.Integrity,
+Attribute.Integrity,Attribute.Integrity.Variety,
+Attribute.Integrity.Variety,Attribute.Integrity.Variety.Create account,
+Attribute.Integrity.Variety.Create account,T1136,Create Account
+Attribute.Integrity.Variety,Attribute.Integrity.Variety.Defacement,
+Attribute.Integrity.Variety.Defacement,T1491,Defacement
+Attribute,Attribute.Confidentiality,
+Attribute.Confidentiality,Attribute.Confidentiality.Data.Variety,
+Attribute.Confidentiality.Data.Variety,Attribute.Confidentiality.Data.Variety.Credentials,
+Attribute.Confidentiality.Data.Variety.Credentials,T1245,Private Keys
+Action.Malware.Variety.Scan network,T1253,Conduct passive scanning
+Action.Malware.Variety.Scan network,T1254,Conduct active scanning
+Veris,Value_chain,
+Value_chain,Value_chain.Targeting,
+Value_chain.Targeting,Value_chain.Targeting.Variety,
+Value_chain.Targeting.Variety,Value_chain.Targeting.Variety.Organizational Information,
+Value_chain.Targeting.Variety.Organizational Information,T1288,Analyze architecture and configuration posture
+Value_chain,Value_chain.Non-distribution services,
+Value_chain.Non-distribution services,Value_chain.Non-distribution services.Variety,
+Value_chain.Non-distribution services.Variety,Value_chain.Non-distribution services.Variety.Counter AV,
+Value_chain.Non-distribution services.Variety.Counter AV,T1292,Test signature detection
+Value_chain,Value_chain.Cash-out,
+Value_chain.Cash-out,Value_chain.Cash-out.Variety,
+Value_chain.Cash-out.Variety,Value_chain.Cash-out.Variety.Unknown,
+Value_chain.Cash-out.Variety.Unknown,T1316,Non-traditional or less attributable payment options
+Value_chain.Non-distribution services.Variety.Other,T1337,SSL certificate acquisition for domain
+Attribute.Integrity.Variety,Attribute.Integrity.Variety.Fraudulent transaction,
+Attribute.Integrity.Variety.Fraudulent transaction,T1338,SSL certificate acquisition for trust breaking
+Value_chain,Value_chain.Development,
+Value_chain.Development,Value_chain.Development.Variety,
+Value_chain.Development.Variety,Value_chain.Development.Variety.Unknown,
+Value_chain.Development.Variety.Unknown,T1347,Build and configure delivery systems
+Value_chain.Development.Variety,Value_chain.Development.Variety.Exploit,
+Value_chain.Development.Variety.Exploit,T1349,Build or acquire exploits
+Action.Malware.Variety.Other,T1394,Distribute malicious software development tools
+Action.Social.Vector,Action.Social.Vector.Phone,
+Action.Social.Vector.Phone,T1411,Input Prompt
+Action.Social.Variety,Action.Social.Variety.Pretexting,
+Action.Social.Variety.Pretexting,T1411,Input Prompt
+Veris,Asset,
+Asset,Asset.Assets,
+Asset.Assets,Asset.Assets.Variety,
+Asset.Assets.Variety,Asset.Assets.Variety.U - Mobile phone,
+Asset.Assets.Variety.U - Mobile phone,T1411,Input Prompt
+Asset.Assets.Variety.U - Mobile phone,T1463,Manipulate Device Communication
+Action.Hacking.Variety.MitM,T1463,Manipulate Device Communication
+Action.Malware.Variety.Backdoor,T9000,Backdoor
+Action.Malware.Variety.Password dumper,t1503,Credentials from Web Browsers
