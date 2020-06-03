@@ -847,7 +847,7 @@ class Rules():
         ## DISCOVERY METHOD ##
         if 'discovery_method' not in incident:
             logging.info("%s: auto-filled Unknown for discovery_method", iid)
-            incident['discovery_method'] = "Unknown"
+            incident['discovery_method'] = {"unknown": True}
         #compareFromTo('discovery_method', incident['discovery_method'], schema['discovery_method'])
         #if incident.has_key('cost_corrective_action'):
             #compareFromTo('cost_corrective_action', incident['cost_corrective_action'], schema['cost_corrective_action'])
