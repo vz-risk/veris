@@ -31,13 +31,13 @@ defaultMerged = "../verisc-merged.json"
 
 
 def checkMalwareIntegrity(inDict):
-    if 'malware' in inDict['action']:
+    if 'malware' in inDict.get("action", {}):
         if 'Software installation' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
           yield ValidationError("Malware present, but no Software installation in attribute.integrity.variety")
 
 
 def checkSocialIntegrity(inDict):
-  if 'social' in inDict['action']:
+  if 'social' in inDict.get("action", {}):
     if 'Alter behavior' not in inDict.get('attribute',{}).get('integrity',{}).get('variety',[]):
       yield ValidationError("acton.social present, but Alter behavior not in attribute.integrity.variety")
 
@@ -49,8 +49,10 @@ def checkSQLiRepurpose(inDict):
 
 
 def checkSecurityIncident(inDict):
-  if inDict['security_incident'] == "Confirmed":
-    if 'attribute' not in inDict:
+  if 'security_incident' not in inDict:
+    yield ValidationError("security_incident not in incident.")
+  else:
+    if inDict['security_incident'] == "Confirmed" and 'attribute' not in inDict:
       yield ValidationError("security_incident Confirmed but attribute section not present")
 
 
