@@ -28,7 +28,7 @@ The XML version has been archived until we can sync the XML with the JSON schema
 * bin/build_standard_excel.py - script to read a merged schema file and produce the VERIS_Standard_Excel.xlsx file
 * checkValidity.py - script (usable as module) to validate a json record against a schema file as well as aditional rules.
 * convert-1.3.py - convert veris 1.2 json records to 1.3
-* convert_1.3_to_1.3.1.py - convert veris 1.3 json records to 1.3.1
+* convert_1.3.X_to_1.3.Y.py - convert veris 1.3.X json records to 1.3.Y
 * import_stdexcel.py - script (usable as module) to convert VERIS_Standard_Excel.xlsx Reviewed data to a csv to json.
 * import_veris.py - script (usable as module) to import a csv to json.  Chooses the correct import module, uses the rules module, and uses the checkValidity module.
 * mergeSchema.py - Merges the schema file (e.g. verisc.json) and labels file (e.g. verisc-labels.json) to form the merged schema file (schema-merged.json)
@@ -36,12 +36,18 @@ The XML version has been archived until we can sync the XML with the JSON schema
 * update_labels.py - script to update an existing labels file with a diff file.
 * update_schema.py - script to update an existing schema file with a diff file.
 * VERIS_Standard_Excel.xlsx - standard excel file used to produce importable data.
+* vacf-rev20XX-vY_Y_Y.csv - VERIS <-> Mitre ATT&CK mapping structured as graph edges
+* cis_csc_veris_map-rev20XX-vY_Y.xlsx - VERIS <-> CIS CSC mapping for both VERIS patterns and actions.
+* joined_veris_json.md - Explain the joined VERIS format.
 
 # Required packages
 The following packages are required to run the associated tools
 ## Python
 ipdb
 simplejson
+
+# Joined JSON
+As the amount of VERIS json grows, it becomes unwieldly.  As such, the VERIS toolchain is being updated to allow a joined form of VERIS.  Please read more in the joined_veris_json.md file.
 
 # VERIS Common Attack Framework  
 The VERIS Common Attack Framework, (or VCAF)  serves as a bridge to ATT&CK, covering the portions of VERIS not in ATT&CK with the aim of creating a holistic framework. At its very core, VCAF is made of two components: one is the conceptual mapping between VERIS and ATT&CK, and another is the extension of ATT&CK with techniques that cover all possible Threat Actions present in VERIS. This is helpful in using ATT&CK to make strategic decisions and understanding what tactical actions to take to address a strategic challenge.  The mapping can be found as an edge list (or a join table for the more SQL minded) in `bin/vcaf-rev2020-v1_0_3.csv` in this repository.

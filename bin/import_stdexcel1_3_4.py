@@ -20,6 +20,7 @@ import re
 import operator
 #import imp
 import importlib
+import zipfile # to compress
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
     spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
@@ -39,11 +40,12 @@ cfg = {
     'enumfile': "../verisc-enum.json",
     'mergedfile': "../verisc-merged.json",
     'vcdb':False,
-    'version':"1.3.3",
+    'version':"1.3.4",
     'countryfile':'all.json',
     'output': os.getcwd(),
     'check': False,
-    'repositories': ""
+    'repositories': "",
+    'join': True
 }
 #logger = multiprocessing.get_logger()
 
@@ -71,7 +73,7 @@ class CSVtoJSON():
     jschema = None
     sfields = None
     # country_region = None
-    script_version = "1.3.3"
+    script_version = "1.3.4"
 
 
     def __init__(self, cfg, file_version=None):
@@ -111,7 +113,7 @@ class CSVtoJSON():
                 for row in csv_reader:
                     versions[m.sub('', row["schema_version"])] += 1 # the regex removes trailing '.0' to make counting easier
                 version = max(versions.items(), key=operator.itemgetter(1))[0]  # return the most common version. (They shoudl all be the same, but, you know.)
-                if version not in ["1.2", "1.3", "1.3.1", "1.3.2", "1.3.3"]:
+                if version not in ["1.2", "1.3", "1.3.1", "1.3.2", "1.3.3", "1.3.4"]:
                     logging.warning("VERIS version {0} in file {1} does not appear to be a standard version.  \n".format(version, inFile) + 
                                    "Please ensure it is correct as it is used for upgrading VERIS files to the report version.")
                 if not version:
@@ -599,6 +601,7 @@ class CSVtoJSON():
 
             while repeat > 0:
                 outjson['plus']['master_id'] = str(uuid.uuid4()).upper()
+                #print(outjson['plus']['master_id']) # DEBUG
                 yield iid, outjson
                 # outjson['incident_id'] = str(uuid.uuid4()).upper()     ### HERE
                 # outjson['plus']['master_id'] = outjson['incident_id']  ###
@@ -627,6 +630,12 @@ if __name__ == '__main__':
     parser.add_argument('--source', help="Source_id to use for the incidents. Partner pseudonym.")
     parser.add_argument('-a', '--analyst', help="The analyst to use if no analyst exists in record or if --force_analyst is set.")
     parser.add_argument("-f", "--force_analyst", help="Override default analyst with --analyst.", action='store_true')
+    parser.add_argument("-j", "--join", help="output a zip file containing json joined in a single list.", action='store_true')
+    parser.add_argument('--size',
+                    help='The maximum number of json to join in a list within a single file.  ' + \
+                    'If more files exist than the limit, additional files will be created.',
+                    type=int,
+                    default=25000)
     output_group = parser.add_mutually_exclusive_group()
     output_group.add_argument("-o", "--output", help="directory where json files will be written")
     output_group.add_argument("--check", help="Generate VERIS json records from the input csv, but do not write them to disk. " + 
@@ -705,19 +714,48 @@ if __name__ == '__main__':
         logging.info("Output files will be written to %s",cfg["output"])
     else:
         logging.info("'check' setting is {0} so files will not be written.".format(cfg.get('check', False)))
+    # If joining
+    if not cfg.get('check', False) and cfg.get('join', True):
+        zf = zipfile.ZipFile(os.path.join(cfg["output"].rstrip("/") + "/", cfg['source'] + ".json.zip"), mode='w')
+        i = 0 # count incidents
     for iid, incident_json in importStdExcel.main():
-        if not cfg.get('check', False):    
-            # write the json to a file
-            if cfg["output"].endswith("/"):
-                dest = cfg["output"] + incident_json['plus']['master_id'] + '.json'
-                # dest = args.output + outjson['incident_id'] + '.json'
+        if not cfg.get('check', False):
+            if cfg.get('join', True):
+                if i % cfg['size'] == 0:
+                    if i != 0:
+                        try:
+                            incidents_str = json.dumps(incidents)
+                            zf.writestr(cfg['source'] + "_" + str(int(i // cfg['size'])) + ".json", 
+                                        incidents_str + "\n", 
+                                        zipfile.ZIP_DEFLATED)
+                        except UnicodeDecodeError:
+                            logging.critical("Some kind of unicode error in or before response %s. " + \
+                                             "Unfortunately because the JSON is joined, failing rather than moving on.", iid)
+                            raise
+                    incidents = [copy.deepcopy(incident_json)] # if we don't deep copy, we get a reference that has the wrong master_id
+                else:
+                    incidents.append(copy.deepcopy(incident_json)) # if we don't deep copy, we get a reference that has the wrong master_id
+                i+=1
             else:
-                dest = cfg["output"] + '/' + incident_json['plus']['master_id'] + '.json'
-                # dest = args.output + '/' + outjson['incident_id'] + '.json'
-            logging.info("%s: writing file to %s", iid, dest)
-            try:
-                with open(dest, 'w') as fwrite:
-                    json.dump(incident_json, fwrite, indent=2, sort_keys=True, separators=(',', ': '))
-            except UnicodeDecodeError:
-                logging.critical("Some kind of unicode error in response %s. Movin on.", iid)
-                logging.critical(incident_json)
+                # write the json to a file
+                dest = cfg["output"].rstrip("/") + '/' + incident_json['plus']['master_id'] + '.json'
+                    # dest = args.output + '/' + outjson['incident_id'] + '.json'
+                logging.info("%s: writing file to %s", iid, dest)
+                try:
+                    with open(dest, 'w') as fwrite:
+                        json.dump(incident_json, fwrite, indent=2, sort_keys=True, separators=(',', ': '))
+                except UnicodeDecodeError:
+                    logging.critical("Some kind of unicode error in response %s. Movin on.", iid)
+                    logging.critical(incident_json)
+
+    if not cfg.get('check', False) and cfg.get('join', True):
+        try:
+            incidents_str = json.dumps(incidents)
+            zf.writestr(cfg['source'] + "_" + str(int(i // cfg['size'])) + ".json", 
+                        incidents_str + "\n", 
+                        zipfile.ZIP_DEFLATED)
+        except UnicodeDecodeError:
+            logging.critical("Some kind of unicode error in or before response %s. " + \
+                             "Unfortunately because the JSON is joined, failing rather than moving on.", iid)
+            raise
+        zf.close()
