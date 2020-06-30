@@ -10,7 +10,7 @@ Scripts supporting the joined JSON format:
 * verisr/json2veris() - YES as of 2.3.2007
 * convert_1.3.4_to_1.3.5.py - Planned
 * other conversion scripts - Not planned
-* import_stdexcel1_3_4.py - Testing
+* import_stdexcel1_3_4.py - Yes
 * other import_stdexcel scripts - Not planned
 * import_veris.py - Not planned, no longer used
 * into-mongo.py - Not planned

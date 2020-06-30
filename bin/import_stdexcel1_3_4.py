@@ -725,7 +725,7 @@ if __name__ == '__main__':
                     if i != 0:
                         try:
                             incidents_str = json.dumps(incidents)
-                            zf.writestr(cfg['source'] + "_" + str(int(i // cfg['size'])) + ".json", 
+                            zf.writestr(cfg['source'] + "_" + str(int(i // cfg['size']) - 1) + ".json", 
                                         incidents_str + "\n", 
                                         zipfile.ZIP_DEFLATED)
                         except UnicodeDecodeError:
