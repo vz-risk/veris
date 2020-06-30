@@ -249,8 +249,12 @@ if __name__ == '__main__':
             # errors in json
             try:
                 incident = simplejson.load(open(src))
+                if type(incident) == list:
+                    logging.warning("ERROR: %s is a list (presumably of VERIS json).  If so, it must be zipped to be processed. Skipping" % inFile)
+                    continue
             except simplejson.scanner.JSONDecodeError:
                 logging.warning("ERROR: %s did not parse properly. Skipping" % src)
+                continue
             # replacing vakudate() with iterating errors - 171206 - GDB
             for e in validator.iter_errors(incident):
                 offendingPath = '.'.join(str(x) for x in e.path)
@@ -277,6 +281,7 @@ if __name__ == '__main__':
                             incidents = simplejson.load(filehandle)
                         except simplejson.scanner.JSONDecodeError:
                             logging.warning("ERROR: %s in %s did not parse properly. Skipping" % (jfile, src))
+                            continue
                         for incident in incidents:
                             for e in validator.iter_errors(incident):
                                 offendingPath = '.'.join(str(x) for x in e.path)
@@ -298,8 +303,12 @@ if __name__ == '__main__':
                     # files_to_validate.add(inFile)
                     try:
                         incident = simplejson.load(open(inFile))
+                        if type(incident) == list:
+                            logging.warning("ERROR: %s is a list (presumably of VERIS json).  If so, it must be zipped to be processed.  Skipping." % inFile)
+                            continue
                     except simplejson.scanner.JSONDecodeError:
                         logging.warning("ERROR: %s did not parse properly. Skipping" % inFile)
+                        continue
                     for e in validator.iter_errors(incident):
                         offendingPath = '.'.join(str(x) for x in e.path)
                         logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message)) 
