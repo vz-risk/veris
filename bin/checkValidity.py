@@ -11,6 +11,7 @@ import logging
 import fnmatch
 from datetime import date
 import importlib
+import zipfile # to decompress
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
     spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
@@ -243,7 +244,7 @@ if __name__ == '__main__':
     # files_to_validate = set()
     incident_counter = 0
     for src in cfg["input"]:
-        if os.path.isfile(src):
+        if os.path.isfile(src) and src.endswith(".json"):
             logging.debug("Now validating {0}.".format(src))
             # errors in json
             try:
@@ -268,6 +269,25 @@ if __name__ == '__main__':
             incident_counter += 1
             if incident_counter % 100 == 0:
                 logging.info("%s incident validated" % incident_counter)
+        elif os.path.isfile(src) and src.endswith(".zip"):
+            with zipfile.ZipFile(src, mode='r', compression=zipfile.ZIP_DEFLATED) as zf:
+                for jfile in zf.namelist():
+                    with zf.open(jfile) as filehandle:
+                        try:
+                            incidents = simplejson.load(filehandle)
+                        except simplejson.scanner.JSONDecodeError:
+                            logging.warning("ERROR: %s in %s did not parse properly. Skipping" % (jfile, src))
+                        for incident in incidents:
+                            for e in validator.iter_errors(incident):
+                                offendingPath = '.'.join(str(x) for x in e.path)
+                                logging.warning("ERROR in incident %s in file %s in zipfile %s. %s %s" % (incident.get("plus", {}).get("master_id", "Unknown plus.master_id"), jfile, src, offendingPath, e.message))    
+                            for e in main(incident):
+                                offendingPath = '.'.join(str(x) for x in e.path)
+                                logging.warning("ERROR in incident %s in file %s in zipfile %s. %s %s" % (incident.get("plus", {}).get("master_id", "Unknown plus.master_id"), jfile, src, offendingPath, e.message))  
+
+                            incident_counter += 1
+                            if incident_counter % 100 == 0:
+                                logging.info("%s incident validated" % incident_counter)
         elif os.path.isdir(src):
             logging.debug("Now validating files in {0}.".format(src))
             src = src.rstrip("/")
@@ -278,16 +298,40 @@ if __name__ == '__main__':
                     # files_to_validate.add(inFile)
                     try:
                         incident = simplejson.load(open(inFile))
-                        validator.validate(incident)
-                        main(incident) 
-                    except ValidationError as e:
-                        offendingPath = '.'.join(str(x) for x in e.path)
-                        logging.warning("ERROR in %s. %s %s" % (inFile, offendingPath, e.message))    
                     except simplejson.scanner.JSONDecodeError:
                         logging.warning("ERROR: %s did not parse properly. Skipping" % inFile)
+                    for e in validator.iter_errors(incident):
+                        offendingPath = '.'.join(str(x) for x in e.path)
+                        logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message)) 
+                    for e in main(incident):
+                        offendingPath = '.'.join(str(x) for x in e.path)
+                        logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message))  
+
                     incident_counter += 1
                     if incident_counter % 100 == 0:
                         logging.info("%s incident validated" % incident_counter)
+                for filename in fnmatch.filter(filenames, '*.zip'):
+                    inFile = os.path.join(root, filename)
+                    with zipfile.ZipFile(inFile, mode='r', compression=zipfile.ZIP_DEFLATED) as zf:
+                        for jfile in zf.namelist():
+                            with zf.open(jfile) as filehandle:
+                                try:
+                                    incidents = simplejson.load(filehandle)
+                                except simplejson.scanner.JSONDecodeError:
+                                    logging.warning("ERROR: %s in %s did not parse properly. Skipping" % (jfile, inFile))
+                                for incident in incidents:
+                                    for e in validator.iter_errors(incident):
+                                        offendingPath = '.'.join(str(x) for x in e.path)
+                                        logging.warning("ERROR in incident %s in file %s in zipfile %s. %s %s" % (incident.get("plus", {}).get("master_id", "Unknown plus.master_id"), jfile, inFile, offendingPath, e.message))    
+                                    for e in main(incident):
+                                        offendingPath = '.'.join(str(x) for x in e.path)
+                                        logging.warning("ERROR in incident %s in file %s in zipfile %s. %s %s" % (incident.get("plus", {}).get("master_id", "Unknown plus.master_id"), jfile, inFile, offendingPath, e.message)) 
+
+                                    incident_counter += 1
+                                    if incident_counter % 100 == 0:
+                                        logging.info("%s incident validated" % incident_counter) 
+        else:
+            logging.warning("%s did not match a known veris format.  Skipping." % src)
 
 
     logging.info("schema assembled successfully.")
