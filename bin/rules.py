@@ -25,6 +25,7 @@ import logging
 import importlib
 import os
 import sys
+import zipfile # to compress
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
     spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
@@ -51,7 +52,7 @@ except:
 import argparse
 import configparser
 import os
-import json
+import simplejson
 from datetime import datetime, date
 from distutils.version import LooseVersion
 from tqdm import tqdm
@@ -67,7 +68,7 @@ cfg = {
     'schemafile': "../vcdb/veris.json",
     'enumfile': "../vcdb/veris-enum.json",
     'vcdb':False,
-    'version':"1.3",
+    'version':"1.3.4",
     'countryfile':'all.json',
     'output': None,
     'quiet': False,
@@ -124,7 +125,7 @@ class Rules():
         if type(country_file) == list:
             country_codes = country_file
         else:
-            country_codes = json.loads(open(country_file).read())
+            country_codes = simplejson.loads(open(country_file).read())
         country_code_remap = {'Unknown': '000000', 'Other': '000000'}
         for eachCountry in country_codes:
             try:
@@ -1007,12 +1008,16 @@ if __name__ == "__main__":
     veris_logger.updateLogger(cfg, formatter)
     # get all files in directory and sub-directories
     if os.path.isfile(cfg['input']):
-        filenames = [cfg['input']]
+        filenames = [s for s in cfg['input'] if s.endswith(".json")]
+        zfilenames = [s for s in cfg['input'] if s.endswith(".zip")]
     elif os.path.isdir(cfg['input']):
         # http://stackoverflow.com/questions/14798220/how-can-i-search-sub-folders-using-glob-glob-module-in-python
         filenames = [os.path.join(dirpath, f)
             for dirpath, dirnames, files in os.walk(cfg['input'])
             for f in files if f.endswith(".json")]
+        zfilenames = [os.path.join(dirpath, f)
+            for dirpath, dirnames, files in os.walk(cfg['input'])
+            for f in files if f.endswith(".zip")]
     else:
         raise OSError("File or directory {0} does not exist.".format(cfg['input']))
 
@@ -1026,9 +1031,12 @@ if __name__ == "__main__":
     for filename in tqdm(filenames):
         with open(filename, 'r+') as filehandle:
             try:
-                incident = json.load(filehandle)
+                incident = simplejson.load(filehandle)
+                if type(incident) == list:
+                    logging.warning("{0} is a list, not an object.  Is it joined json that should be zipped? Skipping.".format(filename))
+                    continue
             except:
-                logging.warning("Unable to load {0}.".format(filename))
+                logging.warning("Unable to load {0}. Skipping.".format(filename))
                 continue
             logging.debug("Before parsing:\n" + pformat(incident))
             # add 'unknowns' as appropriate
@@ -1039,11 +1047,43 @@ if __name__ == "__main__":
             # save it back out
             if overwrite:
                 filehandle.seek(0)
-                json.dump(incident, filehandle, sort_keys=True, indent=2, separators=(',', ': '))
+                simplejson.dump(incident, filehandle, sort_keys=True, indent=2, separators=(',', ': '))
                 filehandle.truncate()
             else:
                 with open(cfg['output'].rstrip("/") + "/" + filename.split("/")[-1], 'w') as outfilehandle:
-                    json.dump(incident, outfilehandle, sort_keys=True, indent=2, separators=(',', ': '))
+                    simplejson.dump(incident, outfilehandle, sort_keys=True, indent=2, separators=(',', ': '))
+
+    for filename in zfilenames:
+        try:
+            if overwrite:
+                outfilename = filename
+            else:
+                outfilename = cfg['output'].rstrip("/") + "/" + os.path.basename(filename)
+            with zipfile.ZipFile(filename, mode='r', compression=zipfile.ZIP_DEFLATED) as zf_in:
+                with zipfile.ZipFile(outfilename + ".temp", mode='w', compression=zipfile.ZIP_DEFLATED) as zf_out:
+                    for jfile in zf_in.namelist():
+                        with zf_in.open(jfile) as filehandle:
+                            try:
+                                incidents = simplejson.load(filehandle)
+                            except simplejson.scanner.JSONDecodeError:
+                                logging.warning("Unable to load {0} in {1}. Skipping.".format(jfile, filename))
+                                continue
+                            for i in range(len(incidents)):
+                                logging.debug("Before parsing:\n" + pformat(incidents[i]))
+                                incidents[i] = rules.makeValid(incidents[i], cfg)
+                                incidents[i] = rules.addRules(incidents[i], cfg)
+                                logging.debug("After parsing:\n" + pformat(incidents[i]))
+
+                        try:
+                            incidents_str = simplejson.dumps(incidents)
+                            zf_out.writestr(jfile, incidents_str + "\n", zipfile.ZIP_DEFLATED)
+                        except UnicodeDecodeError:
+                            logging.critical("Some kind of unicode error in {0} in {1}.".format(jfile, filename))
+                            raise
+            os.rename(outfilename + ".temp", outfilename) # copy the old zip onto the new
+        except zipfile.BadZipFile:
+            logging.warning("{0} is not a zip file.  Skipping".format(filename))
+            continue
 
 
     logging.info('Ending main loop.')

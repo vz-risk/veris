@@ -9,7 +9,8 @@ As such, json files within zip files will be checked to see if they begin with a
 Scripts supporting the joined JSON format:
 * verisr/json2veris() - YES as of 2.3.2007
 * checkValidity.py - Yes
-* convert_1.3.3_to_1.3.4.py - Planned
+* convert_1.3.3_to_1.3.4.py - Not Planned
+* (future) convert_1.3.4_to_1.3.5.py - Planned
 * other conversion scripts - Not planned
 * import_stdexcel1_3_4.py - Yes
 * other import_stdexcel scripts - Not planned
@@ -18,7 +19,7 @@ Scripts supporting the joined JSON format:
 * json2csv.py - Not planned. Import into R and export csv
 * mergeSchema.py - Not necessary
 * repeat_veris.py - Not planned
-* rules.py - Planned
+* rules.py - Yes
 * update_labels.py - Not necessary
 * update_schema.py - Not necessary
 * veris_logger.py - Not necessary
