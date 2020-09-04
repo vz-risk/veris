@@ -34,7 +34,7 @@
     "file-saver": "^2.0.2",
     "json-rules-engine-simplified": "^0.1.17",
     "jszip": "^3.2.2",
-    "markdown-to-jsx": "^6.10.3",
+    "markdown-to-jsx": "^6.11.4",
     "mobx": "^5.14.0",
     "mobx-react": "^5.4.4",
     "mobx-react-devtools": "^6.1.1",
