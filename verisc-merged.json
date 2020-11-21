@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#", 
   "additionalProperties": false, 
-  "description": "VERIS Community Schema 1.3.4.", 
+  "description": "VERIS Community Schema 1.3.5.", 
   "properties": {
     "incident_id": {
       "type": "string", 
@@ -905,7 +905,7 @@
                   "Export data", 
                   "Packet sniffer", 
                   "Password dumper", 
-                  "Ram scraper", 
+                  "RAM scraper", 
                   "Ransomware", 
                   "RAT", 
                   "Rootkit", 
@@ -940,8 +940,9 @@
                   "Remote injection", 
                   "Removable media", 
                   "Software update", 
-                  "Web download", 
-                  "Web drive-by", 
+                  "Web application", 
+                  "Web application - download", 
+                  "Web application - drive-by", 
                   "Other", 
                   "Unknown"
                 ]
@@ -1143,6 +1144,7 @@
                   "Inadequate technology", 
                   "Other", 
                   "Random error", 
+                  "Web application", 
                   "Unknown"
                 ]
               }, 
@@ -1197,6 +1199,7 @@
                   "Non-corporate", 
                   "Physical access", 
                   "Remote access", 
+                  "Web application", 
                   "Other", 
                   "Unknown"
                 ]
@@ -1271,15 +1274,12 @@
                   "Partner vehicle", 
                   "Personal residence", 
                   "Personal vehicle", 
-                  "Privileged access", 
                   "Public facility", 
                   "Public vehicle", 
-                  "Uncontrolled location", 
                   "Victim grounds", 
                   "Victim public area", 
                   "Victim secure area", 
                   "Victim work area", 
-                  "Visitor privileges", 
                   "Unknown", 
                   "Other"
                 ]
@@ -2223,6 +2223,7 @@
                   "P - Customer", 
                   "P - Developer", 
                   "P - End-user", 
+                  "P - End-user or employee", 
                   "P - Executive", 
                   "P - Finance", 
                   "P - Former employee", 
@@ -2231,6 +2232,7 @@
                   "P - Human resources", 
                   "P - Maintenance", 
                   "P - Manager", 
+                  "P - Other employee", 
                   "P - Partner", 
                   "P - System admin", 
                   "P - Other", 
@@ -2915,7 +2917,6 @@
                   "Fraud detection", 
                   "Incident response", 
                   "Law enforcement", 
-                  "Monitoring service", 
                   "Other", 
                   "Security researcher", 
                   "Suspicious traffic", 
@@ -3562,7 +3563,7 @@
     "schema_version": {
       "description": "Schema version in use. This should be 1.3.4 for this schema.", 
       "type": "string", 
-      "default": "1.3.4"
+      "default": "1.3.5"
     }
   }, 
   "required": [
@@ -3573,7 +3574,8 @@
     "asset", 
     "timeline", 
     "incident_id", 
-    "security_incident"
+    "security_incident", 
+    "summary"
   ], 
   "type": "object"
 }

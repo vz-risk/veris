@@ -136,6 +136,12 @@ def checkImpactTotal(inDict):
             yield ValidationError("The maximum amount of attribute.confidentiality.data.amount is {0}, but attribute.confidentiality.total_amount is {1}.  " +
                                   "attribute.confidentiality.total_amount should at least be as much as the max of individual data amounts.".format(max_of_amounts, inDict['attribute']['confidentiality'].get('total_amount', "Not Present")))
 
+### sanity check. if 'misuse', 'actor' should include 'external'
+### VERIS issue #229
+def checkMisuseActor(inDict):
+    if 'misuse' in inDict['action'] and 'internal' not in inDict['actor'] and 'partner' not inDict['actor']:
+        yield ValidationError("Misuse in action, but no internal or partner actor defined.  Per VERIS issue #229, there should always be an internal or partner actor if there is a misuse action.")
+
 
 def main(incident):
   for e in checkMalwareIntegrity(incident):
@@ -154,7 +160,8 @@ def main(incident):
     yield e
   for e in checkImpactTotal(incident):
     yield e
-
+  for e in checkMisuseActor(incident):
+    yield e
 
 if __name__ == '__main__':
     # TODO: implement config file options for all of these

@@ -223,15 +223,23 @@ class Rules():
                 incident['attribute']['confidentiality']['variety'].append('Transmitted')
 
 
-        ### Hierarchical Field
-        # action.malware.variety.Click fraud and cryptocurrency mining is a parent of action.malware.variety.Click fraud and action.malware.variety.Cryptocurrency mining
-        # per vz-risk/VERIS issue #203
+
         if 'malware' in incident['action']:
+            ### Hierarchical Field
+            ## action.malware.variety.Click fraud and cryptocurrency mining is a parent of action.malware.variety.Click fraud and action.malware.variety.Cryptocurrency mining
+            ## per vz-risk/VERIS issue #203
             if ('Click fraud' in incident['action']['malware'].get('variety', []) or \
             'Cryptocurrency mining' in incident['action']['malware'].get('variety', [])) and \
             'Click fraud and cryptocurrency mining' not in incident['action']['malware'].get('variety', []) and \
             LooseVersion(incident['schema_version']) >= LooseVersion("1.3.3"):
                 incident['action']['malware']['variety'].append('Click fraud and cryptocurrency mining')
+        ## action.malware.variety.Web application is a parent of action.malware.variety.Web application - drive-by and action.malware.variety.Web applicationon - download 
+        ## per vz-risk/VERIS issue # 331
+            if ('Web application - download' in incident['action']['malware'].get('vector', []) or \
+            'Web application - drive-by' in incident['action']['malware'].get('vector', [])) and \
+            'Web application' not in incident['action']['malware'].get('vector', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.5"):
+                incident['action']['malware']['variety'].append('Web application')
 
 
         ### Hierarchical Field
