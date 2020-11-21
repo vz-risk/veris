@@ -70,6 +70,14 @@
     }
   }, 
   "victim": {
+    "government": [
+      "Federal", 
+      "Regional", 
+      "Local", 
+      "Unknown", 
+      "Other", 
+      "NA"
+    ], 
     "employee_count": [
       "Small", 
       "1 to 10", 
@@ -334,6 +342,7 @@
       "ZA", 
       "ZM", 
       "ZW", 
+      "XK", 
       "Other"
     ], 
     "revenue": {
@@ -501,7 +510,13 @@
         "YER", 
         "ZAR", 
         "ZMK", 
-        "ZWD"
+        "ZWD", 
+        "XBT", 
+        "BCH", 
+        "Ether", 
+        "Litecoin", 
+        "XMR", 
+        "ZEC"
       ]
     }
   }, 
@@ -578,7 +593,12 @@
       "result": [
         "Infiltrate", 
         "Exfiltrate", 
-        "Elevate"
+        "Elevate", 
+        "Lateral movement", 
+        "Deploy payload", 
+        "Other", 
+        "Unknown", 
+        "NA"
       ]
     }, 
     "malware": {
@@ -595,6 +615,7 @@
         "Client-side attack", 
         "Cryptocurrency mining", 
         "Destroy data", 
+        "In-memory", 
         "Modify data", 
         "Disable controls", 
         "DoS", 
@@ -639,7 +660,12 @@
       "result": [
         "Infiltrate", 
         "Exfiltrate", 
-        "Elevate"
+        "Elevate", 
+        "Lateral movement", 
+        "Deploy payload", 
+        "Other", 
+        "Unknown", 
+        "NA"
       ]
     }, 
     "social": {
@@ -697,7 +723,12 @@
       "result": [
         "Infiltrate", 
         "Exfiltrate", 
-        "Elevate"
+        "Elevate", 
+        "Lateral movement", 
+        "Deploy payload", 
+        "Other", 
+        "Unknown", 
+        "NA"
       ]
     }, 
     "error": {
@@ -757,7 +788,12 @@
       "result": [
         "Infiltrate", 
         "Exfiltrate", 
-        "Elevate"
+        "Elevate", 
+        "Lateral movement", 
+        "Deploy payload", 
+        "Other", 
+        "Unknown", 
+        "NA"
       ]
     }, 
     "physical": {
@@ -796,7 +832,12 @@
       "result": [
         "Infiltrate", 
         "Exfiltrate", 
-        "Elevate"
+        "Elevate", 
+        "Lateral movement", 
+        "Deploy payload", 
+        "Other", 
+        "Unknown", 
+        "NA"
       ]
     }, 
     "environmental": {
@@ -832,7 +873,12 @@
       "result": [
         "Infiltrate", 
         "Exfiltrate", 
-        "Elevate"
+        "Elevate", 
+        "Lateral movement", 
+        "Deploy payload", 
+        "Other", 
+        "Unknown", 
+        "NA"
       ]
     }
   }, 
@@ -1118,6 +1164,7 @@
         "ZA", 
         "ZM", 
         "ZW", 
+        "XK", 
         "Other"
       ]
     }, 
@@ -1433,6 +1480,7 @@
         "ZA", 
         "ZM", 
         "ZW", 
+        "XK", 
         "Other"
       ]
     }
@@ -1829,6 +1877,7 @@
       "ZA", 
       "ZM", 
       "ZW", 
+      "XK", 
       "Other"
     ]
   }, 
@@ -2001,6 +2050,7 @@
     "non-distribution services": {
       "variety": [
         "Hashcracking", 
+        "C2", 
         "Counter AV", 
         "VPN", 
         "Proxy", 
@@ -2020,6 +2070,7 @@
         "Vulnerabilities", 
         "Misconfigurations", 
         "Weaknesses", 
+        "Partner", 
         "Personal Information", 
         "Organizational Information", 
         "NA", 
@@ -2032,7 +2083,9 @@
         "Website", 
         "Botnet", 
         "Compromised server", 
+        "Direct", 
         "Email", 
+        "Parnter", 
         "Phone", 
         "Loader", 
         "NA", 
@@ -2262,7 +2315,13 @@
       "YER", 
       "ZAR", 
       "ZMK", 
-      "ZWD"
+      "ZWD", 
+      "XBT", 
+      "BCH", 
+      "Ether", 
+      "Litecoin", 
+      "XMR", 
+      "ZEC"
     ]
   }, 
   "cost_corrective_action": [

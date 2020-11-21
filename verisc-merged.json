@@ -223,6 +223,24 @@
           "pattern": "(00|11|2[1-3]|3[1-3]|4[24589]|5[1-6]|6[1-2]|7[12]|81|92)-?\\d{0,4}", 
           "type": "string"
         }, 
+        "government": {
+          "description": "The level of government if industry starts with 92.  Otherwise 'NA'", 
+          "items": {
+            "type": "string", 
+            "default": "NA", 
+            "enum": [
+              "Federal", 
+              "Regional", 
+              "Local", 
+              "Unknown", 
+              "Other", 
+              "NA"
+            ]
+          }, 
+          "minItems": 1, 
+          "type": "array", 
+          "uniqueItems": true
+        }, 
         "locations_affected": {
           "description": "The number of victim locations, (stores, offices, etc), affected", 
           "type": "integer"
@@ -483,6 +501,7 @@
               "ZA", 
               "ZM", 
               "ZW", 
+              "XK", 
               "Other"
             ]
           }, 
@@ -491,7 +510,7 @@
           "uniqueItems": true
         }, 
         "region": {
-          "description": "The <a href='https://en.wikipedia.org/wiki/UN_M.49' target='_blank'>UN M.49</a> super-region and sub-region joined together. e.g. North America: 019021. South America (Brazil): 019005, Asia: 142000, East Asia (includes China): 142030, West Asia (Middle East): 142145, Southeast Asia: 142034, Eastern Europe: 150151, Western Europe: 150155.  Use 000000 if you do not know and 000001 for 'other' (includes international waters and outer space).  If you only know the super-region, use zero's for the region.  (e.g. 019000 for Americas.)", 
+          "description": "The <a href='https://en.wikipedia.org/wiki/UN_M.49' target='_blank'>UN M.49</a> super-region and sub-region joined together. e.g. North America: 019021. South America (Brazil): 019005, Asia: 142000, East Asia (includes China): 142030, West Asia (Middle East): 142145, South Asia (India): 142034, Eastern Europe: 150151, Western Europe: 150155.  Use 000000 if you do not know and 000001 for 'other' (includes international waters and outer space).  If you only know the super-region, use zero's for the region.  (e.g. 019000 for Americas.)", 
           "items": {
             "type": "string", 
             "maxLength": 6, 
@@ -500,8 +519,7 @@
           }, 
           "minItems": 1, 
           "type": "array", 
-          "uniqueItems": true, 
-          "pattern": "\\d{6}"
+          "uniqueItems": true
         }, 
         "state": {
           "description": "ALL CAPS.  For US states, you can use the <a href='https://en.wikipedia.org/wiki/ISO_3166-2:US' target='_blank'>ISO_3166-2 2-character state code</a>, otherwise use the full <a href='https://en.wikipedia.org/wiki/ISO_3166-2' target='_blank'>ISO_3166-2 Country subdivision code</a>", 
@@ -543,6 +561,7 @@
               "type": "integer"
             }, 
             "iso_currency_code": {
+              "description": "ISO_4217 currency code. <a href='https://en.wikipedia.org/wiki/ISO_4217' target='_blank'>More Info</a>", 
               "type": "string", 
               "enum": [
                 "AED", 
@@ -708,7 +727,13 @@
                 "YER", 
                 "ZAR", 
                 "ZMK", 
-                "ZWD"
+                "ZWD", 
+                "XBT", 
+                "BCH", 
+                "Ether", 
+                "Litecoin", 
+                "XMR", 
+                "ZEC"
               ]
             }
           }, 
@@ -718,7 +743,8 @@
       "required": [
         "country", 
         "employee_count", 
-        "industry"
+        "industry", 
+        "government"
       ], 
       "type": "object"
     }, 
@@ -728,7 +754,7 @@
       "additionalProperties": false, 
       "properties": {
         "hacking": {
-          "description": "<a href='http://veriscommunity.net/actions.html#section-hacking' target='_blank'>More Info</a>", 
+          "description": "Think things a person does at a keyboard (rather than by a program). <a href='http://veriscommunity.net/actions.html#section-hacking' target='_blank'>More Info</a>", 
           "additionalProperties": false, 
           "properties": {
             "variety": {
@@ -820,12 +846,18 @@
               "type": "string"
             }, 
             "result": {
+              "description": "The result of the action.  If there's a difference between action result and actor intent, use the result not intent.", 
               "items": {
                 "type": "string", 
                 "enum": [
                   "Infiltrate", 
                   "Exfiltrate", 
-                  "Elevate"
+                  "Elevate", 
+                  "Lateral movement", 
+                  "Deploy payload", 
+                  "Other", 
+                  "Unknown", 
+                  "NA"
                 ]
               }, 
               "minItems": 1, 
@@ -844,7 +876,7 @@
           "type": "object"
         }, 
         "malware": {
-          "description": "<a href='http://veriscommunity.net/actions.html#section-malware' target='_blank'>More Info</a>", 
+          "description": "Think things a program does (rather than a person on a keyboard) <a href='http://veriscommunity.net/actions.html#section-malware' target='_blank'>More Info</a>", 
           "additionalProperties": false, 
           "properties": {
             "variety": {
@@ -863,6 +895,7 @@
                   "Client-side attack", 
                   "Cryptocurrency mining", 
                   "Destroy data", 
+                  "In-memory", 
                   "Modify data", 
                   "Disable controls", 
                   "DoS", 
@@ -922,12 +955,18 @@
               "type": "string"
             }, 
             "result": {
+              "description": "The result of the action.  If there's a difference between action result and actor intent, use the result not intent.", 
               "items": {
                 "type": "string", 
                 "enum": [
                   "Infiltrate", 
                   "Exfiltrate", 
-                  "Elevate"
+                  "Elevate", 
+                  "Lateral movement", 
+                  "Deploy payload", 
+                  "Other", 
+                  "Unknown", 
+                  "NA"
                 ]
               }, 
               "minItems": 1, 
@@ -950,7 +989,7 @@
           "type": "object"
         }, 
         "social": {
-          "description": "<a href='http://veriscommunity.net/actions.html#section-social' target='_blank'>More Info</a>", 
+          "description": "Actions done to a person. <a href='http://veriscommunity.net/actions.html#section-social' target='_blank'>More Info</a>", 
           "additionalProperties": false, 
           "properties": {
             "variety": {
@@ -1036,12 +1075,18 @@
               "type": "string"
             }, 
             "result": {
+              "description": "The result of the action.  If there's a difference between action result and actor intent, use the result not intent.", 
               "items": {
                 "type": "string", 
                 "enum": [
                   "Infiltrate", 
                   "Exfiltrate", 
-                  "Elevate"
+                  "Elevate", 
+                  "Lateral movement", 
+                  "Deploy payload", 
+                  "Other", 
+                  "Unknown", 
+                  "NA"
                 ]
               }, 
               "minItems": 1, 
@@ -1057,7 +1102,7 @@
           "type": "object"
         }, 
         "error": {
-          "description": "<a href='http://veriscommunity.net/actions.html#section-error' target='_blank'>More Info</a>", 
+          "description": "Unintentional actions. <a href='http://veriscommunity.net/actions.html#section-error' target='_blank'>More Info</a>", 
           "additionalProperties": false, 
           "properties": {
             "variety": {
@@ -1117,7 +1162,7 @@
           "type": "object"
         }, 
         "misuse": {
-          "description": "<a href='http://veriscommunity.net/actions.html#section-misuse' target='_blank'>More Info</a>", 
+          "description": "Unapproved use of legitimate access or permissions. <a href='http://veriscommunity.net/actions.html#section-misuse' target='_blank'>More Info</a>", 
           "additionalProperties": false, 
           "properties": {
             "variety": {
@@ -1165,12 +1210,18 @@
               "type": "string"
             }, 
             "result": {
+              "description": "The result of the action.  If there's a difference between action result and actor intent, use the result not intent.", 
               "items": {
                 "type": "string", 
                 "enum": [
                   "Infiltrate", 
                   "Exfiltrate", 
-                  "Elevate"
+                  "Elevate", 
+                  "Lateral movement", 
+                  "Deploy payload", 
+                  "Other", 
+                  "Unknown", 
+                  "NA"
                 ]
               }, 
               "minItems": 1, 
@@ -1185,7 +1236,7 @@
           "type": "object"
         }, 
         "physical": {
-          "description": "<a href='http://veriscommunity.net/actions.html#section-physical' target='_blank'>More Info</a>", 
+          "description": "Actions involving proximity and physical contact. <a href='http://veriscommunity.net/actions.html#section-physical' target='_blank'>More Info</a>", 
           "additionalProperties": false, 
           "properties": {
             "variety": {
@@ -1242,12 +1293,18 @@
               "type": "string"
             }, 
             "result": {
+              "description": "The result of the action.  If there's a difference between action result and actor intent, use the result not intent.", 
               "items": {
                 "type": "string", 
                 "enum": [
                   "Infiltrate", 
                   "Exfiltrate", 
-                  "Elevate"
+                  "Elevate", 
+                  "Lateral movement", 
+                  "Deploy payload", 
+                  "Other", 
+                  "Unknown", 
+                  "NA"
                 ]
               }, 
               "minItems": 1, 
@@ -1262,7 +1319,7 @@
           "type": "object"
         }, 
         "environmental": {
-          "description": "<a href='http://veriscommunity.net/actions.html#section-environmental' target='_blank'>More Info</a>", 
+          "description": "Forces of nature. Cannot include intentional actions. <a href='http://veriscommunity.net/actions.html#section-environmental' target='_blank'>More Info</a>", 
           "additionalProperties": false, 
           "properties": {
             "variety": {
@@ -1312,18 +1369,25 @@
           "type": "object"
         }, 
         "unknown": {
+          "description": "The action taken was unknown", 
           "properties": {
             "notes": {
               "minLength": 1, 
               "type": "string"
             }, 
             "result": {
+              "description": "The result of the action.  If there's a difference between action result and actor intent, use the result not intent.", 
               "items": {
                 "type": "string", 
                 "enum": [
                   "Infiltrate", 
                   "Exfiltrate", 
-                  "Elevate"
+                  "Elevate", 
+                  "Lateral movement", 
+                  "Deploy payload", 
+                  "Other", 
+                  "Unknown", 
+                  "NA"
                 ]
               }, 
               "minItems": 1, 
@@ -1337,12 +1401,12 @@
       "type": "object"
     }, 
     "actor": {
-      "description": "<a href='http://veriscommunity.net/actors.html' target='_blank'>More Info</a>", 
+      "description": "What entity did the threat action? <a href='http://veriscommunity.net/actors.html' target='_blank'>More Info</a>", 
       "additionalProperties": false, 
       "minProperties": 1, 
       "properties": {
         "external": {
-          "description": "<a href='http://veriscommunity.net/actors.html#section-external' target='_blank'>More Info</a>", 
+          "description": "Unaffiliated with the victim. <a href='http://veriscommunity.net/actors.html#section-external' target='_blank'>More Info</a>", 
           "additionalProperties": false, 
           "properties": {
             "variety": {
@@ -1649,6 +1713,7 @@
                   "ZA", 
                   "ZM", 
                   "ZW", 
+                  "XK", 
                   "Other"
                 ]
               }, 
@@ -1657,7 +1722,7 @@
               "uniqueItems": true
             }, 
             "region": {
-              "description": "The <a href='https://en.wikipedia.org/wiki/UN_M.49' target='_blank'>UN M.49</a> super-region and sub-region joined together. e.g. North America: 019021. South America (Brazil): 019005, Asia: 142000, East Asia (includes China): 142030, West Asia (Middle East): 142145, Southeast Asia: 142034, Eastern Europe: 150151, Western Europe: 150155.  Use 000000 if you do not know and 000001 for 'other' (includes international waters and outer space).  If you only know the super-region, use zero's for the region.  (e.g. 019000 for Americas.)", 
+              "description": "The <a href='https://en.wikipedia.org/wiki/UN_M.49' target='_blank'>UN M.49</a> super-region and sub-region joined together. e.g. North America: 019021. South America (Brazil): 019005, Asia: 142000, East Asia (includes China): 142030, West Asia (Middle East): 142145, South Asia (India): 142034, Eastern Europe: 150151, Western Europe: 150155.  Use 000000 if you do not know and 000001 for 'other' (includes international waters and outer space).  If you only know the super-region, use zero's for the region.  (e.g. 019000 for Americas.)", 
               "items": {
                 "type": "string", 
                 "maxLength": 6, 
@@ -1684,7 +1749,7 @@
           "type": "object"
         }, 
         "internal": {
-          "description": "<a href='http://veriscommunity.net/actors.html#section-internal' target='_blank'>More Info</a>", 
+          "description": "The victim or a part thereof (such as an employee). <a href='http://veriscommunity.net/actors.html#section-internal' target='_blank'>More Info</a>", 
           "additionalProperties": false, 
           "properties": {
             "variety": {
@@ -1770,7 +1835,7 @@
           "type": "object"
         }, 
         "partner": {
-          "description": "<a href='http://veriscommunity.net/actors.html#section-partner' target='_blank'>More Info</a>", 
+          "description": "An entity with an organizational relationship to the victim, but not the victim. <a href='http://veriscommunity.net/actors.html#section-partner' target='_blank'>More Info</a>", 
           "additionalProperties": false, 
           "properties": {
             "motive": {
@@ -2059,6 +2124,7 @@
                   "ZA", 
                   "ZM", 
                   "ZW", 
+                  "XK", 
                   "Other"
                 ]
               }, 
@@ -2067,7 +2133,7 @@
               "uniqueItems": true
             }, 
             "region": {
-              "description": "The <a href='https://en.wikipedia.org/wiki/UN_M.49' target='_blank'>UN M.49</a> super-region and sub-region joined together. e.g. North America: 019021. South America (Brazil): 019005, Asia: 142000, East Asia (includes China): 142030, West Asia (Middle East): 142145, Southeast Asia: 142034, Eastern Europe: 150151, Western Europe: 150155.  Use 000000 if you do not know and 000001 for 'other' (includes international waters and outer space).  If you only know the super-region, use zero's for the region.  (e.g. 019000 for Americas.)", 
+              "description": "The <a href='https://en.wikipedia.org/wiki/UN_M.49' target='_blank'>UN M.49</a> super-region and sub-region joined together. e.g. North America: 019021. South America (Brazil): 019005, Asia: 142000, East Asia (includes China): 142030, West Asia (Middle East): 142145, South Asia (India): 142034, Eastern Europe: 150151, Western Europe: 150155.  Use 000000 if you do not know and 000001 for 'other' (includes international waters and outer space).  If you only know the super-region, use zero's for the region.  (e.g. 019000 for Americas.)", 
               "items": {
                 "type": "string", 
                 "maxLength": 6, 
@@ -2106,7 +2172,7 @@
       "type": "object"
     }, 
     "asset": {
-      "description": "What assets were affected by the incident.  Data types and record count will be covered in the attributes section.  <a href='http://veriscommunity.net/assets.html' target='_blank'>More Info</a>", 
+      "description": "What assets were affected by the incident actions.  Data types and record count will be covered in the attributes section.  <a href='http://veriscommunity.net/assets.html' target='_blank'>More Info</a>", 
       "additionalProperties": false, 
       "minProperties": 1, 
       "properties": {
@@ -2577,6 +2643,7 @@
               "ZA", 
               "ZM", 
               "ZW", 
+              "XK", 
               "Other"
             ]
           }, 
@@ -2592,12 +2659,12 @@
       ]
     }, 
     "attribute": {
-      "description": "<a href='http://veriscommunity.net/attributes.html' target='_blank'>More Info</a>", 
+      "description": "What attributes were compromised? <a href='http://veriscommunity.net/attributes.html' target='_blank'>More Info</a>", 
       "additionalProperties": false, 
       "minProperties": 1, 
       "properties": {
         "confidentiality": {
-          "description": "<a href='http://veriscommunity.net/attributes.html#section-confidentiality' target='_blank'>More Info</a>", 
+          "description": "Was data (potentially) disclosed to an unauthorized party? <a href='http://veriscommunity.net/attributes.html#section-confidentiality' target='_blank'>More Info</a>", 
           "additionalProperties": false, 
           "properties": {
             "data_disclosure": {
@@ -2700,7 +2767,7 @@
           "type": "object"
         }, 
         "integrity": {
-          "description": "<a href='http://veriscommunity.net/attributes.html#section-integrity' target='_blank'>More Info</a>", 
+          "description": "Was a person manipulated or the state of a system changed? <a href='http://veriscommunity.net/attributes.html#section-integrity' target='_blank'>More Info</a>", 
           "additionalProperties": false, 
           "properties": {
             "variety": {
@@ -2738,7 +2805,7 @@
           "type": "object"
         }, 
         "availability": {
-          "description": "<a href='http://veriscommunity.net/attributes.html#section-availability' target='_blank'>More Info</a>", 
+          "description": "Was something rendered partially or wholly unavailable? <a href='http://veriscommunity.net/attributes.html#section-availability' target='_blank'>More Info</a>", 
           "properties": {
             "variety": {
               "items": {
@@ -2803,6 +2870,7 @@
               "type": "string"
             }, 
             "result": {
+              "description": "The result of the action.  If there's a difference between action result and actor intent, use the result not intent.", 
               "items": {
                 "type": "string"
               }, 
@@ -2991,6 +3059,7 @@
                 "type": "string", 
                 "enum": [
                   "Hashcracking", 
+                  "C2", 
                   "Counter AV", 
                   "VPN", 
                   "Proxy", 
@@ -3031,6 +3100,7 @@
                   "Vulnerabilities", 
                   "Misconfigurations", 
                   "Weaknesses", 
+                  "Partner", 
                   "Personal Information", 
                   "Organizational Information", 
                   "NA", 
@@ -3064,7 +3134,9 @@
                   "Website", 
                   "Botnet", 
                   "Compromised server", 
+                  "Direct", 
                   "Email", 
+                  "Parnter", 
                   "Phone", 
                   "Loader", 
                   "NA", 
@@ -3156,6 +3228,9 @@
             "variety"
           ], 
           "type": "object"
+        }, 
+        "NA": {
+          "type": "boolean"
         }
       }, 
       "type": "object"
@@ -3176,6 +3251,7 @@
           ]
         }, 
         "iso_currency_code": {
+          "description": "ISO_4217 currency code. <a href='https://en.wikipedia.org/wiki/ISO_4217' target='_blank'>More Info</a>", 
           "type": "string", 
           "enum": [
             "AED", 
@@ -3341,7 +3417,13 @@
             "YER", 
             "ZAR", 
             "ZMK", 
-            "ZWD"
+            "ZWD", 
+            "XBT", 
+            "BCH", 
+            "Ether", 
+            "Litecoin", 
+            "XMR", 
+            "ZEC"
           ]
         }, 
         "overall_amount": {
@@ -3422,6 +3504,7 @@
       "description": "Plus is the appropriate place to extend the VERIS schema for your own needs.  Add organization-specific enumerations here.", 
       "properties": {
         "master_id": {
+          "description": "Master_id is a type 4 UUID and is unique for every record (incident).", 
           "minLength": 1, 
           "type": "string"
         }, 

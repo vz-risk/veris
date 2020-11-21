@@ -85,16 +85,20 @@ def deepSetAttr(od, name, value):
 #             del o[name[0]]
 
 def keynames(d, lbl, name, keys=set()):
-    if d['type'] == "object":
-        lbl = lbl + "properties."
-        for k, v in d['properties'].items():
-            keys = keys.union(keynames(v, lbl, name + "." + k))
-    elif d['type'] == "array":
-        lbl = lbl + "items."
-        keys = keys.union(keynames(d['items'], lbl, name))
-    else:
-        keys.add(name[1:])
-    return keys
+    try:
+        if d['type'] == "object":
+            lbl = lbl + "properties."
+            for k, v in d['properties'].items():
+                keys = keys.union(keynames(v, lbl, name + "." + k))
+        elif d['type'] == "array":
+            lbl = lbl + "items."
+            keys = keys.union(keynames(d['items'], lbl, name))
+        else:
+            keys.add(name[1:])
+        return keys
+    except:
+        print("d: {0}, lbl: {1}, name: {2}, keys: {3}".format(d, lbl, name, keys))
+        raise
 
 
 def recurse_keys(d, lbl, keys=set()):
