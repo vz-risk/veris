@@ -201,6 +201,7 @@ def main(cfg):
 
         # if it is not, add it to the schema as a property to the correct object
         except (AttributeError, KeyError):
+            print("{0} did not exist. Adding now.".format(instance))
             inFile = deepSetAttr(inFile, instance, updateInstance)
 
 

@@ -180,6 +180,24 @@ def main(cfg):
                 incident["action"]["physical"]["vector"] = [u"Victim work area" if e ==  u"Visitor privileges" else e for e in incident["action"]["physical"]["vector"]] 
                 incident["action"]["physical"]["vector"] = [u"Public facility" if e ==  u"Uncontrolled location" else e for e in incident["action"]["physical"]["vector"]] 
 
+
+            ## Change "Validated" to "Reviewed" in plus.analysis_status for consistency with workflow
+            ## Per vz-risk/VERIS issue # 303
+            if incident["plus"].get("analysis_status", "") == "Validated":
+                incident["plus"]["analysis_status"] = "Reviewed"
+
+
+            ## Chang "Not Applicable" to NA in all but PCI
+            ## Per  vz-risk/VERIS #301
+            if "asset_os" in incident["plus"]:
+                incident["plus"]["asset_os"] = [u"NA" if e ==  u"Not applicable" else e for e in incident["plus"]["asset_os"]] 
+            if "attack_difficulty_initial" in incident["plus"]:
+                incident["plus"]["attack_difficulty_initial"] = [u"NA" if e ==  u"Not applicable" else e for e in incident["plus"]["attack_difficulty_initial"]] 
+            if "attack_difficulty_legacy" in incident["plus"]:
+                incident["plus"]["attack_difficulty_legacy"] = [u"NA" if e ==  u"Not applicable" else e for e in incident["plus"]["attack_difficulty_legacy"]] 
+            if "attack_difficulty_subsequent" in incident["plus"]:
+                incident["plus"]["attack_difficulty_subsequent"] = [u"NA" if e ==  u"Not applicable" else e for e in incident["plus"]["attack_difficulty_subsequent"]] 
+
 TODO
 
 
