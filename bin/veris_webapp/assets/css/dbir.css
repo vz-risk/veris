@@ -54,6 +54,8 @@
 .btn-danger:active, .btn-danger:active:hover, .btn-danger:active:focus { background-color: #000000; border: 0; }
 .btn-danger:focus { background-color: #000000; border: 0; }
 
+.btn-move {margin-bottom: 5px;}
+
 .array-item { border: 1px solid #d2d3d4; padding: 10px; margin-left: 20px; margin-bottom: 10px;}
 .field-array .col-xs-1 { padding: 0; }
 .field-array .col-xs-1 button { margin-right: 0; }
