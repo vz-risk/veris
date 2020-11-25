@@ -343,10 +343,13 @@ function processSchema(schema, schemaName, version, labels) {
 
 function mergeLabels(schema, labels) {
   for (let key in labels) {
+    //if (key == "data") {console.log(schema)}
     if (typeof labels[key] === 'object') {
       if ('properties' in schema && key in schema.properties) {
           schema.properties[key] = mergeLabels(schema.properties[key], labels[key])
-      }      
+      } else if ('items' in schema && 'properties' in schema.items && key in schema.items.properties) {
+        schema.items.properties[key] = mergeLabels(schema.items.properties[key], labels[key])
+      }
     } else {
       if ('items' in schema && 'enum' in schema.items) {
         [schema.items.enum, schema.items.enumNames] = processEnums(schema.items, labels)
