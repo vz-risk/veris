@@ -11,8 +11,10 @@ import Engine from 'json-rules-engine-simplified';
 import FileSaver from 'file-saver';
 import Form from 'react-jsonschema-form';
 import JSZip from 'jszip';
-import uuidv1 from 'uuid/v1';
-import uuidv4 from 'uuid/v4';
+//import uuidv1 from 'uuid/v1';
+import { v1 as uuidv1 } from 'uuid';
+//import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import Ajv from 'ajv';
 
 import {

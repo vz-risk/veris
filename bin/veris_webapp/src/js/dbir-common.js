@@ -217,7 +217,7 @@ const schemas = {
           rawschema: vcdb1_3_4,
           uischema: uiSchemas['vcdb']['1.3.4']
         },
-        '1.3.4': {
+        '1.3.5': {
           schema: processSchema(vcdb1_3_5, 'vcdb', '1.3.5', vcdbLabels),
           rawschema: vcdb1_3_5,
           uischema: uiSchemas['vcdb']['1.3.5']

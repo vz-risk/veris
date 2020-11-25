@@ -15,6 +15,7 @@
 (Note: Steps 4 and 5 may take several iterations to get correct.  Try all combinations of schema/version in the webapp. Make sure to expand collapsed sections.)
 
 OPTIONAL: Update packages:
+(from within the webapp directory))
 A. `npm install -g npm`
 # per https://medium.com/@manjuladube/updating-each-dependency-in-package-json-to-the-latest-version-879836256939
 B. `npm i -g npm-check-updates`
@@ -22,5 +23,6 @@ C. `npm-check-updates -u`
 D. `npm install`
 E. `npm audit fix`
 This likely breaks things.  You'll then need to troubleshoot the JS.
+NOTE: 20-11-23, I had to apply (https://github.com/DustinJackson/html-webpack-inline-source-plugin/commit/66de56497db33ad796705a18cb6a035006c7917d) patch manually to node_modules/html-webpack-inlie-source-plugin/index.js to fix an error outlined here: https://github.com/DustinJackson/html-webpack-inline-source-plugin/issues/57.
 
 6. Run `npm run build:full` to minify the webapp and place it in the right spot. (you may have to run `npm install webpack`)
