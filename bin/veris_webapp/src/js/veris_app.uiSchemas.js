@@ -2615,7 +2615,18 @@ const uiSchemas = {
           "secondary",
           "revenue",
           "*"
-        ]
+        ],
+        "government": {
+          "ui:order": [
+            "NA",
+            "Federal",
+            "Regional",
+            "Local",
+            "Other",
+            "Unknown",
+            "*"
+          ]
+        }
       },
       "discovery_method": {
         "ui:order": [
@@ -4317,7 +4328,18 @@ const uiSchemas = {
           "secondary",
           "revenue",
           "*"
-        ]
+        ],
+        "government": {
+          "ui:order": [
+            "NA",
+            "Federal",
+            "Regional",
+            "Local",
+            "Other",
+            "Unknown",
+            "*"
+          ]
+        }
       },
       "discovery_method": {
         "ui:order": [
@@ -6051,7 +6073,18 @@ const uiSchemas = {
           "secondary",
           "revenue",
           "*"
-        ]
+        ],
+        "government": {
+          "ui:order": [
+            "NA",
+            "Federal",
+            "Regional",
+            "Local",
+            "Other",
+            "Unknown",
+            "*"
+          ]
+        }
       },
       "discovery_method": {
         "ui:order": [
@@ -7745,7 +7778,18 @@ const uiSchemas = {
           "secondary",
           "revenue",
           "*"
-        ]
+        ],
+        "government": {
+          "ui:order": [
+            "NA",
+            "Federal",
+            "Regional",
+            "Local",
+            "Other",
+            "Unknown",
+            "*"
+          ]
+        }
       },
       "discovery_method": {
         "ui:order": [

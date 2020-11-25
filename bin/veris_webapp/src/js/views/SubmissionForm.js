@@ -189,7 +189,8 @@ export default class SubmissionForm extends React.Component {
     record = ungroomData(record, this.selectedSchema, this.selectedVersion);
 
     if (typeof record['schema_version'] === 'undefined') {
-      record['schema_version'] = this.selectedVersion.replace(/\./g, '_');
+      //record['schema_version'] = this.selectedVersion.replace(/\./g, '_');
+      record['schema_version'] = this.selectedVersion.replace(/_/g, '\.');
     }
 
     localStorage.setItem('incident_list_saved', false);
