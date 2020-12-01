@@ -239,7 +239,7 @@ class Rules():
             'Web application - drive-by' in incident['action']['malware'].get('vector', [])) and \
             'Web application' not in incident['action']['malware'].get('vector', []) and \
             LooseVersion(incident['schema_version']) >= LooseVersion("1.3.5"):
-                incident['action']['malware']['variety'].append('Web application')
+                incident['action']['malware']['vector'].append('Web application')
 
 
         ### Hierarchical Field
@@ -275,7 +275,7 @@ class Rules():
             len(set(incident['action']['hacking']['variety']).intersection(hak_exploit_varieties)) > 0 and \
             LooseVersion(incident['schema_version']) >= LooseVersion("1.3.3"):
                 incident['action']['hacking']['variety'].append('Exploit vuln') 
-        mal_exploit_varieties = ["Remote injection", "Web drive-by"]
+        mal_exploit_varieties = ["Remote injection", "Web application - Web drive-by"]
         if 'variety' in incident['action'].get('malware', {}):
             if "Exploit vuln" not in incident['action']['malware']['variety'] and \
             len(set(incident['action']['malware']['variety']).intersection(mal_exploit_varieties)) > 0: # and \
@@ -338,7 +338,6 @@ class Rules():
             'End-user or employee' not in incident['action']['social'].get('target', []) and \
             LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
                 incident['action']['social']['target'].append('End-user or employee')
-
 
 
         ### impact.overall_amount should be at least the sum of the impact.loss.amounts
@@ -610,6 +609,10 @@ class Rules():
                 master_id = "notblank"
             logging.info("%s: auto-filling plus.master_id to %s", iid, master_id)
             incident['plus']['master_id'] = master_id
+        if 'summary' not in incident:
+            logging.info("{0}: no summary. Adding blank summary.".format(iid))
+            incident['summary'] = ""
+
 
         ## VICTIM ##
         if 'victim' not in incident:
@@ -636,6 +639,15 @@ class Rules():
 
         # CC
         victim['country'] = self.compareCountryFromTo('victim.country', victim['country'], iid) #, schema['victim']['country'])
+
+        ## "government" is required in victim - correcting based on industry
+        ## per vz-risk/VERIS #347
+
+        if "government" not in incident['victim']:
+            if incident['victim']['industry'][:2] != "92":
+                incident['victim']['government'] = ["NA"]
+            else:
+                incident['victim']['government'] = ["Unknown"]
 
         # return victim to the incident. - GDB 200211
         incident['victim'] = victim
@@ -966,7 +978,7 @@ if __name__ == "__main__":
     #parser.add_argument("--version", help="The version of veris in use")
     parser.add_argument('--conf', help='The location of the config file', default="./_checkValidity.cfg")
     parser.add_argument('--year', help='The DBIR year to assign tot he records.')
-    #parser.add_argument('--countryfile', help='The json file holdering the country mapping.')
+    parser.add_argument('--countryfile', help='The json file holdering the country mapping.')
     parser.add_argument('--source', help="Source_id to use for the incidents. Partner pseudonym.")
     #parser.add_argument("-f", "--force_analyst", help="Override default analyst with --analyst.", action='store_true')
     args = parser.parse_args()

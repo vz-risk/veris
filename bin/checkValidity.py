@@ -123,8 +123,8 @@ def checkImpactTotal(inDict):
     if 'loss' in inDict.get('impact', {}):
         sum_of_amounts = sum([k.get('amount', 0) for k in inDict['impact']['loss']])
         if sum_of_amounts > inDict['impact'].get('overall_amount', 0):
-            yield ValidationError("The amounts in impact.loss sum to {0}, but impact.overall_amount is {1}.  " +
-                                  "impact.overall_amount should at least be as much as the sum of individual losses.".format(sum_of_amounts, inDict['impact'].get('overall_amount', "Not Present")))
+            yield ValidationError("The amounts in impact.loss sum to {0}, but impact.overall_amount is {1}.  ".format(sum_of_amounts, inDict['impact'].get('overall_amount', "Not Present")) +
+                                  "impact.overall_amount should at least be as much as the sum of individual losses.")
 
 
 ### sanity check attribute.confidentiality.total_amount to ensure it's at least the max of data lost
@@ -133,13 +133,13 @@ def checkImpactTotal(inDict):
     if 'data' in inDict['attribute'].get('confidentiality', {}):
         max_of_amounts = max([k.get('amount', 0) for k in inDict['attribute']['confidentiality']['data']])
         if max_of_amounts > inDict['attribute']['confidentiality'].get('total_amount', 0):
-            yield ValidationError("The maximum amount of attribute.confidentiality.data.amount is {0}, but attribute.confidentiality.total_amount is {1}.  " +
-                                  "attribute.confidentiality.total_amount should at least be as much as the max of individual data amounts.".format(max_of_amounts, inDict['attribute']['confidentiality'].get('total_amount', "Not Present")))
+            yield ValidationError("The maximum amount of attribute.confidentiality.data.amount is {0}, but attribute.confidentiality.total_amount is {1}.  ".format(max_of_amounts, inDict['attribute']['confidentiality'].get('total_amount', "Not Present")) +
+                                  "attribute.confidentiality.total_amount should at least be as much as the max of individual data amounts.")
 
 ### sanity check. if 'misuse', 'actor' should include 'external'
 ### VERIS issue #229
 def checkMisuseActor(inDict):
-    if 'misuse' in inDict['action'] and 'internal' not in inDict['actor'] and 'partner' not inDict['actor']:
+    if 'misuse' in inDict['action'] and 'internal' not in inDict['actor'] and 'partner' not in inDict['actor']:
         yield ValidationError("Misuse in action, but no internal or partner actor defined.  Per VERIS issue #229, there should always be an internal or partner actor if there is a misuse action.")
 
 
@@ -320,10 +320,10 @@ if __name__ == '__main__':
                         continue
                     for e in validator.iter_errors(incident):
                         offendingPath = '.'.join(str(x) for x in e.path)
-                        logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message)) 
+                        logging.warning("ERROR in %s. %s %s" % (inFile, offendingPath, e.message)) 
                     for e in main(incident):
                         offendingPath = '.'.join(str(x) for x in e.path)
-                        logging.warning("ERROR in %s. %s %s" % (src, offendingPath, e.message))  
+                        logging.warning("ERROR in %s. %s %s" % (inFile, offendingPath, e.message))  
 
                     incident_counter += 1
                     if incident_counter % 100 == 0:

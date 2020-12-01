@@ -144,23 +144,25 @@ def main(cfg):
 
             ### asset.assets.P - End-user defined as 'End-user or regular employee' is being split into asset.assets.P - End-user and asset.assets.P - Other employee
             # per vz-risk/VERIS issue #306
-            incident['asset']['assets']= [enum if enum.get(u"variety", "") != "End-user" else dict(enum, **{u"variety": u"End-user or employee"}) for enum in incident['asset']['assets']]
+            incident['asset']['assets']= [enum if enum.get(u"variety", "") != "P - End-user" else dict(enum, **{u"variety": u"P - End-user or employee"}) for enum in incident['asset']['assets']]
 
             ## Summary now required
             ## per vz-risk/VERIS issue #305
             if "summary" not in incident:
-                incident["summary"] == ""
+                incident["summary"] = ""
 
             ## Monitoring service shoudl never be external in discovery_method.  Moving to partner.
             ## per vz-risk/VERIS issue #304
             if "Monitoring service" in incident['discovery_method'].get("external", {}).get("variety", []):
                 # Add Monitoring service to partner 
                 if 'partner' not in incident['discovery_method']:
-                    incident['discovery_method']['partner'] = {'variety', ["Monitoring service"]}
+                    incident['discovery_method']['partner'] = {'variety': ["Monitoring service"]}
                 elif 'variety' not in incident['discovery_method']['partner']:
                     incident['discovery_method']['partner']["variety"] = ["Monitoring service"]
                 elif "Monitoring service" not in incident['discovery_method']['partner']["variety"]:
                     incident['discovery_method']['partner']["variety"].append("Monitoring service")
+                    if "Unknown" in incident['discovery_method']['partner']["variety"]:
+                        incident['discovery_method']['partner']["variety"].remove("Unknown")
                 # Remove monitorign service from external, and then (probably) remove external
                 incident['discovery_method']['external']['variety'].remove("Monitoring service")
                 if len(incident['discovery_method']['external']['variety']) == 0:
@@ -171,15 +173,16 @@ def main(cfg):
             ## per vz-risk/VERIS issue #281
             if 'misuse' in incident['action']:
                 if 'Infiltrate' in incident['action']['misuse'].get('result', []):
-                    incident['action']['misusel']['result'].remove("Infiltrate")
+                    incident['action']['misuse']['result'].remove("Infiltrate")
+                    if len(incident['action']['misuse']['result']) == 0:
+                        _ = incident['action']['misuse'].pop('result')
 
 
             ## update of physical vector. Added last year, but trnsitions were not applied.
             ## per issue Vvz-risk/VERIS issue #198
             if "vector" in incident["action"].get("physical", {}):
                 incident["action"]["physical"]["vector"] = [u"Victim work area" if e ==  u"Visitor privileges" else e for e in incident["action"]["physical"]["vector"]] 
-                incident["action"]["physical"]["vector"] = [u"Public facility" if e ==  u"Uncontrolled location" else e for e in incident["action"]["physical"]["vector"]] 
-
+                incident["action"]["physical"]["vector"] = [u"Public facility" if e ==  u"Uncontrolled location" else e for e in incident["action"]["physical"]["vector"]]
 
             ## Change "Validated" to "Reviewed" in plus.analysis_status for consistency with workflow
             ## Per vz-risk/VERIS issue # 303
@@ -192,14 +195,22 @@ def main(cfg):
             if "asset_os" in incident["plus"]:
                 incident["plus"]["asset_os"] = [u"NA" if e ==  u"Not applicable" else e for e in incident["plus"]["asset_os"]] 
             if "attack_difficulty_initial" in incident["plus"]:
-                incident["plus"]["attack_difficulty_initial"] = [u"NA" if e ==  u"Not applicable" else e for e in incident["plus"]["attack_difficulty_initial"]] 
+                if incident["plus"]["attack_difficulty_initial"] == "Not applicable":
+                    incident["plus"]["attack_difficulty_initial"] = "NA"
             if "attack_difficulty_legacy" in incident["plus"]:
-                incident["plus"]["attack_difficulty_legacy"] = [u"NA" if e ==  u"Not applicable" else e for e in incident["plus"]["attack_difficulty_legacy"]] 
+                if incident["plus"]["attack_difficulty_legacy"] == "Not applicable":
+                    incident["plus"]["attack_difficulty_legacy"] = "NA"
             if "attack_difficulty_subsequent" in incident["plus"]:
-                incident["plus"]["attack_difficulty_subsequent"] = [u"NA" if e ==  u"Not applicable" else e for e in incident["plus"]["attack_difficulty_subsequent"]] 
+                if incident["plus"]["attack_difficulty_subsequent"] == "Not applicable":
+                    incident["plus"]["attack_difficulty_subsequent"] = "NA"
 
-TODO
-
+            ## "government" is required in victim
+            ## per vz-risk/VERIS #347
+            if "government" not in incident['victim']:
+                if incident['victim']['industry'][:2] != "92":
+                    incident['victim']['government'] = ["NA"]
+                else:
+                    incident['victim']['government'] = ["Unknown"]
 
             # Now to save the incident
             logging.info("Writing new file to %s" % out_fname)

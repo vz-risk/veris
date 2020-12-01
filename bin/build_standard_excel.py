@@ -244,9 +244,18 @@ def recurse_veris(o, name):
             if type(item) == dict:
                     if "amount" in item:
                         enum = "{0}:{1}".format(item["variety"], item['amount'])
-                    else:
+                    elif "variety" in item:
                         enum = '{0}'.format(item["variety"])
-                    if name[1:] + ".variety" in flat_dict:
+                    elif name == ".plus.event_chain":
+                        enum = item
+                    else:
+                        raise ValueError("Do not know how to flatten {0}".format(name))
+                    if name == ".plus.event_chain":
+                        if "plus.event_chain" in flat_dict:
+                            flat_dict["plus.event_chain"] = json.dumps(json.loads(flat_dict["plus.event_chain"]) + [enum])
+                        else:
+                            flat_dict["plus.event_chain"] = json.dumps([enum])
+                    elif name[1:] + ".variety" in flat_dict:
                         flat_dict[name[1:] + ".variety"] = flat_dict[name[1:] + ".variety"] + ",{0}".format(enum)
                     else:
                         flat_dict[name[1:] + ".variety"] = "{0}".format(enum)
@@ -379,7 +388,8 @@ def main():
             example.write(row-2, 0, 25) # 25 is just hardcoded number for example
             example.write(row-1, 0, 5) # 5 is just hardcoded number for example
         except:
-            logging.info("No test files found.")
+            #logging.info("No test files found.")
+            raise
 
     workbook.close()
     logging.info('Ending main loop.')

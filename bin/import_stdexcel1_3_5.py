@@ -40,7 +40,7 @@ cfg = {
     'enumfile': "../verisc-enum.json",
     'mergedfile': "../verisc-merged.json",
     'vcdb':False,
-    'version':"1.3.4",
+    'version':"1.3.5",
     'countryfile':'all.json',
     'output': os.getcwd(),
     'check': False,
@@ -73,7 +73,7 @@ class CSVtoJSON():
     jschema = None
     sfields = None
     # country_region = None
-    script_version = "1.3.4"
+    script_version = "1.3.5"
 
 
     def __init__(self, cfg, file_version=None):
@@ -153,7 +153,8 @@ class CSVtoJSON():
                 else:
                     callout = k
                 self.parseSchema(v2, callout, mykeylist)
-        elif v['type']=="array":
+        # bypassing plus.event_chain below. It's stored as a serialized json object so we don't need to parse it's items. - GDB 201130
+        elif v['type']=="array" and base != "plus.event_chain": 
             self.parseSchema(v['items'], base, mykeylist)
         else:
             mykeylist.append(base)
@@ -284,7 +285,7 @@ class CSVtoJSON():
         for enum in ['campaign_id', 'source_id', 'reference', 'security_incident', 'confidence', 'summary', 'related_incidents', 'notes']:
             self.addValue(incident, enum, out, "string")
         # victim
-        for enum in ['victim_id', 'industry', 'government', 'employee_count', 'state',
+        for enum in ['victim_id', 'industry', 'employee_count', 'state',
                 'revenue.iso_currency_code', 'secondary.notes', 'notes']:
             self.addValue(incident, 'victim.'+enum, out, "string")
         self.addValue(incident, 'victim.revenue.amount', out, "integer")
@@ -292,6 +293,7 @@ class CSVtoJSON():
         self.addValue(incident, 'victim.secondary.victim_id', out, "list")
         self.addValue(incident, 'victim.locations_affected', out, "integer")
         self.addValue(incident, 'victim.country', out, "list")
+        self.addValue(incident, "government", out, "list")
 
         # actor
         for enum in ['motive', 'variety', 'country']:
@@ -479,6 +481,11 @@ class CSVtoJSON():
             self.addValue(incident, 'plus.timeline.notification.day', out, "numeric")
         # Skipping: 'unknown_unknowns', useful_evidence', antiforensic_measures, unfollowed_policies,
         # countrol_inadequacy_legacy, pci
+        if incident["plus.event_chain"]:
+            try:
+                out["plus"]["event_chain"] = json.loads(incident["plus.event_chain"])
+            except:
+                logging.warning("plus.event_chain is not valid json to decode: {0}".format(incident["plus.event_chain"]))
 
         return out
 
