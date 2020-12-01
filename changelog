@@ -1,3 +1,53 @@
+Version 1.3.5
+=============
+20-12-01
+
+VERIS updates:
+• Result description improved
+• Included “credential stuffing” in definition of “use of stolen credentials”
+• Added value_chain.NA for when no value_chain exists
+• Added “partner” to value_chain.targeting and value_chain.distribution to capture ‘supply chain’ breaches.
+• Added “In-memory” (only) to malware varieties.
+• Added government levels to victim and made it mandatory. (Use “NA” if industry is not NAICS 92)
+• Added cryptocurrencies to iso_currency_code fields.
+• Fixed “malware.variety.Ram scraper” to “malware.variety.RAM scraper”
+• Added “Web application” as vector for all possible actions.
+• Renamed “action.social.vector.Website” to “action.social.vector.Web application”
+• Renamed “action.malware.vector.Web download” and  “action.malware.vector.Web drive-by” to “action.malware.vector.Web application - download” and  “action.malware.vector.Web application - drive-by” and set both as children of new parent vector “action.malware.vector.Web application”
+• Added “C2” to value_chain.development and “Direct” to value_chain.distribution
+• Added “NA”, “Unknown”, “Other”, “Lateral-movement”, and “Deploy payload” to action result fields.  Removed “Infiltrate” from misuse result field.
+• Updated definition of cloud NA to make it clear not to use it just because an asset is a user device.
+• Updated value_chain.targeting to make it clear how to handle ‘targeted’ breaches.
+• Corrected code for 142034 from southeast asia to south asia in region field definitions
+• Added description to plus.master_id
+• Made summary required. PLEASE FILL IN AT LEAST A SENTENCE OR TWO!
+• Removed “discovery_method.external.variety.Monitoring service” and changed all data to “discovery_method.partner.variety.Monitoring service”. External.variety.Monitoring Service are consistently miscoded
+• Added “XK” for Kosovo in country lists.
+• Corected typo in “data state” enum descriptions
+• Updated Action, Actor, Asset, Attribute 
+• Clarified “actor.external.variety.Organized crime” (it’s an criminal that’s organized, not like crime families)
+• Updated “asset.cloud.On-premise assets” description to clarify it includes colo hosting.
+• Updated “value_chain.money launderying.NA” description
+• Updated “action.misuse.variety.Net misuse” to clarify it includes cloud services
+• Data variety definitions (and other definitions in objects in lists) now populate in the webapp
+• Webapp version no longer has dashes in place of dots in schema_version
+• Lists (plus.event_chain, asset.assets, attribute.confidentiality.data) can now be reordered. Mostly useful for plus.event_chain
+• All webapp libraries updated
+• Updated “discovery_method.external.variety.Other” definition to include “related 3rd parties”
+• checkValidity.py now checks that an internal actor exists if a misuse action exists
+
+VCDB updates:
+• “Not applicable” and “Not Applicable” changed to “NA” except for in PCI
+• “plus.analysis_status” value “Finalized” changed to “Reviewed” to match DBIR process
+• Description updated for “attribute.confidentiality.data_abuse”
+
+verisr updates:
+• Value_chain.X now enumerable
+• Victim.orgsize.Unknown now added with victim.orgsize.Small/Large
+• Character ‘pattern’ column removed
+• Improved json2veris error when no input found
+
+
 Version 1.3.4
 =============
 129-10-31
