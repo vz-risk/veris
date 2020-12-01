@@ -90,7 +90,7 @@ def main(cfg):
       # filenames = filter(lambda fname: fnmatch(fname, "*.json"), filenames)
       filenames = [fname for fname in filenames if fnmatch(fname, "*.json")] # per 2to3. - GDB 181109
       if filenames:
-        dir_ = os.path.join(cfg['output'], root[len(cfg['input']):]) # if we don't strip the input, we get duplicate directories 
+        dir_ = os.path.join(cfg['output'], root[len(cfg['input']):].lstrip("/")) # if we don't strip the input, we get duplicate directories 
         logging.info("Output directory is {0}.".format(dir_))
         if not os.path.isdir(dir_):
             os.makedirs(dir_)
