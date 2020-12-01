@@ -153,20 +153,21 @@ def main(cfg):
 
             ## Monitoring service shoudl never be external in discovery_method.  Moving to partner.
             ## per vz-risk/VERIS issue #304
-            if "Monitoring service" in incident['discovery_method'].get("external", {}).get("variety", []):
-                # Add Monitoring service to partner 
-                if 'partner' not in incident['discovery_method']:
-                    incident['discovery_method']['partner'] = {'variety': ["Monitoring service"]}
-                elif 'variety' not in incident['discovery_method']['partner']:
-                    incident['discovery_method']['partner']["variety"] = ["Monitoring service"]
-                elif "Monitoring service" not in incident['discovery_method']['partner']["variety"]:
-                    incident['discovery_method']['partner']["variety"].append("Monitoring service")
-                    if "Unknown" in incident['discovery_method']['partner']["variety"]:
-                        incident['discovery_method']['partner']["variety"].remove("Unknown")
-                # Remove monitorign service from external, and then (probably) remove external
-                incident['discovery_method']['external']['variety'].remove("Monitoring service")
-                if len(incident['discovery_method']['external']['variety']) == 0:
-                    _ = incident['discovery_method'].pop('external')
+            if type(incident['discovery_method']) == dict: # because "Unknown" and "Other" may be strings
+                if "Monitoring service" in incident['discovery_method'].get("external", {}).get("variety", []):
+                    # Add Monitoring service to partner 
+                    if 'partner' not in incident['discovery_method']:
+                        incident['discovery_method']['partner'] = {'variety': ["Monitoring service"]}
+                    elif 'variety' not in incident['discovery_method']['partner']:
+                        incident['discovery_method']['partner']["variety"] = ["Monitoring service"]
+                    elif "Monitoring service" not in incident['discovery_method']['partner']["variety"]:
+                        incident['discovery_method']['partner']["variety"].append("Monitoring service")
+                        if "Unknown" in incident['discovery_method']['partner']["variety"]:
+                            incident['discovery_method']['partner']["variety"].remove("Unknown")
+                    # Remove monitorign service from external, and then (probably) remove external
+                    incident['discovery_method']['external']['variety'].remove("Monitoring service")
+                    if len(incident['discovery_method']['external']['variety']) == 0:
+                        _ = incident['discovery_method'].pop('external')
 
 
             ## "infiltrate" shoudl nto exist in 'misuse.result'
