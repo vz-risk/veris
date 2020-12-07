@@ -136,7 +136,7 @@ const schemas = {
           uischema: uiSchemas['dbir']['1.3.4']
         },
         '1.3.5': {
-          schema: processSchema(dbir1_3_4, 'dbir', '1.3.5', dbirLabels),
+          schema: processSchema(dbir1_3_5, 'dbir', '1.3.5', dbirLabels),
           rawschema: dbir1_3_5,
           uischema: uiSchemas['dbir']['1.3.5']
         },
