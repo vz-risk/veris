@@ -481,7 +481,7 @@ class CSVtoJSON():
             self.addValue(incident, 'plus.timeline.notification.day', out, "numeric")
         # Skipping: 'unknown_unknowns', useful_evidence', antiforensic_measures, unfollowed_policies,
         # countrol_inadequacy_legacy, pci
-        if incident["plus.event_chain"]:
+        if incident.get("plus.event_chain", None):
             try:
                 out["plus"]["event_chain"] = json.loads(incident["plus.event_chain"])
             except:
