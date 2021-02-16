@@ -213,6 +213,11 @@ def main(cfg):
                 else:
                     incident['victim']['government'] = ["Unknown"]
 
+            ## "cloud" is now required in "asset"
+            if "asset" in incident:
+                if "cloud" not in incident['asset']:
+                    incident['asset']['cloud'] = ["Unknown"]
+
             # Now to save the incident
             logging.info("Writing new file to %s" % out_fname)
             with open(out_fname, 'w') as outfile:
