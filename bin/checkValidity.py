@@ -80,6 +80,7 @@ def checkYear(inDict):
         iyear = inDict.get('timeline', {}).get('incident', {}).get('year', None)
         imonth = inDict.get('timeline', {}).get('incident', {}).get('month', None)
         iday = inDict.get('timeline', {}).get('incident', {}).get('day', None)
+        discovered = inDict.get('timeline', {}).get('discovered', {}).get('unit', "")
         if nyear is not None:
             source = "notification"
             tyear = nyear
@@ -88,17 +89,22 @@ def checkYear(inDict):
             tyear = iyear
             tmonth = imonth
             source = "incident"
+        if tyear >= dbir_year:
+            yield ValidationError("DBIR year of {0} from {5} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {4} is too late to be in this DBIR year.".format(
+                dbir_year, dbir_year - 2, dbir_year - 1, tyear, tmonth, source))
         if tyear == dbir_year - 1:
             if tmonth is not None and tmonth > 10:
-                yield ValidationError("DBIR year of {0} from {5} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {4} is not in this range.".format(
+                yield ValidationError("DBIR year of {0} from {5} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {4} is too late to be in this DBIR year.".format(
                     dbir_year, dbir_year - 2, dbir_year - 1, tyear, tmonth, source))
         elif tyear == dbir_year - 2:
             if tmonth is not None and tmonth < 11:
-                yield ValidationError("DBIR year of {0} from {5} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and month {4} is not in this range.".format(
-                    dbir_year, dbir_year - 2, dbir_year - 1, tyear, tmonth, source))
+                if discovered in ["Months", "Years"]:
+                    yield ValidationError("DBIR year of {0} from {5} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3}, month {4}, and discovery unit {6} is before this range.".format(
+                        dbir_year, dbir_year - 2, dbir_year - 1, tyear, tmonth, source, discovered))
         else:
-            yield ValidationError("DBIR year of {0} from {4} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} is not in this range.".format(
-                dbir_year, dbir_year - 2, dbir_year - 1, tyear, source)) 
+            if discovered != "Years":
+                yield ValidationError("DBIR year of {0} from {4} runs from Nov 1, {1} to Oct 31, {2}. Incident year {3} and discovery unit {5} is before this range.".format(
+                    dbir_year, dbir_year - 2, dbir_year - 1, tyear, source, discovered)) 
         # check if incident or notification dates are in future
         if nyear is not None:
             try:

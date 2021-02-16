@@ -270,6 +270,7 @@ class CSVtoJSON():
         out['schema_version'] = cfg["file_version"]
         # if incident.has_key("incident_id"):
         if "incident_id" in incident:
+            incident['incident_id'] = str(incident['incident_id'])
             if len(incident['incident_id']):
                 # out['incident_id'] = incident['incident_id']
                 # Changing incident_id to UUID to prevent de-anonymiziation of incidents
@@ -577,7 +578,7 @@ class CSVtoJSON():
                 iid = incident['incident_id']  # there should always be an incident ID so commented out above. - gdb 061316
             except:
                 logging.warning("No incident_id in record.  Using row number instead.")
-                incident['incident_id'] = row
+                incident['incident_id'] = str(row)
                 iid = incident['incident_id'] 
                 #logging.error("keys: {0}.".format(incident.keys()))
                 #logging.error("keys: {0}.".format(list(incident.keys())))
