@@ -576,9 +576,12 @@ class CSVtoJSON():
             try:
                 iid = incident['incident_id']  # there should always be an incident ID so commented out above. - gdb 061316
             except:
-                logging.error("keys: {0}.".format(incident.keys()))
-                logging.error("keys: {0}.".format(list(incident.keys())))
-                raise
+                logging.warning("No incident_id in record.  Using row number instead.")
+                incident['incident_id'] = row
+                iid = incident['incident_id'] 
+                #logging.error("keys: {0}.".format(incident.keys()))
+                #logging.error("keys: {0}.".format(list(incident.keys())))
+                #raise
 
             repeat = 1
             logging.info("-----> parsing incident %s", iid)
