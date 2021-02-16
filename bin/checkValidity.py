@@ -80,7 +80,7 @@ def checkYear(inDict):
         iyear = inDict.get('timeline', {}).get('incident', {}).get('year', None)
         imonth = inDict.get('timeline', {}).get('incident', {}).get('month', None)
         iday = inDict.get('timeline', {}).get('incident', {}).get('day', None)
-        discovered = inDict.get('timeline', {}).get('discovered', {}).get('unit', "")
+        discovered = inDict.get('timeline', {}).get('discovered', {}).get('unit', "(no discovery unit)")
         if nyear is not None:
             source = "notification"
             tyear = nyear
@@ -133,14 +133,14 @@ def checkImpactTotal(inDict):
                                   "impact.overall_amount should at least be as much as the sum of individual losses.")
 
 
-### sanity check attribute.confidentiality.total_amount to ensure it's at least the max of data lost
+### sanity check attribute.confidentiality.data_total to ensure it's at least the max of data lost
 ## VERIS issue #143
 def checkImpactTotal(inDict):
     if 'data' in inDict['attribute'].get('confidentiality', {}):
         max_of_amounts = max([k.get('amount', 0) for k in inDict['attribute']['confidentiality']['data']])
-        if max_of_amounts > inDict['attribute']['confidentiality'].get('total_amount', 0):
-            yield ValidationError("The maximum amount of attribute.confidentiality.data.amount is {0}, but attribute.confidentiality.total_amount is {1}.  ".format(max_of_amounts, inDict['attribute']['confidentiality'].get('total_amount', "Not Present")) +
-                                  "attribute.confidentiality.total_amount should at least be as much as the max of individual data amounts.")
+        if max_of_amounts > inDict['attribute']['confidentiality'].get('data_total', 0):
+            yield ValidationError("The maximum amount of attribute.confidentiality.data.amount is {0}, but attribute.confidentiality.data_total is {1}.  ".format(max_of_amounts, inDict['attribute']['confidentiality'].get('data_total', "Not Present")) +
+                                  "attribute.confidentiality.data_total should at least be as much as the max of individual data amounts.")
 
 ### sanity check. if 'misuse', 'actor' should include 'external'
 ### VERIS issue #229
