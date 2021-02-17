@@ -135,7 +135,7 @@ def checkImpactTotal(inDict):
 
 ### sanity check attribute.confidentiality.data_total to ensure it's at least the max of data lost
 ## VERIS issue #143
-def checkImpactTotal(inDict):
+def checkDataTotal(inDict):
     if 'data' in inDict['attribute'].get('confidentiality', {}):
         max_of_amounts = max([k.get('amount', 0) for k in inDict['attribute']['confidentiality']['data']])
         if max_of_amounts > inDict['attribute']['confidentiality'].get('data_total', 0):
@@ -167,6 +167,8 @@ def main(incident):
   for e in checkImpactTotal(incident):
     yield e
   for e in checkMisuseActor(incident):
+    yield e
+  for e in checkDataTotal(incident):
     yield e
 
 if __name__ == '__main__':
