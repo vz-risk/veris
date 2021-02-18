@@ -133,8 +133,9 @@ def main(cfg):
 
             ## Add Web Application to vectors in all actions
             ## Issue 331
-            if "vector" in incident["action"].get("social", {}):
-                incident["action"]["social"]["vector"] = [u"Web application" if e ==  u"Website" else e for e in incident["action"]["social"]["vector"]] 
+            ## Below two lines removed as the update to social.vector.Web application did not get added.
+            #if "vector" in incident["action"].get("social", {}):
+            #    incident["action"]["social"]["vector"] = [u"Web application" if e ==  u"Website" else e for e in incident["action"]["social"]["vector"]] 
             if "vector" in incident["action"].get("malware", {}):
                 incident["action"]["malware"]["vector"] = [u"Web application - drive-by" if e ==  u"Web drive-by" else e for e in incident["action"]["malware"]["vector"]] 
                 incident["action"]["malware"]["vector"] = [u"Web application - download" if e ==  u"Web download" else e for e in incident["action"]["malware"]["vector"]] 
