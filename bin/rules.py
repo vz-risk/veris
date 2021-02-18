@@ -349,7 +349,7 @@ class Rules():
 
 
 
-        ### attribute.confidentiality.total_amount should be at least the max of the attribute.confidentiality.data.amount's
+        ### attribute.confidentiality.data_total should be at least the max of the attribute.confidentiality.data.amount's
         ## VERIS issue 143
         if 'data' in incident['attribute'].get('confidentiality', {}):
             max_of_amounts = max([k.get('amount', 0) for k in incident['attribute']['confidentiality']['data']])
@@ -395,19 +395,22 @@ class Rules():
                     each = "End-user"
                 if LooseVersion(incident['schema_version']) > LooseVersion("1.3"):
                     logging.debug("Version {0} greater than 1.3.".format(incident['schema_version']))
-                    if 'P - '+each not in asset_list:
+                    if 'P - '+each not in asset_list and 'P - '+each:
                         logging.info("{1}: Adding P - {0} to asset list since there was social engineering.".format(each,iid))
                         incident['asset']['assets'].append({'variety':'P - '+each})
+                        asset_list.append('P - {0}'.format(each))
                 else:
                     if each == "Unknown":
                         if 'P - Other' not in asset_list:
                             logging.info("%s: Adding P - Other to asset list since there was social engineering.",iid)
                             incident['asset']['assets'].append({'variety':'P - Other'})
+                            asset_list.append('P - {0}'.format(each))
                             continue
                     if 'P - '+each not in asset_list:
                         if 'P - '+each not in  ['P - Other', 'P - Unknown']:
                             logging.info("{1}: Adding P - {0} to asset list since there was social engineering.".format(each,iid))
                             incident['asset']['assets'].append({'variety':'P - '+each})
+                            asset_list.append('P - {0}'.format(each))
 
 
         # If SQLi was involved then there needs to be misappropriation too
@@ -530,7 +533,7 @@ class Rules():
                 incident['asset']['assets'] = []
             if "S - Web application" not in [d.get("variety", "") for d in incident['asset']['assets']]:
                 logging.info("Added asset.assets.variety.S - Web application to action.hacking.vector.Web application incident for response {0}".format(iid))
-
+                incident['asset']['assets'].append({"variety": "S - Web application"})
 
         # Set US country code to US from QM or QZ     
         # https://en.wikipedia.org/wiki/International_Standard_Recording_Code
@@ -796,18 +799,10 @@ class Rules():
         ## ASSET ##
         if 'asset' not in incident:
             logging.info("%s: auto-filled Unknown for entire asset section", iid)
-            incident['asset'] = { "assets" : [ { "variety" : "Unknown" } ] }
+            incident['asset'] = { "assets" : [] }
         if 'assets' not in incident['asset']:
-            logging.info("%s: auto-filled Unknown for asset.asseets section", iid)
-            incident['asset']['assets'] = [ { "variety" : "Unknown" } ]
-        for index, asset in enumerate(incident['asset']['assets']):
-            if 'variety' not in asset:
-                logging.info("%s: auto-filled Unknown for asset.asseets.variety ", iid)
-                asset['variety'] = "Unknown"
-            #compareFromTo('asset.assets.' + str(index) + '.variety', asset['variety'], schema['asset']['assets']['variety'])
-        #for method in ["cloud", "accessibility", "ownership", "management", "hosting"]:
-            #if method in incident:
-                #compareFromTo('asset.'+method, incident['asset'][method], schema['asset'][method])
+            logging.info("%s: auto-filled Unknown for asset.assets section", iid)
+            incident['asset']['assets'] = []
 
         ## ATTRIBUTE ##
         if 'attribute' not in incident:
@@ -902,13 +897,6 @@ class Rules():
 
         ### Rules from import SG
 
-        # KDT the script sometimes produces incidents with an asset array that has
-        # no entries. I'm too lazy to figure out where that happens so I'll just
-        # check for it here and fix it.
-        if len(incident['asset']['assets']) < 1:
-            incident['asset']['assets'].append({'variety':'Unknown'})
-            logging.info("No asset varieties listed in {0} so adding asset.assets.variety.Unknown".format(iid))
-
         # make sure variety and vector are in actions and of correct length
         if 'action' not in incident:
             incident['action'] = { "Unknown" : {} }
@@ -950,6 +938,20 @@ class Rules():
         if 'modified' not in incident['plus']:
             logging.info("%s: auto-filling now() for plus.modified", iid)
             incident['plus']['modified'] = mydate
+
+
+        ### DO LAST
+
+        # KDT the script sometimes produces incidents with an asset array that has
+        # no entries. I'm too lazy to figure out where that happens so I'll just
+        # check for it here and fix it.
+        if len(incident['asset']['assets']) < 1:
+            incident['asset']['assets'].append({'variety':'Unknown'})
+            logging.info("No asset varieties listed in {0} so adding asset.assets.variety.Unknown".format(iid))
+        for i in range(len(incident['asset']['assets'])):  
+            if 'variety' not in incident['asset']['assets'][i]:
+                logging.info("%s: auto-filled Unknown for asset.asseets.variety ", iid)
+                incident['asset']['assets'][i]['variety'] = "Unknown"
 
         return incident
 
