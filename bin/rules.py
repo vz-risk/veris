@@ -391,8 +391,9 @@ class Rules():
             for each in incident['asset']['assets']:
                 asset_list.append(each['variety'])
             for each in incident['action']['social']['target']:
-                if each == "End-user or employee": # in 1.3.4 we accidentally broke the link betwen action.social.target and asset.assets.P -.  target has "End-user or employee" and assets has "P - End-user"
-                    each = "End-user"
+                if LooseVersion(incident['schema_version']) == LooseVersion("1.3.4"):
+                    if each == "End-user or employee": # in 1.3.4 we accidentally broke the link betwen action.social.target and asset.assets.P -.  target has "End-user or employee" and assets has "P - End-user"
+                        each = "End-user"
                 if LooseVersion(incident['schema_version']) > LooseVersion("1.3"):
                     logging.debug("Version {0} greater than 1.3.".format(incident['schema_version']))
                     if 'P - '+each not in asset_list and 'P - '+each:
@@ -411,6 +412,8 @@ class Rules():
                             logging.info("{1}: Adding P - {0} to asset list since there was social engineering.".format(each,iid))
                             incident['asset']['assets'].append({'variety':'P - '+each})
                             asset_list.append('P - {0}'.format(each))
+            # remove duplicates likely to crop up (via https://stackoverflow.com/questions/9427163/remove-duplicate-dict-in-list-in-python)
+            incident['asset']['assets'] = [dict(t) for t in {tuple(d.items()) for d in incident['asset']['assets']}]
 
 
         # If SQLi was involved then there needs to be misappropriation too

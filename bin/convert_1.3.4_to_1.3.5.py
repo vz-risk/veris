@@ -146,6 +146,8 @@ def main(cfg):
             ### asset.assets.P - End-user defined as 'End-user or regular employee' is being split into asset.assets.P - End-user and asset.assets.P - Other employee
             # per vz-risk/VERIS issue #306
             incident['asset']['assets']= [enum if enum.get(u"variety", "") != "P - End-user" else dict(enum, **{u"variety": u"P - End-user or employee"}) for enum in incident['asset']['assets']]
+            # remove duplicates likely to crop up (via https://stackoverflow.com/questions/9427163/remove-duplicate-dict-in-list-in-python)
+            incident['asset']['assets'] = [dict(t) for t in {tuple(d.items()) for d in incident['asset']['assets']}]
 
             ## Summary now required
             ## per vz-risk/VERIS issue #305
