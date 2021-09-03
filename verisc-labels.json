@@ -1605,7 +1605,7 @@
       "NA": " (cloud.No) Cloud is not applicable to this incident. Only use if computer's weren't involved (people, media, etc). Do not use for Desktops or other user assets."
     },
     "hosting": {
-      "External - unknown environment": "A third party provided hosted the affected asset, but it is unknown whether the victim organization’s environment was shared or dedicated.",
+      "External - unknown environment": "A third party provider hosted the affected asset, but it is unknown whether the victim organization’s environment was shared or dedicated.",
       "External - dedicated environment": "A third party provider hosted the affected asset on servers dedicated to the victim organization.",
       "External - shared environment": "A third party provider hosted the affected asset on a shared physical device. This is common in web hosting services where multiple organizations’ web applications are resident on the same physical server.",
       "Internal": "The affected asset was hosted within the victim organization’s location.",
