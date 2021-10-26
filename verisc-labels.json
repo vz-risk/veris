@@ -523,8 +523,9 @@
   "action": {
     "hacking": {
       "variety": {
-        "Abuse of functionality": "Abuse of functionality",
-        "Brute force": "Brute force or password guessing attacks",
+        "Abuse of functionality": "Abuse of functionality.",
+        "Backdoor": "Hacking action that creates a backdoor for use.",
+        "Brute force": "Brute force or password guessing attacks.",
         "Buffer overflow": "Buffer overflow. Child of 'Exploit vuln'.",
         "Cache poisoning": "Cache poisoning. Child of 'Exploit vuln'.",
         "Cryptanalysis": "Cryptanalysis. Child of 'Exploit vuln'.",
@@ -540,7 +541,7 @@
         "HTTP request smuggling": "HTTP request smuggling. Child of 'Exploit vuln'.",
         "HTTP request splitting": "HTTP request splitting. Child of 'Exploit vuln'.",
         "HTTP response smuggling": "HTTP response smuggling. Child of 'Exploit vuln'.",
-        "HTTP Response Splitting": "HTTP Response Splitting. Child of 'Exploit vuln'.",
+        "HTTP response splitting": "HTTP response splitting. Child of 'Exploit vuln'.",
         "Insecure deserialization": "iterating over sequential or obvious values. https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization. Child of 'Exploit vuln'.",
         "Integer overflows": "Integer overflows. Child of 'Exploit vuln'.",
         "LDAP injection": "LDAP injection. Child of 'Exploit vuln'.",
@@ -562,7 +563,6 @@
         "SQLi": "SQL injection. Child of 'Exploit vuln'.",
         "SSI injection": "SSI injection. Child of 'Exploit vuln'.",
         "URL redirector abuse": "URL redirector abuse. Child of 'Exploit vuln'.",
-        "Use of backdoor or C2": "Use of Backdoor or C2 channel",
         "Use of stolen creds": "Use of stolen authentication credentials (including credential stuffing)",
         "User breakout": "Elevation of privilege by another customer in shared environment. Child of 'Exploit vuln'.",
         "Virtual machine escape": "Virtual machine escape. Child of 'Exploit vuln'.",
@@ -578,7 +578,7 @@
       },
       "vector": {
         "3rd party desktop": "3rd party online desktop sharing (LogMeIn, Go2Assist)",
-        "Backdoor or C2": "Backdoor or command and control channel",
+        "Backdoor": "Hacking actions taken through a backdoor.  C2 is only used by malware.",
         "Command shell": "Remote shell",
         "Desktop sharing": "Graphical desktop sharing (RDP, VNC, PCAnywhere, Citrix)",
         "Desktop sharing software": "Superset of 'Desktop sharing' and '3rd party desktop'.  Please use in place of the other two",
@@ -607,9 +607,10 @@
       "variety": {
         "Adminware": "System or network utilities (e.g., PsTools, Netcat)",
         "Adware": "Adware",
-        "Backdoor": "Backdoor (enable remote access). Child of 'RAT' when combined with 'Trojan'",
+        "Backdoor": "Malware creates a backdoor capability for hacking. Child of 'RAT' when combined with 'Trojan'. Child of 'Backdoor or C2'.",
+        "Backdoor or C2": "Malware creates a remote control capability, but it's unclear if it's a backdoor for hacking or C2 for malware. Parent of 'C2' and 'Backdoor'.",
         "Brute force": "Brute force attack",
-        "C2": "Command and control (C2)",
+        "C2": "Malware creates Command and Control capability for malware. Child of 'Backdoor or C2'.",
         "Capture app data": "Capture data from application or system process",
         "Capture stored data": "Capture data stored on system disk",
         "Click fraud": "Click fraud, whether or not cryptocurrency mining.  Also mark 'Click fraud or cryptocurrency mining'. Child of 'Click fraud and cryptocurrency mining'.",
@@ -642,6 +643,7 @@
         "Unknown": "Unknown"
       },
       "vector": {
+        "C2": "Malware actions taken through a Command and Control (C2) channel.  Backdoor is only used by hacking.",
         "Direct install": "Directly installed or inserted by threat agent (after system access)",
         "Download by malware": "Downloaded and installed by local malware",
         "Email": "Email. Parent to 'Email attachment', 'Email autoexecute', 'Email link', 'Email unknown'",
@@ -699,7 +701,7 @@
         "SMS": "SMS or texting",
         "Social media": "Social media or networking",
         "Software": "Software",
-        "Website": "Website",
+        "Web application": "Web application",
         "Other": "Other",
         "Unknown": "Unknown"
       },

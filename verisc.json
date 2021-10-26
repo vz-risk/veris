@@ -200,6 +200,7 @@
           "minProperties": 1,
           "properties": {
             "amount": {
+              "definition": "The number of known secondary victims. Should always be a positive number if victim_id is filled in.  May not represent all victims if some are unknown.",
               "type": "integer"
             },
             "notes": {

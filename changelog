@@ -11,10 +11,16 @@ Version 1.3.6
 • https://github.com/vz-risk/veris/issues/369 - Attempted to fix typos. May require editing the webapp.
 • https://github.com/vz-risk/veris/issues/310 - Updated actor definitions.
 • https://github.com/vz-risk/veris/issues/280 - Updated physical in value_chain
+• https://github.com/vz-risk/veris/issues/180 - Updated checkValidity to check victim.region
+• https://github.com/vz-risk/veris/issues/271 - if action.malware.variety.DoS -> actor.*.motive.Secondary
+• https://github.com/vz-risk/veris/issues/383 - Clarify Backdoor and C2. In general, hacking can provide a backdoor. Malware can provide a backdoor or C2. Malware can _use_ C2 and hacking can _use_ a backdoor.
+• https://github.com/vz-risk/veris/issues/386 - action.hacking.variety.HTTP Response Splitting -> action.hacking.variety.HTTP response splitting
+• https://github.com/vz-risk/veris/issues/401 - action.social.vector.Website -> action.social.vector.Web application (consistent with other actions)
+• https://github.com/vz-risk/veris/issues/405 - plus.analysis_status.Needs review -> plus.analysis_status.Ready for review (VCDB & convert_1.3.5_to_1.3.6.py)
+• https://github.com/vz-risk/veris/issues/407 - Added validation rule to throw an derror if victim.secondary.victim_id is populated but not victim.secondary.amount
 • 
 • 
 • 
-
 
 
 

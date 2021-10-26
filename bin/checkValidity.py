@@ -149,6 +149,50 @@ def checkMisuseActor(inDict):
         yield ValidationError("Misuse in action, but no internal or partner actor defined.  Per VERIS issue #229, there should always be an internal or partner actor if there is a misuse action.")
 
 
+### Validate victim region field
+### VERIS issue #180
+def checkRegion(inDict):
+    regions = {
+        "002": ["011", "014", "017", "018", "015"], # Africa
+        "010": ["000"], # Antarctica
+        "019": ["021", "005", "013", "029", "419"], # America
+        "419": ["005", "013", "029"], # Latin America and Caribbean 
+        "142": ["030", "034", "035", "143", "145"], # Asia
+        "150": ["039", "151", "154", "830", "155"], # Europe
+        "009": ["053", "054", "057", "061"] # Oceania
+    }
+    non_used_regions = {
+        "001": "000", # world
+        "020": "002", # sub-saharan africa
+        "003": "019" # americas"
+    }
+
+    region = inDict.get('victim', {}).get('region', None)
+    if region is not None:
+        if type(region) != str or len(region) != 6:
+            yield ValidationError("Victim.region {0} is not a six character string.".format(region))
+        else:
+            super_region = region[:3]
+            sub_region = region[3:]
+            if super_region in non_used_regions.keys():
+                yield ValidationError("Replace first half of victim.region ('{0}') with '{1}'.".format(super_region, non_used_regions[super_region]))
+            elif sub_region in non_used_regions.values():
+                yield ValidationError("Replace seoncd half of victim.region ('{0}') with '000' unless you know the correct region.".format(sub_region))
+            elif sub_region not in regions[super_region]:
+                yield ValidationError("victim.region second half, ('{0}') does not match first half '{1}'".format(sub_region, super_region) + 
+                                      "Please replace the second half with one of {0}.".format(",".join(regions[super_region])))
+
+
+### Validate that secondary.victim.amount is > 0 if victim.secondary.victim_id is not empty
+### VERIS issue #407
+def checkSecondaryVictimAmount(inDict):
+    secondary_victims = inDict.get('victim', {}).get('secondary', {}).get('victim_id', [])
+    secondary_victim_amount = inDict.get('victim', {}).get('secondary', {}).get('amount', 0)
+    if len(secondary_victims) > secondary_victim_amount:
+        yield ValidationError("victim.secondary.victim_id lists {0} victims, however victim.secondary.amount is less or missing. Check that the amount is correct.  The amount should be the number of known victims (even if unknown victims may exist.)".format(len(secondary_victims)))
+
+
+
 def main(incident):
   for e in checkMalwareIntegrity(incident):
     yield e
@@ -169,6 +213,8 @@ def main(incident):
   for e in checkMisuseActor(incident):
     yield e
   for e in checkDataTotal(incident):
+    yield e
+  for e in checkRegion(incident):
     yield e
 
 if __name__ == '__main__':
