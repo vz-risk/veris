@@ -1,3 +1,23 @@
+Version 1.3.6
+=============
+21-10-26
+• https://github.com/vz-risk/veris/issues/403 - change 'aquire' to 'acquire' in value_chain definition
+• https://github.com/vz-risk/veris/issues/406 - Added schema_name field.
+• https://github.com/vz-risk/veris/issues/402 - Updated Programming error definition
+• https://github.com/vz-risk/veris/issues/385 - Added 'Evasion' enumeration in 'Hacking' and 'Malware'
+• https://github.com/vz-risk/veris/issues/376 - Improved Phishing & Pretexting definitions.
+• https://github.com/vz-risk/veris/issues/374 - Add 'Other network service' hackking vector
+• https://github.com/vz-risk/veris/issues/373 - Add 'Offboarding' to internal discovery variety.
+• https://github.com/vz-risk/veris/issues/369 - Attempted to fix typos. May require editing the webapp.
+• https://github.com/vz-risk/veris/issues/310 - Updated actor definitions.
+• https://github.com/vz-risk/veris/issues/280 - Updated physical in value_chain
+• 
+• 
+• 
+
+
+
+
 Version 1.3.5
 =============
 20-12-01
