@@ -586,6 +586,55 @@ class Rules():
         if 'source_id' in incident:
             incident['source_id'] = incident['source_id'].lower()
 
+
+        ## added with 1.3.6
+
+        # Per https://github.com/vz-risk/veris/issues/271
+        # infer actor.*.motive.Secondary if malware.variety.DoS
+        if 'DoS' in incident['action'].get('malware', {}).get('variety', []) and LooseVersion(incident['schema_version']) >= LooseVersion("1.3.6"):
+            actors = incident['actor'].keys()
+            if 'external' in actors:
+                actors = "external"
+            elif 'partner' in actors:
+                actors = "partner"
+            elif 'internal' in actors:
+                actors = "internal"
+            else:
+                actors = "unknown"
+            if actors != "unknown":
+                motive = incident['actor'][actors].get('motive', [])
+                if 'Secondary' not in motive:
+                    if 'Unknown' in motive & len(motive) == 1: # if the only motive is 'Unknown', remove it to replace with Secondary
+                        motive.remove('Unknown')
+                    motive.append('Secondary')
+                    incident['actor'][actors]['motive'] = motive
+                    notes = incident['actor'][actors].get('notes', '')
+                    notes = notes + "  actor.{0}.motive.Secondary added because action.malware.variety.DoS exists.".format(actors)
+                    incident['actor'][actors]['notes'] = notes
+
+        ### Hierarchical Field
+        # Added v1.3.6
+        # `action.malware.variety.Backdoor or C2` is a parent of `action.malware.variety.Backdoor` and `action.malware.variety.C2`
+        # per vz-risk/VERIS issue # 383
+        if 'malware' in incident.get('action', {}):
+            if ('C2' in incident['action']['malware'].get('variety', []) or \
+            'Backdoor' in incident['action']['malware'].get('variety', [])) and \
+            'Backdoor or C2' not in incident['action']['malware'].get('variety', []) and \
+            LooseVersion(incident['schema_version']) >= LooseVersion("1.3.6"):
+                incident['action']['malware']['variety'].append('Backdoor or C2')
+
+        ### Validate that secondary.victim.amount is > 0 if victim.secondary.victim_id is not empty
+        ### VERIS issue #407
+        secondary_victims = incident.get('victim', {}).get('secondary', {}).get('victim_id', [])
+        secondary_victim_amount = incident.get('victim', {}).get('secondary', {}).get('amount', 0)
+        if secondary_victim_amount < 0: # I can't believe someone would make this negative, but just in case....
+            secondary_victim_amount == 0
+            incident['victim']['secondary']['amount'] == 0
+        if len(secondary_victims) > secondary_victim_amount:
+            incident['victim']['secondary']['amount'] = len(secondary_victims)
+
+
+
         return incident
 
 
