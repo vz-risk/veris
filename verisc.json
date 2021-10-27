@@ -196,6 +196,7 @@
           "type": "string"
         },
         "secondary": {
+          "description": "Secondary victims indicates that the breach being coded is the first part of a supply chain breach.",
           "additionalProperties": false,
           "minProperties": 1,
           "properties": {

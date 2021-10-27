@@ -609,7 +609,7 @@ class Rules():
                     motive.append('Secondary')
                     incident['actor'][actors]['motive'] = motive
                     notes = incident['actor'][actors].get('notes', '')
-                    notes = notes + "  actor.{0}.motive.Secondary added because action.malware.variety.DoS exists.".format(actors)
+                    notes = notes + "\n" + "actor.{0}.motive.Secondary added because action.malware.variety.DoS exists.".format(actors)
                     incident['actor'][actors]['notes'] = notes
 
         ### Hierarchical Field
@@ -632,6 +632,112 @@ class Rules():
             incident['victim']['secondary']['amount'] == 0
         if len(secondary_victims) > secondary_victim_amount:
             incident['victim']['secondary']['amount'] = len(secondary_victims)
+
+
+        ### Check value_chain enumerations that are likely based on actions taken
+        ### VERIS issue #400
+        if 'Phishing' in incident['action'].get('social', {}).get('variety', []):
+            add_value_chain = False
+            if 'value_chain' not in incident:
+                incident['value_chain'] = {'targeting': {'variety': ['Email addresses']}}
+                add_value_chain = True
+            elif 'targeting' not in incident['value_chain']:
+                incident['value_chain']['targeting'] = {'variety': ['Email addresses']}
+                add_value_chain = True
+            elif 'variety' not in incident['value_chain']['targeting']:
+                incident['value_chain']['targeting']['variety'] = ['Email addresses']
+                add_value_chain = True
+            elif 'Email addresses' not in incident['value_chain']['targeting']['variety']:
+                incident['value_chain']['targeting']['variety'].append("Email addresses")
+                add_value_chain = True
+            if add_value_chain:
+                notes = incident['value_chain']['targeting']['variety'].get('notes', "")
+                incident['value_chain']['targeting']['variety'] = notes + "\n" + "value_chain.targeting.variety.Email addresses added because action.social.vector.Email exists."
+            add_value_chain = False
+            if 'value_chain' not in incident:
+                incident['value_chain'] = {'development': {'variety': ['Email']}}
+                add_value_chain = True
+            elif 'development' not in incident['value_chain']:
+                incident['value_chain']['development'] = {'variety': ['Email']}
+                add_value_chain = True
+            elif 'variety' not in incident['value_chain']['development']:
+                incident['value_chain']['development']['variety'] = ['Email']
+                add_value_chain = True
+            elif 'Email' not in incident['value_chain']['development']['variety']:
+                incident['value_chain']['development']['variety'].append("Email")
+                add_value_chain = True
+            if add_value_chain:
+                notes = incident['value_chain']['development']['variety'].get('notes', "")
+                incident['value_chain']['development']['variety'] = notes + "\n" + "value_chain.development.variety.Email added because action.social.vector.Email exists."
+       if 'C2' in incident['action'].get('malware', {}).get('vector', []):
+            add_value_chain = False
+            if 'value_chain' not in incident:
+                incident['value_chain'] = {'non-distribution services': {'variety': ['Trojan']}}
+                add_value_chain = True
+            elif 'non-distribution services' not in incident['value_chain']:
+                incident['value_chain']['non-distribution services'] = {'variety': ['Trojan']}
+                add_value_chain = True
+            elif 'variety' not in incident['value_chain']['non-distribution services']:
+                incident['value_chain']['non-distribution services']['variety'] = ['Trojan']
+                add_value_chain = True
+            elif 'Trojan' not in incident['value_chain']['non-distribution services']['variety']:
+                incident['value_chain']['non-distribution services']['variety'].append("Trojan")
+                add_value_chain = True
+            if add_value_chain:
+                notes = incident['value_chain']['non-distribution services']['variety'].get('notes', "")
+                incident['value_chain']['non-distribution services']['variety'] = notes + "\n" + "value_chain.development.variety.non-distribution services added because action.malware.vector.C2 exists."
+        if 'Ransomware' in incident['action'].get('malware', {}).get('variety', []):
+            add_value_chain = False
+            if 'value_chain' not in incident:
+                incident['value_chain'] = {'cash-out': {'variety': ['Cryptocurrency']}}
+                add_value_chain = True
+            elif 'cash-out' not in incident['value_chain']:
+                incident['value_chain']['cash-out'] = {'variety': ['Cryptocurrency']}
+                add_value_chain = True
+            elif 'variety' not in incident['value_chain']['cash-out']:
+                incident['value_chain']['cash-out']['variety'] = ['Cryptocurrency']
+                add_value_chain = True
+            elif 'Trojan' not in incident['value_chain']['cash-out']['variety']:
+                incident['value_chain']['cash-out']['variety'].append("Cryptocurrency")
+                add_value_chain = True
+            if add_value_chain:
+                notes = incident['value_chain']['cash-out']['variety'].get('notes', "")
+                incident['value_chain']['cash-out']['variety'] = notes + "\n" + "value_chain.development.variety.Cryptocurrency added because action.malware.variety.Ransomware exists."
+        if 'Trojan' in incident['action'].get('malware', {}).get('variety', []):
+            add_value_chain = False
+            if 'value_chain' not in incident:
+                incident['value_chain'] = {'development': {'variety': ['Trojan']}}
+                add_value_chain = True
+            elif 'development' not in incident['value_chain']:
+                incident['value_chain']['development'] = {'variety': ['Trojan']}
+                add_value_chain = True
+            elif 'variety' not in incident['value_chain']['development']:
+                incident['value_chain']['development']['variety'] = ['Trojan']
+                add_value_chain = True
+            elif 'Trojan' not in incident['value_chain']['development']['variety']:
+                incident['value_chain']['development']['variety'].append("Trojan")
+                add_value_chain = True
+            if add_value_chain:
+                notes = incident['value_chain']['development']['variety'].get('notes', "")
+                incident['value_chain']['development']['variety'] = notes + "\n" + "value_chain.development.variety.Trojan added because action.malware.variety.Trojan exists."
+        if 'Email' in incident['action'].get('social', {}).get('vector', []):
+            add_value_chain = False
+            if 'value_chain' not in incident:
+                incident['value_chain'] = {'distribution': {'variety': ['Email']}}
+                add_value_chain = True
+            elif 'distribution' not in incident['value_chain']:
+                incident['value_chain']['distribution'] = {'variety': ['Email']}
+                add_value_chain = True
+            elif 'variety' not in incident['value_chain']['distribution']:
+                incident['value_chain']['distribution']['variety'] = ['Email']
+                add_value_chain = True
+            elif 'Email' not in incident['value_chain']['distribution']['variety']:
+                incident['value_chain']['distribution']['variety'].append("Email")
+                add_value_chain = True
+            if add_value_chain:
+                notes = incident['value_chain']['distribution']['variety'].get('notes', "")
+                incident['value_chain']['development']['variety'] = notes + "\n" + "value_chain.distribution.variety.Email added because action.social.vector.Email exists."
+
 
 
 
