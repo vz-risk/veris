@@ -669,7 +669,7 @@ class Rules():
             if add_value_chain:
                 notes = incident['value_chain']['development']['variety'].get('notes', "")
                 incident['value_chain']['development']['variety'] = notes + "\n" + "value_chain.development.variety.Email added because action.social.vector.Email exists."
-       if 'C2' in incident['action'].get('malware', {}).get('vector', []):
+        if 'C2' in incident['action'].get('malware', {}).get('vector', []):
             add_value_chain = False
             if 'value_chain' not in incident:
                 incident['value_chain'] = {'non-distribution services': {'variety': ['Trojan']}}

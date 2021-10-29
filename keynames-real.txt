@@ -100,6 +100,7 @@ notes
 plus.master_id
 plus.row_number
 reference
+schema_name
 schema_version
 security_incident
 source_id
