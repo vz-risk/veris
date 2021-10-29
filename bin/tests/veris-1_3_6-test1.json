@@ -1,0 +1,76 @@
+{
+    "incident_id": "TEST_ID",
+    "security_incident": "Confirmed",
+    "summary": "test",
+    "source_id": "vcdb",
+    "confidence": "High",
+    "timeline": {
+        "incident": {
+            "year": 2020,
+            "month": 9,
+            "day": 17
+        },
+        "compromise": {
+            "unit": "Minutes"
+        },
+        "exfiltration": {
+            "unit": "Seconds"
+        },
+        "discovery": {
+            "unit": "Months",
+            "value": 10
+        },
+        "containment": {
+            "unit": "Weeks"
+        }
+    },
+    "victim": {
+        "government": ["NA"],
+        "employee_count": "Unknown",
+        "industry": "721110",
+        "country": [
+            "Unknown"
+        ]
+    },
+    "action": {
+        "unknown": {
+            "notes": "TEST ACTION"
+        }
+    },
+    "actor": {
+        "unknown": {
+            "notes": "TEST ACTOR"
+        }
+    },
+    "asset": {
+        "total_amount": 1,
+        "assets": [
+            {
+                "variety": "Unknown"
+            }
+        ],
+        "cloud": ["Unknown"]
+    },
+    "attribute": {
+        "unknown": {
+            "notes": "TEST ATTIRBUTE"
+        }
+    },
+    "targeted": "Opportunistic",
+    "discovery_method": {
+        "unknown": true
+    },
+    "value_chain": {
+        "NA": true
+    },
+    "impact": {
+        "overall_rating": "Insignificant"
+    },
+    "plus": {
+        "sub_source": "test",
+        "created": "2019-10-03T19:47:42.909Z",
+        "modified": "2019-10-03T19:47:42.909Z",
+        "master_id": "8b57fb92-16e4-4748-89c7-ab7fa9ea183a"
+    },
+    "schema_version": "1.3.6"
+}
