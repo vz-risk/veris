@@ -13,6 +13,7 @@ import logging
 import tempfile
 from copy import deepcopy
 import uuid
+from pprint import pprint
 
 veris = "/Users/v685573/Documents/Development/vzrisk/veris/"
 cfg = {
@@ -122,6 +123,48 @@ class TestRules(unittest.TestCase):
         in_incident["action"] = {"hacking": {"variety": ['Use of backdoor or C2' ], "vector": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
         self.assertIn('Backdoor', out_incident['action']['hacking']['vector'])
+
+    def test386_1(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["action"] = {"hacking": {"variety": ['HTTP Response Splitting'], "vector": ["Unknown"]}}
+        out_incident = apply_convert(in_incident, convert)
+        self.assertNotIn('HTTP Response Splitting', out_incident['action']['hacking']['variety'])
+    def test386_2(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["action"] = {"hacking": {"variety": ['HTTP Response Splitting'], "vector": ["Unknown"]}}
+        out_incident = apply_convert(in_incident, convert)
+        self.assertIn('HTTP response splitting', out_incident['action']['hacking']['variety'])
+
+    def test401_1(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["action"] = {"social": {"variety": ['Unknown'], "vector": ["Website"]}}
+        out_incident = apply_convert(in_incident, convert)
+        self.assertNotIn('Website', out_incident['action']['social']['vector'])
+    def test401_2(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["action"] = {"social": {"variety": ['Unknown'], "vector": ["Website"]}}
+        out_incident = apply_convert(in_incident, convert)
+        self.assertIn('Web application', out_incident['action']['social']['vector'])
+
+    def test405_1(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["plus"]["analysis_status"] = 'Needs review'
+        out_incident = apply_convert(in_incident, convert)
+        #pprint(out_incident)
+        self.assertEqual('Ready for review', out_incident["plus"]["analysis_status"])
+
+    def test407_1(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["victim"]['secondary'] = {"victim_id": ['victim2', 'victim3', 'victim4']}
+        out_incident = apply_convert(in_incident, convert)
+        #pprint(out_incident)
+        self.assertEqual(len(out_incident["victim"]['secondary']["victim_id"]), out_incident["victim"]['secondary']['amount'])
 
 
 

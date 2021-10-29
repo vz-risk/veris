@@ -180,7 +180,7 @@ def main(cfg):
 
             # plus.analysis_status.Needs review -> plus.analysis_status.Ready for review
             # per vz-risk/VERIS issue # 405
-            if 'Ready for review' == incident.get('plus', {}).get('analysis_status', ""):
+            if 'Needs review' == incident.get('plus', {}).get('analysis_status', ""):
                 incident['plus']['analysis_status'] = 'Ready for review'
 
             ### Validate that secondary.victim.amount is > 0 if victim.secondary.victim_id is not empty
