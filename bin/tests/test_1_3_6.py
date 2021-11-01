@@ -88,7 +88,7 @@ class TestRules(unittest.TestCase):
     def test271_1(self):
         in_incident = deepcopy(base_incident)
         in_incident["schema_version"] = "1.3.5"
-        in_incident["action"] = {"malware": {"variety": ["DoS"]}}
+        in_incident["action"] = {"malware": {"variety": ["DoS"], "vector":["Unknown"]}}
         in_incident["actor"] = {"internal": {"variety": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
         motives = list(set(
@@ -98,31 +98,41 @@ class TestRules(unittest.TestCase):
         ))
         #pprint(out_incident)
         self.assertIn('Secondary', motives)
+        for error in validator.iter_errors(out_incident):
+            raise error
 
     def test383_1(self):
         in_incident = deepcopy(base_incident)
         in_incident["schema_version"] = "1.3.5"
-        in_incident["action"] = {"malware": {"variety": ["C2"]}}
+        in_incident["action"] = {"malware": {"variety": ["C2"], "vector": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
         self.assertIn('Backdoor or C2', out_incident['action']['malware']['variety'])
+        for error in validator.iter_errors(out_incident):
+            raise error
     def test383_2(self):
         in_incident = deepcopy(base_incident)
         in_incident["schema_version"] = "1.3.5"
-        in_incident["action"] = {"malware": {"variety": ["Backdoor"]}}
+        in_incident["action"] = {"malware": {"variety": ["Backdoor"], "vector": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
         self.assertIn('Backdoor or C2', out_incident['action']['malware']['variety'])
+        for error in validator.iter_errors(out_incident):
+            raise error
     def test383_3(self):
         in_incident = deepcopy(base_incident)
         in_incident["schema_version"] = "1.3.5"
         in_incident["action"] = {"hacking": {"variety": ['Use of backdoor or C2' ], "vector": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
         self.assertNotIn('Use of backdoor or C2' , out_incident['action']['hacking']['variety'])
+        for error in validator.iter_errors(out_incident):
+            raise error
     def test383_4(self):
         in_incident = deepcopy(base_incident)
         in_incident["schema_version"] = "1.3.5"
         in_incident["action"] = {"hacking": {"variety": ['Use of backdoor or C2' ], "vector": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
         self.assertIn('Backdoor', out_incident['action']['hacking']['vector'])
+        for error in validator.iter_errors(out_incident):
+            raise error
 
     def test386_1(self):
         in_incident = deepcopy(base_incident)
@@ -130,25 +140,26 @@ class TestRules(unittest.TestCase):
         in_incident["action"] = {"hacking": {"variety": ['HTTP Response Splitting'], "vector": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
         self.assertNotIn('HTTP Response Splitting', out_incident['action']['hacking']['variety'])
+        for error in validator.iter_errors(out_incident):
+            raise error
     def test386_2(self):
         in_incident = deepcopy(base_incident)
         in_incident["schema_version"] = "1.3.5"
         in_incident["action"] = {"hacking": {"variety": ['HTTP Response Splitting'], "vector": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
         self.assertIn('HTTP response splitting', out_incident['action']['hacking']['variety'])
+        for error in validator.iter_errors(out_incident):
+            raise error
 
     def test401_1(self):
         in_incident = deepcopy(base_incident)
         in_incident["schema_version"] = "1.3.5"
-        in_incident["action"] = {"social": {"variety": ['Unknown'], "vector": ["Website"]}}
+        in_incident["action"] = {"social": {"variety": ['Unknown'], "vector": ["Website"], "target": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
         self.assertNotIn('Website', out_incident['action']['social']['vector'])
-    def test401_2(self):
-        in_incident = deepcopy(base_incident)
-        in_incident["schema_version"] = "1.3.5"
-        in_incident["action"] = {"social": {"variety": ['Unknown'], "vector": ["Website"]}}
-        out_incident = apply_convert(in_incident, convert)
         self.assertIn('Web application', out_incident['action']['social']['vector'])
+        for error in validator.iter_errors(out_incident):
+            raise error
 
     def test405_1(self):
         in_incident = deepcopy(base_incident)
@@ -157,6 +168,8 @@ class TestRules(unittest.TestCase):
         out_incident = apply_convert(in_incident, convert)
         #pprint(out_incident)
         self.assertEqual('Ready for review', out_incident["plus"]["analysis_status"])
+        for error in validator.iter_errors(out_incident):
+            raise error
 
     def test407_1(self):
         in_incident = deepcopy(base_incident)
@@ -165,7 +178,77 @@ class TestRules(unittest.TestCase):
         out_incident = apply_convert(in_incident, convert)
         #pprint(out_incident)
         self.assertEqual(len(out_incident["victim"]['secondary']["victim_id"]), out_incident["victim"]['secondary']['amount'])
+        for error in validator.iter_errors(out_incident):
+            raise error
 
+    def test400_1(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["action"] = {"social": {"variety": ['Phishing'], "vector": ["Unknown"], "target": ["Unknown"]}}
+        out_incident = apply_convert(in_incident, convert)
+        self.assertIn('Email addresses', out_incident['value_chain']['targeting']['variety'])
+        self.assertGreater(len(out_incident['value_chain']['targeting']['notes']), 0)
+        self.assertIn('Email', out_incident['value_chain']['development']['variety'])
+        self.assertGreater(len(out_incident['value_chain']['development']['notes']), 0)
+        for error in validator.iter_errors(out_incident):
+            raise error
+    def test400_2(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["action"] = {"malware": {"variety": ['Unknown'], "vector": ["C2"]}}
+        out_incident = apply_convert(in_incident, convert)
+        self.assertIn('C2', out_incident['value_chain']['non-distribution services']['variety'])
+        self.assertGreater(len(out_incident['value_chain']['non-distribution services']['notes']), 0)
+        for error in validator.iter_errors(out_incident):
+            raise error
+    def test400_3(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["action"] = {"malware": {"variety": ['Ransomware'], "vector": ["Unknown"]}}
+        out_incident = apply_convert(in_incident, convert)
+        self.assertIn('Cryptocurrency', out_incident['value_chain']['cash-out']['variety'])
+        self.assertGreater(len(out_incident['value_chain']['cash-out']['notes']), 0)
+        for error in validator.iter_errors(out_incident):
+            raise error
+    def test400_4(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["action"] = {"malware": {"variety": ['Trojan'], "vector": ["Unknown"]}}
+        out_incident = apply_convert(in_incident, convert)
+        self.assertIn('Trojan', out_incident['value_chain']['development']['variety'])
+        self.assertGreater(len(out_incident['value_chain']['development']['notes']), 0)
+        for error in validator.iter_errors(out_incident):
+            raise error
+    def test400_5(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["action"] = {"social": {"variety": ['Unknown'], "vector": ["Email"], "target": ["Unknown"]}}
+        out_incident = apply_convert(in_incident, convert)
+        self.assertIn('Email', out_incident['value_chain']['distribution']['variety'])
+        self.assertGreater(len(out_incident['value_chain']['distribution']['notes']), 0)
+        for error in validator.iter_errors(out_incident):
+            raise error
+
+    def test315_1(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["action"] = {"hacking": {"variety": ['Footprinting'], "vector": ["Unknown"]}}
+        out_incident = apply_convert(in_incident, convert)
+        #pprint(out_incident)
+        self.assertNotIn('Footprinting', out_incident['action']['hacking']['variety'])
+        self.assertIn('Profile host', out_incident['action']['hacking']['variety'])
+        for error in validator.iter_errors(out_incident):
+            raise error
+    def test315_2(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.5"
+        in_incident["action"] = {"malware": {"variety": ['SQL injection'], "vector": ["Unknown"]}}
+        out_incident = apply_convert(in_incident, convert)
+        #pprint(out_incident)
+        self.assertNotIn('SQL injection', out_incident['action'].get('malware', {"variety":[], "vector":[]})['variety'])
+        self.assertIn('SQLi', out_incident['action']['hacking']['variety'])
+        for error in validator.iter_errors(out_incident):
+            raise error
 
 
 class TestConvert(unittest.TestCase):

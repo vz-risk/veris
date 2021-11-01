@@ -2049,6 +2049,7 @@
     "development": {
       "variety": [
         "Bot", 
+        "Email", 
         "Exploit", 
         "Exploit Kits", 
         "Payload", 
