@@ -210,7 +210,7 @@ def checkValueChain(inDict):
         if "Ransomware" not in inDict.get('value_chain', {}).get('development', {}).get('variety', []):
             yield ValidationError("Because there is action.malware.variety.Ransomware, consider adding value_chain.distribution.variety.Ransomware.")
             any_value_chain_recommendation = True
-### THis is recommend only
+### This is recommend only
 #    if 'Trojan' in inDict['action'].get('malware', {}).get('variety', []) and "Trojan" not in inDict.get('value_chain', {}).get('development', {}).get('variety', []):
 #        yield ValidationError("Because there is action.malware.variety.Trojan, value_chain.development.variety.Trojan should also.  Please update.")
     if 'Email' in inDict['action'].get('social', {}).get('vector', []):
@@ -246,6 +246,9 @@ def checkValueChain(inDict):
         any_value_chain_recommendation = True
     if 'Exploit misconfig' in inDict['action'].get('hacking', {}).get('variety', []) and "Misconfigurations" not in inDict.get('value_chain', {}).get('targeting', {}).get('variety', []):
         yield ValidationError("Because there is action.hacking.variety.Exploit misconfig, consider adding value_chain.targeting.variety.Misconfigurations.")
+        any_value_chain_recommendation = True
+    if 'Exploit misconfig' in inDict['action'].get('malware', {}).get('variety', []) and "Misconfigurations" not in inDict.get('value_chain', {}).get('targeting', {}).get('variety', []):
+        yield ValidationError("Because there is action.malware.variety.Exploit misconfig, consider adding value_chain.targeting.variety.Misconfigurations.")
         any_value_chain_recommendation = True
     if 'Web application' in inDict['action'].get('malware', {}).get('vector', []) and "Website" not in inDict.get('value_chain', {}).get('development', {}).get('variety', []):
         yield ValidationError("Because there is action.malware.vector.Web application, consider adding value_chain.development.variety.Website.")

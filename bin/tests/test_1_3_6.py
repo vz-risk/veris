@@ -469,7 +469,7 @@ class TestValidation(unittest.TestCase):
         with self.assertRaises(ValidationError):
             for error in checkValidity.main(in_incident):
                 raise error
-    def test_validation_400_8(self):
+    def test_validation_400_11(self):
         in_incident = deepcopy(base_incident)
         in_incident["action"] = {"social": {"variety": ['Pretexting'], "vector": ["Unknown"]}}
         in_incident["value_chain"] = {"targeting": {"variety": "Email addresses"}}
@@ -477,9 +477,66 @@ class TestValidation(unittest.TestCase):
         with self.assertRaises(ValidationError):
             for error in checkValidity.main(in_incident):
                 raise error
+    def test_validation_400_12(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["action"] = {"hacking": {"variety": ['Use of stolen creds'], "vector": ["Unknown"]}}
+        with self.assertRaises(ValidationError):
+            for error in checkValidity.main(in_incident):
+                raise error
+    def test_validation_400_13(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["action"] = {"hacking": {"variety": ['Exploit vuln'], "vector": ["Unknown"]}}
+        in_incident["value_chain"] = {"targeting": {"variety": "Vulnerabilities"}}
+        with self.assertRaises(ValidationError):
+            for error in checkValidity.main(in_incident):
+                raise error
+    def test_validation_400_14(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["action"] = {"hacking": {"variety": ['Exploit vuln'], "vector": ["Unknown"]}}
+        in_incident["value_chain"] = {"development": {"variety": "Exploit"}}
+        with self.assertRaises(ValidationError):
+            for error in checkValidity.main(in_incident):
+                raise error
+    def test_validation_400_15(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["action"] = {"malware": {"variety": ['Downloader'], "vector": ["Unknown"]}}
+        in_incident["value_chain"] = {"development": {"variety": ["Unknown"]}}
+        in_incident["attribute"] = {"integrity": {"variety": "Software installation"}}
+        with self.assertRaises(ValidationError):
+            for error in checkValidity.main(in_incident):
+                raise error
+    def test_validation_400_16(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["action"] = {"hacking": {"variety": ['Exploit misconfig'], "vector": ["Unknown"]}}
+        with self.assertRaises(ValidationError):
+            for error in checkValidity.main(in_incident):
+                raise error
+    def test_validation_400_17(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["action"] = {"malware": {"variety": ['Exploit misconfig'], "vector": ["Unknown"]}}
+        in_incident["value_chain"] = {"development": {"variety": ["Unknown"]}}
+        in_incident["attribute"] = {"integrity": {"variety": "Software installation"}}
+        with self.assertRaises(ValidationError):
+            for error in checkValidity.main(in_incident):
+                raise error
+    def test_validation_400_18(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["action"] = {"malware": {"variety": ['Unknown'], "vector": ["Web application"]}}
+        in_incident["value_chain"] = {"development": {"variety": ["Unknown"]}}
+        in_incident["attribute"] = {"integrity": {"variety": "Software installation"}}
+        with self.assertRaises(ValidationError):
+            for error in checkValidity.main(in_incident):
+                raise error
+    def test_validation_400_19(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["action"] = {"social": {"variety": ['Unknown'], "vector": ["Web application"]}}
+        in_incident["attribute"] = {"integrity": {"variety": "Alter behavior"}}
+        with self.assertRaises(ValidationError):
+            for error in checkValidity.main(in_incident):
+                raise error
 
 
-
+# if True: #
 
 
 
