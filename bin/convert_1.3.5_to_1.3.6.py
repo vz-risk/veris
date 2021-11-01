@@ -268,23 +268,24 @@ def main(cfg):
                 if add_value_chain:
                     notes = incident['value_chain']['cash-out'].get('notes', "")
                     incident['value_chain']['cash-out']['notes'] = notes + "\n" + "value_chain.development.variety.Cryptocurrency added because action.malware.variety.Ransomware exists."
-            if 'Trojan' in incident['action'].get('malware', {}).get('variety', []):
-                add_value_chain = False
-                if 'value_chain' not in incident:
-                    incident['value_chain'] = {'development': {'variety': ['Trojan']}}
-                    add_value_chain = True
-                elif 'development' not in incident['value_chain']:
-                    incident['value_chain']['development'] = {'variety': ['Trojan']}
-                    add_value_chain = True
-                elif 'variety' not in incident['value_chain']['development']:
-                    incident['value_chain']['development']['variety'] = ['Trojan']
-                    add_value_chain = True
-                elif 'Trojan' not in incident['value_chain']['development']['variety']:
-                    incident['value_chain']['development']['variety'].append("Trojan")
-                    add_value_chain = True
-                if add_value_chain:
-                    notes = incident['value_chain']['development'].get('notes', "")
-                    incident['value_chain']['development']['notes'] = notes + "\n" + "value_chain.development.variety.Trojan added because action.malware.variety.Trojan exists."
+### This is a recommend only rule.
+#            if 'Trojan' in incident['action'].get('malware', {}).get('variety', []):
+#               add_value_chain = False
+#                if 'value_chain' not in incident:
+#                    incident['value_chain'] = {'development': {'variety': ['Trojan']}}
+#                    add_value_chain = True
+#                elif 'development' not in incident['value_chain']:
+#                    incident['value_chain']['development'] = {'variety': ['Trojan']}
+#                    add_value_chain = True
+#                elif 'variety' not in incident['value_chain']['development']:
+#                    incident['value_chain']['development']['variety'] = ['Trojan']
+#                    add_value_chain = True
+#                elif 'Trojan' not in incident['value_chain']['development']['variety']:
+#                    incident['value_chain']['development']['variety'].append("Trojan")
+#                    add_value_chain = True
+#                if add_value_chain:
+#                    notes = incident['value_chain']['development'].get('notes', "")
+#                    incident['value_chain']['development']['notes'] = notes + "\n" + "value_chain.development.variety.Trojan added because action.malware.variety.Trojan exists."
             if 'Email' in incident['action'].get('social', {}).get('vector', []):
                 add_value_chain = False
                 if 'value_chain' not in incident:
