@@ -167,20 +167,19 @@ def checkRegion(inDict):
         "003": "019" # americas"
     }
 
-    region = inDict.get('victim', {}).get('region', None)
-    if region is not None:
+    for region in inDict.get('victim', {}).get('region', []):
         if type(region) != str or len(region) != 6:
             yield ValidationError("Victim.region {0} is not a six character string.".format(region))
         else:
             super_region = region[:3]
             sub_region = region[3:]
             if super_region in non_used_regions.keys():
-                yield ValidationError("Replace first half of victim.region ('{0}') with '{1}'.".format(super_region, non_used_regions[super_region]))
-            elif sub_region in non_used_regions.values():
-                yield ValidationError("Replace seoncd half of victim.region ('{0}') with '000' unless you know the correct region.".format(sub_region))
+                yield ValidationError("Region {2} is incorrect. Replace first half of victim.region ('{0}') with '{1}'.".format(super_region, non_used_regions[super_region], region))
+#            elif sub_region in non_used_regions.keys():
+#                yield ValidationError("Region {1} is incorrect. Replace second half of victim.region ('{0}') with '000' unless you know the correct region.".format(sub_region, region))
             elif sub_region not in regions[super_region]:
                 yield ValidationError("victim.region second half, ('{0}') does not match first half '{1}'".format(sub_region, super_region) + 
-                                      "Please replace the second half with one of {0}.".format(",".join(regions[super_region])))
+                                      "  Please replace the second half with one of {0}.".format(", ".join(regions[super_region])))
 
 
 ### Validate that secondary.victim.amount is > 0 if victim.secondary.victim_id is not empty
@@ -211,8 +210,9 @@ def checkValueChain(inDict):
         if "Ransomware" not in inDict.get('value_chain', {}).get('development', {}).get('variety', []):
             yield ValidationError("Because there is action.malware.variety.Ransomware, consider adding value_chain.distribution.variety.Ransomware.")
             any_value_chain_recommendation = True
-    if 'Trojan' in inDict['action'].get('malware', {}).get('variety', []) and "Trojan" not in inDict.get('value_chain', {}).get('development', {}).get('variety', []):
-        yield ValidationError("Because there is action.malware.variety.Trojan, value_chain.development.variety.Trojan should also.  Please update.")
+### THis is recommend only
+#    if 'Trojan' in inDict['action'].get('malware', {}).get('variety', []) and "Trojan" not in inDict.get('value_chain', {}).get('development', {}).get('variety', []):
+#        yield ValidationError("Because there is action.malware.variety.Trojan, value_chain.development.variety.Trojan should also.  Please update.")
     if 'Email' in inDict['action'].get('social', {}).get('vector', []):
         if "Email" not in inDict.get('value_chain', {}).get('distribution', {}).get('variety', []):
             yield ValidationError("Because there is action.social.variety.Email, value_chain.distribution.variety.Email should also.  Please update.")
@@ -222,7 +222,7 @@ def checkValueChain(inDict):
             any_value_chain_recommendation = True
 
     ### Recommended Only
-    if 'malware' in inDict['action'].keys() & len(inDict.get('value_chain', {}).get('development', {}).get('variety', [])) == 0:
+    if ('malware' in inDict['action'].keys()) & (len(inDict.get('value_chain', {}).get('development', {}).get('variety', [])) == 0):
         yield ValidationError("Because there is a malware action, consider adding a value_chain development variety, even if it is 'Unknown'.")
         any_value_chain_recommendation = True
     if 'Trojan' in inDict['action'].get('malware', {}).get('variety', []) and "Trojan" not in inDict.get('value_chain', {}).get('development', {}).get('variety', []):
@@ -279,6 +279,7 @@ def main(incident):
     yield e
   for e in checkDataTotal(incident):
     yield e
+# Added with 1.3.6    
   for e in checkRegion(incident):
     yield e
   for e in checkSecondaryVictimAmount(incident):
