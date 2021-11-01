@@ -27,7 +27,9 @@ cfg = {
 }
 
 def getCountryCode(countryfile):
-    country_codes = sj.loads(open(countryfile).read())
+    #country_codes = sj.loads(open(countryfile).read())
+    with open(countryfile, 'r') as filehandle:
+        country_codes = sj.load(filehandle)
     country_code_remap = {'Unknown': '000000'}
     for eachCountry in country_codes:
         try:
@@ -100,7 +102,9 @@ def main(cfg):
 
             logging.info("Now processing %s" % in_fname)
             try:
-                incident = sj.loads(open(in_fname).read())
+                #incident = sj.loads(open(in_fname).read())
+                with open(in_fname, 'r') as filehandle:
+                    incident = sj.load(filehandle)
             except sj.JSONDecodeError:
                 logging.warning(
                     "ERROR: %s did not parse properly. Skipping" % in_fname)
@@ -163,6 +167,8 @@ def main(cfg):
                 incident['action']['hacking']['vector'].append('Backdoor')
             if 'Use of backdoor or C2' in incident.get('action', {}).get('hacking', {}).get('variety', []):
                 incident['action']['hacking']['variety'].remove('Use of backdoor or C2' )
+                if len(incident['action']['hacking']['variety']) == 0:
+                    incident['action']['hacking']['variety'] = ["Unknown"]
                 if 'Backdoor' not in incident['action']['hacking'].get('vector', []):
                     incident['action']['hacking']['vector'].append('Backdoor')
 
@@ -210,8 +216,8 @@ def main(cfg):
                     incident['value_chain']['targeting']['variety'].append("Email addresses")
                     add_value_chain = True
                 if add_value_chain:
-                    notes = incident['value_chain']['targeting']['variety'].get('notes', "")
-                    incident['value_chain']['targeting']['variety'] = notes + "\n" + "value_chain.targeting.variety.Email addresses added because action.social.vector.Email exists."
+                    notes = incident['value_chain']['targeting'].get('notes', "")
+                    incident['value_chain']['targeting']['notes'] = notes + "\n" + "value_chain.targeting.variety.Email addresses added because action.social.vector.Email exists."
                 add_value_chain = False
                 if 'value_chain' not in incident:
                     incident['value_chain'] = {'development': {'variety': ['Email']}}
@@ -226,25 +232,25 @@ def main(cfg):
                     incident['value_chain']['development']['variety'].append("Email")
                     add_value_chain = True
                 if add_value_chain:
-                    notes = incident['value_chain']['development']['variety'].get('notes', "")
-                    incident['value_chain']['development']['variety'] = notes + "\n" + "value_chain.development.variety.Email added because action.social.vector.Email exists."
+                    notes = incident['value_chain']['development'].get('notes', "")
+                    incident['value_chain']['development']['notes'] = notes + "\n" + "value_chain.development.variety.Email added because action.social.vector.Email exists."
             if 'C2' in incident['action'].get('malware', {}).get('vector', []):
                 add_value_chain = False
                 if 'value_chain' not in incident:
-                    incident['value_chain'] = {'non-distribution services': {'variety': ['Trojan']}}
+                    incident['value_chain'] = {'non-distribution services': {'variety': ['C2']}}
                     add_value_chain = True
                 elif 'non-distribution services' not in incident['value_chain']:
-                    incident['value_chain']['non-distribution services'] = {'variety': ['Trojan']}
+                    incident['value_chain']['non-distribution services'] = {'variety': ['C2']}
                     add_value_chain = True
                 elif 'variety' not in incident['value_chain']['non-distribution services']:
-                    incident['value_chain']['non-distribution services']['variety'] = ['Trojan']
+                    incident['value_chain']['non-distribution services']['variety'] = ['C2']
                     add_value_chain = True
-                elif 'Trojan' not in incident['value_chain']['non-distribution services']['variety']:
-                    incident['value_chain']['non-distribution services']['variety'].append("Trojan")
+                elif 'C2' not in incident['value_chain']['non-distribution services']['variety']:
+                    incident['value_chain']['non-distribution services']['variety'].append("C2")
                     add_value_chain = True
                 if add_value_chain:
-                    notes = incident['value_chain']['non-distribution services']['variety'].get('notes', "")
-                    incident['value_chain']['non-distribution services']['variety'] = notes + "\n" + "value_chain.development.variety.non-distribution services added because action.malware.vector.C2 exists."
+                    notes = incident['value_chain']['non-distribution services'].get('notes', "")
+                    incident['value_chain']['non-distribution services']['notes'] = notes + "\n" + "value_chain.non-distribution services.variety.C2 added because action.malware.vector.C2 exists."
             if 'Ransomware' in incident['action'].get('malware', {}).get('variety', []):
                 add_value_chain = False
                 if 'value_chain' not in incident:
@@ -256,12 +262,12 @@ def main(cfg):
                 elif 'variety' not in incident['value_chain']['cash-out']:
                     incident['value_chain']['cash-out']['variety'] = ['Cryptocurrency']
                     add_value_chain = True
-                elif 'Trojan' not in incident['value_chain']['cash-out']['variety']:
+                elif 'Cryptocurrency' not in incident['value_chain']['cash-out']['variety']:
                     incident['value_chain']['cash-out']['variety'].append("Cryptocurrency")
                     add_value_chain = True
                 if add_value_chain:
-                    notes = incident['value_chain']['cash-out']['variety'].get('notes', "")
-                    incident['value_chain']['cash-out']['variety'] = notes + "\n" + "value_chain.development.variety.Cryptocurrency added because action.malware.variety.Ransomware exists."
+                    notes = incident['value_chain']['cash-out'].get('notes', "")
+                    incident['value_chain']['cash-out']['notes'] = notes + "\n" + "value_chain.development.variety.Cryptocurrency added because action.malware.variety.Ransomware exists."
             if 'Trojan' in incident['action'].get('malware', {}).get('variety', []):
                 add_value_chain = False
                 if 'value_chain' not in incident:
@@ -277,8 +283,8 @@ def main(cfg):
                     incident['value_chain']['development']['variety'].append("Trojan")
                     add_value_chain = True
                 if add_value_chain:
-                    notes = incident['value_chain']['development']['variety'].get('notes', "")
-                    incident['value_chain']['development']['variety'] = notes + "\n" + "value_chain.development.variety.Trojan added because action.malware.variety.Trojan exists."
+                    notes = incident['value_chain']['development'].get('notes', "")
+                    incident['value_chain']['development']['notes'] = notes + "\n" + "value_chain.development.variety.Trojan added because action.malware.variety.Trojan exists."
             if 'Email' in incident['action'].get('social', {}).get('vector', []):
                 add_value_chain = False
                 if 'value_chain' not in incident:
@@ -294,8 +300,8 @@ def main(cfg):
                     incident['value_chain']['distribution']['variety'].append("Email")
                     add_value_chain = True
                 if add_value_chain:
-                    notes = incident['value_chain']['distribution']['variety'].get('notes', "")
-                    incident['value_chain']['development']['variety'] = notes + "\n" + "value_chain.distribution.variety.Email added because action.social.vector.Email exists."
+                    notes = incident['value_chain']['distribution'].get('notes', "")
+                    incident['value_chain']['distribution']['notes'] = notes + "\n" + "value_chain.distribution.variety.Email added because action.social.vector.Email exists."
 
 
             ### crosswalk hacking and malware actions
@@ -305,11 +311,21 @@ def main(cfg):
                 incident['action']['hacking']['variety'].append('Profile host')
             if 'SQL injection' in incident.get('action', {}).get('malware', {}).get('variety', []):
                 incident['action']['malware']['variety'].remove('SQL injection')
-                incident['action']['hacking']['variety'].append('Profile host')
+                malware_empty = True # because 'hacking.variety' may now be empty
+                for field in ["variety", "vector", "result"]: 
+                    field_value = incident['action']['malware'].get(field, [])
+                    if len(field_value) > 0 and field_value != ["Unknown"]:
+                        malware_empty = False
+                if malware_empty:
+                    _ = incident['action'].pop('malware') 
+                else:
+                    incident['action']['malware']['variety'].append("Unknown")
                 if 'hacking' not in incident['action']:
-                    incident['action']['hacking'] = {'variety': ['SQLi']}
+                    incident['action']['hacking'] = {'variety': ['SQLi'], "vector": ["Unknown"]}
                 elif 'variety' not in incident['action']['hacking']:
                     incident['action']['hacking']['variety'] = ['SQLi']
+                    if 'vector' not in incident['action']['hacking']:
+                        incident['action']['hacking']['vector'] = ['Unknown']
                 elif 'SQLi' not in incident['action']['hacking']['variety']:
                     incident['action']['hacking']['variety'].append("SQLi")
 
@@ -340,7 +356,9 @@ if __name__ == '__main__':
     # Parse the config file
     try:
         config = configparser.ConfigParser()
-        config.readfp(open(args["conf"]))
+        #config.readfp(open(args["conf"]))
+        with open(args['conf'], 'r') as filehandle:
+            config.readfp(filehandle)
         cfg_key = {
             'GENERAL': ['report', 'input', 'output', 'analysis', 'year', 'force_analyst', 'version', 'database', 'check'],
             'LOGGING': ['log_level', 'log_file'],
