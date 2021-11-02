@@ -12,22 +12,25 @@ import verisc1_3_2 from '../../assets/schema/verisc-merged1_3_2.json'
 import verisc1_3_3 from '../../assets/schema/verisc-merged1_3_3.json'
 import verisc1_3_4 from '../../assets/schema/verisc-merged1_3_4.json'
 import verisc1_3_5 from '../../assets/schema/verisc-merged1_3_5.json'
+import verisc1_3_6 from '../../assets/schema/verisc-merged1_3_6.json'
 import verisc2 from '../../assets/schema/verisc-merged2.json'
 import vcdb1_3_1 from '../../assets/schema/vcdb-merged1_3_1.json'
 import vcdb1_3_2 from '../../assets/schema/vcdb-merged1_3_2.json'
 import vcdb1_3_3 from '../../assets/schema/vcdb-merged1_3_3.json'
 import vcdb1_3_4 from '../../assets/schema/vcdb-merged1_3_4.json'
 import vcdb1_3_5 from '../../assets/schema/vcdb-merged1_3_5.json'
+import vcdb1_3_6 from '../../assets/schema/vcdb-merged1_3_6.json'
 import dbir1_3_1 from '../../assets/schema/dbir-merged1_3_1.json'
 import dbir1_3_2 from '../../assets/schema/dbir-merged1_3_2.json'
 import dbir1_3_3 from '../../assets/schema/dbir-merged1_3_3.json'
 import dbir1_3_4 from '../../assets/schema/dbir-merged1_3_4.json'
 import dbir1_3_5 from '../../assets/schema/dbir-merged1_3_5.json'
+import dbir1_3_6 from '../../assets/schema/dbir-merged1_3_6.json'
 
 import uiSchemas from './veris_app.uiSchemas'
 
 export const defaultSchemaName = 'partner';
-export const defaultSchemaVersion = '1.3.5';
+export const defaultSchemaVersion = '1.3.6';
 
 const schemas = {
     partner: {
@@ -57,6 +60,11 @@ const schemas = {
           schema: processSchema(dbir1_3_5, 'partner', '1.3.5', dbirLabels),
           rawschema: dbir1_3_5,
           uischema: uiSchemas['partner']['1.3.5']
+        },
+        '1.3.6': {
+          schema: processSchema(dbir1_3_6, 'partner', '1.3.6', dbirLabels),
+          rawschema: dbir1_3_6,
+          uischema: uiSchemas['partner']['1.3.6']
         },
         // '1.4': {
         //   schema: undefined,
@@ -99,6 +107,11 @@ const schemas = {
           rawschema: verisc1_3_5,
           uischema: uiSchemas['verisc']['1.3.5']
         },
+        '1.3.6': {
+          schema: processSchema(verisc1_3_6, 'verisc', '1.3.6', veriscLabels),
+          rawschema: verisc1_3_6,
+          uischema: uiSchemas['verisc']['1.3.6']
+        },
         // '1.4': {
         //   schema: processSchema(verisc1_4, 'verisc', '1.4', veriscLabels),
         //   rawschema: verisc1_4,
@@ -139,6 +152,11 @@ const schemas = {
           schema: processSchema(dbir1_3_5, 'dbir', '1.3.5', dbirLabels),
           rawschema: dbir1_3_5,
           uischema: uiSchemas['dbir']['1.3.5']
+        },
+        '1.3.6': {
+          schema: processSchema(dbir1_3_6, 'dbir', '1.3.6', dbirLabels),
+          rawschema: dbir1_3_6,
+          uischema: uiSchemas['dbir']['1.3.6']
         },
         // '1.4': {
         //   schema: undefined,
@@ -181,6 +199,11 @@ const schemas = {
           rawschema: undefined,
           uischema: uiSchemas['vzir']['1.3.5']
         },
+        '1.3.6': {
+          schema: undefined,
+          rawschema: undefined,
+          uischema: uiSchemas['vzir']['1.3.6']
+        },
         // '1.4': {
         //   schema: undefined,
         //   rawschema: undefined,
@@ -221,6 +244,11 @@ const schemas = {
           schema: processSchema(vcdb1_3_5, 'vcdb', '1.3.5', vcdbLabels),
           rawschema: vcdb1_3_5,
           uischema: uiSchemas['vcdb']['1.3.5']
+        },
+        '1.3.6': {
+          schema: processSchema(vcdb1_3_6, 'vcdb', '1.3.6', vcdbLabels),
+          rawschema: vcdb1_3_6,
+          uischema: uiSchemas['vcdb']['1.3.6']
         }
       },
       allowOther: false
@@ -252,6 +280,11 @@ const schemas = {
           schema: undefined,
           rawschema: undefined,
           uischema: uiSchemas['other']['1.3.5']
+        },
+        '1.3.6': {
+          schema: undefined,
+          rawschema: undefined,
+          uischema: uiSchemas['other']['1.3.6']
         },
         // '1.4': {
         //   schema: undefined,

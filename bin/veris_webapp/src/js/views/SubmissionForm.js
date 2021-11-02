@@ -15,7 +15,8 @@ import JSZip from 'jszip';
 import { v1 as uuidv1 } from 'uuid';
 //import uuidv4 from 'uuid/v4';
 import { v4 as uuidv4 } from 'uuid';
-import Ajv from 'ajv';
+//import Ajv from 'ajv';
+import Ajv from "ajv-draft-04"
 
 import {
   defaultSchemaName,
@@ -43,8 +44,8 @@ const fields = {
   DescriptionField: CustomDescriptionField
 };
 
-let ajv = Ajv({allErrors: true, schemaId: 'id'});
-ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'));
+let ajv = new Ajv({allErrors: true, schemaId: 'id'});
+//ajv.addMetaSchema(require('ajv-draft-04/src/refs/json-schema-draft-04.json'));
 
 function clean(obj) {
   Object.keys(obj).forEach(function(key) {
