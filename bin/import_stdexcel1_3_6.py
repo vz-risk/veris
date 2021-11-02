@@ -283,7 +283,7 @@ class CSVtoJSON():
         tmp = {}
         for enum in incident: tmp[enum] = self.cleanValue(incident, enum)
         incident = tmp
-        for enum in ['campaign_id', 'source_id', 'reference', 'security_incident', 'confidence', 'summary', 'related_incidents', 'notes']:
+        for enum in ['campaign_id', 'source_id', 'reference', 'security_incident', 'confidence', 'summary', 'related_incidents', 'notes', 'schema_name']:
             self.addValue(incident, enum, out, "string")
         # victim
         for enum in ['victim_id', 'industry', 'employee_count', 'state',
@@ -310,32 +310,32 @@ class CSVtoJSON():
 
         # action
         action = "malware."
-        for enum in ['variety', 'vector']:
+        for enum in ['variety', 'vector', "result"]:
             self.addValue(incident, 'action.' + action + enum, out, 'list')
         for enum in ['cve', 'name', 'notes']:
             self.addValue(incident, 'action.' + action + enum, out, 'string')
         action = "hacking."
-        for enum in ['variety', 'vector']:
+        for enum in ['variety', 'vector', "result"]:
             self.addValue(incident, 'action.' + action + enum, out, 'list')
         for enum in ['cve', 'notes']:
             self.addValue(incident, 'action.' + action + enum, out, 'string')
         action = "social."
-        for enum in ['variety', 'vector', 'target']:
+        for enum in ['variety', 'vector', 'target', "result"]:
             self.addValue(incident, 'action.' + action + enum, out, 'list')
         for enum in ['notes']:
             self.addValue(incident, 'action.' + action + enum, out, 'string')
         action = "misuse."
-        for enum in ['variety', 'vector']:
+        for enum in ['variety', 'vector', "result"]:
             self.addValue(incident, 'action.' + action + enum, out, 'list')
         for enum in ['notes']:
             self.addValue(incident, 'action.' + action + enum, out, 'string')
         action = "physical."
-        for enum in ['variety', 'vector', 'vector']:
+        for enum in ['variety', 'vector', "result"]:
             self.addValue(incident, 'action.' + action + enum, out, 'list')
         for enum in ['notes']:
             self.addValue(incident, 'action.' + action + enum, out, 'string')
         action = "error."
-        for enum in ['variety', 'vector']:
+        for enum in ['variety', 'vector', "result"]:
             self.addValue(incident, 'action.' + action + enum, out, 'list')
         for enum in ['notes']:
             self.addValue(incident, 'action.' + action + enum, out, 'string')
@@ -425,7 +425,7 @@ class CSVtoJSON():
 
         # value chain - veris 1.3.3 GDB 181116
         for enum in ["development", "non-distribution services", "targeting", "distribution", "cash-out", "money laundering"]:
-            self.addValue(incident, 'value_chain.'+enum, out, 'string')
+            self.addValue(incident, 'value_chain.'+enum, out, 'list')
 
         # trailer values
         for enum in ['discovery_notes', 'targeted', 'control_failure', 'corrective_action', 'cost_corrective_action']:

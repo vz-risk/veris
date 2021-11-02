@@ -636,6 +636,7 @@ class Rules():
 
         ### Check value_chain enumerations that are likely based on actions taken
         ### VERIS issue #400
+        add_any_value_chain = False
         if 'Phishing' in incident['action'].get('social', {}).get('variety', []):
             add_value_chain = False
             if 'value_chain' not in incident:
@@ -651,6 +652,7 @@ class Rules():
                 incident['value_chain']['targeting']['variety'].append("Email addresses")
                 add_value_chain = True
             if add_value_chain:
+                add_any_value_chain = True
                 notes = incident['value_chain']['targeting'].get('notes', "")
                 incident['value_chain']['targeting']['notes'] = notes + "\n" + "value_chain.targeting.variety.Email addresses added because action.social.vector.Email exists."
             add_value_chain = False
@@ -667,6 +669,7 @@ class Rules():
                 incident['value_chain']['development']['variety'].append("Email")
                 add_value_chain = True
             if add_value_chain:
+                add_any_value_chain = True
                 notes = incident['value_chain']['development'].get('notes', "")
                 incident['value_chain']['development']['notes'] = notes + "\n" + "value_chain.development.variety.Email added because action.social.vector.Email exists."
         if 'C2' in incident['action'].get('malware', {}).get('vector', []):
@@ -684,6 +687,7 @@ class Rules():
                 incident['value_chain']['non-distribution services']['variety'].append("C2")
                 add_value_chain = True
             if add_value_chain:
+                add_any_value_chain = True
                 notes = incident['value_chain']['non-distribution services'].get('notes', "")
                 incident['value_chain']['non-distribution services']['notes'] = notes + "\n" + "value_chain.non-distribution services.variety.C2 added because action.malware.vector.C2 exists."
         if 'Ransomware' in incident['action'].get('malware', {}).get('variety', []):
@@ -701,6 +705,7 @@ class Rules():
                 incident['value_chain']['cash-out']['variety'].append("Cryptocurrency")
                 add_value_chain = True
             if add_value_chain:
+                add_any_value_chain = True
                 notes = incident['value_chain']['cash-out'].get('notes', "")
                 incident['value_chain']['cash-out']['notes'] = notes + "\n" + "value_chain.development.variety.Cryptocurrency added because action.malware.variety.Ransomware exists."
 ### This is a recommend only rule.
@@ -736,9 +741,11 @@ class Rules():
                 incident['value_chain']['distribution']['variety'].append("Email")
                 add_value_chain = True
             if add_value_chain:
+                add_any_value_chain = True
                 notes = incident['value_chain']['distribution'].get('notes', "")
                 incident['value_chain']['distribution']['notes'] = notes + "\n" + "value_chain.distribution.variety.Email added because action.social.vector.Email exists."
-
+            if add_any_value_chain or not (incident['value_chain'].get('NA', False)):
+                incident['value_chain']['NA'] = False
 
 
 
