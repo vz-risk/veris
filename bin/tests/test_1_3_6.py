@@ -15,7 +15,7 @@ from copy import deepcopy
 import uuid
 from pprint import pprint
 
-veris = "/Users/v685573/Documents/Development/vzrisk/veris/"
+veris = os.path.expanduser("~/Documents/Development/vzrisk/veris/")
 cfg = {
     "log_level": "error",
     "log_file": "./unittest.log",

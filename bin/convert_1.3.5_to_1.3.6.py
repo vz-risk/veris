@@ -150,8 +150,8 @@ def main(cfg):
                         motive.append('Secondary')
                         incident['actor'][actors]['motive'] = motive
                         notes = incident['actor'][actors].get('notes', '')
-                        notes = notes + "\n" + "actor.{0}.motive.Secondary added because action.malware.variety.DoS exists.".format(actors)
-                        incident['actor'][actors]['notes'] = notes
+                        notes = notes + "\n" + "VERIS 1.3.6: actor.{0}.motive.Secondary added because action.malware.variety.DoS exists.".format(actors)
+                        incident['actor'][actors]['notes'] = notes.strip()
 
             ### Hierarchical Field
             # `action.malware.variety.Backdoor or C2` is a parent of `action.malware.variety.Backdoor` and `action.malware.variety.C2`
@@ -169,6 +169,8 @@ def main(cfg):
                 incident['action']['hacking']['variety'].remove('Use of backdoor or C2' )
                 if len(incident['action']['hacking']['variety']) == 0:
                     incident['action']['hacking']['variety'] = ["Unknown"]
+                    notes = incident['action']['hacking'].get('notes', "")
+                    incident['action']['hacking']['notes'] = (notes + "\n" + "VERIS 1.3.6: Moved 'Use of backdoor or C2' to 'backdoor' in hacking.vectors causing hacking.variety to be empty.  So adding hacking.variety.Unknown for schema compliance.").strip()
                 if 'Backdoor' not in incident['action']['hacking'].get('vector', []):
                     incident['action']['hacking']['vector'].append('Backdoor')
 
@@ -219,7 +221,7 @@ def main(cfg):
                 if add_value_chain:
                     add_any_value_chain = True
                     notes = incident['value_chain']['targeting'].get('notes', "")
-                    incident['value_chain']['targeting']['notes'] = notes + "\n" + "value_chain.targeting.variety.Email addresses added because action.social.vector.Email exists."
+                    incident['value_chain']['targeting']['notes'] = (notes + "\n" + "VERIS 1.3.6: value_chain.targeting.variety.Email addresses added because action.social.vector.Email exists.").strip()
                 add_value_chain = False
                 if 'value_chain' not in incident:
                     incident['value_chain'] = {'development': {'variety': ['Email']}}
@@ -236,7 +238,7 @@ def main(cfg):
                 if add_value_chain:
                     add_any_value_chain = True
                     notes = incident['value_chain']['development'].get('notes', "")
-                    incident['value_chain']['development']['notes'] = notes + "\n" + "value_chain.development.variety.Email added because action.social.vector.Email exists."
+                    incident['value_chain']['development']['notes'] = (notes + "\n" + "VERIS 1.3.6: value_chain.development.variety.Email added because action.social.vector.Email exists.").strip()
             if 'C2' in incident['action'].get('malware', {}).get('vector', []):
                 add_value_chain = False
                 if 'value_chain' not in incident:
@@ -254,7 +256,7 @@ def main(cfg):
                 if add_value_chain:
                     add_any_value_chain = True
                     notes = incident['value_chain']['non-distribution services'].get('notes', "")
-                    incident['value_chain']['non-distribution services']['notes'] = notes + "\n" + "value_chain.non-distribution services.variety.C2 added because action.malware.vector.C2 exists."
+                    incident['value_chain']['non-distribution services']['notes'] = (notes + "\n" + "VERIS 1.3.6: value_chain.non-distribution services.variety.C2 added because action.malware.vector.C2 exists.").strip()
             if 'Ransomware' in incident['action'].get('malware', {}).get('variety', []):
                 add_value_chain = False
                 if 'value_chain' not in incident:
@@ -272,7 +274,7 @@ def main(cfg):
                 if add_value_chain:
                     add_any_value_chain = True
                     notes = incident['value_chain']['cash-out'].get('notes', "")
-                    incident['value_chain']['cash-out']['notes'] = notes + "\n" + "value_chain.development.variety.Cryptocurrency added because action.malware.variety.Ransomware exists."
+                    incident['value_chain']['cash-out']['notes'] = (notes + "\n" + "VERIS 1.3.6: value_chain.development.variety.Cryptocurrency added because action.malware.variety.Ransomware exists.").strip()
 ### This is a recommend only rule.
 #            if 'Trojan' in incident['action'].get('malware', {}).get('variety', []):
 #               add_value_chain = False
@@ -290,7 +292,7 @@ def main(cfg):
 #                    add_value_chain = True
 #                if add_value_chain:
 #                    notes = incident['value_chain']['development'].get('notes', "")
-#                    incident['value_chain']['development']['notes'] = notes + "\n" + "value_chain.development.variety.Trojan added because action.malware.variety.Trojan exists."
+#                    incident['value_chain']['development']['notes'] = (notes + "\n" + "VERIS 1.3.6: value_chain.development.variety.Trojan added because action.malware.variety.Trojan exists.").strip()
             if 'Email' in incident['action'].get('social', {}).get('vector', []):
                 add_value_chain = False
                 if 'value_chain' not in incident:
@@ -308,9 +310,12 @@ def main(cfg):
                 if add_value_chain:
                     add_any_value_chain = True
                     notes = incident['value_chain']['distribution'].get('notes', "")
-                    incident['value_chain']['distribution']['notes'] = notes + "\n" + "value_chain.distribution.variety.Email added because action.social.vector.Email exists."
-            if add_any_value_chain or not (incident['value_chain'].get('NA', False)):
-                incident['value_chain']['NA'] = False
+                    incident['value_chain']['distribution']['notes'] = (notes + "\n" + "VERIS 1.3.6: value_chain.distribution.variety.Email added because action.social.vector.Email exists.").strip()
+            if add_any_value_chain and incident.get('value_chain', {}).get('NA', False):
+                if 'value_chain' not in incident:
+                    incident['value_chain'] = {'NA': False}
+                else:
+                    incident['value_chain']['NA'] = False
 
             ### crosswalk hacking and malware actions
             ### VERIS issue #315
