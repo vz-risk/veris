@@ -14,6 +14,7 @@ import tempfile
 from copy import deepcopy
 import uuid
 from pprint import pprint
+from jsondiff import diff, similarity, insert
 
 veris = "/Users/v685573/Documents/Development/vzrisk/veris/"
 cfg = {
@@ -93,6 +94,14 @@ class TestConvert(unittest.TestCase):
         in_incident["action"] = {"malware": {"variety": ["DoS"], "vector":["Unknown"]}}
         in_incident["actor"] = {"internal": {"variety": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
+        #raise ValueError(diff(in_incident, out_incident))
+        self.assertEqual(
+            similarity(
+                diff(in_incident, out_incident),
+                {'actor': {'internal': {'motive': ['Secondary'], 'notes': 'actor.internal.motive.Secondary added because action.malware.variety.DoS exists.'}}, 'schema_version': '1.3.6'}
+            ),
+            1
+        )
         motives = list(set(
             out_incident['actor'].get('external', {}).get('motive', []) +
             out_incident['actor'].get('internal', {}).get('motive', []) +
@@ -108,7 +117,15 @@ class TestConvert(unittest.TestCase):
         in_incident["schema_version"] = "1.3.5"
         in_incident["action"] = {"malware": {"variety": ["C2"], "vector": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
-        self.assertIn('Backdoor or C2', out_incident['action']['malware']['variety'])
+        #raise ValueError(diff(in_incident, out_incident))
+        self.assertEqual(
+            similarity(
+                diff(in_incident, out_incident),
+                {'action': {'malware': {'variety': {insert: [(1, 'Backdoor or C2')]}}}, 'schema_version': '1.3.6'}
+            ),
+            1
+        )
+        #self.assertIn('Backdoor or C2', out_incident['action']['malware']['variety'])
         for error in validator.iter_errors(out_incident):
             raise error
     def test_convert_383_2(self):
@@ -116,7 +133,15 @@ class TestConvert(unittest.TestCase):
         in_incident["schema_version"] = "1.3.5"
         in_incident["action"] = {"malware": {"variety": ["Backdoor"], "vector": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
-        self.assertIn('Backdoor or C2', out_incident['action']['malware']['variety'])
+        #raise ValueError(diff(in_incident, out_incident))
+        self.assertEqual(
+            similarity(
+                diff(in_incident, out_incident),
+                {'action': {'malware': {'variety': {insert: [(1, 'Backdoor or C2')]}}}, 'schema_version': '1.3.6'}
+            ),
+            1
+        )
+        #self.assertIn('Backdoor or C2', out_incident['action']['malware']['variety'])
         for error in validator.iter_errors(out_incident):
             raise error
     def test_convert_383_3(self):
@@ -124,15 +149,16 @@ class TestConvert(unittest.TestCase):
         in_incident["schema_version"] = "1.3.5"
         in_incident["action"] = {"hacking": {"variety": ['Use of backdoor or C2' ], "vector": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
+        #raise ValueError(diff(in_incident, out_incident))
+        self.assertEqual(
+            similarity(
+                diff(in_incident, out_incident),
+                {'action': {'hacking': {'variety': ['Unknown'], 'vector': {insert: [(1, 'Backdoor')]}}}, 'schema_version': '1.3.6'}
+            ),
+            1
+        )
         self.assertNotIn('Use of backdoor or C2' , out_incident['action']['hacking']['variety'])
-        for error in validator.iter_errors(out_incident):
-            raise error
-    def test_convert_383_4(self):
-        in_incident = deepcopy(base_incident)
-        in_incident["schema_version"] = "1.3.5"
-        in_incident["action"] = {"hacking": {"variety": ['Use of backdoor or C2' ], "vector": ["Unknown"]}}
-        out_incident = apply_convert(in_incident, convert)
-        self.assertIn('Backdoor', out_incident['action']['hacking']['vector'])
+        #self.assertIn('Backdoor', out_incident['action']['hacking']['vector'])
         for error in validator.iter_errors(out_incident):
             raise error
 
@@ -141,15 +167,16 @@ class TestConvert(unittest.TestCase):
         in_incident["schema_version"] = "1.3.5"
         in_incident["action"] = {"hacking": {"variety": ['HTTP Response Splitting'], "vector": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
+        #raise ValueError(diff(in_incident, out_incident))
+        self.assertEqual(
+            similarity(
+                diff(in_incident, out_incident),
+                {'action': {'hacking': {'variety': ['HTTP response splitting']}}, 'schema_version': '1.3.6'}
+            ),
+            1
+        )
         self.assertNotIn('HTTP Response Splitting', out_incident['action']['hacking']['variety'])
-        for error in validator.iter_errors(out_incident):
-            raise error
-    def test_convert_386_2(self):
-        in_incident = deepcopy(base_incident)
-        in_incident["schema_version"] = "1.3.5"
-        in_incident["action"] = {"hacking": {"variety": ['HTTP Response Splitting'], "vector": ["Unknown"]}}
-        out_incident = apply_convert(in_incident, convert)
-        self.assertIn('HTTP response splitting', out_incident['action']['hacking']['variety'])
+        #self.assertIn('HTTP response splitting', out_incident['action']['hacking']['variety'])
         for error in validator.iter_errors(out_incident):
             raise error
 
@@ -158,8 +185,16 @@ class TestConvert(unittest.TestCase):
         in_incident["schema_version"] = "1.3.5"
         in_incident["action"] = {"social": {"variety": ['Unknown'], "vector": ["Website"], "target": ["Unknown"]}}
         out_incident = apply_convert(in_incident, convert)
+        #raise ValueError(diff(in_incident, out_incident))
+        self.assertEqual(
+            similarity(
+                diff(in_incident, out_incident),
+                {'action': {'social': {'vector': ['Web application']}}, 'schema_version': '1.3.6'}
+            ),
+            1
+        )
         self.assertNotIn('Website', out_incident['action']['social']['vector'])
-        self.assertIn('Web application', out_incident['action']['social']['vector'])
+        #self.assertIn('Web application', out_incident['action']['social']['vector'])
         for error in validator.iter_errors(out_incident):
             raise error
 
@@ -169,7 +204,15 @@ class TestConvert(unittest.TestCase):
         in_incident["plus"]["analysis_status"] = 'Needs review'
         out_incident = apply_convert(in_incident, convert)
         #pprint(out_incident)
-        self.assertEqual('Ready for review', out_incident["plus"]["analysis_status"])
+        #raise ValueError(diff(in_incident, out_incident))
+        self.assertEqual(
+            similarity(
+                diff(in_incident, out_incident),
+                {'plus': {'analysis_status': 'Ready for review'}, 'schema_version': '1.3.6'}
+            ),
+            1
+        )
+        #self.assertEqual('Ready for review', out_incident["plus"]["analysis_status"])
         for error in validator.iter_errors(out_incident):
             raise error
 
@@ -179,6 +222,14 @@ class TestConvert(unittest.TestCase):
         in_incident["victim"]['secondary'] = {"victim_id": ['victim2', 'victim3', 'victim4']}
         out_incident = apply_convert(in_incident, convert)
         #pprint(out_incident)
+        raise ValueError(diff(in_incident, out_incident))
+        self.assertEqual(
+            similarity(
+                diff(in_incident, out_incident),
+                {'victim': {'secondary': {'amount': 3}}, 'schema_version': '1.3.6'}
+            ),
+            1
+        )
         self.assertGreaterEqual(len(out_incident["victim"]['secondary']["victim_id"]), out_incident["victim"]['secondary']['amount'])
         for error in validator.iter_errors(out_incident):
             raise error
