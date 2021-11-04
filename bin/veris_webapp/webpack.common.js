@@ -15,11 +15,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].css',
       chunkFilename: '[id].css'
-    }),
-    new HtmlWebpackPlugin({
-      title: 'VERIS Webapp',
-      template: path.join(__dirname, 'assets', 'index.html')
-    })
+    })//,
+//    new HtmlWebpackPlugin({
+//      title: 'VERIS Webapp',
+//      template: path.join(__dirname, 'assets', 'index.html')
+//    })
   ],
   output: {
     filename: '[name].bundle.js',
