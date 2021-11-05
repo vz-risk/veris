@@ -325,14 +325,15 @@ def main(cfg):
             if 'SQL injection' in incident.get('action', {}).get('malware', {}).get('variety', []):
                 incident['action']['malware']['variety'].remove('SQL injection')
                 malware_empty = True # because 'hacking.variety' may now be empty
-                for field in ["variety", "vector", "result"]: 
+                for field in ['variety']: # ["variety", "vector", "result"]: 
                     field_value = incident['action']['malware'].get(field, [])
                     if len(field_value) > 0 and field_value != ["Unknown"]:
                         malware_empty = False
                 if malware_empty:
                     _ = incident['action'].pop('malware') 
                 else:
-                    incident['action']['malware']['variety'].append("Unknown")
+                    #incident['action']['malware']['variety'].append("Unknown")
+                    pass
                 if 'hacking' not in incident['action']:
                     incident['action']['hacking'] = {'variety': ['SQLi'], "vector": ["Unknown"]}
                 elif 'variety' not in incident['action']['hacking']:
