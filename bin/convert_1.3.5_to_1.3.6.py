@@ -329,11 +329,6 @@ def main(cfg):
                     field_value = incident['action']['malware'].get(field, [])
                     if len(field_value) > 0 and field_value != ["Unknown"]:
                         malware_empty = False
-                if malware_empty:
-                    _ = incident['action'].pop('malware') 
-                else:
-                    #incident['action']['malware']['variety'].append("Unknown")
-                    pass
                 if 'hacking' not in incident['action']:
                     incident['action']['hacking'] = {'variety': ['SQLi'], "vector": ["Unknown"]}
                 elif 'variety' not in incident['action']['hacking']:
@@ -342,6 +337,10 @@ def main(cfg):
                         incident['action']['hacking']['vector'] = ['Unknown']
                 elif 'SQLi' not in incident['action']['hacking']['variety']:
                     incident['action']['hacking']['variety'].append("SQLi")
+                if malware_empty:
+                    _ = incident['action'].pop('malware') 
+                    notes = incident['action']['hacking'].get('notes', "")
+                    incident['action']['hacking']['notes'] = (notes + "\n" + "VERIS 1.3.6: Removed 'malware' section while moving malware.variety.SQL injection to hacking.variety.SQLi").strip()
 
 
             # Now to save the incident
