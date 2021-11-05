@@ -153,13 +153,14 @@ def checkMisuseActor(inDict):
 ### VERIS issue #180
 def checkRegion(inDict):
     regions = {
-        "002": ["011", "014", "017", "018", "015"], # Africa
+        "002": ["011", "014", "017", "018", "015", "000"], # Africa
         "010": ["000"], # Antarctica
-        "019": ["021", "005", "013", "029", "419"], # America
+        "019": ["021", "005", "013", "029", "419", "000"], # America
         "419": ["005", "013", "029"], # Latin America and Caribbean 
-        "142": ["030", "034", "035", "143", "145"], # Asia
-        "150": ["039", "151", "154", "830", "155"], # Europe
-        "009": ["053", "054", "057", "061"] # Oceania
+        "142": ["030", "034", "035", "143", "145", "000"], # Asia
+        "150": ["039", "151", "154", "830", "155", "000"], # Europe
+        "009": ["053", "054", "057", "061", "000"], # Oceania
+        "000": ["000"] # Unknown
     }
     non_used_regions = {
         "001": "000", # world
@@ -177,9 +178,13 @@ def checkRegion(inDict):
                 yield ValidationError("Region {2} is incorrect. Replace first half of victim.region ('{0}') with '{1}'.".format(super_region, non_used_regions[super_region], region))
 #            elif sub_region in non_used_regions.keys():
 #                yield ValidationError("Region {1} is incorrect. Replace second half of victim.region ('{0}') with '000' unless you know the correct region.".format(sub_region, region))
-            elif sub_region not in regions[super_region]:
-                yield ValidationError("victim.region second half, ('{0}') does not match first half '{1}'".format(sub_region, super_region) + 
-                                      "  Please replace the second half with one of {0}.".format(", ".join(regions[super_region])))
+            elif sub_region not in regions.get(super_region, []):
+                error_text = "victim.region second half, ('{0}') does not match first half '{1}'".format(sub_region, super_region)
+                if super_region in regions:
+                    error_text += "  Please replace the second half with one of {0}.".format(", ".join(regions[super_region]))
+                else:
+                    error_text += "  Since {0} is not a super region, please check the whole region.".format(super_region)
+                yield ValidationError(error_text)
 
 
 ### Validate that secondary.victim.amount is > 0 if victim.secondary.victim_id is not empty

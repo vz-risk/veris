@@ -26,6 +26,7 @@ import pprint
 import uuid
 import tempfile
 import jq
+from jsonschema import ValidationError, Draft4Validator
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
     spec = util.spec_from_file_location("veris_logger", script_dir + "/../veris_logger.py")
@@ -131,6 +132,15 @@ spec = util.spec_from_file_location("convert", veris.rstrip("/") + "/bin/" + cfg
 convert = util.module_from_spec(spec)
 spec.loader.exec_module(convert)
 
+# import checkValidity
+spec = util.spec_from_file_location("checkValidity", cfg.get("veris", "../").rstrip("/") + "/bin/checkValidity.py")
+checkValidity = util.module_from_spec(spec)
+spec.loader.exec_module(checkValidity)
+
+# create validator
+with open(veris.rstrip("/") + "/verisc-merged.json") as filehandle:
+    validator = Draft4Validator(json.load(filehandle))
+
 
 # Used to apply convert script to json
 def apply_convert(in_incident, updater, cfg=cfg):
@@ -225,6 +235,10 @@ def main():
                 output.append("Diff: {0}\n".format(repr(j_diff)))
                 for s in diff_lists(j, j_out, j_diff):
                     output.append(s)
+                for e in validator.iter_errors(j_out):
+                    output.append("Schema validation error: {0}".format(e.message))
+                for e in checkValidity.main(j_out):
+                    output.append("Business logic validation error: {0}".format(e.message))
                 print("\n".join(output))
 
 
