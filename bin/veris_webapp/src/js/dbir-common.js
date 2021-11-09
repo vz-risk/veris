@@ -172,7 +172,7 @@ const schemas = {
       allowOther: false
     },
     vzir: {
-      name: 'VZIR (Other)',
+      name: 'VZIR (Load schema)',
       versions: {
         '1.3.1': {
           schema: undefined,
@@ -254,7 +254,7 @@ const schemas = {
       allowOther: false
     },
     other: {
-      name: 'Other',
+      name: 'Other (Load schema)',
       versions: {
         '1.3.1': {
           schema: undefined,
