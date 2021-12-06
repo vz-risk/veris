@@ -202,17 +202,17 @@ export default class SubmissionForm extends React.Component {
       record['schema_version'] = this.selectedVersion.replace(/_/g, '\.');
     }
 
-//    localStorage.setItem('incident_list_saved', false);
-//
-//    const master_id = record.plus.master_id || record.master_id;
-//
-//    let incidents = localStorage.getItem('incidents');
-//    if (!incidents) {
-//      incidents = {}
-//    } else {
-//      incidents = JSON.parse(incidents)
-//    }
-//
+    localStorage.setItem('incident_list_saved', false);
+
+    const master_id = record.plus.master_id || record.master_id;
+
+    let incidents = localStorage.getItem('incidents');
+    if (!incidents) {
+      incidents = {}
+    } else {
+      incidents = JSON.parse(incidents)
+    }
+
     incidents[master_id] = removeEmpty(record);
 
     localStorage.setItem('incidents', JSON.stringify(incidents));
