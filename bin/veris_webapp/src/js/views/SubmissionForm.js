@@ -49,18 +49,21 @@ let ajv = new Ajv({allErrors: true, schemaId: 'id', strict: "log"});
 //ajv.addMetaSchema(require('ajv-draft-04/src/refs/json-schema-draft-04.json'));
 
 function clean(obj) {
-  Object.keys(obj).forEach(function(key) {
-    let value = obj[key];
-    let type = typeof value;
-    if (type === "object") {
-      clean(obj[key]);
-      if (!Object.keys(value).length) {
+  if (typeof obj !== "undefined") { // Attempted fix for obj somehow being undefined and failing on the next line some times. - gdb 211206
+    Object.keys(obj).forEach(function(key) { // I _think_ this errors when 'obj' is undefined. -- gdb 211206
+      let value = obj[key];
+      let type = typeof value;
+      if (type === "object") {
+        clean(obj[key]);
+        if (!Object.keys(value).length) {
+          delete obj[key];
+        }
+      }
+      if (type === "undefined") {
         delete obj[key];
       }
-    } else if (type === "undefined") {
-      delete obj[key];
-    }
-  });
+    });
+  }
 }
 
 class IncidentList extends React.Component {
@@ -162,6 +165,8 @@ export default class SubmissionForm extends React.Component {
   };
 
   onSubmit(event) {
+    localStorage.setItem('last_incident', JSON.stringify(event.formData)); // To help protect against data loss, storing the form data before anything else. - gdb 211206
+
     const d = new Date();
     const rightNow = new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds(), d.getUTCMilliseconds()).toISOString();
 
@@ -172,6 +177,8 @@ export default class SubmissionForm extends React.Component {
     }
 
     let record = event.formData;
+
+    //throw "screw you!"; // debugging
 
     clean(record);
 
@@ -195,17 +202,17 @@ export default class SubmissionForm extends React.Component {
       record['schema_version'] = this.selectedVersion.replace(/_/g, '\.');
     }
 
-    localStorage.setItem('incident_list_saved', false);
-
-    const master_id = record.plus.master_id || record.master_id;
-
-    let incidents = localStorage.getItem('incidents');
-    if (!incidents) {
-      incidents = {}
-    } else {
-      incidents = JSON.parse(incidents)
-    }
-
+//    localStorage.setItem('incident_list_saved', false);
+//
+//    const master_id = record.plus.master_id || record.master_id;
+//
+//    let incidents = localStorage.getItem('incidents');
+//    if (!incidents) {
+//      incidents = {}
+//    } else {
+//      incidents = JSON.parse(incidents)
+//    }
+//
     incidents[master_id] = removeEmpty(record);
 
     localStorage.setItem('incidents', JSON.stringify(incidents));

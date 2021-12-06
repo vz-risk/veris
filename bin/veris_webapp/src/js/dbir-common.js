@@ -353,15 +353,17 @@ export function allowOther(schemaName) {
 }
 
 export function removeEmpty(obj) {
-  Object.keys(obj).forEach(function(key) {
-    if (obj[key] && typeof obj[key] === 'object') {
-      removeEmpty(obj[key]);
-      if (Object.keys(obj[key]).length === 0) {
-        delete obj[key]
+  if (typeof obj !== "undefined") { // Attempted fix for obj somehow being undefined and failing on the next line some times. - gdb 211206
+    Object.keys(obj).forEach(function(key) { // I _think_ this errors when 'obj' is undefined. -- gdb 211206
+      if (obj[key] && typeof obj[key] === 'object') {
+        removeEmpty(obj[key]);
+        if (Object.keys(obj[key]).length === 0) {
+          delete obj[key]
+        }
       }
-    }
-    else if (obj[key] == null) delete obj[key]
-  });
+      else if (obj[key] == null) delete obj[key]
+    });
+  }
   return obj
 }
 
@@ -486,7 +488,7 @@ function groomObject(obj, schemaName, version, isData) {
     try {
       let field = getField(acc, rule.field, isData)
         
-      if ((field !== undefined) && ('year_change' in rule) && ('default' in field)) {
+      if ((field !== undefined) && ('year_change' in rule) && (typeof(field) !== "number") && ('default' in field)) { // added typeof field to catch error.
         const d = new Date();
         if (d.getUTCMonth() < 6) {
           field.default = d.getUTCFullYear()
