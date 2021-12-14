@@ -26,7 +26,8 @@
       "description": "Give a good descriptive summary of the incident in several sentences. Use natural language instead of VERIS notation, but we should be able to 'VERISize' the incident pretty well from just this description.<br />**REMINDER: IF THIS IS FOR THE DBIR AND NOT VCDB  - DON'T RECORD VICTIM-INDENTIFYING INFO**"
     }, 
     "source_id": {
-      "type": "string"
+      "type": "string", 
+      "default": ""
     }, 
     "campaign_id": {
       "type": "string", 
@@ -1017,7 +1018,6 @@
                   "Extortion", 
                   "Forgery", 
                   "Influence", 
-                  "Partner", 
                   "Phishing", 
                   "Pretexting", 
                   "Propaganda", 
@@ -1040,6 +1040,7 @@
                   "Email", 
                   "IM", 
                   "In-person", 
+                  "Partner", 
                   "Phone", 
                   "Removable media", 
                   "SMS", 
@@ -4054,7 +4055,7 @@
     "schema_name": {
       "description": "Name of Schema.  This can be used to signal to software reading the schema which it is.  Common values are 'verisc', 'dbir', and 'vcdb'.", 
       "type": "string", 
-      "default": "dbir"
+      "default": "vcdb"
     }
   }, 
   "required": [
