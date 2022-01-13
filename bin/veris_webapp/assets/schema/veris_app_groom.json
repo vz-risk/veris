@@ -1,6 +1,30 @@
 {
   "version": 1.2,
   "rules": [
+    { "field": ["discovery_notes"],
+      "move": ["discovery_method", "discovery_notes"],
+      "schemas": {"all": ["all"]}
+    },
+    { "field": ["ioc"],
+      "move": ["plus", "ioc"],
+      "schemas": {"all": ["all"]}
+    },
+    { "field": ["control_failure"],
+      "move": ["plus", "control_failure"],
+      "schemas": {"all": ["all"]}
+    },
+    { "field": ["corrective_action"],
+      "move": ["plus", "corrective_action"],
+      "schemas": {"all": ["all"]}
+    },
+    { "field": ["cost_corrective_action"],
+      "move": ["plus", "cost_corrective_action"],
+      "schemas": {"all": ["all"]}
+    },
+    { "field": ["plus", "event_chain"],
+      "move": "event_chain",
+      "schemas": {"all": ["all"]}
+    },
     {
       "field": ["campaign_id"],
       "hide": true,

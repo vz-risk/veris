@@ -2045,7 +2045,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -2415,7 +2416,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -2797,7 +2799,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -3179,7 +3182,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -4166,7 +4170,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -4523,7 +4528,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -4892,7 +4898,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -5261,7 +5268,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -6264,7 +6272,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -6629,7 +6638,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -7006,7 +7016,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -7383,7 +7394,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -8347,7 +8359,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -8712,7 +8725,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -9089,7 +9103,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
@@ -9466,7 +9481,8 @@ const uiSchemas = {
           "internal",
           "partner",
           "other",
-          "unknown"
+          "unknown",
+          "*"
         ],
         "ui:field": "collapsable",
         "external": {
