@@ -49,6 +49,9 @@ simplejson
 # Joined JSON
 As the amount of VERIS json grows, it becomes unwieldly.  As such, the VERIS toolchain is being updated to allow a joined form of VERIS.  Please read more in the joined_veris_json.md file.
 
+# JSON-LD
+JSON-LD is a format for storing linked data.  the verisc.jsonld file is the graph representation of the veris schema rather than the json-schema format (the main format) for veris.
+
 # VERIS Common Attack Framework  
 The VERIS Common Attack Framework, (or VCAF)  serves as a bridge to ATT&CK, covering the portions of VERIS not in ATT&CK with the aim of creating a holistic framework. At its very core, VCAF is made of two components: one is the conceptual mapping between VERIS and ATT&CK, and another is the extension of ATT&CK with techniques that cover all possible Threat Actions present in VERIS. This is helpful in using ATT&CK to make strategic decisions and understanding what tactical actions to take to address a strategic challenge.  The mapping can be found as an edge list (or a join table for the more SQL minded) in `bin/vcaf-rev2020-v1_0_3.csv` in this repository.
 
