@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"),
+    url(./a8d6ac03c7b96b7acb62.ttf) format("opentype");
+}
+
+.material-textfield {
+  position: relative;
+}
+
+.text-label {
+  position: absolute;
+  font-size: 1rem;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  color: gray;
+  padding: 0 0.3rem;
+  margin: 0 0.5rem;
+  transition: 0.1s ease-out;
+  transform-origin: left top;
+  pointer-events: none;
+}
+
+.MuiInput-root {
+  width: 100%;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 1rem 0.7rem;
+  color: gray;
+  transition: 0.1s ease-out;
+}
+
+.MuiInputBase-root.MuiInput-root:before {
+  border: none !important;
+}
+
+.MuiInputBase-root.MuiInput-root:after {
+  border: none !important;
+}
+
+.MuiInput-root:focus {
+  border-color: #6200ee;
+}
+
+.MuiInput-root:focus + .text-label {
+  color: #6200ee;
+  top: 0;
+  transform: translateY(-50%) scale(0.9) !important;
+}
+
+.MuiInput-root:not(:placeholder-shown) + .text-label {
+  top: 0;
+  transform: translateY(-50%) scale(0.9) !important;
+}
+
+.MuiInput-root:not(:focus)::placeholder {
+  opacity: 0;
+}
+
