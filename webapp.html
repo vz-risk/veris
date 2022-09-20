@@ -103,25 +103,21 @@
                                The VERIS WebApp 
                             </h2>
 
-                            <p>So how do you get started using VERIS to record your actual data?  We have a WebApp for that!  This is a web browser app (Chrome or Firefox are recommended) which lets you walk through a series of form fields to record as much or as little as your know about the incident.  Once you finish, you hit Submit and the incident details are converted into a JSON record and stored in the app.  To get the data out of the app, you just export it, and the JSON file is saved to your local system.  This is a good way to get started coding cases up in VERIS format, and leaves you with data that is suitable for pulling into a nosql database, or into R as we do for the DBIR.</p>
+                            <p>So how do you get started using VERIS to record your actual data?  We have a WebApp for that!  This is a web browser app which lets you walk through a series of form fields to record as much or as little as your know about the incident.  Once you finish, you hit Submit and the incident details are converted into a JSON record and stored in the app.  To get the data out of the app, you just export it, and the JSON file is saved to your local system.  This is a good way to get started coding cases up in VERIS format, and leaves you with data that is suitable for pulling into a nosql database, or into R as we do for the DBIR.</p>
 <p>
 If you aren't already familiar with VERIS and how to code incidents, we have a number of resources available to you.  First, we list some training videos by both Rapid7 and by our own team.  The Rapid7 videos are good for getting you more familiar with how VERIS works, and the DBIR team videos are all about how to use the webapp on real case examples.  We recommend you take a look at the VERIS videos to get familiar with how to apply the framework to actual cases, and then take a look at team videos that match the kind of case you're working on to begin with.  We have several common examples in our library.
 </p>
-
-<p>Before you can use the WebApp, you will need to download the appropriate VERIS schema file. The file you choose should match the VERIS schema you are using.  At the time of this webpage's writing, we are on VERIS 1.3.4. 
-</p>  
 
 <h2 class="section-title">
                               Get the WebApp and Schema File 
                             </h2>
 
-                                <p><a href="http://veriscommunity.net/veris_webapp_min.html">VERIS WebApp</a></p>
-                                <p><a href="https://github.com/vz-risk/veris/tree/master/bin/veris_webapp/assets/schema">Schema Files Directory on GitHub</a></p>
+                                <p><a href="http://veriscommunity.net/veris_webapp/">VERIS WebApp</a></p>
 
 <p>Which schema to choose?  That largely depends on what you’re using the data for. Each of the schema files corresponds to the use of the data and ends with the VERIS version it represents.  As you may know, we update VERIS periodically, usually before we start work on the new year's report.  This means that organizations who implemented an older version of VERIS and have not migrated their schema will need to pay attention to the version they choose of the schema file.</p>
-<p>The DBIR schema is used by the team coding partner cases for inclusion into the DBIR.  This year, we will be using the <b>dbir-merged1_3_4.json</b> schema file.</p>
-<p>The VCDB schema is for people who are coding cases for the VERIS Community Database project. The 1.3.4 schema file would be <b>vcdb-merged1_3_4.json</b></p>
-<p>The VERISC schema (VERISC stands for VERIS Community) is for people who want to code their own data--not to be shared with anyone necessarily, although you could later chose to share the JSON files if you wanted to. The current schema file for VERISC is <b>verisc-merged1_3_4.json</b></p>
+<p>The DBIR schema is used by the team coding partner cases for inclusion into the DBIR.  For 2022, we will be using the <b>dbir-merged1_3_6.json</b> schema file.</p>
+<p>The VCDB schema is for people who are coding cases for the VERIS Community Database project. The 1.3.6 schema file would be <b>vcdb-merged1_3_6.json</b></p>
+<p>The VERISC schema (VERISC stands for VERIS Community) is for people who want to code their own data--not to be shared with anyone necessarily, although you could later chose to share the JSON files if you wanted to. The current schema file for VERISC is <b>verisc-merged1_3_6.json</b></p>
 <p>The schema file will change the fields displayed in the WebApp.  For example, a case coded in the VCDB schema will include a field for the name of the organization that was the victim of the breach.  For a case in the DBIR, that field would not exist because we do not collect victim-identifying information from our partners.  Since the schema files are JSON, you can inspect them for yourself in an editor.
 
 
@@ -139,34 +135,18 @@ If you aren't already familiar with VERIS and how to code incidents, we have a n
      				<p><a href="https://www.youtube.com/watch?v=k9OFoSdyLsg">Actions</a></p>
      				<p><a href="https://www.youtube.com/watch?v=tNjDm2gHZ_g&t=7s">Assets</a></p>
      				<p><a href="https://www.youtube.com/watch?v=ypdZb6xnCfk&t=49">Attributes</a></p>
-<p></p>
-                                <h4>Training videos for Coding Cases using the VERIS Webapp</h4>
-				<p>First, we have a pair of videos illustrating how to use the WebApp to code cases.  In these and all other example videos we use, we are coding cases in the VCDB schema.  The main reason is that we can use cases from the publicly disclosed breaches to show you how to use the WebApp without disclosing any private information.  Every breach included in VCDB is from publicly access sources, and we include the URLs that we consulted when coding the case.  If you code your own data, you will be using the VERISC schema, which has small variations from what you will see in our videos. </p>
-     				<p><a href="https://www.youtube.com/watch?v=YdwnfDfT1FU&t=1s">Coding VCDB Cases in the VERIS WebApp</a></p>
-     				<p><a href="https://www.youtube.com/watch?v=APNNCILB4aI">VERIS Webapp Tutorial</a></p>
-<p></p>
-                                <h4>Case example training videos (so far)</h4>
-				<p>These videos are also using the VCDB schedma and the VERIS WebApp, but are more focused on teaching the special considerations for common kinds of incidents we see.  For example, when coding up a laptop theft case, there is not only a potential for a confidentiality loss, but also an availability loss, given that the asset is no longer available.  When coding up a Point of Sale Skimmer case, there is an integrity loss to account for the physical tampering with the hardware.  These are the kinds of things that may not be intuitively obvious that need to be accounted for when coding some of the most common cases.  As we have time, we will be adding to this library of case videos.</p>
-                                <p><a href="https://www.youtube.com/watch?v=xphDFtTLzWk">Laptop Theft</a></p>
-                                <p><a href="https://www.youtube.com/watch?v=Aj-prZOheA0">POS Skimmer</a></p>
-                                <p><a href="https://www.youtube.com/watch?v=g0FN2Zqe9FE">Error Misdelivery</a></p>
-                                <p><a href="https://www.youtube.com/watch?v=SI8eRitqRJE"></a>Misuse</p>
-                                <p><a href="https://www.youtube.com/watch?v=qrt6a-uVD9I"></a>Hacking</p>
-                                <p><a href="https://www.youtube.com/watch?v=j8E7ir6rGQc">Malware</a></p>
-                                <h4>Live streamed case coding by Gabriel Bassett via Twitch</h4>
-				<p>Beginning in the summer of 2019, Gabriel Bassett, Chief Data Scientst for the DBIR, began using Twitch to stream live coding of VCDB cases.  It has been very successful in fostering a discussion of both the ins and outs of coding cases in VERIS, and other topics as they arise during the session.  If you are not familiar with it, the Twitch platform for live streaming video allows anyone to put up a live stream, share their screen and interact with the people watching at the same time.</p>
-                                <p><a href="https://www.youtube.com/channel/UCTGViRfVZwozbJtLxR05SKQ/videos">Gabe's Twitch Cases</a></p>
+
                             </section>
 
 
                         </div>
-                    </div>
+                    <!--</div>//-->
                 </section>
 
 
             </div><!-- /main span9 -->
 
-        </div><!-- /row -->
+        <!--</div>//--><!-- /row -->
     </div><!-- /container -->
 
     <!-- .................................... $scripts .................................... -->
