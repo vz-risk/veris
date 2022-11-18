@@ -1,3 +1,20 @@
+Version 1.3.7
+=============
+22-11-17
+• https://github.com/vz-risk/veris/issues/449 - Updated the definition of baiting to also include SEO websites
+• https://github.com/vz-risk/veris/issues/437 - Added the new enumeration of "Sensitive Personal" as a Data variety
+• https://github.com/vz-risk/veris/issues/424 - Removed "recently resigned" from definition of Resigned
+• https://github.com/vz-risk/veris/issues/423 - Added "default credentials" to definition of "Use of stolen creds"
+• https://github.com/vz-risk/veris/issues/420 - Added additional fields to the pci section to better capture existing PCI controls criteria (fields in_place, full_assessed, breach_cause and breach_contribute)
+• https://github.com/vz-risk/veris/issues/419 - Changed description of discovery.internal to actually reflect it was indeed discovered by an internal individual
+• https://github.com/vz-risk/veris/issues/417 - Added Persist to Results enumeration
+• https://github.com/vz-risk/veris/issues/415 - Provided guidance on what we mean by source_id
+• https://github.com/vz-risk/veris/issues/452 - Added numeration action.social.variety.Prompt bombing
+• https://github.com/vz-risk/veris/issues/452 - Added enumeration action.hacking.variety.Hijacking
+• https://github.com/vz-risk/veris/issues/452 - Added enumeration Multi-factor credential to attribute.confidentiality.data_variety
+• https://github.com/vz-risk/veris/issues/414 - Relocated discovery_notes from root of the incident to underneath of discovery_method
+• https://github.com/vz-risk/veris/issues/451 - Removed the action.error.variety.Omission enumeration
+
 Version 1.3.6
 =============
 21-10-26

@@ -20,7 +20,8 @@
       "description": "Give a good descriptive summary of the incident in several sentences. Use natural language instead of VERIS notation, but we should be able to 'VERISize' the incident pretty well from just this description.<br />**REMINDER: IF THIS IS FOR THE DBIR AND NOT VCDB  - DON'T RECORD VICTIM-INDENTIFYING INFO**"
     },
     "source_id": {
-      "type": "string"
+      "type": "string",
+      "description": "Source of the data (eg vcdb, vzir, hr dept)"
     },
     "campaign_id": {
       "type": "string",
@@ -993,7 +994,7 @@
           "type": "object"
         },
         "internal": {
-          "description": "Discovered by an external partner.",
+          "description": "Discovered by entity within the victim organization.",
           "additionalProperties": false,
           "properties": {
             "variety": {
@@ -1033,15 +1034,16 @@
         },
         "unknown": {
           "type": "boolean"
+        },
+        "discovery_notes": {
+          "description": "How was the incident discovered? <a href='http://veriscommunity.net/discovery.html#section-discovery-method' target='_blank'>More Info</a>",
+          "minLength": 1,
+          "type": "string"
         }
       },
       "type": "object"
     },
-    "discovery_notes": {
-      "description": "How was the incident discovered? <a href='http://veriscommunity.net/discovery.html#section-discovery-method' target='_blank'>More Info</a>",
-      "minLength": 1,
-      "type": "string"
-    },
+
     "value_chain": {
       "description": "Capabilities and investments an attacker must acquire prior to the actions on target, (either by purchase or investment in creating).  May be internal to the actors organization (vertically integrated org), or external (purchased in a criminal market).",
       "minProperties": 1,

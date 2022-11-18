@@ -264,6 +264,11 @@ def checkValueChain(inDict):
     if any_value_chain_recommendation:
         yield ValidationError("Some value_chain changes are recommendations only.  This could be for one of three reasons: The actor could have gotten it free.  The actor could have obtained it during the incident (e.g. creds).  Website describes building a full website, not just uploading a file or such.  Please take these into account when updating the incident.")
 
+#https://github.com/vz-risk/veris/issues/429 Interruption should be for defacement
+def checkDefacementInterruption(incident):
+    if 'Defacement' in incident.get('attribute',{}).get('integrity',{}):
+        if 'Interruption' not in incident.get('attribute',{}).get('availability'):
+            yield ValidationError("Because there is a defacement, consider adding Interruption to Availability")
 
 
 def main(incident):
@@ -293,6 +298,9 @@ def main(incident):
   for e in checkSecondaryVictimAmount(incident):
     yield e
   for e in checkValueChain(incident):
+    yield e
+ #Add with 1.3.7
+  for e in checkDefacementInterruption(incident):
     yield e
 
 
