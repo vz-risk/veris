@@ -6,7 +6,7 @@ import unittest
 from importlib import util
 import json
 import shutil
-import os
+import os, pathlib
 from jsonschema import ValidationError, Draft4Validator
 import re
 import logging
@@ -16,7 +16,9 @@ import uuid
 from pprint import pprint
 
 ##TODO: Update this reference PL priority
-veris = os.path.expanduser("~/Documents/Development/vzrisk/veris/")
+#Actually fix this or just jank patch it?
+#veris = os.path.expanduser("~/Documents/Development/vzrisk/veris/")
+veris = str(pathlib.Path(__file__).parent.resolve().parent.resolve().parent.resolve())
 cfg = {
     "log_level": "error",
     "log_file": "./unittest.log",
@@ -69,16 +71,46 @@ def apply_convert(in_incident, updater, cfg=cfg):
         return(json.load(filehandle))
 
 # Import a base 1.3.6 incident
-##TODO: Update this reference PL priority
-filename = "/Users/v685573/Documents/Development/vzrisk/veris/bin/tests/veris-1_3_6-test1.json"
+filename = str(pathlib.Path(__file__).parent.resolve())+"/veris-{}-test1.JSON".format(cfg['version'].replace(".","_"))
 with open(filename, 'r') as filehandle:
   base_incident = json.load(filehandle)
 
 
 class TestConvert(unittest.TestCase):
 
-    def some_placeholder(self):
-        pass
+    def test420_1(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.6"
+        #we skip adding the fields, since the test file has the fields required
+        out_incident = apply_convert(in_incident, convert)
+        self.assertNotIn('req_1', out_incident['plus']['pci'])
+        self.assertIn('req_1', out_incident['plus']['pci']['requirements'])
+        for error in validator.iter_errors(out_incident):
+            raise error
+
+    def test451_1(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.6"
+
+        #skip adding the fields, since the test file has the fields required
+        out_incident = apply_convert(in_incident, convert)
+        self.assertNotIn('Omission', out_incident['action']['error']['variety'])
+        self.assertIn('Other',out_incident['action']['error']['variety'] )
+
+        for error in validator.iter_errors(out_incident):
+            raise error
+
+    def test414_1(self):
+        in_incident = deepcopy(base_incident)
+        in_incident["schema_version"] = "1.3.6"
+
+        # skip adding the fields, since the test file has the fields required
+        out_incident = apply_convert(in_incident, convert)
+        self.assertIn("discovery_note", out_incident['discovery_method'])
+        for error in validator.iter_errors(out_incident):
+            raise error
+
+
     # vz-risk/veris issue # 263
 #    def  test263_1(self):
 #        incident_in = incident0
@@ -317,6 +349,8 @@ class TestValidation(unittest.TestCase):
             for error in checkValidity.main(in_incident):
                 raise error
 
+    def test_validation_429_1(self):
+        in_incident = deepcopy(base_incident)
 
 # if True: #
 

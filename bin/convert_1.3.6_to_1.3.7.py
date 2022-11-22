@@ -92,7 +92,7 @@ def main(cfg):
     for root, dirnames, filenames in tqdm(os.walk(cfg['input'])):
         logging.info("starting parsing of directory {0}.".format(root))
         # filenames = filter(lambda fname: fnmatch(fname, "*.json"), filenames)
-        filenames = [fname for fname in filenames if fnmatch(fname, "*.json")]  # per 2to3. - GDB 181109
+        filenames = [fname for fname in filenames if fnmatch(fname.lower(), "*.json")]  # per 2to3. - GDB 181109
         if filenames:
             dir_ = os.path.join(cfg['output'], root[len(cfg['input']):].lstrip(
                 "/"))  # if we don't strip the input, we get duplicate directories
