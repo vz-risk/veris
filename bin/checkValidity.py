@@ -264,6 +264,13 @@ def checkValueChain(inDict):
     if any_value_chain_recommendation:
         yield ValidationError("Some value_chain changes are recommendations only.  This could be for one of three reasons: The actor could have gotten it free.  The actor could have obtained it during the incident (e.g. creds).  Website describes building a full website, not just uploading a file or such.  Please take these into account when updating the incident.")
 
+#https://github.com/vz-risk/veris/issues/429 Interruption should be for defacement
+def checkDefacementInterruption(incident):
+    if 'Defacement' in incident.get('attribute',{}).get('integrity',{}).get('variety', {}):
+        if 'availability' not in incident.get('attribute',{}):
+            yield ValidationError("Because there is a defacement, consider adding Interruption to Availability")
+        elif 'Interruption' not in incident.get('attribute',{}).get('availability'):
+            yield ValidationError("Because there is a defacement, consider adding Interruption to Availability")
 
 
 def main(incident):
@@ -293,6 +300,9 @@ def main(incident):
   for e in checkSecondaryVictimAmount(incident):
     yield e
   for e in checkValueChain(incident):
+    yield e
+ #Add with 1.3.7
+  for e in checkDefacementInterruption(incident):
     yield e
 
 
@@ -386,7 +396,7 @@ if __name__ == '__main__':
     # files_to_validate = set()
     incident_counter = 0
     for src in cfg["input"]:
-        if os.path.isfile(src) and src.endswith(".json"):
+        if os.path.isfile(src) and src.lower().endswith(".json"):
             logging.debug("Now validating {0}.".format(src))
             # errors in json
             try:
@@ -415,7 +425,7 @@ if __name__ == '__main__':
             incident_counter += 1
             if incident_counter % 100 == 0:
                 logging.info("%s incident validated" % incident_counter)
-        elif os.path.isfile(src) and src.endswith(".zip"):
+        elif os.path.isfile(src) and src.lower().endswith(".zip"):
             with zipfile.ZipFile(src, mode='r', compression=zipfile.ZIP_DEFLATED) as zf:
                 for jfile in zf.namelist():
                     with zf.open(jfile) as filehandle:
@@ -440,7 +450,7 @@ if __name__ == '__main__':
             src = src.rstrip("/")
             # for inFile in glob.iglob(src + "/*/*.json"):
             for root, dirnames, filenames in os.walk(src):
-                for filename in fnmatch.filter(filenames, '*.json'):
+                for filename in fnmatch.filter(filenames, '*.[Jj][Ss][Oo][Nn]'):
                     inFile = os.path.join(root, filename)
                     # files_to_validate.add(inFile)
                     try:

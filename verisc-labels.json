@@ -538,6 +538,7 @@
         "Forced browsing": "Forced browsing or predictable resource location. Child of 'Exploit vuln'.",
         "Format string attack": "Format string attack. Child of 'Exploit vuln'.",
         "Fuzz testing": "Fuzz testing. Child of 'Exploit vuln'.",
+        "Hijack": "To assume control over and steal functionality for an illicit purpose (e.g. Hijacking phone number intercept SMS verification codes)",
         "HTTP request smuggling": "HTTP request smuggling. Child of 'Exploit vuln'.",
         "HTTP request splitting": "HTTP request splitting. Child of 'Exploit vuln'.",
         "HTTP response smuggling": "HTTP response smuggling. Child of 'Exploit vuln'.",
@@ -565,7 +566,7 @@
         "SQLi": "SQL injection. Child of 'Exploit vuln'.",
         "SSI injection": "SSI injection. Child of 'Exploit vuln'.",
         "URL redirector abuse": "URL redirector abuse. Child of 'Exploit vuln'.",
-        "Use of stolen creds": "Use of stolen authentication credentials (including credential stuffing)",
+        "Use of stolen creds": "Use of stolen or default authentication credentials (including credential stuffing)",
         "User breakout": "Elevation of privilege by another customer in shared environment. Child of 'Exploit vuln'.",
         "Virtual machine escape": "Virtual machine escape. Child of 'Exploit vuln'.",
         "XML attribute blowup": "XML attribute blowup. Child of 'Exploit vuln'.",
@@ -600,6 +601,7 @@
         "Elevate": "The hacking action resulted in additional security permissions",
         "Lateral movement": "The hacking action used security access or permissions already acuired",
         "Deploy payload": "e.g. cryptomining, ransomware, etc",
+        "Persist": "The action resulted in some form of persistence on the system",
         "Other": "The result of the hacking action is not listed",
         "Unknown": "The result of the hacking action is unknown",
         "NA": "The hacking action did not have a result"
@@ -674,6 +676,7 @@
         "Elevate": "The malware action resulted in additional security permissions",
         "Lateral movement": "The malware action used security access or permissions already acuired",
         "Deploy payload": "e.g. cryptomining, ransomware, etc",
+        "Persist": "The action resulted in some form of persistence on the system",
         "Other": "The result of the malware action is not listed",
         "Unknown": "The result of the malware action is unknown",
         "NA": "The malware action did not have a result"
@@ -681,7 +684,7 @@
     },
     "social": {
       "variety": {
-        "Baiting": "Baiting (planting infected media)",
+        "Baiting": "Prepare malicious content in a location where a victim is likely to interact with it. (e.g. SEO - vect: websites, left usbs- vect: removable media, etc)",
         "Bribery": "Bribery or solicitation",
         "Elicitation": "Elicitation (subtle extraction of info through conversation)",
         "Evade Defenses": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
@@ -690,6 +693,7 @@
         "Influence": "Influence tactics (Leveraging authority or obligation, framing, etc)",
         "Phishing": "Any type of *ishing.  Phishing always involves getting data from the victim. Phishing usually has some element of pretexting, but often it doesn’t rise to the level of an invented scenario. E.g. A fake google login page isn’t really pretexting.",
         "Pretexting": "Pretexting (dialogue leveraging invented scenario).  Unlike 'Phishing', does not transfer data. (A fraudulent transfer or changing a bank account on a business account is not really disclosing data.",
+        "Prompt bombing": "Bombarding the user with MFA prompts to get them to accept the login request",
         "Propaganda": "Propaganda or disinformation",
         "Scam": "Online scam or hoax (e.g., scareware, 419 scam, auction fraud)",
         "Spam": "Spam (unsolicited or undesired email and advertisements)",
@@ -739,6 +743,7 @@
         "Elevate": "The social action resulted in additional security permissions",
         "Lateral movement": "The social action used security access or permissions already acuired",
         "Deploy payload": "e.g. cryptomining, ransomware, etc",
+        "Persist": "The action resulted in some form of persistence on the system",
         "Other": "The result of the social action is not listed",
         "Unknown": "The result of the social action is unknown",
         "NA": "The social action did not have a result"
@@ -757,7 +762,6 @@
         "Misconfiguration": "Misconfiguration",
         "Misdelivery": "Misdelivery (send wrong info or to wrong recipient)",
         "Misinformation": "Misinformation (unintentionally giving false info)",
-        "Omission": "Omission (something intended, but not done)",
         "Physical accidents": "Physical accidents (e.g., drops, bumps, spills)",
         "Programming error": "Programming error (flaws or bugs in custom code). This is the error equivalent of the hacking/malware 'Exploit vuln' enumerations.",
         "Publishing error": "Publishing error (private info to public doc or site)",
@@ -807,6 +811,7 @@
         "Elevate": "Do not use. Misuse inherently implies having permission so none can be elevated.",
         "Lateral movement": "The misuse action used security access or permissions already acuired",
         "Deploy payload": "e.g. cryptomining, ransomware, etc",
+        "Persist": "The action resulted in some form of persistence on the system",
         "Other": "The result of the misuse action is not listed",
         "Unknown": "The result of the misuse action is unknown",
         "NA": "The misuse action did not have a result"
@@ -849,6 +854,7 @@
         "Elevate": "The physical action resulted in additional security permissions",
         "Lateral movement": "The physical action used security access or permissions already acuired",
         "Deploy payload": "e.g. cryptomining, ransomware, etc",
+        "Persist": "The action resulted in some form of persistence on the system",
         "Other": "The result of the physical action is not listed",
         "Unknown": "The result of the physical action is unknown",
         "NA": "The physical action did not have a result"
@@ -890,6 +896,7 @@
         "Elevate": "The environmental action resulted in additional security permissions",
         "Lateral movement": "The environmental action used security access or permissions already acuired",
         "Deploy payload": "e.g. cryptomining, ransomware, etc",
+        "Persist": "The action resulted in some form of persistence on the system",
         "Other": "The result of the environmental action is not listed",
         "Unknown": "The result of the environmental action is unknown",
         "NA": "The environmental action did not have a result"
@@ -1224,7 +1231,7 @@
         "Personal issues": "Personal issues",
         "Promoted": "Recently promoted",
         "Reprimanded": "Recently reprimanded",
-        "Resigned": "Preparing to resign or recently resigned",
+        "Resigned": "Preparing to resign",
         "Other": "Other",
         "Unknown": "Unknown"
       }
@@ -1508,6 +1515,7 @@
         "M - Flash drive": "Media - Flash drive or card",
         "M - Payment card": "Media - Payment card (e.g., magstripe, EMV)",
         "M - Smart card": "Media - Identity smart card",
+        "M - SIM card": "Media  - Subscriber Identity Module found in mobile devices ",
         "M - Tapes": "Media - Backup tapes",
         "M - Other": "Media - Variety known but not listed",
         "M - Unknown": "Media - Variety not known",
@@ -1910,12 +1918,14 @@
           "Bank": "Bank account data",
           "Classified": "Classified information",
           "Copyrighted": "Copyrighted material",
-          "Credentials": "Authentication credentials (e.g., pwds, OTPs, biometrics)",
+          "Credentials": "Authentication credentials, such as username and password",
           "Digital certificate": "Digital certificate",
           "Internal": "Sensitive internal data (e.g., plans, reports, emails)",
           "Medical": "Medical records",
+          "Multi-factor credential": "Any additional authentication methods, aside from Username and password (e.g., OTP, biometrics)",
           "Payment": "Payment card data (e.g., PAN, PIN, CVV2, Expiration)",
-          "Personal": "Personal or identifying information (e.g., addr, ID#, credit score)",
+          "Personal": "Personal or identifying information (e.g., addr, Email address, credit score)",
+          "Sensitive Personal": "Data which impacts a person's livelihood, quality of life, and ability to participate in daily activities such as SSNs or other National ID",
           "Secrets": "Trade secrets",
           "Source code": "Source code",
           "System": "System information (e.g., config info, open services)",
