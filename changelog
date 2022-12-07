@@ -11,9 +11,10 @@ Version 1.3.7
 • https://github.com/vz-risk/veris/issues/415 - Provided guidance on what we mean by source_id
 • https://github.com/vz-risk/veris/issues/452 - Added numeration action.social.variety.Prompt bombing
 • https://github.com/vz-risk/veris/issues/452 - Added enumeration action.hacking.variety.Hijacking
-• https://github.com/vz-risk/veris/issues/452 - Added enumeration Multi-factor credential to attribute.confidentiality.data_variety
-• https://github.com/vz-risk/veris/issues/414 - Relocated discovery_notes from root of the incident to underneath of discovery_method
-• https://github.com/vz-risk/veris/issues/451 - Removed the action.error.variety.Omission enumeration
+• https://github.com/vz-risk/veris/issues/452 - Added enumeration "Multi-factor credential" to attribute.confidentiality.data_variety
+• https://github.com/vz-risk/veris/issues/452 - Added enumeration "M - SIM card" to asset.assets.variety
+• https://github.com/vz-risk/veris/issues/451 - Removed the action.error.variety.Omission enumeration and moved values over to "Other"
+ https://github.com/vz-risk/veris/issues/429 - Added rule to checkValidity to suggest Interruption with Defacement
 
 Version 1.3.6
 =============

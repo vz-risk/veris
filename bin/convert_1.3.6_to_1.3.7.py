@@ -167,16 +167,18 @@ def main(cfg):
 
                 #Issue https://github.com/vz-risk/veris/issues/414 Discovery_notes is found in the root of the incident
                 # it should really be at the root  of discovery_method, this update will make that happen
-                #TODO: do we need to ensure we capture if there's a discovery_note BUT no discovery?? seems unlikely considerng discovery_method is required
-                if incident.get("discovery_notes", {}) and incident.get('discovery_method', {}):
-                    incident['discovery_method']['discovery_notes'] = incident.get('discovery_notes')
-                    incident.pop('discovery_notes', None)
+                #: do we need to ensure we capture if there's a discovery_note BUT no discovery?? seems unlikely considerng discovery_method is required
+                # if incident.get("discovery_notes", {}) and incident.get('discovery_method', {}):
+                #     incident['discovery_method']['discovery_notes'] = incident.get('discovery_notes')
+                #     incident.pop('discovery_notes', None)
 
                 ##https://github.com/vz-risk/veris/issues/451 Removes omission from the error variety and reassigns them as Other
                 if "Omission" in incident.get('action', {}).get('error', {}).get('variety',{}):
-                    incident['action']['error']['variety'].append("Other")
+                    if 'Other' not in incident.get('action', {}).get('error', {}).get('variety',{}):
+                        incident['action']['error']['variety'].append("Other")
                     incident['action']['error']['variety'].remove("Omission")
-
+                    notes = incident['action']['error'].get('notes', "")
+                    incident['action']['error']['notes'] = (notes + "\n" + "VERIS 1.3.7: Removed Omission as a legitimate option").strip()
 
                 logging.info("Writing new file to %s" % out_fname)
                 with open(out_fname, 'w') as outfile:

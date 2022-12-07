@@ -100,15 +100,15 @@ class TestConvert(unittest.TestCase):
         for error in validator.iter_errors(out_incident):
             raise error
 
-    def test414_1(self):
-        in_incident = deepcopy(base_incident)
-        in_incident["schema_version"] = "1.3.6"
-
-        # skip adding the fields, since the test file has the fields required
-        out_incident = apply_convert(in_incident, convert)
-        self.assertIn("discovery_note", out_incident['discovery_method'])
-        for error in validator.iter_errors(out_incident):
-            raise error
+    # def test414_1(self):
+    #     in_incident = deepcopy(base_incident)
+    #     in_incident["schema_version"] = "1.3.6"
+    #
+    #     # skip adding the fields, since the test file has the fields required
+    #     out_incident = apply_convert(in_incident, convert)
+    #     self.assertIn("discovery_notes", out_incident['discovery_method'])
+    #     for error in validator.iter_errors(out_incident):
+    #         raise error
 
 
     # vz-risk/veris issue # 263
