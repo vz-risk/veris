@@ -1,19 +1,49 @@
-# OS generated files
-.DS_Store*
+~_$.
+""
+.#"OS generated files"//
+~_$..
+"#
+DS_Store
 ehthumbs.db
-Icon?
+Icon
 Thumbs.db
 
-# backup files
-*.old
-._*
-*~
-._*
-*.swp
-*.bak
+backup files
+$.old
+._$""
+~_
+$.
+.#
+._
+$.
+"".#""//
+"
+.swp
 
-#compilation files
-*.pyc
+"
+"
+.bak
 
-# IDE files
-.idea
+"
+
+~_
+$.
+""."
+""
+.
+#""
+"compilation" "files"
+~_$.
+""
+.
+"pyc"
+
+"#"
+# "."IDE files"."
+#.idea"
+"."
+~_$.
+"."
+."
+"
+.
