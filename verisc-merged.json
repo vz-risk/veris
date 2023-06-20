@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#", 
   "additionalProperties": false, 
-  "description": "VERIS Community Schema 1.3.7.", 
+  "description": "VERIS Community Schema 1.3.6.", 
   "properties": {
     "incident_id": {
       "type": "string", 
@@ -26,8 +26,7 @@
       "description": "Give a good descriptive summary of the incident in several sentences. Use natural language instead of VERIS notation, but we should be able to 'VERISize' the incident pretty well from just this description.<br />**REMINDER: IF THIS IS FOR THE DBIR AND NOT VCDB  - DON'T RECORD VICTIM-INDENTIFYING INFO**"
     }, 
     "source_id": {
-      "type": "string", 
-      "description": "Source of the data (eg vcdb, vzir, hr dept)"
+      "type": "string"
     }, 
     "campaign_id": {
       "type": "string", 
@@ -779,7 +778,6 @@
                   "Forced browsing", 
                   "Format string attack", 
                   "Fuzz testing", 
-                  "Hijack", 
                   "HTTP request smuggling", 
                   "HTTP request splitting", 
                   "HTTP response smuggling", 
@@ -863,7 +861,6 @@
                   "Elevate", 
                   "Lateral movement", 
                   "Deploy payload", 
-                  "Persist", 
                   "Other", 
                   "Unknown", 
                   "NA"
@@ -980,7 +977,6 @@
                   "Elevate", 
                   "Lateral movement", 
                   "Deploy payload", 
-                  "Persist", 
                   "Other", 
                   "Unknown", 
                   "NA"
@@ -1023,7 +1019,6 @@
                   "Influence", 
                   "Phishing", 
                   "Pretexting", 
-                  "Prompt bombing", 
                   "Propaganda", 
                   "Scam", 
                   "Spam", 
@@ -1104,7 +1099,6 @@
                   "Elevate", 
                   "Lateral movement", 
                   "Deploy payload", 
-                  "Persist", 
                   "Other", 
                   "Unknown", 
                   "NA"
@@ -1141,6 +1135,7 @@
                   "Misconfiguration", 
                   "Misdelivery", 
                   "Misinformation", 
+                  "Omission", 
                   "Physical accidents", 
                   "Programming error", 
                   "Publishing error", 
@@ -1242,7 +1237,6 @@
                   "Elevate", 
                   "Lateral movement", 
                   "Deploy payload", 
-                  "Persist", 
                   "Other", 
                   "Unknown", 
                   "NA"
@@ -1324,7 +1318,6 @@
                   "Elevate", 
                   "Lateral movement", 
                   "Deploy payload", 
-                  "Persist", 
                   "Other", 
                   "Unknown", 
                   "NA"
@@ -1408,7 +1401,6 @@
                   "Elevate", 
                   "Lateral movement", 
                   "Deploy payload", 
-                  "Persist", 
                   "Other", 
                   "Unknown", 
                   "NA"
@@ -2217,7 +2209,6 @@
                   "M - Flash drive", 
                   "M - Payment card", 
                   "M - Smart card", 
-                  "M - SIM card", 
                   "M - Tapes", 
                   "M - Other", 
                   "M - Unknown", 
@@ -2726,10 +2717,8 @@
                       "Digital certificate", 
                       "Internal", 
                       "Medical", 
-                      "Multi-factor credential", 
                       "Payment", 
                       "Personal", 
-                      "Sensitive Personal", 
                       "Secrets", 
                       "Source code", 
                       "System", 
@@ -2962,7 +2951,7 @@
           "type": "object"
         }, 
         "internal": {
-          "description": "Discovered by entity within the victim organization.", 
+          "description": "Discovered by an external partner.", 
           "additionalProperties": false, 
           "properties": {
             "variety": {
@@ -3595,9 +3584,9 @@
       "properties": {}
     }, 
     "schema_version": {
-      "description": "Schema version in use. This should be 1.3.7 for this schema.", 
+      "description": "Schema version in use. This should be 1.3.4 for this schema.", 
       "type": "string", 
-      "default": "1.3.7"
+      "default": "1.3.6"
     }, 
     "schema_name": {
       "description": "Name of Schema.  This can be used to signal to software reading the schema which it is.  Common values are 'verisc', 'dbir', and 'vcdb'.", 

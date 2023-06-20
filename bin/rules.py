@@ -1199,16 +1199,16 @@ if __name__ == "__main__":
     veris_logger.updateLogger(cfg, formatter)
     # get all files in directory and sub-directories
     if os.path.isfile(cfg['input']):
-        filenames = [s for s in cfg['input'] if s.lower().endswith(".json")]
-        zfilenames = [s for s in cfg['input'] if s.lower().endswith(".zip")]
+        filenames = [s for s in cfg['input'] if s.endswith(".json")]
+        zfilenames = [s for s in cfg['input'] if s.endswith(".zip")]
     elif os.path.isdir(cfg['input']):
         # http://stackoverflow.com/questions/14798220/how-can-i-search-sub-folders-using-glob-glob-module-in-python
         filenames = [os.path.join(dirpath, f)
             for dirpath, dirnames, files in os.walk(cfg['input'])
-            for f in files if f.lower().endswith(".json")]
+            for f in files if f.endswith(".json")]
         zfilenames = [os.path.join(dirpath, f)
             for dirpath, dirnames, files in os.walk(cfg['input'])
-            for f in files if f.lower().endswith(".zip")]
+            for f in files if f.endswith(".zip")]
     else:
         raise OSError("File or directory {0} does not exist.".format(cfg['input']))
 
