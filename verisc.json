@@ -39,7 +39,7 @@
           "properties": {
             "year": {
               "type": "integer",
-              "maximum": 2022,
+              "maximum": 2050,
               "minimum": 1950
             },
             "month": {
@@ -576,7 +576,7 @@
               "minItems": 1,
               "type": "array",
               "uniqueItems": true
-            }, 
+            },
             "notes": {
               "description": "Misc external actor notes",
               "minLength": 1,
@@ -606,8 +606,8 @@
               "description": "Actor name (if known). e.g. 'lizard squad'",
               "items": {
                 "type": "string"
-              }, 
-              "type": "array", 
+              },
+              "type": "array",
               "uniqueItems": true
             }
           },
@@ -1265,9 +1265,9 @@
       "properties":{
         "master_id": {
           "description": "Master_id is a type 4 UUID and is unique for every record (incident).",
-          "minLength": 1, 
+          "minLength": 1,
           "type": "string"
-        }, 
+        },
         "row_number": {
           "type": "number"
         }
@@ -1315,12 +1315,12 @@
     },
     "schema_version": {
       "description": "Schema version in use. This should be 1.3.7 for this schema.",
-      "type": "string", 
+      "type": "string",
       "default": "1.3.7"
     },
     "schema_name": {
-      "description": "Name of Schema.  This can be used to signal to software reading the schema which it is.  Common values are 'verisc', 'dbir', and 'vcdb'.", 
-      "type": "string", 
+      "description": "Name of Schema.  This can be used to signal to software reading the schema which it is.  Common values are 'verisc', 'dbir', and 'vcdb'.",
+      "type": "string",
       "default": "verisc"
     }
   },
