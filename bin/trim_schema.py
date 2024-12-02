@@ -69,19 +69,28 @@ def deepGetAttr(od, name):
         try:
             return deepGetAttr(od[name[0]], name[1:])
         except:
-            logging.error(name)
+            logging.error(f"failed getting attribute {name}")
             raise
     else:
         return od[name[0]]
 
 
 def deepSetAttr(od, name, value):
-    if len(name) > 1:
-        od[name[0]] = deepSetAttr(od.get(name[0], {}), name[1:], value)
-    else:
-        od[name[0]] = value
-    return od
+    try:
+        if len(name) > 1:
+            od[name[0]] = deepSetAttr(od.get(name[0], {}), name[1:], value)
+        else:
+            od[name[0]] = value
+        return od
+    except Exception as e:
+        logging.error(f"failed to do thing {e}")
 
+## Update process should probably be as follows
+## descend the tree of the Update file and get the furtherest branch
+## remove the branches in reverse order (from further out to in)
+## build FULL queue from update file (what are all the branches)
+## then go through the pruning process starting from furthest branch
+## if the branch has no properties, it should be dropped (meaning all of it's branches were removed)
 
 def update_instance(inInstance, updateInstance):
     # update each of the items in the Instance (other than 'properties' or 'items')
@@ -89,19 +98,37 @@ def update_instance(inInstance, updateInstance):
         if item == "":
             pass  # otherwise we get a recursive call
         if item == "properties":
-            if "properties" not in inInstance:
-                inInstance['properties'] = {}
+            if not inInstance[item]:
+                inInstance.pop(item)
         elif item == "items":
-            if "items" not in inInstance:
-                inInstance["items"] == {}
-        elif item not in inInstance:
-            inInstance[item] = updateInstance[item]
+            inInstance.pop(item)
+        elif item == "type":
+            pass
         elif type(inInstance[item]) == list:
-            inInstance[item] = inInstance['item'] + [i for i in updateInstance[item] if i not in inInstance['item']]  # replace set-based join to maintain order
+            try:
+                for x in updateInstance[item]:
+                    # remove the value from updateInstance
+                    if x in inInstance[item]:
+                        inInstance[item].pop(inInstance.index(x))
+                    else:
+                        pass
+            except Exception as e:
+                logging.error(f"failed parsing list {item} : {e}")
         elif type(inInstance[item]) == dict:
-            inInstance[item].update(updateInstance[item])
+            inInstance[item].pop(updateInstance[item])
+        elif not inInstance[item]:
+            inInstance.pop(item)
         else:
-            inInstance[item] == updateInstance[item]
+            inInstance.pop(item, None)
+    return inInstance
+
+def remove_empty_branches(inInstance):
+    fields_to_keep = ['type', 'schema_name']
+
+    trimmed_inInstance = inInstance.copy()
+    for element in trimmed_inInstance.keys():
+        if len(inInstance[element]) < 3 and element not in fields_to_keep:
+            inInstance.pop(element)
     return inInstance
 
 
@@ -117,7 +144,6 @@ def main(cfg):
         updateFile = json.load(filehandle, object_pairs_hook=OrderedDict)
 
     logging.debug("Updating root of schema.")
-    inFile = update_instance(inFile, updateFile)
     if 'description' in updateFile.keys():
         inFile['description'] = updateFile['description']
 
@@ -126,45 +152,43 @@ def main(cfg):
         queue.append(["properties", instance])
     for instance in updateFile.get('items', {}):
         queue.append(["items", instance])
-
-    # create object representations of dicts
-    # oInFile = objdict(inFile)
-    # oUpdateFile = objdict(updateFile)
-
-    # for each property in the update
-    #    ipdb.set_trace()  # debugging hook
     for instance in queue:
-        logging.debug("Updating {0} in schema.".format(instance))
-        updateInstance = deepGetAttr(updateFile, instance)
-
-        # if the object exists in the schema, update it with the properties in the update.
         try:
+            for inst in deepGetAttr(updateFile, instance)['properties'].keys():
+                queue.append(instance + ["properties", inst])
+        except KeyError:
+            print("{0} failed to find property".format(instance))
+            # pass  # clearly not an object with attributes to add
+        except Exception as e:
+            print(f"i goofed {e}")
+    # we now have a list of possible enuemrations we could remove
+
+
+    for instance in reversed(queue):
+        # trim the leaves of the branches
+        fields_to_avoid = ['schema_name', 'type']
+        # assure we're not removing key fields from our schema
+        if not any(check in fields_to_avoid for check in instance):
+        # pull what we'll be updating
             inInstance = deepGetAttr(inFile, instance)
+
+            updateInstance = deepGetAttr(updateFile, instance)
+
             inInstance = update_instance(inInstance, updateInstance)
-            # save the instance back to the schema
+
             inFile = deepSetAttr(inFile, instance, inInstance)
 
-            # queue properties
-            try:
-                for inst in deepGetAttr(updateFile, instance)['properties'].keys():
-                    queue.append(instance + ["properties", inst])
-            except KeyError:
-                pass  # clearly not an object with attributes to add
+    # trim the empty branches:
+    for instance in reversed(queue):
+        # this loop goes up the full tree as defined in queue and removes branches that have no leaves
+        # it leaves the top level of the schema alone by assuring that the depth is more than 2 elements
+        # it can also be used to ignore certain values
 
-            # queue items
-            try:
-                for inst in deepGetAttr(updateFile, instance)['items'].keys():
-                    queue.append(instance + ["items", inst])
-            except KeyError:
-                pass  # clearly not an object with attributes to add
-
-
-        # if it is not, add it to the schema as a property to the correct object
-        except (AttributeError, KeyError):
-            print("{0} did not exist. Adding now.".format(instance))
-            inFile = deepSetAttr(inFile, instance, updateInstance)
-
-    logging.info('Ending main loop.')
+        fields_to_avoid = ['schema_name']
+        if not any(check in fields_to_avoid for check in instance) and len(instance)>2:
+            inInstance = deepGetAttr(inFile, instance[:-1]) #go up one in the property tree
+            inInstance = remove_empty_branches(inInstance)
+            inFile = deepSetAttr(inFile, instance[:-1], inInstance)
     return inFile
 
 
@@ -193,7 +217,7 @@ if __name__ == "__main__":
     # Parse the config file
     try:
         config = configparser.ConfigParser()
-        config.readfp(open(args["conf"]))
+        config.read_file(open(args["conf"]))
         cfg_key = {
             'GENERAL': ['input', 'update', 'output'],
             'LOGGING': ['log_level', 'log_file']
