@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "additionalProperties": false,
-  "description": "VERIS Community Schema 1.4.0.",
+  "description": "VERIS Community Schema 1.3.7.",
   "properties": {
     "incident_id": {
       "type": "string",
@@ -1314,9 +1314,9 @@
       "properties":{}
     },
     "schema_version": {
-      "description": "Schema version in use. This should be 1.4.0 for this schema.",
+      "description": "Schema version in use. This should be 1.3.7 for this schema.",
       "type": "string",
-      "default": "1.4.0"
+      "default": "1.3.7"
     },
     "schema_name": {
       "description": "Name of Schema.  This can be used to signal to software reading the schema which it is.  Common values are 'verisc', 'dbir', and 'vcdb'.",
