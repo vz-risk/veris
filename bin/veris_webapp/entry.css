@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Roboto";
   src: local("Roboto"),
-    url(./a8d6ac03c7b96b7acb62.ttf) format("opentype");
+    url(/veris_webapp/a8d6ac03c7b96b7acb62.ttf) format("opentype");
 }
 
 .material-textfield {
