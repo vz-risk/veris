@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "additionalProperties": false,
-  "description": "VERIS Community Schema 1.4.0.",
+  "description": "VERIS Community Schema 1.3.7.",
   "properties": {
     "incident_id": {
       "type": "string",
@@ -51,7 +51,7 @@
           "properties": {
             "year": {
               "type": "integer",
-              "maximum": 2050,
+              "maximum": 2050, 
               "minimum": 1950
             },
             "month": {
@@ -788,7 +788,7 @@
                   "Integer overflows",
                   "LDAP injection",
                   "Mail command injection",
-                  "AitM",
+                  "MitM",
                   "Null byte injection",
                   "Offline cracking",
                   "OS commanding",
@@ -906,7 +906,7 @@
                   "Cryptocurrency mining",
                   "Destroy data",
                   "In-memory",
-                  "AitM",
+                  "MitM",
                   "Modify data",
                   "Disable controls",
                   "DoS",
@@ -1196,7 +1196,6 @@
                   "Illicit content",
                   "Knowledge abuse",
                   "Net misuse",
-                  "Password or Session Sharing",
                   "Possession abuse",
                   "Privilege abuse",
                   "Snap picture",
@@ -2720,7 +2719,6 @@
                   "variety": {
                     "type": "string",
                     "enum": [
-                      "API key ",
                       "Bank",
                       "Classified",
                       "Copyrighted",
@@ -2733,7 +2731,6 @@
                       "Personal",
                       "Sensitive Personal",
                       "Secrets",
-                      "Session key",
                       "Source code",
                       "System",
                       "Virtual currency",
@@ -3598,9 +3595,9 @@
       "properties": {}
     },
     "schema_version": {
-      "description": "Schema version in use. This should be 1.4.0 for this schema.",
+      "description": "Schema version in use. This should be 1.3.7 for this schema.",
       "type": "string",
-      "default": "1.4.0"
+      "default": "1.3.7"
     },
     "schema_name": {
       "description": "Name of Schema.  This can be used to signal to software reading the schema which it is.  Common values are 'verisc', 'dbir', and 'vcdb'.",
