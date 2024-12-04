@@ -141,9 +141,9 @@ def merge(schema, labels):
             logging.debug(key)
             raise
         try:
-            schema = deepSetAttr(schema, "{0}{1}".format(rchop(name, "properties."), "enum").split("."), deepGetAttr(labels, key).keys())
+            schema = deepSetAttr(schema, "{0}{1}".format(rchop(name, "properties."), "enum").split("."), list(deepGetAttr(labels, key).keys()))
         except:
-            logging.debug("{0}{1}".format(rchop(name, "properties."), "enum"))
+            logging.warning("{0}{1}".format(rchop(name, "properties."), "enum"))
             raise
 
     return schema
@@ -158,7 +158,7 @@ def enums(schema, labels):
     if args.enum is not None:
         veris_enum = copy.deepcopy(labels)
         for key in keys:
-            veris_enum = deepSetAttr(veris_enum, key, deepGetAttr(labels, key).keys())
+            veris_enum = deepSetAttr(veris_enum, key, list(deepGetAttr(labels, key).keys()))
     return veris_enum
 
 
@@ -176,8 +176,8 @@ enums will be ordered by the labels file."""
                         help="the labels file. (Normally '../verisc-labels.json'.", required=True) #, default=DEFAULTLABELS)
     parser.add_argument("-o", "--output",
                         help="the location of the merged output file. (Normally '../verisc-merged.json'.)", required=True) #, default=MERGED)
-    parser.add_argument("-e", "--enum", help="The name of the enums file if desired. (Normally '../verisc-enum.json'.)", default=None)
-    parser.add_argument("-k", "--keynames", help="The name of the keynames file if desired. (normally '../keynames-real.txt'.)", default=None)
+    parser.add_argument("-e", "--enum", help="The name of the output enums file if desired. (Normally '../verisc-enum.json'.)", default=None)
+    parser.add_argument("-k", "--keynames", help="The name of the output keynames file if desired. (normally '../keynames-real.txt'.)", default=None)
     parser.add_argument("-l", "--logging", choices=["critical", "warning", "info", "debug"],
                         help="Minimum logging level to display",
                         default="warning")
