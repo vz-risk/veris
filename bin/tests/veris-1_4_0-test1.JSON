@@ -1,13 +1,8 @@
 {
-    "source_id": "vcdb",
-    "incident_id": "83c303f0-a1f5-11ef-b4c3-f177172971ad",
-    "security_incident": "Confirmed",
-    "summary": "test",
-    "confidence": "High",
     "plus": {
-        "master_id": "dc72d518-d066-4779-90ec-382d5658108d",
-        "modified": "2024-11-14T00:55:58.672Z",
+        "modified": "2024-12-06T00:07:28.737Z",
         "created": "2024-11-14T00:28:52.143Z",
+        "master_id": "dc72d518-d066-4779-90ec-382d5658108d",
         "analysis_status": "Reviewed",
         "dbir_year": 2025
     },
@@ -99,15 +94,39 @@
         },
         "integrity": {
             "variety": [
-                "Alter behavior"
+                "Alter behavior",
+                "Software installation"
             ]
         }
     },
-    "targeted": "Unknown",
     "discovery_method": {
         "external": {
             "variety": [
                 "Actor disclosure"
+            ]
+        }
+    },
+    "source_id": "vcdb",
+    "security_incident": "Confirmed",
+    "summary": "test",
+    "confidence": "High",
+    "targeted": "Unknown",
+    "incident_id": "83c303f0-a1f5-11ef-b4c3-f177172971ad",
+    "value_chain": {
+        "development": {
+            "variety": [
+                "Bot"
+            ]
+        },
+        "targeting": {
+            "variety": [
+                "Email addresses",
+                "Vulnerabilities"
+            ]
+        },
+        "distribution": {
+            "variety": [
+                "Email"
             ]
         }
     },

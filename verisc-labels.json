@@ -1622,7 +1622,7 @@
     },
     "cloud": {
       "On-Premise Asset(s)": "On premise (including colo) assets were involved in the incident.",
-      "External Cloud Asset(s)": "(cloud.Yes) Cloud assets were involved in the incident", 
+      "External Cloud Asset(s)": "(cloud.Yes) Cloud assets were involved in the incident",
       "Other": "Cloud hosting known but not listed",
       "Unknown": "The involvement of cloud assets was not measured",
       "NA": " (cloud.No) Cloud is not applicable to this incident. Only use if computer's weren't involved (people, media, etc). Do not use for Desktops or other user assets."
@@ -1916,7 +1916,7 @@
       },
       "data": {
         "variety": {
-          "API key ": "Application Programing Interface key are used for programmatic access to applications, if unsure, use Credentials",
+          "API key": "Application Programing Interface key are used for programmatic access to applications, if unsure, use Credentials",
           "Bank": "Bank account data",
           "Classified": "Classified information",
           "Copyrighted": "Copyrighted material",

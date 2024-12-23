@@ -26,6 +26,7 @@ import importlib
 import os
 import sys
 import zipfile # to compress
+from packaging import version
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
     spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
@@ -591,7 +592,7 @@ class Rules():
 
         # Per https://github.com/vz-risk/veris/issues/271
         # infer actor.*.motive.Secondary if malware.variety.DoS
-        if 'DoS' in incident['action'].get('malware', {}).get('variety', []) and LooseVersion(incident['schema_version']) >= LooseVersion("1.3.6"):
+        if 'DoS' in incident['action'].get('malware', {}).get('variety', []) and version.parse(incident['schema_version']) >= version.parse("1.3.6"):
             actors = incident['actor'].keys()
             if 'external' in actors:
                 actors = "external"

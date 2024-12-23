@@ -140,13 +140,34 @@ class TestConvert(unittest.TestCase):
         in_incident["schema_version"] = "1.3.7"
 
         out_incident = apply_convert(in_incident, convert)
+        # We need a more finessed  test if the IN JSON only has extortion action, then all social will be removed + assets
+        if "Extortion" in in_incident.get('action', {}).get('social', {}).get('variety', {}) and \
+                "Exploit vuln" in in_incident.get('action', {}).get('hacking', {}).get('variety', {}):
+            if len(in_incident.get('action', {}).get('social', {}).get('variety', {})) > 1:
+                # if there's more than one social action ,we just want ot make sure to remove the Extortin
+                self.assertNotIn('Extortion', out_incident['action']['social']['variety'])
+                # Verify that ransomware is added
+                self.assertIn("Ransomware", out_incident['action']['malware']['variety'])
 
-        #we should only be updating ones that have extortion + exploit
-        self.assertNotIn('Extortion', out_incident['action']['social']['variety'])
-        self.assertIsNone(out_incident['action']['social']['target'])
-        self.assertNotIn('P - End-user or employee', out_incident['asset']['assets']['variety'])
-        self.assertNotIn("P - End-user", out_incident['asset']['assets']['variety'])
-        self.assertNotIn("Alter behavior", out_incident['attribute']['integrity']['variety'])
+                # Verify that there is noi Obfuscation
+                self.assertNotIn("Obfuscation", out_incident['attribute'].get('availability', {}).get('variety', ""))
+
+            else:
+                #if it's the only social, then we need to remove ALL of elements of associated with it
+                self.assertNotIn('social', out_incident['action'])
+
+                self.assertNotIn('P - End-user or employee',
+                              [item.get("variety", "") for item in out_incident['asset']['assets']])
+                self.assertNotIn("P - End-user",
+                                 [item.get("variety", "") for item in out_incident['asset']['assets']])
+                self.assertIn("S - Web application",
+                                 [item.get("variety", "") for item in out_incident['asset']['assets']])
+
+                #Verify that ransomware is added
+                self.assertIn("Ransomware", out_incident['action']['malware']['variety'])
+
+                #Verify that there is noi Obfuscation
+                self.assertNotIn("Obfuscation", out_incident['attribute'].get('availability',{}).get('variety',""))
 
         for error in validator.iter_errors(out_incident):
             raise error

@@ -181,13 +181,18 @@ def main(cfg):
                 if "MitM" in incident.get('action', {}).get('hacking', {}).get('variety',{}):
                     incident['action']['hacking']['variety'] = [e.replace("MitM", "AitM") for e in
                                                                 incident['action']['hacking']['variety']]
-
+                    notes = incident['action']['hacking'].get('notes', '')
+                    notes = notes + "\n" + "VERIS 1_3_7 to 1_4_0 Migration script, to change MiTM to AiTM"
+                    incident['action']['hacking']['notes'] = notes
 
                 # https://github.com/vz-risk/veris/issues/480 Change man in the middle to adversary in the middle for malware
                 if "MitM" in incident.get('action', {}).get('malware', {}).get('variety',{}):
                     incident['action']['malware']['variety'] = [e.replace("MitM", "AitM") for e in
                                                                 incident['action']['malware']['variety']]
 
+                    notes = incident['action']['malware'].get('notes', '')
+                    notes = notes + "\n" + "VERIS 1_3_7 to 1_4_0 Migration script, to change MiTM to AiTM"
+                    incident['action']['malware']['notes'] = notes
 
 
                 #Stop using Social.Extortion for Ransomware - transfer 2023/2024 caseload over
@@ -198,18 +203,51 @@ def main(cfg):
                     "Exploit vuln" in incident.get('action', {}).get('hacking', {}).get('variety',{}):
                     #remove extortion + remove alter behavior + remove
 
+                    #Add Ransomware
+                    if 'Ransomware' not in incident.get('action', {}).get('malware', {}).get('variety',{}):
+                        #if theres no malware
+                        if 'malware' not in incident['action']:
+                            incident['action']['malware'] = {"variety": ['Ransomware'], "vector": ["Remote injection"]}
+                        else:
+                            incident['action']['malware']['variety'].append('Ransomware')
+                            incident['action']['malware']['vector'].append('Remote injection')
+                        notes = incident['action']['malware'].get('notes',"")
+                        notes = notes + "\n" + "VERIS 1_3_7 to 1_4_0 Migration script, to fix extortion and ransomware attacks"
+                        incident['action']['malware']['notes'] = notes
+
                     # if there's only one social action, clear out everything social related
                     if len(incident.get('action', {}).get('social', {}).get('variety',{})) == 1:
-                        incident['attribute']['integrity']['variety'].remove("Alter behavior")
-                        incident['asset']['assets']['variety'].remove("P - End-user or employee")
-                        incident['asset']['assets']['variety'].remove("P - End-user")
+                        #fix attribute
+                        attribute = incident['attribute']['integrity'].get('variety', [])
+                        attribute.remove("Alter behavior")
+                        incident['attribute']['integrity']['variety'] = attribute
+
+                        # if there's no integrity left, remove integrity
+                        if len(incident['attribute']['integrity']['variety'])<1:
+                            incident['attribute'].pop('integrity')
+
+                        # dealing with assets
+
+                        #incident['asset']['assets'] = [
+                            #enum.pop() if enum.get(u"variety", "") == "P - End-user" else enum for enum in incident['asset']['assets']]
+                        varieties = [item for item in incident['asset']['assets'] if item.get('variety', "") != "P - End-user"]
+                        varieties = [item for item in varieties if item.get('variety', "") != 'P - End-user or employee']
+                        incident['asset']['assets'] = varieties
+
                         incident['action']['social']['target'] = None
                         incident['action']['social']['result'] = None
+                        incident['action'].pop('social')
+                    else:
+                        incident['action']['social']['variety'].remove("Extortion")
 
-                    incident['action']['social']['variety'].remove("Extortion")
+                    notes = incident['action']['hacking'].get('notes', '')
+                    notes = notes + "\n" + "VERIS 1_3_7 to 1_4_0 Migration script, to fix extortion and ransomware attacks"
+                    incident['action']['hacking']['notes'] = notes
 
-
-
+                # There's some floating privleged access physical vectors that shouldn't exist, so cleaning those up
+                if "Privileged access" in incident.get('action', {}).get('physical', {}).get('vector',{}):
+                    incident['action']['physical']['vector'] = [e.replace("Privileged access", "Victim secure area") for e in
+                                                                incident['action']['physical']['vector']]
 
                 logging.info("Writing new file to %s" % out_fname)
                 with open(out_fname, 'w') as outfile:

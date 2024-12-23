@@ -1,3 +1,14 @@
+Version 1.4.0
+=============
+24-12-23
+
+• https://github.com/vz-risk/veris/issues/481 - Change Action.Malware.MitM to Action.Malware.AitM
+• https://github.com/vz-risk/veris/issues/480 - Change Action.Hacking.MitM to Action.Hacking.AitM
+• https://github.com/vz-risk/veris/issues/478 - Add a description to Error.vector.carelessness
+• https://github.com/vz-risk/veris/issues/477 - Add additional data varieties for "Session keys" and "API keys" for pairing with "Use of stolen credentials"
+• https://github.com/vz-risk/veris/issues/476 - Add to Misuse - Password or Session Sharing
+• https://github.com/vz-risk/veris/issues/474 - Stop using Social.Extortion for Ransomware - transfer 2023/2024 caseload over
+
 Version 1.3.7
 =============
 22-11-17
@@ -68,7 +79,7 @@ VERIS updates:
 • Removed “discovery_method.external.variety.Monitoring service” and changed all data to “discovery_method.partner.variety.Monitoring service”. External.variety.Monitoring Service are consistently miscoded
 • Added “XK” for Kosovo in country lists.
 • Corected typo in “data state” enum descriptions
-• Updated Action, Actor, Asset, Attribute 
+• Updated Action, Actor, Asset, Attribute
 • Clarified “actor.external.variety.Organized crime” (it’s an criminal that’s organized, not like crime families)
 • Updated “asset.cloud.On-premise assets” description to clarify it includes colo hosting.
 • Updated “value_chain.money launderying.NA” description
@@ -122,7 +133,7 @@ Version 1.3.3
 =============
 18-11-29
 
-VERIS has been updated to version 1.3.3.  This mostly contains enumeration additions, but has some which affect parsing. 
+VERIS has been updated to version 1.3.3.  This mostly contains enumeration additions, but has some which affect parsing.
 
 For example, 'discovery_method' was previously a flat list.  It is now an object of the form discovery_method.<internal/external/partner>.variety.<enum>.  Additionally, several implicit hierarchies have bene formalized in rules.py.
 
@@ -143,7 +154,7 @@ Schema changes
  * Changes asset.country to an array so that we can model assets that exist in multiple countries.
  * Changes victim.country to an array rather than a string.
  * Adds a discovery_notes field to describe the discovery in greater detail.
- * Removes asset.management, asset.hosting, asset.ownership, and asset.accessibility 
+ * Removes asset.management, asset.hosting, asset.ownership, and asset.accessibility
  * Added asset.governance. This is intended to capture interesting facts about the management of the asset but is not intended to be all-inclusive or apply to all assets. E.g. there would be no selection if a person was the affected asset.
  * Removes the existing physical.vector enumeration and renames physical.location to physical.vector. Some of the values from the old physical.vector are now in physical.variety.
  * Adds new attribute.confidentiality.data_victim (see enumerations below)
@@ -159,7 +170,7 @@ Enumeration changes
   * attribute.integrity.variety: Renamed "Misappropriation" to "Repurpose"
   * attribute.confidentiality.data.variety: Added "Source code"
   * attribute.confidentiality.data.variety: Added "Vitual Currency"
-  * asset.assets.variety: Added "S - Unknown" 
+  * asset.assets.variety: Added "S - Unknown"
   * attribute.confidentiality.data.variety: Added "Digital certificate"
   * action.misuse.variety: Renamed "Embezzlement" to "Possession abuse"
   * action.physical.variety: Renamed "Sabotage" to "Destruction"
