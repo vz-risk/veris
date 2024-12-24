@@ -248,6 +248,9 @@ def main(cfg):
                 if "Privileged access" in incident.get('action', {}).get('physical', {}).get('vector',{}):
                     incident['action']['physical']['vector'] = [e.replace("Privileged access", "Victim secure area") for e in
                                                                 incident['action']['physical']['vector']]
+                    notes = incident['action']['physical'].get('notes', '')
+                    notes = notes + "\n" + "VERIS 1_3_7 to 1_4_0 Migration script to remove privileged access"
+                    incident['action']['physical']['notes'] = notes
 
                 logging.info("Writing new file to %s" % out_fname)
                 with open(out_fname, 'w') as outfile:
