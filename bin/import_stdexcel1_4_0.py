@@ -301,7 +301,7 @@ class CSVtoJSON():
         self.addValue(incident, 'victim.secondary.victim_id', out, "list")
         self.addValue(incident, 'victim.locations_affected', out, "integer")
         self.addValue(incident, 'victim.country', out, "list")
-        self.addValue(incident, "government", out, "list")
+        self.addValue(incident, "victim.government", out, "list")
 
         # actor
         for enum in ['motive', 'variety', 'country']:
