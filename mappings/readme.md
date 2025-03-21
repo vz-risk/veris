@@ -1,0 +1,1 @@
+Visit MITRE Mappings Explorer at https://center-for-threat-informed-defense.github.io/mappings-explorer/external/veris/ for a browser friendly version of the VERIS to ATT&CK mapping.
