@@ -183,8 +183,11 @@ class Rules():
         # Takes in an incident and applies rules for internal consistency and consistency with previous incidents
 
         ## Handle a rare case where the version number uses "_" instead of "."
-        if "_" in incident.get("schema_version", ""):
-            incident["schema_version"] = incident["schema_version"].replace("_", ".")
+        try:
+            if "_" in incident.get("schema_version", ""):
+                incident["schema_version"] = incident["schema_version"].replace("_", ".")
+        except:
+            print(incident['plus']['master_id'])
 
         # The schema should have an import year
         #checkEnum(outjson, jenums, country_region, cfg)

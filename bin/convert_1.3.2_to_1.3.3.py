@@ -7,13 +7,13 @@ from fnmatch import fnmatch
 import configparser
 from tqdm import tqdm
 #import imp
-import importlib
+from importlib import util
 import pprint
 # from distutils.version import LooseVersion
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
-    spec = importlib.util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
-    veris_logger = importlib.util.module_from_spec(spec)
+    spec = util.spec_from_file_location("veris_logger", script_dir + "/veris_logger.py")
+    veris_logger = util.module_from_spec(spec)
     spec.loader.exec_module(veris_logger)
     # veris_logger = imp.load_source("veris_logger", script_dir + "/veris_logger.py")
 except:
