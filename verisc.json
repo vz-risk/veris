@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "additionalProperties": false,
-  "description": "VERIS Community Schema 1.4.0.",
+  "description": "VERIS Community Schema 1.4.1.",
   "properties": {
     "incident_id": {
       "type": "string",

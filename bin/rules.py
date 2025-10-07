@@ -344,6 +344,25 @@ class Rules():
                 incident['action']['social']['target'].append('End-user or employee')
 
 
+        #### Hierarchial Field
+        # Added v1.4.1
+        # The following are children of Personal
+        # Medical
+        # Sensitive Personal
+        # Bank
+        # Payment
+        # per vz-risk/issues/500
+
+        if 'confidentiality' in incident['attribute']:
+            personal_types = ["Medical", "Sensitive Personal", "Bank", "Payment"]
+            if any(data.get("variety") in personal_types for data in incident.get('attribute',{}).get('confidentiality',{}).get("data",[]) ):
+                if "Personal" not in [data.get("variety") for data in incident.get('attribute',{}).get('confidentiality',{}).get("data",[])]:
+                    incident['attribute']['confidentiality']["data"].append({'variety': 'Personal'})
+
+
+
+
+
         ### impact.overall_amount should be at least the sum of the impact.loss.amounts
         ## VERIS issue 142
         if 'loss' in incident.get('impact', {}):
