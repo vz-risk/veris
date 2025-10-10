@@ -10,13 +10,7 @@
         "modified": "2025-10-03T22:10:23.638Z",
         "created": "2025-10-03T22:04:07.926Z",
         "analyst": "TEST",
-        "dbir_year": 2026,
-        "attribute": {
-            "confidentiality": {
-                "partner_data": "Yes",
-                "partner_number": 10
-            }
-        }
+        "dbir_year": 2026
     },
     "timeline": {
         "incident": {
@@ -68,10 +62,10 @@
     "asset": {
         "assets": [
             {
-                "variety": "N - HSM"
+                "variety": "N - WLAN"
             },
             {
-                "variety": "S - Remote access"
+                "variety": "S - Web application"
             }
         ],
         "cloud": [

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "additionalProperties": false,
-  "description": "VERIS Community Schema 1.4.0.",
+  "description": "VERIS Community Schema 1.4.1.",
   "properties": {
     "incident_id": {
       "type": "string",
@@ -795,6 +795,7 @@
                   "Pass-the-hash",
                   "Path traversal",
                   "Profile host",
+                  "Prompt injection",
                   "Reverse engineering",
                   "RFI",
                   "Routing detour",
@@ -1050,6 +1051,7 @@
                   "SMS",
                   "Social media",
                   "Software",
+                  "Virtual meeting",
                   "Web application",
                   "Other",
                   "Unknown"
@@ -2227,7 +2229,6 @@
                   "N - Broadband",
                   "N - Camera",
                   "N - Firewall",
-                  "N - HSM",
                   "N - IDS",
                   "N - LAN",
                   "N - NAS",
@@ -2235,6 +2236,7 @@
                   "N - PLC",
                   "N - Private WAN",
                   "N - Public WAN",
+                  "N - Remote access",
                   "N - Router or switch",
                   "N - RTU",
                   "N - SAN",
@@ -2274,6 +2276,7 @@
                   "S - DNS",
                   "S - File",
                   "S - ICS",
+                  "S - LLM application",
                   "S - Log",
                   "S - Mail",
                   "S - Mainframe",
@@ -2281,7 +2284,7 @@
                   "S - POS controller",
                   "S - Print",
                   "S - Proxy",
-                  "S - Remote access",
+                  "S - Secrets vault",
                   "S - VM host",
                   "S - Web application",
                   "S - Other",
@@ -2709,6 +2712,10 @@
               "description": "Total records breached",
               "type": "integer"
             },
+            "data_volume": {
+              "description": "Amount of data breached in volume (GB)",
+              "type": "integer"
+            },
             "data": {
               "description": "Varieties (and amount) of data compromised. Click the red \u2018Add\u2019 button to record multiple data varieties.",
               "items": {
@@ -2813,9 +2820,11 @@
                   "Hardware tampering",
                   "Log tampering",
                   "Misrepresentation",
+                  "Modify authentication",
                   "Modify configuration",
                   "Modify data",
                   "Modify privileges",
+                  "Register MFA device",
                   "Repurpose",
                   "Software installation",
                   "Other",
@@ -3545,6 +3554,33 @@
           "description": "Master_id is a type 4 UUID and is unique for every record (incident).",
           "minLength": 1,
           "type": "string"
+        },
+        "attribute": {
+          "additionalProperties": false,
+          "properties": {
+            "confidentiality": {
+              "additionalProperties": false,
+              "properties": {
+                "data_abuse": {
+                  "description": "The data was used for fraud, used mischievously, used maliciously, or otherwise abused.",
+                  "minLength": 1,
+                  "type": "string",
+                  "enum": [
+                    "Yes",
+                    "Yes - Data ransomed",
+                    "Yes - Identity theft",
+                    "Yes - Financial fraud",
+                    "Yes - Posted on personal forum",
+                    "No",
+                    "Other",
+                    "Unknown"
+                  ]
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
         },
         "row_number": {
           "type": "number"

@@ -270,13 +270,14 @@ def main(cfg):
                 # We need to ensure all current Malware.Ransomware cases get the new "Data abuse" flag set before any changes we might want to do at
 
                 if "Ransomware" in incident.get("action",{}).get("malware",{}).get("variety",[]):
-                    if "Yes" in incident.get("attribute",{}).get("confidentiality",{}).get("data_disclosure",[]) \
-                        or "Unknown" in incident.get("attribute",{}).get("confidentiality",{}).get("data_disclosure",[]) :
-
-                        incident['attribute']['confidentiality']['data_abuse'] = "Yes - Data ransomed"
-                    #
-
-
+                    if "Yes" in incident.get("attribute",{}).get("confidentiality",{}).get("data_disclosure",[]):
+                       if not "attribute" in incident.get('plus',{}):
+                            incident['plus']['attribute']={"confidentiality":{"data_abuse":"Yes - Data ransomed"}}
+                       elif not "confidentiality" in incident.get('plus',{}).get('attribute',{}):
+                           # we append cause hypothetically there could be other values in that plus column that we don't want to quash
+                           incident['plus']['attribute']['confidentiality'].append({"data_abuse":"Yes - Data ransomed"})
+                       else:
+                           incident['plus']['attribute']['confidentiality']['data_abuse']= "Yes - Data ransomed"
 
 
 

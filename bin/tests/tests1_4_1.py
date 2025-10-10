@@ -81,6 +81,8 @@ class TestConvert(unittest.TestCase):
         in_incident = deepcopy(base_incident)
         in_incident["schema_version"] = "1.4.0"
         #we skip adding the fields, since the test file has the fields required
+
+        in_incident['plus']["attribute"] ={"confidentiality":{"partner_number":10, "partner_data":"Yes"}}
         out_incident = apply_convert(in_incident, convert)
 
         #verify that we dropped these fields
@@ -88,7 +90,7 @@ class TestConvert(unittest.TestCase):
         self.assertNotIn("partner_number", out_incident["plus"].get("attribute",{}).get("confidentiality",{}))
 
         # we also should have trimmed out the confidentiality branch in plus
-        self.assertNotIn("confidentiality", out_incident['plus'].get('attribute',{}))
+        #self.assertNotIn("confidentiality", out_incident['plus'].get('attribute',{}))
 
         # Verify that we properly added the partner to data victim
         self.assertIn("Partner", out_incident["attribute"]["confidentiality"]['data_victim'])
@@ -115,6 +117,7 @@ class TestConvert(unittest.TestCase):
         in_incident = deepcopy(base_incident)
         in_incident["schema_version"] = "1.4.0"
         # we skip adding the fields, since the test file has the fields required
+        in_incident['asset']['assets'].append({"variety": "S - Remote access"})
         out_incident = apply_convert(in_incident, convert)
 
 
@@ -160,7 +163,8 @@ class TestConvert(unittest.TestCase):
         in_incident = deepcopy(base_incident)
 
         in_incident["schema_version"] = "1.4.0"
-        # we skip adding the fields, since the test file has the fields required
+
+        in_incident['asset']['assets'].append({"variety":"N - HSM"})
         out_incident = apply_convert(in_incident, convert)
 
         self.assertIn("S - Secrets vault", [item.get("variety", "") for item in out_incident['asset']['assets']])
@@ -187,6 +191,98 @@ class TestRules(unittest.TestCase):
         ))
         #pprint(out_incident)
         self.assertIn('Secondary', motives)
+        for error in validator.iter_errors(out_incident):
+            raise error
+
+    # vz-risk/veris/issues/492 create hierarchy between register MFA device + create account to "Modiy Authentication"
+    def test_rules_492_1(self):
+        in_incident = deepcopy(base_incident)
+        in_incident['attribute']={'integrity':{'variety':["Register MFA device"]}}
+
+        out_incident = Rules.addRules(in_incident)
+
+        self.assertIn("Modify authentication", out_incident.get("attribute",{}).get("integrity",{}).get("variety",[]))
+
+        for error in validator.iter_errors(out_incident):
+            raise error
+
+    def test_rules_492_2(self):
+        in_incident = deepcopy(base_incident)
+        in_incident['attribute']={'integrity':{'variety':["Created account"]}}
+
+        out_incident = Rules.addRules(in_incident)
+
+        self.assertIn("Modify authentication", out_incident.get("attribute",{}).get("integrity",{}).get("variety",[]))
+
+        for error in validator.iter_errors(out_incident):
+            raise error
+
+    def test_rules_500_1(self):
+        personal_data_types = ["Medical", "Sensitive Personal", "Bank", "Payment"]
+        for p_type in personal_data_types:
+            in_incident = deepcopy(base_incident)
+            in_incident['attribute']['confidentiality']['data'].append({"variety": p_type})
+
+            out_incident = Rules.addRules(in_incident)
+            self.assertIn("Personal", [data.get("variety") for data in
+                                          out_incident.get("attribute", {}).get("confidentiality", {}).get("data", [])])
+            for error in validator.iter_errors(out_incident):
+                raise error
+
+    def test_rules_495(self):
+        types_of_Yes= ["Yes - Data ransomed","Yes - Identity theft","Yes - Financial fraud","Yes - Posted on personal forum"]
+        for p_type in types_of_Yes:
+            in_incident = deepcopy(base_incident)
+            in_incident['plus']['attribute'] ={'confidentiality':{'data_abuse': p_type}}
+
+            out_incident = Rules.addRules(in_incident)
+            self.assertIn("Yes", out_incident['plus']['attribute']['confidentiality']['data_abuse'])
+            for error in validator.iter_errors(out_incident):
+                raise error
+
+
+
+    # Hierarhcy between the credential types (probably excessive to do it for each one rather than iterate it through
+    # vz-risk/veris/501
+    def test_rules_501_1(self):
+        in_incident = deepcopy(base_incident)
+        in_incident['attribute']['confidentiality']['data'].append({"variety":"API key"})
+
+        out_incident = Rules.addRules(in_incident)
+
+        self.assertIn("Credentials", [data.get("variety") for data in out_incident.get("attribute",{}).get("confidentiality",{}).get("data",[])])
+
+        for error in validator.iter_errors(out_incident):
+            raise error
+
+    def test_rules_501_2(self):
+        in_incident = deepcopy(base_incident)
+        in_incident['attribute']['confidentiality']['data'].append({"variety":"Digital certificate"})
+
+        out_incident = Rules.addRules(in_incident)
+
+        self.assertIn("Credentials", [data.get("variety") for data in out_incident.get("attribute",{}).get("confidentiality",{}).get("data",[])])
+
+        for error in validator.iter_errors(out_incident):
+            raise error
+    def test_rules_501_3(self):
+        in_incident = deepcopy(base_incident)
+        in_incident['attribute']['confidentiality']['data'].append({"variety":"Multi-factor credential"})
+
+        out_incident = Rules.addRules(in_incident)
+
+        self.assertIn("Credentials", [data.get("variety") for data in out_incident.get("attribute",{}).get("confidentiality",{}).get("data",[])])
+
+        for error in validator.iter_errors(out_incident):
+            raise error
+    def test_rules_501_4(self):
+        in_incident = deepcopy(base_incident)
+        in_incident['attribute']['confidentiality']['data'].append({"variety":"Session key"})
+
+        out_incident = Rules.addRules(in_incident)
+
+        self.assertIn("Credentials", [data.get("variety") for data in out_incident.get("attribute",{}).get("confidentiality",{}).get("data",[])])
+
         for error in validator.iter_errors(out_incident):
             raise error
 

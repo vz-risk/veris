@@ -65,6 +65,7 @@ attribute.confidentiality.data.variety
 attribute.confidentiality.data_disclosure
 attribute.confidentiality.data_total
 attribute.confidentiality.data_victim
+attribute.confidentiality.data_volume
 attribute.confidentiality.notes
 attribute.confidentiality.state
 attribute.integrity.notes
@@ -97,6 +98,7 @@ incident_id
 ioc.comment
 ioc.indicator
 notes
+plus.attribute.confidentiality.data_abuse
 plus.master_id
 plus.row_number
 reference
