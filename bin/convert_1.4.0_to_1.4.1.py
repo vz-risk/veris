@@ -247,6 +247,10 @@ def main(cfg):
                         partner_number = incident.get("plus",{}).get("attribute",{}).get("confidentiality",{}).get("partner_number","")
                         data_total = incident.get('attribute',{}).get("confidentiality", {}).get("data_total","")
 
+                        #if we don't get any values, then we'll just force a zero
+                        if not data_total:
+                            data_total = 0
+
                         # I believe this field by defintion CAN ONLY be an integer, so we're going to force that
                         if int(partner_number) != int(data_total):
                             data_total = int(partner_number) + int(data_total)

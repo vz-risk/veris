@@ -1,14 +1,8 @@
 {
-    "source_id": "vcdb",
-    "incident_id": "5b2c1160-a083-11f0-b4de-6102c171a07e",
-    "security_incident": "Confirmed",
-    "reference": "TEST",
-    "confidence": "High",
-    "summary": "TEST",
     "plus": {
-        "master_id": "f4a8591c-d9c8-4f78-887c-0f70dcfbd82b",
-        "modified": "2025-10-03T22:10:23.638Z",
+        "modified": "2025-11-18T00:39:12.944Z",
         "created": "2025-10-03T22:04:07.926Z",
+        "master_id": "f4a8591c-d9c8-4f78-887c-0f70dcfbd82b",
         "analyst": "TEST",
         "dbir_year": 2026
     },
@@ -84,13 +78,31 @@
             ],
             "data_disclosure": "Yes",
             "data_total": 25
+        },
+        "integrity": {
+            "variety": [
+                "Software installation"
+            ]
         }
     },
-    "targeted": "Opportunistic",
     "discovery_method": {
         "external": {
             "variety": [
                 "Actor disclosure"
+            ]
+        }
+    },
+    "source_id": "vcdb",
+    "security_incident": "Confirmed",
+    "reference": "TEST",
+    "confidence": "High",
+    "summary": "TEST",
+    "targeted": "Opportunistic",
+    "incident_id": "5b2c1160-a083-11f0-b4de-6102c171a07e",
+    "value_chain": {
+        "cash-out": {
+            "variety": [
+                "Cryptocurrency"
             ]
         }
     },

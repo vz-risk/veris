@@ -2,14 +2,14 @@ Version 1.4.1
 =============
 25-10-14
 
-• https://github.com/vz-risk/veris/issues/486 - Create a new Server asset variety for a Secrets Vault
+• https://github.com/vz-risk/veris/issues/486 - Create a new Server asset variety for a Secrets Vault (remove N - HSM)
 • https://github.com/vz-risk/veris/issues/487 - Add a Server variety for an LLM-powered application - "S - LLM Application"
 • https://github.com/vz-risk/veris/issues/490 - Add Social vector "Video Call" or "Virtual meeting"
 • https://github.com/vz-risk/veris/issues/492 - Add new Integrity variety of "add new MFA device"
 • https://github.com/vz-risk/veris/issues/493 - Change "S - Remote Access" to an "N - Remote access" asset
 • https://github.com/vz-risk/veris/issues/495 - Update attribute.Confidentiality.Data abuse to capture the (ab)use of the data for ransom (i.e. single or double extortion)
 • https://github.com/vz-risk/veris/issues/496 - Removed fields plus.attribute.confidentiality.partner_number and plus.attribute.confidentiality.partner_data
-• https://github.com/vz-risk/veris/issues/498 - Created "Data volume" optional field under Confidentiality
+• https://github.com/vz-risk/veris/issues/498 - Created "Data volume" field under Confidentiality
 • https://github.com/vz-risk/veris/issues/500 - Create hierarchies in Confidentiality Data Types for "Personal" data  (update to Rules.py)
 • https://github.com/vz-risk/veris/issues/501 - Create hierarchies in Confidentiality Data Types for "Credentials" data (update to Rules.py)
 • https://github.com/vz-risk/veris/issues/502 - Added "Prompt injection" to action.hacking.variety

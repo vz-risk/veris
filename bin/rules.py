@@ -69,7 +69,7 @@ cfg = {
     'schemafile': "../vcdb/veris.json",
     'enumfile': "../vcdb/veris-enum.json",
     'vcdb':False,
-    'version':"1.3.4",
+    'version':"1.4.1",
     'countryfile':'all.json',
     'output': None,
     'quiet': False,
@@ -369,11 +369,16 @@ class Rules():
 
         #/vz-risk/veris/issues/495
         # make "Yes - " children of "Yes"
-        if 'confidentiality' in incident['attribute']:
-            types_of_Yes= ["Yes - Data ransomed","Yes - Identity theft","Yes - Financial fraud","Yes - Posted on personal forum"]
-            if any(Yes in incident['attribute'].get("confidentiality",{}).get("data_abuse",[])  for Yes in types_of_Yes):
-                if "Yes" not in incident['attribute'].get("confidentiality",{}).get("data_abuse",[]):
-                    incident['attribute']['confidentiality']['data_abuse'].append("Yes")
+        # if 'attribute' in incident['plus']:
+        #     if "data_abuse" in incident['plus']['attribute'].get('confidentiality',{}):
+        #         types_of_Yes= ["Yes - Data ransomed","Yes - Identity theft","Yes - Financial fraud","Yes - Posted on personal forum"]
+        #         if any(Yes in incident['plus']['attribute'].get("confidentiality",{}).get("data_abuse",[])  for Yes in types_of_Yes):
+        #             if "Poo" not in incident['plus']['attribute'].get("confidentiality",{}).get("data_abuse",[]):
+        #                 #current_val =[]
+        #                 #current_val.append(incident['plus']['attribute']['confidentiality']['data_abuse'])
+        #                 #current_val.append("Yes")
+        #
+        #                 incident['plus']['attribute']['confidentiality']['data_abuse'].append("Yes")
 
 
         #vz-risk/veris/issues/501

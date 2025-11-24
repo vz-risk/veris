@@ -229,16 +229,18 @@ class TestRules(unittest.TestCase):
             for error in validator.iter_errors(out_incident):
                 raise error
 
-    def test_rules_495(self):
-        types_of_Yes= ["Yes - Data ransomed","Yes - Identity theft","Yes - Financial fraud","Yes - Posted on personal forum"]
-        for p_type in types_of_Yes:
-            in_incident = deepcopy(base_incident)
-            in_incident['plus']['attribute'] ={'confidentiality':{'data_abuse': p_type}}
-
-            out_incident = Rules.addRules(in_incident)
-            self.assertIn("Yes", out_incident['plus']['attribute']['confidentiality']['data_abuse'])
-            for error in validator.iter_errors(out_incident):
-                raise error
+    #REMOVING this test is it's a single value field and it should probably stay that way, we can do the Yes rule up analysis side
+    # def test_rules_495(self):
+    #     types_of_Yes= ["Yes - Data ransomed","Yes - Identity theft","Yes - Financial fraud","Yes - Posted on personal forum"]
+    #     for p_type in types_of_Yes:
+    #         in_incident = deepcopy(base_incident)
+    #         in_incident['plus']['attribute'] ={'confidentiality':{'data_abuse': p_type}}
+    #
+    #         out_incident = Rules.addRules(in_incident)
+    #         print(out_incident['plus']['attribute']['confidentiality']['data_abuse'])
+    #         self.assertIn("Yes", out_incident['plus']['attribute']['confidentiality']['data_abuse'])
+    #         for error in validator.iter_errors(out_incident):
+    #             raise error
 
 
 
