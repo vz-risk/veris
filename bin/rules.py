@@ -69,7 +69,7 @@ cfg = {
     'schemafile': "../vcdb/veris.json",
     'enumfile': "../vcdb/veris-enum.json",
     'vcdb':False,
-    'version':"1.3.4",
+    'version':"1.4.1",
     'countryfile':'all.json',
     'output': None,
     'quiet': False,
@@ -183,8 +183,11 @@ class Rules():
         # Takes in an incident and applies rules for internal consistency and consistency with previous incidents
 
         ## Handle a rare case where the version number uses "_" instead of "."
-        if "_" in incident.get("schema_version", ""):
-            incident["schema_version"] = incident["schema_version"].replace("_", ".")
+        try:
+            if "_" in incident.get("schema_version", ""):
+                incident["schema_version"] = incident["schema_version"].replace("_", ".")
+        except:
+            print(incident['plus']['master_id'])
 
         # The schema should have an import year
         #checkEnum(outjson, jenums, country_region, cfg)
@@ -340,6 +343,51 @@ class Rules():
             LooseVersion(incident['schema_version']) >= LooseVersion("1.3.4"):
                 incident['action']['social']['target'].append('End-user or employee')
 
+
+        #### Hierarchial Field
+        # Added v1.4.1
+        # The following are children of Personal
+        # Medical
+        # Sensitive Personal
+        # Bank
+        # Payment
+        # per vz-risk/issues/500
+
+        if 'confidentiality' in incident['attribute']:
+            personal_types = ["Medical", "Sensitive Personal", "Bank", "Payment"]
+            if any(data.get("variety") in personal_types for data in incident.get('attribute',{}).get('confidentiality',{}).get("data",[]) ):
+                if "Personal" not in [data.get("variety") for data in incident.get('attribute',{}).get('confidentiality',{}).get("data",[])]:
+                    incident['attribute']['confidentiality']["data"].append({'variety': 'Personal'})
+
+
+        #/vz-risk/veris/issues/492
+        # Make "Register MFA device" and "Create account" children of "Modify authentication"
+        if "integrity" in incident.get("attribute",{}):
+            if "Register MFA device" or "Created account" in incident.get("attribute",{}).get("integrity",{}).get("variety", []):
+                if "Modify authentication" not in incident.get("attribute",{}).get("integrity",{}).get("variety", []):
+                    incident['attribute']['integrity']['variety'].append("Modify authentication")
+
+        #/vz-risk/veris/issues/495
+        # make "Yes - " children of "Yes"
+        # if 'attribute' in incident['plus']:
+        #     if "data_abuse" in incident['plus']['attribute'].get('confidentiality',{}):
+        #         types_of_Yes= ["Yes - Data ransomed","Yes - Identity theft","Yes - Financial fraud","Yes - Posted on personal forum"]
+        #         if any(Yes in incident['plus']['attribute'].get("confidentiality",{}).get("data_abuse",[])  for Yes in types_of_Yes):
+        #             if "Poo" not in incident['plus']['attribute'].get("confidentiality",{}).get("data_abuse",[]):
+        #                 #current_val =[]
+        #                 #current_val.append(incident['plus']['attribute']['confidentiality']['data_abuse'])
+        #                 #current_val.append("Yes")
+        #
+        #                 incident['plus']['attribute']['confidentiality']['data_abuse'].append("Yes")
+
+
+        #vz-risk/veris/issues/501
+        # Create hierarchy between different "children of credentials
+        if "confidentiality" in incident['attribute']:
+            credential_types = ["API key","Digital certificate","Multi-factor credential","Session key"]
+            if any(data.get("variety") in credential_types for data in incident.get('attribute', {}).get('confidentiality', {}).get("data", [])):
+                if "Credentials" not in [data.get("variety") for data in incident.get('attribute',{}).get('confidentiality',{}).get("data",[])]:
+                    incident['attribute']['confidentiality']["data"].append({'variety': 'Credentials'})
 
         ### impact.overall_amount should be at least the sum of the impact.loss.amounts
         ## VERIS issue 142
@@ -563,7 +611,7 @@ class Rules():
         if 'external' in incident['actor']:
             for eachCountry in incident['actor']['external'].get('country', []):
                 incident['actor']['external']['region'] = incident['actor']['external'].get('region', []) + [self.country_region[eachCountry]]
-            if 'region' in incident['victim'].keys():
+            if 'region' in incident['actor']['external'].keys():
                 incident['actor']['external']['region'] = list(set(incident['actor']['external']['region'])) # remove duplicates
                 # if a region exists but no country, country will be filled in 'unknown'
                 # the 'unknown' country value will cause '000000' to be filled into the region

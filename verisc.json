@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "additionalProperties": false,
-  "description": "VERIS Community Schema 1.4.0.",
+  "description": "VERIS Community Schema 1.4.1.",
   "properties": {
     "incident_id": {
       "type": "string",
@@ -840,6 +840,10 @@
               "description": "Total records breached",
               "type": "integer"
             },
+              "data_volume": {
+              "description": "Amount of data breached in volume (GB)",
+              "type": "integer"
+            },
             "data": {
               "description": "Varieties (and amount) of data compromised. Click the red ‘Add’ button to record multiple data varieties.",
               "items": {
@@ -1267,6 +1271,23 @@
           "description": "Master_id is a type 4 UUID and is unique for every record (incident).",
           "minLength": 1,
           "type": "string"
+        },
+        "attribute": {
+          "additionalProperties": false,
+          "properties": {
+            "confidentiality": {
+              "additionalProperties": false,
+              "properties": {
+                "data_abuse": {
+                  "description": "The data was used for fraud, used mischievously, used maliciously, or otherwise abused.",
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
         },
         "row_number": {
           "type": "number"

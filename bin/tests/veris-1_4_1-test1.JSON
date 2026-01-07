@@ -1,0 +1,111 @@
+{
+    "plus": {
+        "modified": "2025-11-18T00:39:12.944Z",
+        "created": "2025-10-03T22:04:07.926Z",
+        "master_id": "f4a8591c-d9c8-4f78-887c-0f70dcfbd82b",
+        "analyst": "TEST",
+        "dbir_year": 2026
+    },
+    "timeline": {
+        "incident": {
+            "year": 2025
+        }
+    },
+    "victim": {
+        "government": [
+            "Local"
+        ],
+        "country": [
+            "US"
+        ],
+        "victim_id": "TEST",
+        "employee_count": "10001 to 25000",
+        "industry": "92"
+    },
+    "action": {
+        "hacking": {
+            "variety": [
+                "Use of stolen creds"
+            ],
+            "vector": [
+                "Desktop sharing software"
+            ],
+            "result": [
+                "Infiltrate"
+            ]
+        },
+        "malware": {
+            "variety": [
+                "Ransomware"
+            ],
+            "vector": [
+                "Direct install"
+            ]
+        }
+    },
+    "actor": {
+        "external": {
+            "variety": [
+                "Nation-state"
+            ],
+            "motive": [
+                "Financial"
+            ]
+        }
+    },
+    "asset": {
+        "assets": [
+            {
+                "variety": "N - WLAN"
+            },
+            {
+                "variety": "S - Web application"
+            }
+        ],
+        "cloud": [
+            "External Cloud Asset(s)"
+        ]
+    },
+    "attribute": {
+        "confidentiality": {
+            "data": [
+                {
+                    "variety": "Sensitive Personal"
+                }
+            ],
+            "data_victim": [
+                "Employee"
+            ],
+            "data_disclosure": "Yes",
+            "data_total": 25
+        },
+        "integrity": {
+            "variety": [
+                "Software installation"
+            ]
+        }
+    },
+    "discovery_method": {
+        "external": {
+            "variety": [
+                "Actor disclosure"
+            ]
+        }
+    },
+    "source_id": "vcdb",
+    "security_incident": "Confirmed",
+    "reference": "TEST",
+    "confidence": "High",
+    "summary": "TEST",
+    "targeted": "Opportunistic",
+    "incident_id": "5b2c1160-a083-11f0-b4de-6102c171a07e",
+    "value_chain": {
+        "cash-out": {
+            "variety": [
+                "Cryptocurrency"
+            ]
+        }
+    },
+    "schema_name": "vcdb",
+    "schema_version": "1.4.0"
+}

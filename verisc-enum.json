@@ -554,6 +554,7 @@
         "Pass-the-hash",
         "Path traversal",
         "Profile host",
+        "Prompt injection",
         "Reverse engineering",
         "RFI",
         "Routing detour",
@@ -711,6 +712,7 @@
         "SMS",
         "Social media",
         "Software",
+        "Virtual meeting",
         "Web application",
         "Other",
         "Unknown"
@@ -1525,7 +1527,6 @@
         "N - Broadband",
         "N - Camera",
         "N - Firewall",
-        "N - HSM",
         "N - IDS",
         "N - LAN",
         "N - NAS",
@@ -1533,6 +1534,7 @@
         "N - PLC",
         "N - Private WAN",
         "N - Public WAN",
+        "N - Remote access",
         "N - Router or switch",
         "N - RTU",
         "N - SAN",
@@ -1572,6 +1574,7 @@
         "S - DNS",
         "S - File",
         "S - ICS",
+        "S - LLM application",
         "S - Log",
         "S - Mail",
         "S - Mainframe",
@@ -1579,7 +1582,7 @@
         "S - POS controller",
         "S - Print",
         "S - Proxy",
-        "S - Remote access",
+        "S - Secrets vault",
         "S - VM host",
         "S - Web application",
         "S - Other",
@@ -1969,9 +1972,11 @@
         "Hardware tampering",
         "Log tampering",
         "Misrepresentation",
+        "Modify authentication",
         "Modify configuration",
         "Modify data",
         "Modify privileges",
+        "Register MFA device",
         "Repurpose",
         "Software installation",
         "Other",
@@ -2364,5 +2369,21 @@
     "Something in-between",
     "Simple and cheap",
     "Unknown"
-  ]
+  ],
+  "plus": {
+    "attribute": {
+      "confidentiality": {
+        "data_abuse": [
+          "Yes",
+          "Yes - Data ransomed",
+          "Yes - Identity theft",
+          "Yes - Financial fraud",
+          "Yes - Posted on personal forum",
+          "No",
+          "Other",
+          "Unknown"
+        ]
+      }
+    }
+  }
 }
