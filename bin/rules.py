@@ -363,7 +363,7 @@ class Rules():
         #/vz-risk/veris/issues/492
         # Make "Register MFA device" and "Create account" children of "Modify authentication"
         if "integrity" in incident.get("attribute",{}):
-            if "Register MFA device" or "Created account" in incident.get("attribute",{}).get("integrity",{}).get("variety", []):
+            if "Register MFA device" in incident.get("attribute",{}).get("integrity",{}).get("variety", []) or "Created account" in incident.get("attribute",{}).get("integrity",{}).get("variety", []):
                 if "Modify authentication" not in incident.get("attribute",{}).get("integrity",{}).get("variety", []):
                     incident['attribute']['integrity']['variety'].append("Modify authentication")
 
