@@ -314,7 +314,7 @@ class VERISmm():
         ### NOTES:
         ### We will assume that if a field exists, it is validatable VERIS
         ### We will not attempt to validate field values (e.g. month is >= 1, & <= 12)
-        ### We will validate single-value enumerations as the existance of the field
+        ### We will validate single-value enumerations as the existence of the field
         ### We will validate multiple-value enumerations as list length > 0 when 'Unknown' removed
         ### We will validate that string fields are not an empty string
 
