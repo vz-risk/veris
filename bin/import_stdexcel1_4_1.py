@@ -40,7 +40,7 @@ cfg = {
     'enumfile': "../verisc-enum.json",
     'mergedfile': "../verisc-merged.json",
     'vcdb': False,
-    'version': "1.4.0",
+    'version': "1.4.1",
     'countryfile': 'all.json',
     'output': os.getcwd(),
     'check': False,
@@ -476,7 +476,7 @@ class CSVtoJSON():
                       'analyst_notes', 'analysis_status',  # 'public_disclosure', - obscelete as of 1.3.3 - GDB 181116
                       'attack_difficulty_legacy', 'attack_difficulty_subsequent',
                       'attack_difficulty_initial', 'security_maturity',
-                      'attribute.confidentiality.data_abuse']  # - GDB 181116
+                      'attribute.confidentiality.data_abuse','github']  # - GDB 181116
         if cfg["vcdb"]:
             plusfields.append('github')
         for enum in plusfields:
