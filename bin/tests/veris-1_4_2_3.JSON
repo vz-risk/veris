@@ -1,0 +1,83 @@
+{
+    "source_id": "vcdb",
+    "incident_id": "ce223b00-c64c-11f1-8264-7142f7d97368",
+    "security_incident": "Confirmed",
+    "reference": "asdfasdfs",
+    "summary": "asdfsadfsd",
+    "confidence": "Low",
+    "plus": {
+        "master_id": "ddbf5b77-1fb3-4a8c-ac5e-ab8c7e949d35",
+        "modified": "2026-10-12T19:54:54.512Z",
+        "created": "2026-10-12T18:54:20.337Z",
+        "dbir_year": 2027
+    },
+    "timeline": {
+        "incident": {
+            "year": 2026
+        }
+    },
+    "victim": {
+        "government": [
+            "NA"
+        ],
+        "country": [
+            "AG"
+        ],
+        "employee_count": "10001 to 25000",
+        "industry": "22"
+    },
+    "action": {
+        "hacking": {
+            "variety": [
+                "AitM"
+            ],
+            "vector": [
+                "Backdoor"
+            ]
+        }
+    },
+    "actor": {
+        "external": {
+            "variety": [
+                "Agentic system",
+                "Activist"
+            ],
+            "motive": [
+                "Convenience"
+            ]
+        },
+        "internal": {
+            "variety": [
+                "Auditor"
+            ],
+            "motive": [
+                "Misalignment"
+            ]
+        }
+    },
+    "asset": {
+        "assets": [
+            {
+                "variety": "E - Telematics"
+            }
+        ],
+        "cloud": [
+            "NA"
+        ]
+    },
+    "attribute": {
+        "confidentiality": {
+            "data": [
+                {
+                    "variety": "Credentials"
+                }
+            ],
+            "data_disclosure": "Potentially"
+        }
+    },
+    "discovery_method": {
+        "unknown": true
+    },
+    "schema_name": "vcdb",
+    "schema_version": "1.4.2"
+}

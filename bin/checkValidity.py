@@ -273,6 +273,33 @@ def checkDefacementInterruption(incident):
             yield ValidationError("Because there is a defacement, consider adding Interruption to Availability")
 
 
+def checkAgenticActors(incident):
+    # agentic systems can't reside by themselves without a corresponding actor (internal + external)
+    external_actor = incident.get('actor',{}).get("external", {}).get('variety', [])
+    internal_actor = incident.get('actor',{}).get("internal", {}).get('variety', [])
+    if 'Agentic system' in external_actor:
+        if len(set(external_actor)) < 2:
+            yield ValidationError("Agentic system cannot be the sole enumeration in actor.external.variety")
+        # should I just check to make sure that there's MORE than one enumeration in that branch
+    if 'Agentic system' in internal_actor:
+        if len(set(internal_actor)) < 2:
+            yield ValidationError("Agentic system cannot be the sole enumeration in actor.internal.variety")
+
+
+def checkMisalignmentAgenticSystem(incident):
+    # misalignment should only show up with agentic sytems and don't align with people assets
+    external_motive = incident.get('actor',{}).get("external", {}).get('motive', [])
+    internal_motive = incident.get('actor',{}).get("internal", {}).get('motive', [])
+
+    if "Misalignment" in external_motive:
+        if 'Agentic system' not in incident.get('actor',{}).get("external", {}).get('variety', []):
+            yield ValidationError("Misalignment applies only to agentic systems but no agentic system is found in actor.external.variety")
+    if "Misalignment" in internal_motive:
+        if 'Agentic system' not in incident.get('actor',{}).get("internal", {}).get('variety', []):
+            yield ValidationError("Misalignment applies only to agentic systems but no agentic system is found in actor.internal.variety")
+
+
+
 def main(incident):
   for e in checkMalwareIntegrity(incident):
     yield e
@@ -303,6 +330,10 @@ def main(incident):
     yield e
  #Add with 1.3.7
   for e in checkDefacementInterruption(incident):
+    yield e
+  for e in checkAgenticActors(incident):
+    yield e
+  for e in checkMisalignmentAgenticSystem(incident):
     yield e
 
 

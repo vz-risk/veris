@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "additionalProperties": false,
-  "description": "VERIS Community Schema 1.4.1.",
+  "description": "VERIS Community Schema 1.4.2.",
   "properties": {
     "incident_id": {
       "type": "string",
@@ -1137,6 +1137,7 @@
                   "Data entry error",
                   "Disposal error",
                   "Gaffe",
+                  "Inadequate containment",
                   "Loss",
                   "Maintenance error",
                   "Malfunction",
@@ -1443,6 +1444,7 @@
                   "Acquaintance",
                   "Activist",
                   "Auditor",
+                  "Agentic system",
                   "Competitor",
                   "Customer",
                   "Force majeure",
@@ -1471,6 +1473,7 @@
                   "Fun",
                   "Grudge",
                   "Ideology",
+                  "Misalignment",
                   "NA",
                   "Secondary",
                   "Other",
@@ -1784,6 +1787,7 @@
                 "type": "string",
                 "enum": [
                   "Auditor",
+                  "Agentic system",
                   "Call center",
                   "Cashier",
                   "Developer",
@@ -1816,6 +1820,7 @@
                   "Fun",
                   "Grudge",
                   "Ideology",
+                  "Misalignment",
                   "Secondary",
                   "NA",
                   "Other",
