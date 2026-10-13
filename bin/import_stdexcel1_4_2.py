@@ -40,7 +40,7 @@ cfg = {
     'enumfile': "../verisc-enum.json",
     'mergedfile': "../verisc-merged.json",
     'vcdb': False,
-    'version': "1.4.1",
+    'version': "1.4.2",
     'countryfile': 'all.json',
     'output': os.getcwd(),
     'check': False,
@@ -76,7 +76,7 @@ class CSVtoJSON():
     jschema = None
     sfields = None
     # country_region = None
-    script_version = "1.4.1"
+    script_version = "1.4.2"
 
     def __init__(self, cfg, file_version=None):
         veris_logger.updateLogger(cfg)
