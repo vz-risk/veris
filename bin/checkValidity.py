@@ -272,6 +272,38 @@ def checkDefacementInterruption(incident):
         elif 'Interruption' not in incident.get('attribute',{}).get('availability'):
             yield ValidationError("Because there is a defacement, consider adding Interruption to Availability")
 
+# check to assure agentic systems don't reside just by themselves https://github.com/vz-risk/veris/issues/508
+def checkAgenticActors(incident):
+    external_actor = incident.get('actor',{}).get("external", {}).get('variety', [])
+    internal_actor = incident.get('actor',{}).get("internal", {}).get('variety', [])
+    if 'Agentic system' in external_actor:
+        if len(set(external_actor)) < 2:
+            yield ValidationError("Agentic system cannot be the sole enumeration in actor.external.variety")
+        # should I just check to make sure that there's MORE than one enumeration in that branch
+    if 'Agentic system' in internal_actor:
+        if len(set(internal_actor)) < 2:
+            yield ValidationError("Agentic system cannot be the sole enumeration in actor.internal.variety")
+
+# Assure misalignment has an agentic system https://github.com/vz-risk/veris/issues/510
+def checkMisalignmentAgenticSystem(incident):
+    external_motive = incident.get('actor',{}).get("external", {}).get('motive', [])
+    internal_motive = incident.get('actor',{}).get("internal", {}).get('motive', [])
+
+    if "Misalignment" in external_motive:
+        if 'Agentic system' not in incident.get('actor',{}).get("external", {}).get('variety', []):
+            yield ValidationError("Misalignment applies only to agentic systems but no agentic system is found in actor.external.variety")
+    if "Misalignment" in internal_motive:
+        if 'Agentic system' not in incident.get('actor',{}).get("internal", {}).get('variety', []):
+            yield ValidationError("Misalignment applies only to agentic systems but no agentic system is found in actor.internal.variety")
+
+# Assure Inadequate containment has an agentic system https://github.com/vz-risk/veris/issues/511
+def checkInadequateContainment(incident):
+    external_actor = incident.get('actor', {}).get("external", {}).get('variety', [])
+    internal_actor = incident.get('actor', {}).get("internal", {}).get('variety', [])
+
+    if "Inadequate containment" in incident.get('action',{}).get("error", {}).get('variety', []):
+        if 'Agentic system' not in external_actor and 'Agentic system' not in internal_actor:
+            yield ValidationError("Inadequate containment requires an agentic system in actor.external.variety or actor.internal.variety")
 
 def main(incident):
   for e in checkMalwareIntegrity(incident):
@@ -305,6 +337,13 @@ def main(incident):
   for e in checkDefacementInterruption(incident):
     yield e
 
+# Add with 1.4.2
+  for e in checkAgenticActors(incident):
+    yield e
+  for e in checkMisalignmentAgenticSystem(incident):
+    yield e
+  for e in checkInadequateContainment(incident):
+    yield e
 
 if __name__ == '__main__':
     # TODO: implement config file options for all of these

@@ -1,3 +1,12 @@
+Version 1.4.2
+=============
+26-10-14
+
+• https://github.com/vz-risk/veris/issues/512 - Create new error type of "Inadequate containment"
+• https://github.com/vz-risk/veris/issues/510 - Create new actor (internal|external) motive of "Misalignment"
+• https://github.com/vz-risk/veris/issues/508 - Create a new actor (internal|external) variety of "Agentic system"
+
+
 Version 1.4.1
 =============
 25-10-14
